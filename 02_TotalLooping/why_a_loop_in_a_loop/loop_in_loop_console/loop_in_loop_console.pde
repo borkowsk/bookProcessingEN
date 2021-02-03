@@ -1,4 +1,5 @@
-//Loop in loop - note the curly braces {}
+//Loop in loop - printing to console
+//Note the curly braces {}
 
 for(int i=0;i<10;i++)
 {
