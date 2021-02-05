@@ -1,9 +1,9 @@
 //Logistic iteration - first attempt
-final float R=3.45;
-float X=0.3333333;//Range 0..1!
-size(900,300);
+final float R=3.66;//Range from 0..4
+float X=0.99;//Range 0..1!
+size(1000,300);
 
-for(int i=0;i<width;i++)//Default width == 100
+for(int i=0;i<width;i++)
 {
   println(i,X);
   //point(i,height-X*height);//Visualise as a point
