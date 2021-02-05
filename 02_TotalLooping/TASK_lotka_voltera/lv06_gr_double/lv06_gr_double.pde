@@ -24,9 +24,6 @@ for(double T=0;T<Tlimit;T+=Tstep)// double TIME used as stearing variable!
 {
   double oldX=X;//Local variable is valid only inside its block of code
   print('.');//println(T,"X:",X," Y:",Y);
-  //How X & Y changes in "infinitely short" time step
-  X=X + Tstep * (alpha*X-beta*X*Y);
-  Y=Y + Tstep * (gamma*oldX*Y-delta*Y);
   //Visualisation
   float Xf=(float)X,Yf=(float)Y,Tf=(float)T;//float mirrors of variables because of graphics requarements
   stroke(0,255,0);//GREEN for X
@@ -35,6 +32,9 @@ for(double T=0;T<Tlimit;T+=Tstep)// double TIME used as stearing variable!
   ellipse(Tf,500-Yf,DOTSIZE,DOTSIZE);
   stroke(0,0,255);//BLUE for interaction
   point(1000+Xf,500-Yf);
+  //How X & Y changes in "infinitely short" time step
+  X=X + Tstep * (alpha*X-beta*X*Y);
+  Y=Y + Tstep * (gamma*oldX*Y-delta*Y);
 }
 
 //https://github.com/borkowsk/bookProcessingEN

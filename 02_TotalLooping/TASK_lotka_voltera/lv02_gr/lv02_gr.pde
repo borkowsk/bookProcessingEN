@@ -20,14 +20,14 @@ for(int i=0;i<N;i++)
 {
   float oldX=X;//Local variable is valid only inside its block of code
   println(i,"X:",X," Y:",Y);
-  //How X & Y changes in "infinitely short" time step
-  X=X + Tstep * (alpha*X-beta*X*Y);
-  Y=Y + Tstep * (gamma*oldX*Y-delta*Y);
   //Visualisation
   stroke(0,255,0);//GREEN for X
   ellipse(i,500-X,3,3);
   stroke(255,0,0);//RED for Y
   ellipse(i,500-Y,3,3);
+  //How X & Y changes in "infinitely short" time step
+  X=X + Tstep * (alpha*X-beta*X*Y);
+  Y=Y + Tstep * (gamma*oldX*Y-delta*Y);
 }
 
 //https://github.com/borkowsk/bookProcessingEN
