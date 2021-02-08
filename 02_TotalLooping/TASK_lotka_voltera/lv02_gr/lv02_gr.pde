@@ -13,9 +13,8 @@ float delta=0.05;//the mortality of predators
 float Tstep=0.3;//Time step. As short as possible ;-)
 int N=1000;//Number if steps
 size(1000,500);
-
-stroke(255,0,0);
 println("α=",alpha,"β=",beta,"γ=",gamma,"δ=",delta);
+
 for(int i=0;i<N;i++)
 {
   float oldX=X;//Local variable is valid only inside its block of code

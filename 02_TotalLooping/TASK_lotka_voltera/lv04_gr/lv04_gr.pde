@@ -11,16 +11,14 @@ float gamma=beta/10.0;//the growth of predators depends on the number of pray
 float delta=0.1;//the mortality of predators
 //α= 0.1 β= 0.01 γ= 0.001 δ= 0.1 is perfectly stable if Xo=100, Yo=10;
 
-float Tstep=0.01;//Time step. As short as possible ;-)
+float Tstep=0.05;//Time step. As short as possible ;-)
 
 size(1000,500);
-
-stroke(255,0,0);
 println("α=",alpha,"β=",beta,"γ=",gamma,"δ=",delta);
-////Why i? T used instead!
+
+////Why i? T may be used instead!
 for(float T=0;T<1000;T+=Tstep)// float TIME used as stearing variable!
 {
-  float oldX=X;//Local variable is valid only inside its block of code
   //println(T,"X:",X," Y:",Y);
   //Visualisation
   stroke(0,255,0);//GREEN for X
@@ -28,6 +26,7 @@ for(float T=0;T<1000;T+=Tstep)// float TIME used as stearing variable!
   stroke(255,0,0);//RED for Y
   ellipse(T,500-Y,3,3);
   //How X & Y changes in "infinitely short" time step
+  float oldX=X;//Local variable may be declared in any place before use
   X=X + Tstep * (alpha*X-beta*X*Y);
   Y=Y + Tstep * (gamma*oldX*Y-delta*Y);
 }
