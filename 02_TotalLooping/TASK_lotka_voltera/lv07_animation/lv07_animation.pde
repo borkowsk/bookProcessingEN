@@ -5,9 +5,9 @@ double X=300;//x is the number of prey (for example, rabbits);
 double Y=15;//y is the number of some predator (for example, foxes);
 
 //α, β, γ, δ are positive real parameters describing the interaction of the two species.
-final double alpha=0.1;//Prey growth
+final double alpha=0.1;//prey growth
 final double beta=0.01;//interaction of prey with predators
-final double gamma=beta/10.0;//the growth of predators depends on the number of pray
+final double gamma=beta/10.0;//the growth of predators depends on the number of prey
 final double delta=0.1;//the mortality of predators
 //α= 0.1 β= 0.01 γ= 0.001 δ= 0.1 is perfectly stable if Xo=100, Yo=10;
 

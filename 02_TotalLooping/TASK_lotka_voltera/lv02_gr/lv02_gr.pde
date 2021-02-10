@@ -5,9 +5,9 @@ float X=350;//x is the number of prey (for example, rabbits);
 float Y=10;//y is the number of some predator (for example, foxes);
 
 //α, β, γ, δ are positive real parameters describing the interaction of the two species.
-float alpha=0.2;//Prey growth
+float alpha=0.2;//prey growth
 float beta=0.01;//interaction of prey with predators
-float gamma=beta/10.0;//the growth of predators depends on the number of pray
+float gamma=beta/10.0;//the growth of predators depends on the number of prey
 float delta=0.05;//the mortality of predators
 
 float Tstep=0.3;//Time step. As short as possible ;-)
