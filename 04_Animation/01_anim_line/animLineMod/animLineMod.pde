@@ -3,7 +3,7 @@
 void setup() 
 {
   size(300,130);
-  frameRate(60);
+  frameRate(300);
 }
 
 int pos = 0;

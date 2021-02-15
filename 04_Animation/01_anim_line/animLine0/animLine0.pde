@@ -1,6 +1,6 @@
 //ANIM "line()" in default configuration
 
-int pos = 0;
+int pos = 0;//GLOBAL variable!
 
 void draw() //It is executed in an invisible loop
 {

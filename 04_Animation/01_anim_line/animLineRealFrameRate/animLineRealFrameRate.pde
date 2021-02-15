@@ -2,7 +2,7 @@
 
 void setup() 
 {
-  size(300,130);
+  size(300,200);
   frameRate(300);
 }
 
