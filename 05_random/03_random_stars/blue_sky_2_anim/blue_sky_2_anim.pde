@@ -5,10 +5,10 @@ void setup()
 {
   size(1000,700);
   background(0,0,25);
-  frameRate(200);
+  frameRate(300);
   //noSmooth();//It looks much better with the smooth effect
   //Global 'N' and 'i' are set below:
-  N=(height*width)/200;//number of stars to draw
+  N=(height*width)/100;//number of stars to draw
   i=0; //Counter
 }
 
