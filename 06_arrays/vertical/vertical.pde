@@ -21,16 +21,17 @@ void setup()
 
 void draw()
 {
-  background(0,155,155);
+  background(0,155,155);//also clear the window!
   
   //ropes
   for(int i=0;i<width;i+=5)
     line(i,height,i,0);
     
   //cities
-  for(int i=space,j=0;j<N;i+=space,j++)
+  for(int i=space, j=0; j<N; i+=space, j++)
   {
     ellipse(i,positions[j],space,3);//Visualisation
+    
     positions[j]-=random(2);//Random move
     if(positions[j]<0) //Checking if he has not passed the top
       positions[j]+=height;

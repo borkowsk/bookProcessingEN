@@ -1,5 +1,5 @@
 //Mean of some random numbers:
-final int N=10;// How many numbers?
+final int N=20;// How many numbers?
 float[] numbers=new float[N];// table storing values
 
 //Draw numbers randomly!

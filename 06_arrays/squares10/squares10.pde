@@ -1,8 +1,8 @@
-//Tablica kwadratów:
-int[]  kwadraty=new int[10];
+//Table of squares of integers:
+int[]  squares=new int[10];
 for(int i=0;i<10;i++)
-     kwadraty[i]=i * i;
+     squares[i]= i * i;
 
-//Teraz sami wypiszcie te liczby używając print
+//List these numbers yourself using print
 for(int i=0;i<10;i++)
-  print(kwadraty[i]+" ");
+  print(squares[i]+" ");
