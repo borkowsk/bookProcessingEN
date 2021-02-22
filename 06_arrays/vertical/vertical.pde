@@ -28,9 +28,9 @@ void draw()
     line(i,height,i,0);
     
   //cities
-  for(int i=space, j=0; j<N; i+=space, j++)
+  for(int j=0;j<N;j++)
   {
-    ellipse(i,positions[j],space,3);//Visualisation
+    ellipse((j+1)*space,positions[j],space,3);//Visualisation
     
     positions[j]-=random(2);//Random move
     if(positions[j]<0) //Checking if he has not passed the top
