@@ -1,4 +1,4 @@
-// "Nearest Neighbors Social Impact"
+// "Voter model" <=> "Nearest Neighbors Social Impact"
 // One-dimensional, asynchronous cellular automaton
 ///////////////////////////////////////////////////////////////
 final int WorldSize=500;//How many cells do we want?
@@ -80,7 +80,7 @@ void draw()
          cou0++;else cou1++;
        
        //The rule of this automaton - you assume a state 
-       //more common in your environment
+       //more common in your vicinity
        if(cou0>cou1)
          World[i]=0;
        else //What about == ?
@@ -89,3 +89,5 @@ void draw()
    
    t++;//The next generation/step/year
 }
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic

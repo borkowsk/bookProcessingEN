@@ -24,7 +24,7 @@ void draw()
     return;//We use "emergency exit" because there is nothing to draw 
   
   //Visualisation
-  for(int i=0;i<WorldSize;i++)//Instead WordSize may be World.length (an attribute of any array)
+  for(int i=0;i<WorldSize;i++)//Instead WorldSize may be World.length (an attribute of any array)
   {                               
     if(World[i]>0) stroke(255,255,0);//Non-zero cells are yellow
     else           stroke(0,0,255);//Zero cells are blue
@@ -52,3 +52,5 @@ void draw()
    
    t++;//The next generation/step/year
 }
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic

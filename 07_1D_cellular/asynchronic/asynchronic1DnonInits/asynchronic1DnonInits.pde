@@ -1,8 +1,8 @@
-// "Non to much neighbours": 
+// "Not too many neighbors": 
 // One-dimensional, asynchronous cellular automaton
 ///////////////////////////////////////////////////////////////
 final int WorldSize=500;//How many cells do we want?
-final int MCD=4;//Monte Carlo step divider
+final int MCD=3;//Monte Carlo step divider
 final int FR=300;//Expected speed of the simulation
 
 int[] World=new int[WorldSize];//We create an array of the "world"

@@ -1,4 +1,4 @@
-// "Non to much neighbours": 
+// "Not too many neighbors": 
 // One-dimensional, asynchronous cellular automaton
 ///////////////////////////////////////////////////////////////
 final int WorldSize=500;//How many cells do we want?
@@ -70,3 +70,5 @@ void draw()
    
    t++;//The next generation/step/year
 }
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic

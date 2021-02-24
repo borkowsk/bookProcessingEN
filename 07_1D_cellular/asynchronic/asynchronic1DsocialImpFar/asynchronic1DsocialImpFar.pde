@@ -1,4 +1,4 @@
-// "4 Neighbors Social Impact": 
+// "Voter model 2." <=> "4 Neighbors Social Impact": 
 // One-dimensional, asynchronous cellular automaton
 ///////////////////////////////////////////////////////////////
 final int WorldSize=500;//How many cells do we want?
@@ -67,14 +67,14 @@ void draw()
        int cou0  = 0;//counter of 0 state neighbors
        int cou1  = 0;//counter of 1 state neighbors
        
-       if(World[left]==0) //Is the left neighbor not zero, ie is he "alive"?
-         cou0++;else cou1++;
+       if(World[left]==0) //Is the left neighbor not zero?
+         cou0++;else cou1++; 
        
-       if(World[farl]==0) //Is the far left neighbor not zero, ie is he "alive"?
-         cou0++;else cou1++;      
-       
-       if(World[right]==0) //Is the right neighbor not zero?
+       if(World[right]==0)//Is the right neighbor not zero?
          cou0++;else cou1++;
+        
+       if(World[farl]==0) //Is the far left neighbor not zero?
+         cou0++;else cou1++;       
          
        if(World[farr]==0) //Is the far right neighbor not zero?
          cou0++;else cou1++;
@@ -92,3 +92,5 @@ void draw()
    
    t++;//The next generation/step/year
 }
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
