@@ -2,8 +2,8 @@
 //  (the simplest simulation of CA in functional syntax) 
 ///////////////////////////////////////////////////////////////
 final int WorldSize=500;//How many cells do we want?
-final int MCD=5; //Monte Carlo step divider
-final int FR=300;//Expected speed of the simulation
+final int MCD=4; //Monte Carlo step divider
+final int FR=200;//Expected speed of the simulation
 
 int[] World=new int[WorldSize];//We create an array of the "world"
 
