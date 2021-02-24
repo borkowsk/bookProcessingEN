@@ -1,6 +1,6 @@
 //Bounded confidence 0D - 3th attempt
 //Differences in tresholds as a function of extremes of views
-final int N=25;//Number of agents
+final int N=50;//Number of agents
 final float treScale=0.5;//Threshold is a function of extremes of views times Scale
 float[] minds=new float[N];//creating the minds array 
 float[]   eps=new float[N];//creating the epsilons array
