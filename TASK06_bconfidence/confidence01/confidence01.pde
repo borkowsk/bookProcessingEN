@@ -1,20 +1,23 @@
 //Bounded confidence 0D - first attempt
-//Only epsilon
-final int N=25;//Number of agents
+//Only epsilon as a model parameter
+final int     N=25;//Number of agents
+final float eps=0.001;//speed of changes
+
 float[] minds=new float[N];//creating an array 
-float   eps=0.001;
 
 //for visualisation
-float   side=0;
+float   side=0;//diameter of ellipses 
 
 void setup()
 {
   size(1000,250);
   side=height/(N*2);
-  frameRate(60);
+  frameRate(100);
+  
   //Initialisation
   for(int i=0;i<N;i++)
     minds[i]=i*(1.0/N);//<0..1)
+    
   //Check
   for(int i=0;i<N;i++)
     print(minds[i]+" ");
@@ -42,5 +45,6 @@ void draw()
        if(minds[a] > minds[b])
           minds[a]-=eps;
   }
-  
 }
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence

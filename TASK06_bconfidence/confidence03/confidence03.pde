@@ -1,6 +1,6 @@
 //Bounded confidence 0D - 3th attempt
 //Differences in tresholds as a function of extremes of views
-final int N=50;//Number of agents
+final int          N=50;//Number of agents
 final float treScale=0.5;//Threshold is a function of extremes of views times Scale
 
 float[] minds=new float[N];//creating the minds array 
@@ -47,7 +47,6 @@ void draw()
         minds[a]-=eps[a];
     }
   }
-  
 }
 
 void visualisationA()
@@ -71,3 +70,5 @@ void visualisationB()
     rect(frameCount,i/(float)N*height,side,side);
   }
 }
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence

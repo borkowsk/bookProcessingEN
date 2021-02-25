@@ -1,10 +1,11 @@
-//Bounded confidence 0D - 4th attempt
-//with information bubles
-final int N=25;//Number of agents
+//Bounded confidence 1D
+//because of information bubles
+final int     N=25;//Number of agents
+final float eps=0.007;
+final float tre=0.20;
+final int   bub=N/7;//radius of information bubble
+
 float[] minds=new float[N];//creating an array 
-float   eps=0.005;
-float   tre=0.20;
-int     bub=N/10;//radius of information bubble
 
 void setup()
 {
@@ -32,7 +33,7 @@ void draw()
   for(int i=0;i<N;i++)
   {
     int a=int(random(N));
-    int low=max(0,a-bub),hig=min(a+bub+1,N);
+    int low=max(0,a-bub),hig=min(a+bub+1,N);//an alternative way to solve the problem of the world's boundaries
     int b=int( random( low , hig ) );  //println(a,low,b,hig);
     
     if(abs(minds[b]-minds[a])<tre)
@@ -67,3 +68,5 @@ void visualisationB()
     rect(frameCount,i/(float)N*height,side,side);
   }
 }
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence

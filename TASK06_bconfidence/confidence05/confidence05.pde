@@ -1,12 +1,17 @@
-//Bounded confidence 0D - 3th+4th attempt
+//Bounded confidence 1D - 3th+4th attempt
 //Differences in tresholds as a function of extremes of views
 //& with information bubles
-final int N=50;//Number of agents
+final int          N=100;//Number of agents
 final float treScale=0.5;//Threshold is a function of extremes of views times Scale
+final float   minEps=0.001;
+final float   maxEps=0.005;
+final int        bub=N/2;//radius of information bubble
+
 float[] minds=new float[N];//creating the minds array 
 float[]   eps=new float[N];//creating the epsilons array
 float[]   tre=new float[N];//creating the tresholds array
-int     bub=N/2;//radius of information bubble
+
+boolean classicVis=false;//Type of visualisation
 
 void setup()
 {
@@ -17,13 +22,13 @@ void setup()
   for(int i=0;i<N;i++)
   {
     minds[i]=i*(1.0/(N-1));//<0..1>
-    eps[i]=random(0.001,0.01);
+    eps[i]=random(minEps,maxEps);
     //Threshold is a function of extremes of views
     tre[i]=(0.5-abs(minds[i]-0.5))*treScale;//<0..0.5*Scale>
   }
   
   //Check
-  println("N:"+N , "Epsilon: 0.001..0.01" , "Tres.Scale:"+treScale , "Inf.buble:"+bub );
+  println("N:"+N , "Epsilon:"+minEps+".."+maxEps , "Tres.Scale:"+treScale , "Inf.buble:"+bub );
   for(int i=0;i<N;i++)
     println(minds[i],eps[i],tre[i]);
 }
@@ -33,7 +38,8 @@ void draw()
   if(frameCount>width) return;//Emergency exit
   
   //Visualisation
-  visualisationA();
+  if(classicVis) visualisationA();
+  else visualisationB();
   
   //Monte Carlo step of changes
   for(int i=0;i<N;i++)
@@ -74,3 +80,5 @@ void visualisationB()
     rect(frameCount,i/(float)N*height,side,side);
   }
 }
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence

@@ -1,10 +1,10 @@
 //Bounded confidence 0D - second attempt
-//Treshold and epsilon
+//Treshold and epsilon, alternative visualisation
 final int     N=25;//Number of agents
-final float eps=0.003;
-final float tre=0.25;
+final float eps=0.005;
+final float tre=0.15;
 
-float[] minds=new float[N];//creating an array 
+float[] minds=new float[N];//creating an array
 
 //for visualisation
 float   side=0;
@@ -12,8 +12,8 @@ float   side=0;
 void setup()
 {
   size(1000,250);
-  side=height/(N*2);
-  frameRate(60);
+  side=height/(N);
+  frameRate(190);
   
   //Initialisation
   for(int i=0;i<N;i++)
@@ -27,12 +27,12 @@ void setup()
 
 void draw()
 {
-  //Visualisation
-  float step=255/N,R=255,B=0;
+  //Alternative visualisation
   for(int i=0;i<N;i++)
   {
-    stroke(R,0,B);R-=step;B+=step;
-    ellipse(frameCount,(1-minds[i])*height,side,side);
+    float R=minds[i]*255, B=(1-minds[i])*255;
+    stroke(R,0,B);
+    rect(frameCount%width,i/(float)N*height,side,side);
   }
   
   //Monte Carlo step of changes
