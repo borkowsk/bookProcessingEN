@@ -6,7 +6,7 @@ final float eps=0.001;//speed of changes
 float[] minds=new float[N];//creating an array 
 
 //for visualisation
-float   side=0;//diameter of ellipses 
+float   side=0;//diameter of circles 
 
 void setup()
 {
@@ -16,7 +16,7 @@ void setup()
   
   //Initialisation
   for(int i=0;i<N;i++)
-    minds[i]=i*(1.0/N);//<0..1)
+    minds[i]=i*(1.0/(N-1));//<0..1) or minds[i]=random(1.0);
     
   //Check
   for(int i=0;i<N;i++)
@@ -45,6 +45,6 @@ void draw()
        if(minds[a] > minds[b])
           minds[a]-=eps;
   }
-}
+}//end of draw()
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence

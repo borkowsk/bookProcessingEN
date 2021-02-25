@@ -1,8 +1,8 @@
 //Bounded confidence 0D - second attempt
 //Treshold and epsilon
 final int     N=25;//Number of agents
-final float eps=0.003;
-final float tre=0.25;
+final float eps=0.002;
+final float tre=1.0/2;//Treshold
 
 float[] minds=new float[N];//creating an array 
 
@@ -13,14 +13,14 @@ void setup()
 {
   size(1000,250);
   side=height/(N*2);
-  frameRate(60);
+  frameRate(600);
   
   //Initialisation
   for(int i=0;i<N;i++)
     minds[i]=i*(1.0/(N-1));//<0..1>
     
   //Check
-  println("N:"+N , "Epsilon:"+eps , "Treshold:"+tre );
+  println("N:"+N , "Epsilon:"+eps , "Treshold:"+tre ); //surface.setTitle("confidence02 "+tre);
   for(int i=0;i<N;i++)
     print(minds[i]+" ");
 }
@@ -41,7 +41,7 @@ void draw()
     int a=int(random(N));
     int b=int(random(N));
     
-    if(abs(minds[a]-minds[b])<tre)
+    if( abs(minds[a]-minds[b]) < tre )
     {
       if(minds[a] < minds[b])
         minds[a]+=eps;
@@ -50,6 +50,6 @@ void draw()
         minds[a]-=eps;
     }
   }
-}
+} //End of draw()
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence
