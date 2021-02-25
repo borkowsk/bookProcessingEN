@@ -1,19 +1,18 @@
-//Bounded confidence 0D - 3th attempt
+//Bounded confidence 0D - 3th+4th attempt
 //Differences in tresholds as a function of extremes of views
+//& with information bubles
 final int N=50;//Number of agents
 final float treScale=0.5;//Threshold is a function of extremes of views times Scale
 float[] minds=new float[N];//creating the minds array 
 float[]   eps=new float[N];//creating the epsilons array
 float[]   tre=new float[N];//creating the tresholds array
-
-//for visualisation
-float   side=0;
+int     bub=N/2;//radius of information bubble
 
 void setup()
 {
   size(1000,250);
-  side=height/(N*2);
-  frameRate(60);
+  frameRate(300);
+  
   //Initialisation
   for(int i=0;i<N;i++)
   {
@@ -22,27 +21,27 @@ void setup()
     //Threshold is a function of extremes of views
     tre[i]=(0.5-abs(minds[i]-0.5))*treScale;//<0..0.5*Scale>
   }
+  
   //Check
+  println("N:"+N , "Epsilon: 0.001..0.01" , "Tres.Scale:"+treScale , "Inf.buble:"+bub );
   for(int i=0;i<N;i++)
     println(minds[i],eps[i],tre[i]);
 }
 
 void draw()
 {
+  if(frameCount>width) return;//Emergency exit
+  
   //Visualisation
-  float step=255/N,R=255,B=0;
-  for(int i=0;i<N;i++)
-  {
-    stroke(R,0,B);R-=step;B+=step;
-    ellipse(frameCount,(1-minds[i])*height,side,side);
-  }
+  visualisationA();
   
   //Monte Carlo step of changes
   for(int i=0;i<N;i++)
   {
     int a=int(random(N));
-    int b=int(random(N));
-    
+    int low=max(0,a-bub),hig=min(a+bub+1,N);
+    int b=int( random( low , hig ) );  //println(a,low,b,hig);
+
     if(abs(minds[a]-minds[b])<tre[a])
     {
       if(minds[a] < minds[b])
@@ -52,5 +51,26 @@ void draw()
         minds[a]-=eps[a];
     }
   }
-  
+}
+
+void visualisationA()
+{
+  int side=height/(N*2);
+  float step=255/N,R=255,B=0;
+  for(int i=0;i<N;i++)
+  {
+    stroke(R,0,B);R-=step;B+=step;
+    ellipse(frameCount,(1-minds[i])*height,side,side);
+  }
+}
+
+void visualisationB()
+{ //Alternative visualisation
+  int side=height/N;
+  for(int i=0;i<N;i++)
+  {
+    float R=minds[i]*255, B=(1-minds[i])*255;
+    stroke(R,0,B);
+    rect(frameCount,i/(float)N*height,side,side);
+  }
 }

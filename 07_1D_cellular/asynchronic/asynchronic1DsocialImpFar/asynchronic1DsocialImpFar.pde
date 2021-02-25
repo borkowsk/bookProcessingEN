@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////////////////////
 final int WorldSize=500;//How many cells do we want?
 final int MCD=10;//Monte Carlo step divider
-final int FR=300;//Expected speed of the simulation
+final int FR=100;//Expected speed of the simulation
 
 int[] World=new int[WorldSize];//We create an array of the "world"
 

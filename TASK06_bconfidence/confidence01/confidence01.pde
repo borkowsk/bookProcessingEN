@@ -1,9 +1,8 @@
 //Bounded confidence 0D - first attempt
-//Only treshold and epsilon
+//Only epsilon
 final int N=25;//Number of agents
 float[] minds=new float[N];//creating an array 
-float   eps=0.003;
-float   tre=0.25;
+float   eps=0.001;
 
 //for visualisation
 float   side=0;
@@ -15,7 +14,7 @@ void setup()
   frameRate(60);
   //Initialisation
   for(int i=0;i<N;i++)
-    minds[i]=i*(1.0/(N-1));//<0..1>
+    minds[i]=i*(1.0/N);//<0..1)
   //Check
   for(int i=0;i<N;i++)
     print(minds[i]+" ");
@@ -28,7 +27,7 @@ void draw()
   for(int i=0;i<N;i++)
   {
     stroke(R,0,B);R-=step;B+=step;
-    ellipse(frameCount,(1-minds[i])*height,side,side);
+    ellipse(frameCount%width,(1-minds[i])*height,side,side);
   }
   
   //Monte Carlo step of changes
@@ -37,14 +36,11 @@ void draw()
     int a=int(random(N));
     int b=int(random(N));
     
-    if(abs(minds[a]-minds[b])<tre)
-    {
-      if(minds[a] < minds[b])
-        minds[a]+=eps;
-      else
-      if(minds[a] > minds[b])
-        minds[a]-=eps;
-    }
+    if(minds[a] < minds[b])
+       minds[a]+=eps;
+       else
+       if(minds[a] > minds[b])
+          minds[a]-=eps;
   }
   
 }

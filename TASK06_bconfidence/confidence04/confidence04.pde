@@ -1,22 +1,20 @@
-//Bounded confidence 0D - second attempt
+//Bounded confidence 0D - 4th attempt
 //with information bubles
 final int N=25;//Number of agents
 float[] minds=new float[N];//creating an array 
 float   eps=0.005;
 float   tre=0.20;
-int     bub=N/5;//radius of information bubble
-
-//for visualisation
-float   side=0;
+int     bub=N/10;//radius of information bubble
 
 void setup()
 {
   size(1000,250);
-  side=height/(N*2);
   frameRate(60);
+  
   //Initialisation
   for(int i=0;i<N;i++)
     minds[i]=i*(1.0/(N-1));
+    
   //Check
   println("N:"+N , "Epsilon:"+eps , "Treshold:"+tre , "bubleR="+bub);
   for(int i=0;i<N;i++)
@@ -25,13 +23,10 @@ void setup()
 
 void draw()
 {
+  if(frameCount>width) return;//Emergency exit
+  
   //Visualisation
-  float step=255/N,R=255,B=0;
-  for(int i=0;i<N;i++)
-  {
-    stroke(R,0,B);R-=step;B+=step;
-    ellipse(frameCount,(1-minds[i])*height,side,side);
-  }
+  visualisationA();
   
   //Monte Carlo step of changes
   for(int i=0;i<N;i++)
@@ -49,5 +44,26 @@ void draw()
         minds[a]-=eps;
     }
   }
-  
+}
+
+void visualisationA()
+{
+  int side=height/(N*2);
+  float step=255/N,R=255,B=0;
+  for(int i=0;i<N;i++)
+  {
+    stroke(R,0,B);R-=step;B+=step;
+    ellipse(frameCount,(1-minds[i])*height,side,side);
+  }
+}
+
+void visualisationB()
+{ //Alternative visualisation
+  int side=height/N;
+  for(int i=0;i<N;i++)
+  {
+    float R=minds[i]*255, B=(1-minds[i])*255;
+    stroke(R,0,B);
+    rect(frameCount,i/(float)N*height,side,side);
+  }
 }
