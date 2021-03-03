@@ -3,8 +3,8 @@
 ///////////////////////////////////////////////////////////////
 final int   WorldSize=500;//How many cells do we want?
 final float Dens=0.005;   //0.5 or so also posible
-final int   Divider=4;    //By how much we divide?
-final boolean self=false;  //Do we include the state of the middle cell
+final int   Divider=5;    //By how much we divide?
+final boolean self=true;  //Do we include the state of the middle cell
 
 int[] WorldOld=new int[WorldSize];//We need two arrays for the old  
 int[] WorldNew=new int[WorldSize];//and new state of the simulation

@@ -2,7 +2,7 @@
 // One-dimensional, SYNCHRONOUS, deterministic cellular automaton
 ///////////////////////////////////////////////////////////////
 final int   WorldSize=500;//How many cells do we want?
-final float Dens=0.005;//0.5 or so also posible
+final float Dens=0.001;//0.5 or so also posible
 
 int[] WorldOld=new int[WorldSize];//We need two arrays for the old  
 int[] WorldNew=new int[WorldSize];//and new state of the simulation

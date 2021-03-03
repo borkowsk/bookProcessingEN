@@ -49,7 +49,7 @@ void draw()
   visualisation();
   
   for(int i=0;i<WorldSize;i++)//Now the cellular automaton state change
-  {    //Reguła - "Rule - "SUM YOUR STATE WITH YOUR NEIGHBORS AND TAKE MODULO 3"
+  {    //Rule: "SUM YOUR STATE WITH YOUR NEIGHBORS AND TAKE MODULO 3"
        int right = (i+1) % WorldSize;      
        int left  = (WorldSize+i-1) % WorldSize;
        
