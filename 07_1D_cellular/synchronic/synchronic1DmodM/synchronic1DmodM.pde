@@ -3,7 +3,7 @@
 ///////////////////////////////////////////////////////////////
 final int   WorldSize=500;//How many cells do we want?
 final float Dens=0.005;   //0.5 or so also posible
-final int   Divider=4;    //"M" - by how much we divide
+final int   Divider=4;    //By how much we divide?
 final boolean self=false;  //Do we include the state of the middle cell
 
 int[] WorldOld=new int[WorldSize];//We need two arrays for the old  
@@ -54,9 +54,8 @@ void draw()
   if(t>994) return; //Nic już nie ma do narysowania 
   visualisation();
 
-  for(int i=0;i<WorldOld.length;i++)//Zmiana stanu automatu
-  {
-       //RULE: sum of the states [of neighbors] modulo M
+  for(int i=0;i<WorldSize;i++)
+  {    //RULE: "sum of the states [of neighbors] modulo M"
        int right = (i+1) % WorldSize;      
        int morer = (i+2) % WorldSize;     
        int left  = (WorldSize+i-1) % WorldSize;

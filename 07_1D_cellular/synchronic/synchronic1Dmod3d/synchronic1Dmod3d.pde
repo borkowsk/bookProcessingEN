@@ -2,9 +2,9 @@
 // One-dimensional, SYNCHRONOUS, deterministic cellular automaton
 ///////////////////////////////////////////////////////////////
 final int   WorldSize=500;//How many cells do we want?
-final float Dens=0.005;//0.5 or so also posible
-final boolean withMe=true;
-final boolean withMore=false;
+final float Dens=0.002;//0.5 or so also posible
+final boolean withMe=false;
+final boolean withMore=true;
 
 int[] WorldOld=new int[WorldSize];//We need two arrays for the old  
 int[] WorldNew=new int[WorldSize];//and new state of the simulation
@@ -50,10 +50,10 @@ void draw()
   if(t>994) return;
   visualisation();
   
-  //Now the cellular automaton state change
-  for(int i=0;i<WorldOld.length;i++)
+  
+  for(int i=0;i<WorldSize;i++)//Now the cellular automaton state change
   {
-       //RULE - sum of living neighbors modulo 3
+       //RULE - sum of living neighbors (distance 2) modulo 3
        int right = (i+1) % WorldSize;      
        int left  = (WorldSize+i-1) % WorldSize;
        int morer = (i+2) % WorldSize; //More right 
@@ -74,8 +74,7 @@ void draw()
            howMany++; 
        }  
        //What about me?
-       if(withMe)
-        if(WorldOld[i]>0) howMany++;
+       if(withMe && WorldOld[i]>0) howMany++;
              
         WorldNew[i]=howMany % 3;  //Now MODULO! We save the new state on the second array
    }
