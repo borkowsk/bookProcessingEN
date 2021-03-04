@@ -1,7 +1,7 @@
 // "Min Max neighbors": Not too many neighbors, but not too few
 // TWO-dimensional, SYNCHRONOUS, Moore, deterministic cellular automaton
 //////////////////////////////////////////////////////////////////////////////
-final int WorldSide=513;//How many cells do we want in one line?
+final int WorldSide=601;//How many cells do we want in one line?
 final float Dens=0.06;//0.5 or so also posible
 final int   MinN=3;//Minimal number of neighbors required
 final int   MaxN=4;//Maximal number of neighbors required
@@ -11,7 +11,7 @@ int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation
 
 void setup()
 {
-  size(513,513);    //square window
+  size(601,601);    //square window
   frameRate(120);  
   noSmooth();
   
@@ -68,6 +68,7 @@ void draw()
    WorldNew=WorldTmp;
    
    t++;//The next generation/step/year
+   textSize(20);textAlign(LEFT,TOP);text("ST:"+t,0,0);
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/

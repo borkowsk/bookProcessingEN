@@ -2,18 +2,18 @@
 // TWO-dimensional, SYNCHRONOUS, Moore, deterministic cellular automaton
 //////////////////////////////////////////////////////////////////////////////
 // See 233 (Conways Game of Life) or 123 & 234 - much more "biological"
-final int WorldSide=513;//How many cells do we want in one line?
-final float Dens=0.03;//0.5 or so also posible
-final int   MinN=3;//Minimal number of neighbors required
-final int   Best=3;//The number of neighbors needed to revive the cell
-final int   MaxN=8;//Maximal number of neighbors required
+final int WorldSide=601;//How many cells do we want in one line?
+final float Dens=0.33;//0.5 or so also posible
+final int   MinN=2;//Minimal number of neighbors required
+final int   OptN=3;//The number of neighbors needed to revive the cell
+final int   MaxN=3;//Maximal number of neighbors required
 
 int[][] WorldOld=new int[WorldSide][WorldSide];//We need two arrays for the old  
 int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation
 
 void setup()
 {
-  size(513,513);    //square window
+  size(601,601);    //square window
   frameRate(160);  
   noSmooth();
   
@@ -61,7 +61,7 @@ void draw()
                  ;
          if(WorldOld[i][j]==0)
          {
-           WorldNew[i][j]=(live == Best ? 1:0);
+           WorldNew[i][j]=(live == OptN ? 1:0);
          }
          else
          {
@@ -76,6 +76,7 @@ void draw()
    WorldNew=WorldTmp;
    
    t++;//The next generation/step/year
+   textSize(20);textAlign(LEFT,TOP);text("ST:"+t,0,0);
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/

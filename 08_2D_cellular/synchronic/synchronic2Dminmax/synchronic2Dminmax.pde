@@ -1,17 +1,18 @@
-// "Not too many neighbors": 
+// "Min Max neighbors": 
 // TWO-dimensional, SYNCHRONOUS, von Neuman, deterministic cellular automaton
 //////////////////////////////////////////////////////////////////////////////
-final int WorldSide=513;//How many cells do we want in one line?
-final float Dens=0.5;//0.5 or so also posible
-final int   optN=2;//Optimum number of neighbors required
+final int WorldSide=601;//How many cells do we want in one line?
+final float Dens=0.875;//0.5 or so also posible
+final int   MinN=3;//Minimal number of neighbors required
+final int   MaxN=4;//Maximal number of neighbors required
 
 int[][] WorldOld=new int[WorldSide][WorldSide];//We need two arrays for the old  
 int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation
 
 void setup()
 {
-  size(513,513);    //square window
-  frameRate(20);  
+  size(601,601);    //square window
+  frameRate(160);  
   noSmooth();
   
   for(int i=0;i<WorldSide;i++) //Initialisation
@@ -47,13 +48,13 @@ void draw()
          int dw=(j+1) % WorldSide;   
          int up=(WorldSide+j-1) % WorldSide;
          
-         int live = (WorldOld[left][j]>0 ?1:0)
-                 +  (WorldOld[right][j]>0 ?1:0)
-                 +  (WorldOld[i][up]>0 ?1:0)
-                 +  (WorldOld[i][dw]>0 ?1:0)             
+         int live = WorldOld[left][j]
+                 +  WorldOld[right][j]
+                 +  WorldOld[i][up]
+                 +  WorldOld[i][dw]             
                  ;
-      
-         WorldNew[i][j]=(live == optN ? 1:0 );//New state 
+
+         WorldNew[i][j]=(MinN <= live && live <=MaxN ? 1:0 );//New state 
        }
    }
    
@@ -63,6 +64,15 @@ void draw()
    WorldNew=WorldTmp;
    
    t++;//The next generation/step/year
+   textSize(20);textAlign(LEFT,TOP);text("ST:"+t,0,0);
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
+
+/*
+         int live = (WorldOld[left][j]>0 ?1:0)
+                 +  (WorldOld[right][j]>0 ?1:0)
+                 +  (WorldOld[i][up]>0 ?1:0)
+                 +  (WorldOld[i][dw]>0 ?1:0)             
+                 ;
+*/
