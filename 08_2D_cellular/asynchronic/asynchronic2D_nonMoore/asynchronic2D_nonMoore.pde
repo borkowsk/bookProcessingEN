@@ -1,7 +1,7 @@
 // "Not too many neighbors": 
 // Two-dimensional, Moore, asynchronous cellular automaton
 ////////////////////////////////////////////////////////////////////////////////////
-final int Opt=1;//How many neighbors allowed?
+final int Opt=3;//How many neighbors allowed?
 final int WorldSide=600;//Side lenght of simulation world (square)
 final float Dens=0.5;//.01;//Initial density in the lattice World
 //final boolean withMoore=true;//neighborhood with the corners of the square
@@ -67,12 +67,12 @@ void draw()
                 + World[right][j]
                 + World[i][up]
                 + World[i][dw]  
-                +//(withMoore ?   // with corners:
+                + //(withMoore ?   // with corners:
                   World[left][up]
                 + World[right][up]
                 + World[left][dw]
                 + World[right][dw] 
-                //  : 0 ) 
+                 //  : 0 ) 
                 ;//sum of living neighbors 
                 //= sum of states of neighbors (states 0 and 1 only)
       

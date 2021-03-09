@@ -1,9 +1,9 @@
 // "Not too many neighbors": 
 // Two-dimensional, von Neuman, asynchronous cellular automaton
 ////////////////////////////////////////////////////////////////////////////////////
-final int Opt=1;//How many neighbors allowed?
+final int Opt=2;//How many neighbors allowed?
 final int WorldSide=600;//Side lenght of simulation world (square)
-final float Dens=0;//.01;//Initial density in the lattice World
+final float Dens=0.95;//Initial density in the lattice World
 
 int[][] World=new int[WorldSide][WorldSide];//2 dimensional array <=> "matrix" or "lattice" 
                                             
@@ -39,7 +39,7 @@ void visualisation()
       default: stroke(255,0,0);//"emergency color" - RED
       break;
       } 
-      point(i,j);
+      point(i,j);//or j,i
     }
 }
 
@@ -52,7 +52,7 @@ void draw()
   int N=WorldSide*WorldSide;
   for(int a=0;a<N;a++)
   {
-       //Losowanie agenta 
+       //drawing
        int i=(int)random(WorldSide);
        int j=(int)random(WorldSide);
        
@@ -62,12 +62,12 @@ void draw()
        int dw=(j+1) % WorldSide;   
        int up=(WorldSide+j-1) % WorldSide;
        
-       int sum = World[left][j]
-                +World[right][j]
-                +World[i][up]
-                +World[i][dw]              
-                ;//sum of living neighbors 
-                //= sum of states of neighbors (states 0 and 1 only)
+       int sum =  World[left][j]
+                + World[right][j]
+                + World[i][up]
+                + World[i][dw]              
+                ;//sum of living neighbors = sum of states of neighbors
+                //(states 0 and 1 only)
       
         //Implementation of the rule
         if(sum==Opt)
