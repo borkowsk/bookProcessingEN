@@ -1,11 +1,11 @@
 // Rule: "Min:1 Best:2 Max:2 or 3 neighbors". 
 // Two-dimensional, vonNeuman/Moore, asynchronous cellular automaton
 /////////////////////////////////////////////////////////////////////////////////
-final int MinN=1;//Minimal number of neighbors allowed
-final int OptN=2;//Number of neighbors needed to reproduce
+final int MinN=2;//Minimal number of neighbors allowed
+final int OptN=3;//Number of neighbors needed to reproduce
 final int MaxN=4;//Maximal number of neighbors allowed
-final int WorldSide=600;//Side lenght of simulation world (square)
-final float Dens=0;//.1;//Initial density in the lattice World
+final int WorldSide=601;//Side lenght of simulation world (square)
+final float Dens=0.01;//Initial density in the lattice World
 final boolean withM=true;//With or without Moore neighbors
 
 int[][] World=new int[WorldSide][WorldSide];//2 dimensional array <=> "matrix" or "lattice" 
@@ -14,7 +14,7 @@ int FR=30;//desired simulation speed
 
 void setup()
 {
- size(600,600); //squre canvas
+ size(601,601); //squre canvas
  noSmooth();    //much faster drawing
  frameRate(FR);
   
