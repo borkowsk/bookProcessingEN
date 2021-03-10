@@ -3,23 +3,23 @@
 ////////////////////////////////////////////////////////////////////////////////////
 // See 233 (Conways Game of Life) or 123 & 234 - much more "biological"
 final int     WorldSide=1001;//How many cells do we want in one line?
-final float   Dens=200.05;//When >=1, simetric horizontal line is created
+final float   Dens=250.15;//When >=1, simetric horizontal line is created
 final int     MinN=2;//Minimal number of neighbors required
 final int     OptN=3;//The number of neighbors needed to revive the cell
 final int     MaxN=3;//Maximal number of neighbors required
 final boolean withM=true;//With Moore neighbors
 final boolean sync=true;//Synchronous or asynchronous update
 
-int[][] WorldOld=new int[WorldSide][WorldSide];//We need two arrays for the old  
-int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation
-
 final boolean traceVA=true;//virgin areas trace ON/OFF
 int FR=100;
+
+int[][] WorldOld=new int[WorldSide][WorldSide];//We need two arrays for the old  
+int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation
 
 void setup()
 {
   size(1001,1021);    //square window
-  background(255);
+  background(64);
   noSmooth();
   frameRate( FR>0 ? FR : Dens );  
 
@@ -31,18 +31,26 @@ void draw()
 {  
    if(sync)
    {
-     visualisationSY();
+     visualisationSY();//Visualisation for synchronous mode
      synchronicStep();
    } 
    else
    {
-     visualisationAS();
+     visualisationAS();//Visualisation for asynchronous mode
      stepMonteCarlo();
    }
    
+   status();//Status bar
    t++;//The next generation/step/year
-   fill(128);noStroke();rect(0,height-20,width,20);
-   fill(255);textSize(18);textAlign(LEFT,BOTTOM);text(t+" ("+ nf(frameRate,3,2) +") "+liveCounter,0,height);
+}
+
+void status()
+{
+   fill(128);noStroke();
+   rect(0,height-20,width,20);
+   
+   fill(255);textSize(18);textAlign(LEFT,BOTTOM);
+   text(t+" ("+ nf(frameRate,3,2) +") "+liveCounter,0,height);
 }
 
 void initialisation()
@@ -74,8 +82,8 @@ void initialisation()
 void visualisationSY()
 {
   for(int i=0;i<WorldSide;i++)
-    for(int j=0;j<WorldSide;j++)
-    if( (WorldOld[i][j] != WorldNew[i][j]) ) //now WorldNew have step-1 content!!!
+   for(int j=0;j<WorldSide;j++)
+    if( WorldOld[i][j] != WorldNew[i][j] ) //now WorldNew have step-1 content!!!
     {
       if(WorldOld[i][j]>0) stroke(255,0,100);
       else           stroke(0);
@@ -86,11 +94,13 @@ void visualisationSY()
 void visualisationAS()
 {
   for(int i=0;i<WorldSide;i++)
-    for(int j=0;j<WorldSide;j++)
+   for(int j=0;j<WorldSide;j++)
+    if(WorldNew[i][j] == -1 )
     {
       if(WorldOld[i][j]>0) stroke(255,0,100);
       else           stroke(0);
       point(j,i);//the horizontal dimension of the array is the SECOND index
+      WorldNew[i][j]=1;//READY
     }
 }
 
@@ -99,7 +109,6 @@ int liveCounter=0;//The only statistics for the model so far
 void synchronicStep()
 {
   liveCounter=0;//Reset the only statistic
-  
   for(int i=0;i<WorldSide;i++)//Now the cellular automaton state change
   {
        //RULE: Not too many neighbors, not too few, but optimal
@@ -111,11 +120,9 @@ void synchronicStep()
          int dw=(j+1) % WorldSide;   
          int up=(WorldSide+j-1) % WorldSide;
          
-         int lives = WorldOld[left][j] + WorldOld[right][j]
-                 +  WorldOld[i][up] +  WorldOld[i][dw]
+         int lives = WorldOld[left][j]+WorldOld[right][j]+WorldOld[i][up]+WorldOld[i][dw]
                  + (withM ?
-                    WorldOld[left][up] +  WorldOld[right][up]
-                 +  WorldOld[left][dw] +  WorldOld[right][dw]    
+                    WorldOld[left][up]+WorldOld[right][up]+WorldOld[left][dw]+WorldOld[right][dw]    
                  : 0)
                  ;
                  
@@ -137,12 +144,9 @@ void synchronicStep()
 void stepMonteCarlo()
 {
   liveCounter=0;//Reset the only statistic
-  
   for(int N=WorldSide*WorldSide,a=0;a<N;a++)
   {
-       //draw the agent's indexes
-       int i=(int)random(WorldSide);
-       int j=(int)random(WorldSide);
+       int i=int(random(WorldSide)),j=int(random(WorldSide));//draw the agent's indexes
        
        //Rule: "Min-Best-Max neighbors"
        int right = (i+1) % WorldSide;      
@@ -150,23 +154,22 @@ void stepMonteCarlo()
        int dw=(j+1) % WorldSide;   
        int up=(WorldSide+j-1) % WorldSide;
        
-       int lives =  WorldOld[left][j] + WorldOld[right][j]
-                + WorldOld[i][up] + WorldOld[i][dw]        
+       int lives =  WorldOld[left][j]+WorldOld[right][j]+WorldOld[i][up]+WorldOld[i][dw]        
                 // corners:
                 + (withM ?
-                + WorldOld[left][up] + WorldOld[right][up]
-                + WorldOld[left][dw] + WorldOld[right][dw]
-                : 0 )
-                ;//sum of living neighbors 
-                //= sum of states of neighbors (states 0 and 1 only)
-                                                                                         //WorldNew[i][j]=WorldOld[i][j];//Forcing painting o this point. Not work properly :-( 
-         //Implementation of the rule
-         if(WorldOld[i][j]==0)
+                + WorldOld[left][up]+WorldOld[right][up]+WorldOld[left][dw]+WorldOld[right][dw]
+                : 0 );//sum of living neighbors = sum of states of neighbors (states 0 and 1 only)
+       
+       //Implementation of the rule  
+       int State=WorldOld[i][j];
+       if(State==0)
            WorldOld[i][j]=(lives == OptN ? 1:0);
-         else
+       else
            WorldOld[i][j]=(MinN <= lives && lives <=MaxN ? 1:0 );//New state 
          
-         if(WorldOld[i][j]>0) liveCounter++;//Calculating the only statistic
+       if(State!=WorldOld[i][j]) WorldNew[i][j]=-1;//Force painting changed points.
+       
+       if(WorldOld[i][j]>0) liveCounter++;//Calculating the only statistic
    }
 }
 
