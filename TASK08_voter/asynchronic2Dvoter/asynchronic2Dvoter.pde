@@ -77,7 +77,7 @@ void draw()
    }
       
    t++;//next step
-   textSize(20);textAlign(LEFT,TOP);text("ST:"+t,0,0);
+   fill(random(255),random(255),random(255));textSize(30);textAlign(LEFT,TOP);text("ST:"+t,0,0);
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
