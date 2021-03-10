@@ -3,14 +3,14 @@
 ///////////////////////////////////////////////////////////////////////////////////
 final int     WorldSide=601;//How many cells do we want in one line?
 final float   Dens=0;//.001;//0.5 or so also posible
-final int     Div=3; //Divider for remainder operation
+final int     Div=2; //Divider for remainder operation
 final boolean withMoore=true;//With or without Moore neighbors
 final boolean withMe=false;//false or true
 
 int[][] WorldOld=new int[WorldSide][WorldSide];//We need two arrays for the old  
 int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation
 
-final boolean traceVA=false;//virgin areas trace ON/OFF
+final boolean traceVA=true;//virgin areas trace ON/OFF
 int FR = 20;
 
 

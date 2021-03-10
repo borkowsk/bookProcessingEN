@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////
 final int   Opt=1;//Optimum number of neighbors required
 final int   WorldSide=601;//How many cells do we want in one line?
-final float Dens=0.001;//0.5 or so also posible
+final float Dens=0;//.005;//0.5 or so also posible
 
 int[][] WorldOld=new int[WorldSide][WorldSide];//We need two arrays for the old  
 int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation

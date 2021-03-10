@@ -1,8 +1,8 @@
 // "Not too many neighbors": 
-// TWO-dimensional, SYNCHRONOUS, von Neuman, deterministic cellular automaton
+// TWO-dimensional, SYNCHRONOUS, von Neumann, deterministic cellular automaton
 //////////////////////////////////////////////////////////////////////////////
 final int WorldSide=601;//How many cells do we want in one line?
-final float Dens=0.5;//0.5 or so also posible
+final float Dens=0.15;//0.5 or so also posible
 final int   optN=2;//Optimum number of neighbors required
 
 int[][] WorldOld=new int[WorldSide][WorldSide];//We need two arrays for the old  
@@ -17,18 +17,18 @@ void setup()
   for(int i=0;i<WorldSide;i++) //Initialisation
     for(int j=0;j<WorldSide;j++) 
       if(random(1.0)<Dens)
-        WorldOld[i][j]=1;
+        WorldOld[i][j]=1;     
 }
 
 void visualisation()
 {
-  for(int i=0;i<WorldSide;i++)
-    for(int j=0;j<WorldSide;j++)
-    {
-      if(WorldOld[i][j]>0) stroke(255,0,100);
-      else           stroke(0);
-      point(j,i);//the horizontal dimension of the array is the SECOND index
-    }
+    for(int i=0;i<WorldSide;i++)
+      for(int j=0;j<WorldSide;j++)
+      {
+        if(WorldOld[i][j]>0) stroke(255,0,100);
+        else           stroke(0);
+        point(j,i);//the horizontal dimension of the array is the SECOND index
+      }
 }
 
 int t=0;
