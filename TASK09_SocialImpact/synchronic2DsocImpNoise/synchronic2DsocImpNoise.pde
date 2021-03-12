@@ -2,12 +2,13 @@
 // Two-dimensional, synchronous cellular automaton with extended Moore neib.
 ///////////////////////////////////////////////////////////////////////////////////////////
 final int WorldSide=600;//Side lenght of simulation world (square)
-final float Dens=0.50;//.01;//Initial density in the lattice World
+final float Dens=0.40;//.01;//Initial density in the lattice World
 final boolean withMoore=true;//neighborhood with the corners of the square
 final int     MaxStrength=100;
-final int     MooreRad=3;//Radius of extended Moore neib.
+final int     MooreRad=1;//Radius of extended Moore neib.
+final float   Noise=0.001;
 
-int FR=5;//desired simulation speed
+int FR=100;//desired simulation speed
 
 int[][] Strength=new int[WorldSide][WorldSide];//cogency
 
@@ -27,7 +28,8 @@ void draw()
 {  
   visualisation3();
   status();  
-  syncStep();
+  addNoise();
+  syncStep();  
   t++;//next step
 }
 
@@ -42,6 +44,18 @@ void initialisation()
       WorldNew[i][j]=-1;
       Strength[i][j]=(int)random(MaxStrength);
     }
+}
+
+void addNoise()
+{
+  int N=int(WorldSide*WorldSide*Noise);
+  for(int a=0;a<N;a++)
+  {
+      int i=int(random(WorldSide));
+      int j=int(random(WorldSide));
+      if(WorldOld[i][j]==0) WorldOld[i][j]=1;
+                      else  WorldOld[i][j]=0;
+  }
 }
 
 void visualisation1()
@@ -129,7 +143,7 @@ void syncStep() //Synchronous step a la classic CA
 
 void status()
 {
-    fill(64);noStroke();rect(0,height,width,-20);
+    fill(128);noStroke();rect(0,height,width,-20);
     fill(255);
     textSize(18);textAlign(LEFT,BOTTOM);
     text("ST:"+t+"("+nf(frameRate,3,2)+")",0,height);

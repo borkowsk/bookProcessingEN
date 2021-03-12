@@ -25,8 +25,8 @@ int t=0;
 void draw()
 {  
   visualisation3();
-  syncStep();
-  status();    
+  status(); 
+  syncStep(); 
   t++;//next step
 }
 
@@ -148,8 +148,8 @@ void syncStep() //Synchronous step a la classic CA
 
 void status()
 {
-    fill(128);noStroke();rect(0,height,width,-20);
-    fill(random(255),random(255),random(255));
+    fill(random(128));noStroke();rect(0,height,width,-20);
+    fill(random(255));
     textSize(18);textAlign(LEFT,BOTTOM);
     text("ST:"+t+"("+nf(frameRate,3,2)+")",0,height);
 }
