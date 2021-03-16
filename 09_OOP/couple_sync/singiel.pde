@@ -32,10 +32,10 @@
   };//Closing the class. May be ';' but it doesn't have to.
 
 
-  // viewer - procedure external to the class because 
-  // it can be various rows, created as needed
+  // viewer - procedure external to the class
   void view(singiel S,float v,float h,float rad)   
-  {
+  {  //Actually this is a visualization of the oscillator 
+     //transition between states
      ellipseMode(RADIUS); 
      ellipse(v,h,round(S.x1*rad),round(S.x2*rad));
   }
