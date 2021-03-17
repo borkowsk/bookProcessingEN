@@ -4,9 +4,9 @@
 
   class singiel 
   { // FIELDS / ATTRIBUTES:
-    float r; //Parametr kontroli
-    float al;//Parametr sprzężenia
-    float x1,x2;//Stan aktualny i poprzedni
+    double r; 
+    double al;
+    double x1,x2;
     
     //Constructor(s):
     // each class has at least one method called as 
@@ -20,7 +20,17 @@
     // METHODS:
     float alpha()//R / O Access to the field 'al' 
     {            //under a different name. 
-      return al; //The so-called accessory
+      return (float)al; //The so-called accessory
+    }
+    
+    float X1()
+    {
+      return (float)x1;
+    }
+    
+    float X2()
+    {
+      return (float)x2;
     }
     
     void next() // Method to change state of object.
@@ -37,7 +47,7 @@
   void view(singiel S,float v,float h,float rad)   
   {
      ellipseMode(RADIUS); 
-     ellipse(v,h,round(S.x1*rad),round(S.x2*rad));
+     ellipse(v,h,round(S.X1()*rad),round(S.X2()*rad));
   }
 
   // Pair iteration routine
