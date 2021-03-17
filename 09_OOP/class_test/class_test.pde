@@ -1,7 +1,7 @@
 // An example of using a class (complex user type)
 //////////////////////////////////////////////////////
-static float DefaultR=3.5;
-static int   FR=10;
+final float DefaultR=3.5;
+final int   FR=10;
 
 //Construction of the class object
 singiel TheSingiel=new singiel(random(1.0),DefaultR+random(0.5),0);
@@ -11,7 +11,9 @@ void setup()
   size(701,501);
   frameRate(FR);
   // Access to attributes - dot notation
-  println("TS.x:",TheSingiel.x1,"TS.R:",TheSingiel.r," TS.Alpha:",TheSingiel.alpha());
+  println("TS.x:",TheSingiel.x1,"TS.R:",TheSingiel.r
+          //," TS.Alpha:",TheSingiel.alpha() //not important here
+          );
 }
 
 void draw()

@@ -4,9 +4,9 @@
 
   class singiel 
   { // FIELDS / ATTRIBUTES:
-    float r; //Parametr kontroli
-    float al;//Parametr sprzężenia
-    float x1,x2;//Stan aktualny i poprzedni
+    float r; 
+    private float al;// "private" does not work in processing because of its relation to JAVA. 
+    float x1,x2;
     
     //Constructor(s):
     // each class has at least one method called as 
@@ -36,7 +36,7 @@
   void view(singiel S,float v,float h,float rad)   
   {  //Actually this is a visualization of the oscillator 
      //transition between states
-     ellipseMode(RADIUS); 
+     rad*=2;
      ellipse(v,h,round(S.x1*rad),round(S.x2*rad));
   }
 

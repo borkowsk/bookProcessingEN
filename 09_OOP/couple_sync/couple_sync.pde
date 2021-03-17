@@ -1,8 +1,10 @@
 // An example of using the 'singiel' class
 /////////////////////////////////////////////////
-static float DefaultAlpha=0.09;//.25;
-static float DefaultR=3.5;
-static int   FR=255;//Desired frame rate
+
+final  float DefaultR=3.5;//two systems independent of each other, 
+final  float DefaultAlpha=0.1;//by changing the alpha value we can change their mutual synchronization
+
+final int   FR=255;//Desired frame rate
 
 // Construct two instances of the class
 singiel First= new singiel(random(1.0),DefaultR+random(0.5),DefaultAlpha);
@@ -28,15 +30,16 @@ void setup()
 void draw()
 {
   //ALTERNATIVE WAYS OF COLORING
-  stroke(255,min(frameCount,255));
-  //stroke(frameCount%256);
-  //stroke(255-abs(First.x2-Second.x2)*255);
-  //stroke(abs(First.x2-Second.x2)*255);
-  //stroke(255-abs(First.x2-Second.x2)*255,min(frameCount,255),abs(First.x2-Second.x2)*255);
-  //stroke(255-abs(First.x2-Second.x2)*255,frameCount%256,abs(First.x2-Second.x2)*255);
-  //stroke(255-abs(First.x2-Second.x2)*255,frameCount%2*255,abs(First.x2-Second.x2)*255,min(frameCount,255));
-  fill(frameCount%11*25,frameCount%2*255,0,min(frameCount,255));
-  //fill(255-abs(First.x2-Second.x2)*255,frameCount%2*255,abs(First.x2-Second.x2)*255,min(frameCount,255));
+  /*1*/stroke(255,min(frameCount,255));
+  /*2*///stroke(frameCount%256);
+  /*3*///stroke(255-abs(First.x2-Second.x2)*255);
+  /*4*///stroke(abs(First.x2-Second.x2)*255);
+  /*5*///stroke(255-abs(First.x2-Second.x2)*255,min(frameCount,255),abs(First.x2-Second.x2)*255);
+  /*6*///stroke(255-abs(First.x2-Second.x2)*255,frameCount%256,abs(First.x2-Second.x2)*255);
+  /*7*///stroke(255-abs(First.x2-Second.x2)*255,frameCount%2*255,abs(First.x2-Second.x2)*255,min(frameCount,255));
+  
+  /*1*/fill(frameCount%11*25,frameCount%2*255,0,min(frameCount,255));
+  /*2*///fill(255-abs(First.x2-Second.x2)*255,frameCount%2*255,abs(First.x2-Second.x2)*255,min(frameCount,255));
  
   point(ule*1.5+ule*First.x2,ule*1.25-ule*Second.x2);// plot point
   view(First, ule,150,radius);// visualize the transition of oscillators 
@@ -48,6 +51,6 @@ void draw()
   else
   {  First.next();Second.next(); }
     
-  //if(frameCount%FR==0) // Print approximately every second
-  //  println(frameCount+"*"+ frameRate );//Process progress
+  if(frameCount%FR==0) // Print approximately every second
+    println(frameCount+"*"+ frameRate );//Process progress
 }

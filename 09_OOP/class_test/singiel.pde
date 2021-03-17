@@ -4,9 +4,9 @@
 
   class singiel 
   { // FIELDS / ATTRIBUTES:
-    float r; //Parametr kontroli
-    float al;//Parametr sprzężenia
-    float x1,x2;//Stan aktualny i poprzedni
+    float r; //Control parameter.
+    float al;//Coupling parameter
+    float x1,x2;//Current and previous states
     
     //Constructor(s):
     // each class has at least one method called as 
@@ -33,7 +33,7 @@
 
 
   // viewer - procedure external to the class because 
-  // it can be various rows, created as needed
+  // it can be various variants, created as needed
   void view(singiel S,float v,float h,float rad)   
   {
      ellipseMode(RADIUS); 
