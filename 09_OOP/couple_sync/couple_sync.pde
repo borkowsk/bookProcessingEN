@@ -7,8 +7,10 @@ final  float DefaultAlpha=0.1;//by changing the alpha value we can change their 
 final int   FR=255;//Desired frame rate
 
 // Construct two instances of the class
-singiel First= new singiel(random(1.0),DefaultR+random(0.5),DefaultAlpha);
-singiel Second=new singiel(random(1.0),DefaultR+random(0.5),DefaultAlpha);
+singiel First= new singiel(random(1.0),3.55,DefaultAlpha);
+singiel Second=new singiel(random(1.0),3.75,DefaultAlpha);
+//singiel First= new singiel(random(1.0),DefaultR+random(0.5),DefaultAlpha);
+//singiel Second=new singiel(random(1.0),DefaultR+random(0.5),DefaultAlpha);
 
 int ule=200;//unit of length
 int radius=ule/2;

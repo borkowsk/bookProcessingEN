@@ -1,6 +1,10 @@
 // Chaotic oscillator class - complex type
 // An example of a class - user-defined type
 ////////////////////////////////////////////////
+  
+  //The second partner adapts to the state already changed 
+  //in the first one, or they operate in strict parallel.
+  boolean _GottmanMode=false;//Important "refactoring"!
 
   class singiel 
   { // FIELDS / ATTRIBUTES:
@@ -36,19 +40,28 @@
   void view(singiel S,float v,float h,float rad)   
   {  //Actually this is a visualization of the oscillator 
      //transition between states
-     rad*=2;
+     rad*=2; //some other "refactoring"
      ellipse(v,h,round(S.x1*rad),round(S.x2*rad));
   }
 
   // Pair iteration routine
   // Declared outside the class for symmetry reasons
-  void next4couple(singiel F,singiel S) 
+  void next4couple(singiel F,singiel S) //Some "refactoring" done
   {
     // The interaction of the oscillators
-    F.x2=F.x2*(1-F.al)+S.x2*F.al;
-    S.x2=S.x2*(1-S.al)+F.x2*S.al;
+    if(_GottmanMode)// refactored here!
+    {
+      F.x2=F.x2*(1-F.al)+S.x2*F.al;//He adopts first
+      S.x2=S.x2*(1-S.al)+F.x2*S.al;
+    }
+    else
+    {
+      float Xold=F.x2;
+      F.x2=F.x2*(1-F.al)+S.x2*F.al;
+      S.x2=S.x2*(1-S.al)+Xold*S.al;
+    }
     
-    // Real state change
+    // New states of partners
     F.next();
     S.next();
   }
