@@ -4,34 +4,34 @@
 
   //The second partner adapts to the state already changed 
   //in the first one, or they operate in strict parallel.
-  boolean _GottmanMode=true;
+  boolean _GottmanMode4double=true;
     
-  class singiel 
+  class singiel_double
   { // FIELDS / ATTRIBUTES:
     // "private" does not work in processing because of 
     // it's relation to JAVA classes.
     // But we can use this as a message to other developers 
     // that using field names can be cumbersome.
-    private float r; 
-    private float al;
-    private float x1,x2;
+    private double r; 
+    private double al;
+    private double x1,x2;
     
     //Constructor(s):
     // each class has at least one method called as 
     // the class name, has no return type and is used 
     // to create a class object - the instance
     
-    singiel() //parameterless constructor
+    singiel_double() //parameterless constructor
     {
       x1=x2=0.5;r=3;al=0;
     }
     
-    singiel(float iX,float iR)//Alpha-less constructor
+    singiel_double(double iX,double iR)//Alpha-less constructor
     {
       x1=x2=iX;r=iR;al=0;
     }
     
-    singiel(float iX,float iR,float iAlpha) //other constructor    
+    singiel_double(double iX,double iR,double iAlpha) //other constructor    
     {
       x1=x2=iX;r=iR;al=iAlpha;
     }
@@ -39,22 +39,22 @@
     // METHODS:
     float alpha()//R/O Access to the field 'al' ("getter")
     {            //under a different name. 
-      return al; //The so-called accessory
+      return (float)al; //The so-called accessory
     }
     
     float xPre()//R/O Access to the field 'x1' ("getter")
     {
-      return x1;
+      return (float)x1;
     }
     
     float xCur()//R/O Access to the field 'x1' ("getter")
     {
-      return x2;
+      return (float)x2;
     }
     
     // Methods to change state of object
     
-    void set_alpha(float iAl) // "setter" for 'al'
+    void set_alpha(double iAl) // "setter" for 'al'
     {
       if(0<=iAl && iAl<=1)
         al=iAl;
@@ -62,7 +62,7 @@
         println("Invalid 'alpha' value:",iAl);
     }
     
-    void set_x(float iX) // "setter" for x1 & x2
+    void set_x(double iX) // "setter" for x1 & x2
     {
       if(0<=iX && iX<=1)
         x1=x2=iX;
@@ -80,24 +80,24 @@
 
 
   // viewer - procedure external to the class 
-  void view(singiel S,float v,float h,float baseLength)   
+  void view(singiel_double S,float v,float h,float baseLength)   
   {
      ellipse(v,h,round(S.xPre()*baseLength),round(S.xCur()*baseLength));
   }
 
   // Pair iteration routine
   // Declared outside the class for symmetry reasons
-  void next4couple(singiel F,singiel S) 
+  void next4couple(singiel_double F,singiel_double S) 
   {
     // The interaction of the oscillators
-    if(_GottmanMode)
+    if(_GottmanMode4double)
     {
       F.x2=F.x2*(1-F.al)+S.x2*F.al;//He adopts first
       S.x2=S.x2*(1-S.al)+F.x2*S.al;
     }
     else
     {
-      float Xold=F.x2;
+      double Xold=F.x2;
       F.x2=F.x2*(1-F.al)+S.x2*F.al;
       S.x2=S.x2*(1-S.al)+Xold*S.al;
     }

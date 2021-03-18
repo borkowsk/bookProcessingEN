@@ -7,7 +7,7 @@ final  float DefaultAlpha=0.05;//by changing the alpha value we can change their
 
 int   runup=0;//200;
 
-singiel First, Second;// object handles
+singiel_double First, Second;// object handles
 
 //For visualization
 int N=0;//counter of iteration steps
@@ -30,8 +30,8 @@ void setup()
   
   // Create new objects of type 'singiel' using the only available constructor
   // The handles catch whatever is created there
-  First= new singiel(0.66, random(MinR,MaxR), 0);
-  Second=new singiel(0.33, random(MinR,MaxR), 0);
+  First= new singiel_double(0.66, random(MinR,MaxR), 0);
+  Second=new singiel_double(0.33, random(MinR,MaxR), 0);
   
   //Scatter backround
   noStroke();
@@ -46,10 +46,10 @@ void setup()
   
   // period and field name so we read field name or you can with method
   textSize(fSize*0.75);textAlign(LEFT,TOP);
-  println("1st:",First.X1()+" R:"+First.r+" alpha:"+First.alpha());
-  fill(Red,0,0);text("1st.alpha:"+First.alpha()+" R:"+First.r+" X:"+First.X1(),lmargin,Ws-2*fSize);
-  println("2st:",Second.X1()+" R:"+Second.r+" alpha:"+Second.alpha());
-  fill(0,0,Blu);text("2st.alpha:"+Second.alpha()+" R:"+Second.r+" X:"+Second.X1(),lmargin,Ws-fSize);
+  println("1st:",First.xPre()+" R:"+First.r+" alpha:"+First.alpha());
+  fill(Red,0,0);text("1st.alpha:"+First.alpha()+" R:"+First.r+" X:"+First.xPre(),lmargin,Ws-2*fSize);
+  println("2st:",Second.xPre()+" R:"+Second.r+" alpha:"+Second.alpha());
+  fill(0,0,Blu);text("2st.alpha:"+Second.alpha()+" R:"+Second.r+" X:"+Second.xPre(),lmargin,Ws-fSize);
 }
 
 float scaleY(double X,float Sf)//Scaling function
@@ -68,41 +68,39 @@ void draw()
   if(N<2*Ws)
   {
     stroke(Red,0,0);
-    line(lmargin+N-1,scaleY(First.X1(),Tlh),lmargin+N,scaleY(First.X2(),Tlh));
+    line(lmargin+N-1,scaleY(First.xPre(),Tlh),lmargin+N,scaleY(First.xCur(),Tlh));
     
     stroke(0,0,Blu);
-    line(lmargin+N-1,Tlh+scaleY(Second.X1(),Tlh),lmargin+N,Tlh+scaleY(Second.X2(),Tlh));
+    line(lmargin+N-1,Tlh+scaleY(Second.xPre(),Tlh),lmargin+N,Tlh+scaleY(Second.xCur(),Tlh));
     stroke(0,0,25);
   
     stroke(0,Gre,0);
-    point(lmargin+N,2*Tlh+scaleY(abs(First.X2()-Second.X2()),Tlh));
+    point(lmargin+N,2*Tlh+scaleY(abs(First.xCur()-Second.xCur()),Tlh));
     
     stroke(128);
     point(lmargin+N,scaleY(0,Tlh));
     point(lmargin+N,Tlh+scaleY(0,Tlh));
     point(lmargin+N,2*Tlh+scaleY(0,Tlh));
     
-
-    
     if(N>runup)
     {
        noStroke();
-       fill(Red,0,Blu);ellipse(lmargin+2*Ws+First.X2()*Ws,scaleY(Second.X2(),Ws),2.5,2.0);
-       fill(Red,0,0);ellipse(lmargin+2*Ws+First.X2()*Ws,scaleY(0,Ws),1.5,1.5);
-       fill(0,0,Blu);ellipse(lmargin+2*Ws,scaleY(Second.X2(),Ws),1.5,1.5);
+       fill(Red,0,Blu);ellipse(lmargin+2*Ws+First.xCur()*Ws,scaleY(Second.xCur(),Ws),2.5,2.0);
+       fill(Red,0,0);ellipse(lmargin+2*Ws+First.xCur()*Ws,scaleY(0,Ws),1.5,1.5);
+       fill(0,0,Blu);ellipse(lmargin+2*Ws,scaleY(Second.xCur(),Ws),1.5,1.5);
        
-       fill(Red,0,0);ellipse(lmargin+First.X1()*Rs,Ws+scaleY(First.X2(),Sf),2.5,2.5);
-                     ellipse(lmargin,Ws+scaleY(First.X2(),Sf),1.5,1.5);
-                     ellipse(lmargin+First.X1()*Rs,Ws+scaleY(1,Sf),1.5,1.5);
-       fill(0,0,Blu);ellipse(lmargin+Ws+Second.X1()*Rs,Ws+scaleY(Second.X2(),Sf),2.5,2.5);
-                     ellipse(lmargin+Ws,Ws+scaleY(Second.X2(),Sf),1.5,1.5);
-                     ellipse(lmargin+Ws+Second.X1()*Rs,Ws+scaleY(1,Sf),1.5,1.5);
+       fill(Red,0,0);ellipse(lmargin+First.xPre()*Rs,Ws+scaleY(First.xCur(),Sf),2.5,2.5);
+                     ellipse(lmargin,Ws+scaleY(First.xCur(),Sf),1.5,1.5);
+                     ellipse(lmargin+First.xPre()*Rs,Ws+scaleY(1,Sf),1.5,1.5);
+       fill(0,0,Blu);ellipse(lmargin+Ws+Second.xPre()*Rs,Ws+scaleY(Second.xCur(),Sf),2.5,2.5);
+                     ellipse(lmargin+Ws,Ws+scaleY(Second.xCur(),Sf),1.5,1.5);
+                     ellipse(lmargin+Ws+Second.xPre()*Rs,Ws+scaleY(1,Sf),1.5,1.5);
     }
     else
     {
-       stroke(255,0,255);point(lmargin+2*Ws+First.X2()*Ws,scaleY(Second.X2(),Ws));
-       stroke(255,0,0);point(lmargin+First.X1()*Rs,Ws+scaleY(First.X2(),Sf));
-       stroke(0,0,255);point(lmargin+Ws+Second.X1()*Rs,Ws+scaleY(Second.X2(),Sf));
+       stroke(255,0,255);point(lmargin+2*Ws+First.xCur()*Ws,scaleY(Second.xCur(),Ws));
+       stroke(255,0,0);point(lmargin+First.xPre()*Rs,Ws+scaleY(First.xCur(),Sf));
+       stroke(0,0,255);point(lmargin+Ws+Second.xPre()*Rs,Ws+scaleY(Second.xCur(),Sf));
     }
     
     stroke(0,Gre,0);
@@ -116,13 +114,14 @@ void draw()
   else
   {
     N=0;
-    First.al=Second.al=DefaultAlpha;//Now coupled
-    First.x1=First.x2=random(1.0);
-    Second.x1=Second.x2=random(1.0);
+    First.set_alpha(DefaultAlpha);
+    Second.set_alpha(DefaultAlpha);//Now coupled
+    First.set_x(random(1.0));
+    Second.set_x(random(1.0));
     
-    Red=First.X2()*255;//Proportional to starting value of the First
-    Blu=Second.X2()*255;//Proportional to starting value of the Second
-    Gre=abs(First.X2()-Second.X2())*255;//Proportional to difference
+    Red=First.xCur()*255;//Proportional to starting value of the First
+    Blu=Second.xCur()*255;//Proportional to starting value of the Second
+    Gre=abs(First.xCur()-Second.xCur())*255;//Proportional to difference
     
     // change backround???
     noStroke();
@@ -135,9 +134,9 @@ void draw()
     stroke(255);
     line(lmargin+runup,0,lmargin+runup,Tlh*3);
     stroke(0,Gre,0);fill(200);rect(lmargin,Ws-2*fSize,2*Ws-4,2*fSize-2);
-    fill(Red,0,0);text("1st.alpha:"+First.alpha()+" R:"+First.r+" X:"+First.X1(),lmargin,Ws-2*fSize);
-    fill(0,0,Blu);text("2st.alpha:"+Second.alpha()+" R:"+Second.r+" X:"+Second.X1(),lmargin,Ws-fSize);
-    println("realFM:",frameRate,"\tX=",First.X1(),Second.X1());
+    fill(Red,0,0);text("1st.alpha:"+First.alpha()+" R:"+First.r+" X:"+First.xCur(),lmargin,Ws-2*fSize);
+    fill(0,0,Blu);text("2st.alpha:"+Second.alpha()+" R:"+Second.r+" X:"+Second.xCur(),lmargin,Ws-fSize);
+    println("realFM:",frameRate,"\tX=",First.xPre(),Second.xPre());
   }
 
 }
