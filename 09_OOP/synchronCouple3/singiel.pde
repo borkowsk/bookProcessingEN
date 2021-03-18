@@ -80,7 +80,7 @@
 
 
   // viewer - procedure external to the class 
-  void view(singiel S,float v,float h,float baseLength)   
+  void view(singiel S,float v,float h,float baseLength)  //Another refactoring of view procedure 
   {
      ellipse(v,h,round(S.xPre()*baseLength),round(S.xCur()*baseLength));
   }
