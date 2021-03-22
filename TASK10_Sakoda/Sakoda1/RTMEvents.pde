@@ -31,7 +31,7 @@ void keyPressed()
   case '8': STEPSperVIS=150;background(255,255,200);text("StPerV: "+STEPSperVIS,1,16);break;
   case '9': STEPSperVIS=200;background(255,255,200);text("StPerV: "+STEPSperVIS,1,16);break;
 //  case '0': STEPSperVIS=1;DeltaMC=0.2;text("DeltaMC: "+DeltaMC,1,16);break;
-  case ' ': save(modelName+"."+nf((float)StepCounter,6,5)+".PNG");
+  case ' ': save(modelName+"."+nf((float)TheWorld.getTimeStep(),6,5)+".PNG");
             //write(world,modelName+"."+nf((float)StepCounter,6,5));//Aktualny stan ekosystemu
             break;
   case ESC: simulationRun=!simulationRun; break;

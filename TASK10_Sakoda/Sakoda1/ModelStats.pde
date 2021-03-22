@@ -13,11 +13,6 @@ void initializeStats()
 float meanStress=0;
 int   liveCount=0;
 
-void doStatistics(World world)
-{
-  doStatisticsOnAgents(world.agents);
-}
-
 void doStatisticsOnAgents(Agent[] agents)
 {  
   Agent curra;
@@ -36,7 +31,8 @@ void doStatisticsOnAgents(Agent[] agents)
     }
   
    if(outstat!=null)
-      outstat.println(StepCounter+"\t"+liveCount+"\t"+(summ/liveCount)+"\t");
+      outstat.println(TheWorld.getTimeStep()+"\t"
+                      +liveCount+"\t"+(summ/liveCount)+"\t");
    
    meanStress=(float)(summ/liveCount);
    
@@ -62,7 +58,7 @@ void doStatisticsOnAgents(Agent[][] agents)
     }
   
    if(outstat!=null)
-      outstat.println(StepCounter+"\t"+liveCount+"\t"+(summ/liveCount)+"\t");
+      outstat.println(TheWorld.getTimeStep()+"\t"+liveCount+"\t"+(summ/liveCount)+"\t");
    
    meanStress=(float)(summ/liveCount);
    

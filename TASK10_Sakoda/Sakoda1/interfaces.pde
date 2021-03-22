@@ -1,0 +1,15 @@
+// Jakich metod oczekujemy od świata symulacji?
+////////////////////////////////////////////////////////////////////
+
+interface simulation_world
+{
+  void   initializeModel();
+  void   changeState();
+  void   makeStatistics();
+  void   modelFullStep();
+  float  getTimeStep();
+};
+
+///////////////////////////////////////////////////////////////////
+//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM
+///////////////////////////////////////////////////////////////////

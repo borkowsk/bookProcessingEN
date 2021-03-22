@@ -1,44 +1,40 @@
 // World is a one of two central class of each ABM model
 ///////////////////////////////////////////////////////////////
 
-class World //implements simulation_world
+class World implements simulation_world
 {
-  int StepCounter=0;//Gdybyśmy mieli więcej światów to każdy musi mieć własny licznik czasu!
+  int _counter=0;//znak '_' jest konwencjonalnym oznaczeniem nazw "wewnętrznych"
   
-  Agent agents[][];//Dwuwymiarowa tablica agentów 
-                   //Ale mogłaby być jednowymiarowa
-                   //Albo heksagonalna
+  //Agent agents[];//One dimensional array of agents OR ...
+  Agent agents[][];//Two dimensional array of agents
   
   World(int side)//Constructor of the World
   {
+    //agents=new Agent[side]; //OR
     agents=new Agent[side][side];
   }
   
   float  getTimeStep() //"Getter" for simulation step
   {
-    return StepCounter;
+    return _counter;
   }
   
   void initializeModel()//Method 1
   {
     initializeAgents(this.agents);
-    //other initialisations
-    //...
   }
   
   void changeState()//Method 2
   {
     changeAgents(this.agents);
-    //other changes
-    //...
   }
   
   void makeStatistics()
   {
-    //... later
+    doStatisticsOnAgents(this.agents);
   }
   
-  void modelStep()//Method 3 using method 2 
+  void modelFullStep()
   {
      this.changeState(); //'this' is redundant here. For examples only.
      this.makeStatistics();
@@ -46,19 +42,28 @@ class World //implements simulation_world
      //Other changes...
      //...
      
-     StepCounter++;
+     _counter++;
   }
 };
 
-//More elaborated functionalities may be defined as stand-alone functions,
+//For statistics
+float meanStress=0;
+int   liveCount=0;
+
+//More alaborated functionalities may be defined as stand-alone functions,
 //not as methods because of not enought flexible syntax of Processing
 ///////////////////////////////////////////////////////////////////////////
 
 void visualizeModel(World world)
 {
    visualizeAgents(world.agents);
-   //Other visualisations
-   //...
+}
+
+void modelStep(World world)
+{
+   world.changeState();   
+   world.makeStatistics();
+   world._counter++;//Using of internal field!!! Processing allow it, but it is "bad practice".
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////

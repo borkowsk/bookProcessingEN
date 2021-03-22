@@ -35,7 +35,7 @@ void visualizeAgents(Agent[] agents)
       fill(128);
     }
     
-    int t=(StepCounter/STEPSperVIS)%side;//Uwzględniamy różne częstości wizualizacji
+    int t=int(TheWorld.getTimeStep()/STEPSperVIS)%side;//Uwzględniamy różne częstości wizualizacji
     rect(a*cwidth,t*cwidth,cwidth,cwidth);
     stroke(255);
     line(0,(t+1)*cwidth+1,width,(t+1)*cwidth+1);
@@ -77,6 +77,27 @@ void  changeAgents(Agent[] agents)
       }
     }
   }  
+}
+
+void doStatisticsOnAgents(Agent[] agents)
+{  
+  Agent curra;
+  double summ=0;
+  liveCount=0;
+  
+  for(int a=0;a<agents.length;a++)
+    if( (curra=agents[a]) != null )
+    {
+      summ+=curra.stress;
+     
+      //Inne statystyki
+      //TODO
+      //...
+      
+      liveCount++;
+    }
+     
+   meanStress=(float)(summ/liveCount);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////

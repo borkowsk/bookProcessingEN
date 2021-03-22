@@ -26,9 +26,9 @@ void setup()
   strokeWeight(2);
   
   //Model
-  initializeModel(TheWorld);
-  initializeStats();//Wykomentowanie blokuje tworzenie pliku log
-  doStatistics(TheWorld);
+  TheWorld.initializeModel();
+  initializeStats();//Wykomentowanie blokuje tworzenie pliku log!
+  TheWorld.makeStatistics();
   
   //Window 
   println("REQUIRED SIZE OF PAINTING AREA IS "+(cwidth*side)+"x"+(cwidth*side+STATUSHEIGH));
@@ -54,14 +54,13 @@ void draw()
 {
   if(simulationRun)
   {
-    modelStep(TheWorld);
-    doStatistics(TheWorld);
+    TheWorld.modelFullStep();
   }
   
   writeStatusLine();
   
   if(!simulationRun //When simulation was stopped only visualisation should work
-  || StepCounter % STEPSperVIS == 0 ) //But when model is running, visualisation shoud be done from time to time
+  || TheWorld.getTimeStep() % STEPSperVIS == 0 ) //But when model is running, visualisation shoud be done from time to time
   {
     visualizeModel(TheWorld);
     NextVideoFrame();//It utilise inside variable to check if is enabled
@@ -71,12 +70,13 @@ void draw()
 
 void writeStatusLine()
 {
-  fill(255);rect(0,side*cwidth,width,STATUSHEIGH);
-  fill(0);noStroke();
-  textAlign(LEFT, TOP);
-  text(meanStress+"  "+liveCount,0,side*cwidth);
+  fill(255);noStroke();
+  rect(0,side*cwidth,width,STATUSHEIGH);
+  
+  fill(0);textAlign(LEFT, TOP);
+  text(liveCount+"  "+meanStress,0,side*cwidth);
   textAlign(LEFT, BOTTOM);
-  text(StepCounter+")  Fps:"+ frameRate,0,side*cwidth+STATUSHEIGH-2);
+  text(TheWorld.getTimeStep()+")  Fps:"+ frameRate,0,side*cwidth+STATUSHEIGH-2);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
