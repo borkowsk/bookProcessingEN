@@ -12,7 +12,6 @@ void setup()
 {
   size(1200,800);//3*Ws , 2* Ws
   frameRate(1000);
-  ellipseMode(RADIUS); 
   
   // Create new objects of type 'singiel' using the only available constructor
   // The handles catch whatever is created there

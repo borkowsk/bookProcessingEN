@@ -2,13 +2,15 @@
 /////////////////////////////////////////////////
 
 final  float DefaultR=3.5;//two systems independent of each other, 
-final  float DefaultAlpha=0.1;//by changing the alpha value we can change their mutual synchronization
+final  float DefaultAlpha=0.085;//by changing the alpha value we can change their mutual synchronization
 
-final int   FR=255;//Desired frame rate
+final int   FR=150;//Desired frame rate
 
 // Construct two instances of the class
-singiel First= new singiel(random(1.0),3.55,DefaultAlpha);
-singiel Second=new singiel(random(1.0),3.75,DefaultAlpha);
+singiel First= new singiel(0.33,3.69,DefaultAlpha);
+singiel Second=new singiel(0.66,3.95,DefaultAlpha);
+//singiel First= new singiel(random(1.0),3.55,DefaultAlpha);
+//singiel Second=new singiel(random(1.0),3.75,DefaultAlpha);
 //singiel First= new singiel(random(1.0),DefaultR+random(0.5),DefaultAlpha);
 //singiel Second=new singiel(random(1.0),DefaultR+random(0.5),DefaultAlpha);
 
@@ -53,6 +55,6 @@ void draw()
   else
   {  First.next();Second.next(); }
     
-  if(frameCount%FR==0) // Print approximately every second
-    println(frameCount+"*"+ frameRate );//Process progress
+  //if(frameCount%FR==0) // Print approximately every second
+  //  println(frameCount+"*"+ frameRate );//Process progress
 }

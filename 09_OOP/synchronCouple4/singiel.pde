@@ -52,20 +52,20 @@
       return x2;
     }
     
-    // Methods to change state of object
+    // Methods to set state of object
     
-    void set_alpha(float iAl) // "setter" for 'al'
+    void set_alpha(double iAl) // "setter" for 'al'
     {
       if(0<=iAl && iAl<=1)
-        al=iAl;
+        al=(float)iAl;
       else 
         println("Invalid 'alpha' value:",iAl);
     }
     
-    void set_x(float iX) // "setter" for x1 & x2
+    void set_x(double iX) // "setter" for x1 & x2
     {
       if(0<=iX && iX<=1)
-        x1=x2=iX;
+        x1=x2=(float)iX;
       else 
         println("Invalid state value:",iX);
     }

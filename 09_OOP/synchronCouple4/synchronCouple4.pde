@@ -3,11 +3,13 @@
 
 final  float MinR=3.3;//two systems independent of each other 
 final  float MaxR=3.8;//(3.5 to 4 because the sync. in chaos is the most interesting)
-final  float DefaultAlpha=0.05;//by changing the alpha value we can change their mutual synchronization
+final  float DefaultAlpha=0.05;//by changing the alpha value we can change their synchronization
+
+// Create new objects of type 'singiel' using the only available constructor
+singiel_double First= new singiel_double(0.66, random(MinR,MaxR), 0);
+singiel_double Second=new singiel_double(0.33, random(MinR,MaxR), 0);
 
 int   runup=0;//200;
-
-singiel_double First, Second;// object handles
 
 //For visualization
 int N=0;//counter of iteration steps
@@ -27,12 +29,7 @@ void setup()
   runup=int(Ws*0.66);
   frameRate(1000);
   ellipseMode(RADIUS); 
-  
-  // Create new objects of type 'singiel' using the only available constructor
-  // The handles catch whatever is created there
-  First= new singiel_double(0.66, random(MinR,MaxR), 0);
-  Second=new singiel_double(0.33, random(MinR,MaxR), 0);
-  
+    
   //Scatter backround
   noStroke();
   fill(128);
