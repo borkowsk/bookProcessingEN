@@ -3,7 +3,8 @@
 
 class World implements simulation_world
 {
-  int _counter=0;//znak '_' jest konwencjonalnym oznaczeniem nazw "wewnętrznych"
+  int _counter=0;// the '_' character at the beginning 
+      //is the conventional designation of "internal" names 
   
   //Agent agents[];//One dimensional array of agents OR ...
   Agent agents[][];//Two dimensional array of agents
@@ -50,7 +51,7 @@ class World implements simulation_world
 float meanStress=0;
 int   liveCount=0;
 
-//More alaborated functionalities may be defined as stand-alone functions,
+//More elaborated functionalities may be defined as stand-alone functions,
 //not as methods because of not enought flexible syntax of Processing
 ///////////////////////////////////////////////////////////////////////////
 
@@ -59,7 +60,7 @@ void visualizeModel(World world)
    visualizeAgents(world.agents);
 }
 
-void modelStep(World world)
+void modelStep(World world)// Alternative modelStep () procedure
 {
    world.changeState();   
    world.makeStatistics();

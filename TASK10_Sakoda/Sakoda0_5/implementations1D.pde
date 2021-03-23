@@ -18,7 +18,7 @@ void visualizeAgents(Agent[] agents)
    Agent curra;
    for(int a=0;a<agents.length;a++)
    {
-    //Colorisation    
+    //Drawing the agent only when it is in this array cell   
     if( (curra=agents[a]) != null )
     {
         if(curra.stress>0)
@@ -29,16 +29,16 @@ void visualizeAgents(Agent[] agents)
         float forFill=(curra.identity*255.0)/Number_of_identities;
         fill(forFill,forFill,0);
     }
-    else
+    else //otherwise bacground only
     {
       noStroke();
       fill(128);
     }
     
-    int t=int(TheWorld.getTimeStep()/STEPSperVIS)%side;//Uwzględniamy różne częstości wizualizacji
-    rect(a*cwidth,t*cwidth,cwidth,cwidth);
+    int t=int(TheWorld.getTimeStep()/STEPSperVIS)%side;//We take into account different visualization frequencies
+    rect(a*cwidth,t*cwidth,cwidth,cwidth);//Whether full or empty, the same area is painted over
     stroke(255);
-    line(0,(t+1)*cwidth+1,width,(t+1)*cwidth+1);
+    line(0,(t+1)*cwidth+1,width,(t+1)*cwidth+1);//line of the current time
    }
 }
 
@@ -54,7 +54,7 @@ void  changeAgents(Agent[] agents)
       //Sprawdzenie stresu
       int strangers=0;
       
-      if(0<a-1 && agents[a-1]!=null 
+      if(0<=a-1 && agents[a-1]!=null 
       && agents[a-1].identity!=agents[a].identity)
         strangers++;
         
@@ -62,17 +62,17 @@ void  changeAgents(Agent[] agents)
       && agents[a+1].identity!=agents[a].identity)
         strangers++;  
         
-      agents[a].stress=strangers/2.0;  
+      agents[a].stress=strangers/2.0;//Only two possible neighbors  
       
-      //Próba migracji gdy stres doskwiera
+      //Attempting to migrate when the agent is under stress
       if(agents[a].stress>0 
       && random(1.0)<agents[a].stress)
       {
         int target=(int)random(0,agents.length);
-        if(agents[target]==null)//Jest miejsce
+        if(agents[target]==null)//is there a place
         {
-          agents[target]=agents[a];//Przeprowadzka
-          agents[a]=null;//Wymeldowanie ze starego miejsca
+          agents[target]=agents[a];
+          agents[a]=null;
         }
       }
     }
@@ -90,9 +90,8 @@ void doStatisticsOnAgents(Agent[] agents)
     {
       summ+=curra.stress;
      
-      //Inne statystyki
-      //TODO
-      //...
+      //Other statistics
+      //...//TODO
       
       liveCount++;
     }

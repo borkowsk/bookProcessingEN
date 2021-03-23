@@ -1,20 +1,21 @@
 // Agent is a one of two central class of each ABM model
 //////////////////////////////////////////////////////////////////
-int Number_of_identities=3;//Ile jest wykluczających się tożsamości
+int Number_of_identities=3;//How many mutually exclusive identities will be?
 
 class Agent
 {
-  float identity;//Tożsamość agenta: [1..Number_of_identities]
-  float stress;//Stress w aktualnej pozycji [0..1]
+  float identity;//Stress in the current position [0..1]
+  float stress;//Stress in the current position [0..1]
   
   Agent()//Constructor of the Agent
   {
-    identity=round(random(1,Number_of_identities));//Muszą bywać te same
+    //rounding also converts float to int but treats fractions differently
+    identity=round(random(1,Number_of_identities));
     stress=0;
   }
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 //  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
-//  AGENT OF SAKODA MODEL & 2D BASIC INITIALISATION, STEP CHANGE & VISUALISATION
+//  AGENT OF SAKODA MODEL
 ///////////////////////////////////////////////////////////////////////////////////////////
