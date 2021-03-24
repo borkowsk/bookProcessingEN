@@ -2,6 +2,7 @@
 // Agents need to be initialised & they need logic of change 
 // HERE ARE 2D alternatives of main procedures
 ///////////////////////////////////////////////////////////////
+//We're using function overload!
 
 void initializeAgents(Agent[][] agents)
 {
@@ -73,7 +74,7 @@ void  changeAgents(Agent[][] agents)
       //Attempting to migrate when the agent is under stress
       if(agents[a][b].stress>0 
       && random(1.0)<agents[a][b].stress)
-      {
+      { //Drawing the coordinates of the move destination
         int tara=(int)random(0,agents.length);
         int tarb=(int)random(0,agents[a].length);
         

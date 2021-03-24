@@ -21,17 +21,18 @@ class World implements simulation_world
   }
   
   void initializeModel()//Method 1
-  {
+  { //The appropriate overloaded function will be selected 
+    //based on the agent table type!
     initializeAgents(this.agents);
   }
   
   void changeState()//Method 2
-  {
-    changeAgents(this.agents);
+  { //The function corresponding to the type of the array 
+    changeAgents(this.agents);//... will be selected here
   }
   
   void makeStatistics()
-  {
+  { //The function corresponding to the type of the array 
     doStatisticsOnAgents(this.agents);
   }
   
@@ -58,9 +59,10 @@ int   liveCount=0;
 void visualizeModel(World world)
 {
    visualizeAgents(world.agents);
+   //...//& others things 
 }
 
-void modelStep(World world)// Alternative modelStep () procedure
+void modelStep(World world)// Alternative modelStep() procedure
 {
    world.changeState();   
    world.makeStatistics();

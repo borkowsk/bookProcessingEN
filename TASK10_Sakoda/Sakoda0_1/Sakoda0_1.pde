@@ -57,7 +57,7 @@ void statusLine()
   fill(0);textAlign(LEFT, TOP);
   textAlign(LEFT, BOTTOM);
   //Not much to write yet
-  text(TheWorld.StepCounter+")  Fps:"+frameRate,0,side*cwidth+STATUSHEIGH-2);
+  text(TheWorld.getTimeStep()+")  Fps:"+frameRate,0,side*cwidth+STATUSHEIGH-2);
 }
 
 //Expected interface for a world class

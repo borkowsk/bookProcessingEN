@@ -2,6 +2,7 @@
 // Agents need to be initialised & they need logic of change 
 // HERE ARE 1D alternatives of main procedures
 ///////////////////////////////////////////////////////////////
+//We're using function overload!
 
 void initializeAgents(Agent[] agents)
 {
@@ -67,7 +68,7 @@ void  changeAgents(Agent[] agents)
       //Attempting to migrate when the agent is under stress
       if(agents[a].stress>0 
       && random(1.0)<agents[a].stress)
-      {
+      { //An index draw for the moving destination
         int target=(int)random(0,agents.length);
         if(agents[target]==null)//is there a place
         {
