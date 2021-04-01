@@ -6,6 +6,7 @@ class World //implements simulation_world
   int StepCounter=0;//If we had more worlds, 
       //each one must have their own timer!
       
+  //type v.name [][]<- marks of 2D array   
   Agent agents[][];//Two-dimensional array of agents
                    //But it could be one-dimensional,
                    //Or even hexagonal!
@@ -18,8 +19,8 @@ class World //implements simulation_world
   
   void initializeModel()//Method 1
   {
-     for(int a=0;a<agents.length;a++)
-      for(int b=0;b<agents[a].length;b++)
+     for(int a=0;a<agents.length;a++)//for every row
+      for(int b=0;b<agents[a].length;b++)//for every column
       if(random(1.0)<density)// Only some of the cells are occupied
       {
         Agent curr=new Agent();// We construct the agent
@@ -29,13 +30,13 @@ class World //implements simulation_world
   
   void changeState()//Method 2
   {
-    int MCN=agents.length*agents[0].length;//number of draws
+    int MCN=agents.length*agents[0].length;//number of M C draws
     for(int i=0;i<MCN;i++)
     {
       int a=(int)random(0,agents.length);//row
       int b=(int)random(0,agents[a].length);//column
       
-      if(agents[a][b]!= null )
+      if( agents[a][b] != null )
       {
         //Check the stress on the agent
         int strangers=0;//Number of foreign neighbors in von Neumann's neib.
@@ -64,7 +65,7 @@ class World //implements simulation_world
         
         //Attempting to migrate when the agent is under stress
         if( agents[a][b].stress > 0  //Scheling model
-        //&& random(1.0)<agents[a][b].stress //Not always modification
+        && random(1.0)<agents[a][b].stress //"Not always" modification
         )
         {
           int tara=(int)random(0,agents.length);
@@ -87,7 +88,8 @@ class World //implements simulation_world
   
   void modelStep()//Method 3 using method 2 
   {
-     this.changeState(); //'this' is redundant here. For example only.
+     //this.
+     changeState(); //'this' is redundant here. For example only.
      
      //Other every step actions
      makeStatistics(); //here without 'this'
@@ -121,7 +123,7 @@ void visualizeModel(World world)
         // Filling The Circle Depends On 'Identity'   
         float forFill=(curr.identity*255.0)/Number_of_identities;
         fill(forFill,forFill,0);
-        rect(b*cwidth,a*cwidth,cwidth-2,cwidth-2);//strokeWeight = 2 !
+        rect(b*cwidth,a*cwidth,cwidth-2,cwidth-2);//strokeWeight == 2 !
       }  
    }
 }

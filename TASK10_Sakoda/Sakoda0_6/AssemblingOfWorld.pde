@@ -20,10 +20,15 @@ class World implements simulation_world
     return _counter;
   }
   
+  //We postpone real implementations for later and, 
+  //most importantly, for other files !!!
+  
   void initializeModel()//Method 1
   { //The appropriate overloaded function will be selected 
     //based on the agent table type!
     initializeAgents(this.agents);
+    
+    makeStatistics();//First attempt to calculate & write staistics
   }
   
   void changeState()//Method 2
@@ -32,25 +37,22 @@ class World implements simulation_world
   }
   
   void makeStatistics()
-  { //The function has to correspond to the type  
-    doStatisticsOnAgents(this.agents);//...of the array of agents
+  { //The function corresponding to the type of the array 
+    doStatisticsOnAgents(this.agents);
+    saveStatistics();
   }
   
   void modelFullStep()
   {
-     this.changeState(); //'this' is redundant here. For examples only.
-     this.makeStatistics();
-     
+     changeState(); 
+
      //Other changes...
-     //...
+     //...inenviroment for example
      
      _counter++;
+     makeStatistics();//Calculating & writing
   }
 };
-
-//For statistics
-float meanStress=0;
-int   liveCount=0;
 
 //More elaborated functionalities may be defined as stand-alone functions,
 //not as methods because of not enought flexible syntax of Processing
@@ -60,13 +62,6 @@ void visualizeModel(World world)
 {
    visualizeAgents(world.agents);
    //...//& others things 
-}
-
-void modelStep(World world)// Alternative modelStep() procedure
-{
-   world.changeState();   
-   world.makeStatistics();
-   world._counter++;//Using of internal field!!! Processing allow it, but it is "bad practice".
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////

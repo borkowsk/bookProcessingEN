@@ -5,13 +5,13 @@
 //Model parameters
 int side=50;//side of main table
 String modelName="Sakoda0ABM";
-float density=0.5;
+float density=0.55;
 
 //Parameters of visualisation etc...
 int cwidth=16;//size of cell
 int STATUSHEIGH=40;//Height of the status bar
 int STEPSperVIS=1;//How often to visualize the simulation world?
-int FRAMEFREQ=20;//Expected speed of the animation
+int FRAMEFREQ=5;//Expected speed of the animation
 
 World TheWorld=new World(side);//Create a simulation world
               //Which still needs to be initialized in the setup()

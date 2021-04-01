@@ -4,6 +4,7 @@
 void visualizeAgents(Agent[][] agents)
 {
   Agent curra;
+  ellipseMode(CORNER);
   for(int a=0;a<agents.length;a++)
    for(int b=0;b<agents[a].length;b++)
    {
@@ -21,7 +22,7 @@ void visualizeAgents(Agent[][] agents)
            
         float forFill=(curra.identity*255.0)/Number_of_identities;
         fill(forFill,forFill,0);
-        ellipse(b*cwidth,a*cwidth,cwidth,cwidth);
+        ellipse(b*cwidth,a*cwidth,cwidth-1,cwidth-1);
       }  
    }
 }

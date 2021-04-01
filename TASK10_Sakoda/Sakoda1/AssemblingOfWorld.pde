@@ -22,6 +22,9 @@ class World implements simulation_world
     return _counter;
   }
   
+  //We postpone real implementations for later and, 
+  //most importantly, for other files !!!
+  
   void initializeModel()
   {
     initializeAgents(this.agents);

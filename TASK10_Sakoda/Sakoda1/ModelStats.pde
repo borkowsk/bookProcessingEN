@@ -5,9 +5,12 @@ PrintWriter outstat;
 void initializeStats()
 {
   String FileName=modelName+="_s"+side+"d"+density+"i"+Number_of_identities
-                           +"_"+year()+'.'+nf(month(),2)+'.'+nf(day(),2)+'.'+nf(hour(),2)+'.'+nf(minute(),2)+'.'+nf(second(),2)+'.'+millis();
+                           +"_"+year()+'.'+nf(month(),2)+'.'+nf(day(),2)
+                           +'.'+nf(hour(),2)+'.'+nf(minute(),2)+'.'+nf(second(),2)
+                           +'.'+millis();
+  println("Output in file:",FileName);
   outstat=createWriter(FileName+".out");
-  outstat.println("$STEP\tAlive\tStress\t");//<-- complete the header fields!
+  outstat.println("$STEP\tAlive\tStress\t...");//<-- complete the header fields!
 }
 
 float meanStress=0;
@@ -32,7 +35,7 @@ void doStatisticsOnAgents(Agent[] agents)
   
    if(outstat!=null)
       outstat.println(TheWorld.getTimeStep()+"\t"
-                      +liveCount+"\t"+(summ/liveCount)+"\t");
+                      +liveCount+"\t"+(summ/liveCount)+"\t...");//<-- complete the fields!
    
    meanStress=(float)(summ/liveCount);
    
@@ -58,11 +61,11 @@ void doStatisticsOnAgents(Agent[][] agents)
     }
   
    if(outstat!=null)
-      outstat.println(TheWorld.getTimeStep()+"\t"+liveCount+"\t"+(summ/liveCount)+"\t");
+      outstat.println(TheWorld.getTimeStep()+"\t"+liveCount+"\t"+(summ/liveCount)+"\t...");
    
    meanStress=(float)(summ/liveCount);
    
-   //outstat should be closed in exit() --> see Exit.pde
+   //outstat should be closed in exit() --> see RTMExit.pde
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
