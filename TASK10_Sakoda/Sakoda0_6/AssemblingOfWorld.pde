@@ -37,8 +37,8 @@ class World implements simulation_world
   }
   
   void makeStatistics()
-  { //The function corresponding to the type of the array 
-    doStatisticsOnAgents(this.agents);
+  {  
+    doStatisticsOnAgents(this.agents);//The function corresponding to the type of the array
     saveStatistics();
   }
   
