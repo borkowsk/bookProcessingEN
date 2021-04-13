@@ -1,6 +1,7 @@
-boolean trace=false;
 int circles = 50;
+boolean torus=true;
 
+boolean trace=false;
 int diameter=25;
 int radius=diameter/2;
 float maxspeed=1;
@@ -44,16 +45,16 @@ void setup(){
 
   for(int i=0;i<circles;i++){
     do{
-    xpos[i] = diameter/2+random(width-diameter);//(i+3)*60;//WB: Why?
-    ypos[i] = diameter/2+random(height-diameter);//(i+5)*5;//WB: Why?
+    xpos[i] = diameter/2+random(width-diameter);
+    ypos[i] = diameter/2+random(height-diameter);
     }while(!freePosition(i));
-    xspeed[i] = random(-maxspeed,maxspeed);//WB --> Have to be bidirectional!
-    yspeed[i] = random(maxspeed*0.2,maxspeed)*(random(1.0)<0.5?-1:1);//WB: alternative method
+    xspeed[i] = random(maxspeed*0.2,maxspeed)*(random(1.0)<0.5?-1:1);
+    yspeed[i] = random(maxspeed*0.2,maxspeed)*(random(1.0)<0.5?-1:1);
     ischild[i] = random(1.0)<0.5;
     circon[i] = true;
     circolor[i] = color(255);
     collision[i] = false;
-    wellbeing[i]= random(255);//WB
+    wellbeing[i]= random(255);
   }
 }
 
@@ -65,7 +66,7 @@ void visualisation()
     fill(circolor[i]);
     if(ischild[i]) stroke(wellbeing[i],wellbeing[i],0);
     else noStroke();
-    ellipse(xpos[i],ypos[i],diameter,diameter);//WB --> diameter
+    ellipse(xpos[i],ypos[i],diameter,diameter);
   }
 }
 
@@ -74,12 +75,24 @@ void movement()
   for(int i=0;i<circles;i++){
     ypos[i]+=yspeed[i];
     xpos[i]+=xspeed[i];
-    //WB: Borders detection should depend on circle diameters!
-    if(ypos[i]>(height-radius) || ypos[i]<radius){
-      yspeed[i]*=-1;
+    
+    if(torus)
+    {
+      if(xpos[i]<0) xpos[i]=width-xpos[i];
+      else
+      if(xpos[i]>width) xpos[i]-=width;
+      
+      if(ypos[i]<0) ypos[i]=height-ypos[i];
+      else
+      if(ypos[i]>height) ypos[i]-=height;
     }
-    if(xpos[i]>(width-radius) || xpos[i]<radius){
-      xspeed[i]*=-1;
+    else //Borders detection should depend on circle radius!
+    {
+      if(ypos[i]>(height-radius) || ypos[i]<radius)
+        yspeed[i]*=-1;
+      
+      if(xpos[i]>(width-radius) || xpos[i]<radius)
+        xspeed[i]*=-1;
     }
   }  
 }
