@@ -1,21 +1,3 @@
-/*
-A code trying to attempt to model trans-youth individuals' acceptance while interacting with others (adults) in an environment. 
-
-Adults acceptance (non-trans individuals) would have an acceptance label of 'full' or maximum, possibly represented by a color value (ie. 255), where their views of acceptance towards trans-individuals are either completely unaccepting, intermediate, or fully accepting.
-
-We are having circles colliding and changing color upon collision but there are some issues:
-
-1. We are having trouble getting the circles to collide with no overlap.
-2. Assigning a 'circle within a circle' or a thick outline around each adults' circle 
-   (the colored outline differing from inside would represent adult opinion)... and a 
-   colored outline around trans youth circles representing wellbeing
-3. Assigning values to each circle (ie. if blue circle with a neutral color outline of wellbeing (trans youth) collides with a red/non accepting adult outline (different color inside to represent adult)... the well being (neutral color of trans youth outline) will change to represent a lower well being... and so on.
-
-I have pasted the code below so you have an idea of where we are at, I just wanted to see if you had any insight on how to code for this.
-
-Best,
-Brittany
-*/
 boolean trace=false;
 int circles = 50;
 
@@ -166,56 +148,5 @@ void parentReaction(int i,int j)
 void draw(){
   if(frameCount%VISFREQ==0)visualisation();
   movement(); 
-  findcollisions();// or ...
-  //findcollisionsOld();
-}
-
-
-void findCollisionsOld()
-{
-  //WB: Comment all actions below!
-  for(int i=0;i<(circles-1);i++){
-    for(int j=(i+1);j<circles;j++){ 
-      if((dist(xpos[i],ypos[i],xpos[j],ypos[j])<=diameter) //WB --> diameter
-      && collision[i]==false && collision[j]==false){
-        collision[i]=true;
-        collision[j]=true;
-        
-        if(circon[i]==true){
-          circon[i]=false;
-          circolor[i] = color(255,255,0);
-        }
-        else if(circon[i]==false){
-          circon[i]=true;
-          circolor[i] = color(255);
-        }
-        
-        if(circon[j]==true){
-          circon[j]=false;
-          circolor[j] = color(255,255,0);
-        }
-        else if(circon[j]==false){
-          circon[j]=true;
-          circolor[j] = color(255);
-        }
-        
-      }
-      else                             
-      if((dist(xpos[i],ypos[i],xpos[j],ypos[j])>diameter) //WB --> diameter
-      && collision[i]==true && collision[j]==true){
-        collision[i]=false;
-        collision[j]=false;
-      }
-      if(collision[i]==true && collision[j]==true){
-        if((xspeed[i] > 0 && xspeed[j] < 0) || (xspeed[i] < 0 && xspeed[j] > 0)){
-            xspeed[i] *= -1;
-            xspeed[j] *= -1;
-          }
-          if((yspeed[i] > 0 && yspeed[j] < 0) || (yspeed[i] < 0 && yspeed[j] > 0)){
-            yspeed[i] *= -1;
-            yspeed[j] *= -1;
-        }
-      }
-    }
-  }
+  findcollisions();
 }
