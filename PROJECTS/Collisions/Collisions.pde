@@ -16,33 +16,39 @@ I have pasted the code below so you have an idea of where we are at, I just want
 Best,
 Brittany
 */
-int circles = 55;
+int circles = 100;
 
-int diameter=25;//WB
-float maxspeed=7;
+int diameter=25;
+int radius=diameter/2;
+float maxspeed=2;
+int FRAMERATE=100;
+int VISFREQ=5;//every N
 
-int[] xpos = new int[circles];
-int[] ypos = new int[circles];
-int[] xspeed = new int[circles];
-int[] yspeed = new int[circles];
+float[] xpos = new float[circles];
+float[] ypos = new float[circles];
+float[] xspeed = new float[circles];
+float[] yspeed = new float[circles];
 float[] wellbeing = new float[circles];//WB
+
 boolean[] circon = new boolean[circles];
-boolean[] collision = new boolean[circles];
+boolean[] collision = new boolean[circles];//?
 color[] circolor = new color[circles];
 
 void setup(){
-  background(0);
+
   size(1000,600);
   smooth();
+  background(0);
+  frameRate(FRAMERATE);
   //noStroke();//not neded
-  background (0);
+
   for(int i=0;i<circles;i++){
-    xpos[i] = diameter/2+int(random(width-diameter));//(i+3)*60;//WB: Why?
-    ypos[i] = diameter/2+int(random(height-diameter));//(i+5)*5;//WB: Why?
+    xpos[i] = diameter/2+random(width-diameter);//(i+3)*60;//WB: Why?
+    ypos[i] = diameter/2+random(height-diameter);//(i+5)*5;//WB: Why?
     //When number of agent grows, you have to check here collisions with agent already draw!
     //...
-    xspeed[i] = int(random(-maxspeed,maxspeed));//WB --> Have to be bidirectional!
-    yspeed[i] = int(random(2,maxspeed))*(random(1.0)<0.5?-1:1);//WB: alternative method
+    xspeed[i] = random(-maxspeed,maxspeed);//WB --> Have to be bidirectional!
+    yspeed[i] = random(maxspeed*0.2,maxspeed)*(random(1.0)<0.5?-1:1);//WB: alternative method
     circon[i] = true;
     circolor[i] = color(255);
     collision[i] = false;
@@ -67,17 +73,17 @@ void movement()
     ypos[i]+=yspeed[i];
     xpos[i]+=xspeed[i];
     //WB: Borders detection should depend on circle diameters!
-    if(ypos[i]>(height-100) || ypos[i]<50){ //WB: why 100?
+    if(ypos[i]>(height-radius) || ypos[i]<radius){ //WB: why 100?
       yspeed[i]*=-1;
     }
-    if(xpos[i]>(width-50) || xpos[i]<50){
+    if(xpos[i]>(width-radius) || xpos[i]<radius){
       xspeed[i]*=-1;
     }
   }  
 }
 
 void draw(){
-  visualisation();
+  if(frameCount%VISFREQ==0)visualisation();
   movement(); 
 
   //WB: Comment all actions below!
