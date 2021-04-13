@@ -75,7 +75,12 @@ void movement()
   for(int i=0;i<circles;i++){
     ypos[i]+=yspeed[i];
     xpos[i]+=xspeed[i];
-    
+  }
+}
+
+void bordersReaction()
+{
+  for(int i=0;i<circles;i++)
     if(torus)
     {
       if(xpos[i]<0) xpos[i]=width-xpos[i];
@@ -93,8 +98,7 @@ void movement()
       
       if(xpos[i]>(width-radius) || xpos[i]<radius)
         xspeed[i]*=-1;
-    }
-  }  
+    } 
 }
 
 void findcollisions()
@@ -142,7 +146,12 @@ void childReaction(int i,int j)
   if(collision[i]==false){
     //... YOUR CODE
     //eg.:
-    circolor[i]=color(random(255),random(255),random(255));
+    if(random(255)<wellbeing[i])
+       circolor[i]=color(random(255),random(255),random(255));
+    else
+       circolor[i]=color(0.5*red(circolor[i])+0.5*red(circolor[j]),
+                      0.5*green(circolor[i])+0.5*green(circolor[j]),
+                      0.5*blue(circolor[i])+0.5*blue(circolor[j]));
   }
 }
 
@@ -160,6 +169,7 @@ void parentReaction(int i,int j)
 
 void draw(){
   if(frameCount%VISFREQ==0)visualisation();
-  movement(); 
+  movement();
+  bordersReaction();
   findcollisions();
 }
