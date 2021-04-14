@@ -1,5 +1,5 @@
 int circles = 50;
-boolean torus=true;
+boolean torus=false;
 
 boolean trace=false;
 int diameter=25;
