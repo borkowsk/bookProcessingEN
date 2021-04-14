@@ -127,7 +127,7 @@ void syncStep() //Synchronous step a la classic CA
                                  else sum1+=Strength[right][dw]; 
          }
          
-         if(WorldOld[i][j]==0) sum0+=Strength[i][j]; 
+         if(WorldOld[i][j]==0) sum0+=Strength[i][j]; //SELF INFLUENCE
                           else sum1+=Strength[i][j];
          
          if(sum0!=sum1)//What about equal? 
