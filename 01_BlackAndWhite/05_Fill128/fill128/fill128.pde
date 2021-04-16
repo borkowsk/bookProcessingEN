@@ -8,4 +8,4 @@ smooth();
 fill(128);
 ellipse(100,100,150,140);
 
-//http://processingwedukacji.blogspot.com
+//https://github.com/borkowsk/bookProcessingEN

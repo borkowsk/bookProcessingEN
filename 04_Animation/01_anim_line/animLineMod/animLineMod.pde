@@ -1,4 +1,5 @@
 //infinite line animation using remainder from integer division
+//////////////////////////////////////////////////////////////////
 
 void setup() 
 {
@@ -17,3 +18,5 @@ void draw()
   //when 'pos' exceeds 'width' it will return to 0 and so on
   pos=pos % width; // <=> pos %= width;
 }
+
+//https://github.com/borkowsk/bookProcessingEN

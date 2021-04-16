@@ -1,44 +1,47 @@
-int funkcja_zwraca_int()
+// Demonstration of functions with different parameters
+/////////////////////////////////////////////////////////
+
+int function_returning_int()
 {
   return 1;
 }
 
-float funkcja_zwraca_float()
+float function_returning_float()
 {
   return 1.01;
 }
 
-int funkcja_dostaje_int_i_zwraca_int(int x)
+int function_receiving_int_returning_int(int x)
 {
   return x*x;
 }
 
-float funkcja_dostaje_int_i_zwraca_float(int x)
+float function_receiving_int_returning_float(int x)
 {
-  return sqrt(x);//Pierwiastek kwadratowy z liczby całkowitej
+  return sqrt(x);// Square root of an integer
 }
 
-float funkcja_dostaje_float_i_zwraca_float(float x)
+float function_receiving_float_returning_float(float x)
 {
-  return sqrt(x);//Pierwiastek kwadratowy z liczby zmiennoprzecinkowej
+  return sqrt(x);// Square root of a floating point number
 }
 
-float funkcja_dostaje_Float_i_zwraca_float(Float x)
+float function_receiving_Float_object_returning_float(Float x)
 {
-  return sqrt(x);//Pierwiastek kwadratowy z liczby zmiennoprzecinkowej
+  return sqrt(x);// Square root of a floating point number
 }
 
 void setup()
 {
   noLoop();
-  println(  funkcja_zwraca_int() );
-  println(  funkcja_zwraca_float() );
-  println(  funkcja_dostaje_int_i_zwraca_int(2) );
-  println(  funkcja_dostaje_int_i_zwraca_float(2) );
-  println(  funkcja_dostaje_float_i_zwraca_float(2) );
+  println(  function_returning_int() );
+  println(  function_returning_float() );
+  println(  function_receiving_int_returning_int(2) );
+  println(  function_receiving_float_returning_float(2) );
+  println(  function_receiving_float_returning_float(2) );
   Float X=new Float("3.5");
   println(  X );
-  println(  funkcja_dostaje_Float_i_zwraca_float(X) );
+  println(  function_receiving_Float_object_returning_float(X) );
 }
 
 void draw() //Console only applet!
@@ -49,6 +52,8 @@ void draw() //Console only applet!
 
 void exit()
 {
-  println("Dziękuję!");
+  println("Thank You!");
   super.exit();
 }
+
+//https://github.com/borkowsk/bookProcessingEN

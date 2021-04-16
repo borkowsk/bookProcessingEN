@@ -1,4 +1,5 @@
 //infinite line animation
+////////////////////////////////
 
 void setup() 
 {
@@ -19,3 +20,5 @@ void draw()
     println(frameRate);//Real frame rate in last cycle
   }
 }
+
+//https://github.com/borkowsk/bookProcessingEN

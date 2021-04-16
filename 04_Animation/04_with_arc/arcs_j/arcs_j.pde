@@ -1,6 +1,7 @@
 //Processing program in mode 2 - with visible subroutines
 //////////////////////////////////////////////////////////
-void setup() //Jest wykonywane raz - po uruchomieniu
+
+void setup() //It is executed once - after starting
 {
   size(500,500);
   background(0,0,200);//rgB
@@ -10,7 +11,7 @@ void setup() //Jest wykonywane raz - po uruchomieniu
 
 //for(int i=0;i<inf;i+=10)
 int i=0,j=0;
-void draw() //Jest wykonywane w niewidocznej pętli
+void draw() //It is executed in an invisible loop
 {
   if(i>255)
     i=0;
@@ -19,3 +20,5 @@ void draw() //Jest wykonywane w niewidocznej pętli
   i+=10;
   j+=13;
 }
+
+//https://github.com/borkowsk/bookProcessingEN

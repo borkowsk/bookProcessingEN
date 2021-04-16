@@ -11,4 +11,4 @@ text("100*000",100,0);
 text("250*250",250,250);
 text("500*500",500,500);
 
-//http://processingwedukacji.blogspot.com
+//https://github.com/borkowsk/bookProcessingEN

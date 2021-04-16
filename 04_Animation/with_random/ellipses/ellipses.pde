@@ -1,4 +1,4 @@
-//Control parameters
+//Control parameter
 int W=600;
 
 int radius()
@@ -20,3 +20,5 @@ void draw()
   float r=radius();
   ellipse(random(W),random(W),r,r);
 }
+
+//https://github.com/borkowsk/bookProcessingEN

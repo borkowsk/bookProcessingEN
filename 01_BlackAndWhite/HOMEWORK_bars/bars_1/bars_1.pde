@@ -29,3 +29,5 @@ textAlign(LEFT,TOP);text(maxd,0,0);//Print max on window!
 
 line(0,height-1,width,height-1);//Horizontal
 //line(width,height-1,width-10,height-5);//Arrow
+
+//https://github.com/borkowsk/bookProcessingEN

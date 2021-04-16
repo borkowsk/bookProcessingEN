@@ -5,4 +5,4 @@ strokeWeight(2);
 fill(64);
 ellipse(100,100, 85, 75);
 
-//http://processingwedukacji.blogspot.com
+//https://github.com/borkowsk/bookProcessingEN

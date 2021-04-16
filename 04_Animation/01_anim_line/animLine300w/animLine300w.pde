@@ -1,4 +1,5 @@
 //"line" animation with setup()
+/////////////////////////////////
 
 void setup() 
 {
@@ -15,3 +16,5 @@ void draw()
   line(pos, 20, pos, 180);
   pos++;
 }
+
+//https://github.com/borkowsk/bookProcessingEN

@@ -12,4 +12,4 @@ stroke(128);//50% GRAY
 point(50,50);
 stroke(0);//BACK TO BLACK
 
-//http://processingwedukacji.blogspot.com
+//https://github.com/borkowsk/bookProcessingEN

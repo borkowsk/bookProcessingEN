@@ -8,5 +8,5 @@ arc(250, 250, 190, 190, PI/2.0,PI);//CLOCKWISE ANGLE!!!
 fill(128);
 arc(250, 250, 190, 190, PI,PI*2);//Pi=3.141595............
 
-//http://processingwedukacji.blogspot.com
+//https://github.com/borkowsk/bookProcessingEN
 //saveFrame();//If saveFrame() is used without parameters, it will save files as screen-0000.tif, screen-0001.tif, 

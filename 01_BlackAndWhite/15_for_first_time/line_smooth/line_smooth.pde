@@ -1,4 +1,4 @@
-//A simple example of a loop 
+//A simple example of a "for" loop 
 
 size(500,500);
 smooth();
@@ -6,4 +6,4 @@ smooth();
 for(int i=0;i<150;i++) //REPEAT 150 TIMES
   line(i,i,500,150);   //SINGLE ACTION
   
-//http://processingwedukacji.blogspot.com
+//https://github.com/borkowsk/bookProcessingEN

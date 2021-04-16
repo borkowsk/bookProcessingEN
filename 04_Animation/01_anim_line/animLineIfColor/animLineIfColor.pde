@@ -1,4 +1,5 @@
 //infinite line animation in colors
+////////////////////////////////////
 
 void setup() 
 {
@@ -19,3 +20,5 @@ void draw()
     pos = 0;//go back to initial position!
   }
 }
+
+//https://github.com/borkowsk/bookProcessingEN
