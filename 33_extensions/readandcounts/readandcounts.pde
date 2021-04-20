@@ -68,9 +68,9 @@ void exit()
     if(all || ref!=null )
     {
         print('‘' + keys[i] + '’',vals[i],"\t");
-        output.print(nf(vals[i],4) + "\t[‘" + keys[i] + "’]");
+        output.print(nf(vals[i],4) + "\t[ ‘" + keys[i] + "’ ]");
         println(ref!=null?ref:"");
-        output.print(ref!=null?"["+ref+"]\n\n":"\n\n");
+        output.print(ref!=null?"("+ref+")\n\n":"\n\n");
     }
   }
   output.close();
