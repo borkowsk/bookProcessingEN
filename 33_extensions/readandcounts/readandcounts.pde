@@ -1,4 +1,6 @@
-//Read file and make dictionary of tokens
+/**
+Read file and make dictionary of tokens, then write dictionaries in .md format
+*/
 
 String FileName = "readandcounts.pde" ;
 BufferedReader input;
@@ -42,7 +44,7 @@ void draw() {
        if(trimmed.length()==0) trimmed=" ";
        print("‘" + trimmed + "’•");
        
-       if(trimmed.equals("[") ||  trimmed.equals("]") )//[ & ] breaks .md syntax
+       if(trimmed.equals("[") ||  trimmed.equals("]") )//'[' and ']' breaks .md syntax
             trimmed="[]";
        dictionary.increment(trimmed);  
     }

@@ -1,4 +1,4 @@
-[ ‘!=’ ](https://processing.org/reference/inequality.html)	[ ‘&’ ](https://processing.org/reference/bitwiseAND.html)	[ ‘(’ ](https://processing.org/reference/parentheses.html)	[ ‘)’ ](https://processing.org/reference/parentheses.html)	[ ‘+’ ](https://processing.org/reference/addition.html)	[ ‘++’ ](https://processing.org/reference/increment.html)	[ ‘,’ ](https://processing.org/reference/comma.html)	[ ‘.’ ](https://processing.org/reference/dot.html)	[ ‘/’ ](https://processing.org/reference/divide.html)	[ ‘//’ ](https://processing.org/reference/comment.html)	[ ‘:’ ](https://processing.org/reference/conditional.html)	[ ‘;’ ](https://processing.org/reference/semicolon.html)	[ ‘<’ ](https://processing.org/reference/lessthan.html)	[ ‘=’ ](https://processing.org/reference/assign.html)	[ ‘==’ ](https://processing.org/reference/equality.html)	[ ‘?’ ](https://processing.org/reference/conditional.html)	[ ‘[]’ ](https://processing.org/reference/arrayaccess.html)	[ ‘\’ ](https://processing.org/discourse/beta/num_1233191211.html)	[ ‘background’ ](https://processing.org/reference/background_.html)	[ ‘Boolean’ ](https://processing.org/reference/boolean.html)	[ ‘BufferedReader’ ](https://processing.org/reference/BufferedReader.html)	[ ‘catch’ ](https://processing.org/reference/catch.html)	[ ‘createReader’ ](https://processing.org/reference/createReader_.html)	[ ‘createWriter’ ](https://processing.org/reference/createWriter_.html)	[ ‘draw’ ](https://processing.org/reference/draw_.html)	[ ‘else’ ](https://processing.org/reference/else.html)	[ ‘exit’ ](https://processing.org/reference/exit_.html)	[ ‘false’ ](https://processing.org/reference/false.html)	[ ‘for’ ](https://processing.org/reference/for.html)	[ ‘frameCount’ ](https://processing.org/reference/frameCount.html)	[ ‘frameRate’ ](https://processing.org/reference/frameRate.html)	[ ‘get’ ](https://processing.org/reference/get_.html)	[ ‘HALF_PI’ ](https://processing.org/reference/HALF_PI.html)	[ ‘height’ ](https://processing.org/reference/height.html)	[ ‘if’ ](https://processing.org/reference/if.html)	[ ‘int’ ](https://processing.org/reference/int.html)	[ ‘IntDict’ ](https://processing.org/reference/IntDict.html)	[ ‘line’ ](https://processing.org/reference/line_.html)	[ ‘new’ ](https://processing.org/reference/new.html)	[ ‘nf’ ](https://processing.org/reference/nf_.html)	[ ‘noLoop’ ](https://processing.org/reference/noLoop_.html)	[ ‘null’ ](https://processing.org/reference/null.html)	[ ‘print’ ](https://processing.org/reference/print_.html)	[ ‘println’ ](https://processing.org/reference/println_.html)	[ ‘PrintWriter’ ](https://processing.org/reference/PrintWriter.html)	[ ‘setup’ ](https://processing.org/reference/setup_.html)	[ ‘size’ ](https://processing.org/reference/size_.html)	[ ‘String’ ](https://processing.org/reference/String.html)	[ ‘super’ ](https://processing.org/reference/super.html)	[ ‘text’ ](https://processing.org/reference/text_.html)	[ ‘textAlign’ ](https://processing.org/reference/textAlign_.html)	[ ‘trim’ ](https://processing.org/reference/trim_.html)	[ ‘try’ ](https://processing.org/reference/try.html)	[ ‘void’ ](https://processing.org/reference/void.html)	[ ‘width’ ](https://processing.org/reference/width.html)	[ ‘{’ ](https://processing.org/reference/curlybraces.html)	[ ‘||’ ](https://processing.org/reference/logicalOR.html)	[ ‘}’ ](https://processing.org/reference/curlybraces.html)	
+[ ‘!=’ ](https://processing.org/reference/inequality.html)	[ ‘(’ ](https://processing.org/reference/parentheses.html)	[ ‘)’ ](https://processing.org/reference/parentheses.html)	[ ‘*/’ ](https://processing.org/reference/multilinecomment.html)	[ ‘+’ ](https://processing.org/reference/addition.html)	[ ‘++’ ](https://processing.org/reference/increment.html)	[ ‘,’ ](https://processing.org/reference/comma.html)	[ ‘.’ ](https://processing.org/reference/dot.html)	[ ‘/’ ](https://processing.org/reference/divide.html)	[ ‘/**’ ](https://processing.org/reference/doccomment.html)	[ ‘//’ ](https://processing.org/reference/comment.html)	[ ‘:’ ](https://processing.org/reference/conditional.html)	[ ‘;’ ](https://processing.org/reference/semicolon.html)	[ ‘<’ ](https://processing.org/reference/lessthan.html)	[ ‘=’ ](https://processing.org/reference/assign.html)	[ ‘==’ ](https://processing.org/reference/equality.html)	[ ‘?’ ](https://processing.org/reference/conditional.html)	[ ‘[]’ ](https://processing.org/reference/arrayaccess.html)	[ ‘\’ ](https://processing.org/discourse/beta/num_1233191211.html)	[ ‘background’ ](https://processing.org/reference/background_.html)	[ ‘Boolean’ ](https://processing.org/reference/boolean.html)	[ ‘BufferedReader’ ](https://processing.org/reference/BufferedReader.html)	[ ‘catch’ ](https://processing.org/reference/catch.html)	[ ‘createReader’ ](https://processing.org/reference/createReader_.html)	[ ‘createWriter’ ](https://processing.org/reference/createWriter_.html)	[ ‘draw’ ](https://processing.org/reference/draw_.html)	[ ‘else’ ](https://processing.org/reference/else.html)	[ ‘exit’ ](https://processing.org/reference/exit_.html)	[ ‘false’ ](https://processing.org/reference/false.html)	[ ‘for’ ](https://processing.org/reference/for.html)	[ ‘frameCount’ ](https://processing.org/reference/frameCount.html)	[ ‘frameRate’ ](https://processing.org/reference/frameRate.html)	[ ‘get’ ](https://processing.org/reference/get_.html)	[ ‘HALF_PI’ ](https://processing.org/reference/HALF_PI.html)	[ ‘height’ ](https://processing.org/reference/height.html)	[ ‘if’ ](https://processing.org/reference/if.html)	[ ‘int’ ](https://processing.org/reference/int.html)	[ ‘IntDict’ ](https://processing.org/reference/IntDict.html)	[ ‘line’ ](https://processing.org/reference/line_.html)	[ ‘new’ ](https://processing.org/reference/new.html)	[ ‘nf’ ](https://processing.org/reference/nf_.html)	[ ‘noLoop’ ](https://processing.org/reference/noLoop_.html)	[ ‘null’ ](https://processing.org/reference/null.html)	[ ‘print’ ](https://processing.org/reference/print_.html)	[ ‘println’ ](https://processing.org/reference/println_.html)	[ ‘PrintWriter’ ](https://processing.org/reference/PrintWriter.html)	[ ‘setup’ ](https://processing.org/reference/setup_.html)	[ ‘size’ ](https://processing.org/reference/size_.html)	[ ‘String’ ](https://processing.org/reference/String.html)	[ ‘super’ ](https://processing.org/reference/super.html)	[ ‘text’ ](https://processing.org/reference/text_.html)	[ ‘textAlign’ ](https://processing.org/reference/textAlign_.html)	[ ‘trim’ ](https://processing.org/reference/trim_.html)	[ ‘try’ ](https://processing.org/reference/try.html)	[ ‘void’ ](https://processing.org/reference/void.html)	[ ‘width’ ](https://processing.org/reference/width.html)	[ ‘{’ ](https://processing.org/reference/curlybraces.html)	[ ‘||’ ](https://processing.org/reference/logicalOR.html)	[ ‘}’ ](https://processing.org/reference/curlybraces.html)	
 
 0058	__‘)’__	<https://processing.org/reference/parentheses.html>
 
@@ -8,7 +8,7 @@
 
 0030	__‘[]’__	<https://processing.org/reference/arrayaccess.html>
 
-0026	__‘.’__	<https://processing.org/reference/dot.html>
+0027	__‘.’__	<https://processing.org/reference/dot.html>
 
 0020	__‘=’__	<https://processing.org/reference/assign.html>
 
@@ -28,15 +28,15 @@
 
 0007	__‘print’__	<https://processing.org/reference/print_.html>
 
-0006	__‘//’__	<https://processing.org/reference/comment.html>
-
-0006	__‘,’__	<https://processing.org/reference/comma.html>
+0007	__‘,’__	<https://processing.org/reference/comma.html>
 
 0006	__‘!=’__	<https://processing.org/reference/inequality.html>
 
 0005	__‘line’__	<https://processing.org/reference/line_.html>
 
 0005	__‘if’__	<https://processing.org/reference/if.html>
+
+0005	__‘//’__	<https://processing.org/reference/comment.html>
 
 0004	__‘?’__	<https://processing.org/reference/conditional.html>
 
@@ -114,5 +114,7 @@
 
 0001	__‘background’__	<https://processing.org/reference/background_.html>
 
-0001	__‘&’__	<https://processing.org/reference/bitwiseAND.html>
+0001	__‘/**’__	<https://processing.org/reference/doccomment.html>
+
+0001	__‘*/’__	<https://processing.org/reference/multilinecomment.html>
 
