@@ -99,6 +99,7 @@ void exit()
     }
   }
   
+  output.println("\n__Processing.org__ <"+reference.get("Processing.org")+">\n");
   output.close();
   //println(HALF_PI);//TEST
   super.exit();
