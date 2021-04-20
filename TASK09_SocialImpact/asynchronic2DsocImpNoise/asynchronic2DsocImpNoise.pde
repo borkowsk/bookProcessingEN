@@ -5,7 +5,7 @@ final int     WorldSide=500;//Side lenght of simulation world (square)
 final float   Dens=0.20;//.01;//Initial density of 1 in the Attitude
 final int     MaxStrength=100;
 
-final int     Bias=50;   //Bias for 1
+final int     Bias=10;   //Bias for 1
 final float   Noise=0.05; //Ratio of random swithes of attitudes
 final int     MooreRad=1;//Radius of extended Moore neib.
 
@@ -25,6 +25,7 @@ void setup()
 }
 
 int t=0;
+int Adopted=0;
 void draw()
 {  
   visualisation3();
@@ -91,13 +92,13 @@ void visualisation2()
 void visualisation3()
 {
    float mult=255.0/MaxStrength;
-   
+   Adopted=0;//Simplest statistics
    for(int i=0;i<WorldSide;i++)
     for(int j=0;j<WorldSide;j++)
     {                      
       float stre=mult*Strength[i][j];//print(stre+" ");
       switch(Attitude[i][j]){ 
-      case 1:stroke(stre,0,stre);break;//magenta shades
+      case 1:stroke(stre,0,stre);Adopted++;break;//magenta shades
       case 0:stroke(0,stre,stre);break;//cyan shades
       default: stroke(255,0,0);//"emergency color" - RED
       break;
@@ -141,7 +142,7 @@ void status()
     fill(128);noStroke();rect(0,height,width,-20);
     fill(255);
     textSize(18);textAlign(LEFT,BOTTOM);
-    text("ST:"+t+"("+nf(frameRate,3,2)+")",0,height);
+    text("ST:"+t+"("+nf(frameRate,3,2)+") Adopted:"+Adopted,0,height);
 }
 
 
