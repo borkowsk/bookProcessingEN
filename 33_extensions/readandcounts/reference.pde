@@ -2,6 +2,7 @@
 //https://processing.github.io/processing-javadocs/core/processing/data/StringDict.html#StringDict-java.lang.String:A:A-
 StringDict reference=new StringDict(
 new String[][] {
+  {"\\"   ,  "https://processing.org/discourse/beta/num_1233191211.html"}, //escape sequences
   {"()"   ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
   {"("    ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
   {")"    ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
