@@ -105,7 +105,8 @@ void exit()
       }
     }
   }
-  output.println("\n__Processing.org__ <"+reference.get("Processing.org")+">\n");
+  output.println("\n[__Processing.org__](http://Processing.org/) <"+reference.get("Processing.org")+">\n");
+  output.println("\n[ReadAndCounts by Wojciech Borkowski](https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts)\n");
   output.close();
   //println(HALF_PI); //TEST
   super.exit();
