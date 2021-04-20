@@ -1,5 +1,9 @@
-//Processing 3+ reference html, as StringDict(-ionary)
-//https://processing.github.io/processing-javadocs/core/processing/data/StringDict.html#StringDict-java.lang.String:A:A-
+/**
+_ReadAndCounts_: 
+2021 (c) Wojciech Borkowski wborkowski@uw.edu.pl
+This file defines a Processing 3+ reference dictionary made from public source:
+https://processing.github.io/processing-javadocs/core/processing/data/StringDict.html#StringDict-java.lang.String:A:A-
+*/
 StringDict reference=new StringDict(
 new String[][] {
   {"Processing.org"    ,  "https://processing.org/reference/index.html" },

@@ -1,5 +1,8 @@
 /**
+_ReadAndCounts_: 
 Read file and make dictionary of tokens, then write dictionary in .md format
+with links to reference if available.
+2021 (c) Wojciech Borkowski wborkowski@uw.edu.pl
 */
 
 String FileName = "readandcounts.pde" ;
@@ -105,8 +108,8 @@ void exit()
       }
     }
   }
-  output.println("\n[__Processing.org__](http://Processing.org/) <"+reference.get("Processing.org")+">\n");
-  output.println("\n[ReadAndCounts by Wojciech Borkowski](https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts)\n");
+  output.println("\n----\n[__Processing.org__](http://Processing.org/) <"+reference.get("Processing.org")+">\n");
+  output.println("\n[Made by _ReadAndCounts_ (c) Wojciech Borkowski](https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts)\n");
   output.close();
   //println(HALF_PI); //TEST
   super.exit();

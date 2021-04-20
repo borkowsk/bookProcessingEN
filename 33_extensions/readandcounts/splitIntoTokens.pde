@@ -1,5 +1,8 @@
-//Split string on a character types borders"+
-//
+/**
+_ReadAndCounts_: 
+This file define function which split string into tokens basing on a character types borders
+2021 (c) Wojciech Borkowski wborkowski@uw.edu.pl
+*/
 
 String[] splitIntoTokens(String line)
 {
@@ -20,8 +23,8 @@ String[] splitIntoTokens(String line)
        ( ptype!=ctype //Other type of character
          && c!='_' //Never brake... Typically inside name
          && abs(ptype-ctype)>1 ) //Capital letters & small letter & parentheses differ in 1.
-      || c==';' || c=='\\'
-      || c==',' || c==']' || c=='}' || c==')' //Never combined with others
+      || c==',' || c==';' || c=='\\'
+      || c==']' || c=='}' || c==')' //Never combined with others
       || c=='"' || c=='\''  //Does not work? Sometimes? Why?
       )
       {
