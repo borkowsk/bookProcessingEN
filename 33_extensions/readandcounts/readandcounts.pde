@@ -11,7 +11,7 @@ void setup()
 {
   size(130,30);
   frameRate(500);
-  // Open the file from the createWriter() example
+  // Open the file from the createReader() example
   input = createReader(FileName); //file must exist   
 }
 
@@ -55,7 +55,8 @@ void draw() {
 void exit()
 {
   PrintWriter output=createWriter("keyindex.md");
-  dictionary.sortValuesReverse();
+  //dictionary.sortValuesReverse();
+  dictionary.sortKeys();
   //println(dictionary);
   println("\nRESULTS:");
   String[] keys=dictionary.keyArray();
