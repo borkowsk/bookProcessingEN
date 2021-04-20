@@ -14,10 +14,14 @@ void setup()
   size(130,30);
   frameRate(500);
   // Open the file from the createReader() example
+  if(args!=null)
+    FileName=args[0];
+  println("Name of input file is \""+FileName+"\"\n");
   input = createReader(FileName); //file must exist   
 }
 
-void draw() {
+void draw() 
+{
   try 
   {
     line = input.readLine();
