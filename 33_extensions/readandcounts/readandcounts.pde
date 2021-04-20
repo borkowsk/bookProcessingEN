@@ -1,13 +1,15 @@
 /**
-Read file and make dictionary of tokens, then write dictionaries in .md format
+Read file and make dictionary of tokens, then write dictionary in .md format
 */
 
 String FileName = "readandcounts.pde" ;
 BufferedReader input;
-String line;
+IntDict dictionary = new IntDict();
+
+//Output flags
 Boolean trace = false;
 Boolean all = false;
-IntDict dictionary = new IntDict();
+Boolean freq = false;
 
 void setup() 
 {
@@ -22,17 +24,18 @@ void setup()
 
 void draw() 
 {
+  String  iline;
   try 
   {
-    line = input.readLine();
+    iline = input.readLine();
   } 
   catch (IOException e) 
   {
     e.printStackTrace();
-    line = null;
+    iline = null;
   }
   
-  if (line == null) 
+  if (iline == null) 
   {
     // Stop reading because of an error or file is empty
     noLoop();
@@ -40,7 +43,7 @@ void draw()
   } 
   else 
   {
-    String[] pieces = splitIntoTokens(line);//Split on borders of character types 
+    String[] pieces = splitIntoTokens(iline); //Split on borders of character types 
     
     for (String s:pieces) 
     {
@@ -83,24 +86,27 @@ void exit()
   }
   
   println();
-  output.println("\n");//.md file need duble '\n'
-  dictionary.sortValuesReverse();
-  keys=dictionary.keyArray();
-  vals=dictionary.valueArray();
-  for(int i=0;i<vals.length;i++)
+  output.println("\n"); // *.md file need duble '\n'
+  
+  if(freq)
   {
-    String ref=reference.get(keys[i]);
-    if(all || ref!=null )
+    dictionary.sortValuesReverse();
+    keys=dictionary.keyArray();
+    vals=dictionary.valueArray();
+    for(int i=0;i<vals.length;i++)
     {
-        print(nf(vals[i],4) + "\t‘" + keys[i] + "’\t\t");
-        output.print(nf(vals[i],4) + "\t__‘" + keys[i] + "’__\t");
-        println(ref!=null?ref:"");
-        output.print(ref!=null?"<"+ref+">\n\n":"\n\n");
+      String ref=reference.get(keys[i]);
+      if(all || ref!=null )
+      {
+          print(nf(vals[i],4) + "\t‘" + keys[i] + "’\t\t");
+          output.print(nf(vals[i],4) + "\t__‘" + keys[i] + "’__\t");
+          println(ref!=null?ref:"");
+          output.print(ref!=null?"<"+ref+">\n\n":"\n\n");
+      }
     }
   }
-  
   output.println("\n__Processing.org__ <"+reference.get("Processing.org")+">\n");
   output.close();
-  //println(HALF_PI);//TEST
+  //println(HALF_PI); //TEST
   super.exit();
 }
