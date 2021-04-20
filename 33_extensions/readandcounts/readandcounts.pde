@@ -40,8 +40,11 @@ void draw() {
     {
        String trimmed=trim(s);
        if(trimmed.length()==0) trimmed=" ";
-       dictionary.increment(trimmed);
        print("‘" + trimmed + "’•");
+       
+       if(trimmed.equals("[") ||  trimmed.equals("]") )//[ & ] breaks .md syntax
+            trimmed="[]";
+       dictionary.increment(trimmed);  
     }
     
     println();
@@ -55,9 +58,8 @@ void draw() {
 void exit()
 {
   PrintWriter output=createWriter("keyindex.md");
-  //dictionary.sortValuesReverse();
   dictionary.sortKeys();
-  //println(dictionary);
+
   println("\nRESULTS:");
   String[] keys=dictionary.keyArray();
   int[]    vals=dictionary.valueArray();
@@ -67,12 +69,30 @@ void exit()
     String ref=reference.get(keys[i]);
     if(all || ref!=null )
     {
-        print('‘' + keys[i] + '’',vals[i],"\t");
+        print('‘' + keys[i] + "’\t");
         output.print(nf(vals[i],4) + "\t[ ‘" + keys[i] + "’ ]");
         println(ref!=null?ref:"");
-        output.print(ref!=null?"("+ref+")\n\n":"\n\n");
+        output.print(ref!=null?"("+ref+")\t":"\t");
     }
   }
+  
+  println();
+  output.println("\n");//.md file need duble '\n'
+  dictionary.sortValuesReverse();
+  keys=dictionary.keyArray();
+  vals=dictionary.valueArray();
+  for(int i=0;i<vals.length;i++)
+  {
+    String ref=reference.get(keys[i]);
+    if(all || ref!=null )
+    {
+        print(nf(vals[i],4) + "\t‘" + keys[i] + "’\t\t");
+        output.print(nf(vals[i],4) + "\t[ ‘" + keys[i] + "’ ]");
+        println(ref!=null?ref:"");
+        output.print(ref!=null?":"+ref+"\n\n":"\n\n");
+    }
+  }
+  
   output.close();
   //println(HALF_PI);//TEST
   super.exit();
