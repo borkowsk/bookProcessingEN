@@ -1,6 +1,6 @@
 /**
 _ReadAndCounts_: 
-2021 (c) Wojciech Borkowski wborkowski@uw.edu.pl
+2021 (c) Wojciech Borkowski wborkowski AT uw.edu.pl
 This file defines a Processing 3+ reference dictionary made from public source:
 https://processing.github.io/processing-javadocs/core/processing/data/StringDict.html#StringDict-java.lang.String:A:A-
 */
@@ -8,19 +8,25 @@ StringDict reference=new StringDict(
 new String[][] {
   {"Processing.org"    ,  "https://processing.org/reference/index.html" },
   {"'"    ,  "https://www.informit.com/articles/article.aspx?p=130880&seqNum=11" }, //character literals
-  {"\""   ,  "https://openjdk.java.net/jeps/326" }, //string literals https://openjdk.java.net/jeps/326 ; https://www.informit.com/articles/article.aspx?p=130880&seqNum=13
+  {"\"...\""   ,  "https://openjdk.java.net/jeps/326" }, 
+  {"\""   ,  "https://www.informit.com/articles/article.aspx?p=130880&seqNum=13"},
   {"\\"   ,  "https://processing.org/discourse/beta/num_1233191211.html"}, //escape sequences
+  
   {"()"   ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
   {"("    ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
   {")"    ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
+  
   {","    ,  "https://processing.org/reference/comma.html"},// (comma)
   {"."    ,  "https://processing.org/reference/dot.html"},// (dot)
+  
   {"/*"   ,  "https://processing.org/reference/multilinecomment.html"},// (multiline comment)
   {"*/"   ,  "https://processing.org/reference/multilinecomment.html"},// (multiline comment)
   {"/**"  ,  "https://processing.org/reference/doccomment.html"},//(doc comment)
   {"//"   ,  "https://processing.org/reference/comment.html"},// (comment)
+  
   {";"    ,  "https://processing.org/reference/semicolon.html"},// (semicolon)
   {"="    ,  "https://processing.org/reference/assign.html"},// (assign)
+  
   {"[]"   ,  "https://processing.org/reference/arrayaccess.html"},// (array access)
   {"["    ,  "https://processing.org/reference/arrayaccess.html"},// (array access)
   {"]"    ,  "https://processing.org/reference/arrayaccess.html"},// (array access)
@@ -75,7 +81,6 @@ new String[][] {
   {"pixelHeight"   ,  "https://processing.org/reference/pixelHeight.html"},
   {"pixelWidth"    ,  "https://processing.org/reference/pixelWidth.html"},
   {"settings"      ,  "https://processing.org/reference/settings_.html"},
-
   {"size"    ,  "https://processing.org/reference/size_.html"},
   {"smooth"  ,  "https://processing.org/reference/smooth_.html"},
   {"width"   ,  "https://processing.org/reference/width.html"},
@@ -106,16 +111,15 @@ new String[][] {
   {"StringList" ,  "https://processing.org/reference/StringList.html"},
   {"Table"      ,  "https://processing.org/reference/Table.html"},
   {"TableRow"   ,  "https://processing.org/reference/TableRow.html"},
-
-  {"XML"      ,  "https://processing.org/reference/XML.html"},
-      
+  {"XML"      ,  "https://processing.org/reference/XML.html"},      
   {"binary"   ,  "https://processing.org/reference/binary_.html"},
-//  {"boolean"  ,  "https://processing.org/reference/booleanconvert_.html"},
-//  {"byte"     ,  "https://processing.org/reference/byteconvert_.html"},
-//  {"char"     ,  "https://processing.org/reference/charconvert_.html"},
-//  {"float"    ,  "https://processing.org/reference/floatconvert_.html"},
+  
+  {"boolean("  ,  "https://processing.org/reference/booleanconvert_.html"},
+  {"byte("     ,  "https://processing.org/reference/byteconvert_.html"},
+  {"char("     ,  "https://processing.org/reference/charconvert_.html"},
+  {"float("    ,  "https://processing.org/reference/floatconvert_.html"},
   {"hex"      ,  "https://processing.org/reference/hex_.html"},
-//  {"int"      ,  "https://processing.org/reference/intconvert_.html"},
+  {"int("      ,  "https://processing.org/reference/intconvert_.html"},
   {"str"      ,  "https://processing.org/reference/strconvert_.html"},
   {"unbinary" ,  "https://processing.org/reference/unbinary_.html"},
   {"unhex"    ,  "https://processing.org/reference/unhex_.html"},
@@ -426,3 +430,5 @@ new String[][] {
   {"TAU"        ,  "https://processing.org/reference/TAU.html"},
   {"TWO_PI"     ,  "https://processing.org/reference/TWO_PI.html"}
 });
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts

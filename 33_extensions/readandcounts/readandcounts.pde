@@ -2,10 +2,10 @@
 _ReadAndCounts_: 
 Read file and make dictionary of tokens, then write dictionary in .md format
 with links to reference if available.
-2021 (c) Wojciech Borkowski wborkowski@uw.edu.pl
+2021 (c) Wojciech Borkowski wborkowski AT uw.edu.pl
 */
 
-String FileName = "readandcounts.pde" ;
+String FileName = "readandcounts.pde"; // "readandcounts.pde"; // "splitIntoTokens.pde"; // "reference.pde";
 BufferedReader input;
 IntDict dictionary = new IntDict();
 
@@ -34,12 +34,14 @@ void setup()
   input = createReader(FileName); //file must exist   
 }
 
+int linecounter=0;
 void draw() 
 {
   String  iline;
   try 
   {
     iline = input.readLine();
+    linecounter++;
   } 
   catch (IOException e) 
   {
@@ -55,8 +57,8 @@ void draw()
   } 
   else 
   {
-    String[] pieces = splitIntoTokens(iline); //Split on borders of character types 
-    
+    String[] pieces = splitIntoTokens(iline);//Split on borders of character types 
+    print(linecounter,'\t');
     for (String s:pieces) 
     {
        String trimmed=trim(s);
@@ -76,6 +78,8 @@ void draw()
        else
        if(trimmed.equals("{") ||  trimmed.equals("}") )//consequently as above
             trimmed="{}";
+       else
+       if(trimmed.charAt(0)=='"') trimmed="\"...\"";
             
        dictionary.add(trimmed,up);  
     }
@@ -102,7 +106,7 @@ void exit()
     String ref=reference.get(keys[i]);
     if(alltk || ref!=null )
     {
-        print('‘' + keys[i] + "’\t");
+        print("“" + keys[i] + "”\t");
         output.print("[ ‘" + keys[i] + "’ ]");
         println(ref!=null?ref:"");
         output.print(ref!=null?"("+ref+")\t":"\t");
@@ -138,3 +142,6 @@ void exit()
   //println(HALF_PI); //TEST
   super.exit();
 }
+
+
+//https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts
