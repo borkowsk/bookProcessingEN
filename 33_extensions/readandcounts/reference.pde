@@ -7,6 +7,8 @@ https://processing.github.io/processing-javadocs/core/processing/data/StringDict
 StringDict reference=new StringDict(
 new String[][] {
   {"Processing.org"    ,  "https://processing.org/reference/index.html" },
+  {"'"    ,  "https://www.informit.com/articles/article.aspx?p=130880&seqNum=11" }, //character literals
+  {"\""   ,  "https://openjdk.java.net/jeps/326" }, //string literals https://openjdk.java.net/jeps/326 ; https://www.informit.com/articles/article.aspx?p=130880&seqNum=13
   {"\\"   ,  "https://processing.org/discourse/beta/num_1233191211.html"}, //escape sequences
   {"()"   ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
   {"("    ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
