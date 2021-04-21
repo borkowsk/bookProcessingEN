@@ -20,12 +20,12 @@ String[] splitIntoTokens(String line)
       if(trace) print(ctype,"`"+c+"’ ");
       
       if( 
-       ( ptype!=ctype //Other type of character
+         c==',' || c==';' || c=='\\' || c=='/'
+      || c==']' || c=='}' || c==')' //Never combined with others
+      || c=='"' || c=='\''  //Does it work? Sometimes? Why?
+      || ( ptype!=ctype //Other type of character
          && c!='_' //Never brake... Typically inside name
          && abs(ptype-ctype)>1 ) //Capital letters & small letter & parentheses differ in 1.
-      || c==',' || c==';' || c=='\\'
-      || c==']' || c=='}' || c==')' //Never combined with others
-      || c=='"' || c=='\''  //Does not work? Sometimes? Why?
       )
       {
         pieces.append(line.substring(beg,i));

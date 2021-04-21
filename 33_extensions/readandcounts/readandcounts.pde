@@ -11,8 +11,9 @@ IntDict dictionary = new IntDict();
 
 //Output flags
 Boolean trace = false;
-Boolean all = false;
-Boolean freq = false;
+Boolean alltk = false;
+Boolean freq =  false;
+Boolean multi = false;
 
 void setup() 
 {
@@ -20,8 +21,16 @@ void setup()
   frameRate(500);
   // Open the file from the createReader() example
   if(args!=null)
+  {
     FileName=args[0];
-  println("Name of input file is \""+FileName+"\"\n");
+    if(args.length>1) multi=args[1].equals("+M");
+    if(args.length>2) alltk=args[2].equals("+A");
+  }
+  else
+  {
+     println("USAGE:\n\treadandcount filename.pde [+/-M] [+/-A]\n");
+  }
+  println("Expected name of input file is \""+FileName+"\"\n");
   input = createReader(FileName); //file must exist   
 }
 
@@ -51,12 +60,24 @@ void draw()
     for (String s:pieces) 
     {
        String trimmed=trim(s);
+       int    up=1;
+       
        if(trimmed.length()==0) trimmed=" ";
        print("‘" + trimmed + "’•");
        
+       if(trimmed.equals("()") || trimmed.equals("[]") || trimmed.equals("{}"))
+             up=2;
+       else      
        if(trimmed.equals("[") ||  trimmed.equals("]") )//'[' and ']' breaks .md syntax
             trimmed="[]";
-       dictionary.increment(trimmed);  
+       else     
+       if(trimmed.equals("(") ||  trimmed.equals(")") )//'(' and ')' may break .md syntax
+            trimmed="()";
+       else
+       if(trimmed.equals("{") ||  trimmed.equals("}") )//consequently as above
+            trimmed="{}";
+            
+       dictionary.add(trimmed,up);  
     }
     
     println();
@@ -69,7 +90,7 @@ void draw()
 
 void exit()
 {
-  PrintWriter output=createWriter("keyindex.md");
+  PrintWriter output=createWriter(multi?FileName+".md":"keyindex.md");
   dictionary.sortKeys();
 
   println("\nRESULTS:");
@@ -79,7 +100,7 @@ void exit()
   for(int i=0;i<vals.length;i++)
   {
     String ref=reference.get(keys[i]);
-    if(all || ref!=null )
+    if(alltk || ref!=null )
     {
         print('‘' + keys[i] + "’\t");
         output.print("[ ‘" + keys[i] + "’ ]");
@@ -89,17 +110,20 @@ void exit()
   }
   
   println();
-  output.println("\n"); // *.md file need duble '\n'
+  output.println("\n"); // *.md file need double '\n'
   
   if(freq)
   {
+    dictionary.div("{}",2);
+    dictionary.div("[]",2);
+    dictionary.div("()",2);
     dictionary.sortValuesReverse();
     keys=dictionary.keyArray();
     vals=dictionary.valueArray();
     for(int i=0;i<vals.length;i++)
     {
       String ref=reference.get(keys[i]);
-      if(all || ref!=null )
+      if(alltk || ref!=null )
       {
           print(nf(vals[i],4) + "\t‘" + keys[i] + "’\t\t");
           output.print(nf(vals[i],4) + "\t__‘" + keys[i] + "’__\t");
@@ -109,7 +133,7 @@ void exit()
     }
   }
   output.println("\n----\n[__Processing.org__](http://Processing.org/) <"+reference.get("Processing.org")+">\n");
-  output.println("\n[Made by _ReadAndCounts_ (c) Wojciech Borkowski](https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts)\n");
+  output.println("\n[Index made by _ReadAndCounts_ (c) Wojciech Borkowski](https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts)\n");
   output.close();
   //println(HALF_PI); //TEST
   super.exit();
