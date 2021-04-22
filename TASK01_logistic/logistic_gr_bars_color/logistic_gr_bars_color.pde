@@ -1,4 +1,5 @@
 //Logistic iteration - bars in color
+
 final float R=3.87;
 float X=0.3333333;//Range 0..1!
 
@@ -19,3 +20,4 @@ fill(128,0,0);textSize(24);
 text("R="+R,0,height);
 
 //https://github.com/borkowsk/bookProcessingEN
+

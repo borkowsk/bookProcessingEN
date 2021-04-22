@@ -1,3 +1,6 @@
+//Resizable Processing window
+//From Processing.org
+
 void setup() {
   size(400, 400);
   surface.setResizable(true);
@@ -12,4 +15,7 @@ void keyPressed() {
   surface.setSize(round(random(200, 500)), 
                   round(random(200, 500)));
 }
+
+//https://github.com/borkowsk/bookProcessingEN
+
 

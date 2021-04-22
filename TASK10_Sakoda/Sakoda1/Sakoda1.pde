@@ -1,5 +1,5 @@
-//   Sakoda inspired AGENT BASE MODEL utilized 1D or 2D dicrete geometry
-//   implemented by Wojciech Borkowski
+// Sakoda inspired AGENT BASE MODEL utilized 1D or 2D dicrete geometry
+// implemented by Wojciech Borkowski
 /////////////////////////////////////////////////////////////////////////////////////////
 
 //Model parameters
@@ -80,5 +80,6 @@ void writeStatusLine()
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA MAIN 
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA MAIN
+// https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////////////////////////////

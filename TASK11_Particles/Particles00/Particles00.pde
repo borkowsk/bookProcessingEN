@@ -1,6 +1,7 @@
 // "Naive" particles system with simplified phisics of collisions
 ////////////////////////////////////////////////////////////////////////
 //
+
 int circles = 50;
 boolean torus=false;
 
@@ -152,3 +153,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN
+

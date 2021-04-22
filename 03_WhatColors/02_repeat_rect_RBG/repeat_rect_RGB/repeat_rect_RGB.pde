@@ -1,4 +1,5 @@
 //Red cards
+
 size(500,500);
 background(0,0,200);//rgB - BLUE BACKGROUND
 
@@ -13,3 +14,4 @@ for(int i=0;i<256;i+=10) //REPEAT EVERY TEN TIMES!
 
 //https://www.facebook.com/ProcessingWEdukacji/
 //http://processingwedukacji.blogspot.com
+

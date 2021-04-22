@@ -1,11 +1,12 @@
-// World is a one of two central class of each ABM model
+/** World is a one of two central class of each ABM model
 ///////////////////////////////////////////////////////////////
-//In this version, instead of directly implementing the content 
-//of the methods, we put calls to normal procedures there.
-//This is the only way in Processing that the method implementation 
-//could be in a different tab - another code module. 
-//By the way, you can thus benefit from function overloading and 
-//place calls to other simulation layers - e.g. environment resources.
+  In this version, instead of directly implementing the content 
+  of the methods, we put calls to normal procedures there.
+  This is the only way in Processing that the method implementation 
+  could be in a different tab - another code module. 
+  By the way, you can thus benefit from function overloading and 
+  place calls to other simulation layers - e.g. environment resources.
+*/
 
 class World //implements simulation_world
 {
@@ -69,4 +70,5 @@ void visualizeModel(World world)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF SAKODA
+//  https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////////////////////////////////

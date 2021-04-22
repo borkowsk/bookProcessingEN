@@ -1,4 +1,4 @@
-// Jakich metod oczekujemy od świata symulacji?
+// World of simuliation interface - expected methods
 ////////////////////////////////////////////////////////////////////
 
 interface simulation_world
@@ -11,5 +11,6 @@ interface simulation_world
 };
 
 ///////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM
+// https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////

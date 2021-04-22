@@ -1,3 +1,5 @@
+//print if example
+
 int a=10;//or 0
 
 if( a != 0 )  
@@ -8,3 +10,4 @@ else
     
     
 //https://github.com/borkowsk/bookProcessingEN
+

@@ -1,4 +1,5 @@
 //Mean of some random numbers:
+
 final int N=20;// How many numbers?
 float[] numbers=new float[N];// table storing values
 
@@ -19,3 +20,6 @@ println("Sum =",sum);
 
 //Calculate and write the average!
 print("Average =",sum/N);
+
+//https://github.com/borkowsk/bookProcessingEN
+

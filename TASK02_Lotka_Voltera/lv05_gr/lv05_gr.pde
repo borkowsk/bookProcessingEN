@@ -1,6 +1,7 @@
-//Lotka–Volterra equations
+/** Lotka–Volterra equations
 //https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
-//
+*/
+
 float X=300;//x is the number of prey (for example, rabbits);
 float Y=35;//y is the number of some predator (for example, foxes);
 
@@ -35,3 +36,4 @@ for(float T=0;T<Tlimit;T+=Tstep)// float TIME used as stearing variable!
 }
 
 //https://github.com/borkowsk/bookProcessingEN
+

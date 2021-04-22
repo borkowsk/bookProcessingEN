@@ -1,7 +1,11 @@
-// Agent is a one of two central class of each ABM model
-// Agents need to be initialised & they need logic of change 
-// HERE ARE 2D alternatives of main procedures
-///////////////////////////////////////////////////////////////
+/** Agent is a one of two central class of each ABM model:
+    Agents procedures for Sakoda inspired asynchronous AGENT BASE MODEL 
+    which utilizes 1D or 2D dicrete geometry 
+    Agents need to be initialised & they need logic of change 
+    HERE ARE 2D alternatives of main procedures
+//https://github.com/borkowsk/bookProcessingEN
+*/
+
 //We're using function overload!
 
 void initializeAgents(Agent[][] agents)

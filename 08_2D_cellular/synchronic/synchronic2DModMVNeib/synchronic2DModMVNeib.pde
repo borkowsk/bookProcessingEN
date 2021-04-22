@@ -1,6 +1,7 @@
 // "Modulo from neighbors states"
 // TWO-dimensional, SYNCHRONOUS, vonNeuman/Moore, deterministic cellular automaton
 ///////////////////////////////////////////////////////////////////////////////////
+
 final int     WorldSide=601;//How many cells do we want in one line?
 final float   Dens=0;//.001;//0.5 or so also posible
 final int     Div=5; //Divider for remainder operation
@@ -119,3 +120,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
+

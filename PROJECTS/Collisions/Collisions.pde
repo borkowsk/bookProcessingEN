@@ -1,3 +1,7 @@
+/** Collisions example
+//https://github.com/borkowsk/bookProcessingEN
+*/
+
 int circles = 50;
 boolean torus=false;
 
@@ -173,3 +177,6 @@ void draw(){
   bordersReaction();
   findcollisions();
 }
+
+//https://github.com/borkowsk/bookProcessingEN
+

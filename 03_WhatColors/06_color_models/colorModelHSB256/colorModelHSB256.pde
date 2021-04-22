@@ -2,6 +2,7 @@
 // or HSL (hue, saturation, lightness) or HSV (hue, saturation, value)
 // https://en.wikipedia.org/wiki/HSL_and_HSV 
 // https://pl.wikipedia.org/wiki/HSL
+
 size(256,256);
 
 //Alternative color model. Default range 0.255.
@@ -16,3 +17,4 @@ for (int i = 0; i < 256; i++) {
 }
 
 //https://github.com/borkowsk/bookProcessingEN
+

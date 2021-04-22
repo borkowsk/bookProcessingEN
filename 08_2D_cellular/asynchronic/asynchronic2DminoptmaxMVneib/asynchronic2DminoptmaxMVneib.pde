@@ -1,6 +1,7 @@
 // Rule: "Min:1 Best:2 Max:2 or 3 neighbors". 
 // Two-dimensional, vonNeuman/Moore, asynchronous cellular automaton
 /////////////////////////////////////////////////////////////////////////////////
+
 final int MinN=2;//Minimal number of neighbors allowed
 final int OptN=3;//Number of neighbors needed to reproduce
 final int MaxN=4;//Maximal number of neighbors allowed
@@ -95,3 +96,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
+

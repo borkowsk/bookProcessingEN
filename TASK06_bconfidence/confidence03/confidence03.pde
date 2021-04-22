@@ -1,5 +1,6 @@
 //Bounded confidence 0D - 3th attempt
 //Differences in tresholds as a function of extremes of views
+
 final int          N=50;//Number of agents
 final float treScale=0.999;//Threshold is a function of extremes of views times Scale
 
@@ -72,3 +73,4 @@ void visualisationB()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence
+

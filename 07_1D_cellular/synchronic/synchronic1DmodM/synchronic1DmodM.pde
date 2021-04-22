@@ -1,6 +1,7 @@
 // "sum of the states [of neighbors] modulo M": 
 // One-dimensional, SYNCHRONOUS, deterministic cellular automaton
-///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
 final int   WorldSize=500;//How many cells do we want?
 final float Dens=0.005;   //0.5 or so also posible
 final int   Divider=5;    //By how much we divide?
@@ -80,3 +81,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/synchronic/
+

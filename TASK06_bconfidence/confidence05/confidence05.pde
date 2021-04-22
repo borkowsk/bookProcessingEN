@@ -1,6 +1,7 @@
 //Bounded confidence 1D - 3th+4th attempt
 //Differences in tresholds as a function of extremes of views
 //& with information bubles
+
 final int          N=100;//Number of agents
 final float treScale=0.5;//Threshold is a function of extremes of views times Scale
 final float   minEps=0.001;
@@ -82,3 +83,4 @@ void visualisationB()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence
+

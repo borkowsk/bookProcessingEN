@@ -1,3 +1,5 @@
+//Simple animation example 
+
 void setup()  
 {
   size(500,200);      //the size of the window
@@ -9,3 +11,6 @@ void draw()
   stroke(random(256),random(256),random(256));
   point(random(width),random(height));
 }
+
+//https://github.com/borkowsk/bookProcessingEN
+

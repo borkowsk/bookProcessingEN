@@ -1,6 +1,7 @@
 // Agent is a one of two central class of each ABM model
 // HERE: Agent for simplified Sakoda model
 //////////////////////////////////////////////////////////////////////////////
+
 int Number_of_identities=3;//How many mutually exclusive identities are there?
 
 class Agent
@@ -16,6 +17,7 @@ class Agent
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
-//  AGENT OF (simplified) SAKODA MODEL
+// AGENT OF (simplified) SAKODA MODEL
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE 
+// https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////////////////////////////

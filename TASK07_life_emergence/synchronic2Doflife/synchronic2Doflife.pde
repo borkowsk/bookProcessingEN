@@ -2,6 +2,7 @@
 // TWO-dimensional, SYNCHRONOUS, vonNeuman/Moore, deterministic cellular automaton
 ////////////////////////////////////////////////////////////////////////////////////
 // See 233 (Conways Game of Life) or 123 & 234 - much more "biological"
+
 final int     WorldSide=1001;//How many cells do we want in one line?
 final float   Dens=250.15;//When >=1, simetric horizontal line is created
 final int     MinN=2;//Minimal number of neighbors required
@@ -174,3 +175,4 @@ void stepMonteCarlo()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
+

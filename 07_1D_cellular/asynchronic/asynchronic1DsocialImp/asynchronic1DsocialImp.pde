@@ -1,6 +1,7 @@
 // "Voter model" <=> "Nearest Neighbors Social Impact"
 // One-dimensional, asynchronous cellular automaton
 ///////////////////////////////////////////////////////////////
+
 final int WorldSize=500;//How many cells do we want?
 final int MCD=4;//Monte Carlo step divider
 final int FR=300;//Expected speed of the simulation
@@ -91,3 +92,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
+

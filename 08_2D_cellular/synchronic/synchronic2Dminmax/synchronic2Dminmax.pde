@@ -1,6 +1,7 @@
 // "Min Max neighbors": 
 // TWO-dimensional, SYNCHRONOUS, von Neuman, deterministic cellular automaton
 //////////////////////////////////////////////////////////////////////////////
+
 final int WorldSide=601;//How many cells do we want in one line?
 final float Dens=0.875;//0.5 or so also posible
 final int   MinN=3;//Minimal number of neighbors required
@@ -76,3 +77,5 @@ void draw()
                  +  (WorldOld[i][dw]>0 ?1:0)             
                  ;
 */
+
+

@@ -2,7 +2,9 @@
 /////////////////////////////////////////////////////////////////////////////////////
 // http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
 //
+
 // Trzeba zainstalować program ffmpeg żeby działało!!!
+
 import com.hamoid.*;//Oraz importujemy niezbędną biblioteką zawierającą klasę VideoExport
 
 // USAGE:
@@ -66,5 +68,6 @@ void CloseVideo() //To wołamy gdy chcemy zamknąć
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - MOVIE MAKER 
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - MOVIE MAKER
+// https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////////////////////////////

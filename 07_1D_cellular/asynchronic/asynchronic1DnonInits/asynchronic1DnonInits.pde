@@ -1,6 +1,7 @@
 // "Not too many neighbors": 
 // One-dimensional, asynchronous cellular automaton
-///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
 final int WorldSize=500;//How many cells do we want?
 final int MCD=3;//Monte Carlo step divider
 final int FR=300;//Expected speed of the simulation
@@ -84,3 +85,6 @@ void draw()
    
    t++;//The next generation/step/year
 }
+
+// https://github.com/borkowsk/bookProcessingEN
+

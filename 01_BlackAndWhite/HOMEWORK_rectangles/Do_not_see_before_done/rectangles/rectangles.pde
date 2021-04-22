@@ -1,3 +1,5 @@
+//Drawing example
+
 size(300,300);
 
 rectMode(CORNER);  // Default rectMode is CORNER

@@ -1,11 +1,13 @@
-//A General Systems Theory of Marriage: Nonlinear Difference Equation Modeling of Marital Interaction
-//John Gottman, Catherine Swanson, & Kristin Swanson
-//  Wt+1 = IHW(Ht)  + r1Wt + a
-//  Ht+1 = IWH(Wt+1)+ r2Ht + b
+/** A General Systems Theory of Marriage: 
+  Nonlinear Difference Equation Modeling of Marital Interaction
+  John Gottman, Catherine Swanson, and Kristin Swanson
+  Wt+1 = IHW(Ht)  + r1Wt + a
+  Ht+1 = IWH(Wt+1)+ r2Ht + b
+*/
 
 //For model
-final float IHW=0.600,IWH=0.400;                    //Interaction values are properties of a human relationship 
-final float a=-0.002,b=0.002,r1=0.6,r2=0.4;         //Values describe the characters of people
+final float IHW=0.600,IWH=0.400; //Interaction values are properties of a human relationship 
+final float a=-0.002,b=0.002,r1=0.6,r2=0.4; //Values describe the characters of people
 float W=0.75;
 float H=0.25;
 
@@ -28,3 +30,4 @@ for(int i=0;i<width;i+=DOTSIZE+1)
 }
 
 //https://github.com/borkowsk/bookProcessingEN
+

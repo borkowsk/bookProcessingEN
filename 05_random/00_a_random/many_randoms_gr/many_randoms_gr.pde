@@ -1,6 +1,9 @@
+//Random() example
+
 float a=random(1.0);//This variable is outside loop
                     //But in fact is local, in invisible 
                     //setup subroutine!
+
 for(int i=0;i<100;i++)
 {
   println(a);   //Printed on the console - why first?
@@ -9,3 +12,4 @@ for(int i=0;i<100;i++)
 }  
 
 //https://github.com/borkowsk/bookProcessingEN
+

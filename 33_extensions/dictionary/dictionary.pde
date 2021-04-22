@@ -1,5 +1,7 @@
 //IntDict is a simple class to use a String as a lookup 
-//for an int value. String "keys" are associated with integer values. 	
+//for an int value. String "keys" are associated with integer values.
+//From Processing.org
+
 IntDict inventory;
 
 void setup() {
@@ -18,5 +20,7 @@ void draw() {
   int numRecords = inventory.get("records");
   text(numRecords, width/2, height/2);
 }
+
+//https://github.com/borkowsk/bookProcessingEN
 
 

@@ -1,5 +1,6 @@
 //Bounded confidence 0D - first attempt
 //Only epsilon as a model parameter
+
 final int     N=25;//Number of agents
 final float eps=0.001;//speed of changes
 
@@ -48,3 +49,4 @@ void draw()
 }//end of draw()
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence
+

@@ -1,5 +1,6 @@
 // Simulation have to collect and write down statistics from every step
 ///////////////////////////////////////////////////////////////////////////////////////
+
 PrintWriter outstat;
 
 void initializeStats()
@@ -69,5 +70,6 @@ void doStatisticsOnAgents(Agent[][] agents)
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: STATISTICS LOG TEMPLATE
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: STATISTICS LOG TEMPLATE
+// https://github.com/borkowsk/bookProcessingEN 
 ///////////////////////////////////////////////////////////////////////////////////////////

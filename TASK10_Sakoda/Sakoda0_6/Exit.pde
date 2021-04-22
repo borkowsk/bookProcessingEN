@@ -1,3 +1,5 @@
+// EXIT TEMPLATE
+
 void exit()          //it is called whenever a window is closed. Maybe asynchronicaly!
 {
   noLoop();          //For to be sure...
@@ -15,5 +17,6 @@ void exit()          //it is called whenever a window is closed. Maybe asynchron
 } 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - EXIT TEMPLATE
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - EXIT TEMPLATE
+// https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////////////////////////////

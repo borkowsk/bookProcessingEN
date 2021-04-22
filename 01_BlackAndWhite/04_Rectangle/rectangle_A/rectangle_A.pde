@@ -1,5 +1,6 @@
-//Window size 200x200
-size(200,200);
+// Drawing example
+
+size(200,200);//Window size 200x200
 
 // Draw white rect using 
 // default CORNER mode -> references

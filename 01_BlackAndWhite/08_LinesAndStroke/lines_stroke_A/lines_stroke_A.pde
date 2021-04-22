@@ -1,4 +1,5 @@
 // Gray lines
+
 size(200,200);
 line( 30, 20, 85, 20);
 stroke(128);//The intensity of the shade of the line

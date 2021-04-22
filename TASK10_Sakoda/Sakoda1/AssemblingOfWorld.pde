@@ -1,7 +1,6 @@
 // World is a one of two central class of each ABM model
 ///////////////////////////////////////////////////////////////
 
-
 class World implements simulation_world
 {
   int _counter=0;
@@ -67,5 +66,6 @@ void visualizeModel(World world)
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF SAKODA
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF SAKODA
+// https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////////////////////////////////

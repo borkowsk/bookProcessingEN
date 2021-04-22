@@ -1,6 +1,7 @@
 // "Voter model" <=> "Nearest Neighbors Social Impact"
 // Two-dimensional, asynchronous cellular automaton
 ////////////////////////////////////////////////////////////////////////////////////
+
 final int WorldSide=600;//Side lenght of simulation world (square)
 final float Dens=0.50;//.01;//Initial density in the lattice World
 final boolean withMoore=true;//neighborhood with the corners of the square
@@ -88,3 +89,4 @@ void status()
 
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
+

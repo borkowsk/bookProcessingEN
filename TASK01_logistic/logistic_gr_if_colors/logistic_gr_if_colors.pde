@@ -1,4 +1,5 @@
 //Logistic iteration - almost everything possible without procedures
+
 float R=2.5;//Range from 0..4
 float X=0.99;//Range 0..1!
 size(1000,300);
@@ -21,3 +22,4 @@ for(int i=0;i<width;i++)
 text("R="+R,0,height);
 
 //https://github.com/borkowsk/bookProcessingEN
+

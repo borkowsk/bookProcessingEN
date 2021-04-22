@@ -93,6 +93,8 @@ void  changeAgents(Agent[][] agents)//Monte Carlo step
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
-//  2D BASIC INITIALISATION, STEP CHANGE & VISUALISATION
+// 2D BASIC INITIALISATION, STEP CHANGE & VISUALISATION
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
+// https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////////////////////////////
+

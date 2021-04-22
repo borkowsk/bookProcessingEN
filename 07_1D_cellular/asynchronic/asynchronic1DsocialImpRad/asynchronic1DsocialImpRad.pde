@@ -1,6 +1,7 @@
 // "Voter model with RADIUS." <=> "R*2 Neighbors Social Impact": 
 // One-dimensional, asynchronous cellular automaton
-///////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+
 final int WorldSize=500;//How many cells do we want?
 final int NeiRadius=7;//Neighborhood radius
 
@@ -88,3 +89,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
+

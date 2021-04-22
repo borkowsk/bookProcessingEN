@@ -1,5 +1,6 @@
 //An ellipse with a thick gray outline
-size(200,200);
+
+size(200,200);//Window 200x200 px
 
 stroke(128);
 strokeWeight(2);

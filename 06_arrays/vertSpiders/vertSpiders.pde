@@ -1,8 +1,9 @@
-//FALLING SPIDERS
+// FALLING SPIDERS
 ////////////////////////////////////////////////////////////////////////
-final int Num=10;//How many spiders
-final float minv=10;//The slightest movement of the spider
-final float maxv=50;//What the greatest movement of the spider
+
+final int Num=10;    //How many spiders
+final float minv=10; //The slightest movement of the spider
+final float maxv=50; //What the greatest movement of the spider
 
 float[] h=new float[Num];//Vertical position
 float[] x=new float[Num];//Horizontal position
@@ -52,3 +53,6 @@ void draw()
     h[i]+=v[i]/FR;//Speed is in pixels per second!
   }
 }
+
+//https://github.com/borkowsk/bookProcessingEN
+

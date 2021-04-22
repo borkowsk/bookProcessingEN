@@ -1,5 +1,8 @@
-// World is a one of two central class of each ABM model
-///////////////////////////////////////////////////////////////
+/** World is a one of two central class of each ABM model:
+    World for Sakoda inspired asynchronous AGENT BASE MODEL 
+    which utilizes 1D or 2D dicrete geometry
+//https://github.com/borkowsk/bookProcessingEN
+*/
 
 class World implements simulation_world
 {
@@ -67,3 +70,4 @@ void visualizeModel(World world)
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF SAKODA
 ///////////////////////////////////////////////////////////////////////////////////////////////
+

@@ -2,9 +2,9 @@
 // to create sequence programs, which usually are graphical demos. 
 // But there is a way around this ...
 ////////////////////////////////////////////////////////////////////////////////////////
-//Initialisation
+
 int W;
-void setup()
+void setup()//Initialisation
 {
   size(600,600);
   W=width;
@@ -56,3 +56,6 @@ void draw()
   
   frame++;
 }
+
+//https://github.com/borkowsk/bookProcessingEN
+

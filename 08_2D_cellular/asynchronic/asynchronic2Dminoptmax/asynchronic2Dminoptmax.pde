@@ -1,6 +1,7 @@
 // Rule: "Min=Best:1 Max:2 sąsiadów". 
 // Two-dimensional, von Neoman, asynchronous cellular automaton
 /////////////////////////////////////////////////////////////////////////////////
+
 final int WorldSide=600;//Side lenght of simulation world (square)
 final float Dens=0;//.1;//Initial density in the lattice World
 
@@ -85,3 +86,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
+

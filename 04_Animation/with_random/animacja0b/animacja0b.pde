@@ -1,3 +1,5 @@
+//Animation example
+
 void draw()
 {
   point(random(width),random(height));
@@ -13,3 +15,4 @@ void setup()
 }
 
 //https://github.com/borkowsk/bookProcessingEN
+

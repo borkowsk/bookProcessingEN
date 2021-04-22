@@ -1,5 +1,6 @@
 //Bounded confidence 1D
 //because of information bubles
+
 final int     N=25;//Number of agents
 final float eps=0.007;
 final float tre=0.20;
@@ -70,3 +71,4 @@ void visualisationB()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence
+

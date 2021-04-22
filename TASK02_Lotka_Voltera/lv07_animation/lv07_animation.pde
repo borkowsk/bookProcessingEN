@@ -1,6 +1,7 @@
-//Lotka–Volterra equations
+/** Lotka–Volterra equations
 //https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
-//
+*/
+
 double X=300;//x is the number of prey (for example, rabbits);
 double Y=15;//y is the number of some predator (for example, foxes);
 
@@ -50,3 +51,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN
+

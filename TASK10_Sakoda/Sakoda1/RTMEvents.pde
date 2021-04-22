@@ -1,5 +1,6 @@
 //  Dopasowana do modelu obsługa zdarzeń
 ///////////////////////////////////////////////////
+
 int searchedX=-1;
 int searchedY=-1;
 boolean Clicked=false;
@@ -54,5 +55,6 @@ void keyPressed()
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EVENTS TEMPLATE
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EVENTS TEMPLATE
+// https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////////////////////////////

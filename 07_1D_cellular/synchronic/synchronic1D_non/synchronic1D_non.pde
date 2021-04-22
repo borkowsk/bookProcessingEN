@@ -1,6 +1,7 @@
 // "Not too many neighbors": 
 // One-dimensional, SYNCHRONOUS, deterministic cellular automaton
-///////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
 final int   WorldSize=500;//How many cells do we want?
 final float Dens=0.001;//0.5 or so also posible
 
@@ -64,3 +65,5 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/synchronic/
+
+

@@ -1,4 +1,5 @@
 //Demonstration of modulo logic
+
 final int N=17; //Array size
 final int M=2;  //Moving step
 final int FR=2; //Frame rate
@@ -36,8 +37,6 @@ void visualise()
   arc(width/2,height/2,width/2,height/2,j*angl,(j+1)*angl);
 }
 
-
-
 void draw()
 {
   visualise();
@@ -56,3 +55,6 @@ void draw()
   fill(0,0,255);
   text(jstr,width/2,height-2*FS);
 }
+
+// https://github.com/borkowsk/bookProcessingEN
+

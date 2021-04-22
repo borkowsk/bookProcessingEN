@@ -1,4 +1,5 @@
 //setup() only
+
 void setup()//It is executed once - after starting
 {
   strokeWeight(3);
@@ -8,3 +9,4 @@ void setup()//It is executed once - after starting
 }
 
 //https://github.com/borkowsk/bookProcessingEN
+

@@ -1,5 +1,6 @@
 //Bounded confidence 0D - second attempt
 //Treshold and epsilon, alternative visualisation
+
 final int     N=25;//Number of agents
 final float eps=0.005;
 final float tre=0.15;
@@ -53,3 +54,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence
+

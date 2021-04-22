@@ -1,6 +1,7 @@
 // "Not too many neighbors": 
 // Two-dimensional, Moore, asynchronous cellular automaton
 ////////////////////////////////////////////////////////////////////////////////////
+
 final int Opt=3;//How many neighbors allowed?
 final int WorldSide=600;//Side lenght of simulation world (square)
 final float Dens=0.5;//.01;//Initial density in the lattice World
@@ -88,3 +89,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
+

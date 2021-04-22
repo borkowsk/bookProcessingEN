@@ -1,5 +1,6 @@
 // Agent is a one of two central class of each ABM model
 //////////////////////////////////////////////////////////////////
+
 int Number_of_identities=3;//How many mutually exclusive identities will be?
 
 class Agent
@@ -16,6 +17,7 @@ class Agent
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
-//  AGENT OF SAKODA MODEL
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
+// AGENT OF Sakoda inspired asynchronous AGENT BASE MODEL 
+// https://github.com/borkowsk/bookProcessingEN
 ///////////////////////////////////////////////////////////////////////////////////////////

@@ -1,4 +1,5 @@
 //Logistic iteration - calculation on doubles
+
 final double R=3.45;
 double X=0.3333333;//Range 0..1!
 size(1600,600);
@@ -12,3 +13,6 @@ for(int i=0;i<width;i++)//Default width == 100
 }
 
 text("R="+R,0,height);
+
+// https://github.com/borkowsk/bookProcessingEN
+

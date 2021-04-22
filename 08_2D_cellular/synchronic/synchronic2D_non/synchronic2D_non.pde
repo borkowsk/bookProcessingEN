@@ -1,6 +1,7 @@
 // "Not too many neighbors": 
 // TWO-dimensional, SYNCHRONOUS, von Neumann, deterministic cellular automaton
-//////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
 final int WorldSide=601;//How many cells do we want in one line?
 final float Dens=0.15;//0.5 or so also posible
 final int   optN=2;//Optimum number of neighbors required
@@ -66,3 +67,4 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
+

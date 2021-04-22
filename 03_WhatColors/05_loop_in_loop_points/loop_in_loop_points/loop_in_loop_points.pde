@@ -1,5 +1,7 @@
 //Loop in loop - note the curly braces {}
+
 size(256,256);
+
 for(int i=0;i<256;i++)
 {
   for(int j=0;j<256;j++)
@@ -16,3 +18,4 @@ for(int i=0;i<256;i++)
 }
 
 //https://github.com/borkowsk/bookProcessingEN
+

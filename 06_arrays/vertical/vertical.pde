@@ -1,10 +1,13 @@
-//Rafał Kosik "Vertical" - https://www.goodreads.com/book/show/6615626-vertical
-// The action of this SF novel takes place in a cylindrical world 
-// after a conflict with "aliens". People live in steel cities, 
-// climbing ropes, pursuing an undefined Goal.
+/** Rafał Kosik "Vertical": 
+ The action of this SF novel takes place in a cylindrical world 
+ after a conflict with "aliens". People live in steel cities, 
+ climbing ropes, pursuing an undefined Goal.
+// https://www.goodreads.com/book/show/6615626-vertical
+*/
 
-int N=10; //Number of cities
-int space=1;//Distance between cities
+
+int N=10;    //Number of cities
+int space=1; //Distance between cities
 float[] positions=new float[N];
 
 void setup()
@@ -37,3 +40,6 @@ void draw()
       positions[j]+=height;
   }
 }
+
+//https://github.com/borkowsk/bookProcessingEN
+

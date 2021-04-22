@@ -1,4 +1,5 @@
 // Window size 500x500 with contour smoothing
+
 size(500,500);
 smooth();
 

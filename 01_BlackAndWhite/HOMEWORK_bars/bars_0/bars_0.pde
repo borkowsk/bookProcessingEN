@@ -1,5 +1,6 @@
 //4 bars example. SIMPLIFIED
 //DATA. Values can be changed at will
+
 float d0=300,d1=499,d2=150,d3=75;
 
 size(600,500);

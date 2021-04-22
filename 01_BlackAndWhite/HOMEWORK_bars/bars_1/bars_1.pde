@@ -1,6 +1,7 @@
 //4 bars example. Without FOR!!!
 //DATA. Values can be changed at will
 //"final" means something like "constant"
+
 final float d0=200,d1=180,d2=50,d3=25;
 
 //auxiliary variables

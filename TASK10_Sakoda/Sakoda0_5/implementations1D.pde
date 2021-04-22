@@ -2,6 +2,7 @@
 // Agents need to be initialised & they need logic of change 
 // HERE ARE 1D alternatives of main procedures
 ///////////////////////////////////////////////////////////////
+
 //We're using function overload!
 
 void initializeAgents(Agent[] agents)
@@ -101,6 +102,7 @@ void doStatisticsOnAgents(Agent[] agents)
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
-//  1D BASIC INITIALISATION, STEP CHANGE & VISUALISATION
+// 1D BASIC INITIALISATION, STEP CHANGE & VISUALISATION
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE
+// https://github.com/borkowsk/bookProcessingEN 
 ///////////////////////////////////////////////////////////////////////////////////////////
