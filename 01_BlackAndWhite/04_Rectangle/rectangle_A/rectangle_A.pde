@@ -1,4 +1,4 @@
-// Drawing example
+// Drawing example for rect() and point()
 
 size(200,200);//Window size 200x200
 
