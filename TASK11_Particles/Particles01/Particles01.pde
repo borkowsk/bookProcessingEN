@@ -1,6 +1,5 @@
-// "Naive" particles system with simplified phisics of collisions
-////////////////////////////////////////////////////////////////////////
-//
+/// "Naive" particles system with simplified phisics of collisions
+//*//////////////////////////////////////////////////////////////////////
 
 int circles = 50;
 boolean torus=false;
@@ -71,8 +70,8 @@ void movement()
   }
 }
 
+/// It detects collisions with borders
 void bordersReaction()
-//It detects collisions with borders
 {
   for(int i=0;i<circles;i++)
     if(torus)
@@ -95,8 +94,8 @@ void bordersReaction()
     } 
 }
 
+/// It detects collisions and triggers appropriate reaction procedures
 void findcollisions()
-//It detects collisions and triggers appropriate reaction procedures
 {
     for(int i=0;i<(circles-1);i++){
      for(int j=(i+1);j<circles;j++){ 
@@ -117,8 +116,8 @@ void findcollisions()
     for(int i=0;i<circles;i++) collision[i]=false;//Clear collisions
 }
 
+/// SIMPLIFIED elastic rebound, i.e. the physical reaction to collisions
 void physicalCollision(int i,int j)
-//SIMPLIFIED elastic rebound, i.e. the physical reaction to collisions
 {
   float xitmp=xspeed[i];
   float yitmp=yspeed[i];
@@ -134,8 +133,8 @@ void physicalCollision(int i,int j)
   }
 }
 
+/// i-th agent reacts, j-th agent supplies data only!
 void reaction(int i,int j)
-// i-th agent reacts, j-th agent supplies data only!
 {
   if(collision[i]==false){
     //... YOUR CODE
@@ -155,5 +154,4 @@ void draw()
   findcollisions();
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

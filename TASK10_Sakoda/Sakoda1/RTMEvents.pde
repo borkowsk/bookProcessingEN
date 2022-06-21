@@ -1,5 +1,5 @@
-//  Dopasowana do modelu obsługa zdarzeń
-///////////////////////////////////////////////////
+///  Dopasowana do modelu obsługa zdarzeń
+//*/////////////////////////////////////////////////
 
 int searchedX=-1;
 int searchedY=-1;
@@ -33,7 +33,7 @@ void keyPressed()
   case '9': STEPSperVIS=200;background(255,255,200);text("StPerV: "+STEPSperVIS,1,16);break;
 //  case '0': STEPSperVIS=1;DeltaMC=0.2;text("DeltaMC: "+DeltaMC,1,16);break;
   case ' ': save(modelName+"."+nf((float)TheWorld.getTimeStep(),6,5)+".PNG");
-            //write(world,modelName+"."+nf((float)StepCounter,6,5));//Aktualny stan ekosystemu
+            //write(world,modelName+"."+nf((float)StepCounter,6,5)); //Aktualny stan ekosystemu
             break;
   case ESC: simulationRun=!simulationRun; break;
   case 's': simulationRun=false; break;
@@ -54,7 +54,7 @@ void keyPressed()
 }
 
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////
 // https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EVENTS TEMPLATE
 // https://github.com/borkowsk/bookProcessingEN
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////

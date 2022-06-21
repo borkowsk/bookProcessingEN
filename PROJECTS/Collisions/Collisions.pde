@@ -1,5 +1,6 @@
 /** Collisions example
-//https://github.com/borkowsk/bookProcessingEN
+(Slighthly modified)
+See: <source>???
 */
 
 int circles = 50;
@@ -10,7 +11,7 @@ int diameter=25;
 int radius=diameter/2;
 float maxspeed=1;
 int FRAMERATE=200;
-int VISFREQ=4;//every N
+int VISFREQ=4; ///< every N
 
 float[] xpos = new float[circles];
 float[] ypos = new float[circles];
@@ -18,7 +19,7 @@ float[] xspeed = new float[circles];
 float[] yspeed = new float[circles];
 
 boolean[] ischild = new boolean[circles];
-float[] wellbeing = new float[circles];//Moving average of interactions results
+float[] wellbeing = new float[circles]; //Moving average of interactions results
 
 //Parents - bounded confidence
 //Children - wellbeing with treshold (?) const-diff(attitudes)   
@@ -26,11 +27,12 @@ float[] wellbeing = new float[circles];//Moving average of interactions results
 //
 
 
-boolean[] circon = new boolean[circles];//??
-color[] circolor = new color[circles];//Atitude?
+boolean[] circon = new boolean[circles]; ///< ??
+color[] circolor = new color[circles];   ///< Atitude?
 
-boolean[] collision = new boolean[circles];//?
+boolean[] collision = new boolean[circles]; ///< ?
 
+/// Is this position free?
 boolean freePosition(int i)
 {
   for(int j=0;j<circles;j++)
@@ -40,12 +42,13 @@ boolean freePosition(int i)
   return true;
 }
 
-void setup(){
+void setup()
+{
   size(1000,600);
   smooth();
   background(0);
   frameRate(FRAMERATE);
-  strokeWeight(2);//not neded
+  strokeWeight(2); //not neded
 
   for(int i=0;i<circles;i++){
     do{
@@ -82,6 +85,7 @@ void movement()
   }
 }
 
+/// Implements collisions with borders
 void bordersReaction()
 {
   for(int i=0;i<circles;i++)
@@ -105,8 +109,8 @@ void bordersReaction()
     } 
 }
 
+/// It detects collisions and triggers appropriate reaction procedures
 void findcollisions()
-//It detects collisions and triggers appropriate reaction procedures
 {
     for(int i=0;i<(circles-1);i++){
      for(int j=(i+1);j<circles;j++){ 
@@ -127,11 +131,11 @@ void findcollisions()
      }
     }
     
-    for(int i=0;i<circles;i++) collision[i]=false;//Clear collisions
+    for(int i=0;i<circles;i++) collision[i]=false; //Clear collisions
 }
 
+/// Elastic rebound, i.e. the physical reaction to collisions
 void physicalCollision(int i,int j)
-//Elastic rebound, i.e. the physical reaction to collisions
 {
   if(collision[i]==false){
      xspeed[i] *= -1;
@@ -144,8 +148,8 @@ void physicalCollision(int i,int j)
   }
 }
 
+/// i-th agent reacts, j-th agent supplies data only!
 void childReaction(int i,int j)
-// i-th agent reacts, j-th agent supplies data only!
 {
   if(collision[i]==false){
     //... YOUR CODE
@@ -159,8 +163,8 @@ void childReaction(int i,int j)
   }
 }
 
+/// i-th agent reacts, j-th agent supplies data only!
 void parentReaction(int i,int j)
-// i-th agent reacts, j-th agent supplies data only!
 {
   if(collision[i]==false){
     //... YOUR CODE
@@ -171,12 +175,14 @@ void parentReaction(int i,int j)
   }
 }
 
-void draw(){
+void draw()
+{
   if(frameCount%VISFREQ==0)visualisation();
   movement();
   bordersReaction();
   findcollisions();
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+//*////////////////////////////////////////////////////////////////////////////
+// https://github.com/borkowsk/bookProcessingEN
+//*////////////////////////////////////////////////////////////////////////////

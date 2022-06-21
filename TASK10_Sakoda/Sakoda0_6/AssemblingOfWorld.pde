@@ -6,13 +6,14 @@
 
 class World implements simulation_world
 {
-  int _counter=0;// the '_' character at the beginning 
+  int _counter=0; // the '_' character at the beginning 
       //is the conventional designation of "internal" names 
   
-  //Agent agents[];//One dimensional array of agents OR ...
-  Agent agents[][];//Two dimensional array of agents
+  //Agent agents[]; //One dimensional array of agents OR ...
+  Agent agents[][]; //Two dimensional array of agents
   
-  World(int side)//Constructor of the World
+  /// Constructor of the World
+  World(int side)
   {
     //agents=new Agent[side]; //OR
     agents=new Agent[side][side];
@@ -23,25 +24,27 @@ class World implements simulation_world
     return _counter;
   }
   
-  //We postpone real implementations for later and, 
-  //most importantly, for other files !!!
+  // We postpone real implementations for later and, 
+  // most importantly, for other files !!!
   
-  void initializeModel()//Method 1
+  /// Method 1.
+  void initializeModel()
   { //The appropriate overloaded function will be selected 
     //based on the agent table type!
     initializeAgents(this.agents);
     
-    makeStatistics();//First attempt to calculate & write staistics
+    makeStatistics(); //First attempt to calculate & write staistics
   }
   
-  void changeState()//Method 2
+  //Method 2.
+  void changeState()
   { //The function corresponding to the type of the array 
-    changeAgents(this.agents);//... will be selected here
+    changeAgents(this.agents); //... will be selected here
   }
   
   void makeStatistics()
   {  
-    doStatisticsOnAgents(this.agents);//The function corresponding to the type of the array
+    doStatisticsOnAgents(this.agents); //The function corresponding to the type of the array
     saveStatistics();
   }
   
@@ -53,13 +56,13 @@ class World implements simulation_world
      //...inenviroment for example
      
      _counter++;
-     makeStatistics();//Calculating & writing
+     makeStatistics(); //Calculating & writing
   }
 };
 
-//More elaborated functionalities may be defined as stand-alone functions,
-//not as methods because of not enought flexible syntax of Processing
-///////////////////////////////////////////////////////////////////////////
+/// More elaborated functionalities may be defined as stand-alone functions,
+/// not as methods because of not enought flexible syntax of Processing
+//*/////////////////////////////////////////////////////////////////////////
 
 void visualizeModel(World world)
 {
@@ -67,7 +70,6 @@ void visualizeModel(World world)
    //...//& others things 
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////////
 //  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF SAKODA
-///////////////////////////////////////////////////////////////////////////////////////////////
-
+//*/////////////////////////////////////////////////////////////////////////////////////////////

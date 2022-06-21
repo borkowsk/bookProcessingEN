@@ -1,18 +1,17 @@
-// Agent is a one of two central class of each ABM model
-// Agents need to be initialised & they need logic of change 
-// HERE ARE 2D alternatives of main procedures
-///////////////////////////////////////////////////////////////
-
-//We're using function overload!
+/// Agent is a one of two central class of each ABM model
+/// Agents need to be initialised & they need logic of change 
+/// HERE ARE 2D alternatives of main procedures
+//               We're using function overload!
+//*/////////////////////////////////////////////////////////////
 
 void initializeAgents(Agent[][] agents)
 {
    for(int a=0;a<agents.length;a++)
     for(int b=0;b<agents[a].length;b++)
-    if(random(1.0)<density)//with some probability
+    if(random(1.0)<density) //with some probability
     {
-      Agent curr=new Agent();// We construct the agent
-      agents[a][b]=curr;// ... and put it in the array
+      Agent curr=new Agent(); // We construct the agent
+      agents[a][b]=curr; // ... and put it in the array
     }
 }
 
@@ -22,14 +21,14 @@ void visualizeAgents(Agent[][] agents)
   for(int a=0;a<agents.length;a++)
    for(int b=0;b<agents[a].length;b++)
    {
-      //Cell background
+      // Cell background
       noStroke();fill(200);
-      rect(b*cwidth,a*cwidth,cwidth,cwidth);//'a' is vertical!
+      rect(b*cwidth,a*cwidth,cwidth,cwidth); //'a' is vertical!
       
-      //Drawing the agent only when it is in this array cell
+      // Drawing the agent only when it is in this array cell
       if( (curra=agents[a][b]) != null )
       {
-        if(curra.stress>0)// Stress as the outline color
+        if(curra.stress>0) // Stress as the outline color
           stroke(curra.stress*255,0,curra.stress*255);
         else
           noStroke();
@@ -43,7 +42,7 @@ void visualizeAgents(Agent[][] agents)
 
 void  changeAgents(Agent[][] agents)
 {
-  int MCN=agents.length*agents[0].length;//number of draws in MC steps
+  int MCN=agents.length*agents[0].length; //number of draws in MC steps
   for(int i=0;i<MCN;i++)
   {
     int a=(int)random(0,agents.length);
@@ -70,19 +69,19 @@ void  changeAgents(Agent[][] agents)
       && agents[a][b+1].identity!=agents[a][b].identity)
         strangers++;  
       
-      agents[a][b].stress=strangers/4.0;//von Neumann neib.  
+      agents[a][b].stress=strangers/4.0; //von Neumann neib.  
       
-      //Attempting to migrate when the agent is under stress
+      // Attempting to migrate when the agent is under stress
       if(agents[a][b].stress>0 
       && random(1.0)<agents[a][b].stress)
-      { //Drawing the coordinates of the move destination
+      { // Drawing the coordinates of the move destination
         int tara=(int)random(0,agents.length);
         int tarb=(int)random(0,agents[a].length);
         
-        if(agents[tara][tarb]==null)//There is an empty place
+        if(agents[tara][tarb]==null) //There is an empty place
         {
-          agents[tara][tarb]=agents[a][b];//Take a new place
-          agents[a][b]=null;//Release the old ones
+          agents[tara][tarb]=agents[a][b]; //Take a new place
+          agents[a][b]=null; //Release the old ones
         }
       }
     }
@@ -91,28 +90,28 @@ void  changeAgents(Agent[][] agents)
 
 void doStatisticsOnAgents(Agent[][] agents)
 {  
-  Agent curra;//Auxiliary agent handle
-  double summ=0;//Sum of stresses
-  liveCount=0;//Number of agents
+  Agent curra;   //Auxiliary agent handle
+  double summ=0; //Sum of stresses
+  liveCount=0;   //Number of agents
   
   for(int a=0;a<agents.length;a++)
    for(int b=0;b<agents[a].length;b++)
     if( (curra=agents[a][b]) != null )
     {
-      summ+=curra.stress;//Sum of stresses
+      summ+=curra.stress; //Sum of stresses
      
       //Other statistics
       //... //TODO
       
-      liveCount++;//Number of agents
+      liveCount++; //Number of agents
     }
      
    meanStress=(float)(summ/liveCount);
 }
 
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////
 // 2D BASIC INITIALISATION, STEP CHANGE & VISUALISATION
 // https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
 // https://github.com/borkowsk/bookProcessingEN 
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////

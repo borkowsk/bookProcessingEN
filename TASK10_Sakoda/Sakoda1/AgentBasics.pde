@@ -1,6 +1,6 @@
-// Agent is a one of two central class of each ABM model
-// Agent need to be initialised & they need logic of change 
-///////////////////////////////////////////////////////////////
+/// Agent is a one of two central class of each ABM model
+/// Agent need to be initialised & they need logic of change 
+//*/////////////////////////////////////////////////////////////
 
 void initializeAgents(Agent[][] agents)
 {
@@ -31,7 +31,7 @@ void  changeAgents(Agent[] agents)
     int a=(int)random(0,agents.length);
     if(agents[a]!= null )
     {
-      //Sprawdzenie stresu
+      // Sprawdzenie stresu
       int strangers=0;
       if(0<a-1 && agents[a-1]!=null 
       && agents[a-1].identity!=agents[a].identity)
@@ -41,15 +41,15 @@ void  changeAgents(Agent[] agents)
         strangers++;  
       agents[a].stress=strangers/2.0;  
       
-      //Próba migracji gdy stres doskwiera
+      // Próba migracji gdy stres doskwiera
       if(agents[a].stress>0 
       && random(1)<agents[a].stress)
       {
         int target=(int)random(0,agents.length);
-        if(agents[target]==null)//Jest miejsce
+        if(agents[target]==null) //Jest miejsce
         {
-          agents[target]=agents[a];//Przeprowadzka
-          agents[a]=null;//Wymeldowanie ze starego miejsca
+          agents[target]=agents[a]; //Przeprowadzka
+          agents[a]=null; //Wymeldowanie ze starego miejsca
         }
       }
     }
@@ -65,7 +65,7 @@ void  changeAgents(Agent[][] agents)
     int b=(int)random(0,agents[a].length);
     if(agents[a][b]!= null )
     {
-      //Sprawdzenie stresu
+      // Sprawdzenie stresu
       int strangers=0;
       if(0<a-1 && agents[a-1][b]!=null 
       && agents[a-1][b].identity!=agents[a][b].identity)
@@ -85,25 +85,25 @@ void  changeAgents(Agent[][] agents)
       
       agents[a][b].stress=strangers/4.0;  
       
-      //Próba migracji gdy stres doskwiera
+      // Próba migracji gdy stres doskwiera
       if(agents[a][b].stress>0 
       && random(1)<agents[a][b].stress)
       {
         int tara=(int)random(0,agents.length);
         int tarb=(int)random(0,agents[a].length);
         
-        if(agents[tara][tarb]==null)//Jest miejsce
+        if(agents[tara][tarb]==null) //Jest miejsce
         {
-          agents[tara][tarb]=agents[a][b];//Przeprowadzka
-          agents[a][b]=null;//Wymeldowanie ze starego miejsca
+          agents[tara][tarb]=agents[a][b]; //Przeprowadzka
+          agents[a][b]=null; //Wymeldowanie ze starego miejsca
         }
       }
     }
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//*//////////////////////////////////////////////////////////////////////////////////////////////////////////
 // BASIC INITIALISATION & EVERY STEP CHANGE
 // https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE 
 // https://github.com/borkowsk/bookProcessingEN 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//*//////////////////////////////////////////////////////////////////////////////////////////////////////////

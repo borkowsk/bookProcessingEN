@@ -1,5 +1,5 @@
-// World is a one of two central class of each ABM model
-///////////////////////////////////////////////////////////////
+/// World is a one of two central class of each ABM model
+//*/////////////////////////////////////////////////////////////
 
 class World implements simulation_world
 {
@@ -7,9 +7,9 @@ class World implements simulation_world
   
   //Agent agents[];//One dimensional array of agents
   //OR
-  Agent agents[][];//Two dimensional array of agents
+  Agent agents[][]; //Two dimensional array of agents
   
-  World(int side)//Constructor of the World
+  World(int side) //Constructor of the World
   {
     //agents=new Agent[side];
     //OR
@@ -56,16 +56,16 @@ class World implements simulation_world
   
 }
 
-//More alaborated functionalities are defined as stand-alone functions,
-//not as methods because of not enought flexible syntax of Processing
-///////////////////////////////////////////////////////////////////////////
+/// More alaborated functionalities are defined as stand-alone functions,
+/// not as methods because of not enought flexible syntax of Processing
+//*/////////////////////////////////////////////////////////////////////////
 
 void visualizeModel(World world)
 {
   visualizeAgents(world.agents);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////////
 // https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF SAKODA
 // https://github.com/borkowsk/bookProcessingEN
-///////////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////////

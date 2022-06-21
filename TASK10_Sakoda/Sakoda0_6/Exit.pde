@@ -4,7 +4,7 @@ void exit()          //it is called whenever a window is closed. Maybe asynchron
 {
   noLoop();          //For to be sure...
   delay(100);        // it is possible to close window when draw() is still working!
-  println(modelName+" exited in step: "+TheWorld.getTimeStep());//end state of the system
+  println(modelName+" exited in step: "+TheWorld.getTimeStep()); //end state of the system
   
   if(outstat!=null)
   {
@@ -16,7 +16,7 @@ void exit()          //it is called whenever a window is closed. Maybe asynchron
   super.exit();      //What library superclass have to do at exit() !!!
 } 
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////
 // https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - EXIT TEMPLATE
 // https://github.com/borkowsk/bookProcessingEN
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////

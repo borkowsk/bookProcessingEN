@@ -1,5 +1,5 @@
-// World full of agents need method of visualisation on screen/window
-////////////////////////////////////////////////////////////////////////////
+/// World full of agents need method of visualisation on screen/window
+//*//////////////////////////////////////////////////////////////////////////
 
 void visualizeAgents(Agent[][] agents)
 {
@@ -8,11 +8,11 @@ void visualizeAgents(Agent[][] agents)
   for(int a=0;a<agents.length;a++)
    for(int b=0;b<agents[a].length;b++)
    {
-      //Background
-      noStroke();fill(200);//Lepiej dopasowa tło
-      rect(b*cwidth,a*cwidth,cwidth,cwidth);//a is vertical!
+      // Background
+      noStroke();fill(200); //Lepiej dopasowa tło
+      rect(b*cwidth,a*cwidth,cwidth,cwidth); //a is vertical!
       
-      //Colorisation of agent
+      // Colorisation of agent
       if( (curra=agents[a][b]) != null )
       {
         if(curra.stress>0)
@@ -32,7 +32,7 @@ void visualizeAgents(Agent[] agents)
    Agent curra;
    for(int a=0;a<agents.length;a++)
    {
-    //Colorisation    
+    // Colorisation    
     if( (curra=agents[a]) != null )
     {
         if(curra.stress>0)
@@ -49,7 +49,7 @@ void visualizeAgents(Agent[] agents)
       fill(128);
     }
     
-    int t=(int(TheWorld.getTimeStep())/STEPSperVIS)%side;//Uwzględniamy różne częstości wizualizacji
+    int t=(int(TheWorld.getTimeStep())/STEPSperVIS)%side; //Uwzględniamy różne częstości wizualizacji
     rect(a*cwidth,t*cwidth,cwidth,cwidth);
     stroke(255);
     line(0,(t+1)*cwidth+1,width,(t+1)*cwidth+1);
@@ -58,6 +58,6 @@ void visualizeAgents(Agent[] agents)
 
 // https://github.com/borkowsk/bookProcessingEN
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+//*//////////////////////////////////////////////////////////////////////////////////////////////////////
 //  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC VISUALISATION
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+//*//////////////////////////////////////////////////////////////////////////////////////////////////////

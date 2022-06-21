@@ -3,7 +3,7 @@
 String FileName = "readtokens.pde" ;
 BufferedReader input;
 String line;
-Boolean trace = true;
+Boolean trace = false;
 
 void setup() 
 {
@@ -32,7 +32,7 @@ void draw() {
   } 
   else 
   {
-    String[] pieces = splitIntoTokens(line);//Split on borders of character types 
+    String[] pieces = splitIntoTokens(line); //Split on borders of character types 
     
     for (String s:pieces) 
     {
@@ -49,7 +49,7 @@ void draw() {
 
 String[] splitIntoTokens(String line)
 {
-  StringList pieces=new StringList();//For output
+  StringList pieces=new StringList(); //For output
   
   if(line.length()>0)
   {
@@ -89,4 +89,3 @@ void _Test1()
 }
 
 //https://github.com/borkowsk/bookProcessingEN
-

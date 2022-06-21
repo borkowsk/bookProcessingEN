@@ -1,9 +1,8 @@
-// Agent is a one of two central class of each ABM model
-// Agents need to be initialised & they need logic of change 
-// HERE ARE 1D alternatives of main procedures
-///////////////////////////////////////////////////////////////
-
-//We're using function overload!
+/// Agent is a one of two central class of each ABM model
+/// Agents need to be initialised & they need logic of change 
+/// HERE ARE 1D alternatives of main procedures
+//            We're using function overload!
+//*/////////////////////////////////////////////////////////////
 
 void initializeAgents(Agent[] agents)
 {
@@ -20,7 +19,7 @@ void visualizeAgents(Agent[] agents)
    Agent curra;
    for(int a=0;a<agents.length;a++)
    {
-    //Drawing the agent only when it is in this array cell   
+    // Drawing the agent only when it is in this array cell   
     if( (curra=agents[a]) != null )
     {
         if(curra.stress>0)
@@ -37,10 +36,10 @@ void visualizeAgents(Agent[] agents)
       fill(128);
     }
     
-    int t=int(TheWorld.getTimeStep()/STEPSperVIS)%side;//We take into account different visualization frequencies
-    rect(a*cwidth,t*cwidth,cwidth,cwidth);//Whether full or empty, the same area is painted over
+    int t=int(TheWorld.getTimeStep()/STEPSperVIS)%side; //We take into account different visualization frequencies
+    rect(a*cwidth,t*cwidth,cwidth,cwidth); // Whether full or empty, the same area is painted over
     stroke(255);
-    line(0,(t+1)*cwidth+1,width,(t+1)*cwidth+1);//line of the current time
+    line(0,(t+1)*cwidth+1,width,(t+1)*cwidth+1); //line of the current time
    }
 }
 
@@ -53,7 +52,7 @@ void  changeAgents(Agent[] agents)
     
     if(agents[a]!= null )
     {
-      //Sprawdzenie stresu
+      // Sprawdzenie stresu
       int strangers=0;
       
       if(0<=a-1 && agents[a-1]!=null 
@@ -64,12 +63,12 @@ void  changeAgents(Agent[] agents)
       && agents[a+1].identity!=agents[a].identity)
         strangers++;  
         
-      agents[a].stress=strangers/2.0;//Only two possible neighbors  
+      agents[a].stress=strangers/2.0; // Only two possible neighbors  
       
-      //Attempting to migrate when the agent is under stress
+      // Attempting to migrate when the agent is under stress
       if(agents[a].stress>0 
       && random(1.0)<agents[a].stress)
-      { //An index draw for the moving destination
+      { // An index draw for the moving destination
         int target=(int)random(0,agents.length);
         if(agents[target]==null)//is there a place
         {
@@ -101,8 +100,8 @@ void doStatisticsOnAgents(Agent[] agents)
    meanStress=(float)(summ/liveCount);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////
 // 1D BASIC INITIALISATION, STEP CHANGE & VISUALISATION
 // https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE
 // https://github.com/borkowsk/bookProcessingEN 
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////

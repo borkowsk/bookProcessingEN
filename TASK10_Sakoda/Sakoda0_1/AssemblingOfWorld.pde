@@ -1,5 +1,5 @@
 /** World is a one of two central class of each ABM model
-///////////////////////////////////////////////////////////////
+==================================================================
   In this version, instead of directly implementing the content 
   of the methods, we put calls to normal procedures there.
   This is the only way in Processing that the method implementation 
@@ -8,33 +8,39 @@
   place calls to other simulation layers - e.g. environment resources.
 */
 
-class World //implements simulation_world
+/// implements simulation_world
+class World 
 {
-  int StepCounter=0;//If we had more worlds, 
+  int StepCounter=0; //If we had more worlds, 
       //each one must have their own timer!
       
-  Agent agents[][];//Two-dimensional array of agents
-                   //But it could be one-dimensional,
-                   //Or even hexagonal!
-  
-  World(int side)//Constructor of the World
+  Agent agents[][]; //Two-dimensional array of agents
+                    //But it could be one-dimensional,
+                    //Or even hexagonal!
+                    
+  ///Constructor of the World
+  World(int side)
   {
-    agents=new Agent[side][side];//We guarantee the creation 
-                                 //of an array. Empty for now!
+    agents=new Agent[side][side]; //We guarantee the creation 
+                                  //of an array. Empty for now!
   }
   
-  float  getTimeStep() //"Getter" for simulation step
-  {      //Would be required by the interface.
+  /// "Getter" for simulation step
+  /// Would be required by the interface.
+  float  getTimeStep() 
+  {      
     return StepCounter;
   }
   
-  void initializeModel()//Method 1
+  /// Method 1.
+  void initializeModel()
   {
     initializeAgents(this.agents);
     //... //Other initializations if there was anything but agents.
   }
   
-  void changeState()//Method 2
+  /// Method 2.
+  void changeState()
   {
     changeAgents(this.agents);
     //... //other changes if there was anything but agents.
@@ -45,7 +51,8 @@ class World //implements simulation_world
     //... later on
   }
   
-  void modelStep()//Method 3 using method 2 
+  /// Method 3. using method 2 
+  void modelStep()
   {
      this.changeState(); //'this' is redundant here. For example only.
      
@@ -57,8 +64,8 @@ class World //implements simulation_world
   
 };
 
-//More alaborated functionalities may be defined as stand-alone functions
-///////////////////////////////////////////////////////////////////////////
+///More alaborated functionalities may be defined as stand-alone functions
+//*/////////////////////////////////////////////////////////////////////////
 
 void visualizeModel(World world)
 {
@@ -68,7 +75,7 @@ void visualizeModel(World world)
          // Enviroment for example.
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////////
 //  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF SAKODA
 //  https://github.com/borkowsk/bookProcessingEN
-///////////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////////

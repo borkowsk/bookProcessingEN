@@ -1,6 +1,6 @@
-// "Naive" particles system with simplified phisics of collisions
-////////////////////////////////////////////////////////////////////////
-//
+/// "Naive" particles system with simplified phisics of collisions
+/// (slightly modified example)
+//*//////////////////////////////////////////////////////////////////////
 
 int circles = 50;
 boolean torus=true;
@@ -10,17 +10,17 @@ int diameter=25;
 int radius=diameter/2;
 float maxspeed=1;
 int FRAMERATE=800;
-int VISFREQ=8;//every N
+int VISFREQ=8; ///< every N
 
 float[]   xpos = new float[circles];
 float[]   ypos = new float[circles];
 float[]   xspeed = new float[circles];
 float[]   yspeed = new float[circles];
-boolean[] collision = new boolean[circles];//
+boolean[] collision = new boolean[circles]; ///< ???
 
 boolean[] isNaive = new boolean[circles];
-color[]   circolor = new color[circles];//Atitude?
-float[]   wellbeing = new float[circles];//Moving average 
+color[]   circolor = new color[circles];  ///< Atitude?
+float[]   wellbeing = new float[circles]; ///< Moving average 
 
 boolean isPositionFree(int i)
 {
@@ -76,8 +76,8 @@ void movement()
   }
 }
 
+/// It detects collisions with borders.
 void bordersReaction()
-//It detects collisions with borders
 {
   for(int i=0;i<circles;i++)
     if(torus)
@@ -100,8 +100,8 @@ void bordersReaction()
     } 
 }
 
+/// It detects collisions and triggers appropriate reaction procedures.
 void findcollisions()
-//It detects collisions and triggers appropriate reaction procedures
 {
     for(int i=0;i<(circles-1);i++){
      for(int j=(i+1);j<circles;j++){ 
@@ -125,8 +125,8 @@ void findcollisions()
     for(int i=0;i<circles;i++) collision[i]=false;//Clear collisions
 }
 
+/// SIMPLIFIED elastic rebound, i.e. the physical reaction to collisions
 void physicalCollision(int i,int j)
-//SIMPLIFIED elastic rebound, i.e. the physical reaction to collisions
 {
   if(collision[i]==false){
      xspeed[i] *= -1;
@@ -139,8 +139,8 @@ void physicalCollision(int i,int j)
   }
 }
 
+/// i-th agent reacts, j-th agent supplies data only!
 void reactionOfNaive(int i,int j)
-// i-th agent reacts, j-th agent supplies data only!
 {
   if(collision[i]==false){
     //... YOUR CODE
@@ -154,8 +154,8 @@ void reactionOfNaive(int i,int j)
   }
 }
 
+/// i-th agent reacts, j-th agent supplies data only!
 void reaction(int i,int j)
-// i-th agent reacts, j-th agent supplies data only!
 {
   if(collision[i]==false){
     //... YOUR CODE
@@ -175,5 +175,4 @@ void draw()
   findcollisions();
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

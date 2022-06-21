@@ -1,5 +1,5 @@
-// Simulation have to collect and write down statistics from every step
-///////////////////////////////////////////////////////////////////////////////////////
+/// Simulation have to collect and write down statistics from every step
+//*/////////////////////////////////////////////////////////////////////////////////////
 
 PrintWriter outstat;
 
@@ -11,7 +11,7 @@ void initializeStats()
                            +'.'+millis();
   println("Output in file:",FileName);
   outstat=createWriter(FileName+".out");
-  outstat.println("$STEP\tAlive\tStress\t...");//<-- complete the header fields!
+  outstat.println("$STEP\tAlive\tStress\t..."); //<-- complete the header fields!
 }
 
 float meanStress=0;
@@ -36,7 +36,7 @@ void doStatisticsOnAgents(Agent[] agents)
   
    if(outstat!=null)
       outstat.println(TheWorld.getTimeStep()+"\t"
-                      +liveCount+"\t"+(summ/liveCount)+"\t...");//<-- complete the fields!
+                      +liveCount+"\t"+(summ/liveCount)+"\t..."); //<-- complete the fields!
    
    meanStress=(float)(summ/liveCount);
    
@@ -69,7 +69,7 @@ void doStatisticsOnAgents(Agent[][] agents)
    //outstat should be closed in exit() --> see RTMExit.pde
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////
 // https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: STATISTICS LOG TEMPLATE
 // https://github.com/borkowsk/bookProcessingEN 
-///////////////////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////////////////////////////////////////////////////////////////////
