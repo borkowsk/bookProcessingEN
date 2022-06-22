@@ -1,4 +1,4 @@
-// Window size 500x500 with contour smoothing
+/// Window size 500x500 with contour smoothing
 
 size(500,500);
 smooth();
@@ -9,5 +9,4 @@ smooth();
 fill(128);
 ellipse(100,100,150,140);
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

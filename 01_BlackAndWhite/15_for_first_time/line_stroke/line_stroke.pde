@@ -1,13 +1,12 @@
-//Two statement in a loop
+/// Two statement inside a loop
 
-size(500,500);//Larger window size needed
-noSmooth();//Without smoothing outlines
+size(500,500); //Larger window size needed
+noSmooth(); //Without smoothing outlines
 
 for(int i=0;i<256;i++) //REPEAT 256 TIMES
-{ //code block START
+{ // code block START
   stroke(i);
   line(i*2,i*2,0,500);
-} //END
+} // code block END
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

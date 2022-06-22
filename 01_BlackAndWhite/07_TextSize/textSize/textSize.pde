@@ -1,8 +1,7 @@
-//Big centered text in big window
+/// Big centered text in big window
 size(500,500);
-textAlign(CENTER, CENTER);//Text alignment
+textAlign(CENTER, CENTER); //Text alignment
 textSize(32); //Font size
 text("This window is big",250,250);
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN
