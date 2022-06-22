@@ -1,12 +1,12 @@
-// "Voter model" <=> "Nearest Neighbors Social Impact"
-// Two-dimensional, synchronous cellular automaton
-////////////////////////////////////////////////////////////////////////////////////
+/// "Voter model" <=> "Nearest Neighbors Social Impact"
+/// Two-dimensional, synchronous cellular automaton
+//*//////////////////////////////////////////////////////////////////////////////////
 
-final int WorldSide=600;//Side lenght of simulation world (square)
-final float Dens=0.50;//.01;//Initial density in the lattice World
-final boolean withMoore=true;//neighborhood with the corners of the square
+final int WorldSide=600; //Side lenght of simulation world (square)
+final float Dens=0.50;   //.01;//Initial density in the lattice World
+final boolean withMoore=true;  //neighborhood with the corners of the square
 
-int FR=1;//desired simulation speed
+int FR=1; //desired simulation speed
 
 int[][] WorldOld=new int[WorldSide][WorldSide];
 int[][] WorldNew=new int[WorldSide][WorldSide];
@@ -16,7 +16,7 @@ void setup()
  size(600,620); //squre canvas
  noSmooth();    //much faster drawing
  frameRate(FR);
- initialisation();//Initial state of the model
+ initialisation(); //Initial state of the model
 }
 
 int t=0;
@@ -25,7 +25,7 @@ void draw()
   visualisation2();
   syncStep();
   status();    
-  t++;//next step
+  t++; //next step
 }
 
 void initialisation()
@@ -45,9 +45,9 @@ void visualisation()
     for(int j=0;j<WorldSide;j++) 
     {                      
       switch(WorldOld[i][j]){ 
-      case 1:stroke(255,255,0);break;//Yellow
-      case 0:stroke(0,0,0);break;
-      default: stroke(255,0,0);//"emergency color" - RED
+      case 1:stroke(255,255,0);break; //Yellow
+      case 0:stroke(0,0,0);break;     //Black
+      default: stroke(255,0,0);       //"emergency color" - RED
       break;
       } 
       point(i,j);
@@ -58,29 +58,30 @@ void visualisation2()
 {
    for(int i=0;i<WorldSide;i++)
     for(int j=0;j<WorldSide;j++)
-    if(WorldOld[i][j] != WorldNew[i][j])
+    if(WorldOld[i][j] != WorldNew[i][j]) // Only when changed!
     {                      
       switch(WorldOld[i][j]){ 
-      case 1:stroke((100+t*10)%256,(100+t*10)%256,0);break;//yellow shades
-      case 0:stroke(0,0,(100+t*10)%256);break;//blue shades
-      default: stroke(255,0,0);//"emergency color" - RED
+      case 1:stroke((100+t*10)%256,(100+t*10)%256,0);break; //yellow shades
+      case 0:stroke(0,0,(100+t*10)%256);break; //blue shades
+      default: stroke(255,0,0);                //"emergency color" - RED
       break;
       } 
       point(i,j);
     }
 }
 
-void syncStep() //Synchronous step a la classic CA
+/// Synchronous step a la classic CA
+void syncStep() 
 {
   for(int i=0;i<WorldSide;i++)
-  {    //RULE: you assume a state more common in your vicinity
+  {    // RULE: you assume a state more common in your vicinity
        int right = (i+1) % WorldSide, left  = (WorldSide+i-1) % WorldSide;      
 
        for(int j=0;j<WorldSide;j++)
        {
          int dw=(j+1) % WorldSide, up=(WorldSide+j-1) % WorldSide;   
-         int cou0  = 0;//counter of 0 state neighbors
-         int cou1  = 0;//counter of 1 state neighbors
+         int cou0  = 0; //counter of 0 state neighbors
+         int cou1  = 0; //counter of 1 state neighbors
          
          if(WorldOld[left][j]==0 ) cou0++; else cou1++;
          if(WorldOld[right][j]==0) cou0++; else cou1++;
@@ -102,7 +103,7 @@ void syncStep() //Synchronous step a la classic CA
        }
    }
    
-   //Swap the arrays
+   // Swap the arrays
    int[][] WorldTmp=WorldOld;
    WorldOld=WorldNew;
    WorldNew=WorldTmp; 
@@ -117,5 +118,4 @@ void status()
 }
 
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic

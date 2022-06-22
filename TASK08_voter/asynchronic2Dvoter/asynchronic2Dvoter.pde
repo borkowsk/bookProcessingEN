@@ -1,30 +1,30 @@
-// "Voter model" <=> "Nearest Neighbors Social Impact"
-// Two-dimensional, asynchronous cellular automaton
-////////////////////////////////////////////////////////////////////////////////////
+/// "Voter model" <=> "Nearest Neighbors Social Impact"
+/// Two-dimensional, asynchronous cellular automaton
+//*//////////////////////////////////////////////////////////////////////////////////
 
-final int WorldSide=600;//Side lenght of simulation world (square)
-final float Dens=0.50;//.01;//Initial density in the lattice World
-final boolean withMoore=true;//neighborhood with the corners of the square
+final int WorldSide=600; //Side lenght of simulation world (square)
+final float Dens=0.50;   //.01;//Initial density in the lattice World
+final boolean withMoore=true; //neighborhood with the corners of the square
 
-int FR=1;//desired simulation speed
+int FR=1; //desired simulation speed
 
-int[][] World=new int[WorldSide][WorldSide];//2 dimensional array
+int[][] World=new int[WorldSide][WorldSide]; //2 dimensional array
                                             
 void setup()
 {
  size(600,620); //squre canvas
  noSmooth();    //much faster drawing
  frameRate(FR);
- initialisation();//Initial state of the model
+ initialisation(); //Initial state of the model
 }
 
 int t=0;
 void draw()
 {  
   visualisation();
-  stepMonteCarlo();//or other
+  stepMonteCarlo(); //or other
   status();    
-  t++;//next step
+  t++; //next step
 }
 
 void initialisation()
@@ -41,9 +41,9 @@ void visualisation()
     for(int j=0;j<WorldSide;j++) 
     {                      
       switch(World[i][j]){ 
-      case 1:stroke(255,255,0);break;//Yellow
+      case 1:stroke(255,255,0);break; //Yellow
       case 0:stroke(0,0,0);break;
-      default: stroke(255,0,0);//"emergency color" - RED
+      default: stroke(255,0,0); //"emergency color" - RED
       break;
       } 
       point(i,j);
@@ -57,7 +57,7 @@ void stepMonteCarlo()  // Monte Carlo step
        int i= (int)random(WorldSide), j= (int)random(WorldSide);
        int right= (i+1) % WorldSide, left= (WorldSide+i-1) % WorldSide;
        int dw= (j+1) % WorldSide, up= (WorldSide+j-1) % WorldSide;
-       int cou0=0, cou1=0;//counters of 0 & 1 state neighbors
+       int cou0=0, cou1=0; //counters of 0 & 1 state neighbors
        
        if(World[left][j]==0 ) cou0++; else cou1++;
        if(World[right][j]==0) cou0++; else cou1++;
@@ -72,7 +72,7 @@ void stepMonteCarlo()  // Monte Carlo step
          if(World[right][dw]==0) cou0++; else cou1++; 
        }
        
-       if(World[i][j]==0) cou0++; else cou1++;//Central cell
+       if(World[i][j]==0) cou0++; else cou1++; //Central cell
        
        if(cou0>cou1) World[i][j]=0;
        else World[i][j]=1;
@@ -88,5 +88,4 @@ void status()
 }
 
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic

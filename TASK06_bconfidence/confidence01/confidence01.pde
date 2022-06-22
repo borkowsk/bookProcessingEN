@@ -1,13 +1,13 @@
-//Bounded confidence 0D - first attempt
-//Only epsilon as a model parameter
+/// Bounded confidence 0D - first attempt
+/// Only epsilon as a model parameter
 
-final int     N=25;//Number of agents
-final float eps=0.001;//speed of changes
+final int     N=25; //Number of agents
+final float eps=0.001; //speed of changes
 
-float[] minds=new float[N];//creating an array 
+float[] minds=new float[N]; //creating an array 
 
-//for visualisation
-float   side=0;//diameter of circles 
+// for visualisation
+float   side=0; //diameter of circles 
 
 void setup()
 {
@@ -15,18 +15,18 @@ void setup()
   side=height/(N*2);
   frameRate(100);
   
-  //Initialisation
+  // Initialisation
   for(int i=0;i<N;i++)
-    minds[i]=i*(1.0/(N-1));//<0..1) or minds[i]=random(1.0);
+    minds[i]=i*(1.0/(N-1)); //<0..1) or minds[i]=random(1.0);
     
-  //Check
+  // Check
   for(int i=0;i<N;i++)
     print(minds[i]+" ");
 }
 
 void draw()
 {
-  //Visualisation
+  // Visualisation
   float step=255/N,R=255,B=0;
   for(int i=0;i<N;i++)
   {
@@ -34,7 +34,7 @@ void draw()
     ellipse(frameCount%width,(1-minds[i])*height,side,side);
   }
   
-  //Monte Carlo step of changes
+  // Monte Carlo step of changes
   for(int i=0;i<N;i++)
   {
     int a=int(random(N));
@@ -48,5 +48,4 @@ void draw()
   }
 }//end of draw()
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence
