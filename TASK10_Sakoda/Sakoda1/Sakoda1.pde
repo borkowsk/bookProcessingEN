@@ -1,5 +1,6 @@
 /// Sakoda inspired AGENT BASE MODEL utilized 1D or 2D dicrete geometry
 /// implemented by Wojciech Borkowski
+/// \see https://www.jasss.org/20/3/15.html
 //*///////////////////////////////////////////////////////////////////////////////////////
 
 // Model parameters
@@ -14,7 +15,7 @@ int cwidth=8; //size of cell
 int STATUSHEIGH=40;
 int STEPSperVIS=1;
 int FRAMEFREQ=20;
-boolean WITH_VIDEO=false;
+boolean WITH_VIDEO=true;
 boolean simulationRun=true; //Start/stop flag
 
 void setup()
