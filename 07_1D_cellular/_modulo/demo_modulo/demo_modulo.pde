@@ -1,17 +1,18 @@
-//Demonstration of modulo logic
+// Demonstration of modulo logic
 
-final int N=17; //Array size
-final int M=2;  //Moving step
-final int FR=2; //Frame rate
-final int FS=20;//Font size 
+final int N=17;  //Array size
+final int M=2;   //Moving step
 
-int i=int(random(N));//index of RED one
-int j=int(random(N));//index of BLUE one
+final int FR=1;  //Frame rate
+final int FS=20; //Font size 
+
+int i=int(random(N)); //index of RED one
+int j=int(random(N)); //index of BLUE one
 
 void setup()
 {
   size(600,600);
-  frameRate(2);
+  frameRate(FR);
   visualise();
 }
 
@@ -57,4 +58,3 @@ void draw()
 }
 
 // https://github.com/borkowsk/bookProcessingEN
-

@@ -1,6 +1,6 @@
-//setup() only
+// setup() only
 
-void setup()//It is executed once - after starting
+void setup() //It is executed once - after starting
 {
   strokeWeight(3);
   stroke(255,0,255);
@@ -8,5 +8,4 @@ void setup()//It is executed once - after starting
   ellipse(50,50,99,99);
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

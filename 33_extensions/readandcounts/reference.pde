@@ -1,8 +1,8 @@
 /**
-_ReadAndCounts_: 
-2021 (c) Wojciech Borkowski wborkowski AT uw.edu.pl
-This file defines a Processing 3+ reference dictionary made from public source:
-https://processing.github.io/processing-javadocs/core/processing/data/StringDict.html#StringDict-java.lang.String:A:A-
+ _ReadAndCounts_: 
+ 2021 (c) Wojciech Borkowski wborkowski AT uw.edu.pl
+ This file defines a Processing 3+ reference dictionary made from public source:
+ https://processing.github.io/processing-javadocs/core/processing/data/StringDict.html#StringDict-java.lang.String:A:A-
 */
 StringDict reference=new StringDict(
 new String[][] {
@@ -12,27 +12,28 @@ new String[][] {
   {"\""   ,  "https://www.informit.com/articles/article.aspx?p=130880&seqNum=13"},
   {"\\"   ,  "https://processing.org/discourse/beta/num_1233191211.html"}, //escape sequences
   
-  {"()"   ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
-  {"("    ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
-  {")"    ,  "https://processing.org/reference/parentheses.html"},// (parentheses)
+  {"()"   ,  "https://processing.org/reference/parentheses.html"}, // (parentheses)
+  {"("    ,  "https://processing.org/reference/parentheses.html"}, // (parentheses)
+  {")"    ,  "https://processing.org/reference/parentheses.html"}, // (parentheses)
   
-  {","    ,  "https://processing.org/reference/comma.html"},// (comma)
-  {"."    ,  "https://processing.org/reference/dot.html"},// (dot)
+  {","    ,  "https://processing.org/reference/comma.html"}, // (comma)
+  {"."    ,  "https://processing.org/reference/dot.html"}, // (dot)
   
-  {"/*"   ,  "https://processing.org/reference/multilinecomment.html"},// (multiline comment)
-  {"*/"   ,  "https://processing.org/reference/multilinecomment.html"},// (multiline comment)
-  {"/**"  ,  "https://processing.org/reference/doccomment.html"},//(doc comment)
-  {"//"   ,  "https://processing.org/reference/comment.html"},// (comment)
+  {"/*"   ,  "https://processing.org/reference/multilinecomment.html"}, // (multiline comment)
+  {"*/"   ,  "https://processing.org/reference/multilinecomment.html"}, // (multiline comment)
+  {"/**"  ,  "https://processing.org/reference/doccomment.html"}, //(doc comment)
+  {"//"   ,  "https://processing.org/reference/comment.html"}, // (comment)
   
-  {";"    ,  "https://processing.org/reference/semicolon.html"},// (semicolon)
-  {"="    ,  "https://processing.org/reference/assign.html"},// (assign)
+  {";"    ,  "https://processing.org/reference/semicolon.html"}, // (semicolon)
+  {"="    ,  "https://processing.org/reference/assign.html"}, // (assign)
   
-  {"[]"   ,  "https://processing.org/reference/arrayaccess.html"},// (array access)
-  {"["    ,  "https://processing.org/reference/arrayaccess.html"},// (array access)
-  {"]"    ,  "https://processing.org/reference/arrayaccess.html"},// (array access)
-  {"{}"   ,  "https://processing.org/reference/curlybraces.html"},// (curly braces)
-  {"{"    ,  "https://processing.org/reference/curlybraces.html"},// (curly braces)
-  {"}"    ,  "https://processing.org/reference/curlybraces.html"},// (curly braces)
+  {"[]"   ,  "https://processing.org/reference/arrayaccess.html"}, // (array access)
+  {"["    ,  "https://processing.org/reference/arrayaccess.html"}, // (array access)
+  {"]"    ,  "https://processing.org/reference/arrayaccess.html"}, // (array access)
+  
+  {"{}"   ,  "https://processing.org/reference/curlybraces.html"}, // (curly braces)
+  {"{"    ,  "https://processing.org/reference/curlybraces.html"}, // (curly braces)
+  {"}"    ,  "https://processing.org/reference/curlybraces.html"}, // (curly braces)
   
   {"catch"    ,  "https://processing.org/reference/catch.html"},
   {"class"    ,  "https://processing.org/reference/class.html"},
@@ -145,19 +146,19 @@ new String[][] {
   {"splice"     ,  "https://processing.org/reference/splice_.html"},
   {"subset"     ,  "https://processing.org/reference/subset_.html"},
       
-  {"!="  ,  "https://processing.org/reference/inequality.html"},// (inequality)
-  {"<"  ,  "https://processing.org/reference/lessthan.html"},// (less than)
-  {"<="  ,  "https://processing.org/reference/lessthanorequalto.html"},// (less than or equal to)
-  {"=="  ,  "https://processing.org/reference/equality.html"},// (equality)
-  {">"  ,  "https://processing.org/reference/greaterthan.html"},// (greater than)
-  {">="  ,  "https://processing.org/reference/greaterthanorequalto.html"},// (greater than or equal to)
+  {"!="  ,  "https://processing.org/reference/inequality.html"}, // (inequality)
+  {"<"  ,  "https://processing.org/reference/lessthan.html"},    // (less than)
+  {"<="  ,  "https://processing.org/reference/lessthanorequalto.html"}, // (less than or equal to)
+  {"=="  ,  "https://processing.org/reference/equality.html"},   // (equality)
+  {">"  ,  "https://processing.org/reference/greaterthan.html"}, // (greater than)
+  {">="  ,  "https://processing.org/reference/greaterthanorequalto.html"}, // (greater than or equal to)
       
   {"for"    ,  "https://processing.org/reference/for.html"},
   {"while"  ,  "https://processing.org/reference/while.html"},
       
-  {"?:"  ,  "https://processing.org/reference/conditional.html"},// (conditional)
-  {"?"  ,  "https://processing.org/reference/conditional.html"},// (conditional)
-  {":"  ,  "https://processing.org/reference/conditional.html"},// (conditional)
+  {"?:"  ,  "https://processing.org/reference/conditional.html"}, // (conditional)
+  {"?"  ,  "https://processing.org/reference/conditional.html"},  // (conditional)
+  {":"  ,  "https://processing.org/reference/conditional.html"},  // (conditional)
   
   {"break"     ,  "https://processing.org/reference/break.html"},
   {"case"      ,  "https://processing.org/reference/case.html"},
@@ -167,9 +168,9 @@ new String[][] {
   {"if"        ,  "https://processing.org/reference/if.html"},
   {"switch"    ,  "https://processing.org/reference/switch.html"},
       
-  {"!"   ,  "https://processing.org/reference/logicalNOT.html"},// (logical NOT)
-  {"&&"  ,  "https://processing.org/reference/logicalAND.html"},// (logical AND)
-  {"||"  ,  "https://processing.org/reference/logicalOR.html"},// (logical OR)
+  {"!"   ,  "https://processing.org/reference/logicalNOT.html"}, // (logical NOT)
+  {"&&"  ,  "https://processing.org/reference/logicalAND.html"}, // (logical AND)
+  {"||"  ,  "https://processing.org/reference/logicalOR.html"},  // (logical OR)
       
   {"createShape"  ,  "https://processing.org/reference/createShape_.html"},
   {"loadShape"    ,  "https://processing.org/reference/loadShape_.html"},
@@ -375,22 +376,22 @@ new String[][] {
   {"textDescent"  ,  "https://processing.org/reference/textDescent_.html"},
   {"PVector"      ,  "https://processing.org/reference/PVector.html"},
   
-  {"%"   ,  "https://processing.org/reference/modulo.html"},// (modulo)
-  {"*"   ,  "https://processing.org/reference/multiply.html"},// (multiply)
-  {"*="  ,  "https://processing.org/reference/multiplyassign.html"},// (multiply assign)
-  {"+"   ,  "https://processing.org/reference/addition.html"},// (addition)
-  {"++"  ,  "https://processing.org/reference/increment.html"},// (increment)
-  {"+="  ,  "https://processing.org/reference/addassign.html"},// (add assign)
-  {"-"   ,  "https://processing.org/reference/minus.html"},// (minus)
-  {"--"  ,  "https://processing.org/reference/decrement.html"},// (decrement)
-  {"-="  ,  "https://processing.org/reference/subtractassign.html"},// (subtract assign)
-  {"/"   ,  "https://processing.org/reference/divide.html"},// (divide)
-  {"/="  ,  "https://processing.org/reference/divideassign.html"},// (divide assign)
+  {"%"   ,  "https://processing.org/reference/modulo.html"},   // (modulo)
+  {"*"   ,  "https://processing.org/reference/multiply.html"}, // (multiply)
+  {"*="  ,  "https://processing.org/reference/multiplyassign.html"}, // (multiply assign)
+  {"+"   ,  "https://processing.org/reference/addition.html"},  // (addition)
+  {"++"  ,  "https://processing.org/reference/increment.html"}, // (increment)
+  {"+="  ,  "https://processing.org/reference/addassign.html"}, // (add assign)
+  {"-"   ,  "https://processing.org/reference/minus.html"},     // (minus)
+  {"--"  ,  "https://processing.org/reference/decrement.html"}, // (decrement)
+  {"-="  ,  "https://processing.org/reference/subtractassign.html"}, // (subtract assign)
+  {"/"   ,  "https://processing.org/reference/divide.html"},    // (divide)
+  {"/="  ,  "https://processing.org/reference/divideassign.html"},   // (divide assign)
   
-  {"&"   ,  "https://processing.org/reference/bitwiseAND.html"},// (bitwise AND)
-  {"<<"  ,  "https://processing.org/reference/leftshift.html"},// (left shift)
-  {">>"  ,  "https://processing.org/reference/rightshift.html"},// (right shift)
-  {"|"   ,  "https://processing.org/reference/bitwiseOR.html"},// (bitwise OR)
+  {"&"   ,  "https://processing.org/reference/bitwiseAND.html"}, // (bitwise AND)
+  {"<<"  ,  "https://processing.org/reference/leftshift.html"},  // (left shift)
+  {">>"  ,  "https://processing.org/reference/rightshift.html"}, // (right shift)
+  {"|"   ,  "https://processing.org/reference/bitwiseOR.html"},  // (bitwise OR)
 
   {"abs"        ,  "https://processing.org/reference/abs_.html"},
   {"ceil"       ,  "https://processing.org/reference/ceil_.html"},
@@ -431,5 +432,4 @@ new String[][] {
   {"TWO_PI"     ,  "https://processing.org/reference/TWO_PI.html"}
 });
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts

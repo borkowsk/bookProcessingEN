@@ -1,4 +1,4 @@
-//Read file and make dictionary of tokens
+// Read file and make dictionary of tokens
 
 String FileName = "readtokens.pde" ;
 BufferedReader input;
@@ -88,4 +88,4 @@ void _Test1()
   if( a==b && b!=1) print( 'o' );
 }
 
-//https://github.com/borkowsk/bookProcessingEN
+// https://github.com/borkowsk/bookProcessingEN

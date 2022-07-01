@@ -1,5 +1,5 @@
 // Demonstration of functions with different parameters
-/////////////////////////////////////////////////////////
+//*///////////////////////////////////////////////////////
 
 int function_returning_int()
 {
@@ -18,17 +18,17 @@ int function_receiving_int_returning_int(int x)
 
 float function_receiving_int_returning_float(int x)
 {
-  return sqrt(x);// Square root of an integer
+  return sqrt(x); // Square root of an integer
 }
 
 float function_receiving_float_returning_float(float x)
 {
-  return sqrt(x);// Square root of a floating point number
+  return sqrt(x); // Square root of a floating point number
 }
 
 float function_receiving_Float_object_returning_float(Float x)
 {
-  return sqrt(x);// Square root of a floating point number
+  return sqrt(x); // Square root of a floating point number
 }
 
 void setup()
@@ -56,5 +56,4 @@ void exit()
   super.exit();
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

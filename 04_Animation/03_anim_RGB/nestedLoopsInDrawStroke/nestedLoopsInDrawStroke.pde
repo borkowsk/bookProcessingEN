@@ -1,5 +1,5 @@
-//Loop in the loop in the hidden INFINITE loop!
-/////////////////////////////////////////////////
+// Loop in the loop in the hidden INFINITE loop!
+//*///////////////////////////////////////////////
 
 void setup()
 {
@@ -20,7 +20,7 @@ void draw()
         //stroke(k,j,i);
         //stroke(j,k,i);
         stroke(i,j,k);
-        point(j,255-i);//2D gradient of colors
+        point(j,255-i); //2D gradient of colors
       }
     }
     
@@ -35,5 +35,4 @@ void draw()
   k++; 
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

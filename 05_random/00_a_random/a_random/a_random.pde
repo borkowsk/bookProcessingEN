@@ -1,10 +1,9 @@
-//Random number generator - first test
+// Random number generator - first test
 
-float a=random(1.0);//A random number in the range 0..1
+float a=random(1.0); //A random number in the range 0..1
 // The range can be changed, check e.g .:
 // random (10) or random (1.0,2.0);
 
 println(a); // Number printed on the console
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

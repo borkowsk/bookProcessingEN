@@ -1,4 +1,4 @@
-//Random tiles
+// Random tiles
 void setup()
 {
   size(500,500);
@@ -17,5 +17,4 @@ void draw()
   }
 }
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/05_random
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/05_random

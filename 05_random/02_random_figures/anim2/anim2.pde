@@ -1,9 +1,9 @@
-//Simple animation example 
+// Simple animation example 
 
 void setup()  
 {
-  size(500,200);      //the size of the window
-  background(0,0,128);//its background color
+  size(500,200);       //the size of the window
+  background(0,0,128); //its background color
 }
 
 void draw()
@@ -12,5 +12,4 @@ void draw()
   point(random(width),random(height));
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

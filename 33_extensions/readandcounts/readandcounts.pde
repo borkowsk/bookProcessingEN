@@ -1,15 +1,15 @@
 /**
-_ReadAndCounts_: 
-Read file and make dictionary of tokens, then write dictionary in .md format
-with links to reference if available.
-2021 (c) Wojciech Borkowski wborkowski AT uw.edu.pl
+ _ReadAndCounts_: 
+ Read file and make dictionary of tokens, then write dictionary in .md format
+ with links to reference if available.
+ 2021 (c) Wojciech Borkowski wborkowski AT uw.edu.pl
 */
 
 String FileName = "readandcounts.pde"; // "readandcounts.pde"; // "splitIntoTokens.pde"; // "reference.pde";
 BufferedReader input;
 IntDict dictionary = new IntDict();
 
-//Output flags
+// Output flags
 Boolean trace = false;
 Boolean alltk = false;
 Boolean freq =  false;
@@ -19,6 +19,7 @@ void setup()
 {
   size(130,30);
   frameRate(500);
+  
   // Open the file from the createReader() example
   if(args!=null)
   {
@@ -35,6 +36,7 @@ void setup()
 }
 
 int linecounter=0;
+
 void draw() 
 {
   String  iline;
@@ -57,7 +59,7 @@ void draw()
   } 
   else 
   {
-    String[] pieces = splitIntoTokens(iline);//Split on borders of character types 
+    String[] pieces = splitIntoTokens(iline); //Split on borders of character types 
     print(linecounter,'\t');
     for (String s:pieces) 
     {
@@ -70,13 +72,13 @@ void draw()
        if(trimmed.equals("()") || trimmed.equals("[]") || trimmed.equals("{}"))
              up=2;
        else      
-       if(trimmed.equals("[") ||  trimmed.equals("]") )//'[' and ']' breaks .md syntax
+       if(trimmed.equals("[") ||  trimmed.equals("]") ) //'[' and ']' breaks .md syntax
             trimmed="[]";
        else     
-       if(trimmed.equals("(") ||  trimmed.equals(")") )//'(' and ')' may break .md syntax
+       if(trimmed.equals("(") ||  trimmed.equals(")") ) //'(' and ')' may break .md syntax
             trimmed="()";
        else
-       if(trimmed.equals("{") ||  trimmed.equals("}") )//consequently as above
+       if(trimmed.equals("{") ||  trimmed.equals("}") ) //consequently as above
             trimmed="{}";
        else
        if(trimmed.charAt(0)=='"') trimmed="\"...\"";
@@ -144,5 +146,4 @@ void exit()
 }
 
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts

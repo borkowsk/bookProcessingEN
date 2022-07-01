@@ -1,11 +1,11 @@
-//50 lines in shades of Prussian blue (cyan)
+/// 50 lines in shades of Prussian blue (cyan)
 
 size(500,500);
 background(100,0,0);
 
-//Comment on one or the other
-noSmooth();//No anti-aliasing
-//smooth();//With anti-aliasing
+// Comment on one or the other
+//noSmooth(); //No anti-aliasing
+smooth(); //With anti-aliasing
 
 for(int i=0;i<500;i+=10) //REPEAT 50x every 10
 {
@@ -13,6 +13,5 @@ for(int i=0;i<500;i+=10) //REPEAT 50x every 10
   line(i,i,0,500);
 }
 
-//https://www.facebook.com/ProcessingWEdukacji/
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://www.facebook.com/ProcessingWEdukacji/
+// https://github.com/borkowsk/bookProcessingEN

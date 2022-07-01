@@ -1,4 +1,4 @@
-//"cabinet" - an array of 10 integers:
+// "cabinet" - an array of 10 float:
 
 float[] cabinet_with_floats = new float[ 10 ];
 
@@ -9,5 +9,4 @@ print( cabinet_with_floats[ 1 ] + " " );
 print( cabinet_with_floats[ 9 ] + " " );
 //print( cabinet_with_floats[ 10 ] + " " );
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

@@ -1,16 +1,16 @@
 /**
-_ReadAndCounts_: 
-This file define function which split string into tokens basing on a character types borders
-2021 (c) Wojciech Borkowski wborkowski AT uw.edu.pl
+ _ReadAndCounts_: 
+ This file define function which split string into tokens basing on a character types borders
+ 2021 (c) Wojciech Borkowski wborkowski AT uw.edu.pl
 */
 
 String[] splitIntoTokens(String iline)
 {
-  StringList pieces=new StringList();// for return
+  StringList pieces=new StringList(); // for return
   
   if(iline.length()>0)
   {
-    int beg=0;//First position of substring
+    int beg=0; //First position of substring
     int ptype=Character.getType(iline.charAt(0));
     
     for(int i=0;i<iline.length();i++)
@@ -53,5 +53,4 @@ String[] splitIntoTokens(String iline)
   return pieces.array();
 }
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts

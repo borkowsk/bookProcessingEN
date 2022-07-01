@@ -1,11 +1,11 @@
-//"line" animation with setup()
-/////////////////////////////////
+// "line" animation with setup()
+//*///////////////////////////////
 
 void setup() 
 {
   frameRate(15);
   size(300,200);
-  strokeWeight(2);//Bold lines!
+  strokeWeight(2); //Bold lines!
 }
 
 int pos = 0;
@@ -17,5 +17,4 @@ void draw()
   pos++;
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

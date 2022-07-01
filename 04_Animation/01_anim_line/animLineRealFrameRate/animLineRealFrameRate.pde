@@ -1,5 +1,5 @@
-//infinite line animation
-////////////////////////////////
+// infinite line animation
+//*//////////////////////////////
 
 void setup() 
 {
@@ -16,10 +16,9 @@ void draw()
   pos++;
   if (pos > width) //already outside the window?
   {
-    pos = 0;//go back to initial position!
-    println(frameRate);//Real frame rate in last cycle
+    pos = 0; //go back to initial position!
+    println(frameRate); //Real frame rate in last cycle
   }
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

@@ -2,7 +2,7 @@
  The action of this SF novel takes place in a cylindrical world 
  after a conflict with "aliens". People live in steel cities, 
  climbing ropes, pursuing an undefined Goal.
-// https://www.goodreads.com/book/show/6615626-vertical
+ See: https://www.goodreads.com/book/show/6615626-vertical
 */
 
 
@@ -14,32 +14,32 @@ void setup()
 {
      size(200,1000);
      frameRate(200);
-     //Calculate space
+     // Calculate space
      space=width/(N+1);
      
-     //Initial positions
+     // Initial positions
      for(int j=0;j<N;j++)
         positions[j]=height-1;
 }
 
 void draw()
 {
-  background(0,155,155);//also clear the window!
+  background(0,155,155); //also clear the window!
   
-  //ropes
+  // ropes
   for(int i=0;i<width;i+=5)
     line(i,height,i,0);
     
-  //cities
+  // cities
   for(int j=0;j<N;j++)
   {
-    ellipse((j+1)*space,positions[j],space,3);//Visualisation
+    ellipse((j+1)*space,positions[j],space,3); //Visualisation
     
-    positions[j]-=random(2);//Random move
+    positions[j]-=random(2); //Random move
+    
     if(positions[j]<0) //Checking if he has not passed the top
       positions[j]+=height;
   }
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

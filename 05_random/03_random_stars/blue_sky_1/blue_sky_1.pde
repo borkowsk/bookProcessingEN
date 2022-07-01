@@ -2,7 +2,7 @@
 size(500,500);
 background(0,0,50);
 
-//DRAW STARS
+// DRAW STARS
 for(int i=0;i<1500;i++) //1500 stars
 {
   float R=random(255);
@@ -12,5 +12,4 @@ for(int i=0;i<1500;i++) //1500 stars
   point(random(500),random(500));
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

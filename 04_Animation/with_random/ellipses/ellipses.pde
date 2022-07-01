@@ -1,6 +1,6 @@
-//Eliipses example
+// Eliipses example
 
-//Control parameter
+// Control parameter
 int W=600;
 
 int radius()
@@ -8,13 +8,13 @@ int radius()
   return int(random(W/10));
 }
 
-//Initialisation
+// Initialisation
 void setup()
 {
   size(600,600);
 }
 
-//Running - visualisation and dynamics (about 60 times per sec.)
+// Running - visualisation and dynamics (about 60 times per sec.)
 void draw()
 {
   fill(random(255),random(255),random(255),random(255));
@@ -22,5 +22,4 @@ void draw()
   ellipse(random(W),random(W),r,r);
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

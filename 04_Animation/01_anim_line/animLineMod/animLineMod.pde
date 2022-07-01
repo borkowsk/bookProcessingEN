@@ -1,5 +1,5 @@
-//infinite line animation using remainder from integer division
-//////////////////////////////////////////////////////////////////
+// infinite line animation using remainder from integer division
+//*////////////////////////////////////////////////////////////////
 
 void setup() 
 {
@@ -14,10 +14,9 @@ void draw()
   background(204);
   line(pos, 20, pos, height-20 );
   pos++;
-  //If we use the remainder from integer division then 
-  //when 'pos' exceeds 'width' it will return to 0 and so on
+  // If we use the remainder from integer division then 
+  // when 'pos' exceeds 'width' it will return to 0 and so on
   pos=pos % width; // <=> pos %= width;
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

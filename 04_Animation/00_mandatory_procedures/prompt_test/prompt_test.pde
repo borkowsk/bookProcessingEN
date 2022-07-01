@@ -1,4 +1,4 @@
-//no setup() or draw()
+// no setup() or draw() - no effect!
 
 void prompt()
 {
@@ -6,5 +6,4 @@ void prompt()
     line(0,10,5,5);    
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

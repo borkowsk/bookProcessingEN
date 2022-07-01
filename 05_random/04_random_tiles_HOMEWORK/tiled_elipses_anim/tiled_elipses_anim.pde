@@ -1,10 +1,11 @@
-//Random tiled circles
+// Random tiled circles
+
 void setup()
 {
   size(500,500);
   frameRate(2);
   background(0,200,255);
-  //clear();//Strange black background, see manual
+  //clear(); //Strange black background, see manual
 }
 
 void draw()
@@ -19,5 +20,4 @@ void draw()
   }
 }
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/05_random
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/05_random

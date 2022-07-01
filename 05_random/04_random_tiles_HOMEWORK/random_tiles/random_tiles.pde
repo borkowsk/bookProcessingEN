@@ -1,4 +1,4 @@
-//Random tiles
+// Random tiles
 size(500,500);
 for(int i=0;i<10;i++)
 {
@@ -9,5 +9,4 @@ for(int i=0;i<10;i++)
    }
 }
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/05_random
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/05_random

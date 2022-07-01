@@ -1,5 +1,5 @@
-//infinite line animation
-//////////////////////////////
+// infinite line animation
+//*////////////////////////////
 
 void setup() 
 {
@@ -16,8 +16,7 @@ void draw()
   pos++;
   
   if (pos > width) //already outside the window?
-    pos = 0;//go back to initial position!
+    pos = 0; //go back to initial position!
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN
