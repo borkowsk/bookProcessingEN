@@ -1,3 +1,4 @@
+// TODO comments clean!
 // "Seeding": One-dimensional, asynchronous cellular automaton
 //  (the simplest simulation of CA in functional syntax) 
 ///////////////////////////////////////////////////////////////
@@ -55,4 +56,3 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
-

@@ -1,3 +1,4 @@
+// TODO comments clean!
 // "Not too many neighbors": 
 // Two-dimensional, von Neuman, asynchronous cellular automaton
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,4 +83,3 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
-
