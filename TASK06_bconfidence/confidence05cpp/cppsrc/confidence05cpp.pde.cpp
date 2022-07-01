@@ -16,7 +16,7 @@ using namespace Processing;
 /// & with information bubles
 //*/////////////////////////////////////////////////////////////////////////////////////
 
-//declared in local.h: const int       SEED=111;    ///< seed for random number generator
+//declared in local.h: const int       SEED=111;   ///< seed for random number generator
 //declared in local.h: const int          N=100;   ///< Number of agents
 //declared in local.h: const float treScale=0.5;   ///<  Threshold is a function of extremes of views times Scale
 //declared in local.h: const float   minEps=0.001; ///< minimal epsilon. 
@@ -33,7 +33,7 @@ void processing_window::setup()
 {
   size(1000,250);
   setFrameRate(300);
-  //randomSeed(SEED);
+  randomSeed(SEED);
   
   // Initialisation
   for(int i=0;i<N;i++)
@@ -41,7 +41,7 @@ void processing_window::setup()
     minds[i]=i*(1.0/(N-1)); //<0..1>
     eps[i]=random(minEps,maxEps); //print(eps[i],"");
     // Threshold is a function of extremes of views
-    tre[i]=(0.5-fabs(minds[i]-0.5))*treScale; println(tre[i]);//<0..0.5*Scale>
+    tre[i]=(0.5-std::abs(minds[i]-0.5))*treScale; println(tre[i]);//<0..0.5*Scale>
   }
   
   // Check
@@ -65,7 +65,7 @@ void processing_window::draw()
     int low=max(0,a-bub),hig=min(a+bub+1,N);
     int b=int( random( low , hig ) );  //println(a,low,b,hig);
 
-    if(fabs(minds[a]-minds[b])<tre[a])
+    if(std::abs(minds[a]-minds[b])<tre[a])
     {
       if(minds[a] < minds[b])
         minds[a]+=eps[a];

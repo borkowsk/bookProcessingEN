@@ -9,7 +9,7 @@
 //All classes from Processing files
 
 //All global finals (consts) from Processing files
-static 	const int       SEED=111;    ///< seed for random number generator
+static 	const int       SEED=111;   ///< seed for random number generator
 static 	const int          N=100;   ///< Number of agents
 static 	const float treScale=0.5;   ///<  Threshold is a function of extremes of views times Scale
 static 	const float   minEps=0.001; ///< minimal epsilon. 
