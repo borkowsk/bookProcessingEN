@@ -1,0 +1,75 @@
+/// Simulation have to collect and write down statistics from every step
+//*/////////////////////////////////////////////////////////////////////////////////////
+
+PrintWriter outstat;           ///< globally visible handle to output file
+
+void initializeStats()         ///< global function
+{
+  String FileName=modelName+="_s"+side+"d"+density+"i"+Number_of_identities
+                           +"_"+year()+'.'+nf(month(),2)+'.'+nf(day(),2)
+                           +'.'+nf(hour(),2)+'.'+nf(minute(),2)+'.'+nf(second(),2)
+                           +'.'+millis();
+  println("Output in file:",FileName);
+  outstat=createWriter(FileName+".out");
+  outstat.println("$STEP\tAlive\tStress\t..."); //<-- complete the header fields!
+}
+
+float meanStress=0;          ///< global statistic
+int   liveCount=0;           ///< global stat.
+
+void doStatisticsOnAgents(Agent[] agents)           ///< global function
+{  
+  Agent curra;
+  double summ=0;
+  liveCount=0;
+  
+  for(int a=0;a<agents.length;a++)
+    if( (curra=agents[a]) != null )
+    {
+      summ+=curra.stress;
+     
+      //Inne statystyki
+      //TODO
+       
+      liveCount++;
+    }
+  
+   if(outstat!=null)
+      outstat.println(TheWorld.getTimeStep()+"\t"
+                      +liveCount+"\t"+(summ/liveCount)+"\t..."); //<-- complete the fields!
+   
+   meanStress=(float)(summ/liveCount);
+   
+   //outstat should be closed in exit() --> see Exit.pde
+}
+
+void doStatisticsOnAgents(Agent[][] agents)           ///< global function
+{  
+  Agent curra;
+  double summ=0;
+  liveCount=0;
+  
+  for(int a=0;a<agents.length;a++)
+   for(int b=0;b<agents[a].length;b++)
+    if( (curra=agents[a][b]) != null )
+    {
+      summ+=curra.stress;
+     
+      //Inne statystyki
+      //TODO
+      
+      liveCount++;
+    }
+  
+   if(outstat!=null)
+      outstat.println(TheWorld.getTimeStep()+"\t"+liveCount+"\t"+(summ/liveCount)+"\t...");
+   
+   meanStress=(float)(summ/liveCount);
+   
+   //outstat should be closed in exit() --> see RTMExit.pde
+}
+
+//*/////////////////////////////////////////////////////////////////////////////////////////
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: STATISTICS LOG TEMPLATE
+// https://github.com/borkowsk/bookProcessingEN 
+//*/////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,9 @@
+[ ‘!=’ ](https://processing.org/reference/inequality.html)	[ ‘"..."’ ](https://openjdk.java.net/jeps/326)	[ ‘()’ ](https://processing.org/reference/parentheses.html)	[ ‘++’ ](https://processing.org/reference/increment.html)	[ ‘,’ ](https://processing.org/reference/comma.html)	[ ‘-’ ](https://processing.org/reference/minus.html)	[ ‘.’ ](https://processing.org/reference/dot.html)	[ ‘//’ ](https://processing.org/reference/comment.html)	[ ‘;’ ](https://processing.org/reference/semicolon.html)	[ ‘<’ ](https://processing.org/reference/lessthan.html)	[ ‘=’ ](https://processing.org/reference/assign.html)	[ ‘boolean’ ](https://processing.org/reference/boolean.html)	[ ‘delay’ ](https://processing.org/reference/delay_.html)	[ ‘false’ ](https://processing.org/reference/false.html)	[ ‘fill’ ](https://processing.org/reference/fill_.html)	[ ‘for’ ](https://processing.org/reference/for.html)	[ ‘height’ ](https://processing.org/reference/height.html)	[ ‘if’ ](https://processing.org/reference/if.html)	[ ‘import’ ](https://processing.org/reference/import.html)	[ ‘int’ ](https://processing.org/reference/int.html)	[ ‘new’ ](https://processing.org/reference/new.html)	[ ‘null’ ](https://processing.org/reference/null.html)	[ ‘saveFrame’ ](https://processing.org/reference/saveFrame_.html)	[ ‘set’ ](https://processing.org/reference/set_.html)	[ ‘static’ ](https://processing.org/reference/static.html)	[ ‘String’ ](https://processing.org/reference/String.html)	[ ‘text’ ](https://processing.org/reference/text_.html)	[ ‘true’ ](https://processing.org/reference/true.html)	[ ‘void’ ](https://processing.org/reference/void.html)	[ ‘{}’ ](https://processing.org/reference/curlybraces.html)	
+
+
+----
+[__Processing.org__](http://Processing.org/) <https://processing.org/reference/index.html>
+
+
+[Index made by _ReadAndCounts_ (c) Wojciech Borkowski](https://github.com/borkowsk/bookProcessingEN/tree/main/33_extensions/readandcounts)
+
