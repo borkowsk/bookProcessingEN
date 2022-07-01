@@ -15,7 +15,7 @@ void setup()
   if( X > 1.0 ) println("X is too big!");
   if( X < 0.0 ) println("X is too small!");
   
-  stroke(255,0,0);//In RED!
+  stroke(255,0,0); //In RED!
 }
 
 
