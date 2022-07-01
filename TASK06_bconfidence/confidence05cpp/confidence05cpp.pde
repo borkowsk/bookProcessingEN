@@ -3,6 +3,7 @@
 /// & with information bubles
 //*/////////////////////////////////////////////////////////////////////////////////////
 
+final int       SEED=111;   ///< seed for random number generator
 final int          N=100;   ///< Number of agents
 final float treScale=0.5;   ///<  Threshold is a function of extremes of views times Scale
 final float   minEps=0.001; ///< minimal epsilon. 
@@ -13,20 +14,21 @@ float[] minds=new float[N]; ///< creating the minds array
 float[]   eps=new float[N]; ///< creating the epsilons array
 float[]   tre=new float[N]; ///< creating the tresholds array
 
-boolean classicVis=false;   ///< Type of visualisation
+boolean classicVis=true;    ///< Type of visualisation
 
 void setup()
 {
   size(1000,250);
   frameRate(300);
+  randomSeed(SEED);
   
   // Initialisation
   for(int i=0;i<N;i++)
   {
     minds[i]=i*(1.0/(N-1)); //<0..1>
-    eps[i]=random(minEps,maxEps);
+    eps[i]=random(minEps,maxEps); //print(eps[i],"");
     // Threshold is a function of extremes of views
-    tre[i]=(0.5-abs(minds[i]-0.5))*treScale; //<0..0.5*Scale>
+    tre[i]=(0.5-abs(minds[i]-0.5))*treScale; println(tre[i]);//<0..0.5*Scale>
   }
   
   // Check
@@ -68,7 +70,7 @@ void visualisationA()  ///< Basic visualisation
   for(int i=0;i<N;i++)
   {
     stroke(R,0,B);R-=step;B+=step;
-    ellipse(frameCount,(1-minds[i])*height,side,side);
+    rect(frameCount,(1-minds[i])*height,side,side);
   }
 }
 
