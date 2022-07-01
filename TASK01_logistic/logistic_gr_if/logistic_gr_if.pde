@@ -1,12 +1,13 @@
-//Logistic iteration - with range checking
+// Logistic iteration - with range checking
 
-float R=5.5;//Range from 0..4
+float R=3.5;//Range from 0..4
 float X=0.99;//Range 0..1!
 size(1000,300);
 
 //checking the range of R & X
 if( R > 4.0 ) println("R is too big!");
 if( R < 0.0 ) println("R is too small!");
+
 if( X > 1.0 ) println("X is too big!");
 if( X < 0.0 ) println("X is too small!");
 
@@ -20,5 +21,4 @@ for(int i=0;i<width;i++)
 
 text("R="+R,0,height);
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

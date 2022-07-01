@@ -1,6 +1,6 @@
-//Logistic iteration - almost everything possible without procedures
+// Logistic iteration - almost everything possible without procedures
 
-float R=2.5;//Range from 0..4
+float R=3.575;//Range from 0..4
 float X=0.99;//Range 0..1!
 size(1000,300);
 
@@ -8,6 +8,9 @@ size(1000,300);
 if( R >= 4.0 ) { R=4.0; println("R is too big!"); }
 if( R <= 0.0 ) { R=0.0; println("R is too small!"); }
 println("Current R=",R);
+   
+if( X > 1.0 ) println("X is too big!");
+if( X < 0.0 ) println("X is too small!");
 
 stroke(255,0,0);//In RED!
 
@@ -21,5 +24,4 @@ for(int i=0;i<width;i++)
 
 text("R="+R,0,height);
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN

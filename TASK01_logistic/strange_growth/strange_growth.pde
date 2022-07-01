@@ -1,4 +1,4 @@
-//General cell population growth - what does 1/3 of a cell mean?
+/// General cell population growth. What does 1/3 of a cell mean?
 
 int   X=1;//Current state
 float R=2.5;//Average number of mature descendants
@@ -10,5 +10,4 @@ for(int i=0;i<10;i++)
   X=int(R*X);//Calculate next state using R
 }
 
-//https://github.com/borkowsk/bookProcessingEN
-
+// https://github.com/borkowsk/bookProcessingEN
