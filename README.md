@@ -4,9 +4,6 @@ Materials for the textbook in preparation.
 Text partially available on the blog: 
 https://processingwedukacji.blogspot.com
 
-Current news also on Facebook: 
-https://www.facebook.com/ProcessingWEdukacji/
-
 This repository contains only the materials for the book, no other simulation materials in Processing.
 
 * ADDITIONAL LITERATURE *
