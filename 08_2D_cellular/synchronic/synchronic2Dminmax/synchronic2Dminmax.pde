@@ -1,9 +1,9 @@
-// "Min Max neighbors": 
+// "Min Max neighbors":Not too many neighbors, but not too few 
 // TWO-dimensional, SYNCHRONOUS, von Neuman, deterministic cellular automaton
 //////////////////////////////////////////////////////////////////////////////
 
 final int WorldSide=601;//How many cells do we want in one line?
-final float Dens=0.875;//0.5 or so also posible
+final float Dens=0.88;//0.875;//0.5 or so also posible
 final int   MinN=3;//Minimal number of neighbors required
 final int   MaxN=4;//Maximal number of neighbors required
 
@@ -13,7 +13,7 @@ int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation
 void setup()
 {
   size(601,601);    //square window
-  frameRate(160);  
+  frameRate(999);  
   noSmooth();
   
   for(int i=0;i<WorldSide;i++) //Initialisation
@@ -65,6 +65,7 @@ void draw()
    WorldNew=WorldTmp;
    
    t++;//The next generation/step/year
+   fill(255,128);
    textSize(20);textAlign(LEFT,TOP);text("ST:"+t,0,0);
 }
 
@@ -77,5 +78,3 @@ void draw()
                  +  (WorldOld[i][dw]>0 ?1:0)             
                  ;
 */
-
-
