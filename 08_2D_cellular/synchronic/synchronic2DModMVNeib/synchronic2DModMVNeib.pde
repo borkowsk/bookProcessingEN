@@ -2,18 +2,17 @@
 // TWO-dimensional, SYNCHRONOUS, vonNeuman/Moore, deterministic cellular automaton
 ///////////////////////////////////////////////////////////////////////////////////
 
-final int     WorldSide=601;//How many cells do we want in one line?
-final float   Dens=0;//.001;//0.5 or so also posible
-final int     Div=5; //Divider for remainder operation
-final boolean withMoore=true;//With or without Moore neighbors
-final boolean withMe=true;//false or true
+final int     WorldSide=602; //How many cells do we want in one line?
+final float   Dens=0; //.001; //0.5 or so also posible
+final int     Div=7; //Divider for remainder operation
+final boolean withMoore=false; //With or without Moore neighbors
+final boolean withMe=true; //false or true
 
-int[][] WorldOld=new int[WorldSide][WorldSide];//We need two arrays for the old  
-int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation
+int[][] WorldOld=new int[WorldSide][WorldSide]; //We need two arrays for the old  
+int[][] WorldNew=new int[WorldSide][WorldSide]; //and new state of the simulation
 
-final boolean traceVA=false;//virgin areas trace ON/OFF
-int FR = 9;
-
+final boolean traceVA=false; //virgin areas trace ON/OFF
+int FR = 1;
 
 void setup()
 {
@@ -113,10 +112,10 @@ void draw()
    WorldOld=WorldNew;
    WorldNew=WorldTmp;
    
-   t++;//The next generation/step/year
+   t++; //The next generation/step/year
    textSize(18);
-   fill(128);noStroke();            rect(0,height-20,width,20);
-   fill(255);textAlign(LEFT,BOTTOM);text(t+"("+frameRate+")",0,height);
+   fill(128);noStroke();             rect(0,height-20,width,20);
+   fill(255);textAlign(LEFT,BOTTOM); text(t+"("+frameRate+")",0,height);
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
