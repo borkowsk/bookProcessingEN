@@ -1,4 +1,4 @@
-text("Witaj na kursie\nProcessingu!",10,50);
+text("Welcome to the\nProcessing course!",10,50);
 
 
 
