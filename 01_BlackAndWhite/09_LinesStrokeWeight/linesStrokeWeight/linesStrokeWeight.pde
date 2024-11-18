@@ -2,10 +2,10 @@
 
 size(200,200);
 
-line(30, 20, 85, 20); //default line settings
+line(30, 20, 85, 20); // default line settings
 
 stroke(128);
-strokeWeight(2); //Line thickness
+strokeWeight(2); // Line thickness
 line(85, 20, 85, 75);
 
 stroke(255);

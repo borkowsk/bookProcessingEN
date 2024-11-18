@@ -1,4 +1,4 @@
-// infinite line animation in colors
+// Infinite line animation in colors.
 //*//////////////////////////////////
 
 void setup() 

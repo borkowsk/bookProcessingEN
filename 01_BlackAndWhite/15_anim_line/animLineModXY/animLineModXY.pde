@@ -1,5 +1,5 @@
-// infinite line animation using remainder from integer division
-//*////////////////////////////////////////////////////////////////
+// Infinite line animation using remainder from integer division.
+//*///////////////////////////////////////////////////////////////
 
 void setup() 
 {
@@ -7,11 +7,11 @@ void setup()
   frameRate(60);
 }
 
-int posX = 0;
-int posY = 0;
+int posX = 0; ///< GLOBAL SCOPE.
+int posY = 0; ///< GLOBAL SCOPE.
 
 void draw() 
-{
+{ //extern posX,posY; // Used from global scope.
   background(204);
   line(posX,posY,posX+50,posY+20 );
   

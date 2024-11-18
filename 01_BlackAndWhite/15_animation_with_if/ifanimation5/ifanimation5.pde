@@ -4,7 +4,7 @@ void setup()
 {
      size(500,500);
      noStroke();
-     frameRate(10); //Test what happened when rate is small (1..3)
+     frameRate(10); // Test what happened when rate is small (1..3)
 }
 
 void mousePressed()
@@ -26,5 +26,5 @@ void mousePressed()
 
 void draw()
 {
-  //Only this one put drawing to screen!
+  // Only this one procedure put drawing to screen!
 }

@@ -1,4 +1,4 @@
-/// Drawing rectangles example
+/// Drawing rectangles example.
 
 size(300,300);
 

@@ -9,7 +9,7 @@ void setup() //It is executed once - after starting
   ellipse(250, 250, 205, 205); //white ellipse in the background
 }
 
-float i=0; //"for(int i=0;i<inf;i+=10)"
+float i=0; //Like "for(int i=0;i<inf;i+=10)"
 
 void draw() //It is executed in an invisible loop
 {

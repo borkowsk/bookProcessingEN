@@ -1,4 +1,4 @@
-/// What is the variable useful for
+/// What is the variable useful for.
 
 size(500,500);   //A slightly larger window
 background(200); //Bright background (200/255 of brightness)
