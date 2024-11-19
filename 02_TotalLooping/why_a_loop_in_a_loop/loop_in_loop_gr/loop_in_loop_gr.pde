@@ -1,4 +1,5 @@
-/// Loop in loop - note the curly braces {}
+/// Loop in loop - note the multi-instruction code blocks.
+//*////////////////////////////////////////////////////////
 
 //noStroke(); //ellipses without outlines
 

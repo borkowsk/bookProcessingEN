@@ -1,4 +1,5 @@
-/// Drawing points next example 
+/// Drawing points next example.
+//*//////////////////////////////
 
 size(500,500);
 background(255);

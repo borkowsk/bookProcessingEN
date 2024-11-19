@@ -1,14 +1,15 @@
-/// Bigger CD image ;-) example
+/// Bigger CD image ;-) example.
+//*//////////////////////////////
 
 size(300,300);
+background(0); // Change background!
+noFill();      // Only the contours of the ellipses.
 //noSmooth();
-background(0); //Black background (0 brightness)
-noFill(); //The contours of the ellipses themselves
 
-for(int i=250;i>30;i=i-2) //REPEAT every other time <=> i-=2
-{
-   stroke(100+i%4*50); //More sophisticated outline
-   ellipse(width/2,height/2,i,i); //In the center of a window
+for(int i=250;i>30;i-=2) // REPEAT BACKWARD every two times <=> i=i-2
+{  // Before run, try to guess what this code below does!
+   stroke(i);   // More sophisticated color
+   ellipse(width/2,height/2,i,i); // In the center of a window
 }
 
 // https://github.com/borkowsk/bookProcessingEN
