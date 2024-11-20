@@ -1,6 +1,7 @@
-// setup() only
+// `setup()` mandatory only.
+//*/////////////////////////
 
-void setup() //It is executed once - after starting
+void setup() // It is executed once - after starting
 {
   strokeWeight(3);
   stroke(255,0,255);

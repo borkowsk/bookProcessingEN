@@ -1,4 +1,5 @@
-/// prompt with setup()
+/// `prompt()` "called" inside `setup()`.
+//*///////////////////////////////////////
 
 void prompt()
 {
@@ -6,9 +7,9 @@ void prompt()
     line(0,10,5,5);    
 }
 
-void setup() //It is executed once - after starting
+void setup() // It is executed once - after starting
 {
-    prompt(); //Call of prompt()
+    prompt(); // Call `prompt()`!
 }
 
 // https://github.com/borkowsk/bookProcessingEN
