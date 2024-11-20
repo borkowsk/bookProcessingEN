@@ -1,15 +1,15 @@
-// Loop in the loop in the hidden INFINITE loop!
-//*////////////////////////////////////////////////
+/// Loop in the loop in the hidden INFINITE loop.
+//*//////////////////////////////////////////////
 
 void setup()
 {
   size(256,256);
 }
 
-int k=0;
+int k=0; ///< global scope variable.
 
 void draw()
-{
+{ // external k; // It changes every step.
   if(k<256)
   {
     for(int i=0;i<256;i++)

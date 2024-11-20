@@ -1,20 +1,20 @@
-// Eliipses example
+/// Ellipses example:
+//*//////////////////
 
-// Control parameter
-int W=600;
+int W=600;  ///< Global control parameter.
 
-int radius()
+int radius() // uses global W
 {
   return int(random(W/10));
 }
 
-// Initialisation
+// Initialisation:
 void setup()
 {
   size(600,600);
 }
 
-// Running - visualisation and dynamics (about 60 times per sec.)
+// Running - visualisation and dynamics (about 60 times per sec.).
 void draw()
 {
   fill(random(255),random(255),random(255),random(255));
