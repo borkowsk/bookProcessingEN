@@ -1,29 +1,29 @@
-// "Not too many neighbors": 
-// One-dimensional, asynchronous cellular automaton
-///////////////////////////////////////////////////////////////
+/// "Not too many neighbors": 
+/// The one-dimensional, asynchronous cellular automaton.
+//-///////////////////////////////////////////////////////
 
-final int WorldSize=500;//How many cells do we want?
-final int MCD=3;//Monte Carlo step divider
-final int FR=300;//Expected speed of the simulation
+final int WorldSize=500; // How many cells do we want?
+final int MCD=3;  // Monte Carlo step divider
+final int FR=300; // Expected speed of the simulation
 
-int[] World=new int[WorldSize];//We create an array of the "world"
+int[] World=new int[WorldSize]; // Here it creates an array of the "world"
 
-void setup()
+void setup() // modifies external World
 {
-  size(500,1000);//The window is more vertical than horizontal
-  frameRate(FR); //Expected speed of the simulation
-  noSmooth(); //Antialiasing is unnecessary for cellular automata
-  //Initialisation
-  World[WorldSize/2]=1; //The seed of the automaton more or less in the middle
+  size(500,1000); // The window is more vertical than horizontal
+  frameRate(FR);  // Expected speed of the simulation
+  noSmooth();     // Antialiasing is unnecessary for cellular automata
+  // Initialisation
+  World[WorldSize/2]=1; // The seed of the automaton more or less in the middle
 }
 
 void Visualisation1()
 {
   for(int i=0;i<WorldSize;i++)
   {                               
-    if(World[i]>0) stroke(255,255,0);//Non-zero cells are yellow
-    else           stroke(0,0,255);//Zero cells are blue
-    point(i,t);//State of the 'i' cell of the automaton at time 't'
+    if(World[i]>0) stroke(255,255,0); // Non-zero cells are yellow
+    else           stroke(0,0,255);   // Zero cells are blue
+    point(i,t); // State of the 'i' cell of the automaton at time 't'
   }
 }
 
@@ -31,46 +31,47 @@ void Visualisation2()
 {
   for(int i=0;i<WorldSize;i++)
   {                               
-    if(World[i]>0) stroke(0,255,128);//Non-zero cells are green
-    else           stroke(0);//Zero cells are black
-    line(i,t,i,height);//State of the 'i' cell of the automaton at time 't'
+    if(World[i]>0) stroke(0,255,128); // Non-zero cells are green
+    else           stroke(0); // Zero cells are black
+    line(i,t,i,height); // State of the 'i' cell of the automaton at time 't'
   }
 }
 
-int t=0;//Time counter, i.e. steps/generations/years
-void draw()
+int t=0; // Time counter, i.e. steps/generations/years
+
+void draw() // uses external t
 {
-  if(t>height) //Is it off screen?
-    return;//We use "emergency exit" because there is nothing to draw 
+  if(t>height) // Is it off screen?
+    return;    // We use "emergency exit" because there is nothing to draw 
  
   Visualisation1();
   
-  //Monte Carlo or part of Monte Carlo step
-  int N=WorldSize/MCD; //At MOST 1/MCD of the automaton cells changes its state in a time step
+  // Monte Carlo or part of Monte Carlo step
+  int N=WorldSize/MCD; // At MOST 1/MCD of the automaton cells changes its state in a time step
   for(int j=0;j<N;j++)
   {
-       int i=int(random(WorldSize));//We need to truncate the fractional part
+       int i=int(random(WorldSize)); // We need to truncate the fractional part
        
-       //Calculation of neighbors' indices taking into account the "boundary conditions" 
-       int right = (i+1) % WorldSize;//Wrapping in a circle using the remainder of division operator       
-       int left  = (WorldSize+i-1) % WorldSize;//This operator works intuitively only for positive numbers!
-       int lcou  = 0;//counter of live neighbors
+       // Calculation of neighbors' indices taking into account the "boundary conditions" 
+       int right = (i+1) % WorldSize; // Wrapping in a circle using the remainder of division operator       
+       int left  = (WorldSize+i-1) % WorldSize; // This operator works intuitively only for positive numbers!
+       int lcou  = 0; // counter of live neighbors
        
-       if(World[left]>0) //Is the left neighbor not zero, ie is he "alive"?
+       if(World[left]>0) // Is the left neighbor not zero, ie is he "alive"?
          lcou++;    
        
-       if(World[right]>0) //Is the right neighbor not zero?
+       if(World[right]>0) // Is the right neighbor not zero?
          lcou++; 
        
-       //The rule of this automaton - if you have ONE living neighbor, you are alive
+       // The rule of this automaton - if you have ONE living neighbor, you are alive
        if(lcou==1)
          World[i]=1;
        else
          World[i]=0;
    }
    
-   t++;//The next generation/step/year
+   t++; // The next generation/step/year
 }
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
-
+// https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
+/// @date 2024-11-21 (reappered)

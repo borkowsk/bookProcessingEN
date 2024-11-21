@@ -1,13 +1,14 @@
-// Demonstration of modulo logic
+/// Demonstration of modulo logic.
+//-///////////////////////////////
 
-final int N=17;  //Array size
-final int M=2;   //Moving step
+final int FR= 1; // Frame rate
+final int FS=20; // Font size 
 
-final int FR=1;  //Frame rate
-final int FS=20; //Font size 
+final int N =17; // Array size
+final int M = 2; // Moving step
 
-int i=int(random(N)); //index of RED one
-int j=int(random(N)); //index of BLUE one
+int i=int(random(N)); // index of RED one
+int j=int(random(N)); // index of BLUE one
 
 void setup()
 {
@@ -25,7 +26,7 @@ void visualise()
   fill(255);
   
   for(int i=0;i<N;i++)
-  {
+  { // In Processing i declared inside loop hides global i only inside loop block.
     rect((i+1)*side,side,side,side);
     arc(width/2,height/2,width/2,height/2,i*angl,(i+1)*angl);
   } 
@@ -38,7 +39,7 @@ void visualise()
   arc(width/2,height/2,width/2,height/2,j*angl,(j+1)*angl);
 }
 
-void draw()
+void draw() // modifies global i,j
 {
   visualise();
   String istr="(i+M)%N="+"("+i+"+"+M+")%"+N+"=\t";
@@ -49,7 +50,8 @@ void draw()
   j=(N+j-M)%N;
   jstr+=nf(j,2,0);
   
-  println(istr+"\t\t"+jstr,(i==j?"!!!":"") );
+  println(istr,"\t",jstr,(i==j?"!!!":"") );
+  
   textAlign(CENTER,BOTTOM);
   fill(255,0,0);
   text(istr,width/2,height-4*FS);
@@ -58,3 +60,4 @@ void draw()
 }
 
 // https://github.com/borkowsk/bookProcessingEN
+/// @date 2024-11-21 (last modification) 
