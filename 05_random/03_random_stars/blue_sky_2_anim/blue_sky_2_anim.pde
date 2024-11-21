@@ -1,7 +1,9 @@
-// Stars in the sky of any size - animated
-int N,i; //'N' and 'i' must be global!
+/// Stars in the sky of any size - animated.
+//*/////////////////////////////////////////
 
-void setup()
+int N,i; // 'N' and 'i' must be global!
+
+void setup() // uses external N,i
 {
   size(1000,700);
   background(0,0,25);
@@ -12,18 +14,18 @@ void setup()
   i=0; //Counter
 }
 
-void draw()
+void draw() // uses external N,i
 {
   if(i<N)
   {
-    float R=55+random(200); //Stars with a minimum brightness of 55
-    float G=55+random(200); //<=> random(55,255);
+    float R=55+random(200); // Stars with a minimum brightness of 55
+    float G=55+random(200); // <=> random(55,255);
     float B=55+random(200); // ---//---
-    stroke(R,G,B); //Different colors of the stars
-    strokeWeight(random(2)); //Different sizes of stars
+    stroke(R,G,B);           // Different colors of the stars
+    strokeWeight(random(2)); // Different sizes of stars
     
     point(random(width),
-          random(height)); //Different positions
+          random(height)); // Different positions
     i++;
   }
 }

@@ -1,18 +1,19 @@
-// FALLING SPIDERS
-//*//////////////////////////////////////////////////////////////////////
+/// FALLING SPIDERS.
+//*/////////////////
 
-final int Num=10;    //How many spiders
-final float minv=10; //The slightest movement of the spider
-final float maxv=50; //What the greatest movement of the spider
+final int   FR   = 10; // How many frames per second
+final int   Num  = 10; // How many spiders
 
-float[] h=new float[Num]; //Vertical position
-float[] x=new float[Num]; //Horizontal position
-float[] v=new float[Num]; //Vertical speed in pixels per second!
+final float minv = 10.0; // The slightest movement of the spider
+final float maxv = 50.0; // What the greatest movement of the spider
 
-float y0=0;      //Starting height = height/D;
-final int FR=10; //How many frames per second
+float y0=0.0; // Starting height = height/D;
 
-void setup()
+float[] h=new float[Num]; // Vertical position
+float[] x=new float[Num]; // Horizontal position
+float[] v=new float[Num]; // Vertical speed in pixels per second!
+
+void setup() // changes global y0,h,x,v
 {
   size(500,500);
   y0=height/20;
@@ -22,21 +23,21 @@ void setup()
   stroke(255);
   fill(0);
     
-  for(int i=0;i<Num;i++) //Initialize Positions and Speeds
+  for(int i=0;i<Num;i++) // Initialize Positions and Speeds
   {
-    h[i]=y0;  //Initial vertical position         
-    x[i]=random(width); //Horizontal position
-    v[i]=random(minv,maxv); //Vertical speed
+    h[i]=y0;  // Initial vertical positions         
+    x[i]=random(width); // Horizontal positions
+    v[i]=random(minv,maxv); // Vertical speeds
   }
 }
               
-void draw()
+void draw() // global h,x,v
 {
   // Visualisation
-  background(0,0,200); //rgB
-  line(0,y0,width,y0); //horizontal "rope"
+  background(0,0,200); // rgB
+  line(0,y0,width,y0); // horizontal "rope"
   
-  for(int i=0;i<Num;i++) //Visualisation
+  for(int i=0;i<Num;i++) // Visualisation
     if(h[i]<height-3)
     {
       line(x[i],y0,x[i],h[i]);
@@ -48,9 +49,9 @@ void draw()
       v[i]=0;
     }
   
-  for(int i=0;i<Num;i++) //Change of positions
+  for(int i=0;i<Num;i++) // Change of positions
   {
-    h[i]+=v[i]/FR; //Speed is in pixels per second!
+    h[i]+=v[i]/FR; // Speed is in pixels per second!
   }
 }
 

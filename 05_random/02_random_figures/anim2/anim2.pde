@@ -1,9 +1,10 @@
-// Simple animation example 
+/// Simple animation example with random.
+//*//////////////////////////////////////
 
 void setup()  
 {
-  size(500,200);       //the size of the window
-  background(0,0,128); //its background color
+  size(500,200);       // the size of the window.
+  background(0,0,128); // thr background color.
 }
 
 void draw()

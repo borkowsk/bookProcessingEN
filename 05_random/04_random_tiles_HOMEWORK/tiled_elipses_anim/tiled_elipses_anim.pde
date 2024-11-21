@@ -1,4 +1,5 @@
-// Random tiled circles
+/// Random tiled circles.
+//*//////////////////////
 
 void setup()
 {

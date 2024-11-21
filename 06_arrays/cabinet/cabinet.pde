@@ -1,12 +1,16 @@
-// "cabinet" - an array of 10 integers:
+/// "cabinet" - an array of 10 integers:
+//*/////////////////////////////////////
 
 int[] cabinet_with_integers = new int[ 10 ];
 
-cabinet_with_integers[ 0 ] = 111;
+println( cabinet_with_integers );
 
-print( cabinet_with_integers[ 0 ] + " " );
-print( cabinet_with_integers[ 1 ] + " " );
-print( cabinet_with_integers[ 9 ] + " " );
-//print( cabinet_with_integers[ 10 ] + " " );
+cabinet_with_integers[ 1 ] = 111;
+cabinet_with_integers[ 2 ] = 200;
+
+print( cabinet_with_integers[ 0 ], "" );
+print( cabinet_with_integers[ 1 ], "" );
+print( cabinet_with_integers[ 2 ], "" );
+print( cabinet_with_integers[ 9 ], "" );
 
 // https://github.com/borkowsk/bookProcessingEN
