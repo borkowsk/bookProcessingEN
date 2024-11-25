@@ -29,9 +29,9 @@ def visualise(): # Is it any global variable modified inside?
   angl=(PI*2)/(N)
   fill(255)
   
-  for ii in range(0,N,1): # 'i' has int value
-    # loop block: Note! Variable `ii` is visible also outside this block!
-    # So it cannot be named `i`. In such a way it will cover global `i`
+  for ii in range(0,N,1): # 'ii' has int value
+    # block:  ## In JAVA Processing `i` declared inside loop hides global `i` only inside loop block.
+    ## But it is not safe practice of coding. And is not allowed in Python code!
     rect((ii+1)*side,side,side,side)
     arc(width/2,height/2,width/2,height/2,ii*angl,(ii+1)*angl)
    
@@ -39,7 +39,6 @@ def visualise(): # Is it any global variable modified inside?
   fill(255,0,0,200)
   ellipse((i+1.5)*side,side*1.5,side,side)
   arc(width/2,height/2,width/2,height/2,i*angl,(i+1)*angl)
-  
   fill(0,0,255,128)
   ellipse((j+1.5)*side,side*1.5,side,side)
   arc(width/2,height/2,width/2,height/2,j*angl,(j+1)*angl)
@@ -49,15 +48,16 @@ def draw(): # Is it any global variable modified inside? #
   global i,j
   '''What should this code below do?''' 
   visualise()
-  istr="(i+M)%N="+"("+str(i)+"+"+str(M)+")%"+str(N)+"=\t"
+  istr="(i+M)%N="+"("+str(i)+"+"+str(M)+")%"+str(N)+"=\t"  ## How to add ints to string?
   i=(i+M)%N
   istr+=nf(i,2,0)
   
   jstr="(N+j-M)%N="+"("+str(N)+"+"+str(j)+"-"+str(M)+")%"+str(N)+"=\t"
+  
   j=(N+j-M)%N
   jstr+=nf(j,2,0)
   
-  print istr,"\t",jstr,("!!!"if i==j else "") 
+  print istr,"\t",jstr,("!!!" if i==j else "") 
   
   textAlign(CENTER,BOTTOM)
   fill(255,0,0)
@@ -67,4 +67,4 @@ def draw(): # Is it any global variable modified inside? #
 
 
 ## https://github.com/borkowsk/bookProcessingEN
-## @date 2024-11-21 (last modification) 
+## @date 2024-11-25 (last modification) 

@@ -25,10 +25,11 @@ void visualise()
   float angl=(PI*2)/(N);
   fill(255);
   
-  for(int i=0;i<N;i++)
+  for(int ii=0;ii<N;ii++)
   { // In Processing i declared inside loop hides global i only inside loop block.
-    rect((i+1)*side,side,side,side);
-    arc(width/2,height/2,width/2,height/2,i*angl,(i+1)*angl);
+    // But it is not safe practice of coding.
+    rect((ii+1)*side,side,side,side);
+    arc(width/2,height/2,width/2,height/2,ii*angl,(ii+1)*angl);
   } 
   
   fill(255,0,0,200);
@@ -42,11 +43,12 @@ void visualise()
 void draw() // modifies global i,j
 {
   visualise();
-  String istr="(i+M)%N="+"("+i+"+"+M+")%"+N+"=\t";
+  String istr="(i+M)%N="+"("+str(i)+"+"+str(M)+")%"+str(N)+"=\t"; // How to add ints to string?
   i=(i+M)%N;
   istr+=nf(i,2,0);
   
-  String jstr="(N+j-M)%N="+"("+N+"+"+j+"-"+M+")%"+N+"=\t";
+  String jstr="(N+j-M)%N="+"("+str(N)+"+"+str(j)+"-"+str(M)+")%"+str(N)+"=\t";
+  
   j=(N+j-M)%N;
   jstr+=nf(j,2,0);
   
@@ -60,4 +62,4 @@ void draw() // modifies global i,j
 }
 
 // https://github.com/borkowsk/bookProcessingEN
-/// @date 2024-11-21 (last modification) 
+/// @date 2024-11-25 (last modification) 
