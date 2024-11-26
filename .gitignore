@@ -5,6 +5,7 @@
 # *.[oa]
 *~
 *.tmp
+*.sed
 *.pdf
 *.png
 *.PNG
@@ -29,15 +30,15 @@
 *.txt
 *_x11
 *_svg
-
+*.autosave
 #IDE & cmake files
 .idea/
 Makefile
 CMakeFiles
 cmake_install.cmake
-cmake-build-debug/
-cmake-build-release/
-cmake-build-relwithdebinfo/
+*-debug/
+*-release/
+*-relwithdebinfo/
 NBuild/
 application.*
 
