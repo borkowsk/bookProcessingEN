@@ -1,12 +1,14 @@
-// TODO comments clean!
-// An example of using a class (complex user type)
-//////////////////////////////////////////////////////
-final float DefaultR=3.95;
+/// TODO comments clean!
+/// An example of using a class (complex user type)
+//-////////////////////////////////////////////////////
+
+final float DefaultR=3.66;
 final int   FR=5;
 
-//Construction of the class object
-//singiel TheSingiel=new singiel(0.55,DefaultR,0);//singiel(float iX,float iR,float iAlpha);
+/// Construction of the class object.
+/// Ex. `singiel TheSingiel=new singiel(0.55,DefaultR,0);//singiel(float iX,float iR,float iAlpha);`
 singiel TheSingiel=new singiel(random(1.0),DefaultR+random(0.5),0);
+
 
 void setup()
 {
@@ -18,6 +20,7 @@ void setup()
           );
 }
 
+
 void draw()
 { //Object of type 'singiel' used as parameter
   //background(200);
@@ -25,4 +28,5 @@ void draw()
   TheSingiel.next();// Method call - dot notation
 }
 
-//https://github.com/borkowsk/bookProcessingEN/
+// https://github.com/borkowsk/bookProcessingEN/
+/// @date 2024-11-29 (revived)
