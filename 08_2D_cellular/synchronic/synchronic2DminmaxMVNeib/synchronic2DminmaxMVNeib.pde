@@ -1,6 +1,6 @@
 // "Min Max neighbors": Not too many neighbors, but not too few
 // TWO-dimensional, SYNCHRONOUS, vonNeuman/Moore, deterministic cellular automaton
-///////////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////////
 
 final int WorldSide=601;//How many cells do we want in one line?
 final float Dens=0.76;//0.5 or so also posible
@@ -77,3 +77,4 @@ void draw()
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
 
+/// @date 2024-11-29 (revived)

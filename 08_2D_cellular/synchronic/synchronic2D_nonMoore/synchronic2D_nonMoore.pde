@@ -1,15 +1,16 @@
-// "Not too many neighbors": 
-// TWO-dimensional, SYNCHRONOUS, von Neumann, deterministic cellular automaton
-////////////////////////////////////////////////////////////////////////////////
+/// "Not too many neighbors": 
+/// TWO-dimensional, SYNCHRONOUS, von Neumann, deterministic cellular automaton
+//-//////////////////////////////////////////////////////////////////////////////
 
-final int   Opt=1;//Optimum number of neighbors required
-final int   WorldSide=601;//How many cells do we want in one line?
-final float Dens=0;//.005;//0.5 or so also posible
+final int   Opt=1;         //Optimum number of neighbors required
+final int   WorldSide=601; //How many cells do we want in one line?
+final float Dens=0.001;        //.005;//0.5 or so also posible
 
-int[][] WorldOld=new int[WorldSide][WorldSide];//We need two arrays for the old  
-int[][] WorldNew=new int[WorldSide][WorldSide];//and new state of the simulation
+int[][] WorldOld=new int[WorldSide][WorldSide]; //We need two worlds for the old  
+int[][] WorldNew=new int[WorldSide][WorldSide]; //and new state of the simulation
 
-int FR=200;//Desired speed
+int FR=200; //Desired speed frame per second [fps]
+
 
 void setup()
 {
@@ -27,10 +28,11 @@ void setup()
   else WorldOld[WorldSide/2][WorldSide/2]=1;
 }
 
+
 void visualisation()
 {
   for(int i=0;i<WorldSide;i++)
-    for(int j=0;j<WorldSide;j++)                                 // if(WorldOld[i][j]!=WorldNew[i][j])
+    for(int j=0;j<WorldSide;j++)                                 // if(WorldOld[i][j]!=WorldNew[i][j]) ???
     {
       if(WorldOld[i][j]>0) stroke(255,0,100);
       else           stroke(0);
@@ -39,8 +41,11 @@ void visualisation()
     }
 }
 
-int t=0;
-void draw()
+
+int t=0; // time is global
+
+
+void draw() // modifies global t,WorldOld,WorldNew
 {  
   visualisation();
   
@@ -55,7 +60,7 @@ void draw()
          int dw=(j+1) % WorldSide;   
          int up=(WorldSide+j-1) % WorldSide;
          
-         int live = (WorldOld[left][j]>0 ?1:0)
+         int live =((WorldOld[left][j]>0 ?1:0)
                  +  (WorldOld[right][j]>0 ?1:0)
                  +  (WorldOld[i][up]>0 ?1:0)
                  +  (WorldOld[i][dw]>0 ?1:0)     
@@ -63,20 +68,21 @@ void draw()
                  +  (WorldOld[right][up]>0 ?1:0)
                  +  (WorldOld[left][dw]>0 ?1:0)
                  +  (WorldOld[right][dw]>0 ?1:0) 
-                 ;
+                  );
       
          WorldNew[i][j]=(live == Opt ? 1:0 );//New state 
        }
-   }
+  }
    
-   //Swap the arrays
-   int[][] WorldTmp=WorldOld;
-   WorldOld=WorldNew;
-   WorldNew=WorldTmp;
+  //Swap the arrays
+  int[][] WorldTmp=WorldOld;
+  WorldOld=WorldNew;
+  WorldNew=WorldTmp;
    
-   t++;//The next generation/step/year
-   fill(random(255));textSize(20);textAlign(LEFT,TOP);text("ST:"+t,0,0);
+  t++; //The next generation/step/year
+  fill(random(255));textSize(20);textAlign(LEFT,TOP);text("ST:"+t,0,0);
 }
 
 //https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
 
+/// @date 2024-11-29 (revived)
