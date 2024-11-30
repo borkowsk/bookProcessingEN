@@ -1,9 +1,9 @@
-/// "Voter model" <=> "Nearest Neighbors Social Impact"
-/// Two-dimensional, synchronous cellular automaton
-//*//////////////////////////////////////////////////////////////////////////////////
+/// "Voter model" <=> "Nearest Neighbors Social Impact".
+/// Two-dimensional, synchronous cellular automaton.
+//-//////////////////////////////////////////////////////////////////////////////////
 
-final int WorldSide=600; //Side lenght of simulation world (square)
-final float Dens=0.50;   //.01;//Initial density in the lattice World
+final int     WorldSide=600;   //Side lenght of simulation world (square)
+final float   Dens=0.50;       //.01;//Initial density in the lattice World
 final boolean withMoore=true;  //neighborhood with the corners of the square
 
 int FR=1; //desired simulation speed
@@ -19,7 +19,8 @@ void setup()
  initialisation(); //Initial state of the model
 }
 
-int t=0;
+int t=0; // time is global.
+
 void draw()
 {  
   visualisation2();
@@ -58,7 +59,7 @@ void visualisation2()
 {
    for(int i=0;i<WorldSide;i++)
     for(int j=0;j<WorldSide;j++)
-    if(WorldOld[i][j] != WorldNew[i][j]) // Only when changed!
+    if(WorldOld[i][j] != WorldNew[i][j]) // Only WHEN changed!
     {                      
       switch(WorldOld[i][j]){ 
       case 1:stroke((100+t*10)%256,(100+t*10)%256,0);break; //yellow shades
@@ -118,4 +119,4 @@ void status()
 }
 
 
-// https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
+//@date 2023 (https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic)

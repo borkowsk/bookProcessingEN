@@ -1,15 +1,16 @@
-/// "Naive" particles system with simplified phisics of collisions
-//*//////////////////////////////////////////////////////////////////////
+/// "Naive" particles system with simplified phisics of collisions.
+//-//////////////////////////////////////////////////////////////////////
 
-int circles = 50;
-boolean torus=false;
+int     circles = 50;
+boolean torus = false;
 
 boolean trace=false;
-int diameter=25;
-int radius=diameter/2;
-float maxspeed=1;
-int FRAMERATE=800;
-int VISFREQ=8; //every N
+int     diameter=25;
+int     radius=diameter/2;
+float   maxspeed=1;
+
+int     FRAMERATE=800;
+int     VISFREQ=8; //every N
 
 float[]   xpos = new float[circles];
 float[]   ypos = new float[circles];
@@ -19,6 +20,7 @@ boolean[] collision = new boolean[circles];
 
 color[]   circolor = new color[circles];
 
+
 boolean isPositionFree(int i)
 {
   for(int j=0;j<circles;j++)
@@ -27,6 +29,7 @@ boolean isPositionFree(int i)
             return false;
   return true;
 }
+
 
 void setup()
 {
@@ -49,6 +52,7 @@ void setup()
   }
 }
 
+
 void visualisation()
 {
   if(!trace) background(0);
@@ -61,6 +65,7 @@ void visualisation()
     ellipse(xpos[i],ypos[i],diameter,diameter);
   }
 }
+
 
 void movement()
 {
@@ -151,4 +156,4 @@ void draw()
   findcollisions();
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+///@date 2023 (https://github.com/borkowsk/bookProcessingEN)

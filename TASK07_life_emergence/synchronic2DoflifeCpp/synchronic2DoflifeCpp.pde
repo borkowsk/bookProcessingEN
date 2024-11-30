@@ -4,7 +4,7 @@
 // See 233 (Conways Game of Life) or 123 & 234 - much more "biological"
 
 final int     WorldSide=501;  ///< How many cells do we want in one line?
-final boolean sync=true;     ///< Synchronous or asynchronous update    !!!!!!!
+final boolean sync=true;      ///< Synchronous or asynchronous update    !!!!!!!
 
 final float   Dens=150.15;    ///< When >=1, simetric horizontal line is created
 final int     MinN=2;         ///< Minimal number of neighbors required
@@ -180,4 +180,4 @@ void stepMonteCarlo() ///< globally visible
    }
 }
 
-// https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
+/// @date 2023 (https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/)
