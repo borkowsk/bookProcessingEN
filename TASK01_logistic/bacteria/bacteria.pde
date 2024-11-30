@@ -1,12 +1,11 @@
-//Bacterial population
+/** Bacterial population. */
 
-int X=1;//Current state
+int X=1; //Current state
 
 for(int i=0;i<10;i++)
 {
-  println(i,X);//what a "hack"?
-  X=2*X;//Calculate next state
+  println(i,X); //Note! `print` inserts a space in place of a comma
+  X=2*X;        //Calculate next state!
 }
 
-// https://github.com/borkowsk/bookProcessingEN
-
+//@date 2024 (https://github.com/borkowsk/bookProcessingEN)

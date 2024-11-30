@@ -3,7 +3,7 @@
 float R=3.575;  //Range from 0..4
 float X=0.99;   //Range 0..1!
 
-void setup() // modifies global R,X
+void processing_window::setup() // modifies global R,X
 {
   size(1000,300);
   
@@ -19,14 +19,14 @@ void setup() // modifies global R,X
   if( X > 1.0 ) println("X is too big!");
   if( X < 0.0 ) println("X is too small!");
   
-  text("R="+R,10,height-5);
+  text(String("R=")+R,10,height-5);
   stroke(255,0,0); //In RED!
 }
 
 
 int t=0; ///< 't' means "time". Is global because value should be kept between `draw` calls.
 
-void draw() // uses global t,X
+void processing_window::draw() // uses global t,X
 {
   if(t>width) return; //Nothing more to do!
   
@@ -38,4 +38,6 @@ void draw() // uses global t,X
   t++; //INCREMENTATION!!!
 }
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+//@date 2024 (https://github->com/borkowsk/bookProcessingEN)
+//MADE NOTE: /data/wb/SCC/public/Processing2C/scripts did it 2024-11-30 11:30:49 !
+

@@ -1,13 +1,14 @@
-//Logistic iteration - first attempt
+/** Logistic iteration - first attempt */
 
-final float R=2.5;
-float X=0.3333333;
+final float R=2.5; //immutable parameter
+float X=0.3333333; //changing state
 
-for(int i=0;i<100;i++)//Default width == 100
+for(int i=0;i<100;i++)
 {
   println(i,X);
-  X=R*X*(1-X);//Calculate next iteration
+  X=R*X*(1-X);   //Calculate next iteration
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+text("DONE",30,55); //For default window 100x100
 
+//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
