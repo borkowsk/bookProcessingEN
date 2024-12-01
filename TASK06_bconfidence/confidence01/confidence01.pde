@@ -7,11 +7,10 @@ final float eps=0.001; //speed of changes
 
 float[] minds=new float[N]; //creating an array 
 
-// for visualisation
+// for visualisation:
 float   side=0; //diameter of circles 
 
-
-void setup()
+void setup() // uses global side
 {
   size(1000,250);
   side=height/(N*2);
@@ -23,14 +22,14 @@ void setup()
     
   // Check
   for(int i=0;i<N;i++)
-    print(minds[i]+" ");
+    print(str(minds[i])+" ");
 }
 
 
 void draw()
 {
   // Visualisation
-  float step=255/N,R=255,B=0;
+  float step=255.0/N,R=255,B=0;
   for(int i=0;i<N;i++)
   {
     stroke(R,0,B);R-=step;B+=step;
@@ -45,11 +44,11 @@ void draw()
     
     if(minds[a] < minds[b])
        minds[a]+=eps;
-       else
+    else
        if(minds[a] > minds[b])
           minds[a]-=eps;
   }
-} //end of draw()
+} // end of draw()
 
 
 //@date 2024 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
