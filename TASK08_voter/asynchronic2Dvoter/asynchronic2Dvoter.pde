@@ -12,14 +12,15 @@ int[][] World=new int[WorldSide][WorldSide]; //2 dimensional array
                                             
 void setup()
 {
- size(600,620); //squre canvas
- noSmooth();    //much faster drawing
- frameRate(FR);
- initialisation(); //Initial state of the model
+  size(600,620); //squre canvas
+  noSmooth();    //much faster drawing
+  frameRate(FR);
+  initialisation(); //Initial state of the model
 }
 
-int t=0;
-void draw()
+int t=0; // time is global
+
+void draw() // uses global t
 {  
   visualisation();
   stepMonteCarlo(); //or other
@@ -29,7 +30,7 @@ void draw()
 
 void initialisation()
 {
-   for(int i=0;i<WorldSide;i++) 
+  for(int i=0;i<WorldSide;i++) 
     for(int j=0;j<WorldSide;j++) 
       if(random(1.0)<Dens)
         World[i][j]=1;
@@ -37,7 +38,7 @@ void initialisation()
 
 void visualisation()
 {
-   for(int i=0;i<WorldSide;i++)
+  for(int i=0;i<WorldSide;i++)
     for(int j=0;j<WorldSide;j++) 
     {                      
       switch(World[i][j]){ 
@@ -52,39 +53,41 @@ void visualisation()
 
 void stepMonteCarlo()  // Monte Carlo step
 {
-  for(int N=WorldSide*WorldSide, a=0;a<N;a++)
-  {    //RULE: You assume a state more common in your vicinity
-       int i= (int)random(WorldSide), j= (int)random(WorldSide);
-       int right= (i+1) % WorldSide, left= (WorldSide+i-1) % WorldSide;
-       int dw= (j+1) % WorldSide, up= (WorldSide+j-1) % WorldSide;
-       int cou0=0, cou1=0; //counters of 0 & 1 state neighbors
-       
-       if(World[left][j]==0 ) cou0++; else cou1++;
-       if(World[right][j]==0) cou0++; else cou1++;
-       if(World[i][up]==0) cou0++; else cou1++;
-       if(World[i][dw]==0) cou0++; else cou1++; 
-       
-       if(withMoore)
-       {
-         if(World[left][up]==0) cou0++; else cou1++;
-         if(World[right][up]==0) cou0++; else cou1++;
-         if(World[left][dw]==0) cou0++; else cou1++;
-         if(World[right][dw]==0) cou0++; else cou1++; 
-       }
-       
-       if(World[i][j]==0) cou0++; else cou1++; //Central cell
-       
-       if(cou0>cou1) World[i][j]=0;
-       else World[i][j]=1;
-   }
+  final int N=WorldSide*WorldSide;
+  for(int a=0;a<N;a++)
+  { /* RULE: You assume a state more common in your vicinity */
+    int i= int(random(WorldSide)), j= int(random(WorldSide));
+    int right= (i+1) % WorldSide, left= (WorldSide+i-1) % WorldSide;
+    int dw= (j+1) % WorldSide, up= (WorldSide+j-1) % WorldSide;
+    int cou0=0, cou1=0; //counters of 0 & 1 state neighbors
+     
+    if(World[left][j]==0 ) cou0++; else cou1++;
+    if(World[right][j]==0) cou0++; else cou1++;
+    if(World[i][up]==0) cou0++; else cou1++;
+    if(World[i][dw]==0) cou0++; else cou1++; 
+     
+    if(withMoore)
+    {
+      if(World[left][up]==0) cou0++; else cou1++;
+      if(World[right][up]==0) cou0++; else cou1++;
+      if(World[left][dw]==0) cou0++; else cou1++;
+      if(World[right][dw]==0) cou0++; else cou1++; 
+    }
+     
+    if(World[i][j]==0) cou0++; 
+    else cou1++; //Central cell
+     
+    if(cou0>cou1) World[i][j]=0;
+    else World[i][j]=1;
+  }
 }
 
 void status()
 {
-    fill(128);noStroke();rect(0,height,width,-20);
-    fill(random(255),random(255),random(255));
-    textSize(18);textAlign(LEFT,BOTTOM);
-    text("ST:"+t+"("+nf(frameRate,3,2)+")",0,height);
+  fill(128);noStroke();rect(0,height,width,-20);
+  fill(random(255),random(255),random(255));
+  textSize(18);textAlign(LEFT,BOTTOM);
+  text("ST:"+str(t)+"("+nf(frameRate,3,2)+")",0,height);
 }
 
 

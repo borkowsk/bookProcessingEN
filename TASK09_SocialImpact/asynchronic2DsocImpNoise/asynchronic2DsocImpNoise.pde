@@ -19,15 +19,16 @@ int[][] Attitude=new int[WorldSide][WorldSide]; //Current attitude
 
 void setup()
 {
- size(500,520); //squre canvas
- noSmooth();    //much faster drawing
- frameRate(FR);
- initialisation(); //Initial state of the model
+  size(500,520); //squre canvas
+  noSmooth();    //much faster drawing
+  frameRate(FR);
+  initialisation(); //Initial state of the model
 }
 
-int t=0;
-int Adopted=0;
-void draw()
+int t=0;        // is global
+int Adopted=0;  // is global
+
+void draw() // uses global t
 {  
   visualisation3();
   status();  
@@ -38,13 +39,13 @@ void draw()
 
 void initialisation()
 {
-   for(int i=0;i<WorldSide;i++) 
+  for(int i=0;i<WorldSide;i++) 
     for(int j=0;j<WorldSide;j++) 
     {
       if(random(1.0)<Dens)
         Attitude[i][j]=1;
        
-      Strength[i][j]=(int)random(MaxStrength);
+      Strength[i][j]=int(random(MaxStrength));
     }
 }
 
@@ -53,16 +54,15 @@ void addNoise()
   int N=int(WorldSide*WorldSide*Noise);
   for(int a=0;a<N;a++)
   {
-      int i=int(random(WorldSide));
-      int j=int(random(WorldSide));
-      if(Attitude[i][j]==0) Attitude[i][j]=1;
-                      else  Attitude[i][j]=0;
+    int i=int(random(WorldSide));
+    int j=int(random(WorldSide));
+    if(Attitude[i][j]==0) Attitude[i][j]=1; else  Attitude[i][j]=0;
   }
 }
 
 void visualisation1()
 {
-   for(int i=0;i<WorldSide;i++)
+  for(int i=0;i<WorldSide;i++)
     for(int j=0;j<WorldSide;j++) 
     {                      
       switch(Attitude[i][j]){ 
@@ -71,13 +71,13 @@ void visualisation1()
       default: stroke(255,0,0); //"emergency color" - RED
       break;
       } 
-      point(i,j);
+    point(i,j);
     }
 }
 
 void visualisation2()
 {
-   for(int i=0;i<WorldSide;i++)
+  for(int i=0;i<WorldSide;i++)
     for(int j=0;j<WorldSide;j++)
     {                      
       switch(Attitude[i][j]){ 
@@ -90,11 +90,11 @@ void visualisation2()
     }
 }
 
-void visualisation3()
+void visualisation3() // modifies global Adopted
 {
-   float mult=255.0/MaxStrength;
-   Adopted=0; //Simplest statistics
-   for(int i=0;i<WorldSide;i++)
+  float mult=255.0/MaxStrength;
+  Adopted=0; //Simplest statistics
+  for(int i=0;i<WorldSide;i++)
     for(int j=0;j<WorldSide;j++)
     {                      
       float stre=mult*Strength[i][j]; //print(stre+" ");
@@ -113,37 +113,37 @@ void asyncStep() // asynchronous step
   int N=WorldSide*WorldSide;
   for(int a=0;a<N;a++)
   {      
-         int i=int(random(WorldSide));
-         int j=int(random(WorldSide));
-         // RULE: you assume a state more common in your vicinity     
-         int sum0  = 0, sum1  = Bias; //sums of strenght "points"
-                  
-         for(int k=i-MooreRad;k<=i+MooreRad;k++)
-           for(int m=j-MooreRad;m<=j+MooreRad;m++)
-           {
-              int K=(WorldSide+k)%WorldSide; //Implement TORUS
-              int M=(WorldSide+m)%WorldSide; //calculation
-              
-              if(Attitude[K][M]==0 ) 
-                sum0+=Strength[K][M]; 
-              else 
-                sum1+=Strength[K][M];    
-           }
-           
-         if(sum0>sum1) 
-           Attitude[i][j]=0;
-         else 
-           Attitude[i][j]=1;
+    int i=int(random(WorldSide));
+    int j=int(random(WorldSide));
+    // RULE: you assume a state more common in your vicinity     
+    int sum0  = 0, sum1  = Bias; //sums of strenght "points"
+          
+    for(int k=i-MooreRad;k<=i+MooreRad;k+=1)
+      for(int m=j-MooreRad;m<=j+MooreRad;m+=1)
+      {
+        int K=(WorldSide+k)%WorldSide; //Implement TORUS
+        int M=(WorldSide+m)%WorldSide; //calculation
+      
+        if(Attitude[K][M]==0 ) 
+          sum0+=Strength[K][M]; 
+        else 
+          sum1+=Strength[K][M];    
+      }
+   
+    if(sum0>sum1) 
+      Attitude[i][j]=0;
+    else 
+      Attitude[i][j]=1;
   }
 }
    
 
 void status()
 {
-    fill(128);noStroke();rect(0,height,width,-20);
-    fill(255);
-    textSize(18);textAlign(LEFT,BOTTOM);
-    text("ST:"+t+"("+nf(frameRate,3,2)+") Adopted:"+Adopted,0,height);
+  fill(128);noStroke();rect(0,height,width,-20);
+  fill(255);
+  textSize(18);textAlign(LEFT,BOTTOM);
+  text("ST:"+t+"("+nf(frameRate,0,2)+"fps) Adopted:"+str(Adopted),0,height);
 }
 
 
