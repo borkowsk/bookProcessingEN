@@ -9,7 +9,7 @@ final float a=1.1,b=0.9,r1=0.1,r2=0.1;
 float W=0.5;
 float H=0.5;
 
-// float IHW,IWH; //?
+float IHW,IWH; //?
 
 for(int i=0;i<width;i++)
 {  

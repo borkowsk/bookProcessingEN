@@ -8,14 +8,16 @@
 //For model:
 final float IHW=0.6001,IWH=0.4001;  //Interaction values are properties of a human relationship 
 final float a=-0.001,b=-0.001,r1=0.6,r2=0.4;  //Values describe the characters of people
+
 float W=0.5;
 float H=0.5;
 
-//For visualisation
+//For visualisation:
 final float DOTSIZE=1;
 final float scale=1;
+
 size(1500,500);
-line(0,height/2,width,height/2);//Zero line
+line(0,height/2,width,height/2); //Zero line
 
 for(int i=0;i<width;i++)
 {  
@@ -27,7 +29,9 @@ for(int i=0;i<width;i++)
   ellipse(i,height/2-H*scale/2*height,DOTSIZE,DOTSIZE); //The husband is GREEN
   //MODEL:
   W=r1*W+a+IHW*H;
-  H=r2*H+b+IWH*W;
+  H=r2*H+b+IWH*W; // new value of W?
 }
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+print("DONE");
+
+//@date 2023 (https://github.com/borkowsk/bookProcessingEN)

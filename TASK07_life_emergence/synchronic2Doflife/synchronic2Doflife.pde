@@ -1,10 +1,10 @@
 /// "Min-Opt-Max neighbors": Not too many neighbors, but not too few, but OPTIMAL!
-/// TWO-dimensional, SYNCHRONOUS, vonNeuman/Moore, deterministic cellular automaton
-//*//////////////////////////////////////////////////////////////////////////////////
+/// TWO-dimensional, (A)SYNCHRONOUS, vonNeuman/Moore, deterministic cellular automaton
+//-//////////////////////////////////////////////////////////////////////////////////
 // See 233 (Conways Game of Life) or 123 & 234 - much more "biological"
 
-final int     WorldSide=501; //How many cells do we want in one line?
-final boolean sync=false;     //Synchronous or asynchronous update    !!!!!!!
+final int     WorldSide=501;  //How many cells do we want in one line?
+final boolean sync=true;      //Synchronous or asynchronous update    !!!!!!!
 
 final float   Dens=150.15;    //When >=1, simetric horizontal line is created
 final int     MinN=2;         //Minimal number of neighbors required
@@ -28,8 +28,9 @@ void setup()
   initialisation();
 }
 
-int t=0;
-void draw()
+int t=0; // time is global
+
+void draw() // modifies global t
 {  
    if(sync)
    {
@@ -43,7 +44,7 @@ void draw()
    }
    
    status(); //Status bar
-   t++; //The next generation/step/year
+   t++;      //The next generation/step/year
 }
 
 void status()
@@ -133,9 +134,9 @@ void synchronicStep()
          if(WorldOld[i][j]==0)
            WorldNew[i][j]=(lives == OptN ? 1:0);
          else
-           WorldNew[i][j]=(MinN <= lives && lives <=MaxN ? 1:0 );//New state 
+           WorldNew[i][j]=(MinN <= lives && lives <=MaxN ? 1:0 ); //New state 
          
-         if(WorldNew[i][j]>0) liveCounter++;//Calculating the only statistic
+         if(WorldNew[i][j]>0) liveCounter++; //Calculating the only statistic
        }
    }
    
@@ -177,4 +178,4 @@ void stepMonteCarlo()
    }
 }
 
-// https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
+//@date 2024 (https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/)
