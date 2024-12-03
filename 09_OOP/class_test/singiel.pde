@@ -4,9 +4,11 @@
 
 class singiel 
 { // FIELDS / ATTRIBUTES:
-  float r;     //!< Control parameter.
+  float  r;    //!< Control parameter.
   float al;    //!< Coupling parameter
-  float x1,x2; //!< Current and previous states
+  float x1,x2=0; //!< Current and previous states
+  
+  final float max_r=4.0;
   
   // Constructor(s):
   //-///////////////
@@ -17,6 +19,7 @@ class singiel
   
   singiel(float iX,float iR,float iAlpha)    
   {
+    float tmp; //TEST
     x1=x2=iX;r=iR;al=iAlpha;
   }
   
@@ -25,6 +28,7 @@ class singiel
   
   float alpha() //!< R / O Access to the field 'al' 
   {             //!< under a different name. 
+    String tmp; //TEST
     return al;  //!< The so-called accessory
   }
   
@@ -59,5 +63,7 @@ void next4couple(singiel F,singiel S)
   S.next();
 }
 
+int tmp=0; //test!
+
 // https://github.com/borkowsk/bookProcessingEN/
-/// @date 2024-11-29 (revived)
+/// @date 2024-12-03 (revived)

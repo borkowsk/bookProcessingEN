@@ -14,7 +14,7 @@ class Agent
   {      
     identity=int(random(1,Number_of_identities+1)); //Simple way
     //rounding also converts float to int but treats fraction part differently
-    //identity=round(random(1,Number_of_identities));//The classes may be unequal
+    //identity=round(random(1,Number_of_identities)); //The classes may be unequal
     stress=0;
   }
 };

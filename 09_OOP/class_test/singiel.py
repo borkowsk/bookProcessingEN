@@ -1,7 +1,7 @@
 ## Chaotic oscillator class.
 ## An example of a class - user-defined type.
 ##-##========================================
-# THIS IS TARNSLATED MANUALLY:
+# THIS IS TRANSLATED MANUALLY:
     
 class singiel :
   ## Basic constructor. See also: https://www.geeksforgeeks.org/operator-overloading-in-python/
@@ -72,4 +72,4 @@ def next4couple(F,S): # Is it any global variable modified inside?
 
 
 ## https://github.com/borkowsk/bookProcessingEN/
-## @date 2024-12-02 (revived)
+## @date 2024-12-03 (revived)
