@@ -1,16 +1,17 @@
 // We defined a class, now we will use it. The most extensive example.
-/////////////////////////////////////////////////////////////////////////////////
+//-///////////////////////////////////////////////////////////////////////////////
 
-final  float DefaultR=3.5;//two systems independent of each other (3.5 to 4 because the sync. in chaos is the most interesting)
-final  float DefaultAlpha=0.1;//by changing the alpha value we can change their mutual synchronization
+final  float DefaultR=3.5;  //two systems independent of each other (3.5 to 4 because the sync. in chaos is the most interesting)
+final  float DefaultAlpha=0.1; //by changing the alpha value we can change their mutual synchronization
 final  int   runup=200;
 
-singiel First, Second;// object handles
+singiel First, Second; // object handles
 
-int Ws=400;                      
-void setup()
+int Ws=400;      
+
+void setup() // modifies global First,Second
 {
-  size(1200,800);//3*Ws , 2* Ws
+  size(1200,800); //3*Ws , 2* Ws
   frameRate(1000);
   
   // Create new objects of type 'singiel' using the only available constructor
@@ -19,26 +20,26 @@ void setup()
   Second=new singiel(random(1.0), DefaultR+random(0.5), DefaultAlpha);
   
   // period and field name so we read field name or you can with method
-  println("1st:",First.x1+" "+First.r+" alfa:"+First.alpha());
-  println("2st:",Second.x1+" "+Second.r+" alfa:"+Second.alpha());
+  println("1st:",First.x1," R:",First.r," alfa:",First.alpha());
+  println("2st:",Second.x1," R:",Second.r," alfa:",Second.alpha());
 }
 
 //For visualization
-int N=0;//counter of iteration steps
-int Sf=400;//Scale factor
+int N=0; //counter of iteration steps
+int Sf=400; //Scale factor
 
-float scaleY(double X)//Scaling function
+float scaleY(double X) //Scaling function
 {
-  return Sf-(float)X*Sf;
+  return Sf-(float)(X)*Sf;
 }
 
 float Gre=255;
 float Blu=255;
 float Red=255;
 
-void draw()
+void draw() // uses global Ws,N,Sf,Gre,Blu,Red
 {
-  next4couple(First,Second); //println("1st:",First.x1,"\t2nd:",Second.x1);
+  next4couple(First,Second);
   
   if(N<2*Ws)
   {
@@ -83,4 +84,3 @@ void draw()
 }
 
 //https://github.com/borkowsk/bookProcessingEN
-
