@@ -16,11 +16,11 @@ class singiel:  ##singiel:
   # to create a class object - the "instance".
   
   
-  def make_singiel(iX,iR,iAlpha):    #1
+  def make_singiel3(iX,iR,iAlpha):    #3 (FLOAT IX,FLOAT IR,FLOAT IALPHA)
     self=singiel() #make default.
     '''block:'''
     tmp=[]  #TEST
-    x1=x2=iX;r=iR;al=iAlpha
+    this.x1=this.x2=iX;this.r=iR;this.al=iAlpha     #substitution(s) in method line: 4
     return self
   
   
@@ -30,21 +30,21 @@ class singiel:  ##singiel:
   def  alpha(self) #!< R / O Access to the field 'al' ## is an object method.
     '''block:'''             #!< under a different name. 
     tmp=[]  #TEST
-    return al   #!< The so-called accessory
+    return this.al   #!< The so-called accessory    #substitution(s) in method line: 1
   
   
   
   def  next(self)  #!<  Method to change state of object.### is an object method.
     '''block:'''          
-    x1=x2
-    x2=x1*r*(1-x1)  #This is an iteration without a pair
+    this.x1=this.x2     #substitution(s) in method line: 2
+    this.x2=this.x1*this.r*(1-this.x1)  #This is an iteration without a pair    #substitution(s) in method line: 4
   
    
   def __INIT__(self)
     self.r  =0.0  #!< Control parameter.     ##float field 
     self.al  =0.0  #!< Coupling parameter     ##float field 
-    self.x2  =0  #!< Current and previous states   ##float field 
     self.x1  =0.0  #!< Current and previous states   ##float field 
+    self.x2  =0  #!< Current and previous states   ##float field 
     # fc:4
 
   #Closing the class. In JAVA syntax may be ';' but it doesn't have to. #@END_OF_CLASS
@@ -74,6 +74,6 @@ def next4couple(singiel F,singiel S): # Any globals modified?
 tmp=0  #test!
 
 ## https://github.com/borkowsk/bookProcessingEN/
-## @date 2024-12-09 (revived)
+## @date 2024-12-10 (revived)
 
 ## Finally, level is 0,infunction is 0, inclass is 0 (global)
