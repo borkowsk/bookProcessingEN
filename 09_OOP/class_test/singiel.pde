@@ -46,8 +46,8 @@ class singiel
 // it can be in various variants, created as needed.
 void view(singiel S,float v,float h,float rad)   
 {
-   ellipseMode(RADIUS); 
-   ellipse(v,h,round(S.x1*rad),round(S.x2*rad));
+  ellipseMode(RADIUS); 
+  ellipse(v,h,round(S.x1*rad),round(S.x2*rad));
 }
 
 // Pair iteration routine
@@ -66,4 +66,4 @@ void next4couple(singiel F,singiel S)
 int tmp=0; //test!
 
 // https://github.com/borkowsk/bookProcessingEN/
-/// @date 2024-12-03 (revived)
+/// @date 2024-12-10 (revived)
