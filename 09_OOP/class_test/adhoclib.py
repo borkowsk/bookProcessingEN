@@ -1,3 +1,3 @@
-''' Translating from a pde file sometimes requires 
-    defining additional functionalities. They go to this file! '''
+''' Translating from a pde file requires i_m_p_o_r_t_s from other files and 
+    sometimes defining additional functionalities. They are in this file! '''
 from singiel import *

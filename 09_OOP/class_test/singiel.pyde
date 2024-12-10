@@ -2,45 +2,48 @@
 ## An example of a class - user-defined type.
 ##-##=============================================
 
+from adhoclib import * 
+
 class singiel:  ##singiel:
   '''block:''' # FIELDS / ATTRIBUTES:
   
-## static and final object members are not supported yet!!!
+  # static and final object members are not supported yet!!!
   '''constant double'''
   max_r=4.0
   
   # Constructor(s):
-  #-####===========
+  #-####=============
   # each class has at least one method called as 
   # the class name, has no return type and is used 
   # to create a class object - the "instance".
   
   
+  @staticmethod
   def make_singiel3(iX,iR,iAlpha):    #3 (FLOAT IX,FLOAT IR,FLOAT IALPHA)
     self=singiel() #make default.
     '''block:'''
     tmp=[]  #TEST
-    this.x1=this.x2=iX;this.r=iR;this.al=iAlpha     #substitution(s) in method line: 4
+    self.x1=self.x2=iX;self.r=iR;self.al=iAlpha     #substitution(s) in method line: 4
     return self
   
   
   # METHODS:
-  #-####///
+  #-####====
   
-  def  alpha(self) #!< R / O Access to the field 'al' ## is an object method.
+  def  alpha(self): #!< R / O Access to the field 'al' ## is an object method.
     '''block:'''             #!< under a different name. 
     tmp=[]  #TEST
-    return this.al   #!< The so-called accessory    #substitution(s) in method line: 1
+    return self.al   #!< The so-called accessory    #substitution(s) in method line: 1
   
   
   
-  def  next(self)  #!<  Method to change state of object.### is an object method.
+  def  next(self):  #!<  Method to change state of object.### is an object method.
     '''block:'''          
-    this.x1=this.x2     #substitution(s) in method line: 2
-    this.x2=this.x1*this.r*(1-this.x1)  #This is an iteration without a pair    #substitution(s) in method line: 4
+    self.x1=self.x2     #substitution(s) in method line: 2
+    self.x2=self.x1*self.r*(1-self.x1)  #This is an iteration without a pair    #substitution(s) in method line: 4
   
    
-  def __INIT__(self)
+  def __INIT__(self):
     self.r  =0.0  #!< Control parameter.     ##float field 
     self.al  =0.0  #!< Coupling parameter     ##float field 
     self.x1  =0.0  #!< Current and previous states   ##float field 
@@ -52,15 +55,15 @@ class singiel:  ##singiel:
 
 ## viewer - procedure external to the class because 
 ## it can be in various variants, created as needed.
-def view(singiel S,v,h,rad): # Any globals modified?   
+def view(S,v,h,rad): # Any globals modified?   
   '''block:'''
-   ellipseMode(RADIUS); 
-   ellipse(v,h,round(S.x1*rad),round(S.x2*rad))
+  ellipseMode(RADIUS); 
+  ellipse(v,h,round(S.x1*rad),round(S.x2*rad))
 
 
 ## Pair iteration routine
 ## Declared outside the class for symmetry reasons
-def next4couple(singiel F,singiel S): # Any globals modified? 
+def next4couple(F,S): # Any globals modified? 
   '''block:'''
   # The interaction of the oscillators
   F.x2=F.x2*(1-F.al)+S.x2*F.al
@@ -75,5 +78,5 @@ tmp=0  #test!
 
 ## https://github.com/borkowsk/bookProcessingEN/
 ## @date 2024-12-10 (revived)
-
-## Finally, level is 0,infunction is 0, inclass is 0 (global)
+## jigle.awk .pde classes preprocessing by borkowsk @ github.
+## Tranlated by pde2pyde Tue, 10 Dec 2024 16:28:55 +0100

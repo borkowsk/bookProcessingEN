@@ -1,7 +1,7 @@
-/// TODO comments clean!
 /// An example of using a class (complex user type)
+/// @date 2024-12-10 (last modification)
 //-////////////////////////////////////////////////////
-
+/// TODO comments clean!
 final float DefaultR=3.66;
 final int   FR=5;
 
@@ -29,4 +29,3 @@ void draw()
 }
 
 // https://github.com/borkowsk/bookProcessingEN/
-/// @date 2024-11-29 (revived)

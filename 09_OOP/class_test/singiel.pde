@@ -1,6 +1,6 @@
-/// Chaotic oscillator class.
-/// An example of a class - user-defined type.
-//-//////////////////////////////////////////////
+/// Chaotic oscillator class. An example of a "class", a user-defined type.
+/// @date 2024-12-10 (last modification)
+//-////////////////////////////////////////////////////////////////////////
 
 class singiel 
 { // FIELDS / ATTRIBUTES:
@@ -11,7 +11,7 @@ class singiel
   final float max_r=4.0;
   
   // Constructor(s):
-  //-///////////////
+  //-////////////////
   // each class has at least one method called as 
   // the class name, has no return type and is used 
   // to create a class object - the "instance".
@@ -24,7 +24,7 @@ class singiel
   }
   
   // METHODS:
-  //-////////
+  //-/////////
   
   float alpha() //!< R / O Access to the field 'al' 
   {             //!< under a different name. 
@@ -66,4 +66,3 @@ void next4couple(singiel F,singiel S)
 int tmp=0; //test!
 
 // https://github.com/borkowsk/bookProcessingEN/
-/// @date 2024-12-10 (revived)

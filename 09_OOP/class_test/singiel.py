@@ -1,20 +1,22 @@
-## Chaotic oscillator class.
-## An example of a class - user-defined type.
-##-##=============================================
-from adhoclib import *
+## Chaotic oscillator class. An example of a "class", a user-defined type.
+## @date 2024-12-10 (last modification)
+##-##======================================================================
+
+from adhoclib import * 
 
 class singiel:  ##singiel:
-  '''block:''' # FIELDS / ATTRIBUTES: 
+  '''block:''' # FIELDS / ATTRIBUTES:
   
-  ## static and final object members are not supported yet!!!
+  # static and final object members are not supported yet!!!
   '''constant double'''
   max_r=4.0
   
   # Constructor(s):
-  #-####===========
+  #-####=============
   # each class has at least one method called as 
   # the class name, has no return type and is used 
   # to create a class object - the "instance".
+  
   
   @staticmethod
   def make_singiel3(iX,iR,iAlpha):    #3 (FLOAT IX,FLOAT IR,FLOAT IALPHA)
@@ -26,7 +28,7 @@ class singiel:  ##singiel:
   
   
   # METHODS:
-  #-####///
+  #-####====
   
   def  alpha(self): #!< R / O Access to the field 'al' ## is an object method.
     '''block:'''             #!< under a different name. 
@@ -34,19 +36,19 @@ class singiel:  ##singiel:
     return self.al   #!< The so-called accessory    #substitution(s) in method line: 1
   
   
+  
   def  next(self):  #!<  Method to change state of object.### is an object method.
     '''block:'''          
     self.x1=self.x2     #substitution(s) in method line: 2
     self.x2=self.x1*self.r*(1-self.x1)  #This is an iteration without a pair    #substitution(s) in method line: 4
   
-  
+   
   def __INIT__(self):
     self.r  =0.0  #!< Control parameter.     ##float field 
     self.al  =0.0  #!< Coupling parameter     ##float field 
     self.x1  =0.0  #!< Current and previous states   ##float field 
     self.x2  =0  #!< Current and previous states   ##float field 
-    # fc:4    
-
+    # fc:4
 
   #Closing the class. In JAVA syntax may be ';' but it doesn't have to. #@END_OF_CLASS
 
@@ -75,6 +77,5 @@ def next4couple(F,S): # Any globals modified?
 tmp=0  #test!
 
 ## https://github.com/borkowsk/bookProcessingEN/
-## @date 2024-12-10 (revived)
-
-## Finally, level is 0,infunction is 0, inclass is 0 (global)
+## jigle.awk .pde classes preprocessing by borkowsk @ github.
+## Tranlated by pde2pyde Tue, 10 Dec 2024 16:33:35 +0100
