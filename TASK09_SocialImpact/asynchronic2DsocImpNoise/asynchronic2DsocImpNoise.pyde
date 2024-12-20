@@ -3,7 +3,7 @@
 ##*##=======================================================================================
 
 '''constant int'''
-WorldSide=500   #Side lenght of simulation world (square)
+WorldSide=300   #Side lenght of simulation world (square)
 '''constant double'''
 Dens=0.20  #.01;##Initial density of 1 in the Attitude
 '''constant int'''
@@ -27,7 +27,7 @@ Attitude=[[0 for _x in range(WorldSide)] for _y in range(WorldSide)]  #Current a
 
 def setup(): # Any globals modified?
   '''block:'''
-  size(500,520)  #squre canvas
+  size(300,320)  #squre canvas
   noSmooth()     #much faster drawing
   frameRate(FR)
   initialisation()  #Initial state of the model
@@ -133,10 +133,12 @@ def asyncStep(): # Any globals modified? # asynchronous step
 
 def status(): # Any globals modified?
   '''block:'''
-  fill(128);noStroke();rect(0,height,width,-20)TASK09_SocialImpact/asynchronic2DsocImpNoise/asynchronic2DsocImpNoise.pyde
+  fill(128);noStroke();rect(0,height,width,-20)
+
   fill(255)
   textSize(18);textAlign(LEFT,BOTTOM)
   text("ST:"+str(t)+"("+nfs(frameRate,0,2)+"fps) Adopted:"+str(Adopted),0,height)
 
 
-## @date 2024-12-01 (https://github.com/borkowsk/bookProcessingEN/)
+## @date 2024-12-20 (https://github.com/borkowsk/bookProcessingEN/)
+## TASK09_SocialImpact/asynchronic2DsocImpNoise/asynchronic2DsocImpNoise.pyde
