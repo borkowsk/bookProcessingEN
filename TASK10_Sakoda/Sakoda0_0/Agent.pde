@@ -2,17 +2,17 @@
 /// HERE: Agent for simplified Sakoda model
 //*////////////////////////////////////////////////////////////////////////////
 
-int Number_of_identities=3; //How many mutually exclusive identities are there?
+int Number_of_identities=3; // How many mutually exclusive identities are there?
 
 class Agent
 {
   float identity; // [1..Number_of_identities]
   float stress; //Stress in the current position [0..1]
-  
-  /// Constructor of the Agent
+
+  // Constructor of the Agent.
   Agent() 
   {      
-    identity=int(random(1,Number_of_identities+1)); //Simple way
+    identity=int(random(1, Number_of_identities+1)); //Simple way
     stress=0;
   }
 };
@@ -22,3 +22,4 @@ class Agent
 // https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE 
 // https://github.com/borkowsk/bookProcessingEN
 //*/////////////////////////////////////////////////////////////////////////////////////////
+ 
