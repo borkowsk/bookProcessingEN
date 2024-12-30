@@ -14,7 +14,7 @@ void setup()
   size(600,600);
 }
 
-// Running - visualisation and dynamics (about 60 times per sec.).
+// Running - visualisation and dynamics (many times per sec.).
 void draw()
 {
   fill(random(255),random(255),random(255),random(255));
