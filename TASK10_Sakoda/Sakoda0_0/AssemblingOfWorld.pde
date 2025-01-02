@@ -3,8 +3,7 @@
 
 class World //implements simulation_world interface later...
 {
-  int StepCounter=0; //If we had more worlds, 
-  //each one must have their own timer!
+  int StepCounter=0; //If we had more worlds, each one must have their own timer!
 
   //type v.name [][]<- marks of 2D array   
   Agent[][] agents; //Two-dimensional array of agents

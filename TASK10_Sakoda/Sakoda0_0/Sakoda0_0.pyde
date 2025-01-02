@@ -19,6 +19,7 @@ TheWorld = World.make_World0(side)  #Create a simulation world#
 ##Which still needs to be initialized in the setup()
 
 def setup(): # Is it any global variable modified inside?
+  global side,density,cwidth,STATUSHEIGH,STEPSperVIS,FRAMEFREQ,modelName  ##MANUALLY!!!
   '''Purpose of the code block below is ...'''
   # Graphics initialization
   size(800, 840)  #Variables cannot be used here unfortunately :-(
@@ -27,31 +28,31 @@ def setup(): # Is it any global variable modified inside?
   frameRate(FRAMEFREQ)  #It will come in handy here...
 
   # Does the window size match the program's expectations?
-  println("REQUIRED SIZE OF PAINTING AREA IS ", 
-    (cwidth*side)+"x"+(cwidth*side+STATUSHEIGH))
-  println("CURRENT SIZE OF PAINTING AREA IS ", 
-    width+"x"+height)
+  print "REQUIRED SIZE OF PAINTING AREA IS ", str(cwidth*side)+"x"+str(cwidth*side+STATUSHEIGH)
+  print "CURRENT SIZE OF PAINTING AREA IS ", str(width)+"x"+str(height)
   cwidth=(height-STATUSHEIGH)/side  #Adjusting the size of the agents. 
   #At most, the entire window will not be filled.
 
   # Finally, we deal with the MODEL itself
-  TheWorld.initializeModel()  #Initialisation of the World
-  visualizeModel(TheWorld)  #The first visualization
+  TheWorld.initializeModel(density)  #Initialisation of the World
+  visualizeModel(TheWorld,cwidth)  #The first visualization
 
 
 def draw(): # Is it any global variable modified inside?
+  global side,density,cwidth,STATUSHEIGH,STEPSperVIS,FRAMEFREQ,modelName  
   '''Purpose of the code block below is ...'''
   TheWorld.modelStep()  #The next simulation step
 
   # Visualization doesn't have to be at every step  
   if TheWorld.StepCounter % STEPSperVIS == 0  :
-    visualizeModel(TheWorld)
+    visualizeModel(TheWorld,cwidth)
 
   # Drawing the status bar is not that expensive, so every step.
   statusLine()
 
 
 def statusLine(): # Is it any global variable modified inside?
+  global side,density,cwidth,STATUSHEIGH,STEPSperVIS,FRAMEFREQ,modelName    
   '''Purpose of the code block below is ...'''
   fill(255)
   noStroke()
@@ -61,7 +62,7 @@ def statusLine(): # Is it any global variable modified inside?
   textAlign(LEFT, TOP)
   textAlign(LEFT, BOTTOM)
   # Not much to write yet
-  text(TheWorld.StepCounter+")  Fps:"+frameRate, 0, side*cwidth+STATUSHEIGH-2)
+  text(str(TheWorld.StepCounter)+")  Fps:"+str(frameRate), 0, side*cwidth+STATUSHEIGH-2)
 
 
 ## Expected interface for a world class

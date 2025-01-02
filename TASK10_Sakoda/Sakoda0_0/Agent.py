@@ -8,6 +8,8 @@ Number_of_identities=3  # How many mutually exclusive identities are there?
 
 class Agent: #Agent:
   '''Purpose of the code block below is ...'''
+  '''(float)(identity)(=0.0)([1..Number_of_identities])'''
+  '''(float)(stress)(=0.0)(Stress in the current position [0..1])'''
 
   # Constructor of the Agent.
   @staticmethod
@@ -18,9 +20,10 @@ class Agent: #Agent:
     self.stress=0
     return self
   
-  def __INIT__(self):
-    self.identity  =0.0  # [1..Number_of_identities]      ##float field 
-    self.stress  =0.0  #Stress in the current position [0..1]  ##float field 
+
+  def __init__(self):
+    self.identity  =0.0  # [1..Number_of_identities] #float field 
+    self.stress  =0.0  # Stress in the current position [0..1] #float field 
     # fc:2
 
   #@END_OF_CLASS
@@ -32,4 +35,4 @@ class Agent: #Agent:
 ##*##=======================================================================================
  
 ## jigle.awk .pde classes preprocessing by borkowsk @ github.
-## Translated by pde2pyde Fri, 20 Dec 2024 21:01:07 +0100
+## Translated by pde2pyde Thu, 02 Jan 2025 16:39:59 +0100
