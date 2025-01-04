@@ -17,6 +17,7 @@ void draw()
 {
   background(128);
   
+  census(theWorld);
   visualise(theWorld);
   theWorld.update();
   
