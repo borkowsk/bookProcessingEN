@@ -54,6 +54,10 @@ class World
            plane[nrow][ncol]=plane[row][col]; // To a new place.
            plane[row][col]=null; // Very important: The normal world does not allow bilocation!
          }
+         else
+         {
+           plane[row][col].interactionA(plane[nrow][ncol]);
+         }
       }
     }  
   }

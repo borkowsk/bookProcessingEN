@@ -4,11 +4,12 @@
 
 void setup()
 {
-  size(500,520);
+  size(1000,1020);
   
   theWorld=new World();
   theWorld.initialise();
   
+  frameRate(100);
   println(Model,"Ready!");
 }
 

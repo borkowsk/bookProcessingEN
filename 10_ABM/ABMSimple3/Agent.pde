@@ -6,19 +6,19 @@ enum Dirs { UNKNOWN, N, NE, E, SE, S, SW, W, NW }; ///< all directions of the wo
 
 Dirs[] allDirs={ Dirs.UNKNOWN,Dirs.N,Dirs.NE,Dirs.E,Dirs.SE,Dirs.S,Dirs.SW,Dirs.W,Dirs.NW };
 
-color dirs2color(Dirs direction)
+color dirs2color(Dirs direction) //!< second version of colorisation
 {
   switch(direction){
-  case UNKNOWN: return color(255,255,255);
   case N:       return color(  0,  0,255);
   case NE:      return color(  0,255,255);
   case E:       return color(  0,255,  0);
   case SE:      return color(255,255,  0);
   case S:       return color(255,  0,  0);
-  case SW:      return color(175,200,  0);
-  case W:       return color(150,100,  0);
-  case NW:      return color( 55, 55,255);
-  default: return color(255,100,100);
+  case SW:      return color(255,  0,120);
+  case W:       return color(255,  0,255);
+  case NW:      return color(120,  0,255);
+  case UNKNOWN: 
+  default: return color(255,255,255);
   }
 }
 
@@ -36,4 +36,10 @@ class Agent
     if( direction==Dirs.UNKNOWN && random(1.0)<0.01 ) // Within approximately 100 steps, everyone will choose a direction
       direction=allDirs[int(random(1,allDirs.length))];
   }
+  
+  void interactionA(Agent other) //!< Asymmetric interaction.
+  {
+    other.direction=this.direction;
+  }
+  
 } 
