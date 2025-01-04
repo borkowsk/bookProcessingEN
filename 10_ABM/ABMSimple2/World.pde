@@ -18,12 +18,19 @@ class World
       }
   }
   
-  void update() //!< Updating the state of the world, i.e. the simulation step.
+  void update() //!< Monte Carlo update of the world, i.e. the simulation step.
   {
-    for(int row=0;row<WSide;row++)
-      for(int col=0;col<WSide;col++)
-        if(plane[row][col]!=null)
-          plane[row][col].update();
+    int square=WSide*WSide;
+    for(int i=0;i<square;i++)
+    {
+      int col=int(random(0,WSide));
+      int row=int(random(0,WSide));
+      if(plane[row][col]!=null)
+      {
+         plane[row][col].update();
+         // Moves & interactions later on.
+      }
+    }  
   }
 }
 
