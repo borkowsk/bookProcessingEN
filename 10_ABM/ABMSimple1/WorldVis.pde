@@ -11,7 +11,8 @@ void visualise(World currWorld)
     for(int col=0;col<WSide;col++)
       if(currWorld.plane[row][col]!=null)
       {
-        fill(255); noStroke();
+        fill(currWorld.plane[row][col].getColor()); 
+        noStroke();
         ellipse(col*CSide-HSide,row*CSide-HSide,CSide,CSide);
       }
       else

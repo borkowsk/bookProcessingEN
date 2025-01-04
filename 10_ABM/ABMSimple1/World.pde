@@ -20,7 +20,10 @@ class World
   
   void update() //!< Updating the state of the world, i.e. the simulation step.
   {
-    // we will do it later.
+    for(int row=0;row<WSide;row++)
+      for(int col=0;col<WSide;col++)
+        if(plane[row][col]!=null)
+          plane[row][col].update();
   }
 }
 
