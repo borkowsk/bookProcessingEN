@@ -28,7 +28,32 @@ class World
       if(plane[row][col]!=null)
       {
          plane[row][col].update();
-         // Moves & interactions later on.
+         
+         // Requested move.
+         int dcol,drow;
+         switch( plane[row][col].direction ){
+            case N:       dcol= 0; drow=-1; break;
+            case NE:      dcol=+1; drow=-1; break;
+            case E:       dcol=+1; drow= 0; break;
+            case SE:      dcol=+1; drow=+1; break;
+            case S:       dcol= 0; drow=+1; break;
+            case SW:      dcol=-1; drow=+1; break;
+            case W:       dcol=-1; drow= 0; break;
+            case NW:      dcol=-1; drow=-1; break;
+            case UNKNOWN: 
+            default: dcol= 0; drow= 0; break;
+            }
+         
+         // Requested position
+         int ncol=(WSide+col+dcol)%WSide;
+         int nrow=(WSide+row+drow)%WSide;
+         
+         // Action depend on emptines of the new position
+         if(plane[nrow][ncol]==null)
+         {
+           plane[nrow][ncol]=plane[row][col];
+           plane[row][col]=null;
+         }
       }
     }  
   }
