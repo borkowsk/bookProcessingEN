@@ -42,4 +42,10 @@ class Agent
     other.direction=this.direction;
   }
   
+  void interactionS(Agent other) //!< Symmetric interaction.
+  {
+    Dirs newdirection=allDirs[int(random(1,allDirs.length))]; // Agents "establish" a new common direction.
+    this.direction=newdirection;
+    other.direction=newdirection;
+  }
 } 

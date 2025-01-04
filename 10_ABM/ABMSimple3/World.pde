@@ -56,7 +56,7 @@ class World
          }
          else
          {
-           plane[row][col].interactionA(plane[nrow][ncol]);
+           plane[row][col].interactionS(plane[nrow][ncol]);
          }
       }
     }  
