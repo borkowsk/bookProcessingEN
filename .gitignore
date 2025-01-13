@@ -41,4 +41,5 @@ cmake_install.cmake
 *-relwithdebinfo/
 NBuild/
 application.*
-
+*.class
+._bak/
