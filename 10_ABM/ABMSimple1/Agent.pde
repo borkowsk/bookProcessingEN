@@ -1,5 +1,5 @@
 /// The agent: its atributes, random initialisation and methods
-/// @date 2025-01-04 (modification)
+/// @date 2025-01-13 (modification)
 //*/////////////////////////////////////////////////////////////////////////////
 
 enum Dirs { UNKNOWN, N, NE, E, SE, S, SW, W, NW }; ///< all directions of the world.
