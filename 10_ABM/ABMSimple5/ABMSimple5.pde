@@ -21,7 +21,7 @@ void draw()
   visualise(theWorld);
   theWorld.update();
   
-  text(str(frameCount)+"("+str(frameRate)+")",0,height);
+  text(str(frameCount)+"("+str(frameRate)+")",3,height-3); // 3 pixels margins.
 }
 
 void exit()
