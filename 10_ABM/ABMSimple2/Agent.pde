@@ -24,7 +24,7 @@ color dirs2color(Dirs direction)
 
 class Agent
 {
-  Dirs direction=Dirs.UNKNOWN;  //!< It knows his walking direction.
+  Dirs direction=Dirs.UNKNOWN;  //!< It needs to know his walking direction.
   
   color getColor()
   {
@@ -33,7 +33,7 @@ class Agent
   
   void update()
   {
-    if( direction==Dirs.UNKNOWN && random(1.0)<0.01 ) // Within approximately 100 steps, everyone will choose a direction
+    if( direction==Dirs.UNKNOWN && random(1.0)<0.01 ) // Within approximately 100 steps, everyone will choose a direction.
       direction=allDirs[int(random(1,allDirs.length))];
   }
 } 

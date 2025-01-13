@@ -24,7 +24,7 @@ color dirs2color(Dirs direction) //!< second version of colorisation
 
 class Agent
 {
-  Dirs direction=Dirs.UNKNOWN;  //!< It knows his walking direction.
+  Dirs direction=Dirs.UNKNOWN;  //!< It needs to know his walking direction.
   
   color getColor()
   {
