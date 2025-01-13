@@ -9,7 +9,7 @@ void setup()
   theWorld=new World();
   theWorld.initialise();
   
-  frameRate(100);
+  frameRate(DEFAULT_FRAME_RATE);
   println(Model,"Ready!");
 }
 
