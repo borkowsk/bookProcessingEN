@@ -21,4 +21,6 @@ void visualise(World currWorld)
         noFill(); stroke(0);
         rect(col*CSide,row*CSide,CSide,CSide);
       }  
+      
+  stroke(0);fill(255); // back to default.     
 }

@@ -1,5 +1,5 @@
 /// The world visualisation.
-/// @date 2025-01-04 (modification)
+/// @date 2025-01-13 (modification)
 //*/////////////////////////////////////////////////////////////////////////////
 
 void visualise(World currWorld)
@@ -13,11 +13,13 @@ void visualise(World currWorld)
       {
         fill(currWorld.plane[row][col].getColor()); 
         noStroke();
-        ellipse(col*CSide-HSide,row*CSide-HSide,CSide,CSide);
+        ellipse(col*CSide+HSide,row*CSide+HSide,CSide,CSide);
       }
       else
       {
         noFill(); stroke(0);
         rect(col*CSide,row*CSide,CSide,CSide);
       }
+      
+  stroke(0);fill(255); // back to default.    
 }
