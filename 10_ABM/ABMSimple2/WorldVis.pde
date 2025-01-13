@@ -1,5 +1,5 @@
 /// The world visualisation.
-/// @date 2025-01-04 (modification)
+/// @date 2025-01-13 (modification)
 //*/////////////////////////////////////////////////////////////////////////////
 
 void visualise(World currWorld)
@@ -14,6 +14,8 @@ void visualise(World currWorld)
         fill(currWorld.plane[row][col].getColor()); 
         noStroke();
         ellipse(col*CSide-HSide,row*CSide-HSide,CSide,CSide);
+        stroke(0); // When we finish drawing on the agent, the graphic is left with the noStroke option, which is not the default.
+                   // This is the solution...
       }
       else
       {
