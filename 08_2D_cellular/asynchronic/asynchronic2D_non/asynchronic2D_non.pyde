@@ -84,4 +84,4 @@ def draw(): # Any globals modified? #
   #end
 
 ## https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
-## @date 2024-11-29 (revived)
+## @date 2025-03-17 (revived)
