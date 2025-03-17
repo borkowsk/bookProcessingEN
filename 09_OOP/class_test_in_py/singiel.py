@@ -1,5 +1,5 @@
 ## Chaotic oscillator class. An example of a "class", a user-defined type.
-## @date 2024-12-10 (last modification)
+## @date 2025-03-17 (last modification)
 ##-##======================================================================
 
 from adhoclib import * 

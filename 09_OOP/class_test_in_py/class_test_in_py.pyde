@@ -1,5 +1,5 @@
 ## An example of using a class (complex user type)
-## @date 2024-12-10 (last modification)
+## @date 2025-03-17 (last modification)
 ##-##==================================================
 ## TODO comments clean!
 from adhoclib import * 
