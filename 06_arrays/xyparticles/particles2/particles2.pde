@@ -54,7 +54,7 @@ void draw() // changes global y,x,vx,vy
     if(y[i]<height-3) // Still on the way
     {
       if(x[i] < 0 || width < x[i])
-        vx[i]=-vx[i]; // Changes in the direction of the horizontal component of the velocity vector to the opposite
+        vx[i]=-vx[i]; // Changes in the direction of the horisontal component of the velocity vector to the opposite
     }
     else // Target line achieved
     {

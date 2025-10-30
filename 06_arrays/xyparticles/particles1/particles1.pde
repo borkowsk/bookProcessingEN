@@ -26,12 +26,12 @@ void setup() // changes global y0,y,x,vx,vy
   stroke(255);
   fill(0);
     
-  for(int i=0;i<Num;i++) // Initialize Positions and Speeds
+  for(int i=0;i<Num;i++) // Initialize positions and speeds
   {
     y[i]=y0;  // Initial vertical positions         
     x[i]=random(width); // Horizontal positions
-    vy[i]=random(minv,maxv); // Vertical speeds
-    vx[i]=random(-maxv/2,maxv/2); // Horisontal speeds could be negative.
+    vy[i]=random(minv,maxv); // Vertical velocities
+    vx[i]=random(-maxv/2,maxv/2); // Horizontal velocities can be negative.
   }
 }
               
@@ -40,7 +40,7 @@ void draw() // global h,x,v
   // Visualisation
   background(0,0,200); // rgB
 
-  for(int i=0;i<Num;i++) // Visualisation
+  for(int i=0;i<Num;i++) // Visualization
     if(y[i]<height-3) // Still on the way
     {
       ellipse(x[i],y[i],5,5);
@@ -55,7 +55,7 @@ void draw() // global h,x,v
   for(int i=0;i<Num;i++) // Change of positions
   {
     y[i]+=vy[i]/FR; // Vertical speed is in pixels per second!
-    x[i]+=vx[i]/FR; // Horisontal speed is in pixels per second!
+    x[i]+=vx[i]/FR; // Horizontal speed is in pixels per second!
   }
 }
 
