@@ -19,7 +19,8 @@ float[] vx=new float[Num]; //!< Vertical speed in pixels per second!
 boolean[] in_collision=new boolean[Num]; //!< Is it involved in some kind of collision?
 float DIAM=6; //!< Diameter of the "insect" as a circle.
 
-void checkCollisions() //Naive collision detection (full of errors!)
+//Naive collision detection (full of errors!)
+void checkCollisions() //changes in_collision
 {
   for(int i=0;i<Num;i++)
   {
@@ -30,28 +31,8 @@ void checkCollisions() //Naive collision detection (full of errors!)
         in_collision[i]=true;
     }
   }
-  
 }
 
-void setup() // changes global y0,y,x,vx,vy
-{
-  size(500,500);
-  y0=height/20;
-  
-  noSmooth();
-  frameRate(FR);
-  stroke(255);
-  fill(0);
-    
-  for(int i=0;i<Num;i++) // Initialize Positions and Speeds
-  {
-    y[i]=y0;  // Initial vertical positions         
-    x[i]=random(width); // Horizontal positions
-    vy[i]=random(minv,maxv); // Vertical speeds
-    vx[i]=random(-maxv/2,maxv/2); // Horisontal speeds could be negative.
-  }
-}
-              
 void draw() // changes global y,x,vx,vy
 {
   // Visualisation
@@ -83,6 +64,25 @@ void draw() // changes global y,x,vx,vy
   }
   
   checkCollisions();
+}
+
+void setup() // changes global y0,y,x,vx,vy
+{
+  size(500,500);
+  y0=height/20;
+  
+  noSmooth();
+  frameRate(FR);
+  stroke(255);
+  fill(0);
+    
+  for(int i=0;i<Num;i++) // Initialize Positions and Speeds
+  {
+    y[i]=y0;  // Initial vertical positions         
+    x[i]=random(width); // Horizontal positions
+    vy[i]=random(minv,maxv); // Vertical speeds
+    vx[i]=random(-maxv/2,maxv/2); // Horisontal speeds could be negative.
+  }
 }
 
 // https://github.com/borkowsk/bookProcessingEN
