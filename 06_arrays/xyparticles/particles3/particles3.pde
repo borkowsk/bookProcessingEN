@@ -1,5 +1,5 @@
 /// RUNNING BUGS
-/// @date 2025-10-30
+/// @date 2025-11-02
 //*//////////////////
 
 final int   FR   = 10; //!< How many frames per second
