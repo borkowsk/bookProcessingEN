@@ -57,7 +57,7 @@ void draw() // changes global y,x,vx,vy
     // Checking the new positions    
     if(y[i]<height-3) // Still on the way
     {
-      if(x[i] < 0 || width < x[i])
+      if(x[i] < 0 || width < x[i] || in_collision[i])
         vx[i]=-vx[i]; // Changes in the direction of the horisontal component of the velocity vector to the opposite
     }
     else // Target line achieved
@@ -65,6 +65,7 @@ void draw() // changes global y,x,vx,vy
       vy[i]=0;
       vx[i]=0;
     }
+    
   }
   
   checkCollisions();
