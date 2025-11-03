@@ -19,9 +19,12 @@ float[] vx=new float[Num]; //!< Vertical speed in pixels per second!
 boolean[] in_collision=new boolean[Num]; //!< Is it involved in some kind of collision?
 float DIAM=6; //!< Diameter of the "insect" as a circle.
 
-//Naive collision detection (full of errors!)
+//Working collision detection (It can still be done better)
 void checkCollisions() //changes in_collision
 {
+  for(int i=0;i<Num;i++) // We clear the array before updating.
+     in_collision[i]=false;
+     
   for(int i=0;i<Num;i++)
   {
     for(int j=0;j<Num;j++)
