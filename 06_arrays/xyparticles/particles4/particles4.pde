@@ -1,5 +1,5 @@
 /// RUNNING BUGS
-/// @date 2025-11-02
+/// @date 2025-11-03
 //*//////////////////
 
 final int   FR   = 10; //!< How many frames per second
@@ -25,10 +25,11 @@ void checkCollisions() //changes in_collision
   for(int i=0;i<Num;i++)
   {
     for(int j=0;j<Num;j++)
+    if(i!=j) // is always in collision with itself!
     {
       float distance=dist(x[i],y[i],x[j],y[j]);
       if(distance<DIAM) // A collision occurred when the distance is less than two radii.
-        in_collision[i]=true;
+        in_collision[i]=true; //where need we clear this?  
     }
   }
 }
