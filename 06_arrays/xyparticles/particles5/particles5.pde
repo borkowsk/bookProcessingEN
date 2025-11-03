@@ -2,7 +2,7 @@
 /// @date 2025-11-03
 //*//////////////////
 
-final int   FR   = 10; //!< How many frames per second
+final int   FR   = 1; //!< How many frames per second
 final int   Num  = 50; //!< How many bugs
 
 final float minv = 10.0; //!< The slightest movement of the spider
@@ -51,14 +51,11 @@ void draw() // changes global y,x,vx,vy
 
   for(int i=0;i<Num;i++) // Change of positions
   {
-    y[i]+=vy[i]/FR; // Vertical speed is in pixels per second!
-    x[i]+=vx[i]/FR; // Horisontal speed is in pixels per second!
-    
     // Checking the new positions    
     if(y[i]<height-3) // Still on the way
     {
       if(x[i] < 0 || width < x[i] || in_collision[i])
-        vx[i]=-vx[i]; // Changes in the direction of the horisontal component of the velocity vector to the opposite
+        vx[i]=-vx[i]; // Changes in the direction of the X component of the velocity
     }
     else // Target line achieved
     {
@@ -66,6 +63,8 @@ void draw() // changes global y,x,vx,vy
       vx[i]=0;
     }
     
+    y[i]+=vy[i]/FR; // Vertical speed is in pixels per second!
+    x[i]+=vx[i]/FR; // Horisontal speed is in pixels per second!
   }
   
   checkCollisions();
@@ -80,13 +79,13 @@ void setup() // changes global y0,y,x,vx,vy
   frameRate(FR);
   stroke(255);
   fill(0);
-    
-  for(int i=0;i<Num;i++) // Initialize Positions and Speeds
+  float a=width/(Num+1.0); // Distance between starting positions
+  for(int i=0;i<Num;i++) // Initialize positions and speeds
   {
-    y[i]=y0;  // Initial vertical positions         
-    x[i]=random(width); // Horizontal positions
-    vy[i]=random(minv,maxv); // Vertical speeds
-    vx[i]=random(-maxv/2,maxv/2); // Horisontal speeds could be negative.
+    y[i]=y0;     
+    x[i]=i*a+a/2; // a/2 prevents starting on the edge
+    vy[i]=random(minv,maxv); // Y speeds
+    vx[i]=random(-maxv/2,maxv/2); // X speeds could be negative.
   }
 }
 
