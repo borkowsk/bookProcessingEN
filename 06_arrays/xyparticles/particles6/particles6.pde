@@ -19,7 +19,7 @@ float[] vx=new float[Num]; //!< Horisontal speed in pixels per second!
 boolean[] in_collision=new boolean[Num]; //!< Is it involved in some kind of collision?
 float DIAM=5; //!< Diameter of the "insect" as a circle.
 
-//Working collision detection (It can still be done better)
+//Working collision detection (Now optimised)
 void checkCollisions() //changes in_collision
 {
   for(int i=0;i<Num;i++) // We clear the array before updating.
@@ -27,12 +27,15 @@ void checkCollisions() //changes in_collision
      
   for(int i=0;i<Num;i++)
   {
-    for(int j=0;j<Num;j++)
-    if(i!=j) // is always in collision with itself!
+    for(int j=i+1;j<Num;j++) //Only those not checked before!
+    //if(i!=j) // Now i==j is never happened at all!
     {
       float distance=dist(x[i],y[i],x[j],y[j]);
       if(distance<DIAM) // A collision occurred when the distance is less than two radii.
-        in_collision[i]=true; //where need we clear this?  
+      {
+        in_collision[i]=true; // Now both i and j ...
+        in_collision[j]=true; // ... are flaged as collided.
+      }
     }
   }
 }
@@ -63,8 +66,8 @@ void draw() // changes global y,x,vx,vy
       vx[i]=0;
     }
     
-    y[i]+=vy[i]/FR; // Vertical speed is in pixels per second!
-    x[i]+=vx[i]/FR; // Horisontal speed is in pixels per second!
+    y[i]+=vy[i]/FR; // Note: Vertical speed is in pixels per second!
+    x[i]+=vx[i]/FR; // And... Horisontal speed also is in pixels per second!
   }
   
   checkCollisions();
@@ -83,7 +86,7 @@ void setup() // changes global y0,y,x,vx,vy
   for(int i=0;i<Num;i++) // Initialize positions and speeds
   {
     y[i]=y0;     
-    x[i]=i*a+a/2; // a/2 prevents starting on the edge
+    x[i]=i*a+a/2; // a/2 prevents starting on the left edge
     vy[i]=random(minv,maxv); // Y speeds
     vx[i]=random(-maxv/2,maxv/2); // X speeds could be negative.
   }
