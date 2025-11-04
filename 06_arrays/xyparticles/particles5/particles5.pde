@@ -2,7 +2,7 @@
 /// @date 2025-11-03
 //*//////////////////
 
-final int   FR   = 1; //!< How many frames per second
+final int   FR   = 100; //!< How many frames per second
 final int   Num  = 50; //!< How many bugs
 
 final float minv = 10.0; //!< The slightest movement of the spider

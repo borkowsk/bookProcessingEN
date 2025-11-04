@@ -24,7 +24,7 @@ void setup() // changes global y0,h,x,v
   stroke(255);
   fill(0);
     
-  for(int i=0;i<Num;i++) // Initialize Positions and Speeds
+  for(int i=0;i<Num;i++) // Initialize positions and speeds
   {
     y[i]=y0;  // Initial vertical positions         
     x[i]=random(width); // Horizontal positions

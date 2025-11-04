@@ -14,7 +14,7 @@ float[] y=new float[Num]; //!< Vertical position
 float[] x=new float[Num]; //!< Horizontal position
 
 float[] vy=new float[Num]; //!< Vertical speed in pixels per second!
-float[] vx=new float[Num]; //!< Vertical speed in pixels per second!
+float[] vx=new float[Num]; //!< Horizontal speed in pixels per second!
 
 boolean[] in_collision=new boolean[Num]; //!< Is it involved in some kind of collision?
 float DIAM=6; //!< Diameter of the "insect" as a circle.
@@ -80,7 +80,7 @@ void setup() // changes global y0,y,x,vx,vy
   stroke(255);
   fill(0);
     
-  for(int i=0;i<Num;i++) // Initialize Positions and Speeds
+  for(int i=0;i<Num;i++) // Initialize positions and speeds
   {
     y[i]=y0;  // Initial vertical positions         
     x[i]=random(width); // Horizontal positions

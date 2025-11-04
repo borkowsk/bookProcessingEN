@@ -14,7 +14,7 @@ float[] y=new float[Num]; //!< Vertical position
 float[] x=new float[Num]; //!< Horizontal position
 
 float[] vy=new float[Num]; //!< Vertical speed in pixels per second!
-float[] vx=new float[Num]; //!< Vertical speed in pixels per second!
+float[] vx=new float[Num]; //!< Horizontal speed in pixels per second!
 
 void setup() // changes global y0,y,x,vx,vy
 {
