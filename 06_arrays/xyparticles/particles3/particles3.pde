@@ -5,8 +5,8 @@
 final int   FR   = 10; //!< How many frames per second
 final int   Num  = 50; //!< How many bugs
 
-final float minv = 10.0; //!< The slightest movement of the spider
-final float maxv = 50.0; //!< What the greatest movement of the spider
+final float minv = 10.0; //!< The slightest movement of the insect
+final float maxv = 50.0; //!< What the greatest movement of the insect
 
 float y0=0.0; //!< Starting height = height/D;
 
