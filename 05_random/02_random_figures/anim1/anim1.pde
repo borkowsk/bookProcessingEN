@@ -1,5 +1,5 @@
-// Randomized a/nimation example.
-//*//////////////////////////////
+// Randomized animation example.
+//*/////////////////////////////
 
 void setup()  
 {

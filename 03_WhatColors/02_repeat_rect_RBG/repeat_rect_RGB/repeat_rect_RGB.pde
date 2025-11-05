@@ -13,5 +13,5 @@ for(int i=0;i<256;i+=10) // REPEAT EVERY TEN TIMES!
   rect(i,i,0,500); // And draw a "card"!
 } // END OF THE REPEATED ACTION
 
-// https://www.facebook.com/ProcessingWEdukacji/
+// https://github.com/borkowsk/bookProcessingEN
 // http://processingwedukacji.blogspot.com

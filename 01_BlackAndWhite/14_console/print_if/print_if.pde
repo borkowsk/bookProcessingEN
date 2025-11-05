@@ -1,4 +1,4 @@
-/// print if example.
+/// print and if example.
 
 int a=10; //or maybe 0 ;-)
 

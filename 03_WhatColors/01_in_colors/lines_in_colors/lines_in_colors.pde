@@ -14,5 +14,4 @@ for(int i=0;i<500;i+=10) // REPEAT 50x every 10
   line(i,i,0,500);
 }
 
-// https://www.facebook.com/ProcessingWEdukacji/
 // https://github.com/borkowsk/bookProcessingEN

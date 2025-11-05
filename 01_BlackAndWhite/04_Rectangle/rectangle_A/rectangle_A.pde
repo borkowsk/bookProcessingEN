@@ -11,6 +11,6 @@ stroke(255); //WHITE
 point(25,25);
 stroke(128); //50% GRAY
 point(50,50);
-stroke(0); //BACK TO BLACK
+stroke(0);   //BACK TO BLACK
 
 // https://github.com/borkowsk/bookProcessingEN

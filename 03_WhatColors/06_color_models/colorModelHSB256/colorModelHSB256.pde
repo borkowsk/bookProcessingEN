@@ -2,6 +2,7 @@
 /// Other words HSL (hue, saturation, lightness) or HSV (hue, saturation, value)
 /// https://en.wikipedia.org/wiki/HSL_and_HSV 
 /// https://pl.wikipedia.org/wiki/HSL
+//*/////////////////////////////////////////////////////////////////////////////
 
 size(256,256);
 

@@ -1,4 +1,5 @@
 /// Big centered text in big window
+
 size(500,500);
 textAlign(CENTER, CENTER); //Text alignment
 textSize(32); //Font size

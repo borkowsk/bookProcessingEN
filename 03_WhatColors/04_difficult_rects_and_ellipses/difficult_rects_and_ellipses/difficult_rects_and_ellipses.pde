@@ -18,6 +18,5 @@ for(int i=300;i>=0;i-=10) // REPEAT EVERY TENTH BACKWARD!
   ellipse(i,i,10,10);   // ...  and "tails".
 }
 
-// https://www.facebook.com/ProcessingWEdukacji/
 // http://processingwedukacji.blogspot.com
 // https://github.com/borkowsk/bookProcessingEN

@@ -1,3 +1,4 @@
+// Using mouse position with event handler
 // src: https://openprocessing.org/sketch/825836/
 
 void setup()
@@ -28,3 +29,6 @@ void draw()
 {
   // Only this one procedure put drawing to screen!
 }
+
+
+// https://github.com/borkowsk/bookProcessingEN

@@ -1,5 +1,6 @@
 /// 4 bars example. SIMPLIFIED
 /// DATA. Values can be changed at will
+//*////////////////////////////////////////
 
 float d0=300,d1=499,d2=150,d3=75;
 
@@ -17,6 +18,5 @@ line(0,0,0,499); //Vertical
 line(0,0,5,10);  //Arrow
 
 line(0,499,599,499); //Horizontal
-
 
 // https://github.com/borkowsk/bookProcessingEN
