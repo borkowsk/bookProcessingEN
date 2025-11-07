@@ -3,12 +3,12 @@
 //=============================================================================
 
 int WorldSize=302; //How many elements do we want in a line?
+float IDens=0.0; //The initial density in the array
+int   Div=7;     //What divisor in the automaton rule
+
 int[][] WorldOld=new int[WorldSize][WorldSize]; //Creating tables - in Processing always using allocation!
 int[][] WorldNew=new int[WorldSize][WorldSize];
 boolean[][] Changed=new boolean[WorldSize][WorldSize]; //An array of change flags to draw
-
-float IDens=0.0; //The initial density in the array
-int   Div=7;     //What divisor in the automaton rule
 
 float CellSize=3;       //Cell height
 int   FRAME_RATE_REQ=2; //How many frames per second would we like
@@ -57,6 +57,7 @@ void draw()
   fill(0,0,0,128);rect(10,height-16,20*8,16);
   fill(255);
   text("ST: "+frameCount+" Fr: "+frameRate,10,height);
+  //saveFrame("step-######.png");
 }
 
 /** "Tool" for drawing a hexagon:
@@ -146,6 +147,5 @@ void change() ///< modifies global WorldOld,WorldNew
 //*////////////////////////////////////////////////////////////////////////////////
 // Author: Wojciech T. Borkowski
 // Materials for the textbook "Processing in education and simulation
-// https://github.com/borkowsk/sym4processing/tree/master/ProcessingWEdukacji
 //*////////////////////////////////////////////////////////////////////////////////
-/// @date 2024-11-29 (revived)
+/// @date 2025-11-07 (revived)
