@@ -31,4 +31,4 @@ for i in range(0,width,1): # loop over variable "i"
 
 text("R="+str(R),0,height-10)
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

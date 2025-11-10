@@ -1,4 +1,5 @@
 ''' General cell population growth in window '''
+
 X=2   #Current state
 R=1.1 #Average number of mature descendants
 
@@ -15,4 +16,4 @@ for i in range(0,100+1,1): # loop over variable "i"
   ellipse(i*2,800-X,2,2) #visialisation!
 
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

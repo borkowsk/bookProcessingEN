@@ -1,7 +1,7 @@
 /** Logistic iteration with graphics */
 
 final float R=3.69;  //Range from 0..4
-float X=0.99;  //Range 0..1!
+float X=0.99;        //Range 0..1!
 size(1000,300);
 
 for(int i=0;i<width;i++)
@@ -14,4 +14,4 @@ for(int i=0;i<width;i++)
 
 text("R="+R,10,height-10);
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

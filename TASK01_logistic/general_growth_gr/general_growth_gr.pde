@@ -1,4 +1,5 @@
 /** General cell population growth in window */
+
 float X=2;   //Current state
 float R=1.1; //Average number of mature descendants
 
@@ -15,4 +16,4 @@ for(int i=0;i<=100;i++)
   ellipse(i*2,800-X,2,2); //visialisation!
 }
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

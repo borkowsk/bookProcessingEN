@@ -19,4 +19,4 @@ for(int i=0;i<width;i+=interspace)
 fill(128,0,0);textSize(24);
 text("R="+R,0,height);
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

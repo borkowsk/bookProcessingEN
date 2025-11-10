@@ -40,4 +40,4 @@ def draw(): # Is it any global variable modified inside? YES
   t+=1 #INCREMENTATION!!!
 
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

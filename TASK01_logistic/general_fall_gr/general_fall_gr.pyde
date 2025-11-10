@@ -15,4 +15,4 @@ for i in range(0,100+1,1): # loop over variable "i"
   ellipse(i*2,800-X,7,7) #visualization.
 
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

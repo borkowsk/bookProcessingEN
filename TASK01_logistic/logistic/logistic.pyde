@@ -12,4 +12,4 @@ for i in range(0,100,1): # loop over variable "i"
 
 text("DONE",30,55) #For default window 100x100
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

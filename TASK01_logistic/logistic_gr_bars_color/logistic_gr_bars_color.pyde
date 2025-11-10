@@ -21,4 +21,4 @@ for i in range(0,width,interspace): # loop over variable "i"
 fill(128,0,0);textSize(24)
 text("R="+str(R),0,height)
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
