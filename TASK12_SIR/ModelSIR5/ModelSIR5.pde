@@ -15,7 +15,7 @@ float IDens=0.70; //Initial density in the array -
                   // Although there may be small areas that it has missed.
 
 //`final` is something like constants ;-)
-final int Duration=7;//Czas trwania infekcji!
+final int Duration=7; //Duration of a single infection!
 final int Empty=0; 
 final int Susceptible=1;
 final int Infected=2;
@@ -55,7 +55,7 @@ void draw()
   for(int i=0;i<World.length;i++) //Visualization, in other words "drawing on the screen"
     for(int j=0;j<World.length;j++) 
     {
-      switch(World[i][j]){//The switch statement allows us to select any color depending on the number in the cell
+      switch(World[i][j]){ //The switch statement allows us to select any color depending on the number in the cell
       case Recovered:  stroke(0,255,0);break; // He is cured
       case Infected:   stroke(255,0,0);break; // He got sick
       case Susceptible:stroke(0,0,255);break; // Susceptible
@@ -70,7 +70,7 @@ void draw()
   //STATES: Empty=0; Susceptible=1; Infected=2; Recovered=Infected+Duration;
   for(int a=0;a<World.length*World.length;a++) //As many draws as there are cells
   {
-       //Losowanie agenta 
+       //Random agent selection
        int i=(int)random(World.length);
        int j=(int)random(World.length);
        
@@ -115,4 +115,5 @@ void draw()
 // Author: Wojciech T. Borkowski
 // Materials for the script "Processing in education and simulation
 // https://github.com/borkowsk/bookProcessingEN
+/// @date 2025-11-10 (last modification)
 //*////////////////////////////////////////////////////////////////////////////////

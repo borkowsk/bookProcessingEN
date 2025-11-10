@@ -16,7 +16,7 @@ final int Infected=2;
 final int Recovered=3;
 
 void setup()
-{ //Empty=-1; //ERROR: The `final` field cannot be assigned!
+{ //Empty=-1;      //LOOK! It makes ERROR: The `final` field cannot be assigned!
  size(400,400);    //Square window
  noSmooth();       //It speeds up simulations significantly
  
@@ -88,8 +88,9 @@ void draw()
    text("ST:"+t,0,10);
 }
 
-//////////////////////////////////////////////////////////////////////////////////
+//*////////////////////////////////////////////////////////////////////////////////
 // Author: Wojciech T. Borkowski
 // Materials for the script "Processing in education and simulation
 // https://github.com/borkowsk/bookProcessingEN
-//////////////////////////////////////////////////////////////////////////////////
+/// @date 2025-11-10 (last modification)
+//*////////////////////////////////////////////////////////////////////////////////

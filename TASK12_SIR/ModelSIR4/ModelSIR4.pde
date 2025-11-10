@@ -59,7 +59,7 @@ void draw()
   for(int i=0;i<World.length;i++) //Visualization, in other words "drawing on the screen"
     for(int j=0;j<World.length;j++) 
     {
-      switch(World[i][j]){//The switch statement allows us to select any color depending on the number in the cell
+      switch(World[i][j]){ //The switch statement allows us to select any color depending on the number in the cell
       case 3:stroke(0,255,0);break;
       case 2:stroke(255,0,0);break;
       case 1:stroke(0,0,255);break;
@@ -112,8 +112,9 @@ void draw()
    println("ST:"+t+"\tZ\t"+kranken+"\tW\t"+geheilt+"\tU\t"+starben);
 }
 
-//////////////////////////////////////////////////////////////////////////////////
+//*////////////////////////////////////////////////////////////////////////////////
 // Author: Wojciech T. Borkowski
 // Materials for the script "Processing in education and simulation
 // https://github.com/borkowsk/bookProcessingEN
-//////////////////////////////////////////////////////////////////////////////////
+/// @date 2025-11-10 (last modification)
+//*////////////////////////////////////////////////////////////////////////////////
