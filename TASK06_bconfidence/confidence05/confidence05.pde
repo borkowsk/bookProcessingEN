@@ -3,11 +3,11 @@
 /// & with information bubles.
 //-//////////////////////////////////////////////////////////////////
 
-final int          N=100; //Number of agents
-final float treScale=0.5; //Threshold is a function of extremes of views times Scale
+final int          N=100;   //Number of agents
+final float treScale=0.5;   //Threshold is a function of extremes of views times Scale
 final float   minEps=0.001;
 final float   maxEps=0.005;
-final int        bub=N/2; //radius of information bubble
+final int        bub=N/2;   //radius of information bubble
 
 float[] minds=new float[N]; //creating the minds array 
 float[]   eps=new float[N]; //creating the epsilons array
@@ -23,7 +23,7 @@ void setup()
   //Initialisation
   for(int i=0;i<N;i++)
   {
-    minds[i]=i*(1.0/(N-1));//<0..1>
+    minds[i]=i*(1.0/(N-1)); //<0..1>
     eps[i]=random(minEps,maxEps);
     //Threshold is a function of extremes of views
     tre[i]=(0.5-abs(minds[i]-0.5))*treScale;//<0..0.5*Scale>
@@ -86,4 +86,4 @@ void draw()
   }
 }
 
-//@date 2023 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)

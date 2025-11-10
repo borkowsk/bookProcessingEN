@@ -54,4 +54,4 @@ def draw(): # Is it any global variable modified inside? NO. Only content of `mi
  # end of draw()
 
 
-##@date 2024-12-01 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)

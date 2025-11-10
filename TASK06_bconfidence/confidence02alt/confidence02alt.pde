@@ -19,7 +19,7 @@ void setup() // modifies global side
   
   //Initialisation:
   for(int i=0;i<N;i++)
-    minds[i]=i*(1.0/(N-1));//<0..1>
+    minds[i]=i*(1.0/(N-1)); //<0..1>
     
   //Check:
   println( "N:",N,"Epsilon:",eps ,"Treshold:",tre );
@@ -54,4 +54,4 @@ void draw()
   }
 }
 
-//@date 2023 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)

@@ -5,7 +5,7 @@
 final int   N=25;        //Number of agents
 final float eps=0.007;
 final float tre=0.20;
-final int   bub=N/7;    //radius of information bubble
+final int   bub=N/7;     //radius of information bubble
 
 float[] minds=new float[N]; //creating an array 
 
@@ -71,5 +71,4 @@ void draw()
   }
 }
 
-
-//@date 2023 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)

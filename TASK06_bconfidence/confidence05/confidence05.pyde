@@ -4,7 +4,7 @@
 ##-##=================================================================
 
 '''constant int'''
-N=100  #Number of agents
+N=100         #Number of agents
 '''constant double'''
 treScale=0.5  #Threshold is a function of extremes of views times Scale
 '''constant double'''
@@ -15,8 +15,8 @@ maxEps=0.005
 bub=N/2  #radius of information bubble
 
 minds=[0.0]*(N) #creating the minds array 
-eps=[0.0]*(N) #creating the epsilons array
-tre=[0.0]*(N) #creating the tresholds array
+eps=[0.0]*(N)   #creating the epsilons array
+tre=[0.0]*(N)   #creating the tresholds array
 
 classicVis=False    #Type of visualisation
 
@@ -81,4 +81,5 @@ def draw(): # Any globals modified? NO, only contents of lists.
       elif minds[a] > minds[b] :
           minds[a]-=eps[a]
 
-#@date 2024-12-01 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+

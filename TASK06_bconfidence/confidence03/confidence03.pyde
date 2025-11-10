@@ -75,4 +75,4 @@ def draw(): # Any globals modified?
   
 
 
-##@date 2024-12-01 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
