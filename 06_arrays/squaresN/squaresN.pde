@@ -13,4 +13,4 @@ println("First",N,"squares of integers");
 for(int i=0; i<=N ; i++ )
      println(i,"->",squares[i]);
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

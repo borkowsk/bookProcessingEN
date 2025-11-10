@@ -14,4 +14,4 @@ print "First",N,"squares of integers"
 for i in range(0,N+1,1): # 'i' keeps int
      print i,"->",squares[i]
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

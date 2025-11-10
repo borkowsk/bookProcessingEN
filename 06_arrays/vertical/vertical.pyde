@@ -44,4 +44,4 @@ def draw(): # Is it any global variable used inside? YES!!!
   
 
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
