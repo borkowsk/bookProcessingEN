@@ -32,7 +32,7 @@ void visualisation()
     {
       if(WorldOld[i][j]>0) stroke(255,0,100);
       else           stroke(0);
-      point(j,i);//the horizontal dimension of the array is the SECOND index
+      point(j,i); //the horizontal dimension of the array is the SECOND index
     }
 }
 
@@ -80,5 +80,4 @@ void draw() // modifies global t,WorldOld,WorldNew
   textSize(20); textAlign(LEFT,TOP); text("ST:"+t,0,0);
 }
 
-// https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
-/// @date 2024-11-29 (revived)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

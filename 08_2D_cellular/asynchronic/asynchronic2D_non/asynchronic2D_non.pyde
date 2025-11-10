@@ -83,5 +83,5 @@ def draw(): # Any globals modified? #
   textSize(20);textAlign(LEFT,TOP);text("ST:"+str(t),0,0)
   #end
 
-## https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
-## @date 2025-03-17 (revived)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
+

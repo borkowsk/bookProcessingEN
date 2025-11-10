@@ -78,7 +78,7 @@ void draw() ///< uses global t
        if(World[i][j]==0) //Empty central cell
        {
          if(sum==OptN) //Become... 
-            World[i][j]=1;//Become...
+            World[i][j]=1; //Become...
        }
        else //Central cell dies of loneliness or over-density
          if(sum<MinN || MaxN<sum)
@@ -89,6 +89,4 @@ void draw() ///< uses global t
   textSize(20);textAlign(LEFT,TOP); text("ST:"+t,0,0); // In processing, you can concatenate strings with numbers and variables representing numbers.
 }
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
-
-/// @date 2024-11-29 (revived)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

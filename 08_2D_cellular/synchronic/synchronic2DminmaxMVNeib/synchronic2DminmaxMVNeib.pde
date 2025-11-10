@@ -28,7 +28,7 @@ void setup()
 
 void visualisation()
 {
-  for(int i=0;i<WorldSide;i++)s
+  for(int i=0;i<WorldSide;i++)
     for(int j=0;j<WorldSide;j++)
     {
       if(WorldOld[i][j]>0) stroke(255,0,100);
@@ -72,5 +72,5 @@ void draw() // uses global t, WorldNew, WorldOld
   textSize(20); textAlign(LEFT,TOP); text("ST:"+t,0,0);
 }
 
-// https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
-/// @date 2024-11-29 (revived)
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

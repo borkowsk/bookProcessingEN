@@ -78,5 +78,5 @@ def draw(): # Any globals modified? #
   if t==100 : ##After hundred steps...
       print   frameRate,"fps" 
 
-##https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
-## @date 2024-11-26 (revived)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
+

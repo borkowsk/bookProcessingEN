@@ -127,5 +127,6 @@ def draw(): # Any globals modified? #
   fill(128);noStroke();             rect(0,height-20,width,20)
   fill(255);textAlign(LEFT,BOTTOM); text(str(t)+"("+str(frameRate)+")",0,height)
 
-##https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
-## @date 2024-11-29 (revived)
+
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
+

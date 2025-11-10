@@ -4,7 +4,7 @@
 
 final int   Opt=1;         //Optimum number of neighbors required
 final int   WorldSide=601; //How many cells do we want in one line?
-final float Dens=0.001;        //.005;//0.5 or so also posible
+final float Dens=0.001;    //.005;//0.5 or so also posible
 
 int[][] WorldOld=new int[WorldSide][WorldSide]; //We need two worlds for the old  
 int[][] WorldNew=new int[WorldSide][WorldSide]; //and new state of the simulation
@@ -32,12 +32,12 @@ void setup()
 void visualisation()
 {
   for(int i=0;i<WorldSide;i++)
-    for(int j=0;j<WorldSide;j++)                                 // if(WorldOld[i][j]!=WorldNew[i][j]) ???
+    for(int j=0;j<WorldSide;j++)    // if(WorldOld[i][j]!=WorldNew[i][j]) - supposed test
     {
       if(WorldOld[i][j]>0) stroke(255,0,100);
       else           stroke(0);
-      point(j,i);//The horizontal dimension of the array 
-                 //is the SECOND index!
+      point(j,i); //The horizontal dimension of the array 
+                  //is the SECOND index!
     }
 }
 
@@ -49,7 +49,7 @@ void draw() // modifies global t,WorldOld,WorldNew
 {  
   visualisation();
   
-  for(int i=0;i<WorldSide;i++)//Now the cellular automaton state change
+  for(int i=0;i<WorldSide;i++) //Now the cellular automaton state change
   {
        //RULE - Not too many von Neumann neighbors
        int right = (i+1) % WorldSide;          
@@ -83,6 +83,5 @@ void draw() // modifies global t,WorldOld,WorldNew
   fill(random(255));textSize(20);textAlign(LEFT,TOP);text("ST:"+t,0,0);
 }
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
 
-/// @date 2024-11-29 (revived)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

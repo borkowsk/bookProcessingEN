@@ -41,7 +41,7 @@ void visualisation()
       switch(World[i][j]){ 
       case 1:stroke(255,255,0);break;
       case 0:stroke(0,0,0);break;
-      default: stroke(255,0,0);//"emergency color"
+      default: stroke(255,0,0); //"emergency color"
       break;
       } 
       point(i,j);
@@ -94,5 +94,4 @@ void draw() // uses global t
   textSize(20);textAlign(LEFT,TOP);text("ST:"+str(t),0,0);
 }
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
-/// @date 2024-11-29 (revived)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

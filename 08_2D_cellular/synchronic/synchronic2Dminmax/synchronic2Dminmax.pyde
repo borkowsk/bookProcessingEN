@@ -72,7 +72,7 @@ def draw(): # Any globals modified? #
   fill(255,128)
   textSize(20);textAlign(LEFT,TOP);text("ST:"+str(t),0,0)
 
-##https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
+
 '''
          live = (1 if WorldOld[left][j]>0  else 0)
                  +  (1 if WorldOld[right][j]>0  else 0)
@@ -80,4 +80,4 @@ def draw(): # Any globals modified? #
                  +  (1 if WorldOld[i][dw]>0  else 0)             
                  
 '''
-## @date 2024-11-29 (revived)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

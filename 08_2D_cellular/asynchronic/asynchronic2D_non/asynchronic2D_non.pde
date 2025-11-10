@@ -78,5 +78,5 @@ void draw() // uses global t,World
   textSize(20);textAlign(LEFT,TOP);text("ST:"+str(t),0,0);
 }
 
-// https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
-/// @date 2024-11-29 (revived)
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

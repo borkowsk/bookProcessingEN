@@ -74,5 +74,4 @@ def draw(): # Any globals modified? #
   t+=1 ##The next generation/step/year
 
 
-## https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
-## @date 2024-11-29 (revived)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

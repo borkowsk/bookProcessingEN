@@ -7,7 +7,7 @@ Opt=1          ##Optimum number of neighbors required
 '''constant int'''
 WorldSide=601  ##How many cells do we want in one line?
 '''constant float'''
-Dens=0.001         ##.005#0.5 or so also posible
+Dens=0.001     ##.005#0.5 or so also posible
 
 '''assumed list of list of int (inefficient!)'''
 WorldOld=[[0 for _x in range(WorldSide)] for _y in range(WorldSide)]  ##We need two worlds for the old  
@@ -35,7 +35,7 @@ def setup(): # Any globals modified?
 def visualisation(): # Any globals modified?
   '''block:''' 
   for i in range(0,WorldSide,1): # loop over variable "i"
-    for j in range(0,WorldSide,1): # loop over variable "j"   ## if(WorldOld[i][j]!=WorldNew[i][j]) ???
+    for j in range(0,WorldSide,1): # loop over variable "j"   ## if(WorldOld[i][j]!=WorldNew[i][j]) - supposed test?
       '''block:''' 
       if WorldOld[i][j]>0 : stroke(255,0,100)
       else :           stroke(0)
@@ -83,6 +83,5 @@ def draw(): # Any globals modified? #
   t+=1  ##The next generation/step/year
   fill(random(255));textSize(20);textAlign(LEFT,TOP);text("ST:"+str(t),0,0)
 
-##https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
 
-## @date 2024-11-29 (revived)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

@@ -48,7 +48,7 @@ void initialisation() ///< set up the world
     if( !traceVA )
       for(int i=0;i<WorldOld.length;i++)
         for(int j=0;j<WorldOld.length;j++) 
-          WorldNew[i][j]=-1;//Something different from any possible state
+          WorldNew[i][j]=-1; //Something different from any possible state
         
     WorldOld[WorldOld.length/2][WorldOld.length/2]=1;
   }
@@ -76,7 +76,7 @@ void visualisation()
         }
         
         point(i,j); //or j,i ?
-     }//end if    
+     } //end if    
 }
 
 int t=0;
@@ -126,5 +126,4 @@ void draw() // global t,WorldOld,WorldNew
   fill(255);textAlign(LEFT,BOTTOM); text(str(t)+"("+frameRate+")",0,height);
 }
 
-//https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/
-/// @date 2024-11-29 (revived)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
