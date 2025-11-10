@@ -5,9 +5,9 @@
 '''constant int'''
 WorldSize=500  ## How many cells do we want?
 '''constant int'''
-MCD=3   ## Monte Carlo step divider
+MCD=3          ## Monte Carlo step divider
 '''constant int'''
-FR=300  ## Expected speed of the simulation
+FR=300         ## Expected speed of the simulation
 
 World=[0]*(WorldSize) ## Here it creates an array of the "world"
 
@@ -78,5 +78,6 @@ def draw(): # Any global variable modified? YES
   t+=1  ## The next generation/step/year
   '''block ended.'''
 
-## https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
-## @date 2024-11-21 (reappered)
+
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

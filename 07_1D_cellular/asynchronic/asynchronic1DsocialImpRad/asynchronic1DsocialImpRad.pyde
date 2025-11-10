@@ -5,7 +5,7 @@
 '''constant int'''
 WorldSize=500  ## How many cells do we want?
 '''constant int'''
-NeiRadius=7  ## Neighborhood radius
+NeiRadius=7    ## Neighborhood radius
 
 '''constant int'''
 MCD=10  ## Monte Carlo step divider
@@ -93,4 +93,5 @@ def draw(): # Any globals modified? #
   t+=1  ## The next generation/step/year.
 
 
-## https:// github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

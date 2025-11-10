@@ -1,10 +1,11 @@
 ## "sum of states modulo 3": 
 ## One-dimensional, SYNCHRONOUS, deterministic cellular automaton
-##-##===========================================================
+##-##=============================================================
+
 '''constant int'''
 WorldSize=500  ##How many cells do we want?
 '''constant float'''
-Dens=0.000  ##0.5 or 0.005 are also posible
+Dens=0.000     ##0.5 or 0.005 are also posible
 
 WorldOld=[0]*(WorldSize) ##We need two "worlds" for the old  
 WorldNew=[0]*(WorldSize) ##and new state of the simulation
@@ -68,5 +69,6 @@ def draw(): # Any sideeffects on globals? # YES!
  
   t+=1  ##The next generation/step/year
 
-## https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/synchronic/
-## @date 2024-11-26 (revived)
+
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

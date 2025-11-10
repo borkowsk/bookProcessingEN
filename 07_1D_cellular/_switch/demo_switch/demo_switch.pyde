@@ -1,6 +1,5 @@
 ## Demonstration of very useful switch-case construction.
 ##-##===========================================================
-
  
 num = 1
 
@@ -22,7 +21,7 @@ if  _switchvar== 'A':
 elif _switchvar=='B': 
   print   "Bravo"   ## Does not execute, when letter=='N'
   pass
-else :             ## Default executes if the case labels
+else :              ## Default executes if the case labels
   print   "None"    ## don't match the switch parameter
   pass
 
@@ -59,3 +58,6 @@ else :  fill(200,128,0); stroke(64,64,0); pass
 
 ellipse(width/2,height/2,50,50)
   
+ 
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

@@ -5,9 +5,9 @@
 '''constant int'''
 WorldSize=500  ## How many cells do we want?
 '''constant int'''
-MCD=3   ## Monte Carlo step divider
+MCD=3          ## Monte Carlo step divider
 '''constant int'''
-FR=300  ## Expected speed of the simulation
+FR=300         ## Expected speed of the simulation
 
 World=[0]*(WorldSize) ## We create an array of the "world"
 
@@ -91,5 +91,6 @@ def draw(): # Any globals modified? #
   t+=1  ## The next generation/step/year
   '''end'''
 
-## https://github.com/borkowsk/bookProcessingEN
-## @date 2024-11-21 (revived)
+
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

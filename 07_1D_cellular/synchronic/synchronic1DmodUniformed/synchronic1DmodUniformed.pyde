@@ -97,6 +97,6 @@ def draw(): # Any sideeffects on globals? # YES
   t+=1; 
 
 
-## https://github.com/borkowsk/bookProcessingEN
-## https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/synchronic/
-## @date 2024-11-26 (revived)
+
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

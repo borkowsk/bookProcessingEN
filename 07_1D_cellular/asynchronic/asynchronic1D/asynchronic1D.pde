@@ -4,8 +4,8 @@
 ///////////////////////////////////////////////////////////////
 
 final int WorldSize = 500; // How many cells do we want?
-final int MCD =  4; // Monte Carlo step divider
-final int FR = 900; // Expected speed of the simulation
+final int MCD =  4;        // Monte Carlo step divider
+final int FR = 900;        // Expected speed of the simulation
 
 int[] World=new int[WorldSize]; // We create an array of the "world", initialised with zeros
 
@@ -18,11 +18,13 @@ void setup()
   World[WorldSize/2]=1; // The seed of the automaton more or less in the middle
 }
 
+
 int t=0; // Time counter, i.e. steps/generations/years
+
 void draw() // uses global t
 {
   if(t>height) // Is it off screen?
-  //  return;    // Alt... there is nothing to draw - we use "emergency exit" prom function. 
+  //  return;  // Alt... there is nothing to draw - we use "emergency exit" prom function. 
      t=height-1;
 
   //Visualisation
@@ -47,7 +49,7 @@ void draw() // uses global t
     int left  = (WorldSize+i-1) % WorldSize; // This operator works intuitively only for positive numbers!
        
     // The rule of this automaton - if you have a living neighbor, you become alive
-    if(World[left]>0) // Is the left neighbor not zero, ie is he "alive"?
+    if(World[left]>0)  // Is the left neighbor not zero, ie is he "alive"?
        World[i]=1;     // The cell under consideration becomes alive
        
     if(World[right]>0) // Is the right neighbor not zero?
@@ -62,5 +64,5 @@ void exit()
   println("Frame rate:",frameRate,"fps");
 }
 
-// https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
-/// @date 2024-11-21 (last modification)
+ 
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

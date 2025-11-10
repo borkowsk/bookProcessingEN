@@ -1,8 +1,0 @@
-s|^(\s*)switch\((.*)\)\s*\{|\1match \2 :|
-s|break\s*\;|pass|
-s|^(\s*)default\s*\:|\1case _ :|
-s|^(\s*)\}||
-$!N
-s/(\s*)case(.*)\:\s*\n(\s*)case(.*)\:/\1case\2|\4 :/g
-P
-D

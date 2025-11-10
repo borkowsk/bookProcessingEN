@@ -1,8 +1,9 @@
 /// "sum of states modulo 3": 
 /// One-dimensional, SYNCHRONOUS, deterministic cellular automaton
 //-/////////////////////////////////////////////////////////////
+
 final int   WorldSize=500; //How many cells do we want?
-final float Dens=0.000; //0.5 or 0.005 are also posible
+final float Dens=0.000;    //0.5 or 0.005 are also posible
 
 int[] WorldOld=new int[WorldSize]; //We need two "worlds" for the old  
 int[] WorldNew=new int[WorldSize]; //and new state of the simulation
@@ -72,5 +73,5 @@ void draw() // modifies global t,WorldOld,WorldNew
   t++; //The next generation/step/year
 }
 
-// https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/synchronic/
-// @date 2024-11-26 (revived)
+ 
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

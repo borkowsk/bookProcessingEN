@@ -5,7 +5,7 @@
 '''constant int'''
 WorldSize=500  ##How many cells do we want?
 '''constant float'''
-Dens=0.01  ##0.5 or so also posible
+Dens=0.01      ##0.5 or so also posible
 
 WorldOld=[0]*(WorldSize) ##We need two "worlds" for the old  
 WorldNew=[0]*(WorldSize) ##and new state of the simulation
@@ -67,4 +67,5 @@ def draw(): # Any globals modified? #
   t+=1  ##The next generation/step/year
 
 
-##https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/synchronic/
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

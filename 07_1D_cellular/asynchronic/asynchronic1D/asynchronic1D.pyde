@@ -51,8 +51,8 @@ def draw(): # Is it any global variable modified inside? #
     left  = (WorldSize+i-1) % WorldSize  ## This operator works intuitively only for positive numbers!
        
     ## The rule of this automaton - if you have a living neighbor, you become alive
-    if World[left]>0 : ## Is the left neighbor not zero, ie is he "alive"?
-       World[i]=1      ## The cell under consideration becomes alive
+    if World[left]>0 :  ## Is the left neighbor not zero, ie is he "alive"?
+       World[i]=1       ## The cell under consideration becomes alive
        
     if World[right]>0 : ## Is the right neighbor not zero?
        World[i]=1
@@ -65,5 +65,5 @@ def exit(): # Looks like this hack does not work in Python mode.
   print "Frame rate:",frameRate,"fps" #So it never appears :-(
 
 
-## https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/asynchronic
-## @date 2024-11-21 (last modification)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

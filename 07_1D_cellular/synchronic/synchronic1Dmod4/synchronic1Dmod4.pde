@@ -74,8 +74,8 @@ void draw() // uses global t,WorldOld,WorldNew
   //NOW THE MOST IMPORTANT - Swap the arrays
   int[] WorldTmp=WorldOld; WorldOld=WorldNew; WorldNew=WorldTmp;
  
-  t++;//The next generation/step/year
+  t++; //The next generation/step/year
 }
 
-// https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/synchronic/
-// @date 2024-11-26 (revived)
+ 
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

@@ -61,5 +61,5 @@ void draw() // modifies global i,j
   text(jstr,width/2,height-2*FS);
 }
 
-// https://github.com/borkowsk/bookProcessingEN
-/// @date 2024-11-25 (last modification) 
+ 
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

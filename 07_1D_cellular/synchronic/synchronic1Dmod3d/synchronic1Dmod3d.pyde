@@ -86,5 +86,6 @@ def draw(): # Any sideeffects on globals? #
    
   t+=1 ##The next generation/step/year
 
-## https://github.com/borkowsk/bookProcessingEN/tree/main/07_1D_cellular/synchronic/
-## @date 2024-11-26 (revived)
+
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+
