@@ -1,7 +1,7 @@
-// An example of using the 'singiel' class
+// An another example of using the 'singiel' class
 //-///////////////////////////////////////////////
 
-final  float DefaultR=3.5; //two systems independent of each other, 
+final  float DefaultR=3.5;       //two systems independent of each other, 
 final  float DefaultAlpha=0.085; //by changing the alpha value we can change their mutual synchronization
 
 final int   FR=150; //Desired frame rate
@@ -14,7 +14,7 @@ singiel Second=new singiel(0.66,3.95,DefaultAlpha);
 //singiel First= new singiel(random(1.0),DefaultR+random(0.5),DefaultAlpha);
 //singiel Second=new singiel(random(1.0),DefaultR+random(0.5),DefaultAlpha);
 
-int ule=200;//unit of length
+int ule=200; //unit of length
 int radius=ule/2;
 
 void setup()
@@ -60,4 +60,4 @@ void draw()
   //  println(frameCount+"*"+ frameRate );//Process progress
 }
 
-//https://github.com/borkowsk/bookProcessingEN
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

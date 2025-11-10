@@ -1,8 +1,8 @@
 // We defined a class, now we will use it. The most extensive example.
 //-///////////////////////////////////////////////////////////////////////////////
 
-final  float MinR=3.3; //two systems independent of each other 
-final  float MaxR=3.8; //(3.5 to 4 because the sync. in chaos is the most interesting)
+final  float MinR=3.3;          //two systems independent of each other 
+final  float MaxR=3.8;          //(3.5 to 4 because the sync. in chaos is the most interesting)
 final  float DefaultAlpha=0.05; //by changing the alpha value we can change their synchronization
 
 // Create new objects of type 'singiel' using the only available constructor
@@ -144,4 +144,4 @@ void draw() // uses global First,Second,N,lmargin,fSize,Sf,Ws,Rs,Tlh,Gre,Blu,Red
 
 }
 
-//https://github.com/borkowsk/bookProcessingEN
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

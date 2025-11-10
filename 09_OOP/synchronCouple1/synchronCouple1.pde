@@ -1,8 +1,8 @@
 // Another example of using the same class 'singiel'
 // we defined a class, now we will use it
-////////////////////////////////////////////////////
+//-//////////////////////////////////////////////////
 
-final  float DefaultR=3.5; //two systems independent of each other (3.5 to 4 because the sync. in chaos is the most interesting)
+final  float DefaultR=3.5;     //two systems independent of each other (3.5 to 4 because the sync. in chaos is the most interesting)
 final  float DefaultAlpha=0.1; //by changing the alpha value we can change their mutual synchronization
 final  int   runup=100;
 
@@ -74,4 +74,4 @@ void draw() // uses global N,Sf,Gre,Blu,Red
 
 }
 
-//https://github.com/borkowsk/bookProcessingEN/
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

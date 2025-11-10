@@ -116,4 +116,4 @@ void draw() // uses global Gre,Blu,Red,N,Ws,lmargin,fSize,Sf,Rs
 
 }
 
-//https://github.com/borkowsk/bookProcessingEN
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

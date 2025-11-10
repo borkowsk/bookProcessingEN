@@ -1,10 +1,10 @@
-## An example of using the 'singiel' class
-##-##============================================
+## An another example of using the 'singiel' class
+##-##=============================================
 from adhoclib import * 
 
 
 '''constant double'''
-DefaultR=3.5  #two systems independent of each other, 
+DefaultR=3.5        #two systems independent of each other, 
 '''constant double'''
 DefaultAlpha=0.085  #by changing the alpha value we can change their mutual synchronization
 
@@ -65,5 +65,5 @@ def draw(): # Is it any global variable modified inside?
   #  println(frameCount+"*"+ frameRate ) #Process progress
 
 
-##https://github.com/borkowsk/bookProcessingEN
-## Translated by pde2pyde Tue, 10 Dec 2024 19:19:08 +0100
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

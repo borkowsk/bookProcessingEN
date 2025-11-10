@@ -123,5 +123,5 @@ def draw(): # Is it any global variable modified inside?
 
 
 
-##https://github.com/borkowsk/bookProcessingEN
-## Translated by pde2pyde Tue, 10 Dec 2024 21:08:44 +0100
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

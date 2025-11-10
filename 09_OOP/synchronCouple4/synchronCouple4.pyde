@@ -4,11 +4,11 @@ from adhoclib import *
 
 
 '''constant double'''
-MinR=3.3  #two systems independent of each other 
+MinR=3.3            #two systems independent of each other 
 '''constant double'''
-MaxR=3.8  #(3.5 to 4 because the sync. in chaos is the most interesting)
+MaxR=3.8            #(3.5 to 4 because the sync. in chaos is the most interesting)
 '''constant double'''
-DefaultAlpha=0.05  #by changing the alpha value we can change their synchronization
+DefaultAlpha=0.05   #by changing the alpha value we can change their synchronization
 
 ## Create new objects of type 'singiel' using the only available constructor
 First =  singiel_double.make_singiel_double3(0.66, random(MinR,MaxR), 0) #
@@ -151,5 +151,4 @@ def draw(): # Is it any global variable modified inside?
 
 
 
-##https://github.com/borkowsk/bookProcessingEN
-## Translated by pde2pyde Wed, 11 Dec 2024 00:13:21 +0100
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

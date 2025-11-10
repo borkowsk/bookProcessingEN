@@ -4,7 +4,7 @@ from adhoclib import *
 
 
 '''constant double'''
-DefaultR=3.5   #two systems independent of each other (3.5 to 4 because the sync. in chaos is the most interesting)
+DefaultR=3.5      #two systems independent of each other (3.5 to 4 because the sync. in chaos is the most interesting)
 '''constant double'''
 DefaultAlpha=0.1  #by changing the alpha value we can change their mutual synchronization
 '''constant int'''
@@ -90,5 +90,4 @@ def draw(): # Is it any global variable modified inside?
 
 
 
-##https://github.com/borkowsk/bookProcessingEN
-## Translated by pde2pyde Tue, 10 Dec 2024 20:29:05 +0100
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

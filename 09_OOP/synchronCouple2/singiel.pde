@@ -1,6 +1,6 @@
 // Chaotic oscillator class - complex type
 // An example of a class - user-defined type
-////////////////////////////////////////////////
+//-//////////////////////////////////////////////
   
 //The second partner adapts to the state already changed 
 //in the first one, or they operate in strict parallel.
@@ -65,4 +65,4 @@ void next4couple(singiel F,singiel S) //Some "refactoring" done
   S.next();
 }
   
-//https://github.com/borkowsk/bookProcessingEN/
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
