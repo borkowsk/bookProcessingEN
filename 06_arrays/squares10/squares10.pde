@@ -10,4 +10,6 @@ for(int i=0;i<10;i++)
 for(int i=0;i<10;i++)
   print(squares[i],""); // print put spaces between items (when you put ',')
 
-// https://github.com/borkowsk/bookProcessingEN
+
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

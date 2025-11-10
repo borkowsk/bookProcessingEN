@@ -26,4 +26,6 @@ print("Average =",sum/N);
 // Reasonable appearance of the graphics window after calculations are completed.
 textAlign(CENTER,CENTER);text("Done!\nPress ESC\nor click [x]",width/2,height/2);
 
-// https://github.com/borkowsk/bookProcessingEN
+
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)

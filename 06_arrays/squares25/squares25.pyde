@@ -10,4 +10,7 @@ for i in range(0,25+1,1): # 'i' keeps int
 for i in range(0,25+1,1): # 'i' keeps int
      print squares[i],",",
 
-# https://github.com/borkowsk/bookProcessingEN
+
+
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
+

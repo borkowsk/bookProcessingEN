@@ -10,4 +10,6 @@ for(int i=0;i<=25;i++)
 for(int i=0;i<=25;i++)
      print(squares[i],", ");
 
-// https://github.com/borkowsk/bookProcessingEN
+
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN)
