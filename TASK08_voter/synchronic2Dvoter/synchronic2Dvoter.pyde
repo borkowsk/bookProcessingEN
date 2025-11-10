@@ -121,4 +121,5 @@ def status(): # Any globals modified? NO
   text("ST:"+str(t)+"("+nf(frameRate,3,2)+")",0,height)
 
 
-##@date 2024-12-01 (https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
+

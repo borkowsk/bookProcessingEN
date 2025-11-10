@@ -91,4 +91,4 @@ void status()
 }
 
 
-//@date 2023 (https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic)
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
