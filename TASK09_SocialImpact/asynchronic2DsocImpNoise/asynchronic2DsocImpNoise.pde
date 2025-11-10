@@ -2,9 +2,9 @@
 /// Two-dimensional, asynchronous cellular automaton with extended Moore neib.
 //*/////////////////////////////////////////////////////////////////////////////////////////
 
-final int     WorldSide=500;  //Side lenght of simulation world (square)
-final float   Dens=0.20; //.01;//Initial density of 1 in the Attitude
-final int     MaxStrength=100;
+final int     WorldSide=500;   //Side lenght of simulation world (square)
+final float   Dens=0.20;       //.01;//Initial density of 1 in the Attitude
+final int     MaxStrength=100; //Maximum persuasive power
 
 final int     Bias=10;    //Bias for 1
 final float   Noise=0.05; //Ratio of random swithes of attitudes
@@ -13,13 +13,13 @@ final int     MooreRad=1; //Radius of extended Moore neib.
 
 int FR=100; //desired simulation speed
 
-int[][] Strength=new int[WorldSide][WorldSide]; //cogency
+int[][] Strength=new int[WorldSide][WorldSide]; //cogency/persuasive power
 
 int[][] Attitude=new int[WorldSide][WorldSide]; //Current attitude
 
 void setup()
 {
-  size(500,520); //squre canvas
+  size(500,520); //squre canvas with status line
   noSmooth();    //much faster drawing
   frameRate(FR);
   initialisation(); //Initial state of the model
@@ -37,7 +37,7 @@ void draw() // uses global t
   t++; //next step
 }
 
-void initialisation()
+void initialisation() // fill global Attitude,Strength 
 {
   for(int i=0;i<WorldSide;i++) 
     for(int j=0;j<WorldSide;j++) 
@@ -147,4 +147,4 @@ void status()
 }
 
 
-// https://github.com/borkowsk/bookProcessingEN/
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

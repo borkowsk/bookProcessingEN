@@ -5,11 +5,11 @@
 final int     WorldSide=600;    //Side lenght of simulation world (square)
 final float   Dens=0.50;        //.01;//Initial density in the lattice World
 final boolean withMoore=true;   //neighborhood with the corners of the square
-final int     MaxStrength=100;
+final int     MaxStrength=100;  //Maximum persuasive power
 
 int FR=20; //desired simulation speed
 
-int[][] Strength=new int[WorldSide][WorldSide]; //cogency/credibility
+int[][] Strength=new int[WorldSide][WorldSide]; //cogency/credibility/persuasive power
 
 int[][] WorldOld=new int[WorldSide][WorldSide]; //Current attitude
 int[][] WorldNew=new int[WorldSide][WorldSide]; //New or previous attitude
@@ -17,7 +17,7 @@ int[][] WorldNew=new int[WorldSide][WorldSide]; //New or previous attitude
 void setup()
 {
   size(600, 620); //squre canvas
-  noSmooth();    //much faster drawing
+  noSmooth();     //much faster drawing
   frameRate(FR);
   initialisation(); //Initial state of the model
 }
@@ -173,4 +173,4 @@ void status()
 }
 
 
-//@date 2024 https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

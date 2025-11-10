@@ -5,9 +5,9 @@
 '''constant int'''
 WorldSide=300   #Side lenght of simulation world (square)
 '''constant double'''
-Dens=0.20  #.01;##Initial density of 1 in the Attitude
+Dens=0.20       #.01;##Initial density of 1 in the Attitude
 '''constant int'''
-MaxStrength=100
+MaxStrength=100 #Maximum persuasive power
 
 '''constant int'''
 Bias=10     #Bias for 1
@@ -140,5 +140,5 @@ def status(): # Any globals modified?
   text("ST:"+str(t)+"("+nfs(frameRate,0,2)+"fps) Adopted:"+str(Adopted),0,height)
 
 
-## @date 2024-12-20 (https://github.com/borkowsk/bookProcessingEN/)
-## TASK09_SocialImpact/asynchronic2DsocImpNoise/asynchronic2DsocImpNoise.pyde
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
+

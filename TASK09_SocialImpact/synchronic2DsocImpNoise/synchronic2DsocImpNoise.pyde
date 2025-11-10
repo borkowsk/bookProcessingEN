@@ -1,14 +1,15 @@
 ## "Extended Moore Nowak-Latane Social Impact".
 ## Two-dimensional, synchronous cellular automaton with extended Moore neib.
 ##*##========================================================================
+
 '''constant int'''
 WorldSide=600     #Side lenght of simulation world (square)
 '''constant double'''
 Dens=0.40         #.01;##Initial density in the lattice World
 '''constant boolean'''
-withMoore=True    #neighborhood with the corners of the square
+withMoore=True    #Neighborhood with the corners of the square
 '''constant int'''
-MaxStrength=100
+MaxStrength=100   #Maximum persuasive power
 '''constant int'''
 MooreRad=2        #Radius of extended Moore neib.
 '''constant double'''
@@ -160,4 +161,4 @@ def status(): # Any globals modified?
   text("ST:"+str(t)+"("+nf(frameRate, 0, 2)+")", 0, height)
 
 
-## @date (https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/synchronic)
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

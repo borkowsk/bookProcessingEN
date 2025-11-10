@@ -9,7 +9,7 @@ Dens=0.50         #.01;##Initial density in the lattice World
 '''constant boolean'''
 withMoore=True    #neighborhood with the corners of the square
 '''constant int'''
-MaxStrength=100
+MaxStrength=100   #Maximum persuasive power
 
 FR=20  #desired simulation speed
 
@@ -163,4 +163,5 @@ def status(): # Any globals modified?
   text("ST:"+str(t)+"("+nf(frameRate,0, 2)+")", 0, height)
 
 
-##@date 2024 https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/asynchronic
+## @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
+
