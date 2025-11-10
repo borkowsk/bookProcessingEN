@@ -1,6 +1,5 @@
 /// Simulation control module.
-/// @date 2025-01-13 (modification)
-//*/////////////////////////////////////////////////////////////////////////////
+//*///////////////////////////
 
 void keyPressed() //when key pressed, the numbers 1 to 9 change the speed and 'Q' ends the simulation.
 {
@@ -20,3 +19,5 @@ void keyPressed() //when key pressed, the numbers 1 to 9 change the speed and 'Q
     case 'Q': key=ESC;
   }
 }
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

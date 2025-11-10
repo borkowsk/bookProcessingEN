@@ -1,6 +1,5 @@
 /// The world & its dynamics.
-/// @date 2025-01-04 (modification)
-//*/////////////////////////////////////////////////////////////////////////////
+//*//////////////////////////
 
 class World
 {
@@ -28,3 +27,5 @@ class World
 }
 
 World theWorld=null; ///< A single variable representing the world is initialized during setup.
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

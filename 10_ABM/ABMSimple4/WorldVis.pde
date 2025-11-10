@@ -1,6 +1,5 @@
 /// The world visualisation.
-/// @date 2025-01-13 (modification)
-//*/////////////////////////////////////////////////////////////////////////////
+//*/////////////////////////
 
 void visualise(World currWorld)
 {
@@ -23,3 +22,5 @@ void visualise(World currWorld)
       
   stroke(0);fill(255); // back to default.    
 }
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

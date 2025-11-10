@@ -1,7 +1,8 @@
 /// The agent: its atributes, random initialisation and methods
-/// @date 2025-01-04 (begin)
-//*/////////////////////////////////////////////////////////////////////////////
+//*////////////////////////////////////////////////////////////
 
-class Agent
+class Agent // Empty "prototype" of the agent
 {
 } 
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

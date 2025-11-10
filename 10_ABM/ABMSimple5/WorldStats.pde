@@ -1,6 +1,5 @@
 /// The world statistics.
-/// @date 2025-01-13 (begin)
-//*/////////////////////////////////////////////////////////////////////////////
+//*//////////////////////
 
 int[] allCounts=null; ///< pedestrian/walkers direction counters.
 
@@ -33,3 +32,5 @@ void census(World currWorld)
    
   println(" ----- Step:",nf(frameCount,9),"-----");  
 }
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)

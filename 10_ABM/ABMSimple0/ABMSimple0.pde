@@ -1,6 +1,5 @@
 /// Simple example of Agent Base Model. Mandatory procedures.
-/// @date 2025-01-04 (begin)
-//*/////////////////////////////////////////////////////////////////////////////
+//*//////////////////////////////////////////////////////////
 
 void setup()
 {
@@ -27,3 +26,5 @@ void exit()
   println("The end");
   super.exit();
 }
+
+/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
