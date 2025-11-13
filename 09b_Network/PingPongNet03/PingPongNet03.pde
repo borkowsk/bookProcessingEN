@@ -3,12 +3,12 @@
 
 class Node {
   boolean is_active=false; //State of node, initialisation in definition place
-  boolean will_be_a=false; //Future state of the node. Internal use only.
+  boolean will_be_act=false; //Future state of the node. Internal use only.
   int visX,visY; //Spatial position of the node. For visualisation only!
 }
 
 final int   NUMBER_OF_NODES=20;   //We need some nodes
-final float CONNECTION_PROB=0.33; //And we have to choose which of them are connected.
+final float CONNECTION_PROB=0.13; //And we have to choose which of them are connected.
 
 Node[]  nodes=new Node[NUMBER_OF_NODES];
 int[][] connections=new int[NUMBER_OF_NODES][NUMBER_OF_NODES];
@@ -52,6 +52,7 @@ void initConnections()
       int connected=(random(1.0)<CONNECTION_PROB?1:0); //are a and b connected or not.
       connections[a][b]=connected;
       print(connected,' ');
+      connections[b][a]=connected; //The shadow of connection (because they are symmetric)
     }
     println();
   }
@@ -85,6 +86,25 @@ void viewNodes()
   }
 }
 
-void changeStates(){}
+void changeStates()
+{
+  // First we calculate new activations into internal fields.
+  for(int i=0;i<NUMBER_OF_NODES;i++)
+    if(nodes[i].is_active)
+    {
+      for(int j=0;j<NUMBER_OF_NODES;j++)
+      if(connections[i][j]>0)
+         nodes[j].will_be_act=true; //Transfer acctivation
+    }
+  
+  // Then we change states of nodes, and clear internal fields.
+  for(int i=0;i<NUMBER_OF_NODES;i++)
+  {
+    nodes[i].is_active=nodes[i].will_be_act;
+    nodes[i].will_be_act=false;
+  }
+  
+
+}
 
 /// @date 2025-11-13 (https://github.com/borkowsk/bookProcessingEN)
