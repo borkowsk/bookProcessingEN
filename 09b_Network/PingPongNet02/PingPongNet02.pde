@@ -47,6 +47,10 @@ void initConnections(){}
 
 void viewConnections()
 {
+}
+
+void viewNodes()
+{
   float D=min(width,height)/30; //Visual diameter of node
   
   for(int i=0;i<NUMBER_OF_NODES;i++)
@@ -59,8 +63,6 @@ void viewConnections()
     circle(nodes[i].visX,nodes[i].visY,D);  
   }
 }
-
-void viewNodes(){}
 
 void changeStates(){}
 
