@@ -4,11 +4,10 @@
 class Node {
   boolean is_active=false; //State of node, initialisation in definition place
   boolean will_be_act=false; //Future state of the node. Internal use only.
-  int visX,visY; //Spatial position of the node. For visualisation only!
+  int visX,visY; //Spatial position of the node. Now is meaningful.
 }
 
 final int   NUMBER_OF_NODES=50;   //We need some nodes
-final float CONNECTION_PROB=0.1; //0.033; //And we have to choose which of them are connected.
 
 Node[]  nodes=new Node[NUMBER_OF_NODES];
 int[][] connections=new int[NUMBER_OF_NODES][NUMBER_OF_NODES];
@@ -18,7 +17,7 @@ void setup()
   size(500,500);
   frameRate(5);
   initNodes();
-  initConnections();
+  initConnectionsDist();
   viewConnections();
   viewNodes();
 }
@@ -43,13 +42,17 @@ void initNodes()
   nodes[a].is_active=true;
 }
 
-void initConnections()
+void initConnectionsDist() //Probability of connection depend on distance
 {
+  float maxDist=dist(0,0,width,height);
+  
   for(int a=0;a<NUMBER_OF_NODES;a++)
   {
     for(int b=a+1;b<NUMBER_OF_NODES;b++)
     {
-      int connected=(random(1.0)<CONNECTION_PROB?1:0); //are a and b connected or not.
+      float distance=dist(nodes[a].visX,nodes[a].visY,nodes[b].visX,nodes[b].visY);
+      float antidistratio=(1-
+      int connected=(random(1.0)<?1:0); //are a and b connected or not.
       connections[a][b]=connected;
       print(connected,' ');
       connections[b][a]=connected; //The shadow of connection (because they are symmetric)
