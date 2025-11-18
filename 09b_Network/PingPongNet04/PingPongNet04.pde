@@ -7,14 +7,15 @@ class Node {
   int visX,visY; //Spatial position of the node. Now is meaningful.
 }
 
-final int   NUMBER_OF_NODES=50;   //We need some nodes
+final int   NUMBER_OF_NODES=66;   //We need some nodes
+final float DENSITY=0.999; //0.033; //And we have to choose which of them are connected.
 
 Node[]  nodes=new Node[NUMBER_OF_NODES];
 int[][] connections=new int[NUMBER_OF_NODES][NUMBER_OF_NODES];
 
 void setup()
 {
-  size(500,500);
+  size(900,900);
   frameRate(5);
   initNodes();
   initConnectionsDist();
@@ -51,8 +52,9 @@ void initConnectionsDist() //Probability of connection depend on distance
     for(int b=a+1;b<NUMBER_OF_NODES;b++)
     {
       float distance=dist(nodes[a].visX,nodes[a].visY,nodes[b].visX,nodes[b].visY);
-      float antidistratio=(1-
-      int connected=(random(1.0)<?1:0); //are a and b connected or not.
+      float antidistratio=1.0-distance/maxDist;
+      antidistratio=pow(antidistratio,11)*DENSITY; //println(distance,antidistratio,' ');
+      int connected=(random(1.0)<antidistratio?1:0); //are a and b connected or not.
       connections[a][b]=connected;
       print(connected,' ');
       connections[b][a]=connected; //The shadow of connection (because they are symmetric)
@@ -61,7 +63,7 @@ void initConnectionsDist() //Probability of connection depend on distance
   }
 }
 
-void viewConnections()
+void viewConnections() //...
 {
   for(int a=0;a<NUMBER_OF_NODES;a++)
   {
@@ -107,7 +109,6 @@ void changeStates()
     nodes[i].will_be_act=false;
   }
   
-
 }
 
-/// @date 2025-11-13 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2025-11-18 (https://github.com/borkowsk/bookProcessingEN)
