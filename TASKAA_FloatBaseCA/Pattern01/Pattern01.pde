@@ -5,6 +5,9 @@ float[][] cstates=new float[SIDE][SIDE]; //Current states of cells
 float[][] nstates=new float[SIDE][SIDE]; //New states of cells
 float DENS=0.5;
 
+//Statistic
+float average=0;
+
 void settings()
 {
   size(SIDE, SIDE);
@@ -33,16 +36,21 @@ void initialiseLine() //Alternative initialisation
 
 void visualise()
 {
+  double sum=0; //More precise
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
     {
       float value=cstates[i][j];
+      sum+=value;
+      
       if(0<=value && value<=1)
         stroke(value*255);
       else
         stroke(255,0,0);
       point(i,j);  
     }
+    
+  average=(float)(sum/SIDE*SIDE); //with limited precision of the result
 }
 
 void newStates()
@@ -77,7 +85,7 @@ void draw()
 {
   newStates();
   visualise();
-  println(frameCount);
+  println(frameCount,average);
 }
 
 /// @date 2025-11-20 (initial)
