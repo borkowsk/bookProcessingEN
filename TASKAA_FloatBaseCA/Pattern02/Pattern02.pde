@@ -5,6 +5,12 @@ float[][] cstates=new float[SIDE][SIDE]; //Current states of cells
 float[][] nstates=new float[SIDE][SIDE]; //New states of cells
 float DENS=0.5;
 
+//Weights depending on the neighbor's distance
+float WeightDist3=9.0/24;
+float WeightDist2=9.0/16;
+float WeightDist1=1.0+(15+7)/9.0; // what if 1. ?
+float WeightSum=9*WeightDist1+16*WeightDist2+24*WeightDist3;
+
 //Statistic
 float average=0;
 
@@ -50,7 +56,7 @@ void visualise()
       point(i,j);  
     }
     
-  average=(float)(sum/SIDE*SIDE); //with limited precision of the result
+  average=(float)sum/(SIDE*SIDE); //with limited precision of the result
 }
 
 void newStates()
@@ -64,9 +70,19 @@ void newStates()
        {
          int a=(i+l+SIDE)%SIDE;
          int b=(j+r+SIDE)%SIDE;
-         sum+=cstates[a][b];
+         
+         float w=WeightDist1;
+         
+         //when any neighborhood coordinate is distant by 3.
+         if(l==-3 || l==3 || r==-3 || r==3)
+           w=WeightDist3;
+         else if(l==-2 || l==2 || r==-2 || r==2) // and if not at 3, then at 2
+           w=WeightDist2;
+           
+         sum+=cstates[a][b]*w;
        }
-       nstates[i][j]=sum/49;
+       
+       nstates[i][j]=sum/WeightSum;
     }
    
    float[][] tmp=cstates;
@@ -76,16 +92,19 @@ void newStates()
 
 void setup()
 {
-  initialiseLine();
+  if(DENS>0) //selection of initialization method
+    initialiseDens();
+  else
+    initialiseLine();
   visualise();
-  frameRate(1);
+  frameRate(2);
 }
 
 void draw()
 {
   newStates();
   visualise();
-  println(frameCount,average);
+  println(frameCount,'\t',average);
 }
 
 /// @date 2025-11-20 (initial)

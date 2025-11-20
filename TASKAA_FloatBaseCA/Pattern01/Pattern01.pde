@@ -50,7 +50,7 @@ void visualise()
       point(i,j);  
     }
     
-  average=(float)(sum/SIDE*SIDE); //with limited precision of the result
+  average=(float)sum/(SIDE*SIDE); //with limited precision of the result
 }
 
 void newStates()
