@@ -21,6 +21,16 @@ void initialiseDens()
         cstates[i][j]=0.0;
 }
 
+void initialiseLine() //Alternative initialisation
+{
+  for (int i=0; i<SIDE; i++)
+    for (int j=0; j<SIDE; j++)
+      if (j==SIDE/2)
+        cstates[i][j]=1.0;
+      else
+        cstates[i][j]=0.0;
+}
+
 void visualise()
 {
   for (int i=0; i<SIDE; i++)
@@ -58,7 +68,7 @@ void newStates()
 
 void setup()
 {
-  initialiseDens();
+  initialiseLine();
   visualise();
   frameRate(1);
 }
