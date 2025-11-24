@@ -4,12 +4,6 @@ int SIDE=400;
 float[][] cstates=new float[SIDE][SIDE]; //Current states of cells
 float[][] nstates=new float[SIDE][SIDE]; //New states of cells
 
-void settings()
-{
-  size(SIDE, SIDE);
-  noSmooth();
-}
-
 void initialiseDens()
 {
   for (int i=0; i<SIDE; i++)
@@ -79,6 +73,12 @@ void newStates2()
    nstates=tmp;
 }
 
+void settings()
+{
+  size(SIDE, SIDE);
+  noSmooth();
+}
+
 void setup()
 {
   initialiseDens();
@@ -88,7 +88,7 @@ void setup()
 
 void draw()
 {
-  newStates2();
+  newStates();
   visualise();
   println(frameCount);
 }
