@@ -3,7 +3,6 @@
 int SIDE=400;
 float[][] cstates=new float[SIDE][SIDE]; //Current states of cells
 float[][] nstates=new float[SIDE][SIDE]; //New states of cells
-float DENS=0.5;
 
 void settings()
 {
@@ -15,7 +14,7 @@ void initialiseDens()
 {
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
-      if (random(1.0)<DENS)
+      if (random(1.0)<0.5)
         cstates[i][j]=1.0;
       else
         cstates[i][j]=0.0;
@@ -41,14 +40,38 @@ void newStates()
     for (int j=0; j<SIDE; j++)
     {
       float sum=0;
-      for(int l=-3;l<=3;l++)
-       for(int r=-3;r<=3;r++)
+      for(int k=-3;k<=3;k++)
+       for(int l=-3;l<=3;l++)
        {
-         int a=(i+l+SIDE)%SIDE;
-         int b=(j+r+SIDE)%SIDE;
+         int a=(i+k+SIDE)%SIDE;
+         int b=(j+l+SIDE)%SIDE;
          sum+=cstates[a][b];
        }
        nstates[i][j]=sum/49;
+    }
+   
+   float[][] tmp=cstates;
+   cstates=nstates;
+   nstates=tmp;
+}
+
+void newStates2()
+{
+  final int maxd=2;
+  final int powr=(2*maxd+1)*(2*maxd+1); //when maxd==2, powr==25
+  
+  for (int i=0; i<SIDE; i++)
+    for (int j=0; j<SIDE; j++)
+    {
+      float sum=0;
+      for(int k=-maxd;k<=maxd;k++)
+       for(int l=-maxd;l<=maxd;l++)
+       {
+         int a=(i+k+SIDE)%SIDE;
+         int b=(j+l+SIDE)%SIDE;
+         sum+=cstates[a][b];
+       }
+       nstates[i][j]=sum/powr;
     }
    
    float[][] tmp=cstates;
@@ -65,7 +88,7 @@ void setup()
 
 void draw()
 {
-  newStates();
+  newStates2();
   visualise();
   println(frameCount);
 }

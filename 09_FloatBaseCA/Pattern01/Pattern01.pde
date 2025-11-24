@@ -59,11 +59,11 @@ void newStates()
     for (int j=0; j<SIDE; j++)
     {
       float sum=0;
-      for(int l=-3;l<=3;l++)
-       for(int r=-3;r<=3;r++)
+      for(int k=-3;k<=3;k++)
+       for(int l=-3;l<=3;l++)
        {
-         int a=(i+l+SIDE)%SIDE;
-         int b=(j+r+SIDE)%SIDE;
+         int a=(i+k+SIDE)%SIDE;
+         int b=(j+l+SIDE)%SIDE;
          sum+=cstates[a][b];
        }
        nstates[i][j]=sum/49;

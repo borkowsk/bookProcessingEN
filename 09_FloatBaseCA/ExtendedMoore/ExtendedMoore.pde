@@ -2,13 +2,13 @@
 
 println("--------------------------------------------------");
 
-for (int l=-3; l<=3; l++)
+for (int k=-3; k<=3; k++)
 {
   print('|');
   
-  for (int r=-3; r<=3; r++)
+  for (int l=-3; l<=3; l++)
   {
-    print(nfs(l,1),nfs(r,1),'|'); //the nfs() function guarantees alignment
+    print(nfs(k,1),nfs(l,1),'|'); //the nfs() function guarantees alignment
   }
   
   println();

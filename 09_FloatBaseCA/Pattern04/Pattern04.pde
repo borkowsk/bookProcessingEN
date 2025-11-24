@@ -68,18 +68,18 @@ void newStates()
     for (int j=0; j<SIDE; j++)
     {
       float sum=0;
-      for(int l=-3;l<=3;l++)
-       for(int r=-3;r<=3;r++)
+      for(int k=-3;k<=3;k++)
+       for(int l=-3;l<=3;l++)
        {
-         int a=(i+l+SIDE)%SIDE;
-         int b=(j+r+SIDE)%SIDE;
+         int a=(i+k+SIDE)%SIDE;
+         int b=(j+l+SIDE)%SIDE;
          
          float w=WeightDist1;
          
          //when any neighborhood coordinate is distant by 3.
-         if(l==-3 || l==3 || r==-3 || r==3)
+         if(k==-3 || k==3 || l==-3 || l==3)
            w=WeightDist3;
-         else if(l==-2 || l==2 || r==-2 || r==2) // and if not at 3, then at 2
+         else if(k==-2 || k==2 || l==-2 || l==2) // and if not at 3, then at 2
            w=WeightDist2;
            
          sum+=cstates[a][b]*w;
