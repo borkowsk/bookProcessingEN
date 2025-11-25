@@ -18,9 +18,11 @@ void thinkAndDo0(Bird me)
   //Has the goal been achieved?
   if(dx==0 && dy==0 && dz==0)
   {
+    println("Caught! Go up!");
     me.vx=0;
     me.vy=0;
-    me.vx=2; //Go up! //<>//
+    me.vx=0;
+    me.tz=1000; //Target now unattainable height //<>//
   }
   else //Zeno's of Elea like target aproaching ;-)
   {
