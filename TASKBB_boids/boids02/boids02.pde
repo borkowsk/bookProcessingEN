@@ -4,7 +4,7 @@
 final int NORD_SOUTH=1000; ///< maximum distance from north to south
 final int EAST_WEST=1000;  ///< maximum distance from east to west
 final int MAX_CEIL=100;    ///< maximum flight ceiling
-final int HM_BIRDS=15;      ///< how many birds
+final int HM_BIRDS=1;      ///< how many birds
 
 ArrayList<Bird> birds;     ///< all our birds in JAVA like container
 
