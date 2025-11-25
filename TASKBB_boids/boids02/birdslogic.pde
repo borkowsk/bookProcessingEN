@@ -20,7 +20,7 @@ void thinkAndDo0(Bird me)
   {
     me.vx=0;
     me.vy=0;
-    me.vx=2; //Go up! //<>//
+    me.vx=2; //Go up!
   }
   else //Zeno's of Elea like target aproaching ;-)
   {
