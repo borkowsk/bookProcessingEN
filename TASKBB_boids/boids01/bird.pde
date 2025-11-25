@@ -15,7 +15,7 @@ class Bird
     tz=0;
     x=random(north_south);
     y=random(east_west);
-    z=random(down_up);
+    z=down_up/2+random(down_up/2);
   }
   
 } //end_of_class

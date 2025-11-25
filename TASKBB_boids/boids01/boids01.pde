@@ -4,7 +4,7 @@
 final int NORD_SOUTH=1000; ///< maximum distance from north to south
 final int EAST_WEST=1000;  ///< maximum distance from east to west
 final int MAX_CEIL=100;    ///< maximum flight ceiling
-final int HM_BIRDS=20;     ///< how many birds
+final int HM_BIRDS=15;      ///< how many birds
 
 ArrayList<Bird> birds;     ///< all our birds in JAVA like container
 
@@ -22,8 +22,10 @@ void showBirds()
    {
      Bird current=birds.get(i);
      float ZRatio=current.z/MAX_CEIL;
-     fill(red(current.co),green(current.co),blue(current.co));
+     fill(red(current.co),green(current.co),blue(current.co),128);
      circle(current.x,current.y,2+ZRatio*100); //any way of presenting the height for now
+     stroke(red(current.co),green(current.co),blue(current.co));
+     line(current.x,current.y,current.tx,current.ty);
    }
 }
 
@@ -37,6 +39,18 @@ void setup()
   initBirds();
   sortBirds();
   showBirds();
+  decisions();
+  frameRate(20); // Slowly at first
 }
+
+void draw()
+{
+  moveBirds();
+  sortBirds();
+  background(64);
+  showBirds();
+  decisions();
+}
+
 
 /// @date 2025-11-25 (modified)
