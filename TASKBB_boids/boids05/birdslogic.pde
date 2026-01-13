@@ -5,7 +5,9 @@ void decisions()
    {
      Bird current=birds.get(i);
      if(current.isTargeted())
-         thinkAndDo1(current);
+         thinkAndDoTarget(current);
+     else
+         thinkAndDoBoids(current,i);
    }
 }
 
@@ -17,7 +19,7 @@ int signum(float v)
 }
 
 /// simple target orientation
-void thinkAndDo1(Bird me)
+void thinkAndDoTarget(Bird me)
 {
   float dx=me.tx-me.x;
   float dy=me.ty-me.y;
@@ -40,5 +42,13 @@ void thinkAndDo1(Bird me)
     println(me.vx,me.vy,me.vz);
   }
 }
+
+/// Implementation of the boids algorithm.
+/// See: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html
+void thinkAndDoBoids(Bird me,int myIndex)
+{
+  
+}
+
 
 /// @date 2025-12-10 (modified)

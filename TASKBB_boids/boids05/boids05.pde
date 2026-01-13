@@ -7,7 +7,17 @@ final int     MAX_CEIL=100;    ///< maximum flight ceiling
 final int     HM_BIRDS=100;    ///< how many birds
 final boolean targeted=false;  ///< Do they get their goals as part of initialization?
 
-ArrayList<Bird> birds;     ///< all our birds in JAVA like container
+// Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
+final float   privateRange=min(NORD_SOUTH,EAST_WEST)/100.0; ///< "Range where they fly away from others"
+final float   visualRange=min(NORD_SOUTH,EAST_WEST)/10.0;   ///< "Range where they tend ttoward center of mass"
+final float   avoidfactor=0.03;
+final float   matchingfactor=0.05;
+final float   centeringfactor=0.001;
+final float   turnfactor=0.2;
+final float   maxspeed=4;
+final float   minspeed=2;
+
+ArrayList<Bird> birds;         ///< all our birds in JAVA like container
 
 void initBirds()
 {
