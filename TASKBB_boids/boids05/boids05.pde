@@ -8,8 +8,10 @@ final int     HM_BIRDS=100;    ///< how many birds
 final boolean targeted=false;  ///< Do they get their goals as part of initialization?
 
 // Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
-final float   privateRange=min(NORD_SOUTH,EAST_WEST)/100.0; ///< "Range where they fly away from others"
+final float   protectedRange=min(NORD_SOUTH,EAST_WEST)/100.0; ///< "Range where they fly away from others"
+final float   protectedRangeSquared=protectedRange*protectedRange;
 final float   visualRange=min(NORD_SOUTH,EAST_WEST)/10.0;   ///< "Range where they tend ttoward center of mass"
+final float   visual_range_squared=visualRange*visualRange;
 final float   avoidfactor=0.03;
 final float   matchingfactor=0.05;
 final float   centeringfactor=0.001;
