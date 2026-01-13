@@ -4,7 +4,8 @@ void decisions()
    for(int i=0;i<HM_BIRDS;i++)
    {
      Bird current=birds.get(i);
-     thinkAndDo1(current);
+     if(current.isTargeted())
+         thinkAndDo1(current);
    }
 }
 
