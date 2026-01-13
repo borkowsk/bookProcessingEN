@@ -45,56 +45,56 @@ void thinkAndDoTarget(Bird me)
 
 /// Implementation of the boids algorithm.
 /// See: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html
-void thinkAndDoBoids(Bird me,int myIndex)
+void thinkAndDoBoids(Bird boid,int myIndex)
 {
-  # For every boid . . .
-  for each boid (boid):
+  // For every "boid" - is "upstairs" . . .
+  //for each boid (boid):
   
-      # Zero all accumulator variables
-      xpos_avg, ypos_avg, xvel_avg, yvel_avg, neighboring_boids, close_dx, close_dy = 0
+      // Zero all accumulator variables
+      double? xpos_avg, ypos_avg, xvel_avg, yvel_avg, neighboring_boids, close_dx, close_dy;// = 0
   
-      # For every other boid in the flock . . .
+      // For every other boid in the flock . . .
       for each other boid (otherboid):
   
-          # Compute differences in x and y coordinates
+          // Compute differences in x and y coordinates
           dx = boid.x - otherboid.x
           dy = boid.y - otherboid.y
   
-          # Are both those differences less than the visual range?
+          // Are both those differences less than the visual range?
           if (abs(dx)<visual_range and abs(dy)<visual_range):  
   
-              # If so, calculate the squared distance
+              // If so, calculate the squared distance
               squared_distance = dx*dx + dy*dy
   
-              # Is squared distance less than the protected range?
+              // Is squared distance less than the protected range?
               if (squared_distance < protected_range_squared):
   
-                  # If so, calculate difference in x/y-coordinates to nearfield boid
+                  // If so, calculate difference in x/y-coordinates to nearfield boid
                   close_dx += boid.x - otherboid.x 
                   close_dy += boid.y - otherboid.y
   
-              # If not in protected range, is the boid in the visual range?
+              // If not in protected range, is the boid in the visual range?
               else if (squared_distance < visual_range_squared):
   
-                  # Add other boid's x/y-coord and x/y vel to accumulator variables
+                  // Add other boid's x/y-coord and x/y vel to accumulator variables
                   xpos_avg += otherboid.x 
                   ypos_avg += otherboid.y 
                   xvel_avg += otherboid.vx
                   yvel_avg += otherboid.vy
   
-                  # Increment number of boids within visual range
+                  // Increment number of boids within visual range
                   neighboring_boids += 1 
   
-      # If there were any boids in the visual range . . .            
+      // If there were any boids in the visual range . . .            
       if (neighboring_boids > 0): 
   
-          # Divide accumulator variables by number of boids in visual range
+          // Divide accumulator variables by number of boids in visual range
           xpos_avg = xpos_avg/neighboring_boids 
           ypos_avg = ypos_avg/neighboring_boids
           xvel_avg = xvel_avg/neighboring_boids
           yvel_avg = yvel_avg/neighboring_boids
   
-          # Add the centering/matching contributions to velocity
+          // Add the centering/matching contributions to velocity
           boid.vx = (boid.vx + 
                      (xpos_avg - boid.x)*centering_factor + 
                      (xvel_avg - boid.vx)*matching_factor)
@@ -103,11 +103,11 @@ void thinkAndDoBoids(Bird me,int myIndex)
                      (ypos_avg - boid.y)*centering_factor + 
                      (yvel_avg - boid.vy)*matching_factor)
   
-      # Add the avoidance contribution to velocity
+      // Add the avoidance contribution to velocity
       boid.vx = boid.vx + (close_dx*avoidfactor)
       boid.vy = boid.vy + (close_dy*avoidfactor)
   
-      # If the boid is near an edge, make it turn by turnfactor
+      // If the boid is near an edge, make it turn by turnfactor
       if outside top margin:
           boid.vy = boid.vy + turnfactor
       if outside right margin:
@@ -117,11 +117,11 @@ void thinkAndDoBoids(Bird me,int myIndex)
       if outside bottom margin:
           boid.vy = boid.vy - turnfactor
   
-      # Calculate the boid's speed
-      # Slow step! Lookup the "alpha max plus beta min" algorithm
+      // Calculate the boid's speed
+      // Slow step! Lookup the "alpha max plus beta min" algorithm
       speed = sqrt(boid.vx*boid.vx + boid.vy*boid.vy)
   
-      # Enforce min and max speeds
+      // Enforce min and max speeds
       if speed < minspeed:
           boid.vx = (boid.vx/speed)*minspeed
           boid.vy = (boid.vy/speed)*maxspeed
@@ -129,7 +129,7 @@ void thinkAndDoBoids(Bird me,int myIndex)
           boid.vx = (boid.vx/speed)*maxspeed
           boid.vy = (boid.vy/speed)*maxspeed
   
-      # Update boid's position
+      // Update boid's position
       boid.x = boid.x + boid.vx
       boid.y = boid.y + boid.vy  
 }
