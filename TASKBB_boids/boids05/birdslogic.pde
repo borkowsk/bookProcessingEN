@@ -116,14 +116,15 @@ void thinkAndDoBoids(Bird boid,int myIndex)
       boid.vy = boid.vy + (close_dy*avoidfactor);
   
       // If the boid is near an edge, make it turn by turnfactor
-      if (outside top margin) //outside top margin
-          boid.vy = boid.vy + turnfactor;
-      if (outside right margin) //outside right margin
-          boid.vx = boid.vx - turnfactor;
-      if (outside left margin) //outside left margin
+      if(boid.x < leftmargin)
           boid.vx = boid.vx + turnfactor;
-      if (outside bottom margin) //outside bottom margin
+      if(boid.x > rightmargin)
+          boid.vx = boid.vx - turnfactor;
+      if(boid.y > bottommargin)
           boid.vy = boid.vy - turnfactor;
+      if(boid.y < topmargin)
+          boid.vy = boid.vy + turnfactor;
+
   
       // Calculate the boid's speed
       // Slow step! Lookup the "alpha max plus beta min" algorithm
@@ -148,4 +149,4 @@ void thinkAndDoBoids(Bird boid,int myIndex)
 }
 
 
-/// @date 2026-01-13 (modified)
+/// @date 2026-01-14 (modified)

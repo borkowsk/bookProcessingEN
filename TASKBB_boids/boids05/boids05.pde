@@ -8,16 +8,21 @@ final int     HM_BIRDS=100;    ///< how many birds
 final boolean targeted=false;  ///< Do they get their goals as part of initialization?
 
 // Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
-final float   protectedRange=min(NORD_SOUTH,EAST_WEST)/100.0; ///< "Range where they fly away from others"
+final float   protectedRange=min(NORD_SOUTH,EAST_WEST)/50.0; ///< "Range where they fly away from others"
 final float   protectedRangeSquared=protectedRange*protectedRange;
-final float   visualRange=min(NORD_SOUTH,EAST_WEST)/10.0;   ///< "Range where they tend ttoward center of mass"
+final float   visualRange=min(NORD_SOUTH,EAST_WEST)/15.0;   ///< "Range where they tend ttoward center of mass"
 final float   visual_range_squared=visualRange*visualRange;
 final float   avoidfactor=0.03;
 final float   matchingfactor=0.05;
-final float   centeringfactor=0.001;
-final float   turnfactor=0.2;
+final float   centeringfactor=0.002;
+final float   turnfactor=0.33;
 final float   maxspeed=4;
 final float   minspeed=2;
+final float   margin=100;
+final float   leftmargin=margin;
+final float   rightmargin=EAST_WEST-margin;
+final float   topmargin=margin;
+final float   bottommargin=NORD_SOUTH-margin;
 
 ArrayList<Bird> birds;         ///< all our birds in JAVA like container
 
@@ -35,7 +40,7 @@ void showBirds()
    {
      Bird current=birds.get(i);
      float ZRatio=current.z/MAX_CEIL;
-     current.showBird(2+ZRatio*50); //any way of presenting the height for now
+     current.showBird(2+ZRatio*20); //any way of presenting the height for now
      if(current.isTargeted())
      {
        stroke(red(current.co),green(current.co),blue(current.co));
@@ -62,9 +67,9 @@ void draw()
 {
   moveBirds();
   sortBirds();
-  background(64);
+  background(32);
   showBirds();
   decisions();
 }
 
-/// @date 2025-12-10 (modified)
+/// @date 2026-01-14 (modified)
