@@ -116,14 +116,15 @@ void thinkAndDoBoids(Bird boid,int myIndex)
       boid.vy = boid.vy + (close_dy*avoidfactor);
   
       // If the boid is near an edge, make it turn by turnfactor
+      // but in proportion to the distance from the permitted area
       if(boid.x < leftmargin)
-          boid.vx = boid.vx + turnfactor;
+          boid.vx = boid.vx + turnfactor*abs(boid.x - leftmargin);
       if(boid.x > rightmargin)
-          boid.vx = boid.vx - turnfactor;
+          boid.vx = boid.vx - turnfactor*abs(boid.x - rightmargin);
       if(boid.y > bottommargin)
-          boid.vy = boid.vy - turnfactor;
+          boid.vy = boid.vy - turnfactor*abs(boid.y - bottommargin);
       if(boid.y < topmargin)
-          boid.vy = boid.vy + turnfactor;
+          boid.vy = boid.vy + turnfactor*abs(boid.y - topmargin);
 
   
       // Calculate the boid's speed
@@ -149,4 +150,4 @@ void thinkAndDoBoids(Bird boid,int myIndex)
 }
 
 
-/// @date 2026-01-14 (modified)
+/// @date 2026-01-15 (modified)

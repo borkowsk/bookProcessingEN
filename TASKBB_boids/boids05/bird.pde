@@ -25,7 +25,7 @@ class Bird
     }
     x=random(north_south);
     y=random(east_west);
-    z=down_up/2+random(down_up/2);
+    z=down_up/2+random(down_up/4);
   }
   
   boolean isTargeted()
@@ -50,4 +50,4 @@ class Bird
   
 } //end_of_class
 
-/// @date 2025-12-10 (modified)
+/// @date 2026-01-15 (modified)

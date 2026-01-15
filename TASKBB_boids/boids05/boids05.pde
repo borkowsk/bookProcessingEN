@@ -14,8 +14,8 @@ final float   visualRange=min(NORD_SOUTH,EAST_WEST)/15.0;   ///< "Range where th
 final float   visual_range_squared=visualRange*visualRange;
 final float   avoidfactor=0.03;
 final float   matchingfactor=0.05;
-final float   centeringfactor=0.002;
-final float   turnfactor=0.33;
+final float   centeringfactor=0.005;
+final float   turnfactor=0.02;
 final float   maxspeed=4;
 final float   minspeed=2;
 final float   margin=100;
@@ -72,4 +72,4 @@ void draw()
   decisions();
 }
 
-/// @date 2026-01-14 (modified)
+/// @date 2026-01-15 (modified)
