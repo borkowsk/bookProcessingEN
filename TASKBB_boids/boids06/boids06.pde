@@ -5,7 +5,8 @@ final int     NORD_SOUTH=1000; ///< maximum distance from north to south
 final int     WEST_EAST=1000;  ///< maximum distance from east to west
 final int     MAX_CEIL=100;    ///< maximum flight ceiling
 final int     HM_BIRDS=100;    ///< how many birds
-final boolean TARGETED=true;  ///< Do they get their goals as part of initialization?
+final boolean TARGETED=false;  ///< Do they get their goals as part of initialization?
+final boolean VIEW_TARGETING=true; ///< Show lines for current targets?
 
 // Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
 final float   protectedRange=min(NORD_SOUTH,WEST_EAST)/50.0; ///< "Range where they fly away from others"
@@ -41,9 +42,9 @@ void showBirds()
      Bird current=birds.get(i);
      float ZRatio=current.z/MAX_CEIL;
      current.showBird(2+ZRatio*20); //any way of presenting the height for now
-     if(current.isTargeted())
+     if(VIEW_TARGETING && current.isTargeted())
      {
-       stroke(red(current.co),green(current.co),blue(current.co));
+       stroke(red(current.co)/2,green(current.co)/2,blue(current.co)/2);
        line(current.x,current.y,current.tx,current.ty);
      }
    }
