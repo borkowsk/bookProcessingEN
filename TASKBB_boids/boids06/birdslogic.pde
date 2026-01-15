@@ -28,11 +28,18 @@ void thinkAndDoTarget(Bird me)
   //Has the goal been achieved?
   if(sqrt(dx*dx+dy*dy+dz*dz)<=1.0)
   {
-    println("Caught! Go up!");
+    println("Caught! Change a goal, now!");
     me.vx=0;
     me.vy=0;
-    me.vx=0;
-    me.tz=1000; //Target now unattainable height
+    me.vz=0;
+    if(me.tz<MAX_CEIL/2)
+    {
+      me.tz=MAX_CEIL-1; //Target now unattainable height
+    }
+    else 
+    {
+      me.tx=-NORD_SOUTH;me.ty=-WEST_EAST;me.tz=MAX_CEIL+1; // Not the real target.
+    }
   }
   else //NO! Continue to approach!
   {
@@ -45,7 +52,7 @@ void thinkAndDoTarget(Bird me)
 
 /// Implementation of the boids algorithm.
 /// See: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html
-void thinkAndDoBoids(Bird boid,int myIndex)
+void thinkAndDoBoids(Bird boid,int my_index)
 {
   // For every "boid" - is "upstairs" . . .  //for each boid (boid):
   
@@ -56,7 +63,7 @@ void thinkAndDoBoids(Bird boid,int myIndex)
       // For every other boid in the flock . . .
       //for each other boid (otherboid):
       for(int i=0;i<HM_BIRDS;i++)
-      if(i!=myIndex)
+      if(i!=my_index)
       {
           Bird otherboid=birds.get(i);
           
@@ -78,7 +85,7 @@ void thinkAndDoBoids(Bird boid,int myIndex)
                   close_dy += boid.y - otherboid.y;
               }
               // If not in protected range, is the boid in the visual range?
-              else if (squared_distance < visual_range_squared)
+              else if (squared_distance < visualRangeSquared)
                    {
                       // Add other boid's x/y-coord and x/y vel to accumulator variables
                       xpos_avg += otherboid.x;
@@ -103,28 +110,28 @@ void thinkAndDoBoids(Bird boid,int myIndex)
   
           // Add the centering/matching contributions to velocity
           boid.vx = (boid.vx + 
-                     (xpos_avg - boid.x)*centeringfactor + 
-                     (xvel_avg - boid.vx)*matchingfactor);
+                     (xpos_avg - boid.x)*centeringFactor + 
+                     (xvel_avg - boid.vx)*matchingFactor);
   
           boid.vy = (boid.vy + 
-                     (ypos_avg - boid.y)*centeringfactor + 
-                     (yvel_avg - boid.vy)*matchingfactor);
+                     (ypos_avg - boid.y)*centeringFactor + 
+                     (yvel_avg - boid.vy)*matchingFactor);
       }
       
       // Add the avoidance contribution to velocity
-      boid.vx = boid.vx + (close_dx*avoidfactor);
-      boid.vy = boid.vy + (close_dy*avoidfactor);
+      boid.vx = boid.vx + (close_dx*avoidFactor);
+      boid.vy = boid.vy + (close_dy*avoidFactor);
   
       // If the boid is near an edge, make it turn by turnfactor
       // but in proportion to the distance from the permitted area
-      if(boid.x < leftmargin)
-          boid.vx = boid.vx + turnfactor*abs(boid.x - leftmargin);
-      if(boid.x > rightmargin)
-          boid.vx = boid.vx - turnfactor*abs(boid.x - rightmargin);
-      if(boid.y > bottommargin)
-          boid.vy = boid.vy - turnfactor*abs(boid.y - bottommargin);
-      if(boid.y < topmargin)
-          boid.vy = boid.vy + turnfactor*abs(boid.y - topmargin);
+      if(boid.x < westMargin)
+          boid.vx = boid.vx + turnFactor*abs(boid.x - westMargin);
+      if(boid.x > eastMargin)
+          boid.vx = boid.vx - turnFactor*abs(boid.x - eastMargin);
+      if(boid.y > southMargin)
+          boid.vy = boid.vy - turnFactor*abs(boid.y - southMargin);
+      if(boid.y < nordMargin)
+          boid.vy = boid.vy + turnFactor*abs(boid.y - nordMargin);
 
   
       // Calculate the boid's speed
@@ -132,16 +139,16 @@ void thinkAndDoBoids(Bird boid,int myIndex)
       float speed = sqrt(boid.vx*boid.vx + boid.vy*boid.vy);
   
       // Enforce min and max speeds
-      if (speed < minspeed)
+      if (speed < minSpeed)
       {
-          boid.vx = (boid.vx/speed)*minspeed;
-          boid.vy = (boid.vy/speed)*maxspeed;
+          boid.vx = (boid.vx/speed)*minSpeed;
+          boid.vy = (boid.vy/speed)*maxSpeed;
       }
       
-      if (speed > maxspeed)
+      if (speed > maxSpeed)
       {
-          boid.vx = (boid.vx/speed)*maxspeed;
-          boid.vy = (boid.vy/speed)*maxspeed;
+          boid.vx = (boid.vx/speed)*maxSpeed;
+          boid.vy = (boid.vy/speed)*maxSpeed;
       }
       
       // Update boid's position

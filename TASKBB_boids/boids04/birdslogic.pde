@@ -28,8 +28,8 @@ void thinkAndDo1(Bird me)
     println("Caught! Go up!");
     me.vx=0;
     me.vy=0;
-    me.vx=0;
-    me.tz=1000; //Target now unattainable height
+    me.vz=0;
+    me.tz=MAX_CEIL+1; //Target now unattainable height
   }
   else //NO! Continue to approach!
   {
@@ -40,4 +40,4 @@ void thinkAndDo1(Bird me)
   }
 }
 
-/// @date 2025-12-10 (modified)
+/// @date 2026-01-15 (modified)
