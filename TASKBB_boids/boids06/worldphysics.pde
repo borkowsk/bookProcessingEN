@@ -13,7 +13,7 @@ void moveBirds()
      if(current.z>=MAX_CEIL)
      {
        current.z=MAX_CEIL;
-       current.vz*=-1;
+       current.vz=-1; 
      }
      else 
      if(current.z<=0)

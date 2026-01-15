@@ -57,8 +57,8 @@ void thinkAndDoBoids(Bird boid,int my_index)
   // For every "boid" - is "upstairs" . . .  //for each boid (boid):
   
       // Zero all accumulator variables
-      float xpos_avg, ypos_avg, xvel_avg, yvel_avg, neighboring_boids, close_dx, close_dy;
-      xpos_avg=ypos_avg=xvel_avg=yvel_avg=neighboring_boids=close_dx=close_dy = 0.0;
+      float xpos_avg, ypos_avg, zpos_avg, xvel_avg, yvel_avg, zvel_avg, neighboring_boids, close_dx, close_dy, close_dz;
+      xpos_avg=ypos_avg=zpos_avg=xvel_avg=yvel_avg=zvel_avg=neighboring_boids=close_dx=close_dy=close_dz = 0.0;
   
       // For every other boid in the flock . . .
       //for each other boid (otherboid):
@@ -70,29 +70,34 @@ void thinkAndDoBoids(Bird boid,int my_index)
           // Compute differences in x and y coordinates
           float dx = boid.x - otherboid.x;
           float dy = boid.y - otherboid.y;
+          float dz = boid.z - otherboid.z;
   
           // Are both those differences less than the visual range?
-          if (abs(dx)<visualRange && abs(dy)<visualRange)
+          if (abs(dx)<visualRange && abs(dy)<visualRange && abs(dz)<visualRange)
           {
               // If so, calculate the squared distance
-              float squared_distance = dx*dx + dy*dy;
+              float squared_distance = dx*dx + dy*dy + dz*dz;
   
               // Is squared distance less than the protected range?
               if (squared_distance < protectedRangeSquared)
               {
-                  // If so, calculate difference in x/y-coordinates to nearfield boid
+                  // If so, calculate difference in x/y/z-coordinates to nearfield boid
                   close_dx += boid.x - otherboid.x;
                   close_dy += boid.y - otherboid.y;
+                  close_dz += boid.z - otherboid.z;
               }
               // If not in protected range, is the boid in the visual range?
               else if (squared_distance < visualRangeSquared)
                    {
-                      // Add other boid's x/y-coord and x/y vel to accumulator variables
+                      // Add other boid's x/y/z-coord and x/y/z vel to accumulator variables
                       xpos_avg += otherboid.x;
                       ypos_avg += otherboid.y;
+                      zpos_avg += otherboid.z;
+                      
                       xvel_avg += otherboid.vx;
                       yvel_avg += otherboid.vy;
-      
+                      zvel_avg += otherboid.vz;
+                      
                       // Increment number of boids within visual range
                       neighboring_boids += 1;
                    }
@@ -105,8 +110,11 @@ void thinkAndDoBoids(Bird boid,int my_index)
           // Divide accumulator variables by number of boids in visual range
           xpos_avg = xpos_avg/neighboring_boids;
           ypos_avg = ypos_avg/neighboring_boids;
+          zpos_avg = zpos_avg/neighboring_boids;
+          
           xvel_avg = xvel_avg/neighboring_boids;
           yvel_avg = yvel_avg/neighboring_boids;
+          zvel_avg = zvel_avg/neighboring_boids;
   
           // Add the centering/matching contributions to velocity
           boid.vx = (boid.vx + 
@@ -116,11 +124,16 @@ void thinkAndDoBoids(Bird boid,int my_index)
           boid.vy = (boid.vy + 
                      (ypos_avg - boid.y)*centeringFactor + 
                      (yvel_avg - boid.vy)*matchingFactor);
+                     
+          boid.vz = (boid.vz + 
+                     (zpos_avg - boid.z)*centeringFactor + 
+                     (zvel_avg - boid.vz)*matchingFactor);           
       }
       
-      // Add the avoidance contribution to velocity
+      // Add the avoidance contribution to (x,y,z)-velocity
       boid.vx = boid.vx + (close_dx*avoidFactor);
       boid.vy = boid.vy + (close_dy*avoidFactor);
+      boid.vz = boid.vz + (close_dz*avoidFactor);
   
       // If the boid is near an edge, make it turn by turnfactor
       // but in proportion to the distance from the permitted area
@@ -128,32 +141,39 @@ void thinkAndDoBoids(Bird boid,int my_index)
           boid.vx = boid.vx + turnFactor*abs(boid.x - westMargin);
       if(boid.x > eastMargin)
           boid.vx = boid.vx - turnFactor*abs(boid.x - eastMargin);
+          
       if(boid.y > southMargin)
           boid.vy = boid.vy - turnFactor*abs(boid.y - southMargin);
       if(boid.y < nordMargin)
           boid.vy = boid.vy + turnFactor*abs(boid.y - nordMargin);
 
+      if(boid.z > ceilMargin)
+          boid.vz = boid.vz - turnFactor*abs(boid.z - ceilMargin);
+      if(boid.z < groundMargin)
+          boid.vz = boid.vz + turnFactor*abs(boid.z - groundMargin);
   
       // Calculate the boid's speed
       // Slow step! Lookup the "alpha max plus beta min" algorithm
-      float speed = sqrt(boid.vx*boid.vx + boid.vy*boid.vy);
+      float speed = sqrt(boid.vx*boid.vx + boid.vy*boid.vy + boid.vz*boid.vz);
   
       // Enforce min and max speeds
       if (speed < minSpeed)
       {
           boid.vx = (boid.vx/speed)*minSpeed;
-          boid.vy = (boid.vy/speed)*maxSpeed;
+          boid.vy = (boid.vy/speed)*minSpeed;
+          boid.vz = (boid.vz/speed)*minSpeed;
       }
       
       if (speed > maxSpeed)
       {
           boid.vx = (boid.vx/speed)*maxSpeed;
           boid.vy = (boid.vy/speed)*maxSpeed;
+          boid.vz = (boid.vz/speed)*maxSpeed;
       }
       
-      // Update boid's position
-      boid.x = boid.x + boid.vx;
-      boid.y = boid.y + boid.vy;
+      // Update boid's position - is in worldphysics!
+      //boid.x = boid.x + boid.vx;
+      //boid.y = boid.y + boid.vy;
 }
 
 
