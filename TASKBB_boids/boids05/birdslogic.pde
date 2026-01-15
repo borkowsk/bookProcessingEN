@@ -135,7 +135,7 @@ void thinkAndDoBoids(Bird boid,int myIndex)
       if (speed < minspeed)
       {
           boid.vx = (boid.vx/speed)*minspeed;
-          boid.vy = (boid.vy/speed)*maxspeed;
+          boid.vy = (boid.vy/speed)*minspeed; //fix!
       }
       
       if (speed > maxspeed)
@@ -144,9 +144,9 @@ void thinkAndDoBoids(Bird boid,int myIndex)
           boid.vy = (boid.vy/speed)*maxspeed;
       }
       
-      // Update boid's position
-      boid.x = boid.x + boid.vx;
-      boid.y = boid.y + boid.vy;
+      // Update boid's position - is in worldphysics!
+      //boid.x = boid.x + boid.vx;
+      //boid.y = boid.y + boid.vy;
 }
 
 
