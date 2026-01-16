@@ -67,12 +67,12 @@ void thinkAndDoBoids(Bird boid,int my_index)
       {
           Bird otherboid=birds.get(i);
           
-          // Compute differences in x and y coordinates
+          // Compute differences in x,y,z coordinates
           float dx = boid.x - otherboid.x;
           float dy = boid.y - otherboid.y;
           float dz = boid.z - otherboid.z;
   
-          // Are both those differences less than the visual range?
+          // Are all those differences less than the visual range?
           if (abs(dx)<visualRange && abs(dy)<visualRange && abs(dz)<visualRange)
           {
               // If so, calculate the squared distance
@@ -99,7 +99,7 @@ void thinkAndDoBoids(Bird boid,int my_index)
                       zvel_avg += otherboid.vz;
                       
                       // Increment number of boids within visual range
-                      neighboring_boids += 1;
+                      neighboring_boids ++;
                    }
           }        
       }
@@ -172,8 +172,6 @@ void thinkAndDoBoids(Bird boid,int my_index)
       }
       
       // Update boid's position - is in worldphysics!
-      //boid.x = boid.x + boid.vx;
-      //boid.y = boid.y + boid.vy;
 }
 
 
