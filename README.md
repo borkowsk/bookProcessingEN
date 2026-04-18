@@ -13,3 +13,5 @@ http://grafit.mchtr.pw.edu.pl/~mozaryn/publikacje/Processing_lab1.pdf
 How to separate a subfolder as a separate repository:
 https://help.github.com/en/github/using-git/splitting-a-subfolder-out-into-a-new-repository
 
+☕☕☕<br>
+[Coffee](https://buycoffee.to/adalbertus)
