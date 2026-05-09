@@ -6,6 +6,8 @@ https://processingwedukacji.blogspot.com
 
 This repository contains only the materials for the book, no other simulation materials in Processing.
 
+![UNDER CONSTRUCTION](./doc/under-construction-multi-tasking.gif)
+
 * ADDITIONAL LITERATURE *
 
 http://grafit.mchtr.pw.edu.pl/~mozaryn/publikacje/Processing_lab1.pdf
