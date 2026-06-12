@@ -1,5 +1,5 @@
 /// Test for simulation control module.
-/// @date 2025-01-13 (creation)
+/// @date 2026-06-12 (creation)
 //-/////////////////////////////////////
 /// @note `YesNoKeysControl.pde` is provided 
 ///       from parent folder via symbolic link.

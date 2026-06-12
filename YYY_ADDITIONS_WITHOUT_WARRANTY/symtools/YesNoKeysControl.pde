@@ -1,5 +1,5 @@
 /// Simulation control module.
-/// @date 2025-01-13 (creation)
+/// @date 2026-06-12 (creation)
 //*/////////////////////////////////////////////////////////////////////////////
 
 void keyPressed() //key pressed example. See also: processing-3.5.4/modes/java/reference/keyPressed_.html
