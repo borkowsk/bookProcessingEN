@@ -3,7 +3,7 @@
 int SIDE=400;
 double[][] cstates=new double[SIDE][SIDE]; //Current states of cells
 double[][] nstates=new double[SIDE][SIDE]; //New states of cells
-float DENS=0.15;//0.5;
+float DENS=0.25; //0.5;0.15 etc...
 
 //Weights depending on the neighbor's distance
 double WeightDist3=-0.3; //-0.333333333333333333;//-0.4; //-0.2;
@@ -123,4 +123,4 @@ void draw()
   if(frameCount%10==0) println(msg);
 }
 
-/// @date 2025-11-24 (initial)
+/// @date 2026-06-16 (initial)
