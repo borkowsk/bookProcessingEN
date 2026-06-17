@@ -1,3 +1,7 @@
+// Now the miner not only removes coal, but when he returns to the place 
+// where he was before, he puts down a support pole (also black).
+// ///////////////////////////////////////////////////////////////////////////////
+
 // Grid size for the maze (500x500 cells to match the window size)
 int cols = 500;
 int rows = 500;
