@@ -1,7 +1,7 @@
-//Program dop testowania różnych sposobów losowania
+// Program do testowania różnych sposobów losowania
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// https://en.wikipedia.org/wiki/Normal_distribution#Generating_values_from_normal_distribution
-//-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Zobacz: https://en.wikipedia.org/wiki/Normal_distribution#Generating_values_from_normal_distribution
+// Oraz:   http://www.javamex.com/tutorials/random_numbers/xorshift.shtml#.WT6NEzekKXI
 
 double MyRandom0()
 {
@@ -19,7 +19,7 @@ double MyRandom1()
 
 long xl=123456789L;
 double mianownik=(double)9223372036854775807L; // albo Long.MAX_VALUE;
-//9,223,372,036,854,775,807 <--- max long 
+                                               // 9,223,372,036,854,775,807 <--- max long 
 double MyRandom2() //http://www.javamex.com/tutorials/random_numbers/xorshift.shtml#.WT6NEzekKXI
 {
   //XOR SHIFT random generator
@@ -30,7 +30,7 @@ double MyRandom2() //http://www.javamex.com/tutorials/random_numbers/xorshift.sh
 }
 
 
-double MyRandomM() // M od "manipulacje"
+double MyRandomM() // M od "manipulacje"...
 {
   //return random(0,1);
   //return Math.random(); //Druga wersja - random z Javy
@@ -66,7 +66,7 @@ void draw()
   //Trochę losowań
   for(int s=0;s<NumOfProbesPerDraw;s++)
   {
-    double rndval=MyRandom0(); //MyRandomM(); //Powinno być w zakresie 0..1
+    double rndval=MyRandom2(); //MyRandomM(); //Powinno być w zakresie 0..1
      
     //Testowanie spełnienia założenia.
     if(rndval<0) { println("Niemożliwe!!! rndval=",rndval); continue;}
@@ -111,3 +111,5 @@ void VisualiseBaskets() //Rysowanie słupków
   text("1",StartX+NumOfBaskets*StepX,StartY+HeighH+16);
   text("N="+N,StartX+WidthH,StartY+HeighH+16);
 }
+
+//Footer
