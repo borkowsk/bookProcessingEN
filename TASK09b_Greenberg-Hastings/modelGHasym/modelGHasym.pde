@@ -1,5 +1,6 @@
 /// Greenberg-Hastings Model: Excitable media simulation.
 /// TWO-dimensional, SYNCHRONOUS, Moore, deterministic cellular automaton.
+/// @date 2026-10-05 (last modification)
 //-/////////////////////////////////////////////////////////////////////////
 
 final int   WorldSide=601; //< How many cells do we want in one line?
@@ -13,32 +14,31 @@ final int   STATE_REFRACTORY = 2;
 int[][] WorldOld=new int[WorldSide][WorldSide]; //< We need two "worlds" for the old...
 int[][] WorldNew=new int[WorldSide][WorldSide]; //< And for new state of the simulation.
 
-
 void setup()
 {
   size(601,601);    //square window
   frameRate(999); 
   noSmooth();
   
-  // 1. Najpierw czyścimy cały świat do stanu spoczynku
+  // First, we cleanse the entire world to the resting state
   for(int i=0; i<WorldSide; i++) {
     for(int j=0; j<WorldSide; j++) {
       WorldOld[i][j] = STATE_RESTING;
     }
   }
   
-  // 2. Tworzymy sztuczną asymetrię na środku ekranu
+  // We create an asymmetry in the center of the screen.
   int środekX = WorldSide / 2;
   int startY  = (int)(WorldSide / 4 * Dens);
   int koniecY = (int)(3 * (WorldSide / 4) * Dens);
   
-  // Rysujemy pionowy pasek pobudzenia (linia frontu fali)
+  // We draw a vertical excitation strip (wavefront line).
   for(int i = startY; i <= koniecY; i++) {
     WorldOld[i][środekX] = STATE_EXCITED;
   }
   
-  // Tuż obok (po lewej stronie) rysujemy pasek refrakcji (ogon fali)
-  // Dzięki temu fala może poruszać się tylko w prawą stronę, a na końcach zacznie się zwijać
+  // Right next to it (on the left), we draw the refraction strip (wave tail).
+  // This allows the wave to travel only to the right, while at the ends it begins to curl.
   for(int i = startY; i <= koniecY; i++) {
     WorldOld[i][środekX - 1] = STATE_REFRACTORY;
   }
@@ -104,12 +104,12 @@ void draw() //Modifies global t,WorldOld,WorldNew
     }
   }
    
-  //Swap the arrays 
+  // Swap the arrays 
   int[][] WorldTmp=WorldOld; 
   WorldOld=WorldNew; 
   WorldNew=WorldTmp; 
    
-  t++; //The next generation/step/year 
+  t++; // The next generation/step/year 
   fill(255,128); 
   textSize(20); textAlign(LEFT,TOP); text("ST:"+t,0,0); 
 }
@@ -121,5 +121,3 @@ void mousePressed()
   int j=mouseY;
   WorldOld[j][i]=STATE_EXCITED;
 }
-
-/// @date 2026-06-20

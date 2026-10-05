@@ -1,5 +1,6 @@
 /// Greenberg-Hastings Model: Excitable media simulation.
 /// TWO-dimensional, SYNCHRONOUS, Moore, deterministic cellular automaton.
+/// @date 2026-10-05 (last modification)
 //-/////////////////////////////////////////////////////////////////////////
 
 final int   WorldSide=601; //< How many cells do we want in one line?
@@ -103,5 +104,3 @@ void mousePressed()
   int j=mouseY;
   WorldOld[j][i]=STATE_EXCITED;
 }
-
-/// @date 2026-06-20

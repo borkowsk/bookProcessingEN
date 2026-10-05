@@ -3,13 +3,13 @@
 /// @date 2026-10-05 (last modification)
 //-/////////////////////////////////////////////////////////////////////////
 
-final int WorldSide=601; // How many cells do we want in one line?
+final int WorldSide=601; //< How many cells do we want in one line?
 
-// Definicja wszystkich 11 stanów przy użyciu enum
+// Defining all 11 cell states using enum
 enum CellState {
-  RESTING,          // Stan spoczynku (0)
-  EXCITED,          // Stan pobudzenia (1)
-  REFRACTORY_1,     // Pierwszy stan refrakcji (2)
+  RESTING,          //< Resting/Quiescent (0)
+  EXCITED,          //< Excited state (1)
+  REFRACTORY_1,     //< Initial state of refraction (2)
   REFRACTORY_2,
   REFRACTORY_3,
   REFRACTORY_4,
@@ -17,12 +17,11 @@ enum CellState {
   REFRACTORY_6,
   REFRACTORY_7,
   REFRACTORY_8,
-  REFRACTORY_9      // Ostatni, dziewiąty stan refrakcji
+  REFRACTORY_9      //< The final, ninth state of refraction
 }
 
-CellState[][] WorldOld = new CellState[WorldSide][WorldSide]; 
-CellState[][] WorldNew = new CellState[WorldSide][WorldSide];
-
+CellState[][] WorldOld = new CellState[WorldSide][WorldSide]; //< We need two "worlds" for the old...
+CellState[][] WorldNew = new CellState[WorldSide][WorldSide]; //< And for new state of the simulation.
 
 void setup()
 {
@@ -30,24 +29,24 @@ void setup()
   frameRate(999); 
   noSmooth();
   
-  // 1. Inicjalizacja całego świata stanem spoczynku
+  // Initialization of the entire world to a resting state
   for(int i=0; i<WorldSide; i++) {
     for(int j=0; j<WorldSide; j++) {
       WorldOld[i][j] = CellState.RESTING;
     }
   }
   
-  // 2. Tworzenie asymetrycznego startu (urwanej fali) na środku ekranu
+  // Creating an asymmetrical start (broken wave) in the center of the screen
   int środekX = WorldSide / 2;
   int startY  = WorldSide / 4;
   int koniecY = 3 * (WorldSide / 4);
   
-  // Pionowy pasek pobudzenia
+  // We draw a vertical excitation strip (wavefront line).
   for(int i = startY; i <= koniecY; i++) {
     WorldOld[i][środekX] = CellState.EXCITED;
   }
   
-  // Tuż obok paski refrakcji - „gruby” ogon fali dający asymetrię
+  // Right next to them are refraction bands—a "thick" wave tail creating asymmetry.
   for(int i = startY; i <= koniecY; i++) {
     WorldOld[i][środekX - 1] = CellState.REFRACTORY_1;
     WorldOld[i][środekX - 2] = CellState.REFRACTORY_2;
@@ -61,20 +60,20 @@ void visualisation()
   for(int i=0; i<WorldSide; i++)
     for(int j=0; j<WorldSide; j++)
     {
-      // Mapowanie stanów na kolory przy użyciu switch
+      // Mapping states to colors using a switch construct
       switch(WorldOld[i][j]) 
       {
         case EXCITED: 
-          stroke(255, 0, 100); // Różowy/Czerwony dla pobudzenia
+          stroke(255, 0, 100); // Red/Pink for Excited
           break;
           
         case RESTING: 
-          stroke(0);           // Czarny dla spoczynku
+          stroke(0);           // Black for Resting
           break;
           
         default: 
-          // Wszystkie stany refrakcji rysujemy w odcieniach niebieskiego/turkusu
-          // im dalsza refrakcja, tym jaśniejszy kolor (zbliża się do regeneracji)
+          // We draw all refraction states in shades of blue/turquoise
+          // the further along the refraction, the lighter the color (approaching regeneration)
           int step = WorldOld[i][j].ordinal() - CellState.REFRACTORY_1.ordinal();
           stroke(0, 50 + (step * 20), 255); 
           break;
@@ -100,7 +99,7 @@ void draw() // modifies global t,WorldOld,WorldNew
       int dw=(j+1) % WorldSide;
       int up=(WorldSide+j-1) % WorldSide;
        
-      // Zliczanie pobudzonych sąsiadów
+      // Counting neighbors in the EXCITED state (Moore neighborhood)
       int excitedNeighbors = (
                   (WorldOld[left][j]   == CellState.EXCITED ? 1 : 0)
                +  (WorldOld[right][j]  == CellState.EXCITED ? 1 : 0)
@@ -112,20 +111,20 @@ void draw() // modifies global t,WorldOld,WorldNew
                +  (WorldOld[right][dw] == CellState.EXCITED ? 1 : 0)           
                );
 
-      // REGUŁY MODELU GREENBERGA-HASTINGSA (9 stanów refrakcji)
+      // Greenberg-Hastings Model Rules (9 refractory states)
       switch(WorldOld[i][j]) 
       {
         case RESTING:
-          // Komórka w spoczynku pobudza się, jeśli ma przynajmniej jednego pobudzonego sąsiada
+          // A resting cell becomes excited if it has at least one excited neighbor.
           WorldNew[i][j] = (excitedNeighbors >= 1 ? CellState.EXCITED : CellState.RESTING);
           break;
           
         case EXCITED:
-          // Po pobudzeniu automatycznie wpada w pierwszy stan refrakcji
+          // After excitation, it automatically enters the first refractory state.
           WorldNew[i][j] = CellState.REFRACTORY_1;
           break;
           
-        // Kaskadowe przechodzenie przez kolejne stany refrakcji
+        // Cascading transition through successive refraction states
         case REFRACTORY_1: WorldNew[i][j] = CellState.REFRACTORY_2; break;
         case REFRACTORY_2: WorldNew[i][j] = CellState.REFRACTORY_3; break;
         case REFRACTORY_3: WorldNew[i][j] = CellState.REFRACTORY_4; break;
@@ -136,19 +135,19 @@ void draw() // modifies global t,WorldOld,WorldNew
         case REFRACTORY_8: WorldNew[i][j] = CellState.REFRACTORY_9; break;
         
         case REFRACTORY_9:
-          // Wyjście z ostatniego stanu refrakcji oznacza pełną regenerację i powrót do spoczynku
+          // Exiting the final refractory state signifies full recovery and a return to the resting state.
           WorldNew[i][j] = CellState.RESTING;
           break;
       }
     }
   }
    
-  //Zamiana tablic (Swap)
+  // Swap the arrays 
   CellState[][] WorldTmp = WorldOld;
   WorldOld = WorldNew;
   WorldNew = WorldTmp;
    
-  t++; 
+  t++; // The next generation/step/year 
   fill(255,128);
   textSize(20); textAlign(LEFT,TOP); text("ST:"+t,0,0);
   //saveFrame("../movie/GH-######.png");
