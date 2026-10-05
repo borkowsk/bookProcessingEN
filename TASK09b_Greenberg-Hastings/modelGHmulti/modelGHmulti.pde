@@ -1,5 +1,6 @@
 /// Greenberg-Hastings Model: Excitable media with 9 refractory states.
 /// TWO-dimensional, SYNCHRONOUS, Moore, deterministic cellular automaton.
+/// @date 2026-10-05 (last modification)
 //-/////////////////////////////////////////////////////////////////////////
 
 final int WorldSide=601; // How many cells do we want in one line?
@@ -135,7 +136,7 @@ void draw() // modifies global t,WorldOld,WorldNew
         case REFRACTORY_8: WorldNew[i][j] = CellState.REFRACTORY_9; break;
         
         case REFRACTORY_9:
-          // Ostatni stan refrakcji oznacza pełną regenerację i powrót do spoczynku
+          // Wyjście z ostatniego stanu refrakcji oznacza pełną regenerację i powrót do spoczynku
           WorldNew[i][j] = CellState.RESTING;
           break;
       }
@@ -150,6 +151,7 @@ void draw() // modifies global t,WorldOld,WorldNew
   t++; 
   fill(255,128);
   textSize(20); textAlign(LEFT,TOP); text("ST:"+t,0,0);
+  //saveFrame("../movie/GH-######.png");
 }
 
 //For more fun ;-)
