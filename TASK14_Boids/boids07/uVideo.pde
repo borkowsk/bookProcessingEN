@@ -1,6 +1,6 @@
 /// Tool for made video from simulation. ( "rtmVideo.pde" )
 /// @note This optional source file could be copied or linked from OPTIONALS directory.
-/// @date 2024-11-22 (Last modification)
+/// @date 2026-10-05 (Last modification)
 //-////////////////////////////////////////////////////////////////////////////////////
 
 /// @defgroup Generally usable functions

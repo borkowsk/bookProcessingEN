@@ -95,4 +95,4 @@ void exit()
   super.exit();       //What library superclass have to do at exit()
 }
 
-/// @date 2026-06-16 (modified)
+/// @date 2026-10-05 (modified)
