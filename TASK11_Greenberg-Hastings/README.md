@@ -37,5 +37,5 @@ initial conditions which lead to repetitive behavior.[3]
 * S. Wolfram, A New Kind of Science, 2003, pg. 1013.
 
 
-## @date 2026-10-05 (last modification)
+## @date 2026-10-07 (last modification)
 
