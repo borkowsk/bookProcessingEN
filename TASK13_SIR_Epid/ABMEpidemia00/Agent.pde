@@ -1,0 +1,17 @@
+// Agent jest jedną z dwóch centralnych klas każdego modelu ABM
+//-/////////////////////////////////////////////////////////////
+class Agent
+{
+  float dummy; //ATRYBUT DEMONSTRACYJNY - POTEM MOŻNA USUNĄĆ
+  //... MIEJSCE NA TWÓJ KOD
+  
+  Agent() //Konstruktor agenta. Inicjuje atrybuty
+  {
+    dummy=0;
+    //... MIEJSCE NA TWÓJ KOD
+  }
+}
+
+//-/////////////////////////////////////////////////////////////////////////////////////////
+//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT FOR FILL UP
+//-/////////////////////////////////////////////////////////////////////////////////////////
