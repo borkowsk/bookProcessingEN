@@ -12,4 +12,4 @@ for i in range(0,10,1): # loop over variable "i"
 
 text("DONE!!!",0,height)
 
-## @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)

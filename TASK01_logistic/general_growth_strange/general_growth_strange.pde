@@ -12,4 +12,4 @@ for(int i=0;i<10;i++)
 
 text("DONE!!!",0,height);
 
-/// @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
