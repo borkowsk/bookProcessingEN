@@ -1,26 +1,26 @@
 /// Simple floating point based cellular automaton.
 
-int SIDE=400;
-float[][] cstates=new float[SIDE][SIDE]; //Current states of cells
-float[][] nstates=new float[SIDE][SIDE]; //New states of cells
-float DENS=0.5;
+int SIDE=400; ///< ???
+float[][] cstates=new float[SIDE][SIDE]; //< Current states of cells
+float[][] nstates=new float[SIDE][SIDE]; //< New states of cells
+float DENS=-1; //0.5; //< If dense <0 then initialize with line
 
-//Weights depending on the neighbor's distance
+//Weights depending on the neighbor's distance (why 9 as magic number?) 
 float WeightDist3=9.0/24;
 float WeightDist2=9.0/16;
 float WeightDist1=1.0+(15+7)/9.0; // what if 1. ?
-float WeightSum=9*WeightDist1+16*WeightDist2+24*WeightDist3;
+float WeightSum=9*WeightDist1+16*WeightDist2+24*WeightDist3; //< ???
 
 //Statistic
 float average=0;
 
-void settings()
+void settings() ///< ???
 {
   size(SIDE, SIDE);
   noSmooth();
 }
 
-void initialiseDens()
+void initialiseDens() ///< ???
 {
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
@@ -30,7 +30,7 @@ void initialiseDens()
         cstates[i][j]=0.0;
 }
 
-void initialiseLine() //Alternative initialisation
+void initialiseLine()  ///< Alternative initialisation
 {
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
@@ -40,7 +40,7 @@ void initialiseLine() //Alternative initialisation
         cstates[i][j]=0.0;
 }
 
-void visualise()
+void visualise() ///< ???
 {
   double sum=0; //More precise
   for (int i=0; i<SIDE; i++)
@@ -59,7 +59,7 @@ void visualise()
   average=(float)sum/(SIDE*SIDE); //with limited precision of the result
 }
 
-void newStates()
+void newStates() ///< ???
 {
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
@@ -90,7 +90,7 @@ void newStates()
    nstates=tmp;
 }
 
-void setup()
+void setup() ///< ???
 {
   if(DENS>0) //selection of initialization method
     initialiseDens();
@@ -100,11 +100,11 @@ void setup()
   frameRate(2);
 }
 
-void draw()
+void draw() ///< ???
 {
   newStates();
   visualise();
   println(frameCount,'\t',average);
 }
 
-/// @date 2025-11-24 (initial)
+/// @date 2026-10-07 (modification)

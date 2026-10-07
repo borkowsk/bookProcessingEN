@@ -1,26 +1,26 @@
 /// Simple floating point based cellular automaton.
 
-int SIDE=400;
-double[][] cstates=new double[SIDE][SIDE]; //Current states of cells
-double[][] nstates=new double[SIDE][SIDE]; //New states of cells
+int SIDE=400;  //< ???
+double[][] cstates=new double[SIDE][SIDE]; //< Current states of cells
+double[][] nstates=new double[SIDE][SIDE]; //< New states of cells
 float DENS=0.25; //0.5;0.15 etc...
 
 //Weights depending on the neighbor's distance
 double WeightDist3=-0.3; //-0.333333333333333333;//-0.4; //-0.2;
 double WeightDist2=0.1; // 0.1;//-0.1; //-0.05;
 double WeightDist1=6.066666666666667; // 6.155555555555555556;//6.68888888888889;//1.0; //6.06666666666667;
-double WeightSum=9*WeightDist1+16*WeightDist2+24*WeightDist3;
+double WeightSum=9*WeightDist1+16*WeightDist2+24*WeightDist3; //< Used in the main loop!
 
 //Statistic
 float average=0;
 
-void settings()
+void settings() ///< ???
 {
   size(SIDE, SIDE);
   noSmooth();
 }
 
-void initialiseDens()
+void initialiseDens() ///< ???
 {
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
@@ -30,7 +30,7 @@ void initialiseDens()
         cstates[i][j]=0.0;
 }
 
-void initialiseLine() //Alternative initialisation
+void initialiseLine() ///< Alternative initialisation
 {
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
@@ -40,7 +40,7 @@ void initialiseLine() //Alternative initialisation
         cstates[i][j]=0.0;
 }
 
-void visualise()
+void visualise() ///< ???
 {
   double sum=0; //More precise
   for (int i=0; i<SIDE; i++)
@@ -62,7 +62,7 @@ void visualise()
   average=(float)sum/(SIDE*SIDE); //with limited precision of the result
 }
 
-void newStates()
+void newStates() ///< ???
 {
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
@@ -103,17 +103,17 @@ void newStates()
    nstates=tmp;
 }
 
-void setup()
+void setup() ///< ???
 {
   if(DENS>0) //selection of initialization method
     initialiseDens();
   else
     initialiseLine();
   visualise();
-  frameRate(100); // wishful thinking :-D
+  frameRate(100); // 100 frame/sec.? Just a wishful thinking :-D
 }
 
-void draw()
+void draw() ///< ???
 {
   newStates();
   visualise();
@@ -123,4 +123,4 @@ void draw()
   if(frameCount%10==0) println(msg);
 }
 
-/// @date 2026-06-16 (initial)
+/// @date 2026-10-07 (modification)

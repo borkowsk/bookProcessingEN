@@ -44,6 +44,7 @@ void newStates()
        nstates[i][j]=sum/49;
     }
    
+   // swap the world states
    float[][] tmp=cstates;
    cstates=nstates;
    nstates=tmp;
@@ -68,6 +69,7 @@ void newStates2()
        nstates[i][j]=sum/powr;
     }
    
+   // swap the world states
    float[][] tmp=cstates;
    cstates=nstates;
    nstates=tmp;
@@ -83,14 +85,14 @@ void setup()
 {
   initialiseDens();
   visualise();
-  frameRate(1);
+  frameRate(4);
 }
 
 void draw()
 {
-  newStates();
+  newStates2();
   visualise();
   println(frameCount);
 }
 
-/// @date 2025-11-24 (initial)
+/// @date 2026-10-07 (initial)

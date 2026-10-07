@@ -1,26 +1,26 @@
 /// Simple floating point based cellular automaton.
 
-int SIDE=400;
-float[][] cstates=new float[SIDE][SIDE]; //Current states of cells
-float[][] nstates=new float[SIDE][SIDE]; //New states of cells
-float DENS=0.125;//0.5;
+int SIDE=400; //< ???
+float[][] cstates=new float[SIDE][SIDE]; //< Current states of cells
+float[][] nstates=new float[SIDE][SIDE]; //< New states of cells
+float DENS=0.125; //0.5;
 
 //Weights depending on the neighbor's distance
 float WeightDist3=-0.33333;//-0.4; //-0.2;
 float WeightDist2=0.1;//-0.1; //-0.05;
 float WeightDist1=6.15554666666667;//6.68888888888889;//1.0; //6.06666666666667;
-float WeightSum=9*WeightDist1+16*WeightDist2+24*WeightDist3;
+float WeightSum=9*WeightDist1+16*WeightDist2+24*WeightDist3; //<  Used offten!
 
 //Statistic
 float average=0;
 
-void settings()
+void settings() ///< ???
 {
   size(SIDE, SIDE);
   noSmooth();
 }
 
-void initialiseDens()
+void initialiseDens() ///< ???
 {
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
@@ -40,7 +40,7 @@ void initialiseLine() //Alternative initialisation
         cstates[i][j]=0.0;
 }
 
-void visualise()
+void visualise() ///< ???
 {
   double sum=0; //More precise
   for (int i=0; i<SIDE; i++)
@@ -62,7 +62,7 @@ void visualise()
   average=(float)sum/(SIDE*SIDE); //with limited precision of the result
 }
 
-void newStates()
+void newStates() ///< ???
 {
   for (int i=0; i<SIDE; i++)
     for (int j=0; j<SIDE; j++)
@@ -101,7 +101,7 @@ void newStates()
    nstates=tmp;
 }
 
-void setup()
+void setup() ///< ???
 {
   if(DENS>0) //selection of initialization method
     initialiseDens();
@@ -111,7 +111,7 @@ void setup()
   frameRate(100); // wishful thinking :-D
 }
 
-void draw()
+void draw() ///< ???
 {
   newStates();
   visualise();
@@ -119,4 +119,4 @@ void draw()
   text(frameCount+": "+average+" "+frameRate+"frm/sec",1,height); // here we have the actual speed.
 }
 
-/// @date 2025-11-24 (initial)
+/// @date 2026-10-07 (modification)
