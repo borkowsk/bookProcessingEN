@@ -24,4 +24,4 @@ void visualise(World currWorld) //< There is ones more hard-to-find bug in this 
    stroke(0); // This is the better solution.    
 }
 
-/// @date 2025-11-24 (https://github.com/borkowsk/bookProcessingEN/)
+/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
