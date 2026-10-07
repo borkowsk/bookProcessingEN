@@ -1,4 +1,4 @@
-//Fale morskie jako wykres fali
+// Fale morskie jako wykres fali
 //-/////////////////////////////////////////////////////////////
 
 float mojaFunkcja(float x)
@@ -58,3 +58,4 @@ void wykres()
 
 
 // https://github.com/borkowsk/bookProcessingPL
+// @date 2026-10-07 (last modification)
