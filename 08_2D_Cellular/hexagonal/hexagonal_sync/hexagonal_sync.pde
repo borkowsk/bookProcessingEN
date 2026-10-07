@@ -10,7 +10,7 @@ int[][] WorldOld=new int[WorldSize][WorldSize]; //Creating tables - in Processin
 int[][] WorldNew=new int[WorldSize][WorldSize];
 boolean[][] Changed=new boolean[WorldSize][WorldSize]; //An array of change flags to draw
 
-float CellSize=3;       //Cell height
+float CellSize=2;       //Cell height
 int   FRAME_RATE_REQ=2; //How many frames per second would we like
 
 void settings() //A SPECIAL FUNCTION THAT ALLOWS YOU TO USE AN EXPRESSION DETERMINING WINDOW SIZES AND OTHER WINDOW SETTINGS

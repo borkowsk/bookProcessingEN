@@ -3,10 +3,10 @@
 ///////////////////////////////////////////////////////////////////////////
 
 //Model parameters
-int N=50;        //array side
-int FireTimeDiv=10;//How long the tree is burning (divider for age/size)
-float IgnitionP = 0.75;//Probability of fire transfer
-float InitT=  0.750; //How many trees at start
+int   N = 50;            //array side
+int   FireTimeDiv = 10;  //How long the tree is burning (divider for age/size)
+float IgnitionP = 0.75;  //Probability of fire transfer
+float InitT =  0.750;    //How many trees at start
 
 //2D "World" of trees
 int World[][] = new int[N][N];
@@ -75,7 +75,7 @@ void doMonteCarloStep()
 {
   Step++;
   int M=N*N;
-  for(int m=0;m<M;m++)//Processing is CASE SENSITIVE. But utilising this, is not a good praktise. 
+  for(int m=0;m<M;m++)//Processing is CASE SENSITIVE. But utilising this, is not a good practice!
   {
     int i=(int)random(N);
     int j=(int)random(N);
