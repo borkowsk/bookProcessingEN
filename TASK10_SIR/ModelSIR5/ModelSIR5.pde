@@ -5,7 +5,7 @@
 // WE COLLECT TOTAL STATISTICS FROM THE ENTIRE EPIDEMIC: int sumInfected,sumRecovered,sumDeath;
 //-////////////////////////////////////////////////////////////////////////////////////////////////////
 
-int WorldSize=400; //How many elements do we want in a line and how many lines (square array)
+int WorldSize=601; //How many elements do we want in a line and how many lines (square array)
 
 int[][] World=new int[WorldSize][WorldSize]; //Creating the world table
 
@@ -30,7 +30,7 @@ int sumDeath=0;     // Those who died
 
 void setup()
 { 
- size(400,400); //Square window
+ size(601,601); //Square window
  noSmooth();    //It speeds up simulations significantly
  
  if(IDens>0)
@@ -111,9 +111,17 @@ void draw()
    println("ST:"+t+"\tZ\t"+sumInfected+"\tW\t"+sumRecovered+"\tU\t"+sumDeath);
 }
 
+//For more fun ;-)
+void mousePressed()
+{
+  int i=mouseX;
+  int j=mouseY;
+  World[i][j]=Infected;
+}
+
 //*////////////////////////////////////////////////////////////////////////////////
 // Author: Wojciech T. Borkowski
 // Materials for the script "Processing in education and simulation
 // https://github.com/borkowsk/bookProcessingEN
-/// @date 2025-11-10 (last modification)
+/// @date 2026-10-07 (last modification)
 //*////////////////////////////////////////////////////////////////////////////////
