@@ -3,7 +3,18 @@
 // Supports 256 rules, with statistics and visualization
 
 // ===== CONFIGURATION =====
-final String CA_CODE_BIN = "01101110";  // Rule code in binary (decimal 110)
+final String 
+    CA_CODE_BIN = "01101110"; // Rule code in binary
+//  CA_CODE_BIN = '00011110'; // 30 - Brzydki efekt brzegowy po stronie lewej} 
+//  CA_CODE_BIN = '00110011'; // 51 - Odwracanie bitów
+//  CA_CODE_BIN = '01011010'; // 90
+//  CA_CODE_BIN = '01101110'; // 110  
+//  CA_CODE_BIN = '01111110'; // 126
+//  CA_CODE_BIN = '10000001'; // 129
+//  CA_CODE_BIN = '10110010'; // 178
+//  CA_CODE_BIN = '11101000'; // 232
+//  CA_CODE_BIN = '11111010'; // 250
+//  CA_CODE_BIN = '11111110'; // 254 
 final int WORLD_SIZE = 500;
 final int MAX_STEPS = 800;
 final float PROB_ZERO_INIT = 0.995;   // Probability of initializing with zero
@@ -22,6 +33,7 @@ ArrayList<String> statsLog;
 
 void setup() {
   size(520, 900);
+  noSmooth();
   background(255);
 
   world = new int[WORLD_SIZE];
