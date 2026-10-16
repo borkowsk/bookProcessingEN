@@ -123,5 +123,5 @@ void mousePressed()
 // Author: Wojciech T. Borkowski
 // Materials for the script "Processing in education and simulation
 // https://github.com/borkowsk/bookProcessingEN
-/// @date 2026-10-07 (last modification)
+/// @date 2026-10-16 (last modification)
 //*////////////////////////////////////////////////////////////////////////////////

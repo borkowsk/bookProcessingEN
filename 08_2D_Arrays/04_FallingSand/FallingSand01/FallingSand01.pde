@@ -18,6 +18,7 @@ int[][] grid;
 void setup()
 {
   size(300, 600);
+  frameRate(300);
   grid = new int[cols][rows];
   Initialisation();
 }

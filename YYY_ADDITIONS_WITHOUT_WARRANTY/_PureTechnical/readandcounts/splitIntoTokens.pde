@@ -1,6 +1,6 @@
 /**
  _ReadAndCounts_: 
- This file define function which split string into tokens basing on a character types borders
+ This file define function which split string into tokens baseing on a character types borders
  2021 (c) Wojciech Borkowski wborkowski AT uw.edu.pl
 */
 

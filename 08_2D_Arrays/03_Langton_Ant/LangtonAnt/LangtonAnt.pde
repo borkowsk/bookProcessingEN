@@ -1,3 +1,6 @@
+// Classic Langton Ant model.
+//*//////////////////////////
+
 // Grid size for the simulation (500x500 cells to match the window size)
 int cols = 500;
 int rows = 500;

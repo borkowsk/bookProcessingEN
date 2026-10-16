@@ -1,6 +1,6 @@
 // Resizable Processing window
 // From Processing.org
-// Work strange sometimes!
+// It works strange sometimes!
 
 void setup() 
 {
