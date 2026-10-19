@@ -1,20 +1,20 @@
-/// Narzędzia bitowe dla algorytmów ewolucyjnych.  
+/// Bitwise tools for evolutionary algorithms.  
 //-//////////////////////////////////////////////
-/// @date 2026-10-19 (zmodyfikowany)
-// Skomentowane w standardzie Doxygen.
+/// @date 2026-10-19 (modified)
+// Commented using the Doxygen standard.
 
-/// Tworzy string z reprezentacją heksadecymalną liczby typu integer (32-bitowy).
-/// @param sou - wartość wejściowa.
-/// @param USE_BITS - ograniczenie liczby bitów.
+/// Creates a hexadecimal string representation of a 32-bit integer.
+/// @param sou - input value.
+/// @param USE_BITS - bit count limit.
 public String toHex(int sou,int USE_BITS)
 {                                                     assert(USE_BITS <= 32);
   int form=(USE_BITS+3)/4;
   return hex(sou,form);
 }
 
-/// Tworzy string z reprezentacją heksadecymalną liczby typu long integer (64 bitowy).
-/// @param sou - wartość wejściowa.
-/// @param USE_BITS - ograniczenie liczby bitów.
+/// Creates a hexadecimal string representation of a 64-bit long integer.
+/// @param sou - input value.
+/// @param USE_BITS - bit count limit.
 public String toHex(long sou,int USE_BITS)
 {                                                     assert(USE_BITS <= 64);
   if(USE_BITS>32)
@@ -27,17 +27,17 @@ public String toHex(long sou,int USE_BITS)
     return toHex((int)(sou),USE_BITS);
 }
 
-/// Tworzy string z reprezentacją binarną liczby typu integer (32-bitowy).
-/// @param sou - wartość wejściowa.
-/// @param USE_BITS - ograniczenie liczby bitów.
+/// Creates a binary string representation of a 32-bit integer.
+/// @param sou - input value.
+/// @param USE_BITS - bit count limit.
 public String toBin(int sou,int USE_BITS)
 {                                                     assert(USE_BITS <= 32);
   return binary(sou,USE_BITS);
 }
 
-/// Tworzy string z reprezentacją binarną liczby typu long integer (64 bitowy).
-/// @param sou - wartość wejściowa.
-/// @param USE_BITS - ograniczenie liczby bitów.
+/// Creates a binary string representation of a 64-bit long integer.
+/// @param sou - input value.
+/// @param USE_BITS - bit count limit.
 public String toBin(long sou,int USE_BITS)
 {                                                     assert(USE_BITS <= 64);
   if(USE_BITS>32)
@@ -50,38 +50,38 @@ public String toBin(long sou,int USE_BITS)
     return toBin((int)(sou),USE_BITS);
 }
 
-/// @name kodowanie z NKB na kod Graya. 
+/// @name Encoding from NBC to Gray code. 
 /// @details
-/// Funkcje przyjmują zwykłą liczbę (np. wylosowaną) i zwracają jej reprezentację w kodzie Graya.
+/// Functions accept a standard number (e.g., randomly generated) and return its Gray code representation.
 /// @{
   
-/// Kodowanie 32 bitowej liczby NKB ze znakiem na kod Graya.
-/// @param n - liczba ze znakiem zakodowana naturalnie (NKB).
-/// @return liczba `n` zakodowana kodem Graya.
+/// Encoding a 32-bit signed NBC number into Gray code.
+/// @param n - signed number encoded in natural binary code (NBC).
+/// @return number `n` encoded in Gray code.
 public static int toGray(int n) {
     return n ^ (n >>> 1);
 }
 
-/// Kodowanie 64 bitowej liczby NKB ze znakiem na kod Graya.
-/// @param n - liczba ze znakiem zakodowana naturalnie (NKB).
-/// @return liczba `n` zakodowana kodem Graya.
+/// Encoding a 64-bit signed NBC number into Gray code.
+/// @param n - signed number encoded in natural binary code (NBC).
+/// @return number `n` encoded in Gray code.
 public static long toGray(long n) {
     return n ^ (n >>> 1);
 }
 /// @}
 
 
-/// Dekodowanie powrotne z kodu Graya na NKB.
+/// Decoding back from Gray code to NBC.
 /// @details 
-/// Jest to nieco bardziej skomplikowane i wymaga iteracyjnego (lub kaskadowego) nakładania operacji XOR, 
-/// ponieważ każdy bit liczby NKB zależy od wszystkich bitów stojących przed nim.
-/// Oto najbardziej wydajne, bezpętlowe implementacje bitowe (działające w czasie logarytmicznym).
-/// @note Z pomocą Gemini, ale sprawdzone testem.
+/// This is slightly more complex and requires iterative (or cascaded) XOR operations, 
+/// because each bit of the NBC number depends on all the bits preceding it.
+/// These are the most efficient, loopless bitwise implementations (operating in logarithmic time).
+/// @note Created with the help of Gemini, but verified by tests.
 /// @{
 
-/// Dekodowanie 32 bitowej liczby ze znakiem w kodzie Graya.
-/// @param g - liczba zakodowana kodem Graya.
-/// @return liczba `g` zdekodowana na kod NKB.
+/// Decoding a 32-bit signed number from Gray code.
+/// @param g - Gray code encoded number.
+/// @return number `g` decoded to NBC.
 public static int fromGray(int g) {
     g ^= (g >>> 16);
     g ^= (g >>> 8);
@@ -91,9 +91,9 @@ public static int fromGray(int g) {
     return g;
 }
 
-/// Dekodowanie 64 bitowej liczby ze znakiem w kodzie Graya.
-/// @param g - liczba zakodowana kodem Graya.
-/// @return liczba `g` zdekodowana na kod NKB.
+/// Decoding a 64-bit signed number from Gray code.
+/// @param g - Gray code encoded number.
+/// @return number `g` decoded to NBC.
 public static long fromGray(long g) {
     g ^= (g >>> 32);
     g ^= (g >>> 16);
@@ -105,56 +105,55 @@ public static long fromGray(long g) {
 }
 /// @}
 
-/// @name Funkcje obrabiające BEZNAKOWE, 32-bitowe liczby w kodzie Graya.
+/// @name Functions processing UNSIGNED 32-bit numbers in Gray code.
 /// @details
-/// W Javie 32-bitowa wartość bez znaku (unsigned int) mieści się w 64-bitowym typie long. 
-/// Aby traktować int jako unsigned w kontekście kodu Graya, musimy zadbać o dwie rzeczy:
-/// - Przy konwersji do Graya (long -> int) – uciąć wyższe 32 bity, aby operacja XOR nie 
-///   uwzględniała śmieci spoza zakresu.
-/// - Przy dekodowaniu (int -> long) – potraktować bity z int jako czystą wartość dodatnią 
-///   (odciąć rozszerzenie znaku), a następnie przeprowadzić dekodowanie.
+/// In Java, an unsigned 32-bit value fits inside a 64-bit long type. 
+/// To treat an int as unsigned in the context of Gray code, two things must be handled:
+/// - During encoding to Gray code (long -> int) – truncate upper 32 bits so XOR operations 
+///   do not include garbage outside the range.
+/// - During decoding (int -> long) – treat bits from int as a pure positive value 
+///   (strip sign extension) and then perform decoding.
 /// @{
   
-/// Kodowanie liczby z zakresu 0...2^32 na 32 kod Graya. 
-/// @param n - zakodowana naturalnie (NKB) liczba nieujemna, nie większa niż 2^32.
-/// @return liczba `n` zakodowana kodem Graya.
-/// @note Z pomocą Gemini, ale sprawdzone testem.
+/// Encoding a number from the range 0...2^32 into 32-bit Gray code. 
+/// @param n - naturally encoded (NBC) non-negative number, not exceeding 2^32.
+/// @return number `n` encoded in Gray code.
+/// @note Created with the help of Gemini, but verified by tests.
 public static int toGrayU32(long n) 
 {
-    // Obcinamy long do 32 bitów, aby operować wyłącznie na zakresie unsigned int
+    // Truncate long to 32 bits to operate strictly within unsigned int range
     int bin = (int) n;
-    // Wykonujemy klasyczną operację Graya na 32 bitach
+    // Perform standard Gray operation on 32 bits
     return bin ^ (bin >>> 1);
 }
 
-/// Dekodowanie zakodowane kodem Graya 32 bitowej liczby na liczbę z zakresu 0...2^32.
-/// @param g - liczba zakodowana kodem Graya.
-/// @return liczba `g` zdekodowana na NKB.
+/// Decoding a Gray code encoded 32-bit number into a number in the range 0...2^32.
+/// @param g - Gray code encoded number.
+/// @return number `g` decoded to NBC.
 public static long fromGrayU32(int g) {
-    // Krok 1: Dekodujemy kod Graya na poziomie 32 bitów
+    // Step 1: Decode Gray code at the 32-bit level
     g ^= (g >>> 16);
     g ^= (g >>> 8);
     g ^= (g >>> 4);
     g ^= (g >>> 2);
     g ^= (g >>> 1);
     
-    // Krok 2: Konwertujemy zdekodowany int na bez-znakowy long (maska 0xFFFFFFFFL)
+    // Step 2: Convert decoded int to unsigned long (using mask 0xFFFFFFFFL)
     return g & 0xFFFFFFFFL;
 }
 /// @}
 
-/// @name Reinterpretacje bitów int i long na float i double i odwrotnie.
-///       ===============================================================
-/// @details Mutowanie bitów reprezentacji zmiennoprzecinkowej obciążone jest
-///          wieloma możliwościami uzyskania letalnych kombinacji, 
-///          przede wszystkim wychodzących poza sensowny dla zadania zakres.
-///          Pozwala jednak dojść algorytmowi znacznie bliżej rozwiązania niż
-///          mapowanie zakresu na liczbę typu `int` czy nawet `long`.
+/// @name Bit reinterpretation of int and long to float and double, and vice versa.
+///       ===================================================================
+/// @details Mutating bits of floating-point representations carries 
+///          many possibilities of producing lethal combinations, 
+///          primarily exceeding the meaningful range for the task.
+///          However, it allows the algorithm to get much closer to the solution 
+///          than mapping the range to an `int` or even `long` type.
 /// @{
     
-    ///@returns wartość z zakresu. Jeśli ciąg bitowy nie daje wartości z zakresu 
-    ///         lub jest którąś z nie-liczb to zwracane jest Float.NaN, co można
-    ///         sprawdzić warunkiem `if(Float.isNaN(...)) ...`.
+    ///@returns value within range. If the bit string does not yield a value within range 
+    ///         or is NaN, Float.NaN is returned, which can be checked via `if(Float.isNaN(...)) ...`.
     float   reinterpret(int src,float min,float max)
     {
       float val=Float.intBitsToFloat(src);
@@ -164,9 +163,8 @@ public static long fromGrayU32(int g) {
         return Float.NaN;
     }
     
-    ///@returns wartość z zakresu. Jeśli ciąg bitowy nie daje wartości z zakresu 
-    ///         lub jest którąś z nie-liczb to zwracane jest Float.NaN, co można
-    ///         sprawdzić warunkiem `if(Float.isNaN(...)) ...`.
+    ///@returns value within range. If the bit string does not yield a value within range 
+    ///         or is NaN, Double.NaN is returned, which can be checked via `if(Double.isNaN(...)) ...`.
     double reinterpret(long src,double min,double max)
     {
       double val=Double.longBitsToDouble(src);
@@ -176,15 +174,15 @@ public static long fromGrayU32(int g) {
         return Double.NaN;
     }
     
-    ///@returns liczbę typu `int` o takiej samej reprezentacji bitowej jak `src`.
-    ///@note jak "reinterpret_cast" w C++.
+    ///@returns an `int` with the same bit representation as `src`.
+    ///@note similar to "reinterpret_cast" in C++.
     int reinterpret(float src)
     {
       return Float.floatToIntBits(src);
     }
     
-    ///@returns liczbę typu `long` o takiej samej reprezentacji bitowej jak `src`.
-    ///@note jak "reinterpret_cast" w C++.
+    ///@returns a `long` with the same bit representation as `src`.
+    ///@note similar to "reinterpret_cast" in C++.
     long reinterpret(double src)
     {
       return Double.doubleToLongBits(src);
@@ -192,123 +190,123 @@ public static long fromGrayU32(int g) {
   
 /// @}  
 
-/// @name Funkcje kodujące mniejsze geny o długości do 31 bitów w ciągu 64 bitów.
+/// @name Functions encoding smaller genes with lengths up to 31 bits within a 64-bit sequence.
 /// @details
-/// Do upakowania wielu genów w jednym 64-bitowym ciągu (long) idealnie nadają się operacje na maskach bitowych.
-/// W poniższych implementacjach przyjmujemy standardową konwencję, gdzie bit o indeksie 0 to najmniej znaczący bit 
-/// (LST, po prawej stronie), a bit 63 to bit najstarszy (po lewej stronie). 
-/// @note Poniższe wysoce wydajne, BEZWARUNKOWE funkcje realizują to zadanie, ale nie sprawdzają poprawności parametrów!
+/// Bitwise mask operations are ideal for packing multiple genes into a single 64-bit sequence (long).
+/// In the following implementations, we adopt the standard convention where bit index 0 is the least significant bit 
+/// (LSB, on the right), and bit 63 is the most significant bit (on the left). 
+/// @note The following highly efficient, UNCONDITIONAL functions perform this task, but do not check parameter validity!
 /// [Gemini]
 /// @{
   
-/// Funkcja wycina określoną liczbę bitów (length) zaczynając od pozycji start_pos (włącznie).
-/// @details Przesuwa je na sam początek ciągu, zwracając jako czystą wartość int (unsigned).
-/// @returns WYEKSTRACHOWANY CIĄG BITÓW na liczbie typu `int` (32 bity).
+/// Extracts a specified number of bits (length) starting from pos (inclusive).
+/// @details Shifts them to the very beginning of the sequence, returning them as a pure int (unsigned) value.
+/// @returns EXTRACTED BIT SEQUENCE stored in an `int` (32 bits).
 public static int get_bits(long value, int pos, int length) 
 {                                                                               assert(0<=pos && pos < 64);
-    // 1. Przesuwamy interesujące nas bity na samą prawą stronę (pozycję 0)
+    // 1. Shift target bits all the way to the right side (position 0)
     long shifted = value >>> pos;
     
-    // 2. Tworzymy maskę bitową o żądanej długości (np. dla length=5: 00011111)
+    // 2. Create a bitmask of desired length (e.g., for length=5: 00011111)
     long mask = (1L << length) - 1;
     
-    // 3. Wycinamy bity maską i bezpiecznie rzutujemy na int
+    // 3. Extract bits using mask and safely cast to int
     return (int) (shifted & mask);
 }
 
-/// Funkcja wstawia wartość genu (gene_value) o określonej długości (length) w wybrane miejsce (start_pos) wewnątrz oryginalnego ciągu long. 
-/// @note Stare bity na tych pozycjach są całkowicie nadpisywane.
-/// @return Zwraca nowy ciąg 64 bitowy na liczbie typu `long`.
+/// Inserts a gene value (put_value) of specified length into a designated position (pos) inside the original long sequence. 
+/// @note Existing bits at these positions are completely overwritten.
+/// @return Returns the new 64-bit sequence as a `long`.
 public static long put_bits(long old_value, int pos, int length, int put_value)
 {                                                                               assert(0<=pos && pos < 64);
-    // 1. Tworzymy maskę dla genu (np. dla length=5: 00011111)
+    // 1. Create a mask for the gene (e.g., for length=5: 00011111)
     long mask = (1L << length) - 1;
     
-    // 2. Czyszczona jest wartość genu ze struktur powyżej 'length' (zabezpieczenie)
+    // 2. Clean gene value from structures above 'length' (safety measure)
     long clean_gene = put_value & mask;
     
-    // 3. Tworzymy maskę czyszczącą dla oryginalnej liczby (zera na docelowych pozycjach)
+    // 3. Create a clear mask for original number (zeros at destination positions)
     long clear_mask = ~(mask << pos);
     
-    // 4. Czyścimy miejsce w oryginalnej liczbie i wstawiamy przesunięty gen za pomocą OR (|)
+    // 4. Clear slot in original number and insert shifted gene using OR (|)
     return (old_value & clear_mask) | (clean_gene << pos);
 }
 /// @}
 
-/// Funkcja do odwracania wartości konkretnego bitu (do użycia w mutacjach).
-/// @param sou - wartość wejściowa do zmutowania.
-/// @param pos - określa w jakiej pozycji flip-flop-ujemy bit.
-/// @param USE_BITS - ograniczenie liczby bitów gdzie może zajść zmiana.
-/// @return liczba `sou` z odwróconym bitem na pozycji `pos`.
-/// @note POZOSTAŁE BITY. TAKŻE TE POWYŻEJ `USE_BITS` NIE ULEGAJĄ ZMIANIE.
+/// Function to flip a specific bit value (for use in mutations).
+/// @param sou - input value to mutate.
+/// @param pos - specifies position at which to flip the bit.
+/// @param USE_BITS - bit count limit where mutation can occur.
+/// @return number `sou` with flipped bit at `pos`.
+/// @note OTHER BITS, INCLUDING THOSE ABOVE `USE_BITS`, REMAIN UNCHANGED.
 /// @{
 
-/// Wersja 32 bitowa.  
+/// 32-bit version.  
 public  int switch_bit(int sou,int pos,int USE_BITS)
 {
   if(pos>=USE_BITS)
   {
     println(" Mutation outside BITMASK");
     return sou;
-  }//else Pozycja jest poprawna.
+  }//else Position is valid.
   
-  int bit=0x1<<pos; // Ustawianie pozycji na masce.
-  return sou^bit;   // Przełączenie bitu wg. maski. (xor should do the job).
+  int bit=0x1<<pos; // Setting mask position.
+  return sou^bit;   // Flipping bit according to mask (xor should do the job).
 }
 
 
-/// Wersja 64 bitowa.  
+/// 64-bit version.  
 public  long switch_bit(long sou,int pos,int USE_BITS)
 {
   if(pos>=USE_BITS)
   {
     println(" Mutation outside BITMASK");
     return sou;
-  }//else Pozycja jest poprawna.
+  }//else Position is valid.
   
-  long bit=0x1<<pos; // Ustawianie pozycji na masce.
-  return sou^bit;    // Przełączenie bitu wg. maski. (xor should do the job).
+  long bit=0x1<<pos; // Setting mask position.
+  return sou^bit;    // Flipping bit according to mask (xor should do the job).
 }
 /// @}
 
-/// @name Funkcje do wykonywania crossing-over.
+/// @name Functions for performing crossover operations.
 /// @details 
-///   Działa prosto przy założeniu upraszczającym, że zawsze początkowa część jest od pierwszego rodzica, 
-///   a od pozycji "pos" mamy bity od drugiego rodzica. Jeśli chcesz uzyskać efekt odwrotny to...
-///   Zamień kolejność rodziców w wywołaniu!
+///   Operates simply under the simplifying assumption that the initial part always comes from the first parent, 
+///   and starting from position "pos" bits come from the second parent. If you want the opposite effect...
+///   Swap parent order in the function call!
 /// @{
   
-/// Crossing over dla chromosomów 32 bitowych.  
+/// Crossover for 32-bit chromosomes.  
 public static int cross_over(int parent1, int parent2, int pos) 
 {                                                                assert(0<=pos && pos < 32);
-    // 1. Tworzymy maskę dla końcowych (młodszych) bitów od pozycji 'pos' w prawo.
-    // Np. dla pos = 4, maska to cztery jedynki: 000...0001111
+    // 1. Create a mask for trailing (lower) bits from position 'pos' to the right.
+    // E.g., for pos = 4, mask is four ones: 000...0001111
     int mask = (1 << pos) - 1;
 
-    // 2. ~mask zachowuje bity po lewej stronie (starsze) pierwszego rodzica.
-    // 3. mask zachowuje bity po prawej stronie (młodsze) drugiego rodzica.
+    // 2. ~mask preserves bits on the left side (higher) of the first parent.
+    // 3. mask preserves bits on the right side (lower) of the second parent.
     return (parent1 & ~mask) | (parent2 & mask);
 }
 
-/// Crossing over dla chromosomów 64 bitowych.
+/// Crossover for 64-bit chromosomes.
 public static long cross_over(long parent1, long parent2, int pos) 
 {                                                                assert(0<=pos && pos < 64);
-    // 1. Tworzymy 64-bitową maskę za pomocą literału 1L.
+    // 1. Create 64-bit mask using 1L literal.
     long mask = (1L << pos) - 1;
 
-    // 2. Łączymy lewą część pierwszego rodzica z prawą częścią drugiego rodzica.
+    // 2. Combine left part of first parent with right part of second parent.
     return (parent1 & ~mask) | (parent2 & mask);
 }
 /// @}
 
-/// Funkcja testująca zestaw narzędzi dla GA.
+/// Test function for the GA toolkit.
 void tests()
 {
   int testi=0x00FFAA11;
   long testl=0x1100AABBC0DDEEFFl; //0x8100000A000000EFl; //0x1001010110000000l; //0x1100AABBC0DDEEFFl;
   
-  println("\nLiczby 32 bitowe ze znakiem:\n============================");
-  println("NKB:",testi);
+  println("\nSigned 32-bit numbers:\n============================");
+  println("NBC:",testi);
   println("24b:",toHex(testi,24),"\t",toBin(testi,24));
   println("32b:",toHex(testi,32),"\t",toBin(testi,32));
   int gri=toGray(testi);
@@ -316,8 +314,8 @@ void tests()
   int ugr=fromGray(gri);
   println("ugr:",toHex(ugr,32),"\t",toBin(ugr,32));
   
-  println("\nLiczby 64 bitowe ze znakiem:\n============================");
-  println("NKB:",testl);
+  println("\nSigned 64-bit numbers:\n============================");
+  println("NBC:",testl);
   println("24b:",toHex(testl,24),"\t\t\t",toBin(testl,24));
   println("48b:",toHex(testl,48),"\t\t",toBin(testl,48));
   println("64b:",toHex(testl,64),"\t",toBin(testl,64));
@@ -332,14 +330,14 @@ void tests()
   long ugl=fromGray(grl);
   println("ugr:",toHex(ugl,64),"\t",toBin(ugl,64));
   
-  println("\nZakodowanie bez znaku liczby z zakresu 0..2^32:\n===============================================");
+  println("\nUnsigned encoding of a number in the range 0..2^32:\n===============================================");
   long trzyMiliardy=3000000000l;
   int gray_coded_u=toGrayU32(trzyMiliardy);
   println(trzyMiliardy,"=?=",fromGrayU32(gray_coded_u));
   println(toBin(trzyMiliardy,32),"==>",toBin(gray_coded_u,32));
   println(toBin(fromGrayU32(gray_coded_u),32));
   
-  println("\nMutacja reprezentacji greyowej:\n===============================");
+  println("\nMutation of Gray representation:\n===============================");
   int gray_coded_u1=switch_bit(gray_coded_u,0,32);
   println(trzyMiliardy," < ",fromGrayU32(gray_coded_u1));
   println("----------------------------------->",toBin(gray_coded_u1,32));
@@ -352,7 +350,7 @@ void tests()
   long after_ins=put_bits(0L,16,32,gray_coded_u);
   println("------------------->",toBin(after_ins,64));
   
-  println("\nCrossing over:\n==============");
+  println("\nCrossover:\n==============");
   println(toBin(gray_coded_u1,32));
   println(toBin(gray_coded_u2,32));
   println("-----------------------------------------------");
@@ -365,6 +363,6 @@ void tests()
 }
 
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingPL
+//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingEN
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
 //_EOC
