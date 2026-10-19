@@ -1,360 +1,360 @@
-/* Model społecznego dylematu więźnia z rozmnażaniem i opcjonalnymi mutacjami */
-/* Oraz opcjonalnie z uzyciem modelu Nowaka/Latane do zmiany postaw */
+/* Social Prisoner's Dilemma model with reproduction and optional mutations */
+/* And optionally using Nowak/Latané model for attitude change */
 
 class Agent {
-    int  poglad=0;  /* 0..IlePostaw-1 */
-    int    sila=0;  /* Jeśli 0 to martwy */
-    float stres=0;  /* Wartosc stresu ekonomicznego */
+    int  attitude=0;  /* 0..attitudesCount-1 */
+    int  strength=0;  /* If 0 then dead */
+    float stress=0;   /* Economic stress value */
 }
 
-int MaxBok = 500;
-// Jeśli jest zainicjowany na "false" to startuje formularzem. Jak na true to od razu rusza.
+int MAX_SIDE_LENGTH = 500;
+// If initialized to "false", it starts with the form. If true, it starts immediately.
 boolean isRunning=false;
 
-int MaxIlePostaw = 21;
+int MAX_ATTITUDES_COUNT = 21;
 int LastHist = 100;
 int HistSize = 9;
 
-float MinPoziomSzumu = 0;
-float MaxPoziomSzumu = 0.15;
-float MinZaludnienie = 0;
-float MaxZaludnienie = 1;
+float MIN_NOISE_LEVEL = 0;
+float MAX_NOISE_LEVEL = 0.15;
+float MIN_POPULATION_DENSITY = 0;
+float MAX_POPULATION_DENSITY = 1;
 
-/* Ogólne parametry modelu - gdy zyski ze wspolpracy male, wplyw ma decydujace znaczenie! */
-int Bok = 50;   /* Długość boku świata */
-int IlePostaw = 2; /* Liczba możliwych pogladów 2--> */
-float Zaludnienie = 0.5; /* Zaludnienie 0..1 */
-int MaxSila = 10000;/* Najwieksza sila  */
-int Rozklad = 7;   /* Stopien rozkładu "Pareto" >=0 - zero daje brak rozkladu, same MaxSila. Max: 12 */
+/* General model parameters - when cooperation payoffs are small, social influence becomes decisive! */
+int sideLength = 50;   /* World side length */
+int attitudesCount = 2; /* Number of possible attitudes 2--> */
+float populationDensity = 0.5; /* Density 0..1 */
+int maxStrength = 10000;/* Maximum strength */
+int paretoExponent = 7;   /* Degree of "Pareto" distribution >=0 - zero gives flat distribution, only maxStrength. Max: 12 */
 
-/* Specyficzne parametry modelu */
-int KosztKroku = 5;
-int OptimumZapasu = 50;
-int[][] TabelaWyp = {{6, 12}, {-12, -6}}; //< TABELA WYPŁAT DYLEMATU WIEŹNIA.
+/* Specific model parameters */
+int stepCost = 5;
+int optimumReserve = 50;
+int[][] payoffMatrix = {{6, 12}, {-12, -6}}; //< PRISONER'S DILEMMA PAYOFF TABLE.
 
-boolean UzyjWplywuDlaPostaw = false;
-boolean StresZageszczenia = false;
+boolean useSocialInfluence = false;
+boolean useCrowdingStress = false;
 
-double PoziomSzumu = 0; /* Szum czyli losowe "mutacje" poglądów */
-String FileNameCore = "priz";/* np. rdzeń nazwy pliku */
+double noiseLevel = 0; /* Noise, i.e., random attitude "mutations" */
+String FileNameCore = "priz";/* e.g., file name core */
 PrintWriter logFile = null;
 
-/* Wizualizacyjne */
-int Rozmiar = 15;  /* Długość boku najsiliejszego agenta */
-int NajmRoz = 2; /* Jaki rozmiar wizualizacyjny mają najslabsi agenci w populacji */
-int Brzeg = 0;  /* Obwodka wokół agenta */
+/* Visualization parameters */
+int agentCellSize = 15;  /* Side length of the strongest agent */
+int minAgentRenderSize = 2; /* Visual size for the weakest agents in the population */
+int borderSize = 0;  /* Border around agent */
 
-int CzestoscWizualizacji = 1; /* Co ile kroków Monte Carlo odrysowawywać */
-int Chwila = 10; /* Ile milisekund dla oka po wizualizacji */
-int MaxKrok = 10000;   /* Ile maksymalnie kroków w eksperymencie */
+int visualizationFrequency = 1; /* How many Monte Carlo steps between redraws */
+int stepDelayMs = 10; /* Delay in milliseconds for visualization */
+int maxSteps = 10000;   /* Maximum steps in experiment */
 
-/* Obowiązkowe parametry wizualizacji. Przedrostek S od SCREEN */
-int SWIDTH = 780;    /* Szerokość obszaru roboczego głównego okna */
-int SHEIGHT = 800;   /* Wysokość obszaru roboczego głównego okna */
+/* Mandatory visualization parameters. Prefix S stands for SCREEN */
+int SWIDTH = 780;    /* Main window workspace width */
+int SHEIGHT = 800;   /* Main window workspace height */
 
-Agent[][] SwiatSymulacji;
+Agent[][] simulationWorld;
 
-int numerkroku = 0;
-int deficytzycia = 0;
+int currentStep = 0;
+int birthDeficit = 0;
 
-/* Tablica kierunków do ułatwienia ruchu i interakcji */
+/* Direction array to facilitate movement and interaction */
 int[][] dxy = {{0,1},{0,-1},{1,0},{-1,0},{-1,-1},{1,1},{-1,1},{1,-1}};
 
 PrintWriter F;
 String N_filename;
-double[] StresGlobalny_arr = new double[1];
-double[] SilaSrednia_arr = new double[1];
-double[] SilaMax_arr = new double[1];
-int[] Wyznawcy;
+double[] globalStressArr = new double[1];
+double[] meanStrengthArr = new double[1];
+double[] maxStrengthArr = new double[1];
+int[] attitudeCounts;
 
-int ileTrzeba=500; //< Szerokość lub wysokość konieczna na samą wizualizację świata.
+int requiredWindowSize=500; //< Required width or height for world visualization alone.
 void settings() {
-  ileTrzeba=(Bok+2)*(Rozmiar+Brzeg);
-  size(ileTrzeba, ileTrzeba+80);
+  requiredWindowSize=(sideLength+2)*(agentCellSize+borderSize);
+  size(requiredWindowSize, requiredWindowSize+80);
 }
 
 void setup() {
   if(!isRunning)
   {
-    createGUI(); //Tworzenie formularza. Model powstanie dopiero na kliknięcie OK.
+    createGUI(); // Form creation. Model will start upon clicking OK.
     noLoop();
   }
   else
   {
-    uruchomSymulacje();
+    runSimulation();
     loop();
   }
 }
 
-// Funkcja uruchamiająca model po zatwierdzeniu formularza
-void uruchomSymulacje() {                                  assert(MaxBok>1);
-  SwiatSymulacji = new Agent[MaxBok + 1][MaxBok + 1];
+// Function launching the model after form confirmation
+void runSimulation() {                                  assert(MAX_SIDE_LENGTH>1);
+  simulationWorld = new Agent[MAX_SIDE_LENGTH + 1][MAX_SIDE_LENGTH + 1];
   
-  for(int i = 0; i <= MaxBok; i++) {
-    for(int j = 0; j <= MaxBok; j++) {
-      SwiatSymulacji[i][j] = new Agent();
+  for(int i = 0; i <= MAX_SIDE_LENGTH; i++) {
+    for(int j = 0; j <= MAX_SIDE_LENGTH; j++) {
+      simulationWorld[i][j] = new Agent();
     }
   }
-  Wyznawcy = new int[MaxIlePostaw + 1];
+  attitudeCounts = new int[MAX_ATTITUDES_COUNT + 1];
 
-  Inicjacja(SwiatSymulacji);
-  numerkroku = 0;
-  deficytzycia = 0;
+  initializeWorld(simulationWorld);
+  currentStep = 0;
+  birthDeficit = 0;
   
   N_filename = FileNameCore
-      + Bok + "x" + Bok  /* Długość boku świata */
-      + "P" + IlePostaw   /* Liczba konkurujących pogladów 2..10 */
-      + "G" + Zaludnienie /* Zaludnienie zaludnienia 0..1 */
-      + "M" + PoziomSzumu /* Szum czyli losowe "mutacje" poglądów */
-      + "m" + MaxSila   /* Najwieksza sila - musi byc odpowiednio duża do rozkładu min:1, max: 1 000 000 */
-      + "k" + KosztKroku
-      + "op" + OptimumZapasu
-      + "W(" + TabelaWyp[0][0] + ")(" + TabelaWyp[1][1] + ")(" + TabelaWyp[0][1] + ")"
-      + (UzyjWplywuDlaPostaw ? "WPLY" : "b.wpl")
+      + sideLength + "x" + sideLength  /* World side length */
+      + "P" + attitudesCount   /* Number of competing attitudes 2..10 */
+      + "G" + populationDensity /* Population density 0..1 */
+      + "M" + noiseLevel /* Noise, i.e., random attitude "mutations" */
+      + "m" + maxStrength   /* Max strength - must be large enough for distribution min:1, max: 1 000 000 */
+      + "k" + stepCost
+      + "op" + optimumReserve
+      + "W(" + payoffMatrix[0][0] + ")(" + payoffMatrix[1][1] + ")(" + payoffMatrix[0][1] + ")"
+      + (useSocialInfluence ? "INFL" : "no.infl")
       + "-"
-      + (StresZageszczenia ? "S.ZAG" : "tlok")
+      + (useCrowdingStress ? "CROWD.STR" : "crowd")
       + ".log";
   
   println("Log file is '"+N_filename+"'");    
       
   F = createWriter(N_filename);
   F.println(N_filename);
-  F.println("Krok\tStres\tEnergiaSr\tEnergiaMax\tLiczby wyznawców");
+  F.println("Step\tStress\tMeanEnergy\tMaxEnergy\tAttitude counts");
 }
 
-void Inicjacja(Agent[][] TenSwiat) {
-/* Wypełnianie świata. Nieżywe mają siłę = 0 */
+void initializeWorld(Agent[][] currentWorld) {
+/* Populating the world. Dead agents have strength = 0 */
    int i,j,k;
-   float pomoc; 
-  for(i = 1; i <= Bok; i++) {
-    for(j = 1; j <= Bok; j++) {
-      if (random(1) < Zaludnienie) {
-        /* Żywy */ 
-        TenSwiat[i][j].poglad = int(random(IlePostaw));
-        pomoc = 1; 
-        for(k = 1; k <= Rozklad; k++) {
-          pomoc = pomoc * random(1); 
+   float aux; 
+  for(i = 1; i <= sideLength; i++) {
+    for(j = 1; j <= sideLength; j++) {
+      if (random(1) < populationDensity) {
+        /* Alive */ 
+        currentWorld[i][j].attitude = int(random(attitudesCount));
+        aux = 1; 
+        for(k = 1; k <= paretoExponent; k++) {
+          aux = aux * random(1); 
         }
-        TenSwiat[i][j].sila = 1 + int(pomoc * (MaxSila - 1));
-        TenSwiat[i][j].stres = 0; /* Na razie nie zestresowany... */
+        currentWorld[i][j].strength = 1 + int(aux * (maxStrength - 1));
+        currentWorld[i][j].stress = 0; /* Not stressed yet... */
       } else {
-        /* Martwy */
-        TenSwiat[i][j].poglad = IlePostaw;
-        TenSwiat[i][j].stres = 0; /* Nie zestresowany... */
-        TenSwiat[i][j].sila = 0; /* Bo 0 znaczy MARTWY!!! */
+        /* Dead */
+        currentWorld[i][j].attitude = attitudesCount;
+        currentWorld[i][j].stress = 0; /* Not stressed... */
+        currentWorld[i][j].strength = 0; /* 0 means DEAD! */
       }
     }
   }
 }
 
-double Przeskaluj(double v, double min, double max) { 
-/* Do wizualizacji */
+double rescale(double v, double min, double max) { 
+/* For visualization */
   return (v - min) / (max - min); 
 }
 
-double Przelogarytmuj(double v, double max) { 
-/* Do wizualizacji */
+double applyLogScale(double v, double max) { 
+/* For visualization */
   v = Math.log(v + 1); 
   return v / Math.log(max + 1); 
 }
 
-void Wizualizacja(Agent[][] TenSwiat) { 
-/* Kwadratami o wielkosci proporcjonalnej do logarytmu sily */ 
-  int i,j;    /* Przechodzenie po agentach */
-  double q,r,s,rRoz;  /* Przeliczone cechy agenta */
-  int WRoz,ri,vi;/* Rozmiar wewnętrzny i pozycjonowanie */
+void drawWorld(Agent[][] currentWorld) { 
+/* Squares with size proportional to the logarithm of strength */ 
+  int i,j;    /* Iterating over agents */
+  double q,r,s,rRoz;  /* Recalculated agent properties */
+  int WRoz,ri,vi;/* Internal size and positioning */
 
-  rRoz = 1.0 - (double)NajmRoz / Rozmiar;
-  WRoz = Rozmiar - Brzeg; /* Nie uwaględniamy szerokości obwódki (Bord), ale to specyfika ALGO */
+  rRoz = 1.0 - (double)minAgentRenderSize / agentCellSize;
+  WRoz = agentCellSize - borderSize; /* Ignores border width, specific to ALGO */
   
-  for(i = 1; i <= Bok; i++) {
-    for(j = 1; j <= Bok; j++) {
+  for(i = 1; i <= sideLength; i++) {
+    for(j = 1; j <= sideLength; j++) {
       stroke(100, 100, 100);
       fill(128, 128, 128);
-      rect(i * Rozmiar, j * Rozmiar, Rozmiar, Rozmiar);
-      if (TenSwiat[i][j].sila > 0) {
-        q = Przeskaluj(TenSwiat[i][j].poglad, 0, IlePostaw - 1) * 255;
-        r = Przelogarytmuj(TenSwiat[i][j].sila, MaxSila) * rRoz;
-        s = Przeskaluj(TenSwiat[i][j].stres, 0, 1) * 255;
-        ri = NajmRoz + round((float)(r * (WRoz - NajmRoz))); 
-        vi = (Rozmiar - ri) / 2;
+      rect(i * agentCellSize, j * agentCellSize, agentCellSize, agentCellSize);
+      if (currentWorld[i][j].strength > 0) {
+        q = rescale(currentWorld[i][j].attitude, 0, attitudesCount - 1) * 255;
+        r = applyLogScale(currentWorld[i][j].strength, maxStrength) * rRoz;
+        s = rescale(currentWorld[i][j].stress, 0, 1) * 255;
+        ri = minAgentRenderSize + round((float)(r * (WRoz - minAgentRenderSize))); 
+        vi = (agentCellSize - ri) / 2;
         stroke((float)s, 0, 0);
         fill(0, (float)(255 - q), (float)q);
-        rect(i * Rozmiar + vi, j * Rozmiar + vi, ri, ri);
+        rect(i * agentCellSize + vi, j * agentCellSize + vi, ri, ri);
       } 
     }
   }
 }
 
-void OpcjonalnyWplywSpoleczny(Agent[][] TenSwiat) {
-/* Procedura zmiany poglądów agentów. Zawiera procedury pomocnicze. */
+void applySocialInfluence(Agent[][] currentWorld) {
+/* Procedure for updating agent attitudes. Includes helper inner class. */
 
   class InnerHelper {
     
-    void ZliczWplywy(int x, int y, int[] Liczniki,Agent[][] TenSwiat) {
-    /* Wewnetrzna procedura dla zliczania wplywów */
-      int lewo,prawo,gora,dol,i,j;
-      lewo = x - 1;   if (lewo < 1) lewo = 1;
-      prawo = x + 1;  if (prawo > Bok)  prawo = Bok;
-      gora = y - 1;   if (gora < 1) gora = 1;
-      dol = y + 1;    if (dol > Bok) dol = Bok;
+    void countInfluences(int x, int y, int[] counts, Agent[][] currentWorld) {
+    /* Internal procedure for counting influences */
+      int left,right,top,bottom,i,j;
+      left = x - 1;   if (left < 1) left = 1;
+      right = x + 1;  if (right > sideLength)  right = sideLength;
+      top = y - 1;    if (top < 1) top = 1;
+      bottom = y + 1; if (bottom > sideLength) bottom = sideLength;
   
-      for(i = lewo; i <= prawo; i++) {
-        for(j = gora; j <= dol; j++) {
-          if (TenSwiat[i][j].sila > 0) {
-            Liczniki[TenSwiat[i][j].poglad] = Liczniki[TenSwiat[i][j].poglad] + TenSwiat[i][j].sila;/* !!! */
+      for(i = left; i <= right; i++) {
+        for(j = top; j <= bottom; j++) {
+          if (currentWorld[i][j].strength > 0) {
+            counts[currentWorld[i][j].attitude] = counts[currentWorld[i][j].attitude] + currentWorld[i][j].strength;/* !!! */
           }
         }
       }
     }
   
-    int Ustalpoglad(int[] Liczniki) { 
-    /* Wewnetrzna funkcja dla KrokSymulacji, znajdująca nawiększy licznik */ 
-      int max,nowy,i,j;
+    int determineAttitude(int[] counts) { 
+    /* Internal function for finding the maximum influence count */ 
+      int max,newAttitude,i,j;
       max = 0;
-      nowy = -1;
-      j = int(random(IlePostaw));/* Zeby uniknac niejawnego bias-owania */
-      for(i = 0; i < IlePostaw; i++) { /* Petla tylko dba o przejrzenioe calej tablicy */
-        if (Liczniki[j] > max) {
-          max = Liczniki[j];
-          nowy = j;
+      newAttitude = -1;
+      j = int(random(attitudesCount));/* To avoid implicit bias */
+      for(i = 0; i < attitudesCount; i++) { /* Loop ensures full array traversal */
+        if (counts[j] > max) {
+          max = counts[j];
+          newAttitude = j;
         }
-        j = (j + 1) % IlePostaw; /* Zeby obejsc cala tablice zaczynajac z losowego miesjca */
+        j = (j + 1) % attitudesCount; /* Traverses entire array starting from random index */
       }
-      return nowy;
+      return newAttitude;
     }
   }
 
   int i,j,k,l,N;
-  int[] liczniki = new int[MaxIlePostaw + 1];
+  int[] counts = new int[MAX_ATTITUDES_COUNT + 1];
   InnerHelper helper = new InnerHelper();
 
-  N = Bok * Bok;
+  N = sideLength * sideLength;
   for(k = 1; k <= N; k++) {
-    for(l = 0; l <= IlePostaw; l++) {
-      liczniki[l] = 0;
+    for(l = 0; l <= attitudesCount; l++) {
+      counts[l] = 0;
     }
-    i = 1 + int(random(Bok));
-    j = 1 + int(random(Bok));
-    if (TenSwiat[i][j].sila > 0) { /* Bo bywają też martwi... */
-      if (random(1) < PoziomSzumu) {
-        TenSwiat[i][j].poglad = int(random(IlePostaw));
+    i = 1 + int(random(sideLength));
+    j = 1 + int(random(sideLength));
+    if (currentWorld[i][j].strength > 0) { /* Handles living agents */
+      if (random(1) < noiseLevel) {
+        currentWorld[i][j].attitude = int(random(attitudesCount));
       } else {
-        helper.ZliczWplywy(i, j, liczniki,TenSwiat);
-        TenSwiat[i][j].poglad = helper.Ustalpoglad(liczniki);
+        helper.countInfluences(i, j, counts, currentWorld);
+        currentWorld[i][j].attitude = helper.determineAttitude(counts);
       }
     }
   }
 }
 
-void PoliczStresy(Agent[][] Tab) {
-/* Oblicza aktualne stresy ekonomiczne dla wszystkich agentów */
+void calculateStressLevels(Agent[][] tab) {
+/* Calculates current economic stress levels for all agents */
   int i,j;
-  float Wartosc;
+  float reserveRatio;
 
   class StresHelper {
     
-    int ZliczSasiadow(int x, int y,Agent[][] Tab) {
-    /* Wewnetrzna procedura zliczajaca sasiadow */
-       int lewo,prawo,gora,dol,i,j,licznik;
-      lewo = x - 1;   if (lewo < 1) lewo = 1;
-      prawo = x + 1;  if (prawo > Bok)  prawo = Bok;
-      gora = y - 1;   if (gora < 1) gora = 1;
-      dol = y + 1;    if (dol > Bok) dol = Bok;
-      licznik = 0;
-      for(i = lewo; i <= prawo; i++) {
-        for(j = gora; j <= dol; j++) {
-          if (Tab[i][j].sila > 0) {
-            licznik++;
+    int countNeighbors(int x, int y, Agent[][] tab) {
+    /* Internal procedure for counting neighbors */
+      int left,right,top,bottom,i,j,neighborCount;
+      left = x - 1;   if (left < 1) left = 1;
+      right = x + 1;  if (right > sideLength)  right = sideLength;
+      top = y - 1;    if (top < 1) top = 1;
+      bottom = y + 1; if (bottom > sideLength) bottom = sideLength;
+      neighborCount = 0;
+      for(i = left; i <= right; i++) {
+        for(j = top; j <= bottom; j++) {
+          if (tab[i][j].strength > 0) {
+            neighborCount++;
           }
         }
       }
-      return licznik;
+      return neighborCount;
     }
     
   }
 
  StresHelper helper = new StresHelper();
 
- for(i = 1; i <= Bok; i++) { //<>//
-    for(j = 1; j <= Bok; j++) {
-      if (Tab[i][j].sila > 0) {
-        /* Na ile dni ma zapas */
-        Wartosc = Tab[i][j].sila / KosztKroku;
-        /* Jaka to czesc wartosci wymaganej? */
-        Wartosc = Wartosc / OptimumZapasu;
-        /* Zapamietaj na Krok MC */
-        if (Wartosc < 1) {
-          Tab[i][j].stres = 1 - Wartosc;
+ for(i = 1; i <= sideLength; i++) { //<>//
+    for(j = 1; j <= sideLength; j++) {
+      if (tab[i][j].strength > 0) {
+        /* Days of reserves available */
+        reserveRatio = tab[i][j].strength / stepCost;
+        /* Fraction of required reserve value */
+        reserveRatio = reserveRatio / optimumReserve;
+        /* Store for MC step */
+        if (reserveRatio < 1) {
+          tab[i][j].stress = 1 - reserveRatio;
         } else {
-          Tab[i][j].stres = 0;
+          tab[i][j].stress = 0;
         }
-        /* Jeśli nie lubią zbytniej ciasnoty to się wtedy stresują */
-        if (StresZageszczenia &&
-          (Tab[i][j].stres < 0.9) &&
-          (helper.ZliczSasiadow(i, j,Tab) > 7)) {
-            Tab[i][j].stres = Tab[i][j].stres + 0.1;
+        /* Stressed if crowding is disliked and space is tight */
+        if (useCrowdingStress &&
+          (tab[i][j].stress < 0.9) &&
+          (helper.countNeighbors(i, j, tab) > 7)) {
+            tab[i][j].stress = tab[i][j].stress + 0.1;
         }
       }
     }
   }
 }
 
-void ZyjIUmieraj(Agent[][] TenSwiat) {
-/* Procedura metabolizmu, rozmnażania i poruszania */
+void updateMetabolismAndMovement(Agent[][] currentWorld) {
+/* Metabolism, reproduction, and movement procedure */
 
   class ZyjHelper {
-    boolean SprobujRuchu(int kierunek, int x, int y, int[] nx, int[] ny,Agent[][] TenSwiat) {
-    /* Czy pole nadaje sie do ruchu? */
-      nx[0] = x + dxy[kierunek][0];
-      ny[0] = y + dxy[kierunek][1];
-      /* Zamkniecie z krawedziami */
+    boolean tryMove(int direction, int x, int y, int[] nx, int[] ny, Agent[][] currentWorld) {
+    /* Is the target cell suitable for movement? */
+      nx[0] = x + dxy[direction][0];
+      ny[0] = y + dxy[direction][1];
+      /* Edge clamping */
       if (nx[0] < 1) nx[0] = 1;
-      if (nx[0] > Bok) nx[0] = Bok;
+      if (nx[0] > sideLength) nx[0] = sideLength;
       if (ny[0] < 1) ny[0] = 1;
-      if (ny[0] > Bok) ny[0] = Bok;
-      /* Mozna się przesunąc tylko na puste pole */
-      return (TenSwiat[nx[0]][ny[0]].sila == 0);
+      if (ny[0] > sideLength) ny[0] = sideLength;
+      /* Can move to empty cells only */
+      return (currentWorld[nx[0]][ny[0]].strength == 0);
     }
   
-    void Przesuwaj(int x, int y, int nx, int ny, Agent[][] TenSwiat) {
-    /* Przemieszcza agenta w zadane miejsce */
-      TenSwiat[nx][ny].poglad = TenSwiat[x][y].poglad;
-      TenSwiat[nx][ny].sila = TenSwiat[x][y].sila;
-      TenSwiat[nx][ny].stres = TenSwiat[x][y].stres;
-      /* Parowanie sladu */
-      TenSwiat[x][y].sila = 0;
-      TenSwiat[x][y].stres = 0;
-      TenSwiat[x][y].poglad = IlePostaw;
+    void moveAgent(int x, int y, int nx, int ny, Agent[][] currentWorld) {
+    /* Moves agent to designated destination */
+      currentWorld[nx][ny].attitude = currentWorld[x][y].attitude;
+      currentWorld[nx][ny].strength = currentWorld[x][y].strength;
+      currentWorld[nx][ny].stress = currentWorld[x][y].stress;
+      /* Clearing previous cell */
+      currentWorld[x][y].strength = 0;
+      currentWorld[x][y].stress = 0;
+      currentWorld[x][y].attitude = attitudesCount;
     }
   
-    void ZasiejNowego(Agent[][] TenSwiat) {
-    /* Tworzy nowego agenta jako kopie losowego */
-       int kierunek,i,j,m,n,NN;
+    void spawnNewAgent(Agent[][] currentWorld) {
+    /* Creates a new agent as a clone of a random one */
+       int direction,i,j,m,n,NN;
        int[] nx = new int[1];
        int[] ny = new int[1];
-       NN = Bok * Bok * 3; /* Zabezpieczenie na nieskonczonosc */
-       while(true) { /* Tak długo aż nie będzie pary pól spełniających kryteria */
-        i = 1 + int(random(Bok));
-        j = 1 + int(random(Bok));
-        kierunek = int(random(8));
+       NN = sideLength * sideLength * 3; /* Safety limit against infinite loops */
+       while(true) { /* Until a valid pair of cells is found */
+        i = 1 + int(random(sideLength));
+        j = 1 + int(random(sideLength));
+        direction = int(random(8));
         NN--;
         if (NN == 0) {
-            deficytzycia++;
-            return; /* Ta procedura już nie da rady */
+            birthDeficit++;
+            return; /* Procedure failed to spawn */
         }
-        if ((TenSwiat[i][j].sila > KosztKroku * 2) && (SprobujRuchu(kierunek, i, j, nx, ny,TenSwiat))) {
+        if ((currentWorld[i][j].strength > stepCost * 2) && (tryMove(direction, i, j, nx, ny, currentWorld))) {
            m = nx[0];
            n = ny[0];
-           TenSwiat[i][j].sila = TenSwiat[i][j].sila / 2; /* Bo dzieli się energią */
-           TenSwiat[i][j].stres = 0; /* Przez chwilę nie ma stresu, żeby nie uciekli */
+           currentWorld[i][j].strength = currentWorld[i][j].strength / 2; /* Energy split */
+           currentWorld[i][j].stress = 0; /* Temporarily zero stress to prevent immediate escape */
            
-           TenSwiat[m][n].poglad = TenSwiat[i][j].poglad;
-           TenSwiat[m][n].sila = TenSwiat[i][j].sila;
-           TenSwiat[m][n].stres = TenSwiat[i][j].stres;
+           currentWorld[m][n].attitude = currentWorld[i][j].attitude;
+           currentWorld[m][n].strength = currentWorld[i][j].strength;
+           currentWorld[m][n].stress = currentWorld[i][j].stress;
   
-           if ((PoziomSzumu > 0) && (random(1) < PoziomSzumu)) { /* EWENTUALNA MUTACJA */
-                TenSwiat[m][n].poglad = int(random(IlePostaw));
+           if ((noiseLevel > 0) && (random(1) < noiseLevel)) { /* OPTIONAL MUTATION */
+                currentWorld[m][n].attitude = int(random(attitudesCount));
            }
            break;
         }
@@ -364,44 +364,44 @@ void ZyjIUmieraj(Agent[][] TenSwiat) {
 
  if(!isRunning) //<>//
  { 
-   println("Jeszcze nie skonfigurowano!");
+   println("Not configured yet!");
    return; //<>//
  }
 
  ZyjHelper zyjHelper = new ZyjHelper();
- int kierunek,i,j,k,m,n,NN;
+ int direction,i,j,k,m,n,NN;
  int[] nx = new int[1];
  int[] ny = new int[1];
  
- if(deficytzycia != 0) { /* Dodatkowa próba zasiania nowego */
-  deficytzycia--;
-  zyjHelper.ZasiejNowego(TenSwiat);
+ if(birthDeficit != 0) { /* Extra attempt to spawn an agent */
+  birthDeficit--;
+  zyjHelper.spawnNewAgent(currentWorld);
  }
  
- NN = Bok * Bok;
+ NN = sideLength * sideLength;
  for(k = 1; k <= NN; k++) {
-    i = 1 + int(random(Bok));
-    j = 1 + int(random(Bok));
-    if (TenSwiat[i][j].poglad != IlePostaw) {
-             if (TenSwiat[i][j].sila <= 0) {
-                      println("NIESPÓJNOŚC ALGORYTMU: Agenci z siłą <=0 mają postawę!!");
+    i = 1 + int(random(sideLength));
+    j = 1 + int(random(sideLength));
+    if (currentWorld[i][j].attitude != attitudesCount) {
+             if (currentWorld[i][j].strength <= 0) {
+                      println("ALGORITHM INCONSISTENCY: Agents with strength <= 0 possess an attitude!!");
              }
     }
-    if (TenSwiat[i][j].sila > 0) {
-        /* Czy aby jeszcze żyje */
-        TenSwiat[i][j].sila = TenSwiat[i][j].sila - KosztKroku;
-        if (TenSwiat[i][j].sila <= 0) {
-          /* Śmierc i rozkład */
-          TenSwiat[i][j].sila = 0;
-          TenSwiat[i][j].stres = 0;
-          TenSwiat[i][j].poglad = IlePostaw;
-          /* I nowe życie... */
-          zyjHelper.ZasiejNowego(TenSwiat);
-        } else { /* Ostatecznie próbuje ruchu jesli jest w stresie */
-          if (random(1) < TenSwiat[i][j].stres) {
-           kierunek = int(random(8));
-           if (zyjHelper.SprobujRuchu(kierunek, i, j, nx, ny,TenSwiat)) {
-              zyjHelper.Przesuwaj(i, j, nx[0], ny[0],TenSwiat);
+    if (currentWorld[i][j].strength > 0) {
+        /* Check if still alive */
+        currentWorld[i][j].strength = currentWorld[i][j].strength - stepCost;
+        if (currentWorld[i][j].strength <= 0) {
+          /* Death and decay */
+          currentWorld[i][j].strength = 0;
+          currentWorld[i][j].stress = 0;
+          currentWorld[i][j].attitude = attitudesCount;
+          /* And new life... */
+          zyjHelper.spawnNewAgent(currentWorld);
+        } else { /* Attempts movement if stressed */
+          if (random(1) < currentWorld[i][j].stress) {
+           direction = int(random(8));
+           if (zyjHelper.tryMove(direction, i, j, nx, ny, currentWorld)) {
+              zyjHelper.moveAgent(i, j, nx[0], ny[0], currentWorld);
            }
           }
         }
@@ -409,35 +409,35 @@ void ZyjIUmieraj(Agent[][] TenSwiat) {
  }
 }
 
-void KooperujRywalizuj(Agent[][] TenSwiat) {
-  int kierunek,i,j,k,m,n,NN,p,q;
+void interactCooperateDefect(Agent[][] currentWorld) {
+  int direction,i,j,k,m,n,NN,p,q;
   int[] nx = new int[1];
   int[] ny = new int[1];
 
   class KoopHelper {
-    boolean SprobujPole(int kierunek, int x, int y, int[] nx, int[] ny,Agent[][] TenSwiat) {
-    /* Czy pole zawiera wspolczlonka spoleczenstwa? */
-      nx[0] = x + dxy[kierunek][0];
-      ny[0] = y + dxy[kierunek][1];
-      /* Zamkniecie z krawedziami */
+    boolean isValidNeighborCell(int direction, int x, int y, int[] nx, int[] ny, Agent[][] currentWorld) {
+    /* Does the cell contain a community member? */
+      nx[0] = x + dxy[direction][0];
+      ny[0] = y + dxy[direction][1];
+      /* Edge clamping */
       if (nx[0] < 1) nx[0] = 1;
-      if (nx[0] > Bok) nx[0] = Bok;
+      if (nx[0] > sideLength) nx[0] = sideLength;
       if (ny[0] < 1) ny[0] = 1;
-      if (ny[0] > Bok) ny[0] = Bok;
-      /* Mozna się przesunąc tylko na puste pole */
-      return (TenSwiat[nx[0]][ny[0]].sila > 0);
+      if (ny[0] > sideLength) ny[0] = sideLength;
+      /* Can move to empty cells only */
+      return (currentWorld[nx[0]][ny[0]].strength > 0);
     }
   
-    int Decyzja(int poglad) { /* Zwraca 0 (koop) albo 1 (rywalizacja) */
+    int getDecision(int attitude) { /* Returns 0 (cooperate) or 1 (defect) */
        double prob;
-       if (poglad == 0) {
+       if (attitude == 0) {
          return 0;
-       } else if (poglad == IlePostaw - 1) {
+       } else if (attitude == attitudesCount - 1) {
          return 1;
-       } else { /* Niezdecydowany - a to juz trudna sprawa */
-         prob = (double)poglad / (IlePostaw - 1);
+       } else { /* Undecided */
+         prob = (double)attitude / (attitudesCount - 1);
          if (random(1) < prob) {
-            return 1; /* Im poglad bliższy 0 tym trudniej wylosowac rywalizacje! */
+            return 1; /* The closer the attitude is to 0, the harder it is to defect! */
          } else {
             return 0;
          }
@@ -447,33 +447,33 @@ void KooperujRywalizuj(Agent[][] TenSwiat) {
 
 KoopHelper koopHelper = new KoopHelper();
 
-NN = Bok * Bok;
+NN = sideLength * sideLength;
 for(k = 1; k <= NN; k++) {
-    i = 1 + int(random(Bok));
-    j = 1 + int(random(Bok));
-    if (TenSwiat[i][j].sila > 0) {
-      kierunek = int(random(8));
-      if (koopHelper.SprobujPole(kierunek, i, j, nx, ny,TenSwiat)) {
+    i = 1 + int(random(sideLength));
+    j = 1 + int(random(sideLength));
+    if (currentWorld[i][j].strength > 0) {
+      direction = int(random(8));
+      if (koopHelper.isValidNeighborCell(direction, i, j, nx, ny, currentWorld)) {
          m = nx[0];
          n = ny[0];
-         { /* Jakas interakcja jest mozliwa */
-         p = koopHelper.Decyzja(TenSwiat[i][j].poglad);
-         q = koopHelper.Decyzja(TenSwiat[m][n].poglad);
-         if (p == q) { /* Zagrali to samo! */
-           TenSwiat[i][j].sila = TenSwiat[i][j].sila + TabelaWyp[p][q];
-           TenSwiat[m][n].sila = TenSwiat[m][n].sila + TabelaWyp[p][q];
-         } else if (p == 1) { /* Pierwszy rywalizuje, to drugi jest frajer */
-           TenSwiat[i][j].sila = TenSwiat[i][j].sila + TabelaWyp[0][1];
-           TenSwiat[m][n].sila = TenSwiat[m][n].sila + TabelaWyp[1][0]; /* powinno byc ujemne */
-         } else { /* p=0. Pierwszy jest frajer, to drugi rywalizuje */
-           TenSwiat[i][j].sila = TenSwiat[i][j].sila + TabelaWyp[1][0]; /* powinno byc ujemne */
-           TenSwiat[m][n].sila = TenSwiat[m][n].sila + TabelaWyp[0][1];
+         { /* Interaction is possible */
+         p = koopHelper.getDecision(currentWorld[i][j].attitude);
+         q = koopHelper.getDecision(currentWorld[m][n].attitude);
+         if (p == q) { /* Played the same move! */
+           currentWorld[i][j].strength = currentWorld[i][j].strength + payoffMatrix[p][q];
+           currentWorld[m][n].strength = currentWorld[m][n].strength + payoffMatrix[p][q];
+         } else if (p == 1) { /* First defects, second loses */
+           currentWorld[i][j].strength = currentWorld[i][j].strength + payoffMatrix[0][1];
+           currentWorld[m][n].strength = currentWorld[m][n].strength + payoffMatrix[1][0]; /* Should be negative */
+         } else { /* p=0. First loses, second defects */
+           currentWorld[i][j].strength = currentWorld[i][j].strength + payoffMatrix[1][0]; /* Should be negative */
+           currentWorld[m][n].strength = currentWorld[m][n].strength + payoffMatrix[0][1];
          }
-         /* Cos sie zmienilo. Trzeba zadbac o ogolna spojnosc. */
-         if (TenSwiat[i][j].sila <= 0) TenSwiat[i][j].sila = 1; /* Ostatni dech */
-         if (TenSwiat[m][n].sila <= 0) TenSwiat[m][n].sila = 1; /* Ostatni dech */
-         if (TenSwiat[i][j].sila > MaxSila) TenSwiat[i][j].sila = MaxSila; /* Nie za dużo */
-         if (TenSwiat[m][n].sila > MaxSila) TenSwiat[m][n].sila = MaxSila; /* Nie za dużo */
+         /* Consistency enforcement after state changes */
+         if (currentWorld[i][j].strength <= 0) currentWorld[i][j].strength = 1; /* Last breath */
+         if (currentWorld[m][n].strength <= 0) currentWorld[m][n].strength = 1; /* Last breath */
+         if (currentWorld[i][j].strength > maxStrength) currentWorld[i][j].strength = maxStrength; /* Upper bound */
+         if (currentWorld[m][n].strength > maxStrength) currentWorld[m][n].strength = maxStrength; /* Upper bound */
          }
       }
     }
@@ -481,92 +481,92 @@ for(k = 1; k <= NN; k++) {
   
 }
 
-void KrokSymulacji(Agent[][] TenSwiat) {
-  /* Jeśli używamy wpływu społecznego */
-  if (UzyjWplywuDlaPostaw) {
-        OpcjonalnyWplywSpoleczny(TenSwiat);
+void simulationStep(Agent[][] currentWorld) {
+  /* If social influence is used */
+  if (useSocialInfluence) {
+        applySocialInfluence(currentWorld);
   }
-  /* Realizacja społecznego dylematu więźnia - zdobywanie zasobów */
-  KooperujRywalizuj(TenSwiat);
-  /* Wykonanie ewentualnych ruchów i aplikacja kosztów utrzymania i rozmnażanie */
-  ZyjIUmieraj(TenSwiat);
+  /* Prisoner's Dilemma realization - resource harvesting */
+  interactCooperateDefect(currentWorld);
+  /* Movement, metabolic costs, and reproduction */
+  updateMetabolismAndMovement(currentWorld);
 }
 
-void PoliczStatystyki(Agent[][] Tab, double[] StresRet, double[] SilaSredniaRet, double[] SilaMaxRet, int[] Wyznawcy) {
+void calculateStatistics(Agent[][] tab, double[] stressRet, double[] meanStrengthRet, double[] maxStrengthRet, int[] attitudeCounts) {
   int i,j,N;
-  double SilaSrednia = 0;
-  double SilaMax = 0;
-  for(i = 0; i <= IlePostaw; i++) { Wyznawcy[i] = 0; }
-  double StresGlobalny = 0;
-  N = 0; /* Tak łatwiej */
-  for(i = 1; i <= Bok; i++) {
-    for(j = 1; j <= Bok; j++) {
-      if (Tab[i][j].sila > 0) {
+  double meanStrength = 0;
+  double maxStrengthValue = 0;
+  for(i = 0; i <= attitudesCount; i++) { attitudeCounts[i] = 0; }
+  double globalStress = 0;
+  N = 0;
+  for(i = 1; i <= sideLength; i++) {
+    for(j = 1; j <= sideLength; j++) {
+      if (tab[i][j].strength > 0) {
         N = N + 1;
-        StresGlobalny = StresGlobalny + Tab[i][j].stres;
-        Wyznawcy[Tab[i][j].poglad] = Wyznawcy[Tab[i][j].poglad] + 1;
-        SilaSrednia = SilaSrednia + Tab[i][j].sila;
-        if (SilaMax < Tab[i][j].sila) {
-             SilaMax = Tab[i][j].sila;
+        globalStress = globalStress + tab[i][j].stress;
+        attitudeCounts[tab[i][j].attitude] = attitudeCounts[tab[i][j].attitude] + 1;
+        meanStrength = meanStrength + tab[i][j].strength;
+        if (maxStrengthValue < tab[i][j].strength) {
+             maxStrengthValue = tab[i][j].strength;
         }
       }
     }
   }
-  Wyznawcy[IlePostaw] = N;
+  attitudeCounts[attitudesCount] = N;
   if (N > 0) {
-     StresGlobalny = StresGlobalny / N;
-     SilaSrednia = SilaSrednia / N;
+     globalStress = globalStress / N;
+     meanStrength = meanStrength / N;
   }
-  StresRet[0] = StresGlobalny;
-  SilaSredniaRet[0] = SilaSrednia;
-  SilaMaxRet[0] = SilaMax;
+  stressRet[0] = globalStress;
+  meanStrengthRet[0] = meanStrength;
+  maxStrengthRet[0] = maxStrengthValue;
 }
 
 void draw() {
   if(!isRunning) {
     println("Function draw is entered, however 'isRunning'==false!\nFirst time is expected and nothing wrong!");
-    return; //Zabezpieczenie podwójne, bo przeciez jest noLoop() , ale Processing nawet gdy pętla wyłączona to raz na początku wchodzi do draw().
+    return; // Double guard: loop is disabled by noLoop(), but Processing calls draw() once on startup anyway.
   }
   
-  if (numerkroku <= MaxKrok) {             assert(SwiatSymulacji!=null); //<>//
-    PoliczStresy(SwiatSymulacji);
-    PoliczStatystyki(SwiatSymulacji, StresGlobalny_arr, SilaSrednia_arr, SilaMax_arr, Wyznawcy);
-    double StresGlobalny = StresGlobalny_arr[0];
-    double SilaSrednia = SilaSrednia_arr[0];
-    double SilaMax = SilaMax_arr[0];
+  if (currentStep <= maxSteps) {             assert(simulationWorld!=null); //<>//
+    calculateStressLevels(simulationWorld);
+    calculateStatistics(simulationWorld, globalStressArr, meanStrengthArr, maxStrengthArr, attitudeCounts);
+    double globalStress = globalStressArr[0];
+    double meanStrength = meanStrengthArr[0];
+    double maxStrengthValue = maxStrengthArr[0];
     
-    if (numerkroku % CzestoscWizualizacji == 0) {
-          Wizualizacja(SwiatSymulacji);
+    if (currentStep % visualizationFrequency == 0) {
+          drawWorld(simulationWorld);
     }
     
-    /* Wypisywanie */
+    /* Output display */
     fill(255);
     noStroke();
-    rect(Rozmiar, ileTrzeba, ileTrzeba-Rozmiar*2, SHEIGHT - (Bok + 1) * Rozmiar);
+    rect(agentCellSize, requiredWindowSize, requiredWindowSize-agentCellSize*2, SHEIGHT - (sideLength + 1) * agentCellSize);
     stroke(0, 0, 0);
     fill(0, 0, 0);
     
     textSize(12); textAlign(LEFT,TOP);
-    text(numerkroku + " *STRES: " + nf((float)StresGlobalny,0,7) + " *SIŁA: 0->mn:" + nf((float)SilaSrednia, 0, 3) + "->max:" + SilaMax + " *Żywych: " + Wyznawcy[IlePostaw] + " (deficyt: " + deficytzycia + ") ",
-         Rozmiar,ileTrzeba);
+    text(currentStep + " *STRESS: " + nf((float)globalStress,0,7) + " *STRENGTH: 0->mn:" + nf((float)meanStrength, 0, 3) + "->max:" + maxStrengthValue + " *Alive: " + attitudeCounts[attitudesCount] + " (deficit: " + birthDeficit + ") ",
+         agentCellSize, requiredWindowSize);
     
-    F.print(numerkroku + "\t" + StresGlobalny + "\t" + SilaSrednia + "\t" + SilaMax);
-    for(int i = 0; i < IlePostaw; i++) {
-      double q = Przeskaluj(i, 0, IlePostaw - 1) * 255;
+    F.print(currentStep + "\t" + globalStress + "\t" + meanStrength + "\t" + maxStrengthValue);
+    for(int i = 0; i < attitudesCount; i++) {
+      double q = rescale(i, 0, attitudesCount - 1) * 255;
       fill(0, (float)(255 - q), (float)q);
-      text(" " + Wyznawcy[i] + " ", Rozmiar + i * 50, (Bok + 1) * Rozmiar + 35);
-      F.print("\t" + Wyznawcy[i]);
+      text(" " + attitudeCounts[i] + " ", agentCellSize + i * 50, (sideLength + 1) * agentCellSize + 35);
+      F.print("\t" + attitudeCounts[i]);
     }
     F.println();
     F.flush();
     
-    if (Chwila > 0) {
-      delay(Chwila);
+    if (stepDelayMs > 0) {
+      delay(stepDelayMs);
     }
     
-    /* Kolejny krok */
-    KrokSymulacji(SwiatSymulacji);
-    numerkroku = numerkroku + 1;
+    /* Next step */
+    simulationStep(simulationWorld);
+    currentStep = currentStep + 1;
   } else {
     F.println();
     F.flush();

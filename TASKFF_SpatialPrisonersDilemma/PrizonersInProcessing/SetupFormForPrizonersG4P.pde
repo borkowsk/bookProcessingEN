@@ -1,221 +1,221 @@
-// Komponenty G4P odpowiadające formularzowi konfiguracyjnemu z Delphi
+// G4P components corresponding to the Delphi configuration form
 import g4p_controls.*;
 
 GWindow    setupWindow;
 GButton    OKButton;
-GTextField RdzenStringEdit;
-GTextField ZaludnienieFloatEdit, PoziomSzumuEdit;
-GCheckbox  UzyjWplywuDlaPostawCheckBox, StresZageszczeniaCheckBox;
-GTextField DlBokuSpinEdit, IlePostawSpinEdit1, MaxSilaSpinEdit1, RozkladSpinEdit;
-GTextField KosztKrokuSpinEdit, OptimumZapasuSpinEdit;
+GTextField fileCoreTextField;
+GTextField densityTextField, noiseTextField;
+GCheckbox  socialInfluenceCheckBox, crowdingStressCheckBox;
+GTextField sideLengthTextField, attitudesCountTextField, maxStrengthTextField, distributionTextField;
+GTextField stepCostTextField, optimumReserveTextField;
 GTextField WidthSpinEdit, HeightSpinEdit, SideSpinEdit1, VisfreqSpinEdit2;
-GTextField SlabyAgentSpinEdit1, BrzegSpinEdit1, ChwilaSpinEdit2, MaxKrokSpinEdit3;
-GTextField WyplataSpinEdit00, WyplataSpinEdit10, WyplataSpinEdit01, WyplataSpinEdit11;
+GTextField weakAgentTextField, borderTextField, delayTextField, maxStepsTextField;
+GTextField payoffMatrixTextField00, payoffMatrixTextField10, payoffMatrixTextField01, payoffMatrixTextField11;
 
 //GButton StartButton;
 
-void setupWindowDraw(PApplet appc, GWinData data) { //data nie uzywane bo nie ma po co :-D
+void drawSetupWindow(PApplet appc, GWinData data) { // data not used because there's no need :-D
   appc.background(240);
   
-  // Delikatne obrysy sekcji dla przejrzystości (odpowiednik GroupBox z Delphi)
+  // Subtle section outlines for clarity (equivalent of GroupBox in Delphi)
   //appc.stroke(200);
   //appc.noFill();
-  //appc.rect(10, 10, 345, 310); // Ramka lewa
-  //appc.rect(360, 10, 210, 220); // Ramka tabeli wypłat
+  //appc.rect(10, 10, 345, 310); // Left frame
+  //appc.rect(360, 10, 210, 220); // Payoff table frame
 }
 
 void createGUI() {
   G4P.messagesEnabled(false);
-  setupWindow = GWindow.getWindow(this, "Ustawienia symulacji", 0, 0, 600, 400, JAVA2D);
+  setupWindow = GWindow.getWindow(this, "Simulation Settings", 0, 0, 600, 400, JAVA2D);
   setupWindow.noLoop(); //<>//
-  setupWindow.addDrawHandler(this,"setupWindowDraw");
+  setupWindow.addDrawHandler(this,"drawSetupWindow");
   
-  // Etykiety i pola sterujące w oknie G4P
-  OKButton = new GButton(setupWindow, 225, 355, 153, 25, "OK / Zastosuj");
+  // Labels and control fields in the G4P window
+  OKButton = new GButton(setupWindow, 225, 355, 153, 25, "OK / Apply");
   OKButton.addEventHandler(this, "OKButtonClick");
   
   //StartButton = new GButton(setupWindow, 400, 395, 153, 25, "START / RESET");
   //StartButton.addEventHandler(this, "StartButtonClick");
   
-  RdzenStringEdit = new GTextField(setupWindow, 8, 280, 340, 25);
-  RdzenStringEdit.setText(FileNameCore);
-  RdzenStringEdit.addEventHandler(this, "RdzenStringEditChange");
+  fileCoreTextField = new GTextField(setupWindow, 8, 280, 340, 25);
+  fileCoreTextField.setText(FileNameCore);
+  fileCoreTextField.addEventHandler(this, "onFileCoreChanged");
   
-  // Pola parametrów siatki i ekonomii
-  DlBokuSpinEdit = new GTextField(setupWindow, 16, 60, 65, 22);
-  DlBokuSpinEdit.setText(str(Bok));
-  DlBokuSpinEdit.addEventHandler(this, "DlBokuSpinEditChange");
+  // Grid and economic parameter fields
+  sideLengthTextField = new GTextField(setupWindow, 16, 60, 65, 22);
+  sideLengthTextField.setText(str(sideLength));
+  sideLengthTextField.addEventHandler(this, "onSideLengthChanged");
   
-  ZaludnienieFloatEdit = new GTextField(setupWindow, 16, 120, 65, 22);
-  ZaludnienieFloatEdit.setText(str((float)Zaludnienie));
-  ZaludnienieFloatEdit.addEventHandler(this, "ZaludnienieFloatEditChange");
+  densityTextField = new GTextField(setupWindow, 16, 120, 65, 22);
+  densityTextField.setText(str((float)populationDensity));
+  densityTextField.addEventHandler(this, "onDensityChanged");
 
-  IlePostawSpinEdit1 = new GTextField(setupWindow, 16, 90, 65, 22);
-  IlePostawSpinEdit1.setText(str(IlePostaw));
-  IlePostawSpinEdit1.addEventHandler(this, "IlePostawSpinEdit1Change");
+  attitudesCountTextField = new GTextField(setupWindow, 16, 90, 65, 22);
+  attitudesCountTextField.setText(str(attitudesCount));
+  attitudesCountTextField.addEventHandler(this, "onAttitudesCountChanged");
 
-  MaxSilaSpinEdit1 = new GTextField(setupWindow, 16, 150, 65, 22);
-  MaxSilaSpinEdit1.setText(str(MaxSila));
-  MaxSilaSpinEdit1.addEventHandler(this, "MaxSilaSpinEdit1Change");
+  maxStrengthTextField = new GTextField(setupWindow, 16, 150, 65, 22);
+  maxStrengthTextField.setText(str(maxStrength));
+  maxStrengthTextField.addEventHandler(this, "onMaxStrengthChanged");
 
-  RozkladSpinEdit = new GTextField(setupWindow, 16, 180, 65, 22);
-  RozkladSpinEdit.setText(str(Rozklad));
-  RozkladSpinEdit.addEventHandler(this, "RozkladSpinEditChange");
+  distributionTextField = new GTextField(setupWindow, 16, 180, 65, 22);
+  distributionTextField.setText(str(paretoExponent));
+  distributionTextField.addEventHandler(this, "onDistributionChanged");
 
-  PoziomSzumuEdit = new GTextField(setupWindow, 16, 210, 65, 22);
-  PoziomSzumuEdit.setText(str((float)PoziomSzumu));
-  PoziomSzumuEdit.addEventHandler(this, "PoziomSzumuEditChange");
+  noiseTextField = new GTextField(setupWindow, 16, 210, 65, 22);
+  noiseTextField.setText(str((float)noiseLevel));
+  noiseTextField.addEventHandler(this, "onNoiseLevelChanged");
 
-  KosztKrokuSpinEdit = new GTextField(setupWindow, 305, 128, 57, 22);
-  KosztKrokuSpinEdit.setText(str(KosztKroku));
-  KosztKrokuSpinEdit.addEventHandler(this, "KosztKrokuSpinEditChange");
+  stepCostTextField = new GTextField(setupWindow, 305, 128, 57, 22);
+  stepCostTextField.setText(str(stepCost));
+  stepCostTextField.addEventHandler(this, "onStepCostChanged");
 
-  OptimumZapasuSpinEdit = new GTextField(setupWindow, 305, 160, 57, 22);
-  OptimumZapasuSpinEdit.setText(str(OptimumZapasu));
-  OptimumZapasuSpinEdit.addEventHandler(this, "OptimumZapasuSpinEditChange");
+  optimumReserveTextField = new GTextField(setupWindow, 305, 160, 57, 22);
+  optimumReserveTextField.setText(str(optimumReserve));
+  optimumReserveTextField.addEventHandler(this, "onOptimumReserveChanged");
 
-  // Tabela wypłat
-  WyplataSpinEdit00 = new GTextField(setupWindow, 375, 60, 70, 25);
-  WyplataSpinEdit00.setText(str(TabelaWyp[0][0]));
-  WyplataSpinEdit00.addEventHandler(this, "WyplataSpinEdit00Change");
+  // Payoff table
+  payoffMatrixTextField00 = new GTextField(setupWindow, 375, 60, 70, 25);
+  payoffMatrixTextField00.setText(str(payoffMatrix[0][0]));
+  payoffMatrixTextField00.addEventHandler(this, "onPayoff00Changed");
 
-  WyplataSpinEdit10 = new GTextField(setupWindow, 450, 60, 70, 25);
-  WyplataSpinEdit10.setText(str(TabelaWyp[1][0]));
-  WyplataSpinEdit10.addEventHandler(this, "WyplataSpinEdit10Change");
+  payoffMatrixTextField10 = new GTextField(setupWindow, 450, 60, 70, 25);
+  payoffMatrixTextField10.setText(str(payoffMatrix[1][0]));
+  payoffMatrixTextField10.addEventHandler(this, "onPayoff10Changed");
 
-  WyplataSpinEdit01 = new GTextField(setupWindow, 375, 90, 70, 25);
-  WyplataSpinEdit01.setText(str(TabelaWyp[0][1]));
-  WyplataSpinEdit01.addEventHandler(this, "WyplataSpinEdit01Change");
+  payoffMatrixTextField01 = new GTextField(setupWindow, 375, 90, 70, 25);
+  payoffMatrixTextField01.setText(str(payoffMatrix[0][1]));
+  payoffMatrixTextField01.addEventHandler(this, "onPayoff01Changed");
 
-  WyplataSpinEdit11 = new GTextField(setupWindow, 450, 90, 70, 25);
-  WyplataSpinEdit11.setText(str(TabelaWyp[1][1]));
-  WyplataSpinEdit11.addEventHandler(this, "WyplataSpinEdit11Change");
+  payoffMatrixTextField11 = new GTextField(setupWindow, 450, 90, 70, 25);
+  payoffMatrixTextField11.setText(str(payoffMatrix[1][1]));
+  payoffMatrixTextField11.addEventHandler(this, "onPayoff11Changed");
 
-  UzyjWplywuDlaPostawCheckBox = new GCheckbox(setupWindow, 69, 240, 185, 17, "Używaj wpływu dla postaw");
-  StresZageszczeniaCheckBox = new GCheckbox(setupWindow, 344, 240, 165, 17, "Stres zageszczenia");
+  socialInfluenceCheckBox = new GCheckbox(setupWindow, 69, 240, 185, 17, "Use social influence for attitudes");
+  crowdingStressCheckBox = new GCheckbox(setupWindow, 344, 240, 165, 17, "Crowding stress");
 
-  // --- ETYKIETY (GLabel) ODPOWIADAJĄCE ORYGINAŁOWI Z DELPHI ---
+  // --- LABELS (GLabel) CORRESPONDING TO THE DELPHI ORIGINAL ---
   
-  // Główne ostrzeżenie na górze
-  GLabel tmp=new GLabel(setupWindow, 8, 5, 480, 30, "UWAGA! Jedynie zmiana parametrów przed uruchomieniem wątku roboczego daje pewność efektu!"); assert(tmp!=null);
+  // Main warning at the top
+  GLabel tmp=new GLabel(setupWindow, 8, 5, 480, 30, "ATTENTION! Only changing parameters before starting the worker thread guarantees effect!"); assert(tmp!=null);
   
-  // Zakładka / Sekcja: Parametry pojedynczego eksperymentu (lewa strona)
-  tmp=new GLabel(setupWindow, 85, 60, 180, 20,  "Długość boku świata symulacji"); assert(tmp!=null);
-  tmp=new GLabel(setupWindow, 85, 90, 180, 20,  "Liczba postaw"); assert(tmp!=null);
-  tmp=new GLabel(setupWindow, 85, 120, 180, 20, "Gęstość zaludnienia"); assert(tmp!=null);
-  tmp=new GLabel(setupWindow, 85, 150, 180, 20, "Maksymalna energia agenta"); assert(tmp!=null);
-  tmp=new GLabel(setupWindow, 85, 180, 180, 20, "Stopień rozkładu \"Pareto\""); assert(tmp!=null);
-  tmp=new GLabel(setupWindow, 85, 210, 210, 20, "Prawdopodobieństwo zmian postaw"); assert(tmp!=null);
+  // Tab / Section: Single experiment parameters (left side)
+  tmp=new GLabel(setupWindow, 85, 60, 180, 20,  "Simulation world side length"); assert(tmp!=null);
+  tmp=new GLabel(setupWindow, 85, 90, 180, 20,  "Number of attitudes"); assert(tmp!=null);
+  tmp=new GLabel(setupWindow, 85, 120, 180, 20, "Population density"); assert(tmp!=null);
+  tmp=new GLabel(setupWindow, 85, 150, 180, 20, "Maximum agent energy"); assert(tmp!=null);
+  tmp=new GLabel(setupWindow, 85, 180, 180, 20, "\"Pareto\" distribution degree"); assert(tmp!=null);
+  tmp=new GLabel(setupWindow, 85, 210, 210, 20, "Probability of attitude changes"); assert(tmp!=null);
 
-  // Kolumna prawa: Koszt i optymalny zapas
-  tmp=new GLabel(setupWindow, 365, 130, 160, 20, "Koszt utrzymania (na krok)"); assert(tmp!=null);
-  tmp=new GLabel(setupWindow, 365, 160, 180, 20, "Optymalny zapas (w krokach)"); assert(tmp!=null);
+  // Right column: Cost and optimal reserve
+  tmp=new GLabel(setupWindow, 365, 130, 160, 20, "Maintenance cost (per step)"); assert(tmp!=null);
+  tmp=new GLabel(setupWindow, 365, 160, 180, 20, "Optimal reserve (in steps)"); assert(tmp!=null);
 
-  // Tabela wypłat (nagłówki osi)
-  tmp=new GLabel(setupWindow, 305, 60, 70, 25, "Kooperacja"); assert(tmp!=null);
-  tmp=new GLabel(setupWindow, 305, 90, 70, 25, "Rywalizacja"); assert(tmp!=null);
-  tmp=new GLabel(setupWindow, 375, 30, 70, 25, "Kooperacja"); assert(tmp!=null);
-  tmp=new GLabel(setupWindow, 450, 30, 70, 25, "Rywalizacja"); assert(tmp!=null);
+  // Payoff table (axis headers)
+  tmp=new GLabel(setupWindow, 305, 60, 70, 25, "Cooperation"); assert(tmp!=null);
+  tmp=new GLabel(setupWindow, 305, 90, 70, 25, "Defection"); assert(tmp!=null);
+  tmp=new GLabel(setupWindow, 375, 30, 70, 25, "Cooperation"); assert(tmp!=null);
+  tmp=new GLabel(setupWindow, 450, 30, 70, 25, "Defection"); assert(tmp!=null);
 
-  // Dół formularza: Rdzeń nazwy pliku
-  tmp=new GLabel(setupWindow, 360, 280, 260, 25, "Rdzeń nazwy pliku wyjściowego"); assert(tmp!=null);
+  // Form bottom: Output file name core
+  tmp=new GLabel(setupWindow, 360, 280, 260, 25, "Output file name core"); assert(tmp!=null);
 
   G4P.messagesEnabled(true);
   setupWindow.loop();
 }
 
-// Obsługa zdarzeń zmian i przycisków w G4P odwzorowująca logikę Delphi
+// Event handler for changes and buttons in G4P mirroring Delphi logic
 public void OKButtonClick(GButton button, GEvent event) {
   if (event == GEvent.CLICKED) { //<>//
     println("OK clicked - simulation will start.");
-    ileTrzeba=(Bok+2)*(Rozmiar+Brzeg);
-    UzyjWplywuDlaPostaw = UzyjWplywuDlaPostawCheckBox.isSelected();
-    if(UzyjWplywuDlaPostaw) println("Social influence on attitudes is active.");
-    StresZageszczenia = StresZageszczeniaCheckBox.isSelected();
-    if(StresZageszczenia) println("Overcrowding stress is active.");
-    uruchomSymulacje(); assert(SwiatSymulacji!=null);
-    //setupWindow.hide();  //tego nie ma?
-    //setupWindow.close(); //a to nie działa :-/
-    //setupWindow.dispose(); //i to też nie działa...
-    setupWindow.forceClose(); //A to nareszcie działa!
+    requiredWindowSize=(sideLength+2)*(agentCellSize+borderSize);
+    useSocialInfluence = socialInfluenceCheckBox.isSelected();
+    if(useSocialInfluence) println("Social influence on attitudes is active.");
+    useCrowdingStress = crowdingStressCheckBox.isSelected();
+    if(useCrowdingStress) println("Overcrowding stress is active.");
+    runSimulation(); assert(simulationWorld!=null);
+    //setupWindow.hide();  // doesn't exist?
+    //setupWindow.close(); // doesn't work :-/
+    //setupWindow.dispose(); // doesn't work either...
+    setupWindow.forceClose(); // Finally works!
     isRunning=true;
-    loop(); //Teraz już można uruchomić symulację.
+    loop(); // Now the simulation can start.
   }
 }
 
 //public void StartButtonClick(GButton button, GEvent event) {
 //  if (event == GEvent.CLICKED) {
-//    numerkroku = 0;
-//    deficytzycia = 0;
+//    currentStep = 0;
+//    birthDeficit = 0;
     
-//    // Generowanie nazwy pliku logu
-//    String logName = FileNameCore + Bok + "x" + Bok + "P" + IlePostaw + "G" + Zaludnienie + "M" + PoziomSzumu + "m" + MaxSila + "k" + KosztKroku + "op" + OptimumZapasu + ".log";
+//    // Log file name generation
+//    String logName = FileNameCore + sideLength + "x" + sideLength + "P" + attitudesCount + "G" + populationDensity + "M" + noiseLevel + "m" + maxStrength + "k" + stepCost + "op" + optimumReserve + ".log";
 //    logFile = createWriter(logName);
-//    logFile.println("Krok\tStres\tEnergiaSr\tEnergiaMax\tLiczby wyznawców");
+//    logFile.println("Step\tStress\tMeanEnergy\tMaxEnergy\tAttitude counts");
     
-//    Inicjacja(SwiatSymulacji);
+//    initializeWorld(simulationWorld);
 //    isRunning = true;
 //  }
 //}
 
-public void RdzenStringEditChange(GTextField field, GEvent event) {
+public void onFileCoreChanged(GTextField field, GEvent event) {
   FileNameCore = field.getText();
 }
 
-public void DlBokuSpinEditChange(GTextField field, GEvent event) {
-  try { Bok = int( field.getText() ); } catch(Exception e) {}
+public void onSideLengthChanged(GTextField field, GEvent event) {
+  try { sideLength = int( field.getText() ); } catch(Exception e) {}
 }
 
-public void IlePostawSpinEdit1Change(GTextField field, GEvent event) {
-  try { IlePostaw = int(field.getText()); } catch(Exception e) {}
+public void onAttitudesCountChanged(GTextField field, GEvent event) {
+  try { attitudesCount = int(field.getText()); } catch(Exception e) {}
 }
 
-public void MaxSilaSpinEdit1Change(GTextField field, GEvent event) {
-  try { MaxSila = int(field.getText()); } catch(Exception e) {}
+public void onMaxStrengthChanged(GTextField field, GEvent event) {
+  try { maxStrength = int(field.getText()); } catch(Exception e) {}
 }
 
-public void RozkladSpinEditChange(GTextField field, GEvent event) {
-  try { Rozklad = int(field.getText()); } catch(Exception e) {}
+public void onDistributionChanged(GTextField field, GEvent event) {
+  try { paretoExponent = int(field.getText()); } catch(Exception e) {}
 }
 
-public void KosztKrokuSpinEditChange(GTextField field, GEvent event) {
-  try { KosztKroku = int(field.getText()); } catch(Exception e) {}
+public void onStepCostChanged(GTextField field, GEvent event) {
+  try { stepCost = int(field.getText()); } catch(Exception e) {}
 }
 
-public void OptimumZapasuSpinEditChange(GTextField field, GEvent event) {
-  try { OptimumZapasu = int(field.getText()); } catch(Exception e) {}
+public void onOptimumReserveChanged(GTextField field, GEvent event) {
+  try { optimumReserve = int(field.getText()); } catch(Exception e) {}
 }
 
-public void WyplataSpinEdit00Change(GTextField field, GEvent event) {
-  try { TabelaWyp[0][0] = int(field.getText()); } catch(Exception e) {}
+public void onPayoff00Changed(GTextField field, GEvent event) {
+  try { payoffMatrix[0][0] = int(field.getText()); } catch(Exception e) {}
 }
 
-public void WyplataSpinEdit11Change(GTextField field, GEvent event) {
-  try { TabelaWyp[1][1] = int(field.getText()); } catch(Exception e) {}
+public void onPayoff11Changed(GTextField field, GEvent event) {
+  try { payoffMatrix[1][1] = int(field.getText()); } catch(Exception e) {}
 }
 
-public void PoziomSzumuEditChange(GTextField field, GEvent event) {
-  try { PoziomSzumu = float( field.getText() ); } catch(Exception e) {}
+public void onNoiseLevelChanged(GTextField field, GEvent event) {
+  try { noiseLevel = float( field.getText() ); } catch(Exception e) {}
 }
 
-public void ZaludnienieFloatEditChange(GTextField field, GEvent event) {
-  try { Zaludnienie = float( field.getText() ); } catch(Exception e) {}
+public void onDensityChanged(GTextField field, GEvent event) {
+  try { populationDensity = float( field.getText() ); } catch(Exception e) {}
 }
 
-public void WyplataSpinEdit01Change(GTextField field, GEvent event) {
+public void onPayoff01Changed(GTextField field, GEvent event) {
   try {
     int val = int(field.getText());
-    TabelaWyp[0][1] = val;
-    TabelaWyp[1][0] = -val;
-    WyplataSpinEdit10.setText(str(-val));
+    payoffMatrix[0][1] = val;
+    payoffMatrix[1][0] = -val;
+    payoffMatrixTextField10.setText(str(-val));
   } catch(Exception e) {}
 }
 
-public void WyplataSpinEdit10Change(GTextField field, GEvent event) {
+public void onPayoff10Changed(GTextField field, GEvent event) {
   try {
     int val = int(field.getText());
-    TabelaWyp[0][1] = val;
-    TabelaWyp[1][0] = -val;
-    WyplataSpinEdit01.setText(str(-val));
+    payoffMatrix[0][1] = val;
+    payoffMatrix[1][0] = -val;
+    payoffMatrixTextField01.setText(str(-val));
   } catch(Exception e) {}
 }
