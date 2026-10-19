@@ -1,6 +1,6 @@
 /// Narzędzia bitowe dla algorytmów ewolucyjnych.  
 //-//////////////////////////////////////////////
-/// @date 2026-06-12 (zmodyfikowany)
+/// @date 2026-10-19 (zmodyfikowany)
 // Skomentowane w standardzie Doxygen.
 
 /// Tworzy string z reprezentacją heksadecymalną liczby typu integer (32-bitowy).

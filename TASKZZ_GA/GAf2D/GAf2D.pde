@@ -1,6 +1,6 @@
 /// Dwuwymiarowy algorytm genetyczny.
 //-///////////////////////////////////////////////////////////
-/// @date 2026-06-16 (zmodyfikowany)
+/// @date 2026-10-19 (zmodyfikowany)
 
 import java.lang.Math;
 
