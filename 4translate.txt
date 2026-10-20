@@ -2398,7 +2398,7 @@ TASK12_Sakoda_ABM/Sakoda0_0/AssemblingOfWorld.pde:132://  https://github.com/bor
 TASK12_Sakoda_ABM/Sakoda0_0/AssemblingOfWorld.pde:133:///////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/Agent.pde:1:// An agent is one of the two central classes in any ABM model.
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/Agent.pde:2://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/Agent.pde:5:  float dummy; //ATRYBUT DEMONSTRACYJNY - POTEM MOŻNA USUNĄĆ
+TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/Agent.pde:5:  float dummy; //ATRYBUT DEMONSTRACYJNY - POTEM MOŻNA USUNĄĆ  
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/Agent.pde:6:  //... MIEJSCE NA TWÓJ KOD
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/Agent.pde:8:  Agent() //Konstruktor agenta. Inicjuje atrybuty
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/Agent.pde:11:    //... MIEJSCE NA TWÓJ KOD
@@ -2412,7 +2412,7 @@ TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/ModelVisual.pde:11:    //NA WZÓR TEGO KOD
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/ModelVisual.pde:25:    rect(b*cwidth,a*cwidth,cwidth,cwidth); //WŁAŚCIWE RYSOWANIE 
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/ModelVisual.pde:28://OR
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/ModelVisual.pde:34:    //KOLORYZACJA AGENTA
-TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/ModelVisual.pde:35:    //NA WZÓR TEGO KODU ZDEFINIUJ WŁASNE KOLOROWANIE!   
+TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/ModelVisual.pde:35:    //NA WZÓR TEGO KODU ZDEFINIUJ WŁASNE KOLOROWANIE!
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/ModelVisual.pde:50:    rect(a*cwidth,t*cwidth,cwidth,cwidth); //WŁAŚCIWE RYSOWANIE 
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/ModelVisual.pde:53:    line(0,(t+1)*cwidth+1,width,(t+1)*cwidth+1); //LINIA CZASU TERAŹNIEJSZEGO
 TASK13_SIR_Epid_ABM/ABMTemplateMiniPL/ModelVisual.pde:57://-//////////////////////////////////////////////////////////////////////////////////////////////////////
