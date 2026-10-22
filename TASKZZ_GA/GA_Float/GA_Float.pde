@@ -1,6 +1,6 @@
 /// Very simple genetic algorithm using mutations only.
 //-///////////////////////////////////////////////////////////
-/// @date 2026-10-19 (modified)
+/// @date 2026-10-22 (modified)
 
 import java.lang.Math;
 
@@ -21,7 +21,7 @@ GAPopulation Pop;
 /// @details 
 /// The mathematical formula for a single variable is as follows:
 ///      \(f(x)=10+x^{2}-10\cdot \cos (2\pi x)\)
-///      f(X) = 10 + x² - 10cos(2πx)
+///      f(X) = 10 + x² - 10 cos(2πx)
 /// * Recommended domain search interval is `x in [-5.12, 5.12]`. 
 ///   In this interval, the function has one clear global minimum at point `x = 0`,
 ///   where the value is `0`, and multiple local minima ("valleys", in which 

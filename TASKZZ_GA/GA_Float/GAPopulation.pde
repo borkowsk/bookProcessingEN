@@ -1,13 +1,13 @@
 /// Population of genetic agents for solving one-dimensional problems.
 //-////////////////////////////////////////////////////////////////////////////
-/// @date 2026-10-19 (last modification)
+/// @date 2026-10-22 (last modification)
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.Comparator;
 
-/// @brief "GAgatek" - a genetic algorithm agent.
+/// @brief "GAgatek" - a genetic algorithm agent (g-agent).
 /// @details
-/// Gagatek is a colloquial Polish term meaning a rascal, rogue, or prankster, 
+/// "Gagatek" is a colloquial Polish term meaning a rascal, rogue, or prankster, 
 /// capable of irresponsible antics and minor mischief.  
 /// Synonyms include rascal, imp, scamp, or trickster.
 class GAgatek implements Comparable
@@ -37,7 +37,7 @@ class GAPopulation
 {
   GAgatek[] all;
   
-  double  minx,maxx,range;  ///< Range of x values within which we search.
+  double  minx,maxx,range;  ///< Range of 'x' values within which we search.
   boolean     float_coded; ///< Do we use floating-point encoding?
   
   /// @brief Constructor.
@@ -194,14 +194,14 @@ class GAPopulation
       
       if(maximize) // Are we searching for a maximum?
       {
-        if(A.fitness>B.fitness) // A wins
+        if(A.fitness>B.fitness) // 'A' wins
           B.reset_gene(randomized_clone(A.gene));
         else // B wins, even on equal fitness to ensure generational turnover continues.
           A.reset_gene(randomized_clone(B.gene));
       }
       else // Alternatively searching for a minimum.
       {
-        if(A.fitness<B.fitness) // A wins
+        if(A.fitness<B.fitness) // 'A' wins (?)
           B.reset_gene(randomized_clone(A.gene));
         else // B wins, even on equal fitness to ensure generational turnover continues.
           A.reset_gene(randomized_clone(B.gene));
@@ -215,7 +215,7 @@ class GAPopulation
   /// @brief Target range width (for 32-bit int, exactly 4,294,967,295).
   final double targetRange = (double) Integer.MAX_VALUE - (double) Integer.MIN_VALUE;
         
-  /// @brief Private encoding of double value from 0...maxVal range to full signed 32-bit int.      
+  /// @brief Private encoding of `double` value from 0...maxVal range to full signed 32-bit int.      
   private int map_(double val, double maxVal) 
   {
         // Guard against values outside [0, maxVal]
@@ -228,7 +228,7 @@ class GAPopulation
         return (int) Math.round(mapped);
   }
 
-  /// @brief Private decoding of int value back to given 0...maxVal range.
+  /// @brief Private decoding of `int` value back to given 0...maxVal range.
   private double unmap_(int codedVal, double maxVal) 
   {
       // Calculate codedVal position within int range (0 to 1)

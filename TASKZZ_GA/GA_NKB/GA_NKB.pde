@@ -1,30 +1,30 @@
 /// A very simple genetic algorithm consisting only of mutations.
 //-//////////////////////////////////////////////////////////////
-/// @date 2026-10-19 (modified)
+/// @date 2026-10-22 (modified)
 
 import java.lang.Math;
 
 /// @name Parametry algorytmu genetycznego
 /// @{
-int     TEMPO=1;                   ///< Ile kroków algorytmu na sekundę?
-int     population_size=500;       ///< Rozmiar populacji rozwiązań.
-float   selection_rate=0.33;       ///< Jaką część populacji wymieniamy w każdej generacji (kroku algorytmu).
-float   mutation_rate=0.005;       ///< Jaki jest poziom mutacji (może mieć różne interpretacje!)
-boolean maximize=false;            ///< Czy szukamy maksimum funkcji? Gdy "false" to szukamy minimum.
-boolean selection_by_duels=false;  ///< Czy używamy selekcji przez pojedynki czy klasycznej - z sortowaniem.
+int     TEMPO=1;                   ///< How many algorithm steps per second?
+int     population_size=500;       ///< Solution population size.
+float   selection_rate=0.33;       ///< What fraction of the population is replaced in each generation (algorithm step)?
+float   mutation_rate=0.005;       ///< What is the mutation rate (can have different interpretations!)
+boolean maximize=false;            ///< Are we looking for the maximum of the function? When false, we search for the minimum.
+boolean selection_by_duels=false;  ///< Do we use tournament selection (duels) or classical selection - with sorting?
 /// @}
 
 GAPopulation Pop;
 
-/// Jednowymiarowa Funkcja Rastrigina.
+/// One-dimensional Rastrigin function.
 /// @details 
 /// Wzór matematyczny dla jednej zmiennej wygląda następująco:
 ///      \(f(x)=10+x^{2}-10\cdot \cos (2\pi x)\)
-///      f(X) = 10 + x² - 10cos(2πx)
-/// * Zalecany dziedzinowy przedział poszukiwań to `x in [-5.12, 5.12]`. 
+///      f(X) = 10 + x² - 10 cos(2πx)
+/// * The recommended search range for the domain is `x in [-5.12, 5.12]`.. 
 ///   W tym przedziale funkcja ma jedno wyraźne minimum globalne w punkcie `x = 0`,
 ///   gdzie wartość wynosi `0`, oraz kilkanaście minimów lokalnych („dolin”, w których 
-///   można zobaczyć, że algorytm utknął, jeśli mutacja będzie za mała).
+///   You can see that the algorithm has become stuck if the mutation is too small.).
 /// * Minimum globalne (Dno): Wynosi dokładnie 0.0 dla punktu `x = 0`.
 /// * Maksimum globalne (Szczyt): Wynosi około 40.35 dla punktów \(x \approx \pm 4.523\).
 /// * por.: https://www.wikiwand.com/en/Rastrigin_function . Są tam tez odnośniki do 
@@ -39,7 +39,7 @@ void calculate_fitnesses(GAPopulation pop)
   for(int i=0;i<pop.all.length;i++)
   {
     double cfit=pop.get_fitness(i);
-    if(cfit==-Double.MAX_VALUE) // Jeszcze nie było liczone
+    if(cfit==-Double.MAX_VALUE) // It had not yet been calculated
     {
       double cx=pop.get_val(i);
       cfit=Rastrigin(cx);
@@ -49,7 +49,7 @@ void calculate_fitnesses(GAPopulation pop)
 }
 
 
-float zero=-5; ///< Pozycja Y==0 jako współrzędna w oknie.
+float zero=-5; ///< Position Y==0 as coordinate in the window.
 
 void draw_function()
 {
@@ -142,7 +142,7 @@ void draw()
   text("Y="+best_fit,width/2,48);
   println(frameCount,"\tX:\t",x_best,"\tY:\t",best_fit);
   
-  // Zmiana stanu:
+  // Change of state:
   if(selection_by_duels)
   {
     Pop.clonal_offspring_by_duels(selection_rate,mutation_rate,maximize);

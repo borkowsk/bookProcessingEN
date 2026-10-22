@@ -1,6 +1,6 @@
 /// Bitwise tools for evolutionary algorithms.  
 //-//////////////////////////////////////////////
-/// @date 2026-10-19 (modified)
+/// @date 2026-10-22 (modified)
 // Commented using the Doxygen standard.
 
 /// Creates a hexadecimal string representation of a 32-bit integer.
@@ -143,7 +143,7 @@ public static long fromGrayU32(int g) {
 }
 /// @}
 
-/// @name Bit reinterpretation of int and long to float and double, and vice versa.
+/// @name Bit reinterpretation of `int` and long to float and double, and vice versa.
 ///       ===================================================================
 /// @details Mutating bits of floating-point representations carries 
 ///          many possibilities of producing lethal combinations, 
@@ -210,7 +210,7 @@ public static int get_bits(long value, int pos, int length)
     // 2. Create a bit-mask of desired length (e.g., for length=5: 00011111)
     long mask = (1L << length) - 1;
     
-    // 3. Extract bits using mask and safely cast to int
+    // 3. Extract bits using mask and safely cast to `int`
     return (int) (shifted & mask);
 }
 
