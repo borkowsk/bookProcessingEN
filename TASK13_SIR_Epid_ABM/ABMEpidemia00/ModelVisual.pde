@@ -1,4 +1,4 @@
-// Świat pełen agentów wymaga metody wizualizacji na ekranie/oknie
+// A world full of agents requires a method of visualization on a screen/window
 //-//////////////////////////////////////////////////////////////////////////
 
 void visualizeAgents(Agent[][] agents)
@@ -7,8 +7,8 @@ void visualizeAgents(Agent[][] agents)
   for(int a=0;a<agents.length;a++)
    for(int b=0;b<agents[a].length;b++)
    {
-    //KOLORYZACJA AGENTA
-    //NA WZÓR TEGO KODU ZDEFINIUJ WŁASNE KOLOROWANIE!
+    //AGENT COLORING
+    //USING THIS CODE AS AN EXAMPLE, DEFINE YOUR OWN COLORING!
     if( (curra=agents[a][b]) != null )
     {
       if(curra.dummy>=0)
@@ -22,8 +22,8 @@ void visualizeAgents(Agent[][] agents)
     }
     
     noStroke();
-    rect(b*cwidth,a*cwidth,cwidth,cwidth); //WŁAŚCIWE RYSOWANIE a jest pionowe
-                                          //bo tak leżą w pamięci tablice 2D
+    rect(b*cwidth,a*cwidth,cwidth,cwidth); //THIS IS ACTUAL DRAWING- "a" is vertical
+                                          //because that’s how 2D arrays are laid out in memory
    }
 }
 //OR
@@ -32,8 +32,8 @@ void visualizeAgents(Agent[] agents)
    Agent curra;
    for(int a=0;a<agents.length;a++)
    {
-    //KOLORYZACJA AGENTA
-    //NA WZÓR TEGO KODU ZDEFINIUJ WŁASNE KOLOROWANIE!   
+    //AGENT COLORING
+    //USING THIS CODE AS AN EXAMPLE, DEFINE YOUR OWN COLORING!   
     if( (curra=agents[a]) != null )
     {
       if(curra.dummy>=0)
@@ -48,13 +48,13 @@ void visualizeAgents(Agent[] agents)
     
     int t=StepCounter%side;
     noStroke();
-    rect(a*cwidth,t*cwidth,cwidth,cwidth); //WŁAŚCIWE RYSOWANIE 
+    rect(a*cwidth,t*cwidth,cwidth,cwidth); //THIS IS ACTUAL DRAWING 
     
     stroke(255);
-    line(0,(t+1)*cwidth+1,width,(t+1)*cwidth+1); //LINIA CZASU TERAŹNIEJSZEGO
+    line(0,(t+1)*cwidth+1,width,(t+1)*cwidth+1); //LINE FOR THE PRESENT TIME
    }
 }
 
 //-//////////////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC Wizualizacja
+//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC VISUALISATION
 //-//////////////////////////////////////////////////////////////////////////////////////////////////////

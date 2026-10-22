@@ -57,7 +57,7 @@ void draw()
   //STATES: Empty=0; Susceptible=1; Infected=2; Recovered=3;
   for(int a=0;a<World.length*World.length;a++) //As many draws as there are cells
   {
-       // Drowing agent coordinates
+       // Drawing agent coordinates
        int i=(int)random(World.length);
        int j=(int)random(World.length);
        

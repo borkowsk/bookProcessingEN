@@ -1,4 +1,4 @@
-// Świat pełen agentów wymaga metody wizualizacji na ekranie/oknie
+// A world full of agents requires a method of visualization on a screen/window
 //-//////////////////////////////////////////////////////////////////////////
 
 void visualizeAgents(Agent[][] agents)
@@ -7,7 +7,7 @@ void visualizeAgents(Agent[][] agents)
   for(int a=0;a<agents.length;a++)
    for(int b=0;b<agents[a].length;b++)
    {
-    //Kolorowanie... przykładowe.
+    //Coloring... an example.
     if( (curra=agents[a][b]) != null )
     {
       if(curra.dummy>=0)
@@ -20,7 +20,7 @@ void visualizeAgents(Agent[][] agents)
       fill(128);
     }
     
-    rect(b*cwidth,a*cwidth,cwidth,cwidth); //`a` jest pionowy, ze względu na naturalny układ tablicy 2D
+    rect(b*cwidth,a*cwidth,cwidth,cwidth); //`a` is vertical, due to the natural layout of a 2D array in memory
    }
 }
 //OR
@@ -29,7 +29,7 @@ void visualizeAgents(Agent[] agents)
    Agent curra;
    for(int a=0;a<agents.length;a++)
    {
-    //Kolorowanie... przykładowe.
+    //Coloring... an example.
     if( (curra=agents[a]) != null )
     {
       if(curra.dummy>=0)
@@ -51,5 +51,5 @@ void visualizeAgents(Agent[] agents)
 }
 
 //-//////////////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC Wizualizacja
+//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC VISUALISATION
 //-//////////////////////////////////////////////////////////////////////////////////////////////////////

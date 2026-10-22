@@ -7,7 +7,7 @@ float Y=10;  //y is the number of some predator (for example, foxes);
 
 // α, β, γ, δ are positive real parameters describing 
 // the interaction of the two species.
-final float alpha=0.1;    //prey growth. The name `alpha` can be used until you want to use the `alpha` processing function.l
+final float alpha=0.1;    //prey growth. The name `alpha` can be used until you want to use the `alpha` processing function.
 final float beta=0.01;    //interaction of prey with predators
 final float gamma=0.001;  //the growth of predators depends on the number of prey
 final float delta=0.1;    //the mortality of predators

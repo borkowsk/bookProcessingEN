@@ -1,12 +1,12 @@
 /// "Min-Opt-Max neighbors": Not too many neighbors, but not too few, but OPTIMAL!
-/// TWO-dimensional, (A)SYNCHRONOUS, vonNeuman/Moore, deterministic cellular automaton
-//-//////////////////////////////////////////////////////////////////////////////////
+/// TWO-dimensional, (A)SYNCHRONOUS, von Neumann/Moore, deterministic cellular automaton
+//-///////////////////////////////////////////////////////////////////////////////////
 // See 233 (Conways Game of Life) or 123 & 234 - much more "biological"
 
 final int     WorldSide=501;  //How many cells do we want in one line?
 final boolean sync=true;      //Synchronous or asynchronous update    !!!!!!!
 
-final float   Dens=100.00;    //When >=1, simetric horizontal line is created
+final float   Dens=100.00;    //When >=1, symmetric horizontal line is created
 final int     MinN=2;         //Minimal number of neighbors required
 final int     OptN=3;         //The number of neighbors needed to revive the cell
 final int     MaxN=3;         //Maximal number of neighbors required
@@ -171,7 +171,7 @@ void stepMonteCarlo() // uses global WorldOld,WorldNew
        if(State==0)
            WorldOld[i][j]=(lives == OptN ? 1:0);
        else
-           WorldOld[i][j]=(MinN <= lives && lives <=MaxN ? 1:0 );//New state 
+           WorldOld[i][j]=(MinN <= lives && lives <=MaxN ? 1:0 ); //New state 
          
        if(State!=WorldOld[i][j]) 
            WorldNew[i][j]=-1; //Force painting changed points.

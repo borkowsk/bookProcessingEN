@@ -1,24 +1,24 @@
-//Najprostszy (prawie) układ chaotyczny
-//Parametry kontroli
-//double R=1.99; //Atraktor punktowy
-//double R=3.1; //Atraktor okresowy dwupunktowy
-//double R=3; //Punk krytyczny
-//double R=3.5; //4 punkty
-//double R=3.55; //8 punktowy
-double R=3.565; //Jeszcze okresowy, 14? pkt.
-//double R=3.571; //Blisko granicy chaosu
+//The simplest (almost) chaotic system
+//Control parameters
+//double R=1.99; //Point attractor
+//double R=3.1; //Periodic two-point attractor
+//double R=3; //Critical point
+//double R=3.5; //4 points (periodic)
+//double R=3.55; //8 points (periodic)
+double R=3.565; //Still periodic, 14? points.
+//double R=3.571; //Close to the edge of chaos
 //double R=3.575; //Chaos
-//double R=3.58; //Chaos, 4 chmury
-//double R=3.6; //Chaos - atraktor, 4 chmury i basen
-//double R=4; //Chaos - sam atraktor bez basenu
+//double R=3.58; //Chaos, 4 clouds
+//double R=3.6; //Chaos - attractor, 4 clouds and a pool
+//double R=4; //Chaos - only the attractor, no pool due to lack of space
 
-double X=0.0001; //Zmienna stanu, stan układu
+double X=0.0001; //State variable, state of the system
 int FM=300;
 int Rozbieg=100;
 
 double uklad(double x) // Xn --> Xn+1
 {
-  return R*x*(1-x); //implementacja układu
+  return R*x*(1-x); //state change implementation
 }
 
 void setup()

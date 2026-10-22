@@ -1,4 +1,4 @@
-/// "Naive" particles system with simplified phisics of collisions
+/// "Naive" particles system with simplified physics of collisions
 //*//////////////////////////////////////////////////////////////////////
 
 
@@ -10,7 +10,7 @@ int diameter=25;
 int radius=diameter/2;
 float maxspeed=1;
 int FRAMERATE=1000;
-int VISFREQ=1;//every N
+int VISFREQ=1; //every N
 
 float[]   xpos = new float[circles];
 float[]   ypos = new float[circles];
@@ -116,7 +116,7 @@ void findcollisions()
      }
     }
     
-    for(int i=0;i<circles;i++) collision[i]=false;//Clear collisions
+    for(int i=0;i<circles;i++) collision[i]=false; //Clear collisions
 }
 
 /// SIMPLIFIED elastic rebound, i.e. the physical reaction to collisions

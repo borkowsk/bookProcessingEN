@@ -30,7 +30,7 @@ void visualizeAgents(Agent[] agents)
         float forFill=(curra.identity*255.0)/Number_of_identities;
         fill(forFill,forFill,0);
     }
-    else //otherwise bacground only
+    else //otherwise background only
     {
       noStroke();
       fill(128);
@@ -52,7 +52,7 @@ void  changeAgents(Agent[] agents)
     
     if(agents[a]!= null )
     {
-      // Sprawdzenie stresu
+      // Stress checking
       int strangers=0;
       
       if(0<=a-1 && agents[a-1]!=null 
@@ -70,7 +70,7 @@ void  changeAgents(Agent[] agents)
       && random(1.0)<agents[a].stress)
       { // An index draw for the moving destination
         int target=(int)random(0,agents.length);
-        if(agents[target]==null)//is there a place
+        if(agents[target]==null) //is there a place
         {
           agents[target]=agents[a];
           agents[a]=null;
@@ -92,7 +92,7 @@ void doStatisticsOnAgents(Agent[] agents)
       summ+=curra.stress;
      
       //Other statistics
-      //...//TODO
+      //... //TODO?
       
       liveCount++;
     }

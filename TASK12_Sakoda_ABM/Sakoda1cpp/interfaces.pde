@@ -1,4 +1,4 @@
-/// World of simuliation interface - expected methods
+/// World of simulation interface - expected methods
 //*//////////////////////////////////////////////////////////////////
 
 interface simulation_world

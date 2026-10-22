@@ -1,16 +1,16 @@
-// Agent jest jedną z dwóch centralnych klas każdego modelu ABM
+// An agent is one of the two central classes in any ABM model.
 //-/////////////////////////////////////////////////////////////
 class Agent
 {
   int   state;
-  float immunity; //Zamiast PTransfer!
+  float immunity; //Instead PTransfer!
   
-  Agent() //Konstruktor agenta. Inicjuje atrybuty
+  Agent() //Agent constructor. Initializes attributes
   {
     state=Susceptible;
     immunity=( random(1.0)+random(1.0)+random(1.0)
-              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Średnia 0.5
-             //random(1.0); //Średnia taka sama, ale rozkład płaski
+              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Average 0.5
+             //random(1.0); //The mean is the same, but the distribution is flat
   }
 }
 

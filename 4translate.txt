@@ -1707,7 +1707,7 @@ TASK12_Sakoda_ABM/Sakoda0_1/AssemblingOfWorld.pde:67:///More elaborated function
 TASK12_Sakoda_ABM/Sakoda0_1/AssemblingOfWorld.pde:68://*/////////////////////////////////////////////////////////////////////////
 TASK12_Sakoda_ABM/Sakoda0_1/AssemblingOfWorld.pde:73:   //Other visualisations
 TASK12_Sakoda_ABM/Sakoda0_1/AssemblingOfWorld.pde:74:   //... // if there was anything but agents.
-TASK12_Sakoda_ABM/Sakoda0_1/AssemblingOfWorld.pde:75:         // Enviroment for example.
+TASK12_Sakoda_ABM/Sakoda0_1/AssemblingOfWorld.pde:75:         // environment for example.
 TASK12_Sakoda_ABM/Sakoda0_1/AssemblingOfWorld.pde:78://*/////////////////////////////////////////////////////////////////////////////////////////////
 TASK12_Sakoda_ABM/Sakoda0_1/AssemblingOfWorld.pde:79://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF SAKODA
 TASK12_Sakoda_ABM/Sakoda0_1/AssemblingOfWorld.pde:80://  https://github.com/borkowsk/bookProcessingEN
@@ -2271,7 +2271,7 @@ TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:19://
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:20:// and finally:
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:21://  CloseVideo(); //Should be called in exit()
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:22://
-TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:24:VideoExport        videoExport; //CLASS from Abe Pazosa's VideoExport library - must be installed
+TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:24:VideoExport        videoExport; //CLASS from Abe Pazos's VideoExport library - must be installed
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:26:static boolean     videoExportEnabled=false; //Initialisation will set up it for true
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:31:  videoExport = new VideoExport(parent,Name); //The VideoExport class must have access to the Processing application object.
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:32:  videoExport.setFrameRate(Frames); //Not too fast
@@ -2285,7 +2285,7 @@ TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:62:   //There should be some "force scree
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:63:   for(int i=0;i<videoFramesFreq;i++) //It must last a second or something...
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:64:       videoExport.saveFrame(); //Video frame
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:65:   videoExport.saveFrame(); //Video frame - LAST
-TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:66:   videoExport.endMovie(); //Koniec filma
+TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:66:   videoExport.endMovie(); //Konec filmu ("The End" in Czech)
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:70://*/////////////////////////////////////////////////////////////////////////////////////////
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:71:// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - MOVIE MAKER
 TASK12_Sakoda_ABM/Sakoda1/RTMVideo.pde:72:// https://github.com/borkowsk/bookProcessingEN
@@ -2647,8 +2647,8 @@ TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:1:// A world full of agents re
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:2://-//////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:10:    //AGENT COLORING
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:11:    //USING THIS CODE AS AN EXAMPLE, DEFINE YOUR OWN COLORING!
-TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:25:    rect(b*cwidth,a*cwidth,cwidth,cwidth); //THIS IS ACTUAL DRAWING a jest pionowe
-TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:26:                                          //bo tak leżą w pamięci tablice 2D
+TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:25:    rect(b*cwidth,a*cwidth,cwidth,cwidth); //THIS IS ACTUAL DRAWING- "a" is vertical
+TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:26:                                          //because that’s how 2D arrays are laid out in memory
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:29://OR
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:35:    //AGENT COLORING
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ModelVisual.pde:36:    //USING THIS CODE AS AN EXAMPLE, DEFINE YOUR OWN COLORING!   
@@ -2677,7 +2677,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemia00/AssemblingOfWorld.pde:35:{                    
 TASK13_SIR_Epid_ABM/ABMEpidemia00/AssemblingOfWorld.pde:36:  dummyChangeAgents(world.agents); //THE OVERLOADED FUNCTION WILL BE SELECTED HERE!
 TASK13_SIR_Epid_ABM/ABMEpidemia00/AssemblingOfWorld.pde:41:   dummyChange(world); //TEMPORARY USE OF TRIVIA DYNAMICS
 TASK13_SIR_Epid_ABM/ABMEpidemia00/AssemblingOfWorld.pde:42:   //OR
-TASK13_SIR_Epid_ABM/ABMEpidemia00/AssemblingOfWorld.pde:43:   //... MIEJSCE NA TWÓJ REALNY KOD MODELU e.g. 
+TASK13_SIR_Epid_ABM/ABMEpidemia00/AssemblingOfWorld.pde:43:   //... PLACE FOR YOUR ACTUAL MODEL CODE
 TASK13_SIR_Epid_ABM/ABMEpidemia00/AssemblingOfWorld.pde:44:   //agentsChange(world.agents); //THE OVERLOADED FUNCTION WILL BE SELECTED HERE!
 TASK13_SIR_Epid_ABM/ABMEpidemia00/AssemblingOfWorld.pde:49://-/////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemia00/AssemblingOfWorld.pde:50://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF AGENTS FOR FILL UP
@@ -2692,7 +2692,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemia00/ABMEpidemia.pde:11:World TheWorld=new World(si
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ABMEpidemia.pde:12:                               //IN THE setup() FUNCTION
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ABMEpidemia.pde:14://VISUALIZATION PARAMETERS, STATISTICS, ETC.
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ABMEpidemia.pde:15:int cwidth=15; //CELL SIDE LENGTH IN VISUALIZATION - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
-TASK13_SIR_Epid_ABM/ABMEpidemia00/ABMEpidemia.pde:16:              //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
+TASK13_SIR_Epid_ABM/ABMEpidemia00/ABMEpidemia.pde:16:              // - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ABMEpidemia.pde:17:int STATUSHEIGH=40; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ABMEpidemia.pde:19:int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemia00/ABMEpidemia.pde:20:int FRAMEFREQ=10; //HOW MANY TIMES PER SECOND DOES draw() RUN?
@@ -2743,10 +2743,10 @@ TASK13_SIR_Epid_ABM/ABMEpidemia00/AgentBasics.pde:52://  https://www.researchgat
 TASK13_SIR_Epid_ABM/ABMEpidemia00/AgentBasics.pde:53://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:1:// An agent is one of the two central classes in any ABM model.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:2://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:6:  float immunity; //Zamiast PTransfer!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:6:  float immunity; //Instead PTransfer!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:8:  Agent() //Agent constructor. Initializes attributes
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Średnia 0.5
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:13:             //random(1.0); //Średnia taka sama, ale rozkład płaski
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Mean 0.5
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:13:             //random(1.0); //The mean is the same, but the distribution is flat
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:17://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:18://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT FOR FILL UP
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/Agent.pde:19://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -2880,9 +2880,9 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pd
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:27:int  sumInfected=0; //Number of successful infections
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:28:int sumRecovered=0; //Number of recoveries
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:29:int     sumDeath=0; //Number of deaths
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:31:FloatList deaths=new FloatList(); //Śmierci 
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:32:FloatList newcas=new FloatList(); //Nowe zachorowania
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:33:FloatList  cured=new FloatList(); //Wyleczeni 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:31:FloatList deaths=new FloatList(); //Death counter
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:32:FloatList newcas=new FloatList(); //New cases (infected)
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:33:FloatList  cured=new FloatList(); //Cured counter 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:35://VISUALIZATION PARAMETERS, STATISTICS, ETC.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:36:int cwidth=3; //CELL SIDE LENGTH IN VISUALIZATION - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:37:             //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
@@ -2893,9 +2893,9 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pd
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:44:boolean simulationRun=true; //SIMULATION OPERATIONS FLAG (Start/Stop) 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:48:  //GRAPHICS BELOW
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:51:  noSmooth();   //Significantly speeds up visualizations
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:55:  //randomSeed(-1013); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg e.g. 107 albo 1013
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:55:  //randomSeed(-1013); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:57:  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:58:  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:58:  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:59:  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:60:  //doStatistics(TheWorld); //as above
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:62:  //CALCULATE THE REQUIRED WINDOW SIZE FOR size()
@@ -2912,12 +2912,12 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pd
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:90:  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:93:    //NextVideoFrame(); //ANIMATION FRAME RECORDING FUNCTION. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:94:  }                    //Uses an internal flag to determine if the movie has started
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:104:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram wg. odporności  
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:106:  //Legenda i historie trzech zmiennych dziennych każda w swojej skali
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:104:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram by resistance to infection  
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:106:  //legend and the histories of three daily variables, each on its own scale
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:108:  //timeline(newcas,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:110:  //timeline(deaths,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:112:  //timeline(cured, 200,height,STATUSHEIGH-16,false);
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:114:  //Historie trzech zmiennych we wspólnej skali
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:114:  //Histories of three variables, each on a common scale
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:115:  fill(0,128,255); //Tylko kolor napisów tu możemy ustalić
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:121:  text("Żyją:"+liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath+"     ",width,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/ABMEpidemiaRectImmScreenFull.pde:130://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -2937,19 +2937,19 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:38:   if(agents
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:46:void  agentsChange(Agent[] agents) //to be changed to agentsChange()
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:54:      //agents[a].dummy+=random(-0.1,0.1); //EXAMPLE AGENT STATE CHANGE
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:59://OR
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:63:  //Zapamiętujemy stan przed krokiem
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:63:  //We store the state before the step
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:71:    int a=(int)random(0,agents.length);   //or "agents[a].length" in case we want to make a rectangle
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:72:    int b=(int)random(0,agents[a].length); //print(a,b,' '); DEBUG
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:75:       //If the cell is empty or the agent is healthy, we do nothing
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:78:       //Calculating neighbor locations
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:100:       float prob=random(1); //Fate for the day
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:102:       if(prob<PDeath) //He dies on this day
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:105:          agents[a][b].state=Death; //Ale to trzeba też uwzględnić przy statystyce!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:105:          agents[a][b].state=Death; //But this also needs to be taken into account in the statistics!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:109:          //... or he is cured
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:113:              //agents[a][b].immunity=1; //Dla sprawdzenia, ale demoluje ;-) wykres
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:113:              //agents[a][b].immunity=1; //Just to check, though it will mess up the chart ;-)
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:115:          //else //...OR STILL SUFFERING!
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:119:  //Zapamiętujemy zmianę w podstawowych statystykach 
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:120:  //jaka się dokonała w tym kroku symulacji
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:119:  //We record the change in the base statistics 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:120:  //which took place during this simulation step
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:126://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:127://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC INITIALISATION & EVERY STEP CHANGE
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmScreenFull/AgentBasics.pde:128://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2963,7 +2963,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:11:World TheWorld=new World(
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:12:                               //IN THE setup() FUNCTION
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:14://STAŁE MODELU
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:15:final int Duration=7; //Infection duration
-TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:16://final int Empty=0; //ZBĘDNE. Zamiast tego jest null w komórce tablicy uchwytów do agentów
+TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:16://final int Empty=0; //UNNECESSARY. Instead, there is a null in the cell of the array of agent handles.
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:20:final float PTransfer=0.330; //Probability of infecting an agent in a single interaction
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:21:final float PDeath=0.05;    //Average probability of death in one day of illness duration
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:23://STATISTICS CALCULATED DURING THE SIMULATION
@@ -2971,8 +2971,8 @@ TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:25:int sumInfected=0; //Numb
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:26:int sumRecovered=0; //Number of recoveries
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:27:int sumDeath=0; //Number of deaths
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:29://VISUALIZATION PARAMETERS, STATISTICS, ETC.
-TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:30:int cwidth=3; //CELL SIDE LENGTH IN VISUALIZATION - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
-TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:31:              //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
+TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:30:int cwidth=3; //CELL SIDE LENGTH IN VISUALIZATION
+TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:31:              // - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:32:int STATUSHEIGH=40; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:34:int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ABMEpidemia01.pde:35:int FRAMEFREQ=10; //HOW MANY TIMES PER SECOND DOES draw() RUN?
@@ -3025,8 +3025,8 @@ TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:14:      case Recovered:  fill
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:15:      case Infected:   fill(255,0,0);break; // Just infected
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:16:      case Susceptible:fill(0,0,255);break; // Vulnerable
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:17:      default:         fill(random(255),0,random(255)); // Sick
-TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:27:    rect(b*cwidth,a*cwidth,cwidth,cwidth); //THIS IS ACTUAL DRAWING. UWAGA! a to współrzędna  
-TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:28:                                          //pionowa bo tak jest ułożona tablica 2D
+TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:27:    rect(b*cwidth,a*cwidth,cwidth,cwidth); //THIS IS ACTUAL DRAWING. 
+TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:28:                                          //"a" is vertical, because that is how a 2D array is structured
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:31://OR
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:37:    //AGENT COLORING  
 TASK13_SIR_Epid_ABM/ABMEpidemia01/ModelVisual.pde:40:      switch(curra.state){ //The selection statement allows us to choose any color
@@ -3096,10 +3096,10 @@ TASK13_SIR_Epid_ABM/ABMEpidemia01/AgentBasics.pde:119://  https://www.researchga
 TASK13_SIR_Epid_ABM/ABMEpidemia01/AgentBasics.pde:120://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:1:// An agent is one of the two central classes in any ABM model.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:2://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:6:  float immunity; //Zamiast PTransfer!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:6:  float immunity; //InsteadPTransfer!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:8:  Agent() //Agent constructor. Initializes attributes
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Średnia 0.5
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:13:            //=random(1.0); //Średnia taka sama, ale rozkład płaski
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Mean 0.5
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:13:            //=random(1.0); //The mean is the same, but the distribution is flat
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:17://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:18://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT FOR FILL UP
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/Agent.pde:19://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -3178,9 +3178,9 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:38:boolean simul
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:42:  //GRAPHICS BELOW
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:43:  size(1200,640); //UNFORTUNATELY, ONLY LITERAL VALUES CAN BE PRESENTED HERE ("LITERALS")
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:44:  noSmooth();   //Significantly speeds up visualizations
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:48:  //randomSeed(-1013); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg e.g. 107 albo 1013
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:48:  //randomSeed(-1013); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:50:  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:51:  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:51:  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:52:  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:53:  //doStatistics(TheWorld); //as above
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/ABMEpidemiaRectImmG.pde:55:  //CALCULATE THE REQUIRED WINDOW SIZE FOR size()
@@ -3232,12 +3232,12 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/AgentBasics.pde:109://  https://www.rese
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmG/AgentBasics.pde:110://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:1:// An agent is one of the two central classes in any ABM model.
 TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:2://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:7:  float immunity; //Zamiast PTransfer!
+TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:7:  float immunity; //InsteadPTransfer!
 TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:9:  //Położenie komórek zamieszkania i pracy
 TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:15:  Agent(int initX,int initY) //Konstruktor agenta. Podajemy "adres zamieszkania" 
 TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:18:    flatY=workY=initY; //"workX|Y" mоże zostać sensowniej przypisane później.
-TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:22:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Średnia 0.5
-TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:23:             //random(1.0); //Średnia taka sama, ale rozkład płaski
+TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:22:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Mean 0.5
+TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:23:             //random(1.0); //The mean is the same, but the distribution is flat
 TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:27://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:28://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT FOR FILL UP
 TASK13_SIR_Epid_ABM/city_of_plague/Agent.pde:29://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -3301,7 +3301,7 @@ TASK13_SIR_Epid_ABM/city_of_plague/ModelVisual.pde:39:      case Susceptible:fil
 TASK13_SIR_Epid_ABM/city_of_plague/ModelVisual.pde:40:      case Death:      fill(0);break;//Deceased
 TASK13_SIR_Epid_ABM/city_of_plague/ModelVisual.pde:41:      default:         fill(random(255),green,random(255)); // Sick
 TASK13_SIR_Epid_ABM/city_of_plague/ModelVisual.pde:44:      rect(b*cwidth,a*cwidth,cwidth,cwidth); //THIS IS ACTUAL DRAWING 
-TASK13_SIR_Epid_ABM/city_of_plague/ModelVisual.pde:45:                             //Zamiast rect() mogłoby też być ellipse()
+TASK13_SIR_Epid_ABM/city_of_plague/ModelVisual.pde:45:                             //Insteadrect() mogłoby też być ellipse()
 TASK13_SIR_Epid_ABM/city_of_plague/ModelVisual.pde:50://-//////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/city_of_plague/ModelVisual.pde:51://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM city_of_plague: Wizualizacja
 TASK13_SIR_Epid_ABM/city_of_plague/ModelVisual.pde:52://-//////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3392,7 +3392,7 @@ TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:75:       else// jak krok nie
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:76:         if(env[a][b]==Env_WORK+1) //Tylko jak nadal jest w pracy to z niej wraca
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:78:           agents[a][b]=null; //A z pracy znika
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:79:           agents[curra.flatY][curra.flatX]=curra; //Teleportuje się do domu
-TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:87:  //Zapamiętujemy stan przed krokiem
+TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:87:  //We store the state before the step
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:95:    int a=(int)random(0,agents.length); //or "agents[a].length" in case we want to make a rectangle
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:96:    int b=(int)random(0,agents[a].length); //print(a,b,' ');
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:99:       //If the cell is empty or the agent is healthy, we do nothing
@@ -3402,13 +3402,13 @@ TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:126:       if(prob<PDeath) //
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:129:          //agents[a][b]=null; //Można by dawać mu stan "dead", ale...
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:130:          agents[a][b].state=Death; //Ale to trzeba uwzględnić przy statystyce!
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:134:          //... or he is cured
-TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:138:              //agents[a][b].immunity=1; //Dla sprawdzenia, ale demoluje ;-) wykres
+TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:138:              //agents[a][b].immunity=1; //Just to check, though it will mess up the chart ;-)
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:140:          //else //...OR STILL SUFFERING!
-TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:144:  //Zapamiętujemy zmianę w podstawowych statystykach jaka się dokonała w kroku symulacji
+TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:144:  //We record the change in the base statistics jaka się dokonała w kroku symulacji
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:150://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:151://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC INITIALISATION & EVERY STEP CHANGE
 TASK13_SIR_Epid_ABM/city_of_plague/AgentBasics.pde:152://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:1:// ABM epidemic model with enviroment 
+TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:1:// ABM epidemic model with environment 
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:2:// - using template for AGENT BASE MODEL in 2D discrete geometry
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:3:// @author Wojciech Borkowski
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:4://-///////////////////////////////////////////////////////////////////////////////////////
@@ -3424,7 +3424,7 @@ TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:13:// o miejscu zamieszkan
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:14:String modelName="ABMcity_of_plague"; //NAZWA modelu, na razie nie używana.
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:16://MODEL PARAMETERS
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:17:int side=200; //LENGTH OF THE SIDE OF THE WORLD - PIONOWEGO. Poziomy jest x2
-TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:18:float density=0.66; //Gęstość zaludnienia na "terenach mieszkalnych"
+TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:18:float density=0.66; //Population density in "residential areas"
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:20:final float  PDeath=0.15;     //Średnie prawdopodobieństwo śmierci w danym KROKU(12h!) 
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:21:                              //choroby. Teraz krok to 12 godzin.
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:22:final int    Duration=14;     //Infection duration W krokach symulacji. 
@@ -3462,9 +3462,9 @@ TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:67:  pixelDensity(1); //1 
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:68:  size(1200,750); //UNFORTUNATELY, ONLY LITERAL VALUES CAN BE PRESENTED HERE ("LITERALS")
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:69:  pixelDensity(1); //1 or 2, expecially for MAC "Retina"
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:71:  noSmooth();   //Significantly speeds up visualizations
-TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:75:  //randomSeed(-1013); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg e.g. 107 albo 1013
+TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:75:  //randomSeed(-1013); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:77:  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
-TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:78:  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
+TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:78:  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:79:  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:80:  //doStatistics(TheWorld); //as above
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:82:  //CALCULATE THE REQUIRED WINDOW SIZE FOR size()
@@ -3486,23 +3486,23 @@ TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:113:  if(!simulationRun //
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:114:  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:117:    //NextVideoFrame(); //ANIMATION FRAME RECORDING FUNCTION. 
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:118:  }                    //Uses an internal flag to determine if the movie has started
-TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:125:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram wg. odporności  
+TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:125:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram by resistance to infection  
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:127:                                                                  // Albo historie trzech zmiennych dziennych 
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:128:  //Legenda                                                       // w swojej skali
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:129:  stroke(0,0,255);fill(0,0,200);text("nowi chorzy",300,height-16); //timeline(newcas,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:130:  stroke(255,0,0);fill(200,0,0);text("nowi zmarli",300,height-32); //timeline(deaths,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:131:  stroke(0,255,0);fill(0,200,0);text("nowo wyleczeni",300,height-48); //timeline(cured, 200,height,STATUSHEIGH-16,false);
-TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:133:  //Historie trzech zmiennych we wspólnej skali
+TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:133:  //Histories of three variables, each on a common scale
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:139:  text("Żyją:"+liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath+"     ",width,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:148://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:149://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM MAIN TEMPLATE
 TASK13_SIR_Epid_ABM/city_of_plague/city_of_plague.pde:150://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:1:// An agent is one of the two central classes in any ABM model.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:2://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:6:  float immunity; //Zamiast PTransfer!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:6:  float immunity; //InsteadPTransfer!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:8:  Agent() //Agent constructor. Initializes attributes
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Średnia 0.5
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:13:             //random(1.0); //Średnia taka sama, ale rozkład płaski
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Mean 0.5
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:13:             //random(1.0); //The mean is the same, but the distribution is flat
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:17://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:18://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT FOR FILL UP
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/Agent.pde:19://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -3517,18 +3517,18 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:13://"
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:14:final int Duration=7; //Infection duration
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:15://final int Empty=0; //UNNECESSARY. Instead, there is a null value in the agent handle array cell. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:20://final float PTransfer=???;  //Probability of infecting an agent in a single interaction
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:21:                              //teraz zależy od indywidualnej wartości immunity!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:21:                              //now it depends on the individual immunity value!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:22:final float PDeath=0.015;     //Average probability of death in one day of illness duration
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:24://STATISTICS CALCULATED DURING THE SIMULATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:27:int  sumInfected=0; //Number of successful infections
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:28:int sumRecovered=0; //Number of recoveries
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:29:int     sumDeath=0; //Number of deaths
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:31:FloatList deaths=new FloatList(); //Śmierci 
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:32:FloatList newcas=new FloatList(); //Nowe zachorowania
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:33:FloatList  cured=new FloatList(); //Wyleczeni 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:31:FloatList deaths=new FloatList(); //Death counter
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:32:FloatList newcas=new FloatList(); //New cases (infected)
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:33:FloatList  cured=new FloatList(); //Cured
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:35://VISUALIZATION PARAMETERS, STATISTICS, ETC.
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:36:int cwidth=3; //CELL SIDE LENGTH IN VISUALIZATION - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:37:             //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:36:int cwidth=3; //CELL SIDE LENGTH IN VISUALIZATION 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:37:             // - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:38:int STATUSHEIGH=150; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:40:int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:41:int FRAMEFREQ=30; //HOW MANY TIMES PER SECOND DOES draw() RUN?
@@ -3538,9 +3538,9 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:48:  /
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:49:  //fullScreen();
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:51:  STATUSHEIGH=int(height*0.2); //Trzeba dopasować do proporcji ekranu
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:53:  noSmooth();   //Significantly speeds up visualizations
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:57:  //randomSeed(-1013); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg e.g. 107 albo 1013
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:57:  //randomSeed(-1013); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:59:  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:60:  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:60:  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:61:  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:62:  //doStatistics(TheWorld); //as above
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:64:  //CALCULATE THE REQUIRED WINDOW SIZE FOR size()
@@ -3557,12 +3557,12 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:91:  i
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:92:  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:95:    //NextVideoFrame(); //ANIMATION FRAME RECORDING FUNCTION. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:96:  }                    //Uses an internal flag to determine if the movie has started
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:106:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram wg. odporności  
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:108:  //Legenda i historie trzech zmiennych dziennych każda w swojej skali
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:106:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram by resistance to infection  
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:108:  //legend and the histories of three daily variables, each on its own scale
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:110:  //timeline(newcas,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:112:  //timeline(deaths,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:114:  //timeline(cured, 200,height,STATUSHEIGH-16,false);
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:116:  //Historie trzech zmiennych we wspólnej skali
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:116:  //Histories of three variables, each on a common scale
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:117:  fill(0,128,255); //Tylko kolor napisów tu możemy ustalić
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:123:  text("Żyją:"+liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath+"     ",width,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/ABMEpidemiaRectImmGraphs.pde:132://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -3684,28 +3684,28 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:38:   if(agents[age
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:46:void  agentsChange(Agent[] agents) //to be changed to agentsChange()
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:54:      //agents[a].dummy+=random(-0.1,0.1); //EXAMPLE AGENT STATE CHANGE
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:59://OR
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:63:  //Zapamiętujemy stan przed krokiem
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:63:  //We store the state before the step
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:71:    int a=(int)random(0,agents.length);   //or "agents[a].length" in case we want to make a rectangle
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:72:    int b=(int)random(0,agents[a].length); //print(a,b,' '); DEBUG
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:75:       //If the cell is empty or the agent is healthy, we do nothing
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:78:       //Calculating neighbor locations
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:100:       float prob=random(1); //Fate for the day
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:102:       if(prob<PDeath) //He dies on this day
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:105:          agents[a][b].state=Death; //Ale to trzeba też uwzględnić przy statystyce!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:105:          agents[a][b].state=Death; //But this also needs to be taken into account in the statistics!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:109:          //... or he is cured
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:113:              //agents[a][b].immunity=1; //Dla sprawdzenia, ale demoluje ;-) wykres
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:113:              //agents[a][b].immunity=1; //Just to check, though it will mess up the chart ;-)
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:115:          //else //...OR STILL SUFFERING!
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:119:  //Zapamiętujemy zmianę w podstawowych statystykach 
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:120:  //jaka się dokonała w tym kroku symulacji
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:119:  //We record the change in the base statistics 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:120:  //which took place during this simulation step
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:126://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:127://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC INITIALISATION & EVERY STEP CHANGE
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmGraphs/AgentBasics.pde:128://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:1:// An agent is one of the two central classes in any ABM model.
 TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:2://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:6:  float immunity; //Zamiast PTransfer!
+TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:6:  float immunity; //InsteadPTransfer!
 TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:8:  Agent() //Agent constructor. Initializes attributes
-TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Średnia 0.5
-TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:13:            //=random(1.0); //Średnia taka sama, ale rozkład płaski
+TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Mean 0.5
+TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:13:            //=random(1.0); //The mean is the same, but the distribution is flat
 TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:17://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:18://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT FOR FILL UP
 TASK13_SIR_Epid_ABM/ABMEpidemia/Agent.pde:19://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -3780,7 +3780,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemia/ABMEpidemia.pde:32:              //WARTOŚĆ NAD
 TASK13_SIR_Epid_ABM/ABMEpidemia/ABMEpidemia.pde:33:int STATUSHEIGH=40; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
 TASK13_SIR_Epid_ABM/ABMEpidemia/ABMEpidemia.pde:35:int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemia/ABMEpidemia.pde:36:int FRAMEFREQ=30; //HOW MANY TIMES PER SECOND DOES draw() RUN?
-TASK13_SIR_Epid_ABM/ABMEpidemia/ABMEpidemia.pde:38://boolean WITH_VIDEO=false; //CZY CHCEMY ZAPIS DO PLIKU FILMOWEGO (wymagany modułu RTMVideo.pde)
+TASK13_SIR_Epid_ABM/ABMEpidemia/ABMEpidemia.pde:38://boolean WITH_VIDEO=false; //DO WE WANT TO SAVE TO A VIDEO FILE? (wymagany modułu RTMVideo.pde)
 TASK13_SIR_Epid_ABM/ABMEpidemia/ABMEpidemia.pde:39:boolean simulationRun=true; //SIMULATION OPERATIONS FLAG (Start/Stop) 
 TASK13_SIR_Epid_ABM/ABMEpidemia/ABMEpidemia.pde:43:  //GRAPHICS BELOW
 TASK13_SIR_Epid_ABM/ABMEpidemia/ABMEpidemia.pde:44:  size(1200,640); //UNFORTUNATELY, ONLY LITERAL VALUES CAN BE PRESENTED HERE ("LITERALS")
@@ -3841,36 +3841,36 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:2:// @au
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:3://-///////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:5://MODEL PARAMETERS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:6:int side=200; //LENGTH OF THE SIDE OF THE WORLD
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:10:World TheWorld; //=new World(side); //INICJALIZACJA JEST W FUNKCJI setup()
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:10:World TheWorld; //=new World(side); //INITIALIZATION IS IN THE setup() FUNCTION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:12://"final" is something like constants ;-)
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:13:final int Duration=7; //Infection duration
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:14://final int Empty=0; //UNNECESSARY. Instead, there is a null value in the agent handle array cell. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:19://final float PTransfer=???;  //Probability of infecting an agent in a single interaction
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:20:                              //teraz zależy od indywidualnej wartości "immunity"!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:20:                              //now it depends on the individual "immunity" value!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:21:final float PDeath=0.015;     //Average probability of death in one day of illness duration
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:23://STATISTICS CALCULATED DURING THE SIMULATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:26:int  sumInfected=0; //Number of successful infections
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:27:int sumRecovered=0; //Number of recoveries
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:28:int     sumDeath=0; //Number of deaths
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:30:FloatList deaths=new FloatList(); //Śmierci 
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:31:FloatList newcas=new FloatList(); //Nowe zachorowania
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:32:FloatList  cured=new FloatList(); //Wyleczeni 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:30:FloatList deaths=new FloatList(); //Death counter
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:31:FloatList newcas=new FloatList(); //New cases (infected)
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:32:FloatList  cured=new FloatList(); //Cured counter 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:34://VISUALIZATION PARAMETERS, STATISTICS, ETC.
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:35:int cwidth=1; //CELL SIDE LENGTH IN VISUALIZATION - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:36:             //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:35:int cwidth=1; //CELL SIDE LENGTH IN VISUALIZATION
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:36:             // - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:37:int STATUSHEIGH=150; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:39:int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:40:int FRAMEFREQ=50; //HOW MANY TIMES PER SECOND DOES draw() RUN?
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:42:boolean WITH_VIDEO=false; //CZY CHCEMY ZAPIS DO PLIKU FILMOWEGO (wymagane RTMVideo.pde)
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:42:boolean WITH_VIDEO=false; //DO WE WANT TO SAVE TO A VIDEO FILE? (required RTMVideo.pde)
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:43:boolean simulationRun=true; //SIMULATION OPERATIONS FLAG (Start/Stop) 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:47:  //GRAPHICS BELOW
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:51:  size(1600,900); //UNFORTUNATELY, ONLY LITERAL VALUES CAN BE PRESENTED HERE ("LITERALS")
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:53:  //OBLICZAMY WYMAGANE PARAMETRY OKNA 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:54:  cwidth=(height-STATUSHEIGH)/side; // HOWEVER, WE ADAPT THE SIZE OF THE CELLS TO THE WINDOW THAT IS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:57:  noSmooth();   //Significantly speeds up visualizations
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:61:  //randomSeed(-1013); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg e.g. 107 albo 1013
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:61:  //randomSeed(-1013); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:63:  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:66:  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:66:  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:67:  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:68:  //doStatistics(TheWorld); //as above
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:71:  //INITIALIZE ANIMATION RECORDING (if using RTMVideo.pde)
@@ -3888,23 +3888,23 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:96:  if(
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:97:  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:100:    NextVideoFrame(); //ANIMATION FRAME RECORDING FUNCTION. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:101:  }                    //Uses an internal flag to determine if the movie has started
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:111:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram wg. odporności  
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:115:  //Legenda i historie trzech zmiennych dziennych każda w swojej skali
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:111:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram by resistance to infection  
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:115:  //legend and the histories of three daily variables, each on its own scale
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:117:  //timeline(newcas,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:119:  //timeline(deaths,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:121:  //timeline(cured, 200,height,STATUSHEIGH-16,false);
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:123:  //Historie trzech zmiennych we wspólnej skali
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:123:  //Histories of three variables, each on a common scale
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:124:  fill(0,128,255); //Tylko kolor napisów tu możemy ustalić
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:132:  text("Żyją:"+liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath+"     ",width,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:132:  text("Alives:"+liveCount+" Infected:"+sumInfected+" Cured:"+sumRecovered+" Death:"+sumDeath+"     ",width,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:141://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:142://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM MAIN TEMPLATE
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/ABMEpidemiaRectImmMovie.pde:143://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:1:// An agent is one of the two central classes in any ABM model.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:2://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:6:  float immunity; //Zamiast PTransfer!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:6:  float immunity; //Instead PTransfer!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:8:  Agent() //Agent constructor. Initializes attributes
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Średnia 0.5
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:13:             //random(1.0); //Średnia taka sama, ale rozkład płaski
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Average 0.5
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:13:             //random(1.0); //The mean is the same, but the distribution is flat
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:17://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:18://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT FOR FILL UP
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/Agent.pde:19://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -3977,7 +3977,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AssemblingOfWorld.pde:9:  Agent agen
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AssemblingOfWorld.pde:11:  World(int side,int wside) //CONSTRUCTION OF THE WORLD
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AssemblingOfWorld.pde:13:    //agents=new Agent[wside];
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AssemblingOfWorld.pde:14:    //OR
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AssemblingOfWorld.pde:15:    agents=new Agent[side][wside]; //do WIDEO potrzebujemy parzystości
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AssemblingOfWorld.pde:15:    agents=new Agent[side][wside]; //for VIDEO, we need parity
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AssemblingOfWorld.pde:19://MORE COMPLEX FUNCTIONALITIES ARE DEFINED AS SEPARATE FUNCTIONS RATHER THAN CLASS METHODS World
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AssemblingOfWorld.pde:20://DUE TO PROCESSING SYNTAX LIMITATIONS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AssemblingOfWorld.pde:21://WHICH DOESN'T ALLOW YOU TO HIDE LESS IMPORTANT CLASS METHODS SOMEWHERE ELSE
@@ -4025,18 +4025,18 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:38:   if(agents[agen
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:46:void  agentsChange(Agent[] agents) //to be changed to agentsChange()
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:54:      //agents[a].dummy+=random(-0.1,0.1); //EXAMPLE AGENT STATE CHANGE
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:59://OR
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:63:  //Zapamiętujemy stan przed krokiem
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:63:  //We store the state before the step
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:71:    int a=(int)random(0,agents.length);   //or "agents[a].length" in case we want to make a rectangle
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:72:    int b=(int)random(0,agents[a].length); //print(a,b,' '); DEBUG
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:75:       //If the cell is empty or the agent is healthy, we do nothing
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:78:       //Calculating neighbor locations
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:100:       float prob=random(1); //Fate for the day
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:102:       if(prob<PDeath) //He dies on this day
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:105:          agents[a][b].state=Death; //Ale to trzeba też uwzględnić przy statystyce!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:105:          agents[a][b].state=Death; //But this also needs to be taken into account in the statistics!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:109:          //... or he is cured
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:115:          //else //...OR STILL SUFFERING!
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:119:  //Zapamiętujemy zmianę w podstawowych statystykach 
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:120:  //jaka się dokonała w tym kroku symulacji
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:119:  //We record the change in the base statistics 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:120:  //which took place during this simulation step
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:126://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:127://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC INITIALISATION & EVERY STEP CHANGE
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/AgentBasics.pde:128://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4044,7 +4044,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:1://-//////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:2:// To musi być w setup() żeby było Video:
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:3://
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:4://  initVideoExport(this,FileName,int Frames)); //The VideoExport class must have access to the Processing application object.
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:5://                         //It is best to call it at the end of the setup. Okno musi mieć PARZYSTE rozmiary
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:5://                         //It is best to call it at the end of the setup. The window must have EVEN dimensions
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:6://  
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:7://a to dla każdej klatki
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:8://  NextVideoFrame(); //Video frame
@@ -4053,9 +4053,9 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:10://na koniec zaś:
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:11://  CloseVideo()
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:12://
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:13:import com.hamoid.*; //And we import the necessary Processing library containing the VideoExport class
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:15:VideoExport videoExport; //CLASS from Abe Pazosa's VideoExport library - must be installed
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:15:VideoExport videoExport; //CLASS from Abe Pazos's VideoExport library - must be installed
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:16:                        //http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:17:                        //Oraz zainstalować program ffmpeg żeby działało
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:17:                        //And install the ffmpeg program for it to work
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:23:  videoExport = new VideoExport(parent,Name); //The VideoExport class must have access to the Processing application object.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:24:  videoExport.setFrameRate(Frames); //Not too fast
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:36:     //text(videoExport.VERSION,width/2,height);
@@ -4063,24 +4063,24 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:38:     for(int i=0;i<v
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:39:       videoExport.saveFrame(); //Video frame
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:46:     videoExport.saveFrame(); //Video frame
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:49:void CloseVideo() //This is what we call when we want to close
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:54:   text("(c) W.Borkowski @ ISS University of Warsaw",1,height); //Raczej się nie pojawia :-(
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:54:   text("(c) W.Borkowski @ ISS University of Warsaw",1,height); //It probably won't appear :-(
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:55:   //There should be some "force screen update", but I didn't find it
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:56:   for(int i=0;i<videoFramesFreq;i++) //It must last a second or something...
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:57:       videoExport.saveFrame(); //Video frame
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:58:   videoExport.saveFrame(); //Video frame - LAST
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:59:   videoExport.endMovie(); //"Koniec filma"
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:65:static boolean     videoExportEnabled=false; //inicjalizacja ustawi to na "true"
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:59:   videoExport.endMovie(); //"The End"
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:65:static boolean     videoExportEnabled=false; //initialization will set this to "true"
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:67://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:68://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - MOVIE MAKER 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/rtmVideo.pde:69://-/////////////////////////////////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:1:void exit()          //Funkcja ta jest wywoływana zawsze po zamknięciu okna. 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:1:void exit()          //This function is always called after the window is closed. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:3:  noLoop();          //For to be sure...
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:4:  delay(100);        // możliwe jest zamknięcie okna, gdy draw() nadal działa!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:4:  delay(100);        // Unfortunately, it is possible for the window to be closed while draw() is running.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:5:  //write(world,modelName+"."+nf((float)StepCounter,5,5)); //end state of the system
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:7:  //if(outstat!=null)
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:8:  //{
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:9:  //  outstat.flush();  // Zapisuje pozostałe dane do pliku
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:10:  //  outstat.close();  // Kończy zapis i zamyka plik
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:9:  //  outstat.flush();  // Saves the remaining data to a file
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:10:  //  outstat.close();  // Finishes writing and closes the file
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:11:  //}
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:13:  if(WITH_VIDEO) CloseVideo();    //Finalizacja eksportu wideo
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmMovie/RTMExit.pde:16:  super.exit();       //Co superklasa z biblioteki musi zrobić przy wyjściu.()
@@ -4094,7 +4094,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:5://Mode
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:6:final String  modelName="ABMPlague"; //"Plague" to DŻUMA!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:7:final int     randomSeed=1; //Jak 0 to pozostaje inicjacja automatyczna
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:8:final int     side=200; //LENGTH OF THE SIDE OF THE WORLD
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:9:final float   density=0.66; //Gęstość zaludnienia
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:9:final float   density=0.66; //Population density
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:10:final int     duration=14; //Infection duration
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:11:final float   pDeath=0.33/duration; //Average probability of death in one day of illness duration
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:12:final float   pFarTrans=0.0;   //Prawdopodobieństwo spontanicznego ruchu. 0 - totalny bezruch!
@@ -4105,29 +4105,29 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:22://STA
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:25:int  sumInfected=0; //Number of successful infections
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:26:int sumRecovered=0; //Number of recoveries
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:27:int     sumDeath=0; //Number of deaths
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:29:int migratioStart=0; //Ci co zaczęli migrować wg. `PFarTrans`
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:29:int migratioStart=0; //Those who began migrating according to `PFarTrans`
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:30:int migrationCont=0; //Ci co migrowali (dalej) z powodu pustki wokół
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:32:FloatList deaths=new FloatList(); //Śmierci 
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:33:FloatList newcas=new FloatList(); //Nowe zachorowania
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:34:FloatList  cured=new FloatList(); //Wyleczeni 
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:35:FloatList migration=new FloatList(); //Migrujący
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:32:FloatList deaths=new FloatList(); //Death counters
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:33:FloatList newcas=new FloatList(); //New cases (infected)
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:34:FloatList  cured=new FloatList(); //Cured counters 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:35:FloatList migration=new FloatList(); //Migration counters
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:37://VISUALIZATION PARAMETERS, STATISTICS, ETC.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:38:int cwidth=1; //CELL SIDE LENGTH IN VISUALIZATION - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:39:             //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:40:int STATUSHEIGH=150; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:42:int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:43:int FRAMEFREQ=50; //HOW MANY TIMES PER SECOND DOES draw() RUN?
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:45:boolean WITH_VIDEO=false; //CZY CHCEMY ZAPIS DO PLIKU FILMOWEGO (wymagane RTMVideo.pde. Może nie działać pod Windows)
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:45:boolean WITH_VIDEO=false; //DO WE WANT TO SAVE TO A VIDEO FILE? (required RTMVideo.pde. Może nie działać pod Windows)
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:46:boolean simulationRun=true; //SIMULATION OPERATIONS FLAG (Start/Stop) 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:52:  //GRAPHICS BELOW
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:56:  size(1200,900); //UNFORTUNATELY, ONLY LITERAL VALUES CAN BE PRESENTED HERE ("LITERALS")
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:58:  //OBLICZAMY WYMAGANE PARAMETRY OKNA 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:59:  cwidth=(height-STATUSHEIGH)/side; // HOWEVER, WE ADAPT THE SIZE OF THE CELLS TO THE WINDOW THAT IS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:62:  noSmooth();   //Significantly speeds up visualizations
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:68:    randomSeed(randomSeed); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg e.g. 107 albo 1013
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:68:    randomSeed(randomSeed); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:69:    noiseSeed(randomSeed); //Noise też wymaga zasiania
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:72:  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:75:  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:75:  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:76:  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:77:  //doStatistics(TheWorld); //as above
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:80:  //INITIALIZE ANIMATION RECORDING (if using RTMVideo.pde)
@@ -4145,12 +4145,12 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:105:  if
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:106:  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:109:    NextVideoFrame(); //ANIMATION FRAME RECORDING FUNCTION. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:110:  }                   //Używa wewnętrznej flagi określającej czy filmowanie zostało otwarte
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:120:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram wg. odporności  
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:124:  //Legenda i historie trzech zmiennych dziennych każda w swojej skali
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:120:  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram by resistance to infection  
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:124:  //legend and the histories of three daily variables, each on its own scale
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:126:  //timeline(newcas,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:128:  //timeline(deaths,200,height,STATUSHEIGH-16,false);
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:130:  //timeline(cured, 200,height,STATUSHEIGH-16,false);
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:132:  //Historie trzech zmiennych we wspólnej skali
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:132:  //Histories of three variables, each on a common scale
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:133:  fill(0,128,255); //Tylko kolor napisów tu możemy ustalić
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:146:  text("Żyją:"+liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath+"     ",width,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:152:                             +"\tMs\t"+migratioStart//Ci co zaczęli migrować wg. PFarTrans
@@ -4160,10 +4160,10 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:161://  
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/ABMEpidemiaRectImmNoise.pde:162://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:1:// An agent is one of the two central classes in any ABM model.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:2://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:6:  float immunity; //Zamiast PTransfer!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:6:  float immunity; //InsteadPTransfer!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:8:  Agent() //Agent constructor. Initializes attributes
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Średnia 0.5
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:13:             //random(1.0); //Średnia taka sama, ale rozkład płaski
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:12:              +random(1.0)+random(1.0)+random(1.0) )/6.0; //Mean 0.5
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:13:             //random(1.0); //The mean is the same, but the distribution is flat
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:17://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:18://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT FOR FILL UP
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/Agent.pde:19://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -4236,7 +4236,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AssemblingOfWorld.pde:9:  Agent agen
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AssemblingOfWorld.pde:11:  World(int side,int wside) //CONSTRUCTION OF THE WORLD
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AssemblingOfWorld.pde:13:    //agents=new Agent[wside];
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AssemblingOfWorld.pde:14:    //OR
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AssemblingOfWorld.pde:15:    agents=new Agent[side][wside]; //do WIDEO potrzebujemy parzystości
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AssemblingOfWorld.pde:15:    agents=new Agent[side][wside]; //for VIDEO, we need parity
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AssemblingOfWorld.pde:19://MORE COMPLEX FUNCTIONALITIES ARE DEFINED AS SEPARATE FUNCTIONS RATHER THAN CLASS METHODS World
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AssemblingOfWorld.pde:20://DUE TO PROCESSING SYNTAX LIMITATIONS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AssemblingOfWorld.pde:21://WHICH DOESN'T ALLOW YOU TO HIDE LESS IMPORTANT CLASS METHODS SOMEWHERE ELSE
@@ -4284,7 +4284,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:49:   ) //Samotny...
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:51:     migrationCont++;flaga=true; //Wymuszone błądzenie jeśli wokół pusto i głucho
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:52:     //println("elone"); //DEBUG
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:57:     //Wyliczenie lokalizacji do dalekiej migracji
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:84:  //Zapamiętujemy stan przed krokiem
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:84:  //We store the state before the step
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:92:    int a=(int)random(0,agents.length);   //or "agents[a].length" in case we want to make a rectangle
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:93:    int b=(int)random(0,agents[a].length); //print(a,b,' '); DEBUG
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:97:       //Jeśli migrował to nic więcej nie robimy
@@ -4292,13 +4292,13 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:100:       //If the 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:103:       //Calculating neighbor locations
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:125:       float prob=random(1); //Fate for the day
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:127:       if(prob<pDeath) //He dies on this day
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:130:          agents[a][b].state=Death; //Ale to trzeba też uwzględnić przy statystyce!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:130:          agents[a][b].state=Death; //But this also needs to be taken into account in the statistics!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:134:          //... or he is cured
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:140:          //else //...OR STILL SUFFERING!
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:147:     //Initiating infection from the center w 100 kroku dopiero
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:147:     //Initiating infection from the center only at the hundredth step
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:148:     if(agents[agents.length/2][agents.length/2]==null) //If he weren't here
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:156:  //Zapamiętujemy zmianę w podstawowych statystykach 
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:157:  //jaka się dokonała w tym kroku symulacji
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:156:  //We record the change in the base statistics 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:157:  //which took place during this simulation step 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:167://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:168://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC INITIALISATION & EVERY STEP CHANGE
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/AgentBasics.pde:169://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -4306,7 +4306,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:1://-//////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:2:// To musi być w setup() żeby było Video:
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:3://
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:4://  initVideoExport(this,FileName,int Frames)); //The VideoExport class must have access to the Processing application object.
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:5://                         //It is best to call it at the end of the setup. Okno musi mieć PARZYSTE rozmiary
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:5://                         //It is best to call it at the end of the setup. The window must have EVEN dimensions
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:6://  
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:7://a to dla każdej klatki
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:8://  NextVideoFrame(); //Video frame
@@ -4315,9 +4315,9 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:10://na koniec zaś:
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:11://  CloseVideo()
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:12://
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:13:import com.hamoid.*; //And we import the necessary Processing library containing the VideoExport class
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:15:VideoExport videoExport; //CLASS from Abe Pazosa's VideoExport library - must be installed
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:15:VideoExport videoExport; //CLASS from Abe Pazos's VideoExport library - must be installed
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:16:                        //http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:17:                        //Oraz zainstalować program ffmpeg żeby działało
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:17:                        //And install the ffmpeg program for it to work
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:23:  videoExport = new VideoExport(parent,Name); //The VideoExport class must have access to the Processing application object.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:24:  videoExport.setFrameRate(Frames); //Not too fast
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:36:     //text(videoExport.VERSION,width/2,height);
@@ -4325,26 +4325,26 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:38:     for(int i=0;i<v
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:39:       videoExport.saveFrame(); //Video frame
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:46:     videoExport.saveFrame(); //Video frame
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:49:void CloseVideo() //This is what we call when we want to close
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:54:   text("(c) W.Borkowski @ ISS University of Warsaw",1,height); //Raczej się nie pojawia :-(
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:54:   text("(c) W.Borkowski @ ISS University of Warsaw",1,height); //It probably won't appear :-(
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:55:   //There should be some "force screen update", but I didn't find it
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:56:   for(int i=0;i<videoFramesFreq;i++) //It must last a second or something...
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:57:       videoExport.saveFrame(); //Video frame
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:58:   videoExport.saveFrame(); //Video frame - LAST
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:59:   videoExport.endMovie(); //Koniec filma
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:65:static boolean     videoExportEnabled=false; //inicjalizacja ustawi to na "true"
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:59:   videoExport.endMovie(); //Konec filmu ("The End" in Czech)
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:65:static boolean     videoExportEnabled=false; //initialization will set this to "true"
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:67://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:68://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - MOVIE MAKER 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/rtmVideo.pde:69://-/////////////////////////////////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:1:void exit()          //Funkcja ta jest wywoływana zawsze po zamknięciu okna. 
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:1:void exit()          //This function is always called after the window is closed. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:3:  noLoop();          //For to be sure...
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:4:  delay(100);        // możliwe jest zamknięcie okna, gdy draw() nadal działa!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:4:  delay(100);        // Unfortunately, it is possible for the window to be closed while draw() is running.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:5:  //write(world,modelName+"."+nf((float)StepCounter,5,5)); //end state of the system
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:7:  //if(outstat!=null)
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:8:  //{
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:9:  //  outstat.flush();  // Zapisuje pozostałe dane do pliku
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:10:  //  outstat.close();  // Kończy zapis i zamyka plik
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:9:  //  outstat.flush();  // Saves the remaining data to a file
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:10:  //  outstat.close();  // Finishes writing and closes the file
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:11:  //}
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:13:  if(WITH_VIDEO) CloseVideo();    //
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:13:  if(WITH_VIDEO) CloseVideo();
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:16:  super.exit();       //Co superklasa z biblioteki musi zrobić przy wyjściu.()
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:19://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImmNoise/RTMExit.pde:20://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - EXIT TEMPLATE
@@ -4356,7 +4356,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/Agent.pde:6:  //NOWY KOD
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/Agent.pde:10:  Agent() //Agent constructor. Initializes attributes
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/Agent.pde:12:    //dummy=0;
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/Agent.pde:13:    //NOWY KOD
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/Agent.pde:15:    immunity=random(0.0,1.0); //Zamiast PTransfer!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/Agent.pde:15:    immunity=random(0.0,1.0); //InsteadPTransfer!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/Agent.pde:19://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/Agent.pde:20://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT FOR FILL UP
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/Agent.pde:21://-/////////////////////////////////////////////////////////////////////////////////////////
@@ -4393,15 +4393,15 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:14://"final" is so
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:15:final int Duration=7; //Infection duration
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:16://final int Empty=0; //UNNECESSARY. Instead, there is a null value in the agent handle array cell. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:20://final float PTransfer=???;  //Probability of infecting an agent in a single interaction
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:21:                              //teraz zależy od indywidualnej wartości immunity!
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:21:                              //now it depends on the individual immunity value!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:22:final float PDeath=0.05;      //Average probability of death in one day of illness duration
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:24://STATISTICS CALCULATED DURING THE SIMULATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:26:int sumInfected=0; //Number of successful infections
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:27:int sumRecovered=0; //Number of recoveries
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:28:int sumDeath=0; //Number of deaths
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:30://VISUALIZATION PARAMETERS, STATISTICS, ETC.
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:31:int cwidth=3; //CELL SIDE LENGTH IN VISUALIZATION - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:32:              //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:31:int cwidth=3; //CELL SIDE LENGTH IN VISUALIZATION
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:32:              // - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:33:int STATUSHEIGH=40; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:35:int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:36:int FRAMEFREQ=30; //HOW MANY TIMES PER SECOND DOES draw() RUN?
@@ -4410,9 +4410,9 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:39:boolean simulat
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:43:  //GRAPHICS BELOW
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:44:  size(1200,640); //UNFORTUNATELY, ONLY LITERAL VALUES CAN BE PRESENTED HERE ("LITERALS")
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:45:  noSmooth();   //Significantly speeds up visualizations
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:49:  //randomSeed(-1013); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg e.g. 107 albo 1013
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:49:  //randomSeed(-1013); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:51:  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:52:  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:52:  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:53:  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:54:  //doStatistics(TheWorld); //as above
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:56:  //CALCULATE THE REQUIRED WINDOW SIZE FOR size()
@@ -4433,9 +4433,9 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:86:  if(!simulatio
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:87:  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:90:    //NextVideoFrame(); //ANIMATION FRAME RECORDING FUNCTION. 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:91:  }                    //Uses an internal flag to determine if the movie has started
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:100:  text(liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath,0,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:100:  text(liveCount+" Infected:"+sumInfected+" Cured:"+sumRecovered+" Death:"+sumDeath,0,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:106://-/////////////////////////////////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:107://  https://www.researchgate.net/profile/WOJCIECHREALNY KOD MODELU_BORKOWSKI - ABM MAIN TEMPLATE
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:107://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM MAIN TEMPLATE
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/ABMEpidemiaRectImm.pde:108://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:1:// The world is one of the two central classes of every ABM model
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:2://-/////////////////////////////////////////////////////////////
@@ -4452,7 +4452,7 @@ TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:21://WHICH DOESN'T 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:22://-//////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:26:  initializeAgents(world.agents); //THE OVERLOADED FUNCTION WILL BE SELECTED HERE!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:31:  visualizeAgents(world.agents); //THE OVERLOADED FUNCTION WILL BE SELECTED HERE!
-TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:34://void dummyChange(World world) //FUNKCJĘ MOŻNA USUNĄĆ GDY POJAWI SIĘ
+TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:34://void dummyChange(World world) //THE FUNCTION CAN BE REMOVED WHEN 
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:35://{                             //A REAL MODEL CODE APPEARS
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:36://  dummyChangeAgents(world.agents); //THE OVERLOADED FUNCTION WILL BE SELECTED HERE!
 TASK13_SIR_Epid_ABM/ABMEpidemiaRectImm/AssemblingOfWorld.pde:37://}
@@ -4499,37 +4499,37 @@ TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/Agent.pde:16://  https://www.researchgat
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/Agent.pde:17://-/////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:1:// A world full of agents requires a method of visualization on a screen/window
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:2://-//////////////////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:10:    //Kolorowanie... przykładowe.
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:23:    rect(b*cwidth,a*cwidth,cwidth,cwidth); //`a` jest pionowy, ze względu na naturalny układ tablicy 2D
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:10:    //Coloring... an example.
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:23:    rect(b*cwidth,a*cwidth,cwidth,cwidth); //`a` is vertical, due to the natural layout of a 2D array in memory
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:26://OR
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:32:    //Kolorowanie... przykładowe.
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:32:    //Coloring... an example.
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:53://-//////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:54://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC VISUALISATION
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/ModelVisual.pde:55://-//////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:1:// The world is one of the two central classes of every ABM model
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:2://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:7:  //Agent agents[]; //Jednowymiarowa tablica agentów
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:7:  //Agent agents[]; //One-dimensional array of agents
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:8:  //OR
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:9:  Agent agents[][]; //Dwuwymiarowa tablica agentów
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:11:  World(int side) //Konstruktor obiektu "Świata"
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:9:  Agent agents[][]; //Two-dimensional array of agents
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:11:  World(int side) //Constructor for the "World" object
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:13:    //agents=new Agent[side];
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:14:    //OR
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:19:// Bardziej rozbudowane funkcjonalności są definiowane jako funkcje samodzielne,
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:20:// nie jako metody z powodu niewystarczająco elastycznej składni Processingu
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:19:// More extensive functionalities are defined as standalone functions,
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:20:// ... not as methods, due to Processing’s insufficiently flexible syntax
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:21://-/////////////////////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:33:void dummyChange(World world) //Usuń, gdy zostanie zdefiniowana prawdziwa SYMULACJA.
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:33:void dummyChange(World world) //Remove once the actual SIMULATION is defined.
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:40:   //Dummy part
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:42:   //OR
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:43:   //... przygotuj prawdziwą symulację na agentach... TA CZĘŚĆ JEST DLA CIEBIE!
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:43:   //... prepare a real-world simulation using agents... THIS PART IS FOR YOU!
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:48://-/////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:49://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF AGENTS FOR FILL UP
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AssemblingOfWorld.pde:50://-/////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:1:// An agent is one of the two central classes in any ABM model.
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:2:// The agent must be initialized and must have change logic
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:3://-/////////////////////////////////////////////////////////////
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:12:      //...dodatkowy kod inicjujący... EXP.:  curr.initialise();
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:12:      //...additional initialization code... EXP.:  curr.initialise();
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:16://OR
-TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:23:    //...dodatkowy kod inicjujący... EXP.:  curr.initialise();
+TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:23:    //...additional initialization code... EXP.:  curr.initialise();
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:38://OR
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:51://-//////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASK13_SIR_Epid_ABM/ABMTemplateMinimum0/AgentBasics.pde:52://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC INITIALISATION & EVERY STEP CHANGE
@@ -4625,7 +4625,7 @@ TASK14_Boids_ABM_selforganistion/boids06/birdslogic.pde:78:              // If s
 TASK14_Boids_ABM_selforganistion/boids06/birdslogic.pde:81:              // Is squared distance less than the protected range?
 TASK14_Boids_ABM_selforganistion/boids06/birdslogic.pde:84:                  // If so, calculate difference in x/y/z-coordinates to nearfield boid
 TASK14_Boids_ABM_selforganistion/boids06/birdslogic.pde:89:              // If not in protected range, is the boid in the visual range?
-TASK14_Boids_ABM_selforganistion/boids06/birdslogic.pde:92:                      // Add other boid's x/y/z-coord and x/y/z vel to accumulator variables
+TASK14_Boids_ABM_selforganistion/boids06/birdslogic.pde:92:                      // Add other boid's x/y/z-coord and x/y/z vel. to accumulator variables
 TASK14_Boids_ABM_selforganistion/boids06/birdslogic.pde:101:                      // Increment number of boids within visual range
 TASK14_Boids_ABM_selforganistion/boids06/birdslogic.pde:107:      // If there were any boids in the visual range . . .            
 TASK14_Boids_ABM_selforganistion/boids06/birdslogic.pde:110:          // Divide accumulator variables by number of boids in visual range
@@ -4648,7 +4648,7 @@ TASK14_Boids_ABM_selforganistion/boids06/boids06.pde:8:final boolean TARGETED=fa
 TASK14_Boids_ABM_selforganistion/boids06/boids06.pde:9:final boolean VIEW_TARGETING=true; ///< Show lines for current targets?
 TASK14_Boids_ABM_selforganistion/boids06/boids06.pde:11:// Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
 TASK14_Boids_ABM_selforganistion/boids06/boids06.pde:12:final float   protectedRange=min(NORD_SOUTH,WEST_EAST)/30.0; ///< "Range where they fly away from others"
-TASK14_Boids_ABM_selforganistion/boids06/boids06.pde:14:final float   visualRange=min(NORD_SOUTH,WEST_EAST)/15.0;   ///< "Range where they tend tooward center of mass"
+TASK14_Boids_ABM_selforganistion/boids06/boids06.pde:14:final float   visualRange=min(NORD_SOUTH,WEST_EAST)/15.0;   ///< "Range where they tend toward center of mass"
 TASK14_Boids_ABM_selforganistion/boids06/boids06.pde:30:ArrayList<Bird> birds;         ///< all our birds in JAVA like container
 TASK14_Boids_ABM_selforganistion/boids06/boids06.pde:34:  birds=new ArrayList(HM_BIRDS); // Constructs an empty list with the specified initial capacity.
 TASK14_Boids_ABM_selforganistion/boids06/boids06.pde:39:/// @note We assume that the birds are always properly sorted in terms of height.
@@ -4672,9 +4672,9 @@ TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:5:final int     EAST_WEST=1
 TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:6:final int     MAX_CEIL=100;    ///< maximum flight ceiling
 TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:7:final int     HM_BIRDS=100;    ///< how many birds
 TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:8:final boolean targeted=false;  ///< Do they get their goals as part of initialization?
-TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:10:// Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
+TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:10:// Boids algorithm parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
 TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:11:final float   protectedRange=min(NORD_SOUTH,EAST_WEST)/50.0; ///< "Range where they fly away from others"
-TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:13:final float   visualRange=min(NORD_SOUTH,EAST_WEST)/15.0;   ///< "Range where they tend ttoward center of mass"
+TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:13:final float   visualRange=min(NORD_SOUTH,EAST_WEST)/15.0;   ///< "Range where they tend toward center of mass"
 TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:27:ArrayList<Bird> birds;         ///< all our birds in JAVA like container
 TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:31:  birds=new ArrayList(HM_BIRDS); // Constructs an empty list with the specified initial capacity.
 TASK14_Boids_ABM_selforganistion/boids05/boids05.pde:36:/// @note We assume that the birds are always properly sorted in terms of height.
@@ -4709,7 +4709,7 @@ TASK14_Boids_ABM_selforganistion/boids05/birdslogic.pde:70:              // If s
 TASK14_Boids_ABM_selforganistion/boids05/birdslogic.pde:73:              // Is squared distance less than the protected range?
 TASK14_Boids_ABM_selforganistion/boids05/birdslogic.pde:76:                  // If so, calculate difference in x/y-coordinates to nearfield boid
 TASK14_Boids_ABM_selforganistion/boids05/birdslogic.pde:80:              // If not in protected range, is the boid in the visual range?
-TASK14_Boids_ABM_selforganistion/boids05/birdslogic.pde:83:                      // Add other boid's x/y-coord and x/y vel to accumulator variables
+TASK14_Boids_ABM_selforganistion/boids05/birdslogic.pde:83:                      // Add other boid's x/y-coord and x/y vel. to accumulator variables
 TASK14_Boids_ABM_selforganistion/boids05/birdslogic.pde:89:                      // Increment number of boids within visual range
 TASK14_Boids_ABM_selforganistion/boids05/birdslogic.pde:95:      // If there were any boids in the visual range . . .            
 TASK14_Boids_ABM_selforganistion/boids05/birdslogic.pde:98:          // Divide accumulator variables by number of boids in visual range
@@ -4891,9 +4891,9 @@ TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:6:final int     MAX_CEIL=
 TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:7:final int     HM_BIRDS=60;    ///< how many birds
 TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:8:final boolean TARGETED=false;  ///< Do they get their goals as part of initialization?
 TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:9:final boolean VIEW_TARGETING=true; ///< Show lines for current targets?
-TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:11:// Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
+TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:11:// Boids algorithm parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
 TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:12:final float   protectedRange=min(NORD_SOUTH,WEST_EAST)/30.0; ///< "Range where they fly away from others"
-TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:14:final float   visualRange=min(NORD_SOUTH,WEST_EAST)/15.0;   ///< "Range where they tend tooward center of mass"
+TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:14:final float   visualRange=min(NORD_SOUTH,WEST_EAST)/15.0;   ///< "Range where they tend toward center of mass"
 TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:30:ArrayList<Bird> birds;         ///< all our birds in JAVA like container
 TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:34:  birds=new ArrayList(HM_BIRDS); // Constructs an empty list with the specified initial capacity.
 TASK14_Boids_ABM_selforganistion/boids06b/boids06b.pde:39:/// @note We assume that the birds are always properly sorted in terms of height.
@@ -4971,7 +4971,7 @@ TASK14_Boids_ABM_selforganistion/boids07/boids07.pde:8:final boolean TARGETED=fa
 TASK14_Boids_ABM_selforganistion/boids07/boids07.pde:9:final boolean VIEW_TARGETING=true; ///< Show lines for current targets?
 TASK14_Boids_ABM_selforganistion/boids07/boids07.pde:11:// Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
 TASK14_Boids_ABM_selforganistion/boids07/boids07.pde:12:final float   protectedRange=min(NORD_SOUTH,WEST_EAST)/30.0; ///< "Range where they fly away from others"
-TASK14_Boids_ABM_selforganistion/boids07/boids07.pde:14:final float   visualRange=min(NORD_SOUTH,WEST_EAST)/15.0;   ///< "Range where they tend tooward center of mass"
+TASK14_Boids_ABM_selforganistion/boids07/boids07.pde:14:final float   visualRange=min(NORD_SOUTH,WEST_EAST)/15.0;   ///< "Range where they tend toward center of mass"
 TASK14_Boids_ABM_selforganistion/boids07/boids07.pde:30:ArrayList<Bird> birds;         ///< all our birds in JAVA like container
 TASK14_Boids_ABM_selforganistion/boids07/boids07.pde:34:  birds=new ArrayList(HM_BIRDS); // Constructs an empty list with the specified initial capacity.
 TASK14_Boids_ABM_selforganistion/boids07/boids07.pde:39:/// @note We assume that the birds are always properly sorted in terms of height.
@@ -5085,12 +5085,12 @@ TASKXX_Particles/Particles00/Particles00.pde:144:void reaction(int i, int j) // 
 TASKXX_Particles/Particles00/Particles00.pde:147:    //... YOUR CODE
 TASKXX_Particles/Particles00/Particles00.pde:148:    //eg.:
 TASKXX_Particles/Particles00/Particles00.pde:164:///@date 2024-12-20 (https://github.com/borkowsk/bookProcessingEN)
-TASKXX_Particles/Particles05/Particles05.pde:1:/// "Naive" particles system with simplified phisics of collisions
+TASKXX_Particles/Particles05/Particles05.pde:1:/// "Naive" particles system with simplified physics of collisions
 TASKXX_Particles/Particles05/Particles05.pde:2:/// (slightly modified example)
 TASKXX_Particles/Particles05/Particles05.pde:3://-//////////////////////////////////////////////////////////////////////
 TASKXX_Particles/Particles05/Particles05.pde:13:int     VISFREQ=8; ///< every N
 TASKXX_Particles/Particles05/Particles05.pde:19:boolean[] collision = new boolean[circles]; ///< ???
-TASKXX_Particles/Particles05/Particles05.pde:22:color[]   circolor = new color[circles];  ///< Atitude?
+TASKXX_Particles/Particles05/Particles05.pde:22:color[]   circolor = new color[circles];  ///< Attitude?
 TASKXX_Particles/Particles05/Particles05.pde:23:float[]   wellbeing = new float[circles]; ///< Moving average 
 TASKXX_Particles/Particles05/Particles05.pde:82:/// It detects collisions with borders.
 TASKXX_Particles/Particles05/Particles05.pde:96:    else //Borders detection should depend on circle radius!
@@ -5105,7 +5105,7 @@ TASKXX_Particles/Particles05/Particles05.pde:160:/// i-th agent reacts, j-th age
 TASKXX_Particles/Particles05/Particles05.pde:164:    //... YOUR CODE
 TASKXX_Particles/Particles05/Particles05.pde:165:    //eg.:
 TASKXX_Particles/Particles05/Particles05.pde:182:///@date 2023 (https://github.com/borkowsk/bookProcessingEN)
-TASKXX_Particles/Particles01/Particles01.pde:1:/// "Naive" particles system with simplified phisics of collisions
+TASKXX_Particles/Particles01/Particles01.pde:1:/// "Naive" particles system with simplified physics of collisions
 TASKXX_Particles/Particles01/Particles01.pde:2://*//////////////////////////////////////////////////////////////////////
 TASKXX_Particles/Particles01/Particles01.pde:12:int VISFREQ=8; //every N
 TASKXX_Particles/Particles01/Particles01.pde:73:/// It detects collisions with borders
@@ -5125,10 +5125,10 @@ TASKXX_Particles/Collisions/Collisions.pde:25://Children - wellbeing with thresh
 TASKXX_Particles/Collisions/Collisions.pde:26://           Where const +-= confidence threshold
 TASKXX_Particles/Collisions/Collisions.pde:27://
 TASKXX_Particles/Collisions/Collisions.pde:30:boolean[] circon = new boolean[circles]; ///< ??
-TASKXX_Particles/Collisions/Collisions.pde:31:color[] circolor = new color[circles];   ///< Atitude?
+TASKXX_Particles/Collisions/Collisions.pde:31:color[] circolor = new color[circles];   ///< Attitude?
 TASKXX_Particles/Collisions/Collisions.pde:33:boolean[] collision = new boolean[circles]; ///< ?
 TASKXX_Particles/Collisions/Collisions.pde:35:/// Is this position free?
-TASKXX_Particles/Collisions/Collisions.pde:50:  strokeWeight(2); //not neded
+TASKXX_Particles/Collisions/Collisions.pde:50:  strokeWeight(2); //not needed
 TASKXX_Particles/Collisions/Collisions.pde:92:/// Implements collisions with borders
 TASKXX_Particles/Collisions/Collisions.pde:105:    } else //Borders detection should depend on circle radius!
 TASKXX_Particles/Collisions/Collisions.pde:115:/// It detects collisions and triggers appropriate reaction procedures
@@ -5144,7 +5144,7 @@ TASKXX_Particles/Collisions/Collisions.pde:174:    //eg.:
 TASKXX_Particles/Collisions/Collisions.pde:189://*////////////////////////////////////////////////////////////////////////////
 TASKXX_Particles/Collisions/Collisions.pde:190:// https://github.com/borkowsk/bookProcessingEN
 TASKXX_Particles/Collisions/Collisions.pde:191://*////////////////////////////////////////////////////////////////////////////
-TASKXX_Particles/Particles02/Particles02.pde:1:/// "Naive" particles system with simplified phisics of collisions
+TASKXX_Particles/Particles02/Particles02.pde:1:/// "Naive" particles system with simplified physics of collisions
 TASKXX_Particles/Particles02/Particles02.pde:2://*//////////////////////////////////////////////////////////////////////
 TASKXX_Particles/Particles02/Particles02.pde:13:int VISFREQ=1; //every N
 TASKXX_Particles/Particles02/Particles02.pde:74:/// It detects collisions with borders
@@ -5157,7 +5157,7 @@ TASKXX_Particles/Particles02/Particles02.pde:153:/// i-th agent reacts, j-th age
 TASKXX_Particles/Particles02/Particles02.pde:157:    //... YOUR CODE
 TASKXX_Particles/Particles02/Particles02.pde:158:    //eg.:
 TASKXX_Particles/Particles02/Particles02.pde:174:// https://github.com/borkowsk/bookProcessingEN
-TASKXX_Particles/Particles06cpp/Particles06cpp.pde:1:/// "Naive" particles system with simplified phisics of collisions
+TASKXX_Particles/Particles06cpp/Particles06cpp.pde:1:/// "Naive" particles system with simplified physics of collisions
 TASKXX_Particles/Particles06cpp/Particles06cpp.pde:2:/// (slightly modified example)
 TASKXX_Particles/Particles06cpp/Particles06cpp.pde:3://*//////////////////////////////////////////////////////////////////////
 TASKXX_Particles/Particles06cpp/Particles06cpp.pde:5:int circles = 50;      ///< global
@@ -5288,13 +5288,13 @@ TASKZZ_GA/GAtools.pde:197:/// (LSB, on the right), and bit 63 is the most signif
 TASKZZ_GA/GAtools.pde:198:/// @note The following highly efficient, UNCONDITIONAL functions perform this task, but do not check parameter validity!
 TASKZZ_GA/GAtools.pde:199:/// [Gemini]
 TASKZZ_GA/GAtools.pde:200:/// @{
-TASKZZ_GA/GAtools.pde:202:/// Extracts a specified number of bits (length) starting from pos (inclusive).
+TASKZZ_GA/GAtools.pde:202:/// Extracts a specified number of bits (length) starting from `pos` (inclusive).
 TASKZZ_GA/GAtools.pde:203:/// @details Shifts them to the very beginning of the sequence, returning them as a pure int (unsigned) value.
 TASKZZ_GA/GAtools.pde:204:/// @returns EXTRACTED BIT SEQUENCE stored in an `int` (32 bits).
 TASKZZ_GA/GAtools.pde:207:    // 1. Shift target bits all the way to the right side (position 0)
 TASKZZ_GA/GAtools.pde:210:    // 2. Create a bit-mask of desired length (e.g., for length=5: 00011111)
 TASKZZ_GA/GAtools.pde:213:    // 3. Extract bits using mask and safely cast to int
-TASKZZ_GA/GAtools.pde:217:/// Inserts a gene value (put_value) of specified length into a designated position (pos) inside the original long sequence. 
+TASKZZ_GA/GAtools.pde:217:/// Inserts a gene value (put_value) of specified length into a designated position (`pos`) inside the original long sequence. 
 TASKZZ_GA/GAtools.pde:218:/// @note Existing bits at these positions are completely overwritten.
 TASKZZ_GA/GAtools.pde:219:/// @return Returns the new 64-bit sequence as a `long`.
 TASKZZ_GA/GAtools.pde:222:    // 1. Create a mask for the gene (e.g., for length=5: 00011111)
@@ -5325,7 +5325,7 @@ TASKZZ_GA/GAtools.pde:275:///   and starting from position "pos" bits come from 
 TASKZZ_GA/GAtools.pde:276:///   Swap parent order in the function call!
 TASKZZ_GA/GAtools.pde:277:/// @{
 TASKZZ_GA/GAtools.pde:279:/// Crossover for 32-bit chromosomes.  
-TASKZZ_GA/GAtools.pde:282:    // 1. Create a mask for trailing (lower) bits from position 'pos' to the right.
+TASKZZ_GA/GAtools.pde:282:    // 1. Create a mask for trailing (lower) bits from position `pos` to the right.
 TASKZZ_GA/GAtools.pde:283:    // E.g., for pos = 4, mask is four ones: 000...0001111
 TASKZZ_GA/GAtools.pde:286:    // 2. ~mask preserves bits on the left side (higher) of the first parent.
 TASKZZ_GA/GAtools.pde:287:    // 3. mask preserves bits on the right side (lower) of the second parent.
@@ -5339,9 +5339,9 @@ TASKZZ_GA/GAtools.pde:365://-///////////////////////////////////////////////////
 TASKZZ_GA/GAtools.pde:366://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingEN
 TASKZZ_GA/GAtools.pde:367://-////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASKZZ_GA/GAtools.pde:368://_EOC
-TASKZZ_GA/GA_Gray/GA_Gray.pde:1:/// Bardzo prosty algorytm genetyczny z samymi mutacjami.
-TASKZZ_GA/GA_Gray/GA_Gray.pde:2://-///////////////////////////////////////////////////////////
-TASKZZ_GA/GA_Gray/GA_Gray.pde:3:/// @date 2026-10-19 (zmodyfikowany)
+TASKZZ_GA/GA_Gray/GA_Gray.pde:1:/// A very simple genetic algorithm consisting only of mutations.
+TASKZZ_GA/GA_Gray/GA_Gray.pde:2://-//////////////////////////////////////////////////////////////
+TASKZZ_GA/GA_Gray/GA_Gray.pde:3:/// @date 2026-10-19 (modified)
 TASKZZ_GA/GA_Gray/GA_Gray.pde:7:/// @name Parametry algorytmu genetycznego
 TASKZZ_GA/GA_Gray/GA_Gray.pde:8:/// @{
 TASKZZ_GA/GA_Gray/GA_Gray.pde:9:int     TEMPO=10;                  ///< Ile kroków algorytmu na sekundę?
@@ -5541,9 +5541,9 @@ TASKZZ_GA/GA_NKB/GAPopulation.pde:220://-///////////////////////////////////////
 TASKZZ_GA/GA_NKB/GAPopulation.pde:221://  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingEN
 TASKZZ_GA/GA_NKB/GAPopulation.pde:222://-////////////////////////////////////////////////////////////////////////////////////////////////////////
 TASKZZ_GA/GA_NKB/GAPopulation.pde:223://_EOC
-TASKZZ_GA/GA_NKB/GA_NKB.pde:1:/// Bardzo prosty algorytm genetyczny z samymi mutacjami.
-TASKZZ_GA/GA_NKB/GA_NKB.pde:2://-///////////////////////////////////////////////////////////
-TASKZZ_GA/GA_NKB/GA_NKB.pde:3:/// @date 2026-10-19 (zmodyfikowany)
+TASKZZ_GA/GA_NKB/GA_NKB.pde:1:/// A very simple genetic algorithm consisting only of mutations.
+TASKZZ_GA/GA_NKB/GA_NKB.pde:2://-//////////////////////////////////////////////////////////////
+TASKZZ_GA/GA_NKB/GA_NKB.pde:3:/// @date 2026-10-19 (modified)
 TASKZZ_GA/GA_NKB/GA_NKB.pde:7:/// @name Parametry algorytmu genetycznego
 TASKZZ_GA/GA_NKB/GA_NKB.pde:8:/// @{
 TASKZZ_GA/GA_NKB/GA_NKB.pde:9:int     TEMPO=1;                   ///< Ile kroków algorytmu na sekundę?
@@ -5582,7 +5582,7 @@ TASKZZ_GA/GA_NKB/GA_NKB.pde:159://-/////////////////////////////////////////////
 TASKZZ_GA/GA_NKB/GA_NKB.pde:160://_EOC
 TASKZZ_GA/GAf2D/GAf2D.pde:1:/// Dwuwymiarowy algorytm genetyczny.
 TASKZZ_GA/GAf2D/GAf2D.pde:2://-///////////////////////////////////////////////////////////
-TASKZZ_GA/GAf2D/GAf2D.pde:3:/// @date 2026-10-19 (zmodyfikowany)
+TASKZZ_GA/GAf2D/GAf2D.pde:3:/// @date 2026-10-19 (modified)
 TASKZZ_GA/GAf2D/GAf2D.pde:7:/// @name Parametry algorytmu genetycznego
 TASKZZ_GA/GAf2D/GAf2D.pde:8:/// @{
 TASKZZ_GA/GAf2D/GAf2D.pde:9:int     TEMPO=5;                   ///< Ile kroków algorytmu na sekundę?
@@ -5730,7 +5730,7 @@ TASKZZ_GA/GA_Float/GAPopulation.pde:15:  int       gene; ///< Genes are initiali
 TASKZZ_GA/GA_Float/GAPopulation.pde:16:  double fitness; ///< Fitness is determined later by the environment.
 TASKZZ_GA/GA_Float/GAPopulation.pde:22:  //double get_fitness() { return fitness; }
 TASKZZ_GA/GA_Float/GAPopulation.pde:32:}//_EndOfClass
-TASKZZ_GA/GA_Float/GAPopulation.pde:34:/// Population of "gagatki" responsible for implementing basic genetic operations.
+TASKZZ_GA/GA_Float/GAPopulation.pde:34:/// Population of "GAgateks" responsible for implementing basic genetic operations.
 TASKZZ_GA/GA_Float/GAPopulation.pde:35:/// @details We do not implement crossover because there is no need for it in one-dimensional problems.
 TASKZZ_GA/GA_Float/GAPopulation.pde:40:  double  minx,maxx,range;  ///< Range of x values within which we search.
 TASKZZ_GA/GA_Float/GAPopulation.pde:41:  boolean     float_coded; ///< Do we use floating-point encoding?

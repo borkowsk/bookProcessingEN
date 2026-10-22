@@ -33,7 +33,7 @@ class World implements simulation_world
     //based on the agent table type!
     initializeAgents(this.agents);
     
-    makeStatistics(); //First attempt to calculate & write staistics
+    makeStatistics(); //First attempt to calculate & write statistics
   }
   
   //Method 2.
@@ -53,7 +53,7 @@ class World implements simulation_world
      changeState(); 
 
      //Other changes...
-     //...inenviroment for example
+     //...environment for example
      
      _counter++;
      makeStatistics(); //Calculating & writing
@@ -61,7 +61,7 @@ class World implements simulation_world
 };
 
 /// More elaborated functionalities may be defined as stand-alone functions,
-/// not as methods because of not enought flexible syntax of Processing
+/// not as methods because of not enough flexible syntax of Processing
 //*/////////////////////////////////////////////////////////////////////////
 
 void visualizeModel(World world)

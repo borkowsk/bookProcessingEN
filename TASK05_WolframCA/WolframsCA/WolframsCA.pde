@@ -5,8 +5,8 @@
 // ===== CONFIGURATION =====
 final String 
     CA_CODE_BIN = "01101110"; // Rule code in binary
-//  CA_CODE_BIN = '00011110'; // 30 - Brzydki efekt brzegowy po stronie lewej} 
-//  CA_CODE_BIN = '00110011'; // 51 - Odwracanie bitów
+//  CA_CODE_BIN = '00011110'; // 30 - Ugly edge effect on the left side} 
+//  CA_CODE_BIN = '00110011'; // 51 - Bit flipping
 //  CA_CODE_BIN = '01011010'; // 90
 //  CA_CODE_BIN = '01101110'; // 110  
 //  CA_CODE_BIN = '01111110'; // 126
@@ -201,7 +201,7 @@ int countState(int state) {
 }
 
 float computeClustering(int state) {
-  // Fraction of cells of given state that have neighbors of same state
+  // Fraction of cells of given state that have neighbours of same state
   int matching = 0;
   int total = 0;
 

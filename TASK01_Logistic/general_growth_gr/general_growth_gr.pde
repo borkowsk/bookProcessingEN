@@ -13,7 +13,7 @@ for(int i=0;i<=100;i++)
 {
   println(i,X); //current state
   X=R*X;        //Calculate next state using R!
-  ellipse(i*2,800-X,2,2); //visialisation!
+  ellipse(i*2,800-X,2,2); //visualisation!
 }
 
 /// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)

@@ -1,4 +1,4 @@
-/// "Naive" particles system with simplified phisics of collisions
+/// "Naive" particles system with simplified physics of collisions
 /// (slightly modified example)
 //-//////////////////////////////////////////////////////////////////////
 
@@ -19,7 +19,7 @@ float[]   yspeed = new float[circles];
 boolean[] collision = new boolean[circles]; ///< ???
 
 boolean[] isNaive = new boolean[circles];
-color[]   circolor = new color[circles];  ///< Atitude?
+color[]   circolor = new color[circles];  ///< Attitude?
 float[]   wellbeing = new float[circles]; ///< Moving average 
 
 boolean isPositionFree(int i)
@@ -125,7 +125,7 @@ void findcollisions()
      }
     }
     
-    for(int i=0;i<circles;i++) collision[i]=false;//Clear collisions
+    for(int i=0;i<circles;i++) collision[i]=false; //Clear collisions
 }
 
 /// SIMPLIFIED elastic rebound, i.e. the physical reaction to collisions

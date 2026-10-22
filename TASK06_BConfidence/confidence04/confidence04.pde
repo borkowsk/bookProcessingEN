@@ -1,5 +1,5 @@
 ///  Bounded confidence 1D.
-///  "because of information bubles"
+///  "because of information bubbles"
 //-///////////////////////////////////
 
 final int   N=25;        //Number of agents
@@ -71,4 +71,4 @@ void draw()
   }
 }
 
-/// @date 2026-06-16 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+/// @date 2026-06-16 (changed)

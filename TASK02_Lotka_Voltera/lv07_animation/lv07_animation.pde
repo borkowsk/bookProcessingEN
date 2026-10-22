@@ -26,7 +26,7 @@ void setup() ///< modifies global Tlimit
   line(Tlimit,0,Tlimit,height);
 }
 
-/// for(double T=0;T<Tlimit;T+=Tstep) // double TIME used as stearing variable in a hidden loop of draw()!
+/// for(double T=0;T<Tlimit;T+=Tstep) // double TIME used as control variable in a hidden loop of draw()!
 double T=0; ///< Global time variable
 
 void draw() // uses global T,X,Y
@@ -34,7 +34,7 @@ void draw() // uses global T,X,Y
   if(T<Tlimit)
   {
     //println(T,"X:",X," Y:",Y);
-    //float mirrors of variables because of graphics requarements
+    //float mirrors of variables because of graphics requirements
     float Xf=(float)X;
     float Yf=(float)Y;
     float Tf=(float)T; 

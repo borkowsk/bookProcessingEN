@@ -1,34 +1,34 @@
-//Najprostszy (prawie) układ chaotyczny
-//Parametry kontroli
-//double R=1.99; //Atraktor punktowy
-//double R=3.1; //Atraktor okresowy dwupunktowy
-//double R=3; //Punk krytyczny
-//double R=3.5; //4 punkty
-double R=3.55; //8 punktowy
-//double R=3.565; //Jeszcze okresowy, 14? pkt.
+//The simplest (almost) chaotic system
+//Control parameters
+//double R=1.99; //Point attractor
+//double R=3.1; //Periodic two-point attractor
+//double R=3; //Critical point
+//double R=3.5; //4 points (periodic)
+double R=3.55; //8 points (periodic)
+//double R=3.565; //Still periodic, 14? points.
 //double R=3.5699; //???
-//double R=3.571; //Tuż za granicą chaosu
+//double R=3.571; //Just beyond the border of chaos
 //double R=3.575; //Chaos
-//double R=3.58; //Chaos, 4 chmury
-//double R=3.6; //Chaos - atraktor, 4 chmury i basen
-//double R=4; //Chaos - sam atraktor bez basenu
+//double R=3.58; //Chaos, 4 clouds
+//double R=3.6; //Chaos - attractor, 4 clouds and a pool
+//double R=4; //Chaos - only the attractor, no pool due to lack of space
 
-double X=0.9999; //Zmienna stanu, stan układu
+double X=0.9999; //State variable, state of the system
 int FM=1000;
 int Rozbieg=100;
-int WvS=600; //Rozmiar okna w pionie
+int WvS=600; //Vertical window size
 float G=0;
 float B=255;
 float Red=255;
 
 double uklad(double x) // Xn --> Xn+1
 {
-  return R*x*(1-x); //implementacja układu
+  return R*x*(1-x); //state change implementation
 }
 
 void setup()
 {
-  //R=3+random(1.0); //Jak chcemy stały to odkomentować
+  //R=3+random(1.0); //If we want to do it this way, we can uncomment it.
   size(1800,600);
   frameRate(FM);
   line(2*WvS,0,2*WvS,WvS);

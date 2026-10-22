@@ -20,7 +20,7 @@ for(int i=0;i<N;i++)
   //How X & Y changes in "infinitely short" time step
   float oldX=X; //Such local variable is valid only inside its block of code
   X = X + Tstep * (alfa*X-beta*X*Y); //What is the meaning of these parameters?
-  Y = Y + Tstep * (gamma*oldX*Y-delta*Y); //if you dont want guessed, see next example.
+  Y = Y + Tstep * (gamma*oldX*Y-delta*Y); //if you don't want guessed, see next example.
 }
 
 text("DONE",30,50);

@@ -29,7 +29,7 @@ void timeline(FloatList data, float startX, float startY, float height,boolean l
   
   if(min==max) max++;
   
-  //Właściwe rysowanie
+  //THIS IS ACTUAL DRAWING
   float wid=length/N; //  println(width,N,wid,min,max);
   float oldy=-Float.MIN_VALUE;
   for(int t=0;t<N;t++)
@@ -65,7 +65,7 @@ void timeline(FloatList data, float startX, float startY, float height,boolean l
 
 //A jakby miało być więcej zmiennych? UWAGA!:  wspólna skala!!!
 
-//Wtedy np. tak jak poniżej, co jest wersją bardzo prymitywną, ale będzie działać :-D
+//Wtedy e.g. tak jak poniżej, co jest wersją bardzo prymitywną, ale będzie działać :-D
 void timeline(FloatList data_a, FloatList data_b, FloatList data_c,
               float startX, float startY, float height,boolean logaritm,color color_a,color color_b,color color_c)
 {
@@ -114,7 +114,7 @@ void timeline(FloatList data_a, FloatList data_b, FloatList data_c,
   
   if(gmin==gmax) gmax++;
   
-  //Właściwe rysowanie
+  //THIS IS ACTUAL DRAWING
   float wid=length/max(N1,N2,N3); //Najdłuższy decyduje
   
   float oldy=-Float.MIN_VALUE;

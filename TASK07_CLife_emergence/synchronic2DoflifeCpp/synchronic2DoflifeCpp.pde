@@ -1,12 +1,12 @@
-/// "Min-Opt-Max neighbors": Not too many neighbors, but not too few, but OPTIMAL!
-/// TWO-dimensional, SYNCHRONOUS, vonNeuman/Moore, deterministic cellular automaton
+/// "Min-Opt-Max neighbours": Not too many neighbours, but not too few, but OPTIMAL!
+/// TWO-dimensional, SYNCHRONOUS, von Neumann/Moore, deterministic cellular automaton
 //*//////////////////////////////////////////////////////////////////////////////////
 // See 233 (Conways Game of Life) or 123 & 234 - much more "biological"
 
 final int     WorldSide=501;  ///< How many cells do we want in one line?
 final boolean sync=true;      ///< Synchronous or asynchronous update    !!!!!!!
 
-final float   Dens=150.15;    ///< When >=1, simetric horizontal line is created
+final float   Dens=150.15;    ///< When >=1, symmetric horizontal line is created
 final int     MinN=2;         ///< Minimal number of neighbors required
 final int     OptN=3;         ///< The number of neighbors needed to revive the cell
 final int     MaxN=3;         ///< Maximal number of neighbors required
@@ -86,7 +86,7 @@ void visualisationSY() ///< globally visible
 {
   for(int i=0;i<WorldSide;i++)
    for(int j=0;j<WorldSide;j++)
-    if( WorldOld[i][j] != WorldNew[i][j] ) //now WorldNew have step-1 content!!!
+    if( WorldOld[i][j] != WorldNew[i][j] ) //now `WorldNew` have step-1 content!!!
     {
       if(WorldOld[i][j]>0) 
         stroke(255,0,100);

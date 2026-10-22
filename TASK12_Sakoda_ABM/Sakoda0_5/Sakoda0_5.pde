@@ -1,4 +1,4 @@
-/// Sakoda inspired asynchronous AGENT BASE MODEL utilized 1D or 2D dicrete geometry
+/// Sakoda inspired asynchronous AGENT BASE MODEL utilized 1D or 2D discrete geometry
 //*///////////////////////////////////////////////////////////////////////////////////////
 
 // Model parameters
@@ -6,7 +6,7 @@ int side=50; //side of main table
 String modelName="Sakoda0.5ABM";
 float density=0.45;
 
-// Parameters of visualisation etc...
+// Parameters of visualisation etc.
 int cwidth=8; //size of cell
 int STATUSHEIGH=40; //Height of the status bar
 int STEPSperVIS=1; //How often to visualize?
@@ -39,7 +39,7 @@ void draw()
   //TheWorld.modelFullStep();
     
   if(TheWorld.getTimeStep() % STEPSperVIS == 0 )
-    visualizeModel(TheWorld);//not always
+    visualizeModel(TheWorld); //not always
     
   //Drawing the status bar every step.
   statusLine();
@@ -66,6 +66,6 @@ interface simulation_world
 };
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA0.5 MAIN 
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA 0.5 MAIN 
 // https://github.com/borkowsk/bookProcessingEN 
 //*/////////////////////////////////////////////////////////////////////////////////////////

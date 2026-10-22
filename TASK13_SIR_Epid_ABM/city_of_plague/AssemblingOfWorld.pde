@@ -1,23 +1,23 @@
-// Świat jest jedną z dwóch centralnych klas każdego modelu ABM
+// The world is one of the two central classes of every ABM model
 //-/////////////////////////////////////////////////////////////
-int StepCounter=0; //GLOBALNY LICZNIK KROKÓW SYMULACJI
+int StepCounter=0; //GLOBAL SIMULATION STEP COUNTER
 
 class World
 {
-  Agent agents[][]; //DWUWYMIAROWA TABLICA AGENTÓW
+  Agent agents[][]; //TWO-DIMENSIONAL AGENT TABLE
   int      env[][]; //TABLICA ŚRODOWISKA - "environment"
   
-  World(int side) //KONSTRUKTOR ŚWIATA
+  World(int side) //CONSTRUCTION OF THE WORLD
   {
     env=new int[side][2*side];
     agents=new Agent[side][2*side];
   }
 }
 
-//BARDZIEJ ZŁOŻONE FUNKCJONALNOŚCI ZOSTAŁY ZDEFINIOWANE JAKO OSOBNE FUNKCJE
-//A NIE METODY KLASY World ZE WZGLĘDU NA OGRANICZENIA SKŁADNI PROCESSINGU
-//NIE POZWALAJĄCEJ SCHOWAĆ GDZIEŚ INDZIEJ MNIEJ ISTOTNYCH METOD KLASY
-//-/////////////////////////////////////////////////////////////////////////
+//MORE COMPLEX FUNCTIONALITIES ARE DEFINED AS SEPARATE FUNCTIONS RATHER THAN CLASS METHODS World
+//DUE TO PROCESSING SYNTAX LIMITATIONS
+//WHICH DOESN'T ALLOW YOU TO HIDE LESS IMPORTANT CLASS METHODS SOMEWHERE ELSE
+//-//////////////////////////////////////////////////////////////////////////
 
 void initializeModel(World world)
 {

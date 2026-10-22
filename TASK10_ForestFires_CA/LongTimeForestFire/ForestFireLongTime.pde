@@ -1,15 +1,15 @@
 //"Forest fire with regeneration" - my private version 
-//Model "pożaru lasu" jest bardzo klasyczny, choć tu mamy wersję autorską
-///////////////////////////////////////////////////////////////////////////
+//The "forest fire" model is very classic, although here we have an personal version
+////////////////////////////////////////////////////////////////////////////////////
 
 //Model parameters
 int N=150;        //array side
-int FireTimeDiv=50;//How long the tree is burning (divider for size)
-float IgnitionP = 0.10;//Probability of fire transfer
+int FireTimeDiv=50; //How long the tree is burning (divider for size)
+float IgnitionP = 0.10; //Probability of fire transfer
 float InitT=  0.75; //How many trees at start
-float GrowS=  0.01; //Growt per step
-float SeedP=  0.005;//How often new ofspring emerging (per free cell)
-float LightP= 0.000001;//How often fire emerge (per tree)
+float GrowS=  0.01; //Growth per step
+float SeedP=  0.005; //How often new offspring emerging (per free cell)
+float LightP= 0.000001; //How often fire emerge (per tree)
 int MatureT=220; //Max size of tree. Then will stop to grow
 
 //2D "World" of trees
@@ -34,7 +34,7 @@ void setup()
   for(int i=0;i<N;i++)
    for(int j=0;j<N;j++)
    if(random(0,1)<InitT)
-    World[i][j]=(int)random(MatureT);//FLAT DISTRIBUTION? RATHER NOT REALISTIC!
+    World[i][j]=(int)random(MatureT); //FLAT DISTRIBUTION? RATHER NOT REALISTIC!
     else
     World[i][j]=0;
     
@@ -50,12 +50,12 @@ void draw()
 
 void doVisualisation()
 {
- empty=0;alives=0;burning=0;//Simple caunting will be done during visualisation
+ empty=0;alives=0;burning=0; //Simple counting will be done during visualisation
 
- for(int i=0;i<N;i++)//visualisation
+ for(int i=0;i<N;i++) //visualisation
   for(int j=0;j<N;j++)
   {
-    if(World[i][j]==0)//Free or burned cell
+    if(World[i][j]==0) //Free or burned cell
     {
       fill(20,20,20);
       empty++;
@@ -87,20 +87,20 @@ void doMonteCarloStep()
 {
   Step++;
   int M=N*N;
-  for(int m=0;m<M;m++)//Processing is CASE SENSITIVE. But utilising this, is not a good praktise. 
+  for(int m=0;m<M;m++) //Processing is CASE SENSITIVE. But utilising this, is not a good practice. 
   {
     int i=(int)random(N);
     int j=(int)random(N);
-    if(World[i][j]==0)//Free or burned cell
+    if(World[i][j]==0) //Free or burned cell
     {
       if(random(0,1)<SeedP)
-          World[i][j]=1;//New seedling
+          World[i][j]=1; //New seedling
     }
     else
     if(World[i][j]>0) //TREE
     {
-      if(random(0,1)<LightP) //Spontanic fireing
-        World[i][j]=(int)(-World[i][j]/FireTimeDiv - 1);//At least one step 
+      if(random(0,1)<LightP) //spontaneous ignition
+        World[i][j]=(int)(-World[i][j]/FireTimeDiv - 1); //At least one step 
       else  
       if(World[i][j]<MatureT)
             World[i][j]+=GrowS;
@@ -114,14 +114,14 @@ void doMonteCarloStep()
             int a=(N+i+l)%N;
             int b=(N+j+k)%N;
             if(World[a][b]>0 //If is still not burning
-            && random(0,1)<IgnitionP)//May ignite
+            && random(0,1)<IgnitionP) //May ignite
              {
-               World[a][b]=(int)(-World[a][b]/FireTimeDiv - 1);//At least one step
+               World[a][b]=(int)(-World[a][b]/FireTimeDiv - 1); //At least one step
                println(World[a][b],"!");
              }
         }
        //Burn more
-       World[i][j]++;//Until 0
+       World[i][j]++; //Until 0
     }
   }
 }

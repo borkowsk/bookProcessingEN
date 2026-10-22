@@ -2,8 +2,8 @@
 /// Two-dimensional, asynchronous cellular automaton
 //-//////////////////////////////////////////////////////////////////////////////////
 
-final int     WorldSide=600;  //Side lenght of simulation world (square)
-final float   Dens=0.50;      //.01;//Initial density in the lattice World
+final int     WorldSide=600;  //Side length of simulation world (square)
+final float   Dens=0.50;      //.01; //Initial density in the lattice World
 final boolean withMoore=true; //neighborhood with the corners of the square
 
 int FR=1; //desired simulation speed

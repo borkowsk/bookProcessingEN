@@ -2,7 +2,7 @@
 // Seeding the table at the beginning with a given density of healthy cells and a single infected cell
 // NUMBER OF INTERACTIONS 4, but the probability of infection is not equal to 1 only PTransfer
 // DISEASE lasts in the infected depending on PRecovery or PDeath
-// WE COLLECT STATISTICS: int kranken,geheilt,starben;
+// WE COLLECT STATISTICS: int kranken,geheilt,starben; //from German.
 //-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 int WorldSize=400; //How many elements do we want in a line and how many lines (square array)

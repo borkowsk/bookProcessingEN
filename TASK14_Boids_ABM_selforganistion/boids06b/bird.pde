@@ -45,12 +45,12 @@ class Bird
     arc(x,y,d*0.9,d*0.9,angle-QUARTER_PI/6,angle+QUARTER_PI/6);
     noStroke();
     angle+=PI;
-    arc(x,y,d,d,angle-QUARTER_PI/2,angle+QUARTER_PI/2);//Tail
+    arc(x,y,d,d,angle-QUARTER_PI/2,angle+QUARTER_PI/2); //Tail
     float phasef=phase/18.;
     angle-=HALF_PI;
-    arc(x,y,d,d,angle-QUARTER_PI/4,angle+QUARTER_PI/1-QUARTER_PI/2*phasef);//R-wing
+    arc(x,y,d,d,angle-QUARTER_PI/4,angle+QUARTER_PI/1-QUARTER_PI/2*phasef); //R-wing
     angle+=PI;
-    arc(x,y,d,d,angle-QUARTER_PI/1+QUARTER_PI/2*phasef,angle+QUARTER_PI/4);//L-wing 
+    arc(x,y,d,d,angle-QUARTER_PI/1+QUARTER_PI/2*phasef,angle+QUARTER_PI/4); //L-wing 
     phase=(phase+1)%18;
   }
   

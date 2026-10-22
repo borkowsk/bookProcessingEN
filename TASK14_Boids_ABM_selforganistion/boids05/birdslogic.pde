@@ -80,7 +80,7 @@ void thinkAndDoBoids(Bird boid,int myIndex)
               // If not in protected range, is the boid in the visual range?
               else if (squared_distance < visual_range_squared)
                    {
-                      // Add other boid's x/y-coord and x/y vel to accumulator variables
+                      // Add other boid's x/y-coord and x/y vel. to accumulator variables
                       xpos_avg += otherboid.x;
                       ypos_avg += otherboid.y;
                       xvel_avg += otherboid.vx;

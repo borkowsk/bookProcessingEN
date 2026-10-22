@@ -1,6 +1,6 @@
-/// Bounded confidence 1D - 3th+4th attempt
-/// Differences in tresholds as a function of extremes of views
-/// & with information bubles
+/// Bounded confidence 1D - 3rd+4th attempt
+/// Differences in thresholds as a function of extremes of views
+/// & with information bubbles
 //*/////////////////////////////////////////////////////////////////////////////////////
 
 final int       SEED=111;   ///< seed for random number generator
@@ -12,7 +12,7 @@ final int        bub=N/2;   ///< radius of information bubble
 
 float[] minds=new float[N]; ///< creating the minds array 
 float[]   eps=new float[N]; ///< creating the epsilons array
-float[]   tre=new float[N]; ///< creating the tresholds array
+float[]   tre=new float[N]; ///< creating the thresholds array
 
 boolean classicVis=true;    ///< Type of visualisation
 
@@ -28,7 +28,7 @@ void setup()
     minds[i]=i*(1.0/(N-1)); //<0..1>
     eps[i]=random(minEps,maxEps); //print(eps[i],"");
     // Threshold is a function of extremes of views
-    tre[i]=(0.5-abs(minds[i]-0.5))*treScale; println(tre[i]);//<0..0.5*Scale>
+    tre[i]=(0.5-abs(minds[i]-0.5))*treScale; println(tre[i]); //<0..0.5*Scale>
   }
   
   // Check
@@ -85,4 +85,4 @@ void visualisationB()  ///< Alternative visualisation
   }
 }
 
-/// @date 2026-06-16 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+/// @date 2026-06-16 (changed)

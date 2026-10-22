@@ -2,8 +2,8 @@
 /// Two-dimensional, synchronous cellular automaton.
 //-//////////////////////////////////////////////////////////////////////////////////
 
-final int     WorldSide=600;   //Side lenght of simulation world (square)
-final float   Dens=0.50;       //.01;//Initial density in the lattice World
+final int     WorldSide=600;   //Side length of simulation world (square)
+final float   Dens=0.50;       //.01; //Initial density in the lattice World
 final boolean withMoore=true;  //neighborhood with the corners of the square
 
 int FR=1; //desired simulation speed
@@ -13,7 +13,7 @@ int[][] WorldNew=new int[WorldSide][WorldSide];
 
 void setup()
 {
-  size(600,620); //squre canvas
+  size(600,620); //square canvas
   noSmooth();    //much faster drawing
   frameRate(FR);
   initialisation(); //Initial state of the model

@@ -28,7 +28,7 @@ void doStatisticsOnAgents(Agent[] agents)
     {
       summ+=curra.stress;
      
-      //Inne statystyki
+      //Other statistics
       //TODO
        
       liveCount++;
@@ -55,7 +55,7 @@ void doStatisticsOnAgents(Agent[][] agents)
     {
       summ+=curra.stress;
      
-      //Inne statystyki
+      //Other statistics
       //TODO
       
       liveCount++;

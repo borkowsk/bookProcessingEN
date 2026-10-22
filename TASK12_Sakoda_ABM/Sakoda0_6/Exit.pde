@@ -1,6 +1,6 @@
 // EXIT TEMPLATE
 
-void exit()          //it is called whenever a window is closed. Maybe asynchronicaly!
+void exit()          //it is called whenever a window is closed. Maybe asynchronously!
 {
   noLoop();          //For to be sure...
   delay(100);        // it is possible to close window when draw() is still working!

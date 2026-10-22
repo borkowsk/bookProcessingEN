@@ -31,7 +31,7 @@ class GAgatek implements Comparable
   
 }//_EndOfClass
 
-/// Population of "gagatki" responsible for implementing basic genetic operations.
+/// Population of "GAgateks" responsible for implementing basic genetic operations.
 /// @details We do not implement crossover because there is no need for it in one-dimensional problems.
 class GAPopulation
 {
@@ -247,6 +247,6 @@ class GAPopulation
 }//_EndOfClass
 
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingPL
+//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingEN
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
 //_EOC

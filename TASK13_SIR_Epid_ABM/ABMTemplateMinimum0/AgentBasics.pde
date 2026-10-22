@@ -1,5 +1,5 @@
-// Agent jest jedną z dwóch centralnych klas każdego modelu ABM
-// Agent musi zostać zainicjowany i musi mieć logikę zmian
+// An agent is one of the two central classes in any ABM model.
+// The agent must be initialized and must have change logic
 //-/////////////////////////////////////////////////////////////
 
 void initializeAgents(Agent[][] agents)
@@ -9,7 +9,7 @@ void initializeAgents(Agent[][] agents)
     if(random(1)<density)
     {
       Agent curr=new Agent();
-      //...dodatkowy kod inicjujący... EXP.:  curr.initialise();
+      //...additional initialization code... EXP.:  curr.initialise();
       agents[a][b]=curr;
     }
 }
@@ -20,7 +20,7 @@ void initializeAgents(Agent[] agents)
   if(random(1)<density)
   {
     Agent curr=new Agent();
-    //...dodatkowy kod inicjujący... EXP.:  curr.initialise();
+    //...additional initialization code... EXP.:  curr.initialise();
     agents[a]=curr;
   }
 }

@@ -1,12 +1,12 @@
 /// "Extended Moore Nowak-Latane Social Impact".
-/// Two-dimensional, synchronous cellular automaton with extended Moore neib.
+/// Two-dimensional, synchronous cellular automaton with extended Moore neigh.
 //*///////////////////////////////////////////////////////////////////////////
 
-final int     WorldSide=600;    //Side lenght of simulation world (square)
-final float   Dens=0.40;        //.01;//Initial density in the lattice World
+final int     WorldSide=600;    //Side length of simulation world (square)
+final float   Dens=0.40;        //.01; //Initial density in the lattice World
 final boolean withMoore=true;   //Neighborhood with the corners of the square
 final int     MaxStrength=100;  //Maximum persuasive power
-final int     MooreRad=2;       //Radius of extended Moore neib.
+final int     MooreRad=2;       //Radius of extended Moore neigh.
 final float   Noise=0.001;
 
 int FR=100; //desired simulation speed
@@ -130,7 +130,7 @@ void syncStep() // uses global WorldNew,WorldOld //Synchronous step a la classic
   {    // RULE: you assume a state more common in your vicinity    
     for (int j=0; j<WorldSide; j++)
     {  
-      int sum0  = 0, sum1  = 0; //sums of strenght "points"
+      int sum0  = 0, sum1  = 0; //sums of strength "points"
 
       for (int k=i-MooreRad; k<=i+MooreRad; k++)
         for (int m=j-MooreRad; m<=j+MooreRad; m++)

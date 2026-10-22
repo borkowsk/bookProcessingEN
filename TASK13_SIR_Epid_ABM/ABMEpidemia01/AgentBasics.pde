@@ -1,5 +1,5 @@
-// Agent jest jedną z dwóch centralnych klas każdego modelu ABM
-// Agent musi zostać zainicjowany i musi mieć logikę zmian
+// An agent is one of the two central classes in any ABM model.
+// The agent must be initialized and must have change logic
 //-/////////////////////////////////////////////////////////////
 
 void initializeAgents(Agent[][] agents)
@@ -9,13 +9,13 @@ void initializeAgents(Agent[][] agents)
       if(random(1)<density)
       {
         Agent curr=new Agent();
-        //DODATKOWY KOD INICJALIZACJI AGENTÓW, np. curr.initialise();
+        //ADDITIONAL AGENT INITIALIZATION CODE, e.g. curr.initialise();
         liveCount++;
         agents[a][b]=curr;
       }
       
-   //Inicjowanie infekcji od środka
-   if(agents[agents.length/2][agents.length/2]==null) //Gdyby go nie było
+   //Initiating infection from the center
+   if(agents[agents.length/2][agents.length/2]==null) //If he weren't here
    {
       agents[agents.length/2][agents.length/2]=new Agent();
       liveCount++;
@@ -29,20 +29,20 @@ void initializeAgents(Agent[] agents)
     if(random(1)<density)
     {
       Agent curr=new Agent();
-      //DODATKOWY KOD INICJALIZACJI AGENTÓW, np. curr.initialise();
+      //ADDITIONAL AGENT INITIALIZATION CODE, e.g. curr.initialise();
       liveCount++;
       agents[a]=curr;
     }
    
-   //Inicjowanie infekcji od środka
-   if(agents[agents.length/2]==null) //Gdyby go nie było
+   //Initiating infection from the center
+   if(agents[agents.length/2]==null) //If he weren't here
    {
       agents[agents.length/2]=new Agent();
       liveCount++;
    }
    
-   //Inicjowanie infekcji od środka
-   if(agents[agents.length/2]==null) //Gdyby go nie było
+   //Initiating infection from the center
+   if(agents[agents.length/2]==null) //If he weren't here
    {
       agents[agents.length/2]=new Agent();
       liveCount++;
@@ -58,7 +58,7 @@ void  agentsChange(Agent[] agents) //przerobiona z dummyChangeAgents()
     int a=(int)random(0,agents.length);
     if(agents[a]!= null )
     {
-      //agents[a].dummy+=random(-0.1,0.1); //PRZYKŁADOWA ZMIANA
+      //agents[a].dummy+=random(-0.1,0.1); //EXAMPLE AGENT STATE CHANGE
     }
   }  
 }
@@ -74,11 +74,11 @@ void  agentsChange(Agent[][] agents) //przerobiona z dummyChangeAgents()
     int b=(int)random(0,agents[a].length); // do głowy zrobić prostokąt
     if(agents[a][b]!= null )
     {
-       //Jeśli pusty lub zdrowy to nic nie robimy
+       //If the cell is empty or the agent is healthy, we do nothing
        if(agents[a][b].state<Infected || Recovered<=agents[a][b].state) 
           continue;
        
-       //Wyliczenie lokalizacji sąsiadów
+       //Calculating neighbor locations
        int dw=(a+1) % agents.length;   
        int up=(agents.length+a-1) % agents.length;
        int right = (b+1) % agents[a].length; //MOŻE BYĆ INNE NIŻ agents.length      
@@ -100,16 +100,16 @@ void  agentsChange(Agent[][] agents) //przerobiona z dummyChangeAgents()
        && agents[dw][b].state==Susceptible && random(1) < PTransfer) 
          {agents[dw][b].state=Infected; sumInfected++;}
 
-       float prob=random(1); //Los na dany dzień
+       float prob=random(1); //Fate for the day
        
-       if(prob<PDeath) //Albo tego dnia umiera
+       if(prob<PDeath) //He dies on this day
         {agents[a][b]=null;sumDeath++;liveCount--;}
         else
         {
-          //Albo jest wyleczony
+          //... or he is cured
           if(++(agents[a][b].state)==Recovered)
               sumRecovered++;
-          //else //NADAL CIERPI!
+          //else //...OR STILL SUFFERING!
         }
     }
   }

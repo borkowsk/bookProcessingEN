@@ -9,7 +9,7 @@ void visualizeAgents(Agent[][] agents)           ///< global function
    for(int b=0;b<agents[a].length;b++)
    {
       // Background
-      noStroke();fill(200); //Lepiej dopasowa tło
+      noStroke();fill(200); //Better background
       rect(b*cwidth,a*cwidth,cwidth,cwidth); //a is vertical!
       
       // Colorisation of agent
@@ -49,7 +49,7 @@ void visualizeAgents(Agent[] agents)           ///< global function
       fill(128);
     }
     
-    //Uwzględniamy różne częstości wizualizacji
+    //We accommodate various visualization frequencies
     int t=(int(TheWorld.getTimeStep())/STEPSperVIS)%side; 
     rect(a*cwidth,t*cwidth,cwidth,cwidth);
     stroke(255);

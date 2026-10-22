@@ -3,37 +3,37 @@
 //*/////////////////////////////////////////////////////////////////////////////////////////
 // http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
 //
-// Trzeba zainstalować program ffmpeg żeby działało!!!
+// You need to install ffmpeg for it to work!!!
 
 /*_onlyProcessingBlockBegin*/
-import com.hamoid.*; //Oraz importujemy niezbędną biblioteką zawierającą klasę VideoExport
+import com.hamoid.*; //And we import the necessary Processing library containing the VideoExport class
 /*_onlyProcessingBlockEnd*/
 
 // USAGE:
-// To wywołanie musi być w setup() żeby zadziałało Video:
+// This call must be in setup() for it to work Video:
 //
-//  initVideoExport(this,FileName,int Frames)); // Klasa VideoExport musi mieć dostęp do obiektu aplikacji Processing-u
-//                                              // Najlepiej wywołać na końcu setupu.
-//                                              // UWAGA!!!: Okno musi mieć PARZYSTE rozmiary
+//  initVideoExport(this,FileName,int Frames)); // The VideoExport class must have access to the Processing application object.
+//                                              // It is best to call it at the end of the setup.
+//                                              // NOTE!!!: The window must be EVEN in size
 //  
-// a to wywołujemy dla każdej klatki
-//  NextVideoFrame();//Video frame
+// and we call this for each frame
+//  NextVideoFrame(); //Video frame
 //
-// a na koniec zaś:
-//  CloseVideo(); //Powinno być w exit()
+// and finally:
+//  CloseVideo(); //Should be called in exit()
 //
 /*_OnlyProcessingBlockBegin*/
-VideoExport        videoExport;  //< KLASA z biblioteki VideoExport Abe Pazosa - trzeba zainstalować
+VideoExport        videoExport;              ///< CLASS from Abe Pazosa's VideoExport library - must be installed
 /*_onlyProcessingBlockEnd*/
 static int         videoFramesFreq=0;        ///< need be really visible globally!
-static boolean     videoExportEnabled=false; ///< init will set up it for true
+static boolean     videoExportEnabled=false; ///< Initialisation will set up it for true
 
 /*_OnlyProcessingBlockBegin*/
 void initVideoExport(processing.core.PApplet parent, String Name,int Frames)
 { 
   videoFramesFreq=Frames;
-  videoExport = new VideoExport(parent,Name); //Klasa VideoExport musi mieć dostęp do obiektu aplikacji Processing-u
-  videoExport.setFrameRate(Frames); //Nie za szybko
+  videoExport = new VideoExport(parent,Name); //The VideoExport class must have access to the Processing application object.
+  videoExport.setFrameRate(Frames); //Not too fast
   videoExport.startMovie();
   fill(0,128,255);text(Name,1,20);
   videoExportEnabled=true;  
@@ -47,7 +47,7 @@ void FirstVideoFrame() ///< need be really visible globally!
      fill(0,128,255);text("(c) W.Borkowski @ ISS University of Warsaw",1,height); 
      //text(videoExport.VERSION,width/2,height);
      delay(200);
-     for(int i=0;i<videoFramesFreq;i++) //Musi trwać sekundę czy coś...
+     for(int i=0;i<videoFramesFreq;i++) //It must last a second or something...
        videoExport.saveFrame(); //Video frame
   } 
   /*_onlyProcessingBlockEnd*/
@@ -60,14 +60,14 @@ void NextVideoFrame() ///< need be really visible globally!
    /*_onlyProcessingBlockEnd*/  
 }
                      
-void CloseVideo() ///< To wołamy gdy chcemy zamknąć
+void CloseVideo() ///< This is what we call when we want to close
 {  /*_OnlyProcessingBlockBegin*/
   if(videoExport!=null)
   { 
    fill(0);
-   text("(c) W.Borkowski @ ISS University of Warsaw",1,height); //Może się nie zdążyć pojawić
-   //powinno być jakieś "force screen update", ale nie znalazłem
-   for(int i=0;i<videoFramesFreq;i++) //Musi trwać sekundę czy coś...
+   text("(c) W.Borkowski @ ISS University of Warsaw",1,height); //It may not show up in time
+   //There should be some "force screen update", but I didn't find it
+   for(int i=0;i<videoFramesFreq;i++) //It must last a second or something...
        videoExport.saveFrame(); //Video frame
    videoExport.saveFrame(); //Video frame - LAST
    videoExport.endMovie();  //Konec filma ;-)

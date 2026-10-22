@@ -1,5 +1,5 @@
 //"Forest fire" - my private Monte-Carlo version 
-//Model "pożaru lasu" - bardzo klasyczny, w wersji autorskiej Monte Carlo 
+//The "forest fire" model - a very classic, in the original Monte Carlo version
 ///////////////////////////////////////////////////////////////////////////
 
 //Model parameters
@@ -27,8 +27,8 @@ void setup()
    for(int j=0;j<N;j++)
     if(random(0,1)<InitT)
      //World[i][j]=100;
-     //World[i][j]=(int)random(100);//FLAT DISTRIBUTION? RATHER NOT REALISTIC!
-     World[i][j]=(int)(20*(random(1)+random(1)+random(1)+random(1)+random(1)));//MAYBE GAUSSIAN DISTRIBUTION? 
+     //World[i][j]=(int)random(100); //FLAT DISTRIBUTION? RATHER NOT REALISTIC!
+     World[i][j]=(int)(20*(random(1)+random(1)+random(1)+random(1)+random(1))); //MAYBE GAUSSIAN DISTRIBUTION? 
     else
      World[i][j]=0;
 }
@@ -41,10 +41,10 @@ void draw()
 
 void doVisualisation()
 {
- for(int i=0;i<N;i++)//visualisation
+ for(int i=0;i<N;i++) //visualisation
   for(int j=0;j<N;j++)
   {
-    if(World[i][j]==0)//Free or burned cell
+    if(World[i][j]==0) //Free or burned cell
     {
       fill(0,0,0);
     }
@@ -68,19 +68,19 @@ void keyPressed() //Lighting
 {
     int i=(int)random(N);
     int j=(int)random(N);
-    World[i][j]=-World[i][j]/FireTimeDiv - 1;//At least one step
+    World[i][j]=-World[i][j]/FireTimeDiv - 1; //At least one step
 }
 
 void doMonteCarloStep()
 {
   Step++;
   int M=N*N;
-  for(int m=0;m<M;m++)//Processing is CASE SENSITIVE. But utilising this, is not a good practice!
+  for(int m=0;m<M;m++) //Processing is CASE SENSITIVE. But utilising this, is not a good practice!
   {
     int i=(int)random(N);
     int j=(int)random(N);
     
-    if(World[i][j]<0)//Negative means still burning!
+    if(World[i][j]<0) //Negative means still burning!
     {
        //Ignite neighbor!
        int a=(N+i+(int)random(-1.99,1.99))%N;
@@ -89,12 +89,12 @@ void doMonteCarloStep()
        if(World[a][b]>0
        && random(0,1)<IgnitionP)
        {
-         World[a][b]=-World[a][b]/FireTimeDiv - 1;//At least one step
+         World[a][b]=-World[a][b]/FireTimeDiv - 1; //At least one step
          //print("!");
        }
        
        //Burn more
-       World[i][j]++;//Until 0
+       World[i][j]++; //Until 0
        if(World[i][j]>0) print("?");
     }
   }

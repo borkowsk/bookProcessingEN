@@ -21,8 +21,8 @@ println("α=",alpha,"β=",beta,"γ=",gamma,"δ=",delta);
 
 for(int i=0;i<N;i++) //Why i? Maybe T?
 {
-  float oldX=X;//Local variable is valid only inside its block of code
-  //println(i,"X:",X," Y:",Y);//Much faster without console
+  float oldX=X; //Local variable is valid only inside its block of code
+  //println(i,"X:",X," Y:",Y); //Much faster without console
   //Visualisation
   stroke(0,255,0); //GREEN for X
   ellipse(i,500-X,3,3);

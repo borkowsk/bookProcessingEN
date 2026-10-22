@@ -38,7 +38,7 @@ class World //implements simulation_world interface later...
       if ( agents[a][b] != null )
       {
         //Check the stress on the agent
-        int strangers=0; //Number of foreign neighbors in von Neumann's neib.
+        int strangers=0; //Number of foreign neighbors in von Neumann's neigh.
 
         if ( 0 <= a-1 //when not reaching beyond the array
           && agents[a-1][b]!=null //...and there is an agent in the cell
@@ -60,10 +60,10 @@ class World //implements simulation_world interface later...
           && agents[a][b+1].identity!=agents[a][b].identity)
           strangers++;  
 
-        agents[a][b].stress=strangers/4.0; //von Neumann neib.  
+        agents[a][b].stress=strangers/4.0; //von Neumann neigh.  
 
         //Attempting to migrate when the agent is under stress
-        if ( agents[a][b].stress > 0  //Scheling model
+        if ( agents[a][b].stress > 0  //Schelling model
           && random(1.0)<agents[a][b].stress //"Not always" modification
           )
         {
@@ -102,7 +102,7 @@ class World //implements simulation_world interface later...
 
 void visualizeModel(World world)
 {
-  Agent curr; //tmp handle
+  Agent curr; //temporary handle
   for (int a=0; a<world.agents.length; a++)
     for (int b=0; b<world.agents[a].length; b++)
     {

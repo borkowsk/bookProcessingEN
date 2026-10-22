@@ -1,5 +1,5 @@
 /// Bounded confidence 0D - second attempt alternative.
-/// Treshold and epsilon, alternative visualisation
+/// Threshold and epsilon, alternative visualisation
 //-////////////////////////////////////////////////////
 
 final int   N=25;        //Number of agents
@@ -54,4 +54,4 @@ void draw()
   }
 }
 
-/// @date 2026-06-16 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+/// @date 2026-06-16 (changed)

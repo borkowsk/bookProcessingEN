@@ -31,7 +31,7 @@ void  changeAgents(Agent[] agents)
     int a=(int)random(0,agents.length);
     if(agents[a]!= null )
     {
-      // Sprawdzenie stresu
+      // Stress check
       int strangers=0;
       if(0<a-1 && agents[a-1]!=null 
       && agents[a-1].identity!=agents[a].identity)
@@ -41,15 +41,15 @@ void  changeAgents(Agent[] agents)
         strangers++;  
       agents[a].stress=strangers/2.0;  
       
-      // Próba migracji gdy stres doskwiera
+      // Attempting migration when stress takes its toll
       if(agents[a].stress>0 
       && random(1)<agents[a].stress)
       {
         int target=(int)random(0,agents.length);
-        if(agents[target]==null) //Jest miejsce
+        if(agents[target]==null) //Is there any space here?
         {
-          agents[target]=agents[a]; //Przeprowadzka
-          agents[a]=null; //Wymeldowanie ze starego miejsca
+          agents[target]=agents[a]; //moving to a new place
+          agents[a]=null; //Deregistration from the previous place
         }
       }
     }
@@ -65,7 +65,7 @@ void  changeAgents(Agent[][] agents)
     int b=(int)random(0,agents[a].length);
     if(agents[a][b]!= null )
     {
-      // Sprawdzenie stresu
+      // Stress check
       int strangers=0;
       if(0<a-1 && agents[a-1][b]!=null 
       && agents[a-1][b].identity!=agents[a][b].identity)
@@ -85,17 +85,17 @@ void  changeAgents(Agent[][] agents)
       
       agents[a][b].stress=strangers/4.0;  
       
-      // Próba migracji gdy stres doskwiera
+      // Attempting migration when stress takes its toll
       if(agents[a][b].stress>0 
       && random(1)<agents[a][b].stress)
       {
         int tara=(int)random(0,agents.length);
         int tarb=(int)random(0,agents[a].length);
         
-        if(agents[tara][tarb]==null) //Jest miejsce
+        if(agents[tara][tarb]==null) //Is there any space here?
         {
-          agents[tara][tarb]=agents[a][b]; //Przeprowadzka
-          agents[a][b]=null; //Wymeldowanie ze starego miejsca
+          agents[tara][tarb]=agents[a][b]; //moving to a new place
+          agents[a][b]=null; //Deregistration from the previous place
         }
       }
     }

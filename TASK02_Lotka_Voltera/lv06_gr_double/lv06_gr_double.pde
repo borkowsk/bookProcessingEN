@@ -22,10 +22,10 @@ println("α=",alpha,"β=",beta,"γ=",gamma,"δ=",delta);
 
 line((float)(Tlimit),0,(float)(Tlimit),height); // see reference for `line`.
 
-for(double T=0;T<Tlimit;T+=Tstep) // double TIME used as stearing variable!
+for(double T=0;T<Tlimit;T+=Tstep) // double TIME used as control variable!
 {
   //print('.'); //println(T,"X:",X," Y:",Y);
-  //float mirrors of variables because of graphics requairements
+  //float mirrors of variables because of graphics requirements
   float Xf=(float)(X);
   float Yf=(float)(Y);
   float Tf=(float)(T);

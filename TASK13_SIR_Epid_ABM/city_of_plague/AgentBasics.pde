@@ -1,5 +1,5 @@
-// Agent jest jedną z dwóch centralnych klas każdego modelu ABM
-// Agent musi zostać zainicjowany i musi mieć logikę zmian
+// An agent is one of the two central classes in any ABM model.
+// The agent must be initialized and must have change logic
 //-/////////////////////////////////////////////////////////////
 
 void initializeAgents(Agent[][] agents,int[][] env)
@@ -39,7 +39,7 @@ void initializeAgents(Agent[][] agents,int[][] env)
    //Inicjowanie infekcji z pozycji losowej
    int a=int(random(agents.length/3));    //Tylko fragment miasta
    int b=int(random(agents[0].length/3)); //Żeby łatwiej było znaleźć
-   if(agents[a][b]==null) //Gdyby go nie było
+   if(agents[a][b]==null) //If he weren't here
    {
       agents[a][b]=new Agent(b,a); //Konstruktor wymaga podania x,y położenia
       liveCount++;
@@ -84,7 +84,7 @@ void sheduleAgents(Agent[][] agents,int[][] env,int step)
 
 void  agentsChange(Agent[][] agents)
 {
-  //Zapamiętujemy stan przed krokiem
+  //We store the state before the step
   int befInfected=sumInfected;
   int befRecovered=sumRecovered;
   int befDeath=sumDeath;
@@ -92,14 +92,14 @@ void  agentsChange(Agent[][] agents)
   int MC=agents.length*agents[0].length;
   for(int i=0;i<MC;i++)
   {
-    int a=(int)random(0,agents.length); //agents[a].length na wypadek gdyby nam przyszło do głowy zrobić prostokąt
+    int a=(int)random(0,agents.length); //or "agents[a].length" in case we want to make a rectangle
     int b=(int)random(0,agents[a].length); //print(a,b,' ');
     if(agents[a][b]!= null )
     {
-       //Jeśli pusty lub zdrowy to nic nie robimy
+       //If the cell is empty or the agent is healthy, we do nothing
        if(agents[a][b].state<Infected || Recovered<=agents[a][b].state) continue;
        
-       //Wyliczenie lokalizacji sąsiadów
+       //Calculating neighbor locations
        int dw=(a+1) % agents.length;   
        int up=(agents.length+a-1) % agents.length;
        int right = (b+1) % agents[a].length;      
@@ -121,9 +121,9 @@ void  agentsChange(Agent[][] agents)
        && agents[dw][b].state==Susceptible && random(1) < 1-agents[dw][b].immunity ) 
          {agents[dw][b].state=Infected; sumInfected++;}
 
-       float prob=random(1); //Los na dany dzień
+       float prob=random(1); //Fate for the day
        
-       if(prob<PDeath) //Albo tego dnia umiera
+       if(prob<PDeath) //He dies on this day
         { 
           sumDeath++;liveCount--;
           //agents[a][b]=null; //Można by dawać mu stan "dead", ale...
@@ -131,17 +131,17 @@ void  agentsChange(Agent[][] agents)
         }
         else
         {
-          //Albo jest wyleczony
+          //... or he is cured
           if(++(agents[a][b].state)==Recovered)
           {
               sumRecovered++;
-              //agents[a][b].immunity=1; //Dla sprawdzenia, ale demoluje ;-) wykres
+              //agents[a][b].immunity=1; //Just to check, though it will mess up the chart ;-)
           }
-          //else //NADAL CIERPI!
+          //else //...OR STILL SUFFERING!
         }
     }
   }
-  //Zapamiętujemy zmianę w podstawowych statystykach jaka się dokonała w kroku symulacji
+  //We record the change in the base statistics jaka się dokonała w kroku symulacji
   deaths.append(sumDeath-befDeath);
   newcas.append(sumInfected-befInfected);
   cured.append(sumRecovered-befRecovered);

@@ -9,7 +9,7 @@ int side=50; //side of main table
 String modelName="Sakoda0.5ABM";
 float density=0.45;
 
-// Parameters of visualisation etc...
+// Parameters of visualisation etc.
 int cwidth=16;      //size of cell
 int STATUSHEIGH=40; //Height of the status bar
 int STEPSperVIS=1;  //How often to visualize?
@@ -57,5 +57,5 @@ interface simulation_world
 };
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA0.5 MAIN
+//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA 0.5 MAIN
 //*/////////////////////////////////////////////////////////////////////////////////////////

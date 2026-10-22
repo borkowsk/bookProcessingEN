@@ -1,35 +1,35 @@
 //   ABM minimum template - using template for AGENT BASE MODEL in 2D discrete geometry
-//   >>>>   only necessary modules <<<<
+//   >>>> only necessary modules of full template <<<<
 //   @author Wojciech Borkowski
 //-///////////////////////////////////////////////////////////////////////////////////////
 
-//Parametry modelu
-int side=75; //długość boku głównej macierzy
+//Model parameters
+int side=75; //side length of the main matrix
 String modelName="ABMTemplateMin";
 float density=0.75;
 
-World TheWorld=new World(side); //... ale zostanie w pełni zainicjowany wewnątrz setup()
+World TheWorld=new World(side); //will be fully initialized inside setup()
 
-//Parametry wizualizacji etc...
-int cwidth=15; //długość boku komórki w wizualizacji
+//Visualization parameters etc...
+int cwidth=15; //length of the cell side in the visualization
 int STATUSHEIGH=40;
 
-int STEPSperVIS=1; //Jak często wizualizować
-int FRAMEFREQ=10; //Rzadsza lub częstsza aktualizacja
-//boolean WITH_VIDEO=false; //Czy zrobić film na podstawie symulacji?
-boolean simulationRun=true; //Flaga startu/stopu
+int STEPSperVIS=1; //How often to visualize?
+int FRAMEFREQ=10; //Update less frequently or more frequently
+//boolean WITH_VIDEO=false; //Should we make a movie based on the simulation?
+boolean simulationRun=true; //Start/Stop flag
 
 void setup()
 {
-  //Grafika
+  //Graphics
   size(750,790);
   frameRate(FRAMEFREQ);
   background(255,255,200);
   strokeWeight(2);
   
   //Model
-  initializeModel(TheWorld); // Uzupełnienie inicjalizacji
-  //initializeStats(); //Do celów statystycznych
+  initializeModel(TheWorld); //Completing model initialization
+  //initializeStats(); //For statistical purposes
   //doStatistics(TheWorld);
   
   //Window size calculation
@@ -39,16 +39,16 @@ void setup()
   //FOR RTMVideo.pde UNIT
   //if(WITH_VIDEO) {initVideoExport(this,modelName+".mp4",FRAMEFREQ);FirstVideoFrame();}
   
-  //Zakończenie etapu konfiguracji
+  //Completing the configuration stage
   println("CURRENT SIZE OF PAINTING AREA IS "+width+"x"+height); //-myMenu.bounds.height???
-  visualizeModel(TheWorld); //FOR RTMVideo.pde UNIT - Pierwszy raz wizualizacja
+  visualizeModel(TheWorld); //FOR RTMVideo.pde UNIT - First time visualization
   
   //if(!simulationRun) //FOR RTMEvents.pde UNIT
   //  println("PRESS 'r' or 'ESC' to start simulation");
   //else
   //  println("PRESS 's' or 'ESC' to pause simulation");
   
-  //NextVideoFrame(); //FOR RTMVideo.pde - Wykorzystuje zmienną wewnętrzną do sprawdzenia, czy jest włączone
+  //NextVideoFrame(); //FOR RTMVideo.pde - Uses internal variable to check if animation is enabled
 }
 
 void draw()
@@ -61,11 +61,11 @@ void draw()
   
   writeStatusLine();
   
-  if(!simulationRun //Po wstrzymaniu symulacji powinna działać tylko wizualizacja
-  || StepCounter % STEPSperVIS == 0 ) //Ale gdy model jest uruchomiony, wizualizacja powinna być przeprowadzana od czasu do czasu
+  if(!simulationRun //Only visualization should work after pausing the simulation
+  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
   {
     visualizeModel(TheWorld);
-    //NextVideoFrame(); //FOR RTMVideo.pde UNIT - Wykorzystuje zmienną wewnętrzną do sprawdzenia, czy jest włączone
+    //NextVideoFrame(); //FOR RTMVideo.pde UNIT - Uses internal variable to check if animation is enabled
   }
 
 }

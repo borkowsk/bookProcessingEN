@@ -21,7 +21,7 @@ size(1500,500);
 println("α=",alpha,"β=",beta,"γ=",gamma,"δ=",delta);
 
 line(Tlimit,0,Tlimit,height);
-for(float T=0;T<Tlimit;T+=Tstep) // float TIME used as stearing variable!
+for(float T=0;T<Tlimit;T+=Tstep) // float TIME used as a loop control variable!
 {
   println(T,"X:",X," Y:",Y);
   //Visualisation:

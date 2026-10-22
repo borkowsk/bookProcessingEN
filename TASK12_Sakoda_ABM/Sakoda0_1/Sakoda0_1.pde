@@ -7,7 +7,7 @@ int side=50; //side of main table
 String modelName="Sakoda0ABM";
 float density=0.425;
 
-// Parameters of visualisation etc...
+// Parameters of visualisation etc.
 int cwidth=16; //size of cell
 int STATUSHEIGH=40; //Height of the status bar
 int STEPSperVIS=1; //How often to visualize the simulation world?
@@ -72,6 +72,6 @@ interface simulation_world
 };
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA0 MAIN 
+// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA 0 MAIN 
 // https://github.com/borkowsk/bookProcessingEN
 //*/////////////////////////////////////////////////////////////////////////////////////////

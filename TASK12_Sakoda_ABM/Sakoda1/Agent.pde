@@ -11,7 +11,7 @@ class Agent
   /// Constructor of the Agent
   Agent() 
   {
-    identity=round(random(1,Number_of_identities)); //Muszą bywać te same
+    identity=round(random(1,Number_of_identities));
     stress=0;
   }
 }

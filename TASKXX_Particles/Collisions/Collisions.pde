@@ -22,13 +22,13 @@ boolean[] ischild = new boolean[circles];
 float[] wellbeing = new float[circles]; //Moving average of interactions results
 
 //Parents - bounded confidence
-//Children - wellbeing with treshold (?) const-diff(attitudes)   
-//           Where const +-= confidence treshold
+//Children - wellbeing with threshold (?) const-diff(attitudes)   
+//           Where const +-= confidence threshold
 //
 
 
 boolean[] circon = new boolean[circles]; ///< ??
-color[] circolor = new color[circles];   ///< Atitude?
+color[] circolor = new color[circles];   ///< Attitude?
 
 boolean[] collision = new boolean[circles]; ///< ?
 
@@ -47,7 +47,7 @@ void setup()
   smooth();
   background(0);
   frameRate(FRAMERATE);
-  strokeWeight(2); //not neded
+  strokeWeight(2); //not needed
 
   for (int i=0; i<circles; i++) {
     

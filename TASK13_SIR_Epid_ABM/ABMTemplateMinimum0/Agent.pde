@@ -1,11 +1,11 @@
-// Agent jest jedną z dwóch centralnych klas każdego modelu ABM
+// An agent is one of the two central classes in any ABM model.
 //-/////////////////////////////////////////////////////////////
 class Agent
 {
   float dummy; //Dummy attribute/field. Only for demonstration.
-  //... DLA TWOJEGO KODU
+  //... FOR YOUR CODE
   
-  Agent() //Konstruktor Agenta
+  Agent() //Agent Constructor
   {
     dummy=0;
     //... 

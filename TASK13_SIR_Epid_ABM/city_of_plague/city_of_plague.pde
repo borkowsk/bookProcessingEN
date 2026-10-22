@@ -1,4 +1,4 @@
-// ABM epidemic model with enviroment 
+// ABM epidemic model with environment 
 // - using template for AGENT BASE MODEL in 2D discrete geometry
 // @author Wojciech Borkowski
 //-///////////////////////////////////////////////////////////////////////////////////////
@@ -13,13 +13,13 @@
 // o miejscu zamieszkania i miejscu pracy.
 String modelName="ABMcity_of_plague"; //NAZWA modelu, na razie nie używana.
 
-//PARAMETRY MODELU
-int side=200; //DŁUGOŚĆ BOKU ŚWIATA - PIONOWEGO. Poziomy jest x2
-float density=0.66; //Gęstość zaludnienia na "terenach mieszkalnych"
+//MODEL PARAMETERS
+int side=200; //LENGTH OF THE SIDE OF THE WORLD - PIONOWEGO. Poziomy jest x2
+float density=0.66; //Population density in "residential areas"
                            
 final float  PDeath=0.15;     //Średnie prawdopodobieństwo śmierci w danym KROKU(12h!) 
                               //choroby. Teraz krok to 12 godzin.
-final int    Duration=14;     //Czas trwania infekcji! W krokach symulacji. 
+final int    Duration=14;     //Infection duration W krokach symulacji. 
                               //Krok to teraz  12 godzin, czyli default to 7 dni.
 //float PTransfer=???;        //Prawdopodobieństwo zarażenia agenta w pojedynczej
                               //interakcji zależy od indywidualnej wartości `immunity`!
@@ -39,65 +39,65 @@ final int Infected=2;
 final int Recovered=Infected+Duration;
 final int Death=100;
 
-World TheWorld=new World(side); //INICJALIZACJA JEST KOŃCZONA 
-                               //W FUNKCJI setup()
+World TheWorld=new World(side); //INITIALIZATION IS COMPLETED 
+                               //IN THE setup() FUNCTION
 
-//STATYSTYKI LICZONE W TRAKCIE SYMULACJI
+//STATISTICS CALCULATED DURING THE SIMULATION
 int liveCount=0;
-int sumInfected=0; //Zachorowanie
-int sumRecovered=0; //Wyzdrowienia
-int sumDeath=0; //Ci co umarli
+int sumInfected=0; //Number of successful infections
+int sumRecovered=0; //Number of recoveries
+int sumDeath=0; //Number of deaths
 FloatList deaths=new FloatList(); //Historia śmierci 
 FloatList newcas=new FloatList(); //Historia nowych zachorowań
 FloatList  cured=new FloatList(); //Historia wyleczeń 
 
-//PARAMETRY WIZUALIZACJI, STATYSTYKI ITP.
-int cwidth=3;  //DŁUGOŚĆ BOKU KOMÓRKI W WIZUALIZACJI
+//VISUALIZATION PARAMETERS, STATISTICS, ETC.
+int cwidth=3;  //CELL SIDE LENGTH IN VISUALIZATION - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
                //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
-int STATUSHEIGH=150; //WYSOKOŚĆ PASKA STATUSU NA DOLE OKNA
-int STEPSperVIS=1; //JAK CZĘSTO URUCHAMIAMY WIZUALIZACJĘ
-int FRAMEFREQ=2; //ILE RAZY NA SEKUNDĘ URUCHAMIA SIĘ draw()
+int STATUSHEIGH=150; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
+int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
+int FRAMEFREQ=2; //HOW MANY TIMES PER SECOND DOES draw() RUN?
 
-//boolean WITH_VIDEO=false; //CZY CHCEMY ZAPIS DO PLIKU FILMOWEGO (wymagany modu… RTMVideo.pde)
+//boolean WITH_VIDEO=false; //DO WE WANT TO SAVE TO A MOVIE FILE (requires RTMVideo.pde module)
 boolean simulationRun=true; //FLAGA Start/Stop DZIAŁANIA SYMULACJI
 
 void setup()
 {
-  //GRAFIKA
+  //GRAPHICS BELOW
   pixelDensity(1); //1 or 2, expecially for "Retina" (HERE?)
-  size(1200,750); //NIESTETY TU MOGĄ BYĆ TYLKO WARTOŚCI PODANE LITERALNIE CZYLI "LITERAŁY"!!!
+  size(1200,750); //UNFORTUNATELY, ONLY LITERAL VALUES CAN BE PRESENTED HERE ("LITERALS")
   pixelDensity(1); //1 or 2, expecially for MAC "Retina"
   println("Width:",width,"Height:",height,"displayDensity:",displayDensity());
-  noSmooth();   //Znacząco przyśpiesza wizualizacje
+  noSmooth();   //Significantly speeds up visualizations
   frameRate(FRAMEFREQ);
   background(255,255,200);
   strokeWeight(2);
-  //randomSeed(-1013); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg np. 107 albo 1013
+  //randomSeed(-1013); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
   
-  //INICJALIZACJA MODELU I (ewentualnie) STATYSTYK
-  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
-  //initializeStats();      //ODKOMENTOWAĆ JEŚLI UŻYWAMY STATYSTYK
-  //doStatistics(TheWorld); //J.W.
+  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
+  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
+  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
+  //doStatistics(TheWorld); //as above
   
-  //OBLICZAMY WYMAGANY ROZMIAR OKNA DLA size() 
+  //CALCULATE THE REQUIRED WINDOW SIZE FOR size()
   println(modelName+": REQUIRED SIZE OF PAINTING AREA IS "
           +(cwidth*side*2)+"x"+(cwidth*side+STATUSHEIGH)); //Tu brakowało 2
           
-  cwidth=(height-STATUSHEIGH)/side; //DOPASOWUJEMY ROZMIAR KOMÓREK DO OKNA JAKIE JEST
+  cwidth=(height-STATUSHEIGH)/side; // HOWEVER, WE ADAPT THE SIZE OF THE CELLS TO THE WINDOW THAT IS
   
-  //INICJALIZACJA ZAPISU FILMU  (jeśli używamy RTMVideo.pde)
+  //INITIALIZE ANIMATION RECORDING (if using RTMVideo.pde)
   //if(WITH_VIDEO) {initVideoExport(this,modelName+".mp4",FRAMEFREQ);FirstVideoFrame();}
   
-  //INFORMACJE KONSOLOWE NA KONIEC FUNKCJI setup()
+  //CONSOLE INFO AT THE END OF THE setup() FUNCTION
   println("CURRENT SIZE OF PAINTING AREA IS "+width+"x"+height); //-myMenu.bounds.height???
-  visualizeModel(TheWorld); //PIERWSZA PO INICJALIZACJI WIZUALIZACJA ŚWIATA
+  visualizeModel(TheWorld); //FIRST WORLD VISUALIZATION AFTER INITIALIZATION
   
-  //if(!simulationRun) //WYMAGA MODUŁU RTMEvents.pde
+  //if(!simulationRun) //REQUIRES RTMEvents.pde MODULE
   //  println("PRESS 'r' or 'ESC' to start simulation");
   //else
   //  println("PRESS 's' or 'ESC' to pause simulation");
   
-  //NextVideoFrame(); //PIERWSZA REALNA KLATKA FILMU (o ile używamy RTMVideo.pde)
+  //NextVideoFrame(); //FIRST REAL ANIMATION FRAME (if we use RTMVideo.pde)
 }
 
 void draw()
@@ -105,24 +105,24 @@ void draw()
   if(simulationRun)
   {
     modelStep(TheWorld);
-    //doStatistics(TheWorld); //ODKOMENTOWAĆ JEŚLI UŻYWAMY STATYSTYK
-  }                          //Używa wewnętrznej flagi określającej czy log został otwarty
+    //doStatistics(TheWorld); //UNCOMMENT THIS IF USING STATISTICS
+  }                          //Uses an internal flag to determine whether the log has been opened
   
   writeStatusLine();
   
-  if(!simulationRun //Po wstrzymaniu symulacji powinna działać tylko wizualizacja
-  || StepCounter % STEPSperVIS == 0 ) //Ale gdy model jest uruchomiony, wizualizacja powinna być przeprowadzana od czasu do czasu
+  if(!simulationRun //Only visualization should work after pausing the simulation
+  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
   {
     visualizeModel(TheWorld);
-    //NextVideoFrame(); //FUNKCJA ZAPISU KLATKI FILMU. 
-  }                    //Używa wewnętrznej flagi określającej czy film został otwarty
+    //NextVideoFrame(); //ANIMATION FRAME RECORDING FUNCTION. 
+  }                    //Uses an internal flag to determine if the movie has started
 
 }
 
 void writeStatusLine()
 {
   fill(0);rect(0,side*cwidth,width,STATUSHEIGH);fill(128);
-  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram wg. odporności  
+  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram by resistance to infection  
   
                                                                   // Albo historie trzech zmiennych dziennych 
   //Legenda                                                       // w swojej skali
@@ -130,13 +130,13 @@ void writeStatusLine()
   stroke(255,0,0);fill(200,0,0);text("nowi zmarli",300,height-32); //timeline(deaths,200,height,STATUSHEIGH-16,false);
   stroke(0,255,0);fill(0,200,0);text("nowo wyleczeni",300,height-48); //timeline(cured, 200,height,STATUSHEIGH-16,false);
   
-  //Historie trzech zmiennych we wspólnej skali
+  //Histories of three variables, each on a common scale
   stroke(0,0,255);fill(0,0,255);
   timeline(newcas,deaths,cured, 200,height,STATUSHEIGH-16,false,color(0,0,255),color(255,0,0),color(0,255,0));
   
   fill(128);noStroke();
   textAlign(RIGHT, TOP);
-  text("Żyją:"+liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath+"     ",width,side*cwidth); //Miejsce dla NAJWAŻNIEJSZYCH STATYSTYK
+  text("Żyją:"+liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath+"     ",width,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
   println("ST:"+StepCounter+"\tZ\t"+sumInfected+"\t"+newcas.get(newcas.size()-1)
                            +"\tW\t"+sumRecovered+"\t"+cured.get(cured.size()-1)
                            +"\tU\t"+sumDeath+"\t"+deaths.get(deaths.size()-1)

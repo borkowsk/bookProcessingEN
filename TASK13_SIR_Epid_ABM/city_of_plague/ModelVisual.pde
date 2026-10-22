@@ -1,4 +1,4 @@
-// Świat pełen agentów wymaga metody wizualizacji na ekranie/oknie
+// A world full of agents requires a method of visualization on a screen/window
 //-//////////////////////////////////////////////////////////////////////////
 void visualizeEnv(int[][] env)
 {
@@ -17,7 +17,7 @@ void visualizeEnv(int[][] env)
     default:fill(255,0,0);break;
     }
     
-    rect(b*cwidth,a*cwidth,cwidth,cwidth); //WŁAŚCIWE RYSOWANIE 
+    rect(b*cwidth,a*cwidth,cwidth,cwidth); //THIS IS ACTUAL DRAWING 
    }
 }
 
@@ -29,20 +29,20 @@ void visualizeAgents(Agent[][] agents)
   for(int a=0;a<agents.length;a++)
    for(int b=0;b<agents[a].length;b++)
    {
-    //KOLORYZACJA AGENTA
+    //AGENT COLORING
     if( (curra=agents[a][b]) != null )
     {
       float green=curra.immunity*200;
       switch(curra.state){ 
-      case Recovered:  fill(0,128,0);break; //Wyleczony
-      case Infected:   fill(0,255,255);break; //Zachorował
-      case Susceptible:fill(0,green,128);break; //Podatny
-      case Death:      fill(0);break; //Zmarły
-      default:         fill(random(255),green,random(255)); //Chory
+      case Recovered:  fill(0,128,0);break; // Cured
+      case Infected:   fill(0,255,255);break; // Just infected
+      case Susceptible:fill(0,green,128);break; // Vulnerable
+      case Death:      fill(0);break;//Deceased
+      default:         fill(random(255),green,random(255)); // Sick
       break;
       } 
-      rect(b*cwidth,a*cwidth,cwidth,cwidth); //WŁAŚCIWE RYSOWANIE 
-                             //Zamiast rect() mogłoby też być ellipse()
+      rect(b*cwidth,a*cwidth,cwidth,cwidth); //THIS IS ACTUAL DRAWING 
+                             //Insteadrect() mogłoby też być ellipse()
     }    
    }
 }

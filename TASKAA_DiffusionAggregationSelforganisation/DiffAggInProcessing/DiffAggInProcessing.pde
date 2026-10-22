@@ -1,4 +1,4 @@
-// Program CA_2D_agregacja; 
+// Program CA_2D_aggregation; 
 /* Program CA symulacja dyfuzji z agregacją */ 
 /* Przełożony z Delphi za pomoca Gemini */
 

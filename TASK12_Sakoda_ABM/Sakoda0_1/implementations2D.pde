@@ -52,7 +52,7 @@ void  changeAgents(Agent[][] agents)
     if(agents[a][b]!= null )
     {
       // Check the stress on the agent
-      int strangers=0; //Number of foreign neighbors in von Neumann's neib.
+      int strangers=0; //Number of foreign neighbors in von Neumann's neigh.
       
       if( 0 <= a-1 //when not reaching beyond the array
       && agents[a-1][b]!=null //...and there is an agent in the cell
@@ -74,7 +74,7 @@ void  changeAgents(Agent[][] agents)
       && agents[a][b+1].identity!=agents[a][b].identity)
         strangers++;  
       
-      agents[a][b].stress=strangers/4.0; //von Neumann neib.  
+      agents[a][b].stress=strangers/4.0; //von Neumann neigh.  
       
       // Attempting to migrate when the agent is under stress
       if(agents[a][b].stress > 0 

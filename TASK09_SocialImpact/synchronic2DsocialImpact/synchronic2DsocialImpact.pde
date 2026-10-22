@@ -1,9 +1,9 @@
-/// "Cellular Nowak-Latane Social Impact" <=> "Nearest Neighb. Social Impact with strenght"
+/// "Cellular Nowak-Latane Social Impact" <=> "Nearest Neigh. Social Impact with strength"
 /// Two-dimensional, synchronous cellular automaton
 //*/////////////////////////////////////////////////////////////////////////////////////////
 
-final int     WorldSide=600;    //Side lenght of simulation world (square)
-final float   Dens=0.50;        //.01;//Initial density in the lattice World
+final int     WorldSide=600;    //Side length of simulation world (square)
+final float   Dens=0.50;        //.01; //Initial density in the lattice World
 final boolean withMoore=true;   //neighborhood with the corners of the square
 final int     MaxStrength=100;  //Maximum persuasive power
 
@@ -120,8 +120,8 @@ void syncStep() // uses global WorldOld,WorldNew
     for (int j=0; j<WorldSide; j++)
     {
       int dw=(j+1) % WorldSide, up=(WorldSide+j-1) % WorldSide;   
-      int sum0  = 0; //sum of 0 strenght of neighbors
-      int sum1  = 0; //sum of 1 strenght of neighbors
+      int sum0  = 0; //sum of 0 strength of neighbors
+      int sum1  = 0; //sum of 1 strength of neighbors
 
       if (WorldOld[left][j]==0 ) sum0+=Strength[left][j]; 
       else sum1+=Strength[left][j];

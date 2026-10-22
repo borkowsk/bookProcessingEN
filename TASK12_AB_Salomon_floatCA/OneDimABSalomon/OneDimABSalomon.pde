@@ -63,7 +63,7 @@ color colorFromB(float bValue) {
 }
 
 void drawScale(int x, int y, int widthPx, int heightPx, float maxB) {
-  noStroke();fill(255);//,255,0);
+  noStroke();fill(255); //,255,0);
   rect(x,y,widthPx+130,heightPx+25);
   y+=5;
   

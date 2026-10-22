@@ -1,5 +1,5 @@
-// Agent jest jedną z dwóch centralnych klas każdego modelu ABM
-// Agent musi zostać zainicjowany i musi mieć logikę zmian
+// An agent is one of the two central classes in any ABM model.
+// The agent must be initialized and must have change logic
 //-/////////////////////////////////////////////////////////////
 
 void initializeAgents(Agent[][] agents)
@@ -9,7 +9,7 @@ void initializeAgents(Agent[][] agents)
     if(random(1)<density)
     {
       Agent curr=new Agent();
-      //...MIEJSCE NA TWÓJ KOD INICJALIZACJI AGENTÓW, np. curr.initialise();
+      //...A PLACE FOR YOUR AGENT INITIALIZATION CODE, e.g. curr.initialise();
       agents[a][b]=curr;
     }
 }
@@ -20,23 +20,23 @@ void initializeAgents(Agent[] agents)
   if(random(1)<density)
   {
     Agent curr=new Agent();
-    //...MIEJSCE NA TWÓJ KOD INICJALIZACJI AGENTÓW, np. curr.initialise();
+    //...A PLACE FOR YOUR AGENT INITIALIZATION CODE, e.g. curr.initialise();
     agents[a]=curr;
   }
 }
 
-void  dummyChangeAgents(Agent[] agents) //do zmiany na agentsChange()
+void  dummyChangeAgents(Agent[] agents) //to be changed to agentsChange()
 {
   int MC=agents.length;
   for(int i=0;i<MC;i++)
   {
     int a=(int)random(0,agents.length);
     if(agents[a]!= null )
-      agents[a].dummy+=random(-0.1,0.1); //PRZYKŁADOWA ZMIANA
+      agents[a].dummy+=random(-0.1,0.1); //EXAMPLE AGENT STATE CHANGE
   }  
 }
 //OR
-void  dummyChangeAgents(Agent[][] agents) //do zmiany na agentsChange()
+void  dummyChangeAgents(Agent[][] agents) //to be changed to agentsChange()
 {
   int MC=agents.length*agents[0].length;
   for(int i=0;i<MC;i++)
@@ -44,7 +44,7 @@ void  dummyChangeAgents(Agent[][] agents) //do zmiany na agentsChange()
     int a=(int)random(0,agents.length);
     int b=(int)random(0,agents[a].length);
     if(agents[a][b]!= null )
-      agents[a][b].dummy+=random(-0.1,0.1); //PRZYKŁADOWA ZMIANA
+      agents[a][b].dummy+=random(-0.1,0.1); //EXAMPLE AGENT STATE CHANGE
   }
 }
 

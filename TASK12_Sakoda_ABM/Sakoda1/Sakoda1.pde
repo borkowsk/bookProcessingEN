@@ -1,4 +1,4 @@
-/// Sakoda inspired AGENT BASE MODEL utilized 1D or 2D dicrete geometry
+/// Sakoda inspired AGENT BASE MODEL utilized 1D or 2D discrete geometry
 /// implemented by Wojciech Borkowski
 /// \see https://www.jasss.org/20/3/15.html
 //*///////////////////////////////////////////////////////////////////////////////////////
@@ -10,7 +10,7 @@ float density=0.55;
 
 World TheWorld=new World(side); //... but also will be initialised inside setup()
 
-// Parameters of visualisation etc...
+// Parameters of visualisation etc.
 int cwidth=8; //size of cell
 int STATUSHEIGH=40;
 int STEPSperVIS=1;
@@ -28,7 +28,7 @@ void setup()
   
   // Model
   TheWorld.initializeModel();
-  initializeStats(); //Wykomentowanie blokuje tworzenie pliku log!
+  initializeStats(); //Commenting out the code prevents the creation of a log file!
   TheWorld.makeStatistics();
   
   // Window 
@@ -61,7 +61,7 @@ void draw()
   writeStatusLine();
   
   if(!simulationRun //When simulation was stopped only visualisation should work
-  || TheWorld.getTimeStep() % STEPSperVIS == 0 ) //But when model is running, visualisation shoud be done from time to time
+  || TheWorld.getTimeStep() % STEPSperVIS == 0 ) //But when model is running, visualisation should be done from time to time
   {
     visualizeModel(TheWorld);
     NextVideoFrame(); //It utilise inside variable to check if is enabled

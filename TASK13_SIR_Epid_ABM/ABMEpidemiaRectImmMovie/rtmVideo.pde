@@ -1,8 +1,8 @@
 //-////////////////////////////////////////////////////
 // To musi być w setup() żeby było Video:
 //
-//  initVideoExport(this,FileName,int Frames)); //Klasa VideoExport musi mieć dostęp do obiektu aplikacji Processingu
-//                         //Najlepiej wywołać na końcu setupu. Okno musi mieć PARZYSTE rozmiary
+//  initVideoExport(this,FileName,int Frames)); //The VideoExport class must have access to the Processing application object.
+//                         //It is best to call it at the end of the setup. The window must have EVEN dimensions
 //  
 //a to dla każdej klatki
 //  NextVideoFrame(); //Video frame
@@ -10,18 +10,18 @@
 //na koniec zaś:
 //  CloseVideo()
 //
-import com.hamoid.*; //Oraz importujemy niezbędną biblioteką zawierającą klasę VideoExport
+import com.hamoid.*; //And we import the necessary Processing library containing the VideoExport class
 
-VideoExport videoExport; //KLASA z biblioteki VideoExport Abe Pazosa - trzeba zainstalować
+VideoExport videoExport; //CLASS from Abe Pazos's VideoExport library - must be installed
                         //http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
-                        //Oraz zainstalować program ffmpeg żeby działało
+                        //And install the ffmpeg program for it to work
 int videoFramesFreq=0;           
 
 void initVideoExport(processing.core.PApplet parent, String Name,int Frames)
 {
   videoFramesFreq=Frames;
-  videoExport = new VideoExport(parent,Name); //Klasa VideoExport musi mieć dostęp do obiektu aplikacji Processingu
-  videoExport.setFrameRate(Frames); //Nie za szybko
+  videoExport = new VideoExport(parent,Name); //The VideoExport class must have access to the Processing application object.
+  videoExport.setFrameRate(Frames); //Not too fast
   videoExport.startMovie();
   text(Name,1,20);
   videoExportEnabled=true;
@@ -35,7 +35,7 @@ void FirstVideoFrame()
      text("(c) W.Borkowski @ ISS University of Warsaw",1,height); 
      //text(videoExport.VERSION,width/2,height);
      delay(200);
-     for(int i=0;i<videoFramesFreq;i++) //Musi trwać sekundę czy coś...
+     for(int i=0;i<videoFramesFreq;i++) //It must last a second or something...
        videoExport.saveFrame(); //Video frame
   }
 }
@@ -46,23 +46,23 @@ void NextVideoFrame()
      videoExport.saveFrame(); //Video frame
 }
                      
-void CloseVideo() //To wołamy gdy chcemy zamknąć
+void CloseVideo() //This is what we call when we want to close
 {
   if(videoExport!=null)
   { 
    fill(0);
-   text("(c) W.Borkowski @ ISS University of Warsaw",1,height); //Raczej się nie pojawia :-(
-   //powinno być jakieś "force screen update", ale nie znalazłem
-   for(int i=0;i<videoFramesFreq;i++) //Musi trwać sekundę czy coś...
+   text("(c) W.Borkowski @ ISS University of Warsaw",1,height); //It probably won't appear :-(
+   //There should be some "force screen update", but I didn't find it
+   for(int i=0;i<videoFramesFreq;i++) //It must last a second or something...
        videoExport.saveFrame(); //Video frame
    videoExport.saveFrame(); //Video frame - LAST
-   videoExport.endMovie(); //"Koniec filma"
+   videoExport.endMovie(); //"The End"
    videoExportEnabled=false;
    videoExport=null;
   }
 }
 
-static boolean     videoExportEnabled=false; //inicjalizacja ustawi to na "true"
+static boolean     videoExportEnabled=false; //initialization will set this to "true"
 
 //-/////////////////////////////////////////////////////////////////////////////////////////
 //  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - MOVIE MAKER 

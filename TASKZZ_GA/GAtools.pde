@@ -199,7 +199,7 @@ public static long fromGrayU32(int g) {
 /// [Gemini]
 /// @{
   
-/// Extracts a specified number of bits (length) starting from pos (inclusive).
+/// Extracts a specified number of bits (length) starting from `pos` (inclusive).
 /// @details Shifts them to the very beginning of the sequence, returning them as a pure int (unsigned) value.
 /// @returns EXTRACTED BIT SEQUENCE stored in an `int` (32 bits).
 public static int get_bits(long value, int pos, int length) 
@@ -207,14 +207,14 @@ public static int get_bits(long value, int pos, int length)
     // 1. Shift target bits all the way to the right side (position 0)
     long shifted = value >>> pos;
     
-    // 2. Create a bitmask of desired length (e.g., for length=5: 00011111)
+    // 2. Create a bit-mask of desired length (e.g., for length=5: 00011111)
     long mask = (1L << length) - 1;
     
     // 3. Extract bits using mask and safely cast to int
     return (int) (shifted & mask);
 }
 
-/// Inserts a gene value (put_value) of specified length into a designated position (pos) inside the original long sequence. 
+/// Inserts a gene value (put_value) of specified length into a designated position (`pos`) inside the original long sequence. 
 /// @note Existing bits at these positions are completely overwritten.
 /// @return Returns the new 64-bit sequence as a `long`.
 public static long put_bits(long old_value, int pos, int length, int put_value)
@@ -279,7 +279,7 @@ public  long switch_bit(long sou,int pos,int USE_BITS)
 /// Crossover for 32-bit chromosomes.  
 public static int cross_over(int parent1, int parent2, int pos) 
 {                                                                assert(0<=pos && pos < 32);
-    // 1. Create a mask for trailing (lower) bits from position 'pos' to the right.
+    // 1. Create a mask for trailing (lower) bits from position `pos` to the right.
     // E.g., for pos = 4, mask is four ones: 000...0001111
     int mask = (1 << pos) - 1;
 

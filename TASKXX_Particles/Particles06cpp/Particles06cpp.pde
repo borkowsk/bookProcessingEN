@@ -1,4 +1,4 @@
-/// "Naive" particles system with simplified phisics of collisions
+/// "Naive" particles system with simplified physics of collisions
 /// (slightly modified example)
 //*//////////////////////////////////////////////////////////////////////
 
@@ -19,7 +19,7 @@ float[]   yspeed = new float[circles];      ///< global
 boolean[] collision = new boolean[circles]; ///< ???
 
 boolean[] isNaive = new boolean[circles]; ///< global
-color[]   circolor = new color[circles];  ///< Atitude?
+color[]   circolor = new color[circles];  ///< Attitude?
 float[]   wellbeing = new float[circles]; ///< Moving average 
 
 boolean isPositionFree(int i) ///< global

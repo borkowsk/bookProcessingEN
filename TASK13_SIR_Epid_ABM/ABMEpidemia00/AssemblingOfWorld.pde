@@ -1,14 +1,14 @@
-// Świat jest jedną z dwóch centralnych klas każdego modelu ABM
+// The world is one of the two central classes of every ABM model
 //-/////////////////////////////////////////////////////////////
-int StepCounter=0; //GLOBALNY LICZNIK KROKÓW SYMULACJI
+int StepCounter=0; //GLOBAL SIMULATION STEP COUNTER
 
 class World
 {
-  //Agent agents[]; //JEDNOWYMIAROWA TABLICA AGENTÓW
+  //Agent agents[]; //ONE-DIMENSIONAL AGENT TABLE
   //OR
-  Agent agents[][]; //DWUWYMIAROWA TABLICA AGENTÓW
+  Agent agents[][]; //TWO-DIMENSIONAL AGENT TABLE
   
-  World(int side) //KONSTRUKTOR ŚWIATA
+  World(int side) //CONSTRUCTION OF THE WORLD
   {
     //agents=new Agent[side];
     //OR
@@ -16,32 +16,32 @@ class World
   }
 }
 
-//BARDZIEJ ZŁOŻONE FUNKCJONALNOŚCI ZOSTAŁY ZDEFINIOWANE JAKO OSOBNE FUNKCJE
-//A NIE METODY KLASY World ZE WZGLĘDU NA OGRANICZENIA SKŁADNI PROCESSINGU
-//NIE POZWALAJĄCEJ SCHOWAĆ GDZIEŚ INDZIEJ MNIEJ ISTOTNYCH METOD KLASY
-//-/////////////////////////////////////////////////////////////////////////
+//MORE COMPLEX FUNCTIONALITIES ARE DEFINED AS SEPARATE FUNCTIONS RATHER THAN CLASS METHODS World
+//DUE TO PROCESSING SYNTAX LIMITATIONS
+//WHICH DOESN'T ALLOW YOU TO HIDE LESS IMPORTANT CLASS METHODS SOMEWHERE ELSE
+//-//////////////////////////////////////////////////////////////////////////
 
 void initializeModel(World world)
 {
-  initializeAgents(world.agents); //TU NASTĄPI WYBÓR FUNKCJI PRZECIĄŻONEJ!
+  initializeAgents(world.agents); //THE OVERLOADED FUNCTION WILL BE SELECTED HERE!
 }
 
 void visualizeModel(World world)
 {
-  visualizeAgents(world.agents); //TU NASTĄPI WYBÓR FUNKCJI PRZECIĄŻONEJ!
+  visualizeAgents(world.agents); //THE OVERLOADED FUNCTION WILL BE SELECTED HERE!
 }
 
-void dummyChange(World world) //FUNKCJE MOŻNA USUNĄĆ GDY POJAWI SIĘ
-{                             //REALNY KOD MODELU
-  dummyChangeAgents(world.agents); //TU NASTĄPI WYBÓR FUNKCJI PRZECIĄŻONEJ!
+void dummyChange(World world) //THIS FUNCTION CAN BE REMOVED WHEN
+{                             //A REAL MODEL CODE APPEARS
+  dummyChangeAgents(world.agents); //THE OVERLOADED FUNCTION WILL BE SELECTED HERE!
 }
 
 void modelStep(World world)
 {
-   dummyChange(world); //TYMCZASOWE WYWOŁANIE TRYWIALNEJ DYNAMIKI
+   dummyChange(world); //TEMPORARY USE OF TRIVIA DYNAMICS
    //OR
-   //... MIEJSCE NA TWÓJ REALNY KOD MODELU np. 
-   //agentsChange(world.agents); //TU NASTĄPI WYBÓR FUNKCJI PRZECIĄŻONEJ!
+   //... PLACE FOR YOUR ACTUAL MODEL CODE
+   //agentsChange(world.agents); //THE OVERLOADED FUNCTION WILL BE SELECTED HERE!
    
    StepCounter++;
 }

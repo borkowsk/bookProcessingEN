@@ -1,76 +1,76 @@
 // ABM minimum template - using template for AGENT BASE MODEL in 1D & 2D discrete geometry
-//   >>>>   TYLKO NIEZBĘDNE MODUŁY <<<<
+//   >>>> ONLY THE ESSENTIAL MODULES OF THE ABM TEMPLATE <<<<
 // @author Wojciech Borkowski
 //-///////////////////////////////////////////////////////////////////////////////////////
 
-//PARAMETRY MODELU
-int side=200; //DŁUGOŚĆ BOKU ŚWIATA
+//MODEL PARAMETERS
+int side=200; //LENGTH OF THE SIDE OF THE WORLD
 String modelName="ABMEpidemia";
 float density=0.66;
 
-World TheWorld=new World(side); //INICJALIZACJA JEST KOŃCZONA 
-                               //W FUNKCJI setup()
+World TheWorld=new World(side); //INITIALIZATION IS COMPLETED 
+                               //IN THE setup() FUNCTION
 
-//Coś w rodzaju stałych ;-)
-final int Duration=7; //Czas trwania infekcji!
-//final int Empty=0; //NIEPOTRZEBNE. Zamiast tego jest null w komórce tablicy uchwytów do agentów 
+//"final" is something like constants ;-)
+final int Duration=7; //Infection duration
+//final int Empty=0; //UNNECESSARY. Instead, there is a null value in the agent handle array cell. 
 final int Susceptible=1;
 final int Infected=2;
 final int Recovered=Infected+Duration;
-//final float PTransfer=???;  //Prawdopodobieństwo zarażenia agenta w pojedynczej interakcji
-                              //teraz zależy od indywidualnej wartości immunity!
-final float PDeath=0.05;      //Średnie prawdopodobieństwo śmierci w danym dniu choroby
+//final float PTransfer=???;  //Probability of infecting an agent in a single interaction
+                              //now it depends on the individual immunity value!
+final float PDeath=0.05;      //Average probability of death in one day of illness duration
 
-//STATYSTYKI LICZONE W TRAKCIE SYMULACJI
+//STATISTICS CALCULATED DURING THE SIMULATION
 int liveCount=0;
-int sumInfected=0; //Zachorowanie
-int sumRecovered=0; //Wyzdrowienia
-int sumDeath=0; //Ci co umarli
+int sumInfected=0; //Number of successful infections
+int sumRecovered=0; //Number of recoveries
+int sumDeath=0; //Number of deaths
                                
-//PARAMETRY WIZUALIZACJI, STATYSTYKI ITP.
-int cwidth=3; //DŁUGOŚĆ BOKU KOMÓRKI W WIZUALIZACJI
-              //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
-int STATUSHEIGH=40; //WYSOKOŚĆ PASKA STATUSU NA DOLE OKNA
+//VISUALIZATION PARAMETERS, STATISTICS, ETC.
+int cwidth=3; //CELL SIDE LENGTH IN VISUALIZATION
+              // - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
+int STATUSHEIGH=40; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
 
-int STEPSperVIS=1; //JAK CZĘSTO URUCHAMIAMY WIZUALIZACJĘ
-int FRAMEFREQ=30; //ILE RAZY NA SEKUNDĘ URUCHAMIA SIĘ draw()
+int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
+int FRAMEFREQ=30; //HOW MANY TIMES PER SECOND DOES draw() RUN?
 
-//boolean WITH_VIDEO=false; //CZY CHCEMY ZAPIS DO PLIKU FILMOWEGO (wymagany modu… RTMVideo.pde)
-boolean simulationRun=true; //FLAGA Start/stop DZIAŁANIA SYMULACJI
+//boolean WITH_VIDEO=false; //DO WE WANT TO SAVE TO A MOVIE FILE (requires RTMVideo.pde module)
+boolean simulationRun=true; //SIMULATION OPERATIONS FLAG (Start/Stop) 
 
 void setup()
 {
-  //GRAFIKA
-  size(1200,640); //NIESTETY TU MOGĄ BYĆ TYLKO WARTOŚCI PODANE LITERALNIE CZYLI "LITERAŁY"!!!
-  noSmooth();   //Znacząco przyśpiesza wizualizacje
+  //GRAPHICS BELOW
+  size(1200,640); //UNFORTUNATELY, ONLY LITERAL VALUES CAN BE PRESENTED HERE ("LITERALS")
+  noSmooth();   //Significantly speeds up visualizations
   frameRate(FRAMEFREQ);
   background(255,255,200);
   strokeWeight(2);
-  //randomSeed(-1013); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg np. 107 albo 1013
+  //randomSeed(-1013); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
   
-  //INICJALIZACJA MODELU I (ewentualnie) STATYSTYK
-  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
-  //initializeStats();      //ODKOMENTOWAĆ JEŚLI UŻYWAMY STATYSTYK
-  //doStatistics(TheWorld); //J.W.
+  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
+  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
+  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
+  //doStatistics(TheWorld); //as above
   
-  //OBLICZAMY WYMAGANY ROZMIAR OKNA DLA size() 
+  //CALCULATE THE REQUIRED WINDOW SIZE FOR size()
   println(modelName+": REQUIRED SIZE OF PAINTING AREA IS "
           +(cwidth*side)+"x"+(cwidth*side+STATUSHEIGH));
-  cwidth=(height-STATUSHEIGH)/side; //DOPASOWUJEMY ROZMIAR KOMÓREK DO OKNA JAKIE JEST
+  cwidth=(height-STATUSHEIGH)/side; // HOWEVER, WE ADAPT THE SIZE OF THE CELLS TO THE WINDOW THAT IS
   
-  //INICJALIZACJA ZAPISU FILMU  (jeśli używamy RTMVideo.pde)
+  //INITIALIZE ANIMATION RECORDING (if using RTMVideo.pde)
   //if(WITH_VIDEO) {initVideoExport(this,modelName+".mp4",FRAMEFREQ);FirstVideoFrame();}
   
-  //INFORMACJE KONSOLOWE NA KONIEC FUNKCJI setup()
+  //CONSOLE INFO AT THE END OF THE setup() FUNCTION
   println("CURRENT SIZE OF PAINTING AREA IS "+width+"x"+height); //-myMenu.bounds.height???
-  visualizeModel(TheWorld); //PIERWSZA PO INICJALIZACJI WIZUALIZACJA ŚWIATA
+  visualizeModel(TheWorld); //FIRST WORLD VISUALIZATION AFTER INITIALIZATION
   
-  //if(!simulationRun) //WYMAGA MODUŁU RTMEvents.pde
+  //if(!simulationRun) //REQUIRES RTMEvents.pde MODULE
   //  println("PRESS 'r' or 'ESC' to start simulation");
   //else
   //  println("PRESS 's' or 'ESC' to pause simulation");
   
-  //NextVideoFrame(); //PIERWSZA REALNA KLATKA FILMU (o ile używamy RTMVideo.pde)
+  //NextVideoFrame(); //FIRST REAL ANIMATION FRAME (if we use RTMVideo.pde)
 }
 
 void draw()
@@ -78,17 +78,17 @@ void draw()
   if(simulationRun)
   {
     modelStep(TheWorld);
-    //doStatistics(TheWorld); //ODKOMENTOWAĆ JEŚLI UŻYWAMY STATYSTYK
-  }                          //Używa wewnętrznej flagi określającej czy log został otwarty
+    //doStatistics(TheWorld); //UNCOMMENT THIS IF USING STATISTICS
+  }                          //Uses an internal flag to determine whether the log has been opened
   
   writeStatusLine();
   
-  if(!simulationRun //Po wstrzymaniu symulacji powinna działać tylko wizualizacja
-  || StepCounter % STEPSperVIS == 0 ) //Ale gdy model jest uruchomiony, wizualizacja powinna być przeprowadzana od czasu do czasu
+  if(!simulationRun //Only visualization should work after pausing the simulation
+  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
   {
     visualizeModel(TheWorld);
-    //NextVideoFrame(); //FUNKCJA ZAPISU KLATKI FILMU. 
-  }                    //Używa wewnętrznej flagi określającej czy film został otwarty
+    //NextVideoFrame(); //ANIMATION FRAME RECORDING FUNCTION. 
+  }                    //Uses an internal flag to determine if the movie has started
 
 }
 
@@ -97,7 +97,7 @@ void writeStatusLine()
   fill(255);rect(0,side*cwidth,width,STATUSHEIGH);
   fill(0);noStroke();
   textAlign(LEFT, TOP);
-  text(liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath,0,side*cwidth); //Miejsce dla NAJWAŻNIEJSZYCH STATYSTYK
+  text(liveCount+" Infected:"+sumInfected+" Cured:"+sumRecovered+" Death:"+sumDeath,0,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
   println("ST:"+StepCounter+"\tZ\t"+sumInfected+"\tW\t"+sumRecovered+"\tU\t"+sumDeath);
   textAlign(LEFT, BOTTOM);
   text(StepCounter+")  Fps:"+ frameRate,0,side*cwidth+STATUSHEIGH-2);

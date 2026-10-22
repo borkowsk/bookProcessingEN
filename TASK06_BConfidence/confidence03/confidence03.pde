@@ -1,5 +1,5 @@
-/// Bounded confidence 0D - 3th attempt.
-/// Differences in tresholds as a function of extremes of views.
+/// Bounded confidence 0D - 3rd attempt.
+/// Differences in thresholds as a function of extremes of views.
 //-//////////////////////////////////////////////////////////////
 
 final int   N=50;           //Number of agents
@@ -7,7 +7,7 @@ final float treScale=0.999; //Threshold is a function of extremes of views times
 
 float[] minds=new float[N]; //creating the minds array 
 float[]   eps=new float[N]; //creating the epsilons array
-float[]   tre=new float[N]; //creating the tresholds array
+float[]   tre=new float[N]; //creating the thresholds array
 
 void setup()
 {

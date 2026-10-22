@@ -24,7 +24,7 @@ void thinkAndDo0(Bird me)
     me.vx=0;
     me.tz=1000; //Target now unattainable height //<>//
   }
-  else //Zeno's of Elea like target aproaching ;-)
+  else //Zeno's of Elea like target approaching ;-)
   {
     me.vx=dx*0.01;
     me.vy=dy*0.01;

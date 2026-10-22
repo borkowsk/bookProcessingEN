@@ -28,7 +28,7 @@ void doStatisticsOnAgents(Agent[] agents)           ///< global function
     {
       summ+=curra.stress;
      
-      //Inne statystyki
+      //Other statistics
       //TODO
        
       liveCount++;
@@ -55,7 +55,7 @@ void doStatisticsOnAgents(Agent[][] agents)           ///< global function
     {
       summ+=curra.stress;
      
-      //Inne statystyki
+      //Other statistics
       //TODO
       
       liveCount++;
@@ -66,7 +66,7 @@ void doStatisticsOnAgents(Agent[][] agents)           ///< global function
    
    meanStress=(float)(summ/liveCount);
    
-   //outstat should be closed in exit() --> see RTMExit.pde
+   //"outstat" should be closed in exit() --> see RTMExit.pde
 }
 
 //*/////////////////////////////////////////////////////////////////////////////////////////

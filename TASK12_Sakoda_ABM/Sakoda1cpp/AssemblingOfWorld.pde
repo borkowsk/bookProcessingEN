@@ -56,8 +56,8 @@ class World implements simulation_world {
   
 }
 
-/// More alaborated functionalities are defined as stand-alone functions,
-/// not as methods because of not enought flexible syntax of Processing
+/// More elaborated functionalities are defined as stand-alone functions,
+/// not as methods because of not enough flexible syntax of Processing
 //*/////////////////////////////////////////////////////////////////////////
 
 void visualizeModel(World world)           ///< global function

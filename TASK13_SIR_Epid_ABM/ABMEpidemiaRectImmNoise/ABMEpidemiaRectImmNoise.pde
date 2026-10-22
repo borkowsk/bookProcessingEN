@@ -2,13 +2,13 @@
 // @author Wojciech Borkowski
 //-///////////////////////////////////////////////////////////////////////////////////////
 
-//PARAMETRY MODELU - Coś w rodzaju stałych ;-)
+//Model parameters - kind of consts.
 final String  modelName="ABMPlague"; //"Plague" to DŻUMA!
 final int     randomSeed=1; //Jak 0 to pozostaje inicjacja automatyczna
-final int     side=200; //DŁUGOŚĆ BOKU ŚWIATA
-final float   density=0.66; //Gęstość zaludnienia
-final int     duration=14; //Czas trwania infekcji!
-final float   pDeath=0.33/duration; //Średnie prawdopodobieństwo śmierci w danym dniu choroby
+final int     side=200; //LENGTH OF THE SIDE OF THE WORLD
+final float   density=0.66; //Population density
+final int     duration=14; //Infection duration
+final float   pDeath=0.33/duration; //Average probability of death in one day of illness duration
 final float   pFarTrans=0.0;   //Prawdopodobieństwo spontanicznego ruchu. 0 - totalny bezruch!
 final boolean panic=false; //Czy ludzie uciekają przed pustką i śmiercią
 final int     infectionPoint=100; //Moment infekcji -1 - brak!
@@ -19,77 +19,77 @@ final int Infected=2;
 final int Recovered=Infected+duration;
 final int Death=100;
 
-//STATYSTYKI LICZONE W TRAKCIE SYMULACJI
+//STATISTICS CALCULATED DURING THE SIMULATION
 int liveCount=0;
 
-int  sumInfected=0; //Zachorowanie
-int sumRecovered=0; //Wyzdrowienia
-int     sumDeath=0; //Ci co umarli
+int  sumInfected=0; //Number of successful infections
+int sumRecovered=0; //Number of recoveries
+int     sumDeath=0; //Number of deaths
 
-int migratioStart=0; //Ci co zaczęli migrować wg. `PFarTrans`
+int migratioStart=0; //Those who began migrating according to `PFarTrans`
 int migrationCont=0; //Ci co migrowali (dalej) z powodu pustki wokół
 
-FloatList deaths=new FloatList(); //Śmierci 
-FloatList newcas=new FloatList(); //Nowe zachorowania
-FloatList  cured=new FloatList(); //Wyleczeni 
-FloatList migration=new FloatList(); //Migrujący
+FloatList deaths=new FloatList(); //Death counters
+FloatList newcas=new FloatList(); //New cases (infected)
+FloatList  cured=new FloatList(); //Cured counters 
+FloatList migration=new FloatList(); //Migration counters
 
-//PARAMETRY WIZUALIZACJI, STATYSTYKI ITP.
-int cwidth=1; //DŁUGOŚĆ BOKU KOMÓRKI W WIZUALIZACJI
+//VISUALIZATION PARAMETERS, STATISTICS, ETC.
+int cwidth=1; //CELL SIDE LENGTH IN VISUALIZATION - THE VALUE GIVEN HERE IS ONLY PROVISIONAL
              //WARTOŚĆ NADANA TU JEST TYLKO WSTĘPNA
-int STATUSHEIGH=150; //WYSOKOŚĆ PASKA STATUSU NA DOLE OKNA
+int STATUSHEIGH=150; //HEIGHT OF THE STATUS BAR AT THE BOTTOM OF THE WINDOW
 
-int STEPSperVIS=1; //JAK CZĘSTO URUCHAMIAMY WIZUALIZACJĘ
-int FRAMEFREQ=50; //ILE RAZY NA SEKUNDĘ URUCHAMIA SIĘ draw()
+int STEPSperVIS=1; //HOW OFTEN DO WE RUN THE VISUALIZATION
+int FRAMEFREQ=50; //HOW MANY TIMES PER SECOND DOES draw() RUN?
 
-boolean WITH_VIDEO=false; //CZY CHCEMY ZAPIS DO PLIKU FILMOWEGO (wymagane RTMVideo.pde. Może nie działać pod Windows)
-boolean simulationRun=true; //FLAGA Start/stop DZIAŁANIA SYMULACJI
+boolean WITH_VIDEO=false; //DO WE WANT TO SAVE TO A VIDEO FILE? (required RTMVideo.pde. Może nie działać pod Windows)
+boolean simulationRun=true; //SIMULATION OPERATIONS FLAG (Start/Stop) 
 
 World TheWorld;
 
 void setup()
 {
-  //GRAFIKA
+  //GRAPHICS BELOW
   float reqwidth=16*100;
   float reqheight=9*100;
   println("Set size(",reqwidth,",",reqheight,");");
-  size(1200,900); //NIESTETY TU MOGĄ BYĆ TYLKO WARTOŚCI PODANE LITERALNIE CZYLI "LITERAŁY"!!!
+  size(1200,900); //UNFORTUNATELY, ONLY LITERAL VALUES CAN BE PRESENTED HERE ("LITERALS")
   
   //OBLICZAMY WYMAGANE PARAMETRY OKNA 
-  cwidth=(height-STATUSHEIGH)/side; //DOPASOWUJEMY ROZMIAR KOMÓREK DO OKNA JAKIE JEST
+  cwidth=(height-STATUSHEIGH)/side; // HOWEVER, WE ADAPT THE SIZE OF THE CELLS TO THE WINDOW THAT IS
   STATUSHEIGH=int(height*0.15);
   
-  noSmooth();   //Znacząco przyśpiesza wizualizacje
+  noSmooth();   //Significantly speeds up visualizations
   frameRate(FRAMEFREQ);
   background(255,255,200);
   strokeWeight(2);
   if(randomSeed!=0)
   {
-    randomSeed(randomSeed); //Zasianie generatora gdy chcemy mieć powtarzalny przebieg np. 107 albo 1013
+    randomSeed(randomSeed); //Seeding a generator when a repeatable sequence is required, e.g., 107 or 1013.
     noiseSeed(randomSeed); //Noise też wymaga zasiania
   }
   
-  //INICJALIZACJA MODELU I (ewentualnie) STATYSTYK
+  //INITIALIZATION OF THE MODEL AND (OPTIONALLY) STATISTICS
   int wside=width/cwidth;
   TheWorld=new World(side,wside); 
-  initializeModel(TheWorld); //DOKOŃCZENIE INICJALIZACJI ŚWIATA
-  //initializeStats();      //ODKOMENTOWAĆ JEŚLI UŻYWAMY STATYSTYK
-  //doStatistics(TheWorld); //J.W.
+  initializeModel(TheWorld); //COMPLETING WORLD INITIALIZATION
+  //initializeStats();      //UNCOMMENT THIS IF USING STATISTICS
+  //doStatistics(TheWorld); //as above
   
    
-  //INICJALIZACJA ZAPISU FILMU  (jeśli używamy RTMVideo.pde)
+  //INITIALIZE ANIMATION RECORDING (if using RTMVideo.pde)
   if(WITH_VIDEO) {initVideoExport(this,modelName+".mp4",FRAMEFREQ);FirstVideoFrame();}
   
-  //INFORMACJE KONSOLOWE NA KONIEC FUNKCJI setup()
+  //CONSOLE INFO AT THE END OF THE setup() FUNCTION
   println("CURRENT SIZE OF PAINTING AREA IS "+width+"x"+height); //-myMenu.bounds.height???
-  visualizeModel(TheWorld); //PIERWSZA PO INICJALIZACJI WIZUALIZACJA ŚWIATA
+  visualizeModel(TheWorld); //FIRST WORLD VISUALIZATION AFTER INITIALIZATION
   
-  //if(!simulationRun) //WYMAGA MODUŁU RTMEvents.pde
+  //if(!simulationRun) //REQUIRES RTMEvents.pde MODULE
   //  println("PRESS 'r' or 'ESC' to start simulation");
   //else
   //  println("PRESS 's' or 'ESC' to pause simulation");
   
-  NextVideoFrame(); //PIERWSZA REALNA KLATKA FILMU (o ile używamy RTMVideo.pde)
+  NextVideoFrame(); //FIRST REAL ANIMATION FRAME (if we use RTMVideo.pde)
 }
 
 void draw()
@@ -97,16 +97,16 @@ void draw()
   if(simulationRun)
   {
     modelStep(TheWorld);
-    //doStatistics(TheWorld); //ODKOMENTOWAĆ JEŚLI UŻYWAMY STATYSTYK
-  }                          //Używa wewnętrznej flagi określającej czy log został otwarty
+    //doStatistics(TheWorld); //UNCOMMENT THIS IF USING STATISTICS
+  }                          //Uses an internal flag to determine whether the log has been opened
   
   writeStatusLine();
   
-  if(!simulationRun //Po wstrzymaniu symulacji powinna działać tylko wizualizacja
-  || StepCounter % STEPSperVIS == 0 ) //Ale gdy model jest uruchomiony, wizualizacja powinna być przeprowadzana od czasu do czasu
+  if(!simulationRun //Only visualization should work after pausing the simulation
+  || StepCounter % STEPSperVIS == 0 ) //When the model is running, visualization should only be performed every few steps
   {
     visualizeModel(TheWorld);
-    NextVideoFrame(); //FUNKCJA ZAPISU KLATKI FILMU. 
+    NextVideoFrame(); //ANIMATION FRAME RECORDING FUNCTION. 
   }                   //Używa wewnętrznej flagi określającej czy filmowanie zostało otwarte
 
 }
@@ -117,11 +117,11 @@ void writeStatusLine()
   rectMode(CORNERS);
   rect(0,cwidth*side,width,height);fill(128);
   rectMode(CORNER);
-  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram wg. odporności  
+  histogram(TheWorld.agents,0,height-16,STATUSHEIGH-16); //Histogram by resistance to infection  
   textAlign(LEFT,TOP);
   text("Odporność",0,height-STATUSHEIGH);
    
-  //Legenda i historie trzech zmiennych dziennych każda w swojej skali
+  //legend and the histories of three daily variables, each on its own scale
   stroke(0,0,255);fill(0,0,200);text("nowi chorzy",300,cwidth*side+16);
   //timeline(newcas,200,height,STATUSHEIGH-16,false);
   stroke(255,0,0);fill(200,0,0);text("nowi zmarli",300,cwidth*side+32);
@@ -129,7 +129,7 @@ void writeStatusLine()
   stroke(0,255,0);fill(0,200,0);text("nowo wyleczeni",300,cwidth*side+48);
   //timeline(cured, 200,height,STATUSHEIGH-16,false);
   
-  //Historie trzech zmiennych we wspólnej skali
+  //Histories of three variables, each on a common scale
   fill(0,128,255); //Tylko kolor napisów tu możemy ustalić
   stroke(128);
   viewAxis(200,height-1,width-200,height-STATUSHEIGH);
@@ -143,7 +143,7 @@ void writeStatusLine()
   text("migranci",300,cwidth*side+48+16);
   
   fill(128);noStroke();textAlign(RIGHT, TOP);
-  text("Żyją:"+liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath+"     ",width,side*cwidth); //Miejsce dla NAJWAŻNIEJSZYCH STATYSTYK
+  text("Żyją:"+liveCount+" Zachorowali:"+sumInfected+" Wyzdrowieli:"+sumRecovered+" Umarli:"+sumDeath+"     ",width,side*cwidth); //A place for the MOST IMPORTANT STATISTICS
   if(newcas.size()>0)
   {
     println("ST:"+StepCounter+"\tZ\t"+sumInfected+"\t"+newcas.get(newcas.size()-1)

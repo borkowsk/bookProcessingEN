@@ -64,7 +64,7 @@ class World
   
 };
 
-///More alaborated functionalities may be defined as stand-alone functions
+///More elaborated functionalities may be defined as stand-alone functions
 //*/////////////////////////////////////////////////////////////////////////
 
 void visualizeModel(World world)
@@ -72,7 +72,7 @@ void visualizeModel(World world)
    visualizeAgents(world.agents);
    //Other visualisations
    //... // if there was anything but agents.
-         // Enviroment for example.
+         // environment for example.
 }
 
 //*/////////////////////////////////////////////////////////////////////////////////////////////

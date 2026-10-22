@@ -26,7 +26,7 @@ void timeline(FloatList data, //dane do wykresu
     min=(float)Math.log10(min+1); //żeby 0 nie wywalało obliczeń
   }
   
-  //Właściwe rysowanie
+  //THIS IS ACTUAL DRAWING
   float wid=length/N; //println(width,N,wid,min,max);DEBUG
   float oldy=-Float.MIN_VALUE;
   for(int t=0;t<N;t++)
@@ -59,7 +59,7 @@ void timeline(FloatList data, //dane do wykresu
 }
 
 //A jakby miało być więcej zmiennych? UWAGA!:  wspólna skala!!!
-//Wtedy np. tak jak poniżej, co jest wersją bardzo prymitywną, ale będzie działać :-D
+//Wtedy e.g. tak jak poniżej, co jest wersją bardzo prymitywną, ale będzie działać :-D
 void timeline(FloatList data_a, FloatList data_b, FloatList data_c,
               float startX, float startY, float height,boolean logaritm,
               color color_a,color color_b,color color_c)
@@ -104,7 +104,7 @@ void timeline(FloatList data_a, FloatList data_b, FloatList data_c,
     gmin=min;
   }
   
-  //Właściwe rysowanie
+  //THIS IS ACTUAL DRAWING
   float wid=length/max(N1,N2,N3); //Najdłuższy decyduje
   float oldy=-Float.MIN_VALUE;
   stroke(color_a); //fill(color_a);
@@ -185,6 +185,6 @@ void dottedLine(float x1, float y1, float x2, float y2, float steps)
 } 
 
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingPL
+//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingEN
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
 //_EOC

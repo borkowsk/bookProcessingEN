@@ -31,7 +31,7 @@ class World implements simulation_world
   
   void changeState() ///< Method 2.
   { //The function corresponding to the type of the array 
-    changeAgents(this.agents);//... will be selected here
+    changeAgents(this.agents); //... will be selected here
   }
   
   /// The function has to correspond to the type
@@ -57,7 +57,7 @@ float meanStress=0;
 int   liveCount=0;
 
 /// More elaborated functionalities may be defined as stand-alone functions,
-/// not as methods because of not enought flexible syntax of Processing
+/// not as methods because of not enough flexible syntax of Processing
 //*/////////////////////////////////////////////////////////////////////////
 
 void visualizeModel(World world)

@@ -51,4 +51,4 @@ void draw()
 } // end of draw()
 
 
-/// @date 2026-06-16 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+/// @date 2026-06-16 (changed)

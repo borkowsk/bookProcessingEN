@@ -11,7 +11,7 @@ final boolean VIEW_TARGETING=true; ///< Show lines for current targets?
 // Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
 final float   protectedRange=min(NORD_SOUTH,WEST_EAST)/30.0; ///< "Range where they fly away from others"
 final float   protectedRangeSquared=protectedRange*protectedRange;
-final float   visualRange=min(NORD_SOUTH,WEST_EAST)/15.0;   ///< "Range where they tend tooward center of mass"
+final float   visualRange=min(NORD_SOUTH,WEST_EAST)/15.0;   ///< "Range where they tend toward center of mass"
 final float   visualRangeSquared=visualRange*visualRange;
 final float   avoidFactor=0.04;
 final float   matchingFactor=0.05;

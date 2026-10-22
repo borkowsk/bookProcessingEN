@@ -1,14 +1,14 @@
 /// "Extended Moore Nowak-Latane Social Impact" with noise & bias for 1
-/// Two-dimensional, asynchronous cellular automaton with extended Moore neib.
+/// Two-dimensional, asynchronous cellular automaton with extended Moore neigh.
 //*/////////////////////////////////////////////////////////////////////////////////////////
 
-final int     WorldSide=500;   //Side lenght of simulation world (square)
-final float   Dens=0.20;       //.01;//Initial density of 1 in the Attitude
+final int     WorldSide=500;   //Side length of simulation world (square)
+final float   Dens=0.20;       //.01; //Initial density of 1 in the Attitude
 final int     MaxStrength=100; //Maximum persuasive power
 
 final int     Bias=10;    //Bias for 1
-final float   Noise=0.05; //Ratio of random swithes of attitudes
-final int     MooreRad=1; //Radius of extended Moore neib.
+final float   Noise=0.05; //Ratio of random switches of attitudes
+final int     MooreRad=1; //Radius of extended Moore neigh.
 
 
 int FR=100; //desired simulation speed
@@ -19,7 +19,7 @@ int[][] Attitude=new int[WorldSide][WorldSide]; //Current attitude
 
 void setup()
 {
-  size(500,520); //squre canvas with status line
+  size(500,520); //square canvas with status line
   noSmooth();    //much faster drawing
   frameRate(FR);
   initialisation(); //Initial state of the model
@@ -116,7 +116,7 @@ void asyncStep() // asynchronous step
     int i=int(random(WorldSide));
     int j=int(random(WorldSide));
     // RULE: you assume a state more common in your vicinity     
-    int sum0  = 0, sum1  = Bias; //sums of strenght "points"
+    int sum0  = 0, sum1  = Bias; //sums of strength "points"
           
     for(int k=i-MooreRad;k<=i+MooreRad;k+=1)
       for(int m=j-MooreRad;m<=j+MooreRad;m+=1)

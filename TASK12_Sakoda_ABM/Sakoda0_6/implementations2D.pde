@@ -73,7 +73,7 @@ void  changeAgents(Agent[][] agents)
       && agents[a][b+1].identity!=agents[a][b].identity)
         strangers++;  
       
-      agents[a][b].stress=strangers/4.0; //von Neumann neib.  
+      agents[a][b].stress=strangers/4.0; //von Neumann neigh.  
       
       // Attempting to migrate when the agent is under stress
       if(agents[a][b].stress>0 

@@ -15,7 +15,7 @@ void histogram(Agent[][] agents,float startx,float starty,float hight)
   for(int a=0;a<agents.length;a++)
    for(int b=0;b<agents[a].length;b++)
    {
-    //KOLORYZACJA AGENTA
+    //AGENT COLORING
     if( (curra=agents[a][b]) != null 
         && curra.state!=Death //Uwzględniamy zmarłych przy statystyce
     )

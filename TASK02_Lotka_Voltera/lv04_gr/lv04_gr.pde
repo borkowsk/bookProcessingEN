@@ -18,7 +18,7 @@ size(1000,500);
 println("α=",alpha,"β=",beta,"γ=",gamma,"δ=",delta);
 
 // Why i? T may be used instead!
-for(float T=0;T<1000;T+=Tstep) // TIME is used as stearing variable!
+for(float T=0;T<1000;T+=Tstep) // TIME is used as steering variable!
 {
   //println(T,"X:",X," Y:",Y);
   //Visualisation

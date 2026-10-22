@@ -1,4 +1,4 @@
-///  Dopasowana do modelu obsługa zdarzeń
+///  Model-specific event handling
 //*/////////////////////////////////////////////////
 
 int searchedX=-1;
@@ -14,7 +14,7 @@ void mouseClicked()
   Clicked=true;
   theSelected=null;
   searchedX=mouseX;
-  searchedY=mouseY; //Searching should be implemented in visialisation!
+  searchedY=mouseY; //Searching should be implemented in visualisation!
 }
 
 void keyPressed() 
@@ -33,7 +33,7 @@ void keyPressed()
   case '9': STEPSperVIS=200;background(255,255,200);text("StPerV: "+STEPSperVIS,1,16);break;
 //  case '0': STEPSperVIS=1;DeltaMC=0.2;text("DeltaMC: "+DeltaMC,1,16);break;
   case ' ': save(modelName+"."+nf((float)TheWorld.getTimeStep(),6,5)+".PNG");
-            //write(world,modelName+"."+nf((float)StepCounter,6,5)); //Aktualny stan ekosystemu
+            //write(world,modelName+"."+nf((float)StepCounter,6,5)); //Current state of the ecosystem
             break;
   case ESC: simulationRun=!simulationRun; break;
   case 's': simulationRun=false; break;
