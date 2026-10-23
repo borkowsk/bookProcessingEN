@@ -12,7 +12,7 @@ Reynolds' boids paper.
 
 For more see: https://www.wikiwand.com/en/Boids
 
-![OpenGL animation](https://upload.wikimedia.org/wikipedia/commons/4/43/Boids_OpenGL_example.webm  "Example animation")
+[![OpenGL animation](Rule_cohesion.gif  "Example animation")](https://upload.wikimedia.org/wikipedia/commons/4/43/Boids_OpenGL_example.webm)
 
 
 // @date 2026-10-23 (file creation)
