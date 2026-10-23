@@ -50,14 +50,14 @@ class GAPopulation
     for(int i=0;i<population_size;i++)
     {
       double r=Math.random()*range;
-      int as_NKB=map_(r,range);
+      int as_NBC=map_(r,range);
       
       //Coding test
       println('*',minx+r,'\t',r,'\t',
-              toBin(as_NKB,32),'\t',minx+unmap_(as_NKB,range)
+              toBin(as_NBC,32),'\t',minx+unmap_(as_NBC,range)
               );
               
-      all[i]=new GAgatek(as_NKB);
+      all[i]=new GAgatek(as_NBC);
     }
   } 
   

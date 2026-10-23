@@ -52,15 +52,15 @@ class GAPopulation
     for(int i=0;i<population_size;i++)
     {
       double r=Math.random()*range;
-      int as_NKB=map_(r,range);
-      int as_gray=toGray(as_NKB);
+      int as_NBC=map_(r,range);
+      int as_gray=toGray(as_NBC);
       
       float f=(float)r; ///< To inspect the difference with `r` in the debugger.
       int as_float=reinterpret(f);
       
       //Coding test
       println('*',minx+r,'\t',r,'\t',
-              toBin(as_NKB,32),'\t',minx+unmap_(as_NKB,range),'\t',
+              toBin(as_NBC,32),'\t',minx+unmap_(as_NBC,range),'\t',
               toBin(as_gray,32),'\t',minx+unmap_(fromGray(as_gray),range),'\t',
               toBin(as_float,32),'\t',minx+reinterpret(as_float,0f,(float)range) 
               );
@@ -68,7 +68,7 @@ class GAPopulation
       if(gray_coded) //TODO Change to an `enum` that specifies the encoding method.
         all[i]=new GAgatek(as_gray);
       else
-        all[i]=new GAgatek(as_NKB);
+        all[i]=new GAgatek(as_NBC);
     }
   } 
   

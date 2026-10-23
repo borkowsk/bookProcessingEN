@@ -38,7 +38,7 @@ class GAgatek2G implements Comparable
 
 /// Ways to encode a floating-point number into an integer.
 enum GENE_CODING{ 
-                  NKB, ///< Natural Binary Code of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
+                  NBC, ///< Natural Binary Code of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
                   GRY, ///< Gray coding of a mapped range.
                   FLA, ///< Direct bitwise reinterpretation from `float` to `int`. (?)
                   FLR  ///< Bitwise reinterpretation of a `float` as an `int`. (?)
@@ -76,7 +76,7 @@ class GAPopulation
       int coded_y=Integer.MAX_VALUE;
       
       switch(coding){
-        case NKB: 
+        case NBC: 
           coded_x=map_(rx,rangex);
           coded_y=map_(ry,rangey);
         break;
@@ -119,7 +119,7 @@ class GAPopulation
     int from_gene=all[index].geneX;
     
     switch(coding){
-        case NKB: // Natural Binary Code of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
+        case NBC: // Natural Binary Code of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
           return minx+unmap_(from_gene,rangex);
         case GRY: // Gray encoding of the mapped range.
           return minx+unmap_(fromGray(from_gene),rangex);
@@ -150,7 +150,7 @@ class GAPopulation
     int from_gene=all[index].geneY;
     
     switch(coding){
-        case NKB: // Natural Binary Code of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
+        case NBC: // Natural Binary Code of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
           return miny+unmap_(from_gene,rangey);
         case GRY: // Gray encoding of the mapped range.
           return miny+unmap_(fromGray(from_gene),rangey);

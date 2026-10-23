@@ -25,10 +25,10 @@ GAPopulation Pop;
 /// * The recommended search range for the domain is `x in [-5.12, 5.12]`. 
 ///   In this interval, the function has one clear global minimum at point `x = 0`,
 ///   where the value is `0`, and multiple local minima ("valleys", in which
-///   You can see that the algorithm has become stuck if the mutation is too small.).
+///   you can see that the algorithm has become stuck if the mutation is too small).
 /// * Global minimum (Bottom): Exactly 0.0 at point `x = 0`.
 /// * Global Maximum (Peak): It is approximately 40.35 for points \(x \approx \pm 4.523\).
-/// * comp.: https://www.wikiwand.com/en/Rastrigin_function . There are also links to
+/// * cf.: https://www.wikiwand.com/en/Rastrigin_function . There are also links to
 ///   other interesting benchmark functions for optimization algorithms.
 double Rastrigin(double x)
 {

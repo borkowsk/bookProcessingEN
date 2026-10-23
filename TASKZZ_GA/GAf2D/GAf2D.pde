@@ -21,12 +21,13 @@ GAPopulation Pop;
 /// @details 
 /// The mathematical formula for two variables is as follows:
 ///     f(x, y) = 20 + (x² - 10*cos(2πx)) + (y² - 10*cos(2πy))
-/// * The recommended search range for the domain is `x in [-5.12, 5.12]`.. 
+/// * The recommended search range for the domain is `x in [-5.12, 5.12]` and same for `y`. 
 ///   In this interval, the function has one clear global minimum at point `(x, y) = (0, 0)`,
 ///   where the value is `0`. It has about 50 local minima!
-///  an excellent benchmark for 2D algorithms.
+///  It is an excellent benchmark for 2D algorithms!
 /// * Global minimum (Bottom): Exactly 0.0 at point `(x,y) = (0,0)`.
 /// * Global maximum: It is approximately 80.7 for points near the corners of the domain.
+/// * cf.: https://www.wikiwand.com/en/Rastrigin_function .
 double Rastrigin2D(double x, double y)
 {
   if (Double.isNaN(x) || Double.isNaN(y)) {
@@ -79,7 +80,7 @@ void draw_function(int opacity)
   }
 }
 
-/// @name Pair of values for the currently best solution
+/// @name Triplet of values for the currently best solution
 /// @{
 double best_fit=-Double.MAX_VALUE;
 double x_best=-Double.MAX_VALUE;
