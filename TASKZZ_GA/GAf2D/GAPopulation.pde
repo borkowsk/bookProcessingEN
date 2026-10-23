@@ -1,18 +1,18 @@
 /// A population of genetic agents for solving one-dimensional problems.
 //-////////////////////////////////////////////////////////////////////////////
-/// @date 2026-10-22 (last modification)
+/// @date 2026-10-23 (last modification)
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.Comparator;
 
 /// @brief "GAgatek2G" – that is, a genetic algorithm agent with two genes.
 /// @details
-/// Gagatek to potoczne określenie oznaczające figlarza, łobuziaka lub osobę lekkomyślną, 
-/// zdolną do nieodpowiedzialnych wybryków i drobnych wykroczeń.  
-/// Synonimami są tu m.in. urwis, ancymonek, ziółko czy spryciarz.
+/// "Gagatek" is a colloquial Polish term meaning a rascal, rogue, or prankster, 
+/// capable of irresponsible antics and minor mischief.  
+/// Synonyms include rascal, imp, scamp, or trickster.
 class GAgatek2G implements Comparable
 {
-  /// @name Geny. Są inicjowane w konstruktorze.
+  /// @name Geny (En. genes). They are initialized in the constructor.
   /// @{
   int       geneX;
   int       geneY;
@@ -36,16 +36,16 @@ class GAgatek2G implements Comparable
   
 }//_EndOfClass
 
-/// Sposoby kodowania liczby zmiennoprzecinkowej na liczbie całkowitej.
+/// Ways to encode a floating-point number into an integer.
 enum GENE_CODING{ 
-                  NKB, ///< Natural Binary Encoding of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
+                  NKB, ///< Natural Binary Code of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
                   GRY, ///< Gray coding of a mapped range.
                   FLA, ///< Direct bitwise reinterpretation from `float` to `int`. (?)
                   FLR  ///< Bitwise reinterpretation of a `float` as an `int`. (?)
                 };
 
-/// The population of "GAgateks" handles the implementation of basic genetic operations.
-/// @details Nie implementujemy crossing-over bo w problemach jednowymiarowych nie ma potrzeby jego używania.
+/// The population of "GAgatek-s" handles the implementation of basic genetic operations.
+/// @details We do not implement crossover because there is no need for it in one-dimensional problems.
 class GAPopulation
 {
   GAgatek2G[] all;
@@ -84,7 +84,7 @@ class GAPopulation
           coded_x=toGray(map_(rx,rangex));
           coded_y=toGray(map_(ry,rangey));
         break;
-        case FLA: // Bezposrednia reinterpretacja bitowa float-->int.
+        case FLA: // Direct bitwise reinterpretation  float-->int.
         {
           float fx=(float)(minx+rx);
           float fy=(float)(miny+ry);
@@ -92,7 +92,7 @@ class GAPopulation
           coded_y=reinterpret((float)(fy));
         }
         break;
-        case FLR: // Zakres reinterpretowany bitowo float-->int.
+        case FLR: // Bitwise reinterpreted range: float-->int.
           coded_x=reinterpret((float)(rx));
           coded_y=reinterpret((float)(ry));
         break;
@@ -103,7 +103,7 @@ class GAPopulation
       
       all[i]=new GAgatek2G(coded_x,coded_y);
       
-      //Test kodowania
+      //Coding test
       println("*x*\t",minx+rx,'\t',rx,'\t',toBin(coded_x,32),'\t',this.get_x_val(i));
       println("*y*\t",miny+ry,'\t',ry,'\t',toBin(coded_y,32),'\t',this.get_y_val(i),'\n');
               
@@ -119,11 +119,11 @@ class GAPopulation
     int from_gene=all[index].geneX;
     
     switch(coding){
-        case NKB: // Naturalne Kodowanie Binarne zmapowanego zakresu.
+        case NKB: // Natural Binary Code of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
           return minx+unmap_(from_gene,rangex);
-        case GRY: // Kodowanie Graya zmapowanego zakresu.
+        case GRY: // Gray encoding of the mapped range.
           return minx+unmap_(fromGray(from_gene),rangex);
-        case FLA: // Bezposrednia reinterpretacja bitowa float-->int.
+        case FLA: // Direct bitwise reinterpretation float-->int.
         {
           float uncoded=reinterpret(from_gene,(float)(minx),(float)(maxx));
           if(Float.isNaN(uncoded))
@@ -131,7 +131,7 @@ class GAPopulation
           else
             return uncoded;
         }
-        case FLR: // Zakres reinterpretowany bitowo float-->int.
+        case FLR: // Bitwise reinterpreted range: float-->int.
         {
           double uncoded=minx+reinterpret(from_gene,0f,(float)(rangex));
           if(Double.isNaN(uncoded))
@@ -139,7 +139,7 @@ class GAPopulation
           else
             return uncoded;
         }
-        default: //To się nie powinno nigdy zdarzać!
+        default: //This should never happen!
             return Double.NaN;
     } 
   }
@@ -150,11 +150,11 @@ class GAPopulation
     int from_gene=all[index].geneY;
     
     switch(coding){
-        case NKB: // Naturalne Kodowanie Binarne zmapowanego zakresu.
+        case NKB: // Natural Binary Code of the mapped range (N-aturalne K-odowanie B-inarne in Polish)
           return miny+unmap_(from_gene,rangey);
-        case GRY: // Kodowanie Graya zmapowanego zakresu.
+        case GRY: // Gray encoding of the mapped range.
           return miny+unmap_(fromGray(from_gene),rangey);
-        case FLA: // Bezposrednia reinterpretacja bitowa float-->int.
+        case FLA: // Direct bitwise reinterpretation float-->int.
         {
           float uncoded=reinterpret(from_gene,(float)(miny),(float)(maxy));
           if(Float.isNaN(uncoded))
@@ -162,7 +162,7 @@ class GAPopulation
           else
             return uncoded;
         }
-        case FLR: // Zakres reinterpretowany bitowo float-->int.
+        case FLR: // Bitwise reinterpreted range: float-->int.
         {
           double uncoded=miny+reinterpret(from_gene,0f,(float)(rangey));
           if(Double.isNaN(uncoded))
@@ -170,19 +170,19 @@ class GAPopulation
           else
             return uncoded;
         }
-        default: //To się nie powinno nigdy zdarzać!
+        default: //This should never happen!
             return Double.NaN;
     } 
   }
   
-  /// @brief Ustawienie nowej wartości fitness uzyskanej "ze środowiska".
+  /// @brief Setting a new fitness value obtained "from the environment".
   void set_fitness(int index,double new_fitness)
   {                                     assert(index<all.length);
     all[index].fitness=new_fitness;
   }
   
   /// @brief Checking the fitness value.
-  /// @return Wartość ustawioną w set_fitness, a jak jeszcze nie policzone to -Double.MAX_VALUE;
+  /// @return The value set in `set_fitness`, and if not calculated yet, -Double.MAX_VALUE;
   double get_fitness(int index)
   {                                     assert(index<all.length);
     return all[index].fitness;
@@ -191,20 +191,20 @@ class GAPopulation
   // MAIN GENETIC OPERATIONS:
   //============================
 
-  /// @brief Sortowanie wg. fitness. @note Wartości dostosowania muszą być już znane dla wszystkich gagatków!
-  /// @param maximize - czy szukamy/promujemy maksimum wartości `fitness` czy przeciwnie - minimum (co ma sens przy funkcjach).
+  /// @brief Sorting by fitness. @note Sorting by fitness. The fitness values ​​must be known by now for every "GAgatek"
+  /// @param maximize - whether we are looking for/promoting the maximum of the `fitness` value or, on the contrary, the minimum (which makes sense in the case of mathematical functions).
   void sort_by_fitness(boolean maximize)
   {
     if(maximize)
       Arrays.sort(all);
     else
-      // Kod sortowania odwrotnego (malejąco po fitness):
+      // Reverse sort code (descending by fitness):
       Arrays.sort(all, new Comparator() {
         public int compare(Object o1, Object o2) {
           GAgatek2G g1 = (GAgatek2G) o1;
           GAgatek2G g2 = (GAgatek2G) o2;
           
-          // Odwrotne sortowanie: g2 porównujemy z g1
+          // Reverse sort: g2 is compared to g1
           if (g2.fitness > g1.fitness) return -1;
           if (g2.fitness < g1.fitness) return 1;
           return 0;
@@ -220,19 +220,19 @@ class GAPopulation
     int index=(int)random(max_mutation_index);
     if(index<32)
     {
-      int mutated=switch_bit(parent_gene,index,32); //z mutacją
+      int mutated=switch_bit(parent_gene,index,32); //with mutation
       return mutated;
     }
 
-    return parent_gene; //Bez mutacji bo trafił poza bity albo poza wymaganą dziedzinę.
+    return parent_gene; //No mutation because it went out of range
   }
   
   /// @brief Producing offspring from the best fitted (so-called "truncation selection").
-  /// @note Zakładamy, że wcześniej policzono fitness i wykonano sortowanie!
-  /// @param selection_r - współczynnik selekcji czyli jaka część populacji zostanie bezpowrotnie zastąpiona.
-  /// @param mutation_r - jak często zachodzi flip bitu w powstającym klonie gagatka.
+  /// @note We assume that fitness has been calculated and sorted beforehand!
+  /// @param selection_r - selection rate, i.e. what fraction of the population will be permanently replaced.
+  /// @param mutation_r - how often a bit flip occurs in the newly created  g-agent clone.
   /// @details
-  /// Powstaje `population_size*selection_r` nowych agentów będących (niekiedy zmutowanymi) klonami rodziców 
+  /// Generates `population_size*selection_r` new agents as (possibly mutated) clones of parents 
   /// drawn from the `population_size*(1-selection_r)` individuals in the "upper" part of the `all` array.
   void clonal_offspring(float selection_r,float mutation_r)
   {
@@ -243,28 +243,28 @@ class GAPopulation
       int parent_index=(int)random(0,border-1);                             assert(parent_index<border);
       int new_gene_x=randomized_clone(all[parent_index].geneX);
       int new_gene_y=randomized_clone(all[parent_index].geneY);
-      all[i].reset_genes(new_gene_x,new_gene_y); //Przy okazji czyści stary fitness żeby mógł zostać policzony od nowa.
+      all[i].reset_genes(new_gene_x,new_gene_y); //At the same time, it cleans the old fitness so that it can be counted again.
     }
   }
   
   /// @brief Producing offspring from winners of duels between random pairs. 
-  /// @note Zakładamy, że wcześniej policzono `fitness`, ale nie wykonano sortowania!
-  /// @param selection_r - współczynnik selekcji czyli jaka część populacji zostanie bezpowrotnie zastąpiona.
-  /// @param mutation_r - jak często zachodzi flip bitu w powstającym klonie gagatka.
-  /// @param maximize - czy szukamy/promujemy maksimum wartości `fitness` czy przeciwnie - minimum (co ma sens przy funkcjach).
+  /// @note We assume that `fitness` was calculated beforehand, but no sorting was performed!
+  /// @param selection_r - selection rate, i.e. what fraction of the population will be permanently replaced.
+  /// @param mutation_r - how often a bit flip occurs in the newly created  g-agent clone.
+  /// @param maximize - whether we are looking for/promoting the maximum of the `fitness` value or, on the contrary, the minimum (which makes sense in the case of mathematical functions).
   /// @details
-  /// Powstaje `population_size*selection_r` nowych agentów będących (niekiedy zmutowanymi) klonami rodziców,
-  /// którzy wygrali pojedynki na wartość `fitness` w wylosowanych parach. 
+  /// Generates `population_size*selection_r` new agents as (possibly mutated) clones of parents 
+  /// who won the duels for the `fitness` value in drawn pairs.
   void clonal_offspring_by_duels(float selection_r,float mutation_r,boolean maximize)
   {
     this.max_mutation_index=(int)(1./mutation_r);
-    int N=(int)(selection_r*all.length); //Ile nowych potomków, czyli ile pojedynków.
+    int N=(int)(selection_r*all.length); //How many new descendants, i.e. how many duels.
     for(int pair=0;pair<N;pair++)
     {
       GAgatek2G A=null,B=null;
       int indexA=-1,indexB=-1;
       
-      do{ //Losowanie par z uniknięciem walk samobójczych i z nowymi dziećmi.
+      do{ //Drawing pairs to avoid suicidal struggles and with new children.
         indexA=(int)random(all.length);
         indexB=(int)random(all.length);
         A=all[indexA];
@@ -296,7 +296,7 @@ class GAPopulation
     }
   }
   
-  // MAPOWANIE ZAKRESU 0..maxVal na zakres integer-ów i z powrotem (tu potrzebne tylko dla porównawczego NKB).
+  // MAPPING THE RANGE 0..maxVal to a range of integers and back (needed here only for NKB/NBC comparison).
   //==========================================================================================================
   
   /// @brief Target range width (for 32-bit int, exactly 4,294,967,295).
@@ -309,7 +309,7 @@ class GAPopulation
         if (val <= 0) return Integer.MIN_VALUE;
         if (val >= maxVal) return Integer.MAX_VALUE;
 
-        // Obliczenie zmapowanej wartości
+        // Calculate mapped value
         double mapped = (double) Integer.MIN_VALUE + (val / maxVal) * targetRange;
 
         return (int) Math.round(mapped);
@@ -318,10 +318,10 @@ class GAPopulation
   /// @brief Private decoding of `int` value back to given 0...maxVal range.
   private double unmap_(int codedVal, double maxVal) 
   {
-      // Obliczenie pozycji codedVal w zakresie int (od 0 do 1)
+      // Calculate codedVal position within `int` range (0 to 1)
       double percentage = ((double) codedVal - (double) Integer.MIN_VALUE) / targetRange;
 
-      // Skalowanie powrotne do zakresu [0, maxVal]
+      // Scaling back to the range [0, maxVal]
       double unmapped = percentage * maxVal;
 
       // Protection against minor floating-point rounding errors

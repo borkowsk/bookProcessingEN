@@ -1,6 +1,6 @@
 /// Population of genetic agents for solving one-dimensional problems.
 //-////////////////////////////////////////////////////////////////////////////
-/// @date 2026-10-22 (last modification)
+/// @date 2026-10-23 (last modification)
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -31,7 +31,7 @@ class GAgatek implements Comparable
   
 }//_EndOfClass
 
-/// Population of "GAgateks" responsible for implementing basic genetic operations.
+/// Population of "GAgatek-s" responsible for implementing basic genetic operations.
 /// @details We do not implement crossover because there is no need for it in one-dimensional problems.
 class GAPopulation
 {

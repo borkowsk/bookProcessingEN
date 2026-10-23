@@ -1,15 +1,15 @@
 /// A population of genetic agents for solving one-dimensional problems.
 //-////////////////////////////////////////////////////////////////////////////
-/// @date 2026-10-22 (last modification)
+/// @date 2026-10-23 (last modification)
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.Comparator;
 
 /// @brief "GAgatek" - a genetic algorithm agent (g-agent).
 /// @details
-/// Gagatek to potoczne określenie oznaczające figlarza, łobuziaka lub osobę lekkomyślną, 
-/// zdolną do nieodpowiedzialnych wybryków i drobnych wykroczeń.  
-/// Synonimami są tu m.in. urwis, ancymonek, ziółko czy spryciarz.
+/// "Gagatek" is a colloquial Polish term meaning a rascal, rogue, or prankster,  
+/// capable of irresponsible antics and minor mischief.  
+/// Synonyms include rascal, imp, scamp, or trickster.
 class GAgatek implements Comparable
 {
   int       gene; ///< Genes are initialized in the constructor.
@@ -31,8 +31,8 @@ class GAgatek implements Comparable
   
 }//_EndOfClass
 
-/// The population of "GAgateks" handles the implementation of basic genetic operations.
-/// @details Nie implementujemy crossing-over bo w problemach jednowymiarowych nie ma potrzeby jego używania.
+/// The population of "GAgatek-s" handles the implementation of basic genetic operations.
+/// @details We do not implement crossover because there is no need for it in one-dimensional problems.
 class GAPopulation
 {
   GAgatek[] all;
@@ -52,7 +52,7 @@ class GAPopulation
       double r=Math.random()*range;
       int as_NKB=map_(r,range);
       
-      //Test kodowania
+      //Coding test
       println('*',minx+r,'\t',r,'\t',
               toBin(as_NKB,32),'\t',minx+unmap_(as_NKB,range)
               );
@@ -68,17 +68,17 @@ class GAPopulation
   double get_val(int index)
   {                                      assert(index<all.length);
     int from_gene=all[index].gene;
-    return minx+unmap_(from_gene,range);  // NKB
+    return minx+unmap_(from_gene,range);  // NKB/NBC (N-atural B-inary C-ode or N-aturalne K-odowanie B-inarne in Polish)
   }
   
-  /// @brief Ustawienie nowej wartości fitness uzyskanej "ze środowiska".
+  /// @brief Setting a new fitness value obtained "from the environment".
   void set_fitness(int index,double new_fitness)
   {                                     assert(index<all.length);
     all[index].fitness=new_fitness;
   }
   
   /// @brief Checking the fitness value.
-  /// @return Wartość ustawioną w set_fitness, a jak jeszcze nie policzone to -Double.MAX_VALUE;
+  /// @return The value set in `set_fitness`, and if not calculated yet, -Double.MAX_VALUE;
   double get_fitness(int index)
   {                                     assert(index<all.length);
     return all[index].fitness;
@@ -87,20 +87,20 @@ class GAPopulation
   // MAIN GENETIC OPERATIONS:
   //============================
 
-  /// @brief Sortowanie wg. fitness. @note Wartości dostosowania muszą być już znane dla wszystkich gagatków!
-  /// @param maximize - czy szukamy/promujemy maksimum wartości `fitness` czy przeciwnie - minimum (co ma sens przy funkcjach).
+  /// @brief Sorting by fitness. @note Sorting by fitness. The fitness values ​​must be known by now for every "GAgatek"
+  /// @param maximize - whether we are looking for/promoting the maximum of the `fitness` value or, on the contrary, the minimum (which makes sense in the case of mathematical functions).
   void sort_by_fitness(boolean maximize)
   {
     if(maximize)
       Arrays.sort(all);
     else
-      // Kod sortowania odwrotnego (malejąco po fitness):
+      // Reverse sort code (descending by fitness):
       Arrays.sort(all, new Comparator() {
         public int compare(Object o1, Object o2) {
           GAgatek g1 = (GAgatek) o1;
           GAgatek g2 = (GAgatek) o2;
           
-          // Odwrotne sortowanie: g2 porównujemy z g1
+          // Reverse sort: g2 is compared to g1
           if (g2.fitness > g1.fitness) return -1;
           if (g2.fitness < g1.fitness) return 1;
           return 0;
@@ -115,17 +115,17 @@ class GAPopulation
   {
     int index=(int)random(max_mutation_index);
     if(index<32)
-      return switch_bit(parent_gene,index,32); //z mutacją
+      return switch_bit(parent_gene,index,32); //with mutation
     else  
-      return parent_gene; //Bez mutacji bo trafił poza
+      return parent_gene; //No mutation because it went out of range
   }
   
   /// @brief Producing offspring from the best fitted (so-called "truncation selection").
-  /// @note Zakładamy, że wcześniej policzono fitness i wykonano sortowanie!
-  /// @param selection_r - współczynnik selekcji czyli jaka część populacji zostanie bezpowrotnie zastąpiona.
-  /// @param mutation_r - jak często zachodzi flip bitu w powstającym klonie gagatka.
+  /// @note We assume that fitness has been calculated and sorted beforehand!
+  /// @param selection_r - selection rate, i.e. what fraction of the population will be permanently replaced.
+  /// @param mutation_r - how often a bit flip occurs in the newly created  g-agent clone.
   /// @details
-  /// Powstaje `population_size*selection_r` nowych agentów będących (niekiedy zmutowanymi) klonami rodziców 
+  /// Generates `population_size*selection_r` new agents as (possibly mutated) clones of parents  
   /// drawn from the `population_size*(1-selection_r)` individuals in the "upper" part of the `all` array.
   void clonal_offspring(float selection_r,float mutation_r)
   {
@@ -135,28 +135,28 @@ class GAPopulation
     {
       int parent_index=(int)random(0,border-1);                             assert(parent_index<border);
       int new_gene=randomized_clone(all[parent_index].gene);
-      all[i].reset_gene(new_gene); //Przy okazji czyści stary fitness żeby mógł zostać policzony od nowa.
+      all[i].reset_gene(new_gene); //At the same time, it cleans the old fitness so that it can be counted again.
     }
   }
   
   /// @brief Producing offspring from winners of duels between random pairs.
-  /// @note Zakładamy, że wcześniej policzono `fitness`, ale nie wykonano sortowania!
-  /// @param selection_r - współczynnik selekcji czyli jaka część populacji zostanie bezpowrotnie zastąpiona.
-  /// @param mutation_r - jak często zachodzi flip bitu w powstającym klonie gagatka.
-  /// @param maximize - czy szukamy/promujemy maksimum wartości `fitness` czy przeciwnie - minimum (co ma sens przy funkcjach).
+  /// @note We assume that `fitness` was calculated beforehand, but no sorting was performed!
+  /// @param selection_r - selection rate, i.e. what fraction of the population will be permanently replaced.
+  /// @param mutation_r - how often a bit flip occurs in the newly created  g-agent clone.
+  /// @param maximize - whether we are looking for/promoting the maximum of the `fitness` value or, on the contrary, the minimum (which makes sense in the case of mathematical functions).
   /// @details
-  /// Powstaje `population_size*selection_r` nowych agentów będących (niekiedy zmutowanymi) klonami rodziców,
-  /// którzy wygrali pojedynki na wartość `fitness` w wylosowanych parach. 
+  /// Generates `population_size*selection_r` new agents as (possibly mutated) clones of parents 
+  /// who won the duels for the `fitness` value in drawn pairs.
   void clonal_offspring_by_duels(float selection_r,float mutation_r,boolean maximize)
   {
     this.max_mutation_index=(int)(1./mutation_r);
-    int N=(int)(selection_r*all.length); //Ile nowych potomków, czyli ile pojedynków.
+    int N=(int)(selection_r*all.length); //How many new descendants, i.e. how many duels.
     for(int pair=0;pair<N;pair++)
     {
       GAgatek A=null,B=null;
       int indexA=-1,indexB=-1;
       
-      do{ //Losowanie par z uniknięciem walk samobójczych i z nowymi dziećmi.
+      do{ //Drawing pairs to avoid suicidal struggles and with new children.
         indexA=(int)random(all.length);
         indexB=(int)random(all.length);
         A=all[indexA];
@@ -180,7 +180,7 @@ class GAPopulation
     }
   }
   
-  // MAPOWANIE ZAKRESU 0..maxVal na zakres integer-ów i z powrotem.
+  // MAPPING THE RANGE 0..maxVal to a range of integers and back.
   //===============================================================
   
   /// @brief Target range width (for 32-bit int, exactly 4,294,967,295).
@@ -193,7 +193,7 @@ class GAPopulation
         if (val <= 0) return Integer.MIN_VALUE;
         if (val >= maxVal) return Integer.MAX_VALUE;
 
-        // Obliczenie zmapowanej wartości
+        // Calculate mapped value
         double mapped = (double) Integer.MIN_VALUE + (val / maxVal) * targetRange;
 
         return (int) Math.round(mapped);
@@ -202,10 +202,10 @@ class GAPopulation
   /// @brief Private decoding of `int` value back to given 0...maxVal range.
   private double unmap_(int codedVal, double maxVal) 
   {
-      // Obliczenie pozycji codedVal w zakresie int (od 0 do 1)
+      // Calculate codedVal position within `int` range (0 to 1)
       double percentage = ((double) codedVal - (double) Integer.MIN_VALUE) / targetRange;
 
-      // Skalowanie powrotne do zakresu [0, maxVal]
+      // Scaling back to the range [0, maxVal]
       double unmapped = percentage * maxVal;
 
       // Protection against minor floating-point rounding errors
