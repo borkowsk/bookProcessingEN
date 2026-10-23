@@ -13,3 +13,6 @@ Reynolds' boids paper.
 For more see: https://www.wikiwand.com/en/Boids
 
 https://upload.wikimedia.org/wikipedia/commons/4/43/Boids_OpenGL_example.webm?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original
+
+
+// @date 2026-10-23 (file creation)
