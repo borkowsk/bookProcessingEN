@@ -1,6 +1,6 @@
 /// A very simple genetic algorithm consisting only of mutations.
 //-//////////////////////////////////////////////////////////////
-/// @date 2026-10-22 (modified)
+/// @date 2026-10-23 (modified)
 
 import java.lang.Math;
 
