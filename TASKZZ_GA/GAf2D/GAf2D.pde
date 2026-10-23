@@ -1,10 +1,10 @@
 /// Two-dimensional genetic algorithm.
 //-///////////////////////////////////////////////////////////
-/// @date 2026-10-22 (modified)
+/// @date 2026-10-23 (modified)
 
 import java.lang.Math;
 
-/// @name Parametry algorytmu genetycznego
+/// @name Genetic algorithm parameters
 /// @{
 int     TEMPO=5;                   ///< How many algorithm steps per second?
 int     population_size=500;       ///< Solution population size.
@@ -19,14 +19,14 @@ GAPopulation Pop;
 
 /// Two-dimensional Rastrigin function.
 /// @details 
-/// Wzór matematyczny dla dwóch zmiennych wygląda następująco:
+/// The mathematical formula for two variables is as follows:
 ///     f(x, y) = 20 + (x² - 10*cos(2πx)) + (y² - 10*cos(2πy))
 /// * The recommended search range for the domain is `x in [-5.12, 5.12]`.. 
-///   W tym przedziale funkcja ma jedno wyraźne minimum globalne w punkcie `(x, y) = (0, 0)`,
-///   gdzie wartość wynosi `0`. Posiada ona około 50 minimów lokalnych, co czyni ją 
+///   In this interval, the function has one clear global minimum at point `(x, y) = (0, 0)`,
+///   where the value is `0`. It has about 50 local minima!
 ///  an excellent benchmark for 2D algorithms.
-/// * Minimum globalne: Wynosi dokładnie 0.0 dla punktu (0, 0).
-/// * Maksimum globalne: Wynosi około 80.7 dla punktów w pobliżu rogów dziedziny.
+/// * Global minimum (Bottom): Exactly 0.0 at point `(x,y) = (0,0)`.
+/// * Global maximum: It is approximately 80.7 for points near the corners of the domain.
 double Rastrigin2D(double x, double y)
 {
   if (Double.isNaN(x) || Double.isNaN(y)) {
@@ -79,7 +79,7 @@ void draw_function(int opacity)
   }
 }
 
-/// @name Para wartości aktualnie najlepszego rozwiązania
+/// @name Pair of values for the currently best solution
 /// @{
 double best_fit=-Double.MAX_VALUE;
 double x_best=-Double.MAX_VALUE;
@@ -116,7 +116,7 @@ void find_the_best(GAPopulation pop)
   }
 }
 
-// Rysuje populacje.
+// Draws the population.
 void draw_population(GAPopulation pop)
 { 
   stroke(255,0,0);noFill();
@@ -151,7 +151,7 @@ void setup()
 void draw()
 {
   if(frameCount%10==0) draw_function(10);
-  // Stan aktualny:
+  // Current state:
   
   calculate_fitnesses(Pop);
   draw_population(Pop);
