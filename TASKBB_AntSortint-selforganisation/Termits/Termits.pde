@@ -1,10 +1,11 @@
-/* Magda Roszczyńska - 
-Gdy termit nie ma nic na plecach, idzie, sprawdza czy przed nim lub obok niego jest drewienko. 
-Jeżeli jest to z pewnym prawdopodobieństwem go bierze i idzie dalej.
-Jeżeli termit ma coś na plecach sprawdza, czy przed nim, lub obok niego jest podobne drewienko.
-Jeżeli jest to z pewnym prawdopodobieństwem zrzuca drewienko */
-
-/* PRZETŁUMACZONE Z APLIKACJI Delphi NA Processing ZA POMOCĄ GEMINI */
+/* Autorem implementacji w ALGO jest Magda Roszczyńska (jeszcze wtedy bez dr).
+   PRZETŁUMACZONE Z APLIKACJI Delphi NA Processing ZA POMOCĄ GEMINI
+   
+   Gdy termit nie ma nic na plecach, idzie, sprawdza czy przed nim lub obok niego jest drewienko. 
+   Jeżeli jest to z pewnym prawdopodobieństwem go bierze i idzie dalej.
+   Jeżeli termit ma coś na plecach sprawdza, czy przed nim, lub obok niego jest podobne drewienko.
+   Jeżeli jest to z pewnym prawdopodobieństwem zrzuca drewienko 
+*/
 
 int wizual = 5; /* Co ile kroków rysować? */
 int n_termity = 10;
@@ -12,6 +13,7 @@ int Last = 65;
 int czas = 0;
 int szerokosc = 10;
 int n_przedmiotow = 2; /* Ile typów przedmiotów */
+
 double gestosc = 0.2;
 double skret = 0.2;
 double w = 0.9; /* prawdopodobienstwo zostawienia/wzięcia przedmiotu */
@@ -28,9 +30,9 @@ class lok {
   int y;
 }
 
-int[][] world = new int[Last + 1][Last + 1];
+int[][]  world  = new int[Last + 1][Last + 1];
 termit[] kopiec = new termit[n_termity + 1];
-lok[] tablica_przejscia = new lok[4];
+lok[]    tablica_przejscia = new lok[4];
 
 int step = 0;
 
