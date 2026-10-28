@@ -1,4 +1,6 @@
-// G4P components corresponding to the Delphi configuration form
+// G4P components corresponding to the Delphi configuration form for PrizonersInProcessing
+//-///////////////////////////////////////////////////////////////////////////////////////
+
 import g4p_controls.*;
 
 GWindow    setupWindow;
@@ -14,7 +16,7 @@ GTextField payoffMatrixTextField00, payoffMatrixTextField10, payoffMatrixTextFie
 
 //GButton StartButton;
 
-void drawSetupWindow(PApplet appc, GWinData data) { // data not used because there's no need :-D
+void drawSetupWindow(PApplet appc, GWinData dummy) { // data not used because there's no need :-D
   appc.background(240);
   
   // Subtle section outlines for clarity (equivalent of GroupBox in Delphi)
@@ -219,3 +221,5 @@ public void onPayoff10Changed(GTextField field, GEvent event) {
     payoffMatrixTextField01.setText(str(-val));
   } catch(Exception e) {}
 }
+
+/// @date 2026-10-28 (https://github.com/borkowsk/bookProcessingEN)

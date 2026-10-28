@@ -1,5 +1,6 @@
-/* Social Prisoner's Dilemma model with reproduction and optional mutations */
-/* And optionally using Nowak/Latané model for attitude change */
+// Social Prisoner's Dilemma model with reproduction and optional mutations,
+// And optionally using Nowak/Latané model for attitude change
+//-/////////////////////////////////////////////////////////////////////////
 
 class Agent {
     int  attitude=0;  /* 0..attitudesCount-1 */
@@ -21,32 +22,32 @@ float MIN_POPULATION_DENSITY = 0;
 float MAX_POPULATION_DENSITY = 1;
 
 /* General model parameters - when cooperation payoffs are small, social influence becomes decisive! */
-int sideLength = 50;   /* World side length */
-int attitudesCount = 2; /* Number of possible attitudes 2--> */
 float populationDensity = 0.5; /* Density 0..1 */
-int maxStrength = 10000;/* Maximum strength */
-int paretoExponent = 7;   /* Degree of "Pareto" distribution >=0 - zero gives flat distribution, only maxStrength. Max: 12 */
+int   sideLength = 50;         /* World side length */
+int   attitudesCount = 2;      /* Number of possible attitudes 2--> */
+int   maxStrength = 10000;     /* Maximum strength */
+int   paretoExponent = 7;      /* Degree of "Pareto" distribution >=0 - zero gives flat distribution, only maxStrength. Max: 12 */
 
 /* Specific model parameters */
-int stepCost = 5;
-int optimumReserve = 50;
+int     stepCost = 5;
+int     optimumReserve = 50;
 int[][] payoffMatrix = {{6, 12}, {-12, -6}}; //< PRISONER'S DILEMMA PAYOFF TABLE.
 
 boolean useSocialInfluence = false;
 boolean useCrowdingStress = false;
+double  noiseLevel = 0; /* Noise, i.e., random attitude "mutations" */
 
-double noiseLevel = 0; /* Noise, i.e., random attitude "mutations" */
-String FileNameCore = "priz";/* e.g., file name core */
+String FileNameCore = "priz"; /* e.g., file name core */
 PrintWriter logFile = null;
 
 /* Visualization parameters */
-int agentCellSize = 15;  /* Side length of the strongest agent */
+int agentCellSize = 15;     /* Side length of the strongest agent */
 int minAgentRenderSize = 2; /* Visual size for the weakest agents in the population */
-int borderSize = 0;  /* Border around agent */
+int borderSize = 0;         /* Border around agent */
 
-int visualizationFrequency = 1; /* How many Monte Carlo steps between redraws */
-int stepDelayMs = 10; /* Delay in milliseconds for visualization */
-int maxSteps = 10000;   /* Maximum steps in experiment */
+int visualizationFreq = 1; /* How many Monte Carlo steps between redraws */
+int stepDelayMs = 10;      /* Delay in milliseconds for visualization */
+int maxSteps = 10000;      /* Maximum steps in experiment */
 
 /* Mandatory visualization parameters. Prefix S stands for SCREEN */
 int SWIDTH = 780;    /* Main window workspace width */
@@ -62,6 +63,7 @@ int[][] dxy = {{0,1},{0,-1},{1,0},{-1,0},{-1,-1},{1,1},{-1,1},{1,-1}};
 
 PrintWriter F;
 String N_filename;
+
 double[] globalStressArr = new double[1];
 double[] meanStrengthArr = new double[1];
 double[] maxStrengthArr = new double[1];
@@ -69,8 +71,8 @@ int[] attitudeCounts;
 
 int requiredWindowSize=500; //< Required width or height for world visualization alone.
 void settings() {
-  requiredWindowSize=(sideLength+2)*(agentCellSize+borderSize);
-  size(requiredWindowSize, requiredWindowSize+80);
+  requiredWindowSize=(sideLength+2)*(agentCellSize+borderSize); /* Calculate required window size */
+  size(requiredWindowSize, requiredWindowSize+80); /* create window */
 }
 
 void setup() {
@@ -87,7 +89,7 @@ void setup() {
 }
 
 // Function launching the model after form confirmation
-void runSimulation() {                                  assert(MAX_SIDE_LENGTH>1);
+void runSimulation() {                                                  assert(MAX_SIDE_LENGTH>1);
   simulationWorld = new Agent[MAX_SIDE_LENGTH + 1][MAX_SIDE_LENGTH + 1];
   
   for(int i = 0; i <= MAX_SIDE_LENGTH; i++) {
@@ -103,10 +105,10 @@ void runSimulation() {                                  assert(MAX_SIDE_LENGTH>1
   
   N_filename = FileNameCore
       + sideLength + "x" + sideLength  /* World side length */
-      + "P" + attitudesCount   /* Number of competing attitudes 2..10 */
-      + "G" + populationDensity /* Population density 0..1 */
-      + "M" + noiseLevel /* Noise, i.e., random attitude "mutations" */
-      + "m" + maxStrength   /* Max strength - must be large enough for distribution min:1, max: 1 000 000 */
+      + "P" + attitudesCount           /* Number of competing attitudes 2..10 */
+      + "G" + populationDensity        /* Population density 0..1 */
+      + "M" + noiseLevel               /* Noise, i.e., random attitude "mutations" */
+      + "m" + maxStrength              /* Max strength - must be large enough for distribution min:1, max: 1 000 000 */
       + "k" + stepCost
       + "op" + optimumReserve
       + "W(" + payoffMatrix[0][0] + ")(" + payoffMatrix[1][1] + ")(" + payoffMatrix[0][1] + ")"
@@ -122,8 +124,9 @@ void runSimulation() {                                  assert(MAX_SIDE_LENGTH>1
   F.println("Step\tStress\tMeanEnergy\tMaxEnergy\tAttitude counts");
 }
 
+// Populating the world. Dead agents have strength = 0
 void initializeWorld(Agent[][] currentWorld) {
-/* Populating the world. Dead agents have strength = 0 */
+
    int i,j,k;
    float aux; 
   for(i = 1; i <= sideLength; i++) {
@@ -147,22 +150,22 @@ void initializeWorld(Agent[][] currentWorld) {
   }
 }
 
+/* Helpers for visualization */
 double rescale(double v, double min, double max) { 
-/* For visualization */
   return (v - min) / (max - min); 
 }
 
 double applyLogScale(double v, double max) { 
-/* For visualization */
   v = Math.log(v + 1); 
   return v / Math.log(max + 1); 
 }
 
+// Squares with size proportional to the logarithm of strength
 void drawWorld(Agent[][] currentWorld) { 
-/* Squares with size proportional to the logarithm of strength */ 
-  int i,j;    /* Iterating over agents */
+
+  int    i,j;         /* Iterating over agents */
   double q,r,s,rRoz;  /* Recalculated agent properties */
-  int WRoz,ri,vi;/* Internal size and positioning */
+  int    WRoz,ri,vi;  /* Internal size and positioning */
 
   rRoz = 1.0 - (double)minAgentRenderSize / agentCellSize;
   WRoz = agentCellSize - borderSize; /* Ignores border width, specific to ALGO */
@@ -186,8 +189,8 @@ void drawWorld(Agent[][] currentWorld) {
   }
 }
 
+// Procedure for updating agent attitudes. Includes helper inner class.
 void applySocialInfluence(Agent[][] currentWorld) {
-/* Procedure for updating agent attitudes. Includes helper inner class. */
 
   class InnerHelper {
     
@@ -247,8 +250,9 @@ void applySocialInfluence(Agent[][] currentWorld) {
   }
 }
 
+// Calculates current economic stress levels for all agents
 void calculateStressLevels(Agent[][] tab) {
-/* Calculates current economic stress levels for all agents */
+
   int i,j;
   float reserveRatio;
 
@@ -300,8 +304,8 @@ void calculateStressLevels(Agent[][] tab) {
   }
 }
 
+// Metabolism, reproduction, and movement procedure
 void updateMetabolismAndMovement(Agent[][] currentWorld) {
-/* Metabolism, reproduction, and movement procedure */
 
   class ZyjHelper {
     boolean tryMove(int direction, int x, int y, int[] nx, int[] ny, Agent[][] currentWorld) {
@@ -369,7 +373,7 @@ void updateMetabolismAndMovement(Agent[][] currentWorld) {
  }
 
  ZyjHelper zyjHelper = new ZyjHelper();
- int direction,i,j,k,m,n,NN;
+ int direction,i,j,k,NN;
  int[] nx = new int[1];
  int[] ny = new int[1];
  
@@ -535,7 +539,7 @@ void draw() {
     double meanStrength = meanStrengthArr[0];
     double maxStrengthValue = maxStrengthArr[0];
     
-    if (currentStep % visualizationFrequency == 0) {
+    if (currentStep % visualizationFreq == 0) {
           drawWorld(simulationWorld);
     }
     
@@ -574,3 +578,5 @@ void draw() {
     noLoop();
   }
 }
+
+/// @date 2026-10-28 (https://github.com/borkowsk/bookProcessingEN)
