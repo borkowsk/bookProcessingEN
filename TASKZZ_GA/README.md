@@ -5,9 +5,9 @@ Genetic algorithms are commonly used to generate high-quality solutions to
 optimization and search problems via biologically inspired operators such as 
 selection, crossover, and mutation.
 Some examples of GA applications include optimizing decision trees for better 
-performance, solving sudoku puzzles,hyperparameter optimization, 
+performance, solving sudoku puzzles, hyperparameter optimization, 
 and causal inference.
 
 For more see: https://www.wikiwand.com/en/Genetic_algorithm
 
-// @date 2026-10-23 (file created)
+// @date 2026-10-28 (modified)
