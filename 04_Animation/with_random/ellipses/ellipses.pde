@@ -1,5 +1,5 @@
 /// Ellipses example:
-//*//////////////////
+//-//////////////////
 
 int W=600;  ///< Global control parameter.
 
@@ -22,4 +22,4 @@ void draw()
   ellipse(random(W),random(W),r,r);
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

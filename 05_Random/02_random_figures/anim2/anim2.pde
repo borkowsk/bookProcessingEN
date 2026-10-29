@@ -1,5 +1,5 @@
 /// Simple animation example with random.
-//*//////////////////////////////////////
+//-//////////////////////////////////////
 
 void setup()  
 {
@@ -13,4 +13,4 @@ void draw()
   point(random(width),random(height));
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

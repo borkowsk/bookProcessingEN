@@ -11,7 +11,7 @@ int diameter=25;
 int radius=diameter/2;
 float maxspeed=1;
 int FRAMERATE=200;
-int VISFREQ=4; ///< every N
+int VIS_FREQ=4; ///< every N
 
 float[] xpos = new float[circles];
 float[] ypos = new float[circles];
@@ -113,7 +113,7 @@ void bordersReaction()
 }
 
 /// It detects collisions and triggers appropriate reaction procedures
-void findcollisions()
+void findCollisions()
 {
   for (int i=0; i<(circles-1); i++) {
     for (int j=(i+1); j<circles; j++) { 
@@ -180,12 +180,12 @@ void parentReaction(int i, int j)
 
 void draw()
 {
-  if (frameCount%VISFREQ==0) visualisation();
+  if (frameCount%VIS_FREQ==0) visualisation();
   movement();
   bordersReaction();
-  findcollisions();
+  findCollisions();
 }
 
-//*////////////////////////////////////////////////////////////////////////////
-/// @date 2026-10-16 ( →  https://github.com/borkowsk/bookProcessingEN)
-//*////////////////////////////////////////////////////////////////////////////
+//-////////////////////////////////////////////////////////////////////////////
+/// @date 2026-10-29 ( →  https://github.com/borkowsk/bookProcessingEN)
+//-////////////////////////////////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 /// Transparent Random Circles.
-//*////////////////////////////
+//-////////////////////////////
 
 float W=0.;  ///< global variable
 
@@ -27,4 +27,4 @@ void draw()
   ellipse(random(width),random(height),d,d);
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

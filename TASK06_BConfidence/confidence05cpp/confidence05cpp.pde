@@ -1,7 +1,7 @@
 /// Bounded confidence 1D - 3rd+4th attempt
 /// Differences in thresholds as a function of extremes of views
 /// & with information bubbles
-//*/////////////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////////////
 
 final int       SEED=111;   ///< seed for random number generator
 final int          N=100;   ///< Number of agents
@@ -85,4 +85,4 @@ void visualisationB()  ///< Alternative visualisation
   }
 }
 
-/// @date 2026-06-16 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

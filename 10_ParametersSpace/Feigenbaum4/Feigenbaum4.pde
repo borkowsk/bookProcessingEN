@@ -18,7 +18,7 @@ float scaleY(double X)
   return 1000-(float)X*1000;
 }
 
-double uklad(double x) // Xn --> Xn+1
+double iterate(double x) // Xn --> Xn+1
 {
   return r*x*(1-x); //implementacja układu
 }
@@ -27,7 +27,7 @@ void draw()
 {
  if(N<1000)
  {
-    X=uklad(X);
+    X=iterate(X);
     if(N<Rozbieg)
       point(((float)r-3)*1000,scaleY(X));
       else

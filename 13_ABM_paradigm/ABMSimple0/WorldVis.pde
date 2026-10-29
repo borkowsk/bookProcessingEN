@@ -1,5 +1,5 @@
 /// The world visualisation.
-//*/////////////////////////
+//-/////////////////////////
 
 void visualise(World currWorld)
 {
@@ -19,4 +19,4 @@ void visualise(World currWorld)
       }
 }
 
-/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
+/// @date 2026-10-29 (https://github.com/borkowsk/bookProcessingEN/)

@@ -1,5 +1,5 @@
 /// Stars in the sky of any size.
-//*//////////////////////////////
+//-//////////////////////////////
 
 size(1000,700);
 background(0,0,25);
@@ -21,4 +21,4 @@ for(int i=0;i<N;i++)
                             
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

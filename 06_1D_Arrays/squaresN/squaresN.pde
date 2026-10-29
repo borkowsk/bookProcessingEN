@@ -1,5 +1,5 @@
 /// Table of squares of integers.
-//*//////////////////////////////
+//-//////////////////////////////
 
 final int N = 50;
 
@@ -13,4 +13,4 @@ println("First",N,"squares of integers");
 for(int i=0; i<=N ; i++ )
      println(i,"->",squares[i]);
 
-/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

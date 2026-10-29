@@ -23,7 +23,7 @@ void setup()
   krokX=(PI*2)/width; //Jaki fragment X na jedną kolumnę okna o długości `width`
   krokY=(PI*2)/height; //Jaki fragment Y na jeden wiersz okna o wysokości `height`
   mnozZ=255;
-  uklad();
+  axes();
   //blendMode(DARKEST); //todobrzedziałatlkoprzy-Smooth
 }
 
@@ -44,12 +44,12 @@ void draw() //Rysuje wykres kolumna po kolumnie
   }
   else
   {
-     uklad();
+     axes();
   }
   k++; //Tu musimy sami zadbać o powiększanie licznika
 }
 
-void uklad()  //rysunek układu współrzędnych
+void axes()  //rysunek układu współrzędnych
 {
   stroke(0,128,0);
   line(0,height/2,width,height/2);          //Oś X
@@ -59,3 +59,8 @@ void uklad()  //rysunek układu współrzędnych
   line(width/2,0,width/2+5,10);             //Pół grotu Y
   line(width/2,0,width/2-5,10);             //Drugie pół grotu Y
 }
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

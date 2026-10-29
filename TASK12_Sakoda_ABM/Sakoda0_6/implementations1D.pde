@@ -1,6 +1,6 @@
 /** Sakoda inspired asynchronous AGENT BASE MODEL 
     which utilizes 1D or 2D dicrete geometry
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
    Agent is a one of two central class of each ABM model.  
    Agents need to be initialised & they need logic of change 
    HERE ARE 1D alternatives of main procedures
@@ -86,7 +86,7 @@ void  changeAgents(Agent[] agents)
 }
 
 
-//*/////////////////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////////////////
 /// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM EXAMPLE: 
 //  1D BASIC INITIALISATION, STEP CHANGE & VISUALISATION
-//*/////////////////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////////////////

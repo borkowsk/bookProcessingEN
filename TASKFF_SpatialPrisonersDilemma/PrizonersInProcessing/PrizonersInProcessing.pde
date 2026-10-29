@@ -168,7 +168,7 @@ void drawWorld(Agent[][] currentWorld) {
   int    WRoz,ri,vi;  /* Internal size and positioning */
 
   rRoz = 1.0 - (double)minAgentRenderSize / agentCellSize;
-  WRoz = agentCellSize - borderSize; /* Ignores border width, specific to ALGO */
+  WRoz = agentCellSize - borderSize; /* Ignores border width */
   
   for(i = 1; i <= sideLength; i++) {
     for(j = 1; j <= sideLength; j++) {
@@ -579,4 +579,4 @@ void draw() {
   }
 }
 
-/// @date 2026-10-28 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

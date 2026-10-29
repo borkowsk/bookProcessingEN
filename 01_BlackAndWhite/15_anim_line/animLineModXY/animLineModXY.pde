@@ -1,5 +1,5 @@
 // Infinite line animation using remainder from integer division.
-//*///////////////////////////////////////////////////////////////
+//-///////////////////////////////////////////////////////////////
 
 void setup() 
 {
@@ -24,4 +24,4 @@ void draw()
   posY=posY % height;
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

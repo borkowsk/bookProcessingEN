@@ -1,5 +1,5 @@
 /// Processing program in "mode" 2 - with functions.
-//*/////////////////////////////////////////////////
+//-/////////////////////////////////////////////////
 
 void setup() // It is executed once - upon startup.
 {
@@ -19,4 +19,4 @@ void draw() // It is executed in an invisible loop.
   i+=10; // incrementation of "i"
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

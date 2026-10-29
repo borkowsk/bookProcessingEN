@@ -1,5 +1,5 @@
 /// Random number generator - first test:
-//*//////////////////////////////////////
+//-//////////////////////////////////////
 
 float a=random(-5); // A random number in the range -5..?
 // The range can be changed, check e.g .:
@@ -7,4 +7,4 @@ float a=random(-5); // A random number in the range -5..?
 
 println(a); // Number printed on the console
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

@@ -1,5 +1,5 @@
 /// 50 lines in shades of Prussian blue (cyan).
-//*/////////////////////////////////////////////
+//-/////////////////////////////////////////////
 
 size(500,500);
 background(100,0,0);
@@ -14,4 +14,4 @@ for(int i=0;i<500;i+=10) // REPEAT 50x every 10
   line(i,i,0,500);
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

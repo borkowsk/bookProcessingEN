@@ -1,5 +1,5 @@
 /// Global constants & variables.
-//*//////////////////////////////
+//-//////////////////////////////
 
 String Model="ABMWalkers"; ///< We already know what we want to do.
 
@@ -8,4 +8,4 @@ float  Density=0.05;       ///< Agents population density.
 
 int DEFAULT_FRAME_RATE=50; ///< Base simulation speed
 
-/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
+/// @date 2026-10-29 (https://github.com/borkowsk/bookProcessingEN/)

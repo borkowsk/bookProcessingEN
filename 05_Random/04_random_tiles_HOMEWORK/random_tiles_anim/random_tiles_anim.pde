@@ -1,5 +1,5 @@
 /// Random tiles.
-//*//////////////
+//-//////////////
 
 void setup()
 {
@@ -19,4 +19,4 @@ void draw()
   }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN/tree/main/05_random
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN/tree/main/05_random

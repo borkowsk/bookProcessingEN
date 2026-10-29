@@ -12,14 +12,14 @@ void setup()
   size(1000,500);
   smooth();
   background(255);
-  uklad();
+  axes();
   wykres();
 }
 
 //Procedury rysujące:
 //-------------------
 
-void uklad()
+void axes()
 {
   stroke(0,128,0);
   //Rysunek układu współrzędnych
@@ -48,4 +48,4 @@ void wykres()
   }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

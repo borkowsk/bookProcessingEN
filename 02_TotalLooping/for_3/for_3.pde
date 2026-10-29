@@ -1,5 +1,5 @@
 /// Drawing points next example.
-//*//////////////////////////////
+//-//////////////////////////////
 
 size(500,500);
 background(255);
@@ -10,4 +10,4 @@ for(int i=0;i<200;i=i+1) //REPEAT up to 200 i=i+1 <=> i++
   point(i,i);
 } // End of looped action
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

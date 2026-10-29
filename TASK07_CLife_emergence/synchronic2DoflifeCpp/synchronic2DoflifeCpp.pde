@@ -1,6 +1,6 @@
 /// "Min-Opt-Max neighbours": Not too many neighbours, but not too few, but OPTIMAL!
 /// TWO-dimensional, SYNCHRONOUS, von Neumann/Moore, deterministic cellular automaton
-//*//////////////////////////////////////////////////////////////////////////////////
+//-//////////////////////////////////////////////////////////////////////////////////
 // See 233 (Conways Game of Life) or 123 & 234 - much more "biological"
 
 final int     WorldSide=501;  ///< How many cells do we want in one line?
@@ -180,4 +180,4 @@ void stepMonteCarlo() ///< globally visible
    }
 }
 
-/// @date 2026-06-16 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

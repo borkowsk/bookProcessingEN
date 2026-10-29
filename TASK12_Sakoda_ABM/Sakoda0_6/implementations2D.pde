@@ -3,7 +3,7 @@
     which utilizes 1D or 2D dicrete geometry 
     Agents need to be initialised & they need logic of change 
     HERE ARE 2D alternatives of main procedures
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
     // We're using function overload!
 */
 
@@ -93,7 +93,7 @@ void  changeAgents(Agent[][] agents)
 }
 
 
-//*/////////////////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////////////////
 /// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM EXAMPLE: 
 //  2D BASIC INITIALISATION, STEP CHANGE & VISUALISATION
-//*/////////////////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////////////////

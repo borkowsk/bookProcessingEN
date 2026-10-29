@@ -1,5 +1,5 @@
 /// Loop in loop - printing to console.
-//*/////////////////////////////////////
+//-/////////////////////////////////////
 
 for(int i=0;i<10;i++)
 {
@@ -12,4 +12,4 @@ for(int i=0;i<10;i++)
   println();
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

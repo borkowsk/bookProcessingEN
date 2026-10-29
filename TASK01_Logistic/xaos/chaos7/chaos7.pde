@@ -16,7 +16,7 @@ double X=0.0001; //State variable, state of the system
 int FM=300;
 int Rozbieg=100;
 
-double uklad(double x) // Xn --> Xn+1
+double iterate(double x) // Xn --> Xn+1
 {
   return R*x*(1-x); //state change implementation
 }
@@ -42,7 +42,7 @@ void draw()
  if(N<800)
  {
   double Xp=X;
-  X=uklad(X);
+  X=iterate(X);
   //println(N,X);
   stroke(255,0,0,25);
   line(N-1,scale(Xp),N,scale(X));
@@ -60,3 +60,8 @@ void draw()
    G=random(255);B=random(255);
  }
 }
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

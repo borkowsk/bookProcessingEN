@@ -1,5 +1,5 @@
 /// Random tiles HOMEWORK.
-//*///////////////////////
+//-///////////////////////
 
 size(500,500);
 
@@ -12,4 +12,4 @@ for(int i=0;i<10;i++)
    }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN/tree/main/05_random
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN/tree/main/05_random

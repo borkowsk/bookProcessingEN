@@ -1,5 +1,5 @@
 /// "cabinet" - an array of 10 integers.
-//*/////////////////////////////////////
+//-/////////////////////////////////////
 
 int[] cabinet_with_integers = new int[ 10 ];
 
@@ -15,4 +15,4 @@ print( cabinet_with_integers[ 9 ], "" );
 
 
 
-/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

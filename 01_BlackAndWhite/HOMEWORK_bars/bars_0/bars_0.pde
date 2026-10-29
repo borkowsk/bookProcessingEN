@@ -1,6 +1,6 @@
 /// 4 bars example. SIMPLIFIED
 /// DATA. Values can be changed at will
-//*////////////////////////////////////////
+//-////////////////////////////////////////
 
 float d0=300,d1=499,d2=150,d3=75;
 
@@ -19,4 +19,4 @@ line(0,0,5,10);  //Arrow
 
 line(0,499,599,499); //Horizontal
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

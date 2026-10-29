@@ -1,5 +1,5 @@
 // Infinite line animation.
-//*/////////////////////////
+//-/////////////////////////
 
 void setup() 
 {
@@ -23,4 +23,4 @@ void draw()
   }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

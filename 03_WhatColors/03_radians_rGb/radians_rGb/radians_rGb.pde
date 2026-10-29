@@ -1,5 +1,5 @@
 /// Circle sectors.
-//*////////////////
+//-////////////////
 
 size(500,500);
 background(0,0,200); // rgB - BLUE
@@ -13,4 +13,4 @@ for(int i=0;i<256;i+=10) // Repeat every 10
 }
 
 /// http://processingwedukacji.blogspot.com
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

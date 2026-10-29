@@ -1,5 +1,5 @@
 /// 30 white paper sheets (alt.)...
-//*/////////////////////////////////
+//-/////////////////////////////////
 
 size(500,500);
 smooth(); // Line smoothing ("anti-aliasing")

@@ -6,22 +6,22 @@
 //   Jeżeli termit ma coś na plecach sprawdza, czy przed nim, lub obok niego jest podobne drewienko.
 //   Jeżeli jest to z pewnym prawdopodobieństwem zrzuca drewienko.
 
-int wizual = 5; /* Co ile kroków rysować? */
+int wizual = 5; /* Every how many steps should I draw? */
 int n_termity = 10;
 int Last = 65;
 int czas = 0;
 int szerokosc = 10;
-int n_przedmiotow = 2; /* Ile typów przedmiotów */
+int n_przedmiotow = 2; /* How many types of items? */
 
 double gestosc = 0.2;
 double skret = 0.2;
-double w = 0.9; /* prawdopodobienstwo zostawienia/wzięcia przedmiotu */
+double w = 0.9; /* probability of leaving/taking an item */
 
 class termit {
   int x;
   int y;
-  int k; /* kierunek ruchu */
-  int c; /* co nosi termit */
+  int k; /* direction of movement */
+  int c; /* What does a termite carry on its back? */
 }
 
 class lok {
@@ -109,7 +109,7 @@ int i, j, m, k;
 
  fill(255, 255, 255);
  stroke(255, 255, 255);
- rect(10, Last * szerokosc + 10, width - 20, 50); /* Czyszczenie panelu tekstowego */
+ rect(10, Last * szerokosc + 10, width - 20, 50); /* Clearing the text panel */
 
  fill(0);
  textSize(12);

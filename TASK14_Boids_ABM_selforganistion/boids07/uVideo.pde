@@ -1,6 +1,6 @@
 /// Tool for made video from simulation. ( "rtmVideo.pde" )
 /// @note This optional source file could be copied or linked from OPTIONALS directory.
-/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
 //-////////////////////////////////////////////////////////////////////////////////////
 
 /// @defgroup Generally usable functions
@@ -8,7 +8,7 @@
 //-/////////////////////////////////////
 
 //* PL: Narzędzie do tworzenia wideo z symulacji
-//*////////////////////////////////////////////////////////////////////////////////////
+//-////////////////////////////////////////////////////////////////////////////////////
 /// See: http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
 //*
 /// USAGE: Apart from the "hamoid" library, you also need to install 
@@ -104,7 +104,7 @@ void NextVideoFrame()                                                           
 /// will probably be incomplete
 //* UWAGA: powinno być jakieś "force screen update", ale nie znalazłem
 //* Jeśli kliknięcie x okna nastąpi w trakcie rysowania to ostatnia klatka
-//* będzie prawdopodobnie niekompletna.
+//* will likely be incomplete.
 void CloseVideo()                                                               ///< @note GLOBAL dummy in C++
 { /*_OnlyProcessingBlockBegin*/
   if(videoExport!=null)
@@ -123,9 +123,9 @@ void CloseVideo()                                                               
   /*_onlyProcessingBlockEnd*/
 }
 
-//*/////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////
 //*  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: OPTIONAL TOOLS 
 //*  - FUNCTIONS & CLASSES
 //*  https://github.com/borkowsk/sym4processing
 /// @}
-//*/////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////

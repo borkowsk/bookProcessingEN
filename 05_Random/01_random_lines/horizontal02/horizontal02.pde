@@ -1,5 +1,5 @@
 /// Random lines along the horizontal axis.
-//*////////////////////////////////////////
+//-////////////////////////////////////////
 
 size(500,250);
 
@@ -10,4 +10,4 @@ for(int i=0;i<width;i++)
   //line(i,height,i,height-a); //up
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

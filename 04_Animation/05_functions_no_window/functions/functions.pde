@@ -1,5 +1,5 @@
 /// Demonstration of functions with different parameters.
-//*//////////////////////////////////////////////////////
+//-//////////////////////////////////////////////////////
 
 final float onef=1.0;
 
@@ -61,4 +61,4 @@ void exit() // What should be done when window is closed?
   super.exit();
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

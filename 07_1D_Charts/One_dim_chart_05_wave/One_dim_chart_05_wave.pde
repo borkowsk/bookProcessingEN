@@ -17,7 +17,7 @@ float startX=0;
 void draw() //używa procedur rysujących zdefiniowanych dalej.
 {
   background(255);
-  uklad();
+  axes();
   wykres();
   startX-=PI/100;
 }
@@ -25,7 +25,7 @@ void draw() //używa procedur rysujących zdefiniowanych dalej.
 //Procedury rysujące:
 //-------------------
 
-void uklad()   //Rysunek układu współrzędnych
+void axes()   //Rysunek układu współrzędnych
 {
   stroke(0,128,0);
   line(0,250,1000,250);   //Oś X
@@ -53,5 +53,5 @@ void wykres() //Właściwy wykres funkcji
   }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
-/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

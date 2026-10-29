@@ -1,5 +1,5 @@
 /// Loop in loop - using the remainder from division.
-//*///////////////////////////////////////////////////
+//-///////////////////////////////////////////////////
 
 //noStroke(); //ellipses without outlines
 
@@ -13,4 +13,4 @@ for(int i=0;i<10;i++)
     }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

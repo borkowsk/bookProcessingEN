@@ -19,7 +19,7 @@ void draw()
 {
   background(0,255,255);
   wykres();
-  //uklad();
+  //axes();
   startX-=PI/50; //Jeśli program będzie działał wystarczająco długo to tu się zaczną kłopoty.
                  //Dlaczego?
 }
@@ -27,7 +27,7 @@ void draw()
 //Procedury rysujące:
 //-------------------
 
-void uklad()
+void axes()
 {
   stroke(0,128,0);
   //Rysunek układu współrzędnych
@@ -57,5 +57,5 @@ void wykres()
 }
 
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
-/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

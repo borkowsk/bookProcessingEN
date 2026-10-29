@@ -1,5 +1,5 @@
 // ANIM "line()" in default configuration
-//*//////////////////////////////////////////
+//-//////////////////////////////////////////
 
 int pos = 0; //GLOBAL variable!
 
@@ -10,4 +10,4 @@ void draw() //It is executed in an invisible loop
   pos++; //What happen here?
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

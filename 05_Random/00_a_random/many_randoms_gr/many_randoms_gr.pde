@@ -1,5 +1,5 @@
 /// Random() example with variable:
-//*////////////////////////////////
+//-////////////////////////////////
 
 float a=1.0; // This variable is outside loop
              // But in fact is local, in invisible 
@@ -12,4 +12,4 @@ for(int i=0;i<100;i++)
   a=random(1.0); // A new random number in the range 0..1
 }  
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

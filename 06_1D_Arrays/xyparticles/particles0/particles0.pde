@@ -1,6 +1,6 @@
 /// RUNNING BUGS
 //
-//*//////////////////
+//-//////////////////
 
 final int   FR   = 10; // How many frames per second
 final int   Num  = 10; // How many spiders
@@ -54,4 +54,4 @@ void draw() // global h,x,v
   }
 }
 
-/// @date 2025-11-03 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

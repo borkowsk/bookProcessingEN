@@ -1,5 +1,5 @@
 /// Random lines along the Y axis.
-//*///////////////////////////////
+//-///////////////////////////////
 
 size(200,300);
 
@@ -9,4 +9,4 @@ for(int i=0;i<300;i++)
   line(0,i,a,i);
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

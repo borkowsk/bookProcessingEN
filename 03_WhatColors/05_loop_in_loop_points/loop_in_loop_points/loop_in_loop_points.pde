@@ -1,5 +1,5 @@
 /// Loops in loops. Note the code blocks!
-//*///////////////////////////////////////
+//-///////////////////////////////////////
 
 size(256,256); 
 
@@ -18,4 +18,4 @@ for(int i=0;i<256;i++)
   }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

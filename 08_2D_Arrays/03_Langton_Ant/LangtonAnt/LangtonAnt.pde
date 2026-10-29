@@ -1,5 +1,5 @@
 // Classic Langton Ant model.
-//*//////////////////////////
+//-//////////////////////////
 
 // Grid size for the simulation (500x500 cells to match the window size)
 int cols = 500;
@@ -100,3 +100,8 @@ void draw()
   stroke(255, 0, 0);
   point(antX, antY);
 }
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

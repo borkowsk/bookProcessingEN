@@ -21,7 +21,7 @@ float G=0;
 float B=255;
 float Red=255;
 
-double uklad(double x) // Xn --> Xn+1
+double iterate(double x) // Xn --> Xn+1
 {
   return R*x*(1-x); //state change implementation
 }
@@ -61,7 +61,7 @@ void draw()
  if(N<2*WvS)
  {
   double Xp=X;
-  X=uklad(X);
+  X=iterate(X);
   //println(N,X);
   stroke(Red,0,0,25);
   line(N-1,scale(Xp),N,scale(X));
@@ -83,3 +83,8 @@ void draw()
    println("realFM:",frameRate,"\tX=",X);
  }
 }
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

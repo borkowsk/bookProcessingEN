@@ -1,5 +1,5 @@
 /// Mean of some random numbers.
-//*/////////////////////////////
+//-/////////////////////////////
 
 final int N=20; // How many numbers?
 float[] numbers=new float[N]; // table storing values
@@ -28,4 +28,4 @@ textAlign(CENTER,CENTER);text("Done!\nPress ESC\nor click [x]",width/2,height/2)
 
 
 
-/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

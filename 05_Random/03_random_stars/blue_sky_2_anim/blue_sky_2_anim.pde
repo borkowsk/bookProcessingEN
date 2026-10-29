@@ -1,5 +1,5 @@
 /// Stars in the sky of any size - animated.
-//*/////////////////////////////////////////
+//-/////////////////////////////////////////
 
 int N,i; // 'N' and 'i' must be global!
 
@@ -30,4 +30,4 @@ void draw() // uses external N,i
   }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

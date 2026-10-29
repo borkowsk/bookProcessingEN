@@ -1,6 +1,6 @@
 /// "Extended Moore Nowak-Latane Social Impact".
 /// Two-dimensional, synchronous cellular automaton with extended Moore neigh.
-//*/////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////
 
 final int     WorldSide=600;   //Side length of simulation world (square).
 final float   Dens=0.50;       //.01; //Initial density in the lattice World.
@@ -156,4 +156,4 @@ void status()
 }
 
 
-/// @date 2025-11-10 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

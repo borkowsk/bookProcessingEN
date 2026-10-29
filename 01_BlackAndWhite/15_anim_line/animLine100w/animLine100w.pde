@@ -1,5 +1,5 @@
 // ANIM "line()"  
-//*////////////////
+//-////////////////
 
 void setup() // It is executed only once
 {
@@ -15,4 +15,4 @@ void draw() // It is executed in an invisible loop
   pos++; // pos=pos + 1; - so here 'pos' is incremented.
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

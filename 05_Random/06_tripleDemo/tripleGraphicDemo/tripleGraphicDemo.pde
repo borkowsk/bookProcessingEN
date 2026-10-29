@@ -1,7 +1,7 @@
 /// Processing has its own specific application structure which makes it a bit difficult 
 /// to create sequence programs, which usually are graphical demos. 
 /// But there is a way around this ...
-//*////////////////////////////////////////////////////////////////
+//-////////////////////////////////////////////////////////////////
 
 int W=0; // global variable W
 
@@ -60,4 +60,4 @@ void draw() // uses global frame
   frame++;
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

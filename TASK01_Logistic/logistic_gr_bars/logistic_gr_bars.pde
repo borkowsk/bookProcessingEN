@@ -1,4 +1,4 @@
-/** Logistic iteration with bars visialisation */
+/** Logistic iteration with bars visualisation */
 
 final float R=3.22;   
 float X=0.3333333;    // State. Range 0..1!
@@ -18,4 +18,4 @@ for(int i=0;i<width;i+=interspace)
 fill(128);textSize(24);
 text("R="+R,0,height);
 
-/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

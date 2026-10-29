@@ -1,5 +1,5 @@
 /// Processing program in mode 2 - with visible subroutines.
-//*/////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////
 
 void setup() // It is executed once - after starting
 {
@@ -18,4 +18,4 @@ void draw() // It is executed in an invisible loop
   i+=1;
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

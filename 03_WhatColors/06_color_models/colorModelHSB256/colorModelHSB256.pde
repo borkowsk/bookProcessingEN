@@ -2,7 +2,7 @@
 /// Other words HSL (hue, saturation, lightness) or HSV (hue, saturation, value)
 /// https://en.wikipedia.org/wiki/HSL_and_HSV 
 /// https://pl.wikipedia.org/wiki/HSL
-//*/////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////
 
 size(256,256);
 
@@ -17,4 +17,4 @@ for (int i = 0; i < 256; i++) {
   }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

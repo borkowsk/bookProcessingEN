@@ -1,5 +1,5 @@
 /// HOMEWORK from the picture example.
-//*///////////////////////////////////
+//-///////////////////////////////////
 
 size(500,500);
 smooth();           // With line smoothing ("anti-aliasing")
@@ -19,4 +19,4 @@ for(int i=300;i>=0;i-=10) // REPEAT EVERY TENTH BACKWARD!
 }
 
 /// http://processingwedukacji.blogspot.com
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

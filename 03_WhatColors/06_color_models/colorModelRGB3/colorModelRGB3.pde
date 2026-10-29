@@ -1,6 +1,6 @@
 /// RGB color model (red, green, blue).
 /// https://en.wikipedia.org/wiki/RGB
-//*/////////////////////////////////////
+//-/////////////////////////////////////
 
 // RGB color model. Range for all color elements will be 0..99
 colorMode(RGB, 100); // 100 is default size of Processing window
@@ -13,4 +13,4 @@ for (int i = 0; i < 100; i++) {
   }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

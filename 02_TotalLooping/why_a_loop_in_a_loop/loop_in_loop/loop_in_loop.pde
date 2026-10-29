@@ -1,5 +1,5 @@
 /// Loop in loop. The role of code blocks (made by curly braces {}).
-//*//////////////////////////////////////////////////////////////////
+//-//////////////////////////////////////////////////////////////////
 
 for(int i=0;i<10;i++)
 {
@@ -9,4 +9,4 @@ for(int i=0;i<10;i++)
   }
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

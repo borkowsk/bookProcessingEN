@@ -16,7 +16,7 @@ float startX=0;
 void draw()
 {
   background(255);
-  uklad();
+  axes();
   wykres();
   startX-=PI/100;
 }
@@ -40,7 +40,7 @@ void wykres()
   }
 }
 
-void uklad()  //Rysunek układu współrzędnych
+void axes()  //Rysunek układu współrzędnych
 {
   stroke(0,128,0);
   line(0,250,1000,250);   //Oś X
@@ -50,5 +50,5 @@ void uklad()  //Rysunek układu współrzędnych
   line(0,0,5,10);         //Pół grotu Y
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
-/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

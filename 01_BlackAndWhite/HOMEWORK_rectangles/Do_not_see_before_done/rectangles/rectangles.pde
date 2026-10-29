@@ -1,5 +1,5 @@
 /// Drawing rectangles example.
-//*////////////////////////////
+//-////////////////////////////
 
 size(300,300);
 
@@ -36,4 +36,4 @@ rect(250, 250, 30, 30); // Draw gray rect using CENTER mode
 stroke(0);
 point(250,250); //BLACK DOT
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

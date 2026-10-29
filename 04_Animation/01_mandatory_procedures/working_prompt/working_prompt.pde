@@ -1,5 +1,5 @@
 /// `prompt()` "called" inside `setup()`.
-//*///////////////////////////////////////
+//-///////////////////////////////////////
 
 void prompt()
 {
@@ -12,4 +12,4 @@ void setup() // It is executed once - after starting
     prompt(); // Call `prompt()`!
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

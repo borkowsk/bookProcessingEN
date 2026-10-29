@@ -1,4 +1,4 @@
-/// "Naive" particles system with simplified phisics of collisions.
+/// "Naive" particles system with simplified physics of collisions.
 //-//////////////////////////////////////////////////////////////////////
 
 int     circles = 50;
@@ -10,7 +10,7 @@ int     radius=diameter/2;
 float   maxspeed=1;
 
 int     FRAMERATE=800;
-int     VISFREQ=8; //every N
+int     VIS_FREQ=8; //every N
 
 float[]   xpos = new float[circles];
 float[]   ypos = new float[circles];
@@ -104,7 +104,7 @@ void bordersReaction() // uses global xpos,ypos,xspeed,yspeed,collision,circolor
 }
 
 /// It detects collisions and triggers appropriate reaction procedures
-void findcollisions() //< uses global xpos,ypos,xspeed,yspeed,collision,circolor
+void findCollisions() //< uses global xpos,ypos,xspeed,yspeed,collision,circolor
 {
   for (int i=0; i<(circles-1); i++) {
     for (int j=(i+1); j<circles; j++) { 
@@ -154,11 +154,11 @@ void reaction(int i, int j) // uses global xpos,ypos,xspeed,yspeed,collision,cir
 
 void draw()
 {
-  if (frameCount%VISFREQ==0)
+  if (frameCount%VIS_FREQ==0)
     visualisation();
   movement();
   bordersReaction();
-  findcollisions();
+  findCollisions();
 }
 
-///@date 2024-12-20 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

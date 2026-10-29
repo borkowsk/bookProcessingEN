@@ -1,5 +1,5 @@
 /// Processing program in mode 2 - with visible subroutines.
-//*/////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////
 
 void setup() 
 {
@@ -19,4 +19,4 @@ void draw() // external i
   i+=2;
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

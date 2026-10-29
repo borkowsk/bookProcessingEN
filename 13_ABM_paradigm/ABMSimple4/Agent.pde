@@ -1,5 +1,5 @@
 /// The agent: its atributes, random initialisation and methods
-//*////////////////////////////////////////////////////////////
+//-////////////////////////////////////////////////////////////
 
 enum Dirs { UNKNOWN, N, NE, E, SE, S, SW, W, NW }; ///< all directions of the world.
 
@@ -49,4 +49,4 @@ class Agent
   }
 }
 
-/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
+/// @date 2026-10-29 (https://github.com/borkowsk/bookProcessingEN/)

@@ -1,5 +1,5 @@
 // Loop in the loop in the hidden INFINITE loop.
-//*/////////////////////////////////////////////
+//-/////////////////////////////////////////////
 
 void setup()
 {
@@ -34,4 +34,4 @@ void draw()
   k++; // Incrementation of "k" at the end of each call of `draw()`
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

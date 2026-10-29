@@ -1,7 +1,7 @@
 /// 4 bars example. Without FOR!!!
 /// DATA. Values can be changed at will
 /// "final" means something like "constant"
-//*////////////////////////////////////////
+//-////////////////////////////////////////
 
 final float d0=200,d1=180,d2=50,d3=25;
 
@@ -32,4 +32,4 @@ textAlign(LEFT,TOP);text(maxd,0,0); //Print max on window!
 line(0,height-1,width,height-1); //Horizontal
 //line(width,height-1,width-10,height-5); //Arrow
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

@@ -1,5 +1,5 @@
 /// Animation example - stars.
-//*///////////////////////////
+//-///////////////////////////
 
 void draw()
 {
@@ -15,4 +15,4 @@ void setup()
   stroke(255,255,0);
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

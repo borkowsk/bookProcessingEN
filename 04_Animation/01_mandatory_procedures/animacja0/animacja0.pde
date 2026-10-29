@@ -1,9 +1,9 @@
 /// Minimal Processing program in "mode" 2 - with only one mandatory function.
-//*///////////////////////////////////////////////////////////////////////////
+//-///////////////////////////////////////////////////////////////////////////
 
 void draw() // It is executed in an invisible, infinite loop.
 {
   point(random(100),random(100)); // Drawing a point with random coordinates.
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

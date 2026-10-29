@@ -2,7 +2,7 @@
 double R=3.001; //Control parameter
 double X=0.99; //State variable, state of the system
 
-double uklad(double x) // Xn --> Xn+1
+double iterate(double x) // Xn --> Xn+1
 {
   return R*x*(1-x); //state change implementation
 }
@@ -24,7 +24,7 @@ void draw()
  if(N<1000)
  {
     double Xp=X;
-    X=uklad(X);
+    X=iterate(X);
     //println(frameCount,X);
     ellipse(N,scale(X),3.0,3.0);
     N++;
@@ -37,3 +37,8 @@ void draw()
      N=0;
  }
 }
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

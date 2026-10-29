@@ -1,5 +1,5 @@
 /// Two statement inside a loop.
-//*/////////////////////////////
+//-/////////////////////////////
 
 size(500,500); // Larger window size needed
 noSmooth();    // Without smoothing outlines
@@ -10,4 +10,4 @@ for(int i=0;i<256;i++) // REPEAT 256 TIMES
   line(i*2,i*2,0,500); // Draws a line from (i*2, i*2) to (0, 500)
 } // code block END
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

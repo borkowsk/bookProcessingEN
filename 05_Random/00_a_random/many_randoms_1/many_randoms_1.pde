@@ -1,6 +1,6 @@
 /// Random number generator - second test.
 /// Of course the draw range can be changed.
-//*/////////////////////////////////////////
+//-/////////////////////////////////////////
 
 for(int i=0;i<100;i++)
 {
@@ -9,4 +9,4 @@ for(int i=0;i<100;i++)
   point (i,a*100);
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

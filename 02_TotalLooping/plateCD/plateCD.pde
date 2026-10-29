@@ -1,5 +1,5 @@
 /// CD image ;-) example.
-//*///////////////////////
+//-///////////////////////
 
 size(300,300);
 background(0); // Black background (0 brightness)
@@ -17,4 +17,4 @@ stroke(128);
 for(int i=150;i>30;i-=2)
    ellipse(200,200,i,i);
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

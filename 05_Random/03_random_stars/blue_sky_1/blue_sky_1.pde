@@ -1,5 +1,5 @@
 /// Stars in the navy blue sky.
-//*////////////////////////////
+//-////////////////////////////
 
 size(500,500);
 background(0,0,50);
@@ -14,4 +14,4 @@ for(int i=0;i<1500;i++) // 1500 stars
   point(random(500),random(500));
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

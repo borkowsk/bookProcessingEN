@@ -1,18 +1,18 @@
 // Program CA_2D_aggregation; 
-/* Program CA symulacja dyfuzji z agregacją */ 
-/* Przełożony z Delphi za pomoca Gemini */
+/* CA program – simulation of diffusion with aggregation */ 
+/* Translated from Delphi using Gemini */
 
-final int Last = 100;  /* Rozmiar tablicy - Musi byc większe niż 1 i najwyzej 160 */ 
-final int Bok = 5;     /* Rozmiar komórki */ 
-final float Prob0 = 0.800;    /* Prawdopodobienstwo 0 w inicjalizacjilosowej */ 
+final int Last = 100;  /* Array size - Must be greater than 1 and at most 160 */ 
+final int Side = 5;     /* Cell size */ 
+final float Prob0 = 0.800;    /* Probability of 0 in random initialization */ 
 
-final String IniFile = "";    /* "2DCA_dane.txt"; */    /* Nazwa pliku z danymi */ 
+final String IniFile = "";    /* "2DCA_dane.txt"; */    /* Data file name */ 
 
 int[][] Swiat = new int[Last + 1][Last + 1]; 
-/* Globalna zmienna reprezentująca Świat */ 
+/* A global variable representing the World */ 
 int krok; 
 
-/* RÓŻNE FUNKCJE INICJUJĄCE DO ROZSĄDNEGO WYBORU */ 
+/* VARIOUS INITIALIZATION FUNCTIONS FOR A SENSIBLE CHOICE */ 
 
 void setup() {
   size(510, 510);
@@ -21,7 +21,7 @@ void setup() {
 
   println("          Automat komórkowy \"Dyfuzja i agregacja\" o " + Last + "x" + Last + " komórkach");
 
-  /* Wariantowa inicjalizacja przestrzeni symulacji */ 
+  /* Variant-based initialization of the simulation space */ 
   if (IniFile.equals("")) { 
     LosujCały(); 
     Swiat[Last / 2][Last / 2] = 2; 
@@ -40,7 +40,7 @@ void setup() {
 }
 
 void draw() {
-  /* Właściwa pętla symulacji */
+  /* The actual simulation loop */
   ZróbKrokMonteCarlo(); 
   krok = krok + 1; 
   Wypisz(); 
@@ -48,21 +48,21 @@ void draw() {
 }
 
 void ZerujCałe() { 
-/* Wyzerowanie "Swiat"a */ 
+/* Resetting the entire "World" */ 
   for (int i = 1; i <= Last; i++) 
     for (int j = 1; j <= Last; j++) 
       Swiat[i][j] = 0; 
 } 
 
 void ZerujCzęść(int xp, int xk, int yp, int yk) { 
-/* Wyzerowanie kawałka "Swiat"a */ 
+/* Resetting a piece of  the "World" */ 
   for (int i = xp; i <= xk; i++) 
     for (int j = yp; j <= yk; j++) 
       Swiat[i][j] = 0; 
 } 
 
 void LosujCały() { 
-/* Wylosowanie cząstek "Swiat"a */ 
+/* Drawing particles of  the "World" */ 
   for (int i = 1; i <= Last; i++) 
     for (int j = 1; j <= Last; j++) 
       if (random(1.0) < Prob0) 
@@ -72,7 +72,7 @@ void LosujCały() {
 } 
 
 void LosujCzęść(int xp, int xk, int yp, int yk) { 
-/* Losowanie cząstek w prostokącie */ 
+/* Sampling particles within a rectangle */ 
   for (int i = xp; i <= xk; i++) 
     for (int j = yp; j <= yk; j++) 
       if (random(1.0) < Prob0) 
@@ -82,7 +82,7 @@ void LosujCzęść(int xp, int xk, int yp, int yk) {
 } 
 
 void Przesłona(int pozycja) { 
-/* Rysuje przesłone na 2/3 szerokości Świata */ 
+/* It draws a curtain (?) across 2/3 of the width of the World */ 
   for (int i = 1; i <= Last / 3; i++) { 
     Swiat[i][pozycja] = 2; 
     Swiat[Last - i][pozycja] = 2; 
@@ -90,7 +90,7 @@ void Przesłona(int pozycja) {
 } 
 
 int minVal(int a, int b) { 
-/* Matematyczne minimum z dwu liczb całkowitych */ 
+/* The mathematical minimum of two integers */ 
   if (a > b) 
     return b; 
   else 
@@ -98,7 +98,7 @@ int minVal(int a, int b) {
 } 
 
 int maxVal(int a, int b) { 
-/* Matematyczne maximum z dwu liczb całkowitych */ 
+/* The mathematical maximum of two integers */ 
   if (a < b) 
     return b; 
   else 
@@ -106,7 +106,7 @@ int maxVal(int a, int b) {
 } 
 
 void WczytajPlik(String nazwa) { 
-/* Wczytuje plik z danymi. * oznaczają 1, X=2, reszta 0 */ 
+/* Loading the data file. `*` represents 1, `X` represents 2, and everything else is 0. */ 
   String[] linie = loadStrings(nazwa);
   if (linie == null) return;
 
@@ -127,9 +127,9 @@ void WczytajPlik(String nazwa) {
   } 
 } 
 
-void PatrzObok(int xo, int yo, int[] result) { 
-/* Losuje sąsiednią komórkę, dbając o to, żeby nie wyjść za tablice */ 
-/* Niezbyt optymalne, ale skuteczne */ 
+void LookAside(int xo, int yo, int[] result) { 
+/* Selects a neighboring cell at random, ensuring it stays within the bounds of the array. */ 
+/* Not exactly optimal, but effective */ 
   int x = xo + int(random(3)) - 1; 
   int y = yo + int(random(3)) - 1; 
   if (x < 1) x = 1; 
@@ -141,7 +141,7 @@ void PatrzObok(int xo, int yo, int[] result) {
 } 
 
 boolean MaSasiada2(int xo, int yo) { 
-/* Sprawdzenie czy jest w sąsiedztwie Moora jakaś 2-ka */
+/* Checking whether there is (any) two (?) in Moor's vicinity. */
   boolean flaga = false; 
   for (int i = maxVal(1, xo - 1); i <= minVal(xo + 1, Last); i++) 
     for (int j = maxVal(1, yo - 1); j <= minVal(yo + 1, Last); j++) 
@@ -151,7 +151,7 @@ boolean MaSasiada2(int xo, int yo) {
 } 
 
 void ZróbKrokMonteCarlo() { 
-/* Własciwy krok modelu */ 
+/* Here is the model step */ 
   int[] newPos = new int[2];
   for (int k = 1; k <= Last * Last; k++) { 
     int xo = int(random(Last)) + 1; 
@@ -160,7 +160,7 @@ void ZróbKrokMonteCarlo() {
       if (MaSasiada2(xo, yo)) { 
         Swiat[xo][yo] = 2; 
       } else { 
-        PatrzObok(xo, yo, newPos); 
+        LookAside(xo, yo, newPos); 
         int xn = newPos[0];
         int yn = newPos[1];
         if (Swiat[xn][yn] == 0) { 
@@ -181,7 +181,7 @@ void Wypisz() {
         fill(255, 0, 0); 
       else 
         fill(0, 0, 255); 
-      rect(i * Bok, j * Bok, Bok, Bok); 
+      rect(i * Side, j * Side, Side, Side); 
     } 
   }
 }
