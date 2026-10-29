@@ -222,4 +222,4 @@ public void onPayoff10Changed(GTextField field, GEvent event) {
   } catch(Exception e) {}
 }
 
-/// @date 2026-10-28 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-28 ( → https://github.com/borkowsk/bookProcessingEN)

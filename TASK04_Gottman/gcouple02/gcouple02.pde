@@ -33,4 +33,4 @@ for(int i=0;i<width;i+=DOTSIZE+1)
 
 print("DONE");
 
-//@date 2023 (https://github.com/borkowsk/bookProcessingEN)
+//@date 2023 ( → https://github.com/borkowsk/bookProcessingEN)

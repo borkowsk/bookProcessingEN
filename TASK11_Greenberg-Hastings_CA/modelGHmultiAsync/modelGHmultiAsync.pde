@@ -1,6 +1,6 @@
 /// Greenberg-Hastings Model asynchronously: Excitable media with 9 refractory states.
 /// TWO-dimensional, ASYNCHRONOUS!!!, Moore, "semi-deterministic" cellular automaton.
-/// @date 2026-10-16 (last modification)
+/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)
 //-///////////////////////////////////////////////////////////////////////////////////
 
 final int WorldSide=601; //< How many cells do we want in one line?

@@ -12,4 +12,4 @@ for(int i=0;i<=25;i++)
 
 
 
-/// @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)

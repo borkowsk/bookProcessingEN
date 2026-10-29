@@ -89,7 +89,7 @@ void doStatisticsOnAgents(Agent[] agents)
 }
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM EXAMPLE: 
 //  1D & 2D BASIC STATISTICS
-//  https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
 //*/////////////////////////////////////////////////////////////////////////////////////////

@@ -15,4 +15,4 @@ print( cabinet_with_integers[ 9 ], "" );
 
 
 
-/// @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)

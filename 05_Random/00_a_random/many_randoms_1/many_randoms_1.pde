@@ -9,4 +9,4 @@ for(int i=0;i<100;i++)
   point (i,a*100);
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

@@ -60,4 +60,4 @@ void draw()
   //  println(frameCount+"*"+ frameRate );//Process progress
 }
 
-/// @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)

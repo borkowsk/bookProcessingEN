@@ -1,6 +1,6 @@
 /// Sakoda inspired AGENT BASE MODEL utilized 1D or 2D discrete geometry
 /// implemented by Wojciech Borkowski
-/// \see https://www.jasss.org/20/3/15.html
+/// see https://www.jasss.org/20/3/15.html
 //*///////////////////////////////////////////////////////////////////////////////////////
 
 // Model parameters
@@ -81,6 +81,6 @@ void writeStatusLine()
 }
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA MAIN
-// https://github.com/borkowsk/bookProcessingEN
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM SAKODA MAIN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
 //*/////////////////////////////////////////////////////////////////////////////////////////

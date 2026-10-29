@@ -1,8 +1,8 @@
 // Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/IKB1hWWedMk
-// https://github.com/CodingTrain/website/blob/master/CodingChallenges/CC_011_PerlinNoiseTerrain/Processing/CC_011_PerlinNoiseTerrain/CC_011_PerlinNoiseTerrain.pde
+/// http://codingtra.in
+/// http://patreon.com/codingtrain
+/// Code for: https://youtu.be/IKB1hWWedMk
+/// https://github.com/CodingTrain/website/blob/master/CodingChallenges/CC_011_PerlinNoiseTerrain/Processing/CC_011_PerlinNoiseTerrain/CC_011_PerlinNoiseTerrain.pde
 int cols, rows;
 int scl = 20;
 int w = 2000;

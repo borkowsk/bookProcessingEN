@@ -1,7 +1,7 @@
 // Program do testowania różnych sposobów losowania
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Zobacz: https://en.wikipedia.org/wiki/Normal_distribution#Generating_values_from_normal_distribution
-// Oraz:   http://www.javamex.com/tutorials/random_numbers/xorshift.shtml#.WT6NEzekKXI
+/// Zobacz: https://en.wikipedia.org/wiki/Normal_distribution#Generating_values_from_normal_distribution
+/// Oraz:   http://www.javamex.com/tutorials/random_numbers/xorshift.shtml#.WT6NEzekKXI
 
 double MyRandom0()
 {
@@ -20,7 +20,7 @@ double MyRandom1()
 long xl=123456789L;
 double mianownik=(double)9223372036854775807L; // albo Long.MAX_VALUE;
                                                // 9,223,372,036,854,775,807 <--- max long 
-double MyRandom2() //http://www.javamex.com/tutorials/random_numbers/xorshift.shtml#.WT6NEzekKXI
+double MyRandom2() // http://www.javamex.com/tutorials/random_numbers/xorshift.shtml#.WT6NEzekKXI
 {
   //XOR SHIFT random generator
   xl ^= (xl << 21);
@@ -78,7 +78,7 @@ void draw()
         i=NumOfBaskets; //Zabezpieczenie
     
     Basket[i]++;    //Doliczenie
-    N++; //https://www.facebook.com/ModelowanieProcesowSpolecznych/posts/1406909939488446
+    N++; // https://www.facebook.com/ModelowanieProcesowSpolecznych/posts/1406909939488446
   }
   
   background(255);    //Czyszczenie ekranu

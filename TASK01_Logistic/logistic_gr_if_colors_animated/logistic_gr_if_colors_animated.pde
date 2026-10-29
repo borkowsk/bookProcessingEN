@@ -38,4 +38,4 @@ void draw() // uses global t,X
   t++; //INCREMENTATION!!!
 }
 
-/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)

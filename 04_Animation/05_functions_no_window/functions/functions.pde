@@ -61,4 +61,4 @@ void exit() // What should be done when window is closed?
   super.exit();
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

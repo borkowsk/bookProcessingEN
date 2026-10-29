@@ -174,7 +174,7 @@ void timeline(FloatList data_a, FloatList data_b, FloatList data_c,
 
 
 void dottedLine(float x1, float y1, float x2, float y2, float steps)
-//https://processing.org/discourse/beta/num_1219255354.html
+// https://processing.org/discourse/beta/num_1219255354.html
 {
  for(int i=0; i<=steps; i++) {
    float x = lerp(x1, x2, i/steps); //funkcja lerp() jest bardzo użyteczna :-)

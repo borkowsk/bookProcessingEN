@@ -28,4 +28,4 @@ textAlign(CENTER,CENTER);text("Done!\nPress ESC\nor click [x]",width/2,height/2)
 
 
 
-/// @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)

@@ -55,6 +55,6 @@ void keyPressed()
 
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EVENTS TEMPLATE
-// https://github.com/borkowsk/bookProcessingEN
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM EVENTS TEMPLATE
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
 //*/////////////////////////////////////////////////////////////////////////////////////////

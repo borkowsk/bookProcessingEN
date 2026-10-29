@@ -10,4 +10,4 @@ arc(250, 250, 190, 190, PI,PI*2); // Pi=3.141595............
 
 //saveFrame(); // If saveFrame() is used without parameters, it will save files as screen-0000.tif, screen-0001.tif, 
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

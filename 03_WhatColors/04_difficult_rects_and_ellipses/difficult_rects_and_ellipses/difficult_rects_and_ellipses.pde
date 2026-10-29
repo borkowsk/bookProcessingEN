@@ -18,5 +18,5 @@ for(int i=300;i>=0;i-=10) // REPEAT EVERY TENTH BACKWARD!
   ellipse(i,i,10,10);   // ...  and "tails".
 }
 
-// http://processingwedukacji.blogspot.com
-// https://github.com/borkowsk/bookProcessingEN
+/// http://processingwedukacji.blogspot.com
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

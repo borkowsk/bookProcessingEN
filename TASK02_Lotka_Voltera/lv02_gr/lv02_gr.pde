@@ -31,4 +31,4 @@ for(int i=0;i<N;i++)
   Y=Y + Tstep * (gamma*oldX*Y-delta*Y);
 }
 
-//https://github.com/borkowsk/bookProcessingEN
+// https://github.com/borkowsk/bookProcessingEN

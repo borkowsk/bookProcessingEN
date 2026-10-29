@@ -176,6 +176,6 @@ void hexagon(float x, float y, float gsX, float gsY)         ///< "Tool" for dra
 //-////////////////////////////////////////////////////////////////////////////////
 // Autor: Wojciech T. Borkowski
 // Materials for the textbook "Processing in education and simulation
-// https://github.com/borkowsk/sym4processing/tree/master/ProcessingWEdukacji
+/// @date 2026 ( → https://github.com/borkowsk/sym4processing/tree/master/ProcessingWEdukacji
 //-////////////////////////////////////////////////////////////////////////////////
 /// @date 2026-10-07 (revived)

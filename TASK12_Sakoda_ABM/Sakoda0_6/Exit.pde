@@ -17,6 +17,6 @@ void exit()          //it is called whenever a window is closed. Maybe asynchron
 } 
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - EXIT TEMPLATE
-// https://github.com/borkowsk/bookProcessingEN
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: EXIT TEMPLATE
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
 //*/////////////////////////////////////////////////////////////////////////////////////////

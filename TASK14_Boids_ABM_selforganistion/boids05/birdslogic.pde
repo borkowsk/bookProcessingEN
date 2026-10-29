@@ -150,4 +150,4 @@ void thinkAndDoBoids(Bird boid,int myIndex)
 }
 
 
-/// @date 2026-10-16 (modified)
+/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)

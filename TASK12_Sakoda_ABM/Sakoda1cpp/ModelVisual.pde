@@ -58,6 +58,6 @@ void visualizeAgents(Agent[] agents)           ///< global function
 }
 
 //*//////////////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: BASIC VISUALISATION
-//  https://github.com/borkowsk/bookProcessingEN
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM: BASIC VISUALISATION
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
 //*//////////////////////////////////////////////////////////////////////////////////////////////////////

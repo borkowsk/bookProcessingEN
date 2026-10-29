@@ -38,4 +38,4 @@ for(int i=0;i<World.length;i++)
   print(World[i],' ');
     
 
-/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)

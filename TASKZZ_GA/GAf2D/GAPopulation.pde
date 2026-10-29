@@ -1,6 +1,6 @@
 /// A population of genetic agents for solving one-dimensional problems.
 //-////////////////////////////////////////////////////////////////////////////
-/// @date 2026-10-23 (last modification)
+/// @date 2026-10-23 ( → https://github.com/borkowsk/bookProcessingEN)
 import java.lang.Math;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -334,6 +334,6 @@ class GAPopulation
 }//_EndOfClass
 
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingEN
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: https://github.com/borkowsk/bookProcessingEN
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
 //_EOC

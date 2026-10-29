@@ -67,4 +67,4 @@ void next4couple(singiel F,singiel S) //Some "refactoring" done
   S.next();
 }
   
-/// @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)

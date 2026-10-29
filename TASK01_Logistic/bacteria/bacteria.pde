@@ -8,4 +8,4 @@ for(int i=0;i<10;i++)
   X=2*X;        //Calculate next state!
 }
 
-/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)

@@ -12,4 +12,4 @@ for(int i=0;i<100;i++)
   a=random(1.0); // A new random number in the range 0..1
 }  
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

@@ -15,4 +15,4 @@ for (int i = 0; i < 100; i++) {
   }
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

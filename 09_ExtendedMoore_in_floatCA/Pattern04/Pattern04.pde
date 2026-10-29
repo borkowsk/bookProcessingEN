@@ -119,4 +119,4 @@ void draw() ///< ???
   text(frameCount+": "+average+" "+frameRate+"frm/sec",1,height); // here we have the actual speed.
 }
 
-/// @date 2026-10-16 (modification)
+/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)

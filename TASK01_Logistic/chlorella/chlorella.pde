@@ -11,5 +11,5 @@ for(int i=0;i<10;i++)
 
 text("DONE",30,55); //For default window 100x100
 
-/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)
  

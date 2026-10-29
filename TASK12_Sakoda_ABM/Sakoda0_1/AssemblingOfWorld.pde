@@ -76,6 +76,6 @@ void visualizeModel(World world)
 }
 
 //*/////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: WORLD OF SAKODA
-//  https://github.com/borkowsk/bookProcessingEN
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM: WORLD OF SAKODA
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
 //*/////////////////////////////////////////////////////////////////////////////////////////////

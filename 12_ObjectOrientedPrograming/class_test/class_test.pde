@@ -1,5 +1,5 @@
 /// An example of using a class (complex user type)
-/// @date 2026-06-17 (last modification)
+/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)
 //-////////////////////////////////////////////////////
 /// TODO comments clean!
 final float DefaultR=3.66;
@@ -28,4 +28,4 @@ void draw()
   TheSingiel.next(); // Method call - dot notation again
 }
 
-// https://github.com/borkowsk/bookProcessingEN/
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN/

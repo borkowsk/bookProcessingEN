@@ -85,4 +85,4 @@ void visualisationB()  ///< Alternative visualisation
   }
 }
 
-/// @date 2026-06-16 (changed)
+/// @date 2026-06-16 ( → https://github.com/borkowsk/bookProcessingEN)

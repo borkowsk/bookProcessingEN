@@ -20,4 +20,4 @@ for(int i=0;i<width;i++)
 
 text("DONE",30,50);
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+//@date 2024 ( → https://github.com/borkowsk/bookProcessingEN)

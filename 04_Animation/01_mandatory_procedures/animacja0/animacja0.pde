@@ -6,4 +6,4 @@ void draw() // It is executed in an invisible, infinite loop.
   point(random(100),random(100)); // Drawing a point with random coordinates.
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

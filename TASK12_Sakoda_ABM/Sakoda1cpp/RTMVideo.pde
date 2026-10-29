@@ -1,7 +1,7 @@
 ///   Tool for made video from simulation 
 ///   It is based on strictly Processing library, so under C++ is only a dummy for linking
 //*/////////////////////////////////////////////////////////////////////////////////////////
-// http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
+/// http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
 //
 // You need to install ffmpeg for it to work!!!
 
@@ -75,5 +75,5 @@ void CloseVideo() ///< This is what we call when we want to close
 }
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - MOVIE MAKER 
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: MOVIE MAKER 
 //*/////////////////////////////////////////////////////////////////////////////////////////

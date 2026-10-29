@@ -8,4 +8,4 @@ stroke(200);
 for(int i=0;i<150;i++) // REPEAT 150 times.
    ellipse(100+i,100+i,100,100); // "i" modifies every parameter.
  
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

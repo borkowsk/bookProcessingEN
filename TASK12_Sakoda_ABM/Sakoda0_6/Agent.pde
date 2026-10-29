@@ -18,7 +18,7 @@ class Agent
 };
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE: 
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM EXAMPLE: 
 // AGENT OF Sakoda inspired asynchronous AGENT BASE MODEL 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
 //*/////////////////////////////////////////////////////////////////////////////////////////

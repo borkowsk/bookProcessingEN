@@ -1,5 +1,5 @@
 /** Lotka-Volterra equation system.
- * See: //https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
+ * See: https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
  */
 
 float X=100; //x is the number of prey (for example, rabbits);
@@ -25,4 +25,4 @@ for(int i=0;i<N;i++)
 
 text("DONE",30,50);
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+//@date 2024 ( → https://github.com/borkowsk/bookProcessingEN)

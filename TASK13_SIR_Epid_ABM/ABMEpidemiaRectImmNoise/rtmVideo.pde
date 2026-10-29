@@ -13,7 +13,7 @@
 import com.hamoid.*; //And we import the necessary Processing library containing the VideoExport class
 
 VideoExport videoExport; //CLASS from Abe Pazos's VideoExport library - must be installed
-                        //http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
+                        // http://funprogramming.org/VideoExport-for-Processing/examples/basic/basic.pde
                         //And install the ffmpeg program for it to work
 int videoFramesFreq=0;           
 
@@ -65,5 +65,5 @@ void CloseVideo() //This is what we call when we want to close
 static boolean     videoExportEnabled=false; //initialization will set this to "true"
 
 //-/////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - MOVIE MAKER 
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: MOVIE MAKER 
 //-/////////////////////////////////////////////////////////////////////////////////////////

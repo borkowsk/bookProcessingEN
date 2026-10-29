@@ -8,4 +8,4 @@ for(int i=0;i<25;i++)
   println(a); // ... printed on the console
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

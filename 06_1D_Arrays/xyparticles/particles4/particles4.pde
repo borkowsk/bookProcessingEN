@@ -1,5 +1,5 @@
 /// RUNNING BUGS
-/// @date 2025-11-03
+/// 
 //*//////////////////
 
 final int   FR   = 10; //!< How many frames per second
@@ -89,4 +89,4 @@ void setup() // changes global y0,y,x,vx,vy
   }
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2025-11-03 ( → https://github.com/borkowsk/bookProcessingEN)

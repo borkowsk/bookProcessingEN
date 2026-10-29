@@ -1,6 +1,6 @@
 /// Bitwise tools for evolutionary algorithms.  
 //-//////////////////////////////////////////////
-/// @date 2026-10-23 (modified)
+/// @date 2026-10-23 ( → https://github.com/borkowsk/bookProcessingEN)
 // Commented using the Doxygen standard.
 
 /// Creates a hexadecimal string representation of a 32-bit integer.
@@ -363,6 +363,6 @@ void tests()
 }
 
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingEN
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: https://github.com/borkowsk/bookProcessingEN
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
 //_EOC

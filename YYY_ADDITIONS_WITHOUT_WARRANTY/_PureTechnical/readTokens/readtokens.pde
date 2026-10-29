@@ -88,4 +88,4 @@ void _Test1()
   if( a==b && b!=1) print( 'o' );
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026-10-16 ( →  https://github.com/borkowsk/bookProcessingEN)

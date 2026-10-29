@@ -37,4 +37,4 @@ for(float T=0;T<Tlimit;T+=Tstep) // float TIME used as a loop control variable!
   Y= Y + Tstep * (gamma*oldX*Y-delta*Y); //X has already new value, so we use oldX - old value of X
 }
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+//@date 2024 ( → https://github.com/borkowsk/bookProcessingEN)

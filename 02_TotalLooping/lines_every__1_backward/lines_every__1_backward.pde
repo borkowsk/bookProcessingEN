@@ -10,4 +10,4 @@ for(int i=255;i>=0;i--) // REPEAT 256 times (counting backwards)
   line(i,0,128,500); // only x changes, y==0
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

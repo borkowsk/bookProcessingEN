@@ -32,4 +32,4 @@ for(float T=0;T<1000;T+=Tstep) // TIME is used as steering variable!
   Y=Y + Tstep * (gamma*oldX*Y-delta*Y);
 }
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+//@date 2024 ( → https://github.com/borkowsk/bookProcessingEN)

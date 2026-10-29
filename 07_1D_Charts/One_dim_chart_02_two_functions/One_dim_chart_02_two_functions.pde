@@ -43,4 +43,4 @@ for(int k=0;k<1000;k++) //Przejście po wszystkich kolumnach pikseli
   point(k,w);            //Nakreślenie punktu w odpowiednim miejscu
 }
 
-// https://github.com/borkowsk/bookProcessingPL
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

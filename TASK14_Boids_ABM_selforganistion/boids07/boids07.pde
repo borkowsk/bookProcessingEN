@@ -8,7 +8,7 @@ final int     HM_BIRDS=60;    ///< how many birds
 final boolean TARGETED=false;  ///< Do they get their goals as part of initialization?
 final boolean VIEW_TARGETING=true; ///< Show lines for current targets?
 
-// Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
+/// Boids algorith parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
 final float   protectedRange=min(NORD_SOUTH,WEST_EAST)/30.0; ///< "Range where they fly away from others"
 final float   protectedRangeSquared=protectedRange*protectedRange;
 final float   visualRange=min(NORD_SOUTH,WEST_EAST)/15.0;   ///< "Range where they tend toward center of mass"
@@ -95,4 +95,4 @@ void exit()
   super.exit();       //What library superclass have to do at exit()
 }
 
-/// @date 2026-10-16 (modified)
+/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)

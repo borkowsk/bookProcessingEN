@@ -8,4 +8,4 @@ smooth(); // This is the default graphic state
 for(int i=0;i<500;i+=10) // REPEAT 50 times (every 10)
   line(i,i,0,500);
   
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

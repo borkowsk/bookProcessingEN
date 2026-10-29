@@ -6,4 +6,4 @@ strokeWeight(2);
 fill(64);
 ellipse(100,100, 85, 75);
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

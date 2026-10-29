@@ -70,6 +70,6 @@ void doStatisticsOnAgents(Agent[][] agents)           ///< global function
 }
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: STATISTICS LOG TEMPLATE
-// https://github.com/borkowsk/bookProcessingEN 
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM: STATISTICS LOG TEMPLATE
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN 
 //*/////////////////////////////////////////////////////////////////////////////////////////

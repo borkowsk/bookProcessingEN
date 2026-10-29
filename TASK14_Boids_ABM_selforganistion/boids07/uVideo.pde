@@ -1,6 +1,6 @@
 /// Tool for made video from simulation. ( "rtmVideo.pde" )
 /// @note This optional source file could be copied or linked from OPTIONALS directory.
-/// @date 2026-10-16 (Last modification)
+/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)
 //-////////////////////////////////////////////////////////////////////////////////////
 
 /// @defgroup Generally usable functions
@@ -124,7 +124,7 @@ void CloseVideo()                                                               
 }
 
 //*/////////////////////////////////////////////////////////////////////////////
-//*  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - OPTIONAL TOOLS 
+//*  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: OPTIONAL TOOLS 
 //*  - FUNCTIONS & CLASSES
 //*  https://github.com/borkowsk/sym4processing
 /// @}

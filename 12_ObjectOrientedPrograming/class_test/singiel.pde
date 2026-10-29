@@ -1,5 +1,5 @@
 /// Chaotic oscillator class. An example of a "class", a user-defined type.
-/// @date 2026-06-17 (last modification)
+/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)
 //-////////////////////////////////////////////////////////////////////////
 
 class singiel 
@@ -65,4 +65,4 @@ void next4couple(singiel F,singiel S)
 
 int tmp=0; //test!
 
-// https://github.com/borkowsk/bookProcessingEN/
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN/

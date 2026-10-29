@@ -15,4 +15,4 @@ rect(a-10,a-10,a+10,a+10);
 a=300;  // Assignment No. 3.
 rect(a-10,a-10,a+10,a+10);
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

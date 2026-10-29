@@ -12,4 +12,4 @@ for(int i=250;i>30;i-=2) // REPEAT BACKWARD every two times <=> i=i-2
    ellipse(width/2,height/2,i,i); // In the center of a window
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

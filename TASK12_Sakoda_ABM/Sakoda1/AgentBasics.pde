@@ -104,6 +104,6 @@ void  changeAgents(Agent[][] agents)
 
 //*//////////////////////////////////////////////////////////////////////////////////////////////////////////
 // BASIC INITIALISATION & EVERY STEP CHANGE
-// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM EXAMPLE 
-// https://github.com/borkowsk/bookProcessingEN 
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM EXAMPLE 
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN 
 //*//////////////////////////////////////////////////////////////////////////////////////////////////////////

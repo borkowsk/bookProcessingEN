@@ -7,4 +7,4 @@ if( a != 0 )
 //else
 //    print("It is impossible!"); // Uncomment this and try!
     
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

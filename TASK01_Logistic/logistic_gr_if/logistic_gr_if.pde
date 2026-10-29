@@ -22,4 +22,4 @@ for(int i=0;i<width;i++)
 
 text("R="+R,5,height-5);
 
-/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)

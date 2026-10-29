@@ -10,4 +10,4 @@ for(int i=0;i<width;i++)
   //line(i,height,i,height-a); //up
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

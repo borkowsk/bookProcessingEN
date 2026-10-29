@@ -1,6 +1,6 @@
 /** Sakoda inspired asynchronous AGENT BASE MODEL 
     which utilizes 1D or 2D dicrete geometry
-//https://github.com/borkowsk/bookProcessingEN
+// https://github.com/borkowsk/bookProcessingEN
 */
 
 
@@ -57,5 +57,5 @@ interface simulation_world
 };
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA 0.5 MAIN
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM SAKODA 0.5 MAIN
 //*/////////////////////////////////////////////////////////////////////////////////////////

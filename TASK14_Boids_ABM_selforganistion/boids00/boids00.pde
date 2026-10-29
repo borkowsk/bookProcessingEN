@@ -60,4 +60,4 @@ void setup()
   showBirds();
 }
 
-/// @date 2026-10-16 (initial)
+/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)

@@ -66,7 +66,7 @@ void draw3()
 }
 
 void draw4() 
-{ //https://processing.org/examples/noisewave.html
+{ // https://processing.org/examples/noisewave.html
   background(51);
 
   fill(255);

@@ -107,4 +107,4 @@ void changeStates()
 
 }
 
-/// @date 2026-10-16 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)

@@ -1,5 +1,5 @@
 // Using mouse position
-// src: https://openprocessing.org/sketch/825836/
+/// src: https://openprocessing.org/sketch/825836/
 
 void setup()
 {
@@ -24,4 +24,4 @@ void draw()
 		 }
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

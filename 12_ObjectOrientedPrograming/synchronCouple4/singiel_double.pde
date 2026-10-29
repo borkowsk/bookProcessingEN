@@ -108,4 +108,4 @@ void next4couple(singiel_double F,singiel_double S)
   S.next();
 }
 
-/// @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-06-17 ( → https://github.com/borkowsk/bookProcessingEN)

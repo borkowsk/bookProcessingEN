@@ -33,4 +33,4 @@ line(width/2,0,width/2,height);       //Oś Y
 line(width/2,0,width/2+5,10);        //Pół grotu Y
 line(width/2,0,width/2-5,10);        //Drugie pół grotu Y
 
-// https://github.com/borkowsk/bookProcessingPL
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

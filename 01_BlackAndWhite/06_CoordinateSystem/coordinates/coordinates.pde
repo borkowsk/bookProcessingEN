@@ -11,5 +11,5 @@ text("100•000",100,0);
 text("250•250",250,250);
 text("500•500",500,500);
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
 // bullet character: https://www.compart.com/en/unicode/U+2022

@@ -17,6 +17,6 @@ class Agent
 }
 
 //*/////////////////////////////////////////////////////////////////////////////////////////
-// https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM: AGENT OF SAKODA MODEL
-// https://github.com/borkowsk/bookProcessingEN 
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM: AGENT OF SAKODA MODEL
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN 
 //*/////////////////////////////////////////////////////////////////////////////////////////

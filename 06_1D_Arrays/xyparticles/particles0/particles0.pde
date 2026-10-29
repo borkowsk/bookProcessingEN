@@ -1,5 +1,5 @@
 /// RUNNING BUGS
-/// @date 2025-10-30
+//
 //*//////////////////
 
 final int   FR   = 10; // How many frames per second
@@ -54,4 +54,4 @@ void draw() // global h,x,v
   }
 }
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2025-11-03 ( → https://github.com/borkowsk/bookProcessingEN)

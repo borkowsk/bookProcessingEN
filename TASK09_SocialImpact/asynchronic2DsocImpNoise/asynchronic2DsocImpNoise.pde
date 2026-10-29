@@ -147,4 +147,4 @@ void status()
 }
 
 
-/// @date 2025-11-10 (https://github.com/borkowsk/bookProcessingEN/)
+/// @date 2025-11-10 ( → https://github.com/borkowsk/bookProcessingEN)

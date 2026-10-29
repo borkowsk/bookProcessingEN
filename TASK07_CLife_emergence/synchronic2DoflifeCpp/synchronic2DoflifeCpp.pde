@@ -180,4 +180,4 @@ void stepMonteCarlo() ///< globally visible
    }
 }
 
-/// @date 2026-06-16 (https://github.com/borkowsk/bookProcessingEN/tree/main/08_2D_cellular/_synchronic/)
+/// @date 2026-06-16 ( → https://github.com/borkowsk/bookProcessingEN)

@@ -33,4 +33,4 @@ for(int i=0;i<N;i++) //Why i? Maybe T?
   Y=Y + Tstep * (gamma*oldX*Y-delta*Y);
 }
 
-//@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+//@date 2024 ( → https://github.com/borkowsk/bookProcessingEN)

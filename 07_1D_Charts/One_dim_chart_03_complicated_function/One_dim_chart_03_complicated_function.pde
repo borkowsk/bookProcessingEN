@@ -32,4 +32,4 @@ for(int k=0;k<1000;k++)  //Przejście po wszystkich kolumnach pikseli
   //Wartości z konsoli można zaznaczyć (Ctrl-A) i przekopiować do schowka (Ctrl-C)
 }
 
-// https://github.com/borkowsk/bookProcessingPL
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

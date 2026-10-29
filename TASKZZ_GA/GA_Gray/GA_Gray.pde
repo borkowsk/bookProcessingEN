@@ -1,6 +1,6 @@
 /// A very simple genetic algorithm consisting only of mutations.
 //-//////////////////////////////////////////////////////////////
-/// @date 2026-10-23 (modified)
+/// @date 2026-10-23 ( → https://github.com/borkowsk/bookProcessingEN)
 
 import java.lang.Math;
 
@@ -156,6 +156,6 @@ void draw()
 }
 
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - https://github.com/borkowsk/bookProcessingEN
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: https://github.com/borkowsk/bookProcessingEN
 //-////////////////////////////////////////////////////////////////////////////////////////////////////////
 //_EOC

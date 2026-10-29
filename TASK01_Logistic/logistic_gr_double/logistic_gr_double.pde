@@ -15,4 +15,4 @@ for(int i=0;i<width;i++) //Whole window width.
 
 text("R="+str((float)(R)),5,height-10); //Change precision to float because `str` does not accepts double.
 
-/// @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)

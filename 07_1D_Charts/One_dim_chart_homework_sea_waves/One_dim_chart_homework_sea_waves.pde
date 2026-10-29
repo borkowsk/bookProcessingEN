@@ -57,5 +57,5 @@ void wykres()
 }
 
 
-// https://github.com/borkowsk/bookProcessingPL
-// @date 2026-10-07 (last modification)
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-07 ( → https://github.com/borkowsk/bookProcessingEN)

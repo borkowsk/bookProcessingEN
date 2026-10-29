@@ -12,5 +12,5 @@ for(int i=0;i<256;i+=10) // Repeat every 10
   arc(250, 250, 200, 200, radians(i-10),radians(i)); // Sectors
 }
 
-// http://processingwedukacji.blogspot.com
-// https://github.com/borkowsk/bookProcessingEN
+/// http://processingwedukacji.blogspot.com
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

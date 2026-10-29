@@ -7,7 +7,7 @@ final int     MAX_CEIL=100;    ///< maximum flight ceiling
 final int     HM_BIRDS=100;    ///< how many birds
 final boolean targeted=false;  ///< Do they get their goals as part of initialization?
 
-// Boids algorithm parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
+/// Boids algorithm parameters (see: https://people.ece.cornell.edu/land/courses/ece4760/labs/s2021/Boids/Boids.html)
 final float   protectedRange=min(NORD_SOUTH,EAST_WEST)/50.0; ///< "Range where they fly away from others"
 final float   protectedRangeSquared=protectedRange*protectedRange;
 final float   visualRange=min(NORD_SOUTH,EAST_WEST)/15.0;   ///< "Range where they tend toward center of mass"
@@ -72,4 +72,4 @@ void draw()
   decisions();
 }
 
-/// @date 2026-10-16 (modified)
+/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)

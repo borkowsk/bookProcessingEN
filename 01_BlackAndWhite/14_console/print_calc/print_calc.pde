@@ -6,4 +6,4 @@ print(a+10); //Here will be the calculation result!
 
 
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

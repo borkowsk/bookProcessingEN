@@ -3,4 +3,4 @@
 print("The first string on the console");
 print("... and the second");
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)

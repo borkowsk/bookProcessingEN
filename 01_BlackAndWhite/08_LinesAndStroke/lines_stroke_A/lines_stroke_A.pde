@@ -7,4 +7,4 @@ line( 85, 20, 85, 75);
 stroke(255);
 line( 85, 75, 30, 75);
 
-// https://github.com/borkowsk/bookProcessingEN
+/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
