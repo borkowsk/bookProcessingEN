@@ -1,21 +1,30 @@
-// Autorem implementacji w ALGO jest Magda Roszczyńska (jeszcze wtedy bez dr).
-// PRZETŁUMACZONE Z APLIKACJI Delphi NA Processing ZA POMOCĄ GEMINI
-// @details
-//   Gdy termit nie ma nic na plecach, idzie, sprawdza czy przed nim lub obok niego jest drewienko. 
-//   Jeżeli jest to z pewnym prawdopodobieństwem go bierze i idzie dalej.
-//   Jeżeli termit ma coś na plecach sprawdza, czy przed nim, lub obok niego jest podobne drewienko.
-//   Jeżeli jest to z pewnym prawdopodobieństwem zrzuca drewienko.
+/// @file
+/// @brief Ant sorting
+/// @details
+/// The implementation in ALGO was authored by Magda Roszczyńska (who did not yet 
+/// hold a PhD at the time). Then it was ported into Delphi, and then into Processing.
+/// Model definition:
+///  - When a termite is not carrying anything, it moves around and checks whether 
+///    there is a piece of wood in front of or next to it.
+///  - If it finds one, it picks it up with a certain probability and continues on its way.
+///  - If a termite is carrying something, it checks whether there is a similar 
+///    piece of wood in front of or next to it.
+///  - If it finds one, it drops the piece of wood with a certain probability.
+///
+/// TRANSLATED FROM A Delphi APPLICATION TO Processing USING GEMINI.
 
-int vis_frequency = 5; /* Every how many steps should I draw? */
-int n_termity = 10;
+
+int N_termits = 10;
 int Last = 65;
-int czas = 0;
-int Width = 10;
-int n_przedmiotow = 2; /* How many types of items? */
+int N_items = 4; /* How many types of items/"wood types"? */
 
-double gestosc = 0.2;
-double skret = 0.2;
-double w = 0.9; /* probability of leaving/taking an item */
+double Density = 0.2; /* the probability of a small piece of wood lying in a given location */
+double Change_prob = 0.2; /* probability of a change in the direction of movement */
+double w = 0.95; /* probability of leaving/taking an item */
+
+int Width = 10;
+int Frame_rate=1000; /* How many frames per second would we want? */
+int Vis_frequency = 5; /* Every how many simulation steps should I draw? */
 
 class termit {
   int x;
@@ -24,14 +33,14 @@ class termit {
   int c; /* What does a termite carry on its back? */
 }
 
-class lok {
+class direction {
   int x;
   int y;
 }
 
-int[][]  world  = new int[Last + 1][Last + 1];
-termit[] kopiec = new termit[n_termity + 1];
-lok[]    tablica_przejscia = new lok[4];
+int[][]     world = new int[Last + 1][Last + 1];
+termit[]    mound = new termit[N_termits + 1];        ///< termite mound or anthill
+direction[] transitions_table = new direction[4];
 
 int step = 0;
 
@@ -40,34 +49,36 @@ void settings() {
 }
 
 void setup() {
+  frameRate(Frame_rate);
+  
   for (int i = 0; i < 4; i++) {
-    tablica_przejscia[i] = new lok();
+    transitions_table[i] = new direction();
   }
-  for (int i = 1; i <= n_termity; i++) {
-    kopiec[i] = new termit();
+  for (int i = 1; i <= N_termits; i++) {
+    mound[i] = new termit();
   }
 
   step = 0;
-  init(world, kopiec);
+  init(world, mound);
 }
 
-int koloruj_r(int n) {
+int color_in_r(int n) {
   if (n > 0) {
-   return round(n * 255.0 / n_przedmiotow);
+   return round(n * 255.0 / N_items);
   } else {
    return 255;
   }
 }
 
-int koloruj_g(int n) {
+int color_in_g(int n) {
   if (n > 0) {
-   return 255 - round(n * 255.0 / n_przedmiotow);
+   return 255 - round(n * 255.0 / N_items);
   } else {
    return 255;
   }
 }
 
-int koloruj_b(int n) {
+int color_in_b(int n) {
   if (n > 0) {
    return 255;
   } else {
@@ -75,8 +86,8 @@ int koloruj_b(int n) {
   }
 }
 
-void rysowanie(int[][] world_arg, termit[] kopiec_arg) {
-int i, j, m, k;
+void drawing(int[][] world_arg, termit[] mound_arg) {
+ int i, j, m, k;
  m = 0;
  k = 0;
  for (i = 0; i <= Last; i++) {
@@ -86,7 +97,7 @@ int i, j, m, k;
    } else {
     if (world_arg[i][j] > 0) {
      m = m + 1;
-     if (kopiec_arg[world_arg[i][j]].c > 0) {
+     if (mound_arg[world_arg[i][j]].c > 0) {
       k = k + 1;
      }
     }
@@ -98,10 +109,10 @@ int i, j, m, k;
   for (j = 0; j <= Last; j++) {
     if (world_arg[i][j] <= 0) {
      stroke(255, 255, 255);
-     fill(koloruj_r(-world_arg[i][j]), koloruj_g(-world_arg[i][j]), koloruj_b(-world_arg[i][j]));
+     fill(color_in_r(-world_arg[i][j]), color_in_g(-world_arg[i][j]), color_in_b(-world_arg[i][j]));
     } else {
      stroke(0, 0, 0);
-     fill(koloruj_r(kopiec_arg[world_arg[i][j]].c), koloruj_g(kopiec_arg[world_arg[i][j]].c), koloruj_b(kopiec_arg[world_arg[i][j]].c));
+     fill(color_in_r(mound_arg[world_arg[i][j]].c), color_in_g(mound_arg[world_arg[i][j]].c), color_in_b(mound_arg[world_arg[i][j]].c));
     }
     rect(Width * i, Width * j, Width, Width);
    }
@@ -113,325 +124,325 @@ int i, j, m, k;
 
  fill(0);
  textSize(12);
- text("Liczba termitów: " + m, 10, Last * Width + 25);
- text("Liczba drewienek: " + k, 10, Last * Width + 45);
+ text("Number of termites: " + m, 10, Last * Width + 25);
+ text("Number of items: " + k, 10, Last * Width + 45);
 }
 
-void init(int[][] world_arg, termit[] kopiec_arg) {
-int i, j, x, y;
- tablica_przejscia[0].x = 0;
- tablica_przejscia[0].y = -1;
- tablica_przejscia[1].x = 1;
- tablica_przejscia[1].y = 0;
- tablica_przejscia[2].x = 0;
- tablica_przejscia[2].y = 1;
- tablica_przejscia[3].x = -1;
- tablica_przejscia[3].y = 0;
+void init(int[][] world_arg, termit[] mound_arg) {
+ int i, j, x, y;
+ transitions_table[0].x = 0;
+ transitions_table[0].y = -1;
+ transitions_table[1].x = 1;
+ transitions_table[1].y = 0;
+ transitions_table[2].x = 0;
+ transitions_table[2].y = 1;
+ transitions_table[3].x = -1;
+ transitions_table[3].y = 0;
 
  for (i = 0; i <= Last; i++) {
   for (j = 0; j <= Last; j++) {
-   if (random(1) < gestosc) {
-    world_arg[i][j] = (int(random(n_przedmiotow)) + 1) * (-1);
+   if (random(1) < Density) {
+    world_arg[i][j] = (int(random(N_items)) + 1) * (-1);
    } else {
     world_arg[i][j] = 0;
    }
   }
  }
 
- for (i = 1; i <= n_termity; i++) {
+ for (i = 1; i <= N_termits; i++) {
   do {
     x = int(random(Last + 1));
     y = int(random(Last + 1));
    } while (world_arg[x][y] != 0);
    world_arg[x][y] = i;
-   kopiec_arg[i].x = x;
-   kopiec_arg[i].y = y;
-   kopiec_arg[i].c = 0;
-   kopiec_arg[i].k = int(random(4));
+   mound_arg[i].x = x;
+   mound_arg[i].y = y;
+   mound_arg[i].c = 0;
+   mound_arg[i].k = int(random(4));
   }
 
-rysowanie(world_arg, kopiec_arg);
+ drawing(world_arg, mound_arg);
 }
 
-void step(int[][] world_arg, termit[] kopiec_arg) {
-int k_idx, i, g, h, l, t;
- for (k_idx = 1; k_idx <= n_termity; k_idx++) {
-   i = int(random(n_termity)) + 1;
-   g = -((world_arg[(kopiec_arg[i].x + tablica_przejscia[kopiec_arg[i].k].x + Last + 1) % (Last + 1)][(kopiec_arg[i].y + tablica_przejscia[kopiec_arg[i].k].y + Last + 1) % (Last + 1)]));
-   h = -(world_arg[(kopiec_arg[i].x + tablica_przejscia[((kopiec_arg[i].k + 1) % 4)].x + Last + 1) % (Last + 1)][(kopiec_arg[i].y + tablica_przejscia[((kopiec_arg[i].k + 1) % 4)].y + Last + 1) % (Last + 1)]);
-   l = -(world_arg[(kopiec_arg[i].x + tablica_przejscia[((kopiec_arg[i].k + 3) % 4)].x + Last + 1) % (Last + 1)][(kopiec_arg[i].y + tablica_przejscia[((kopiec_arg[i].k + 3) % 4)].y + Last + 1) % (Last + 1)]);
-   t = -(world_arg[(kopiec_arg[i].x + tablica_przejscia[((kopiec_arg[i].k + 2) % 4)].x + Last + 1) % (Last + 1)][(kopiec_arg[i].y + tablica_przejscia[((kopiec_arg[i].k + 2) % 4)].y + Last + 1) % (Last + 1)]);
+void step(int[][] world_arg, termit[] mound_arg) {
+ int k_idx, i, g, h, l, t;
+ for (k_idx = 1; k_idx <= N_termits; k_idx++) {
+   i = int(random(N_termits)) + 1;
+   g = -((world_arg[(mound_arg[i].x + transitions_table[mound_arg[i].k].x + Last + 1) % (Last + 1)][(mound_arg[i].y + transitions_table[mound_arg[i].k].y + Last + 1) % (Last + 1)]));
+   h = -(world_arg[(mound_arg[i].x + transitions_table[((mound_arg[i].k + 1) % 4)].x + Last + 1) % (Last + 1)][(mound_arg[i].y + transitions_table[((mound_arg[i].k + 1) % 4)].y + Last + 1) % (Last + 1)]);
+   l = -(world_arg[(mound_arg[i].x + transitions_table[((mound_arg[i].k + 3) % 4)].x + Last + 1) % (Last + 1)][(mound_arg[i].y + transitions_table[((mound_arg[i].k + 3) % 4)].y + Last + 1) % (Last + 1)]);
+   t = -(world_arg[(mound_arg[i].x + transitions_table[((mound_arg[i].k + 2) % 4)].x + Last + 1) % (Last + 1)][(mound_arg[i].y + transitions_table[((mound_arg[i].k + 2) % 4)].y + Last + 1) % (Last + 1)]);
 
-   if (kopiec_arg[i].c == 0) {
+   if (mound_arg[i].c == 0) {
        if ((g > 0) && (h <= 0) && (l <= 0)) {
         if (random(1) < w) {
-          world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-          kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[kopiec_arg[i].k].x + Last + 1) % (Last + 1);
-          kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[kopiec_arg[i].k].y + Last + 1) % (Last + 1);
-          kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-          world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+          world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+          mound_arg[i].x = (mound_arg[i].x + transitions_table[mound_arg[i].k].x + Last + 1) % (Last + 1);
+          mound_arg[i].y = (mound_arg[i].y + transitions_table[mound_arg[i].k].y + Last + 1) % (Last + 1);
+          mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+          world_arg[mound_arg[i].x][mound_arg[i].y] = i;
          } else {
           if (random(1) < 0.5) {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 1) % 4;
           } else {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 3) % 4;
           }
          }
        } else if ((g <= 0) && (h > 0) && (l <= 0)) {
          if (random(1) < w) {
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-           kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 1) % 4].x + Last + 1) % (Last + 1);
-           kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 1) % 4].y + Last + 1) % (Last + 1);
-           kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-           kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+           world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+           mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 1) % 4].x + Last + 1) % (Last + 1);
+           mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 1) % 4].y + Last + 1) % (Last + 1);
+           mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+           mound_arg[i].k = (mound_arg[i].k + 1) % 4;
+           world_arg[mound_arg[i].x][mound_arg[i].y] = i;
           } else {
           if (random(1) < 0.5) {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 1) % 4;
           } else {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 3) % 4;
           }
          }
         } else if ((g <= 0) && (h <= 0) && (l > 0)) {
           if (random(1) < w) {
-            world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-            kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 3) % 4].x + Last + 1) % (Last + 1);
-            kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 3) % 4].y + Last + 1) % (Last + 1);
-            kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-            kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
-            world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+            world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+            mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 3) % 4].x + Last + 1) % (Last + 1);
+            mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 3) % 4].y + Last + 1) % (Last + 1);
+            mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+            mound_arg[i].k = (mound_arg[i].k + 3) % 4;
+            world_arg[mound_arg[i].x][mound_arg[i].y] = i;
            } else {
            if (random(1) < 0.5) {
-            kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+            mound_arg[i].k = (mound_arg[i].k + 1) % 4;
            } else {
-            kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+            mound_arg[i].k = (mound_arg[i].k + 3) % 4;
            }
           }
          } else if ((g > 0) && (h > 0) && (l <= 0)) {
            if (random(1) < w) {
             if (random(1) < 0.5) {
-              world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-              kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[kopiec_arg[i].k].x + Last + 1) % (Last + 1);
-              kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[kopiec_arg[i].k].y + Last + 1) % (Last + 1);
-              kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-              world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+              world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+              mound_arg[i].x = (mound_arg[i].x + transitions_table[mound_arg[i].k].x + Last + 1) % (Last + 1);
+              mound_arg[i].y = (mound_arg[i].y + transitions_table[mound_arg[i].k].y + Last + 1) % (Last + 1);
+              mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+              world_arg[mound_arg[i].x][mound_arg[i].y] = i;
              } else {
-              world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-              kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 1) % 4].x + Last + 1) % (Last + 1);
-              kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 1) % 4].y + Last + 1) % (Last + 1);
-              kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-              kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
-              world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+              world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+              mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 1) % 4].x + Last + 1) % (Last + 1);
+              mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 1) % 4].y + Last + 1) % (Last + 1);
+              mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+              mound_arg[i].k = (mound_arg[i].k + 1) % 4;
+              world_arg[mound_arg[i].x][mound_arg[i].y] = i;
              }
            } else {
             if (random(1) < 0.5) {
-             kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+             mound_arg[i].k = (mound_arg[i].k + 1) % 4;
             } else {
-             kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+             mound_arg[i].k = (mound_arg[i].k + 3) % 4;
             }
            }
           } else if ((g > 0) && (h <= 0) && (l > 0)) {
             if (random(1) < w) {
              if (random(1) < 0.5) {
-              world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-              kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[kopiec_arg[i].k].x + Last + 1) % (Last + 1);
-              kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[kopiec_arg[i].k].y + Last + 1) % (Last + 1);
-              kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-              world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+              world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+              mound_arg[i].x = (mound_arg[i].x + transitions_table[mound_arg[i].k].x + Last + 1) % (Last + 1);
+              mound_arg[i].y = (mound_arg[i].y + transitions_table[mound_arg[i].k].y + Last + 1) % (Last + 1);
+              mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+              world_arg[mound_arg[i].x][mound_arg[i].y] = i;
              } else {
-              world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-              kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 3) % 4].x + Last + 1) % (Last + 1);
-              kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 3) % 4].y + Last + 1) % (Last + 1);
-              kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-              kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
-              world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+              world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+              mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 3) % 4].x + Last + 1) % (Last + 1);
+              mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 3) % 4].y + Last + 1) % (Last + 1);
+              mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+              mound_arg[i].k = (mound_arg[i].k + 3) % 4;
+              world_arg[mound_arg[i].x][mound_arg[i].y] = i;
              }
             } else {
              if (random(1) < 0.5) {
-              kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+              mound_arg[i].k = (mound_arg[i].k + 1) % 4;
              } else {
-              kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+              mound_arg[i].k = (mound_arg[i].k + 3) % 4;
              }
             }
            } else if ((g <= 0) && (h > 0) && (l > 0)) {
              if (random(1) < w) {
               if (random(1) < 0.5) {
-                world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-                kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 1) % 4].x + Last + 1) % (Last + 1);
-                kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 1) % 4].y + Last + 1) % (Last + 1);
-                kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-                kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
-                world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+                world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+                mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 1) % 4].x + Last + 1) % (Last + 1);
+                mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 1) % 4].y + Last + 1) % (Last + 1);
+                mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+                mound_arg[i].k = (mound_arg[i].k + 1) % 4;
+                world_arg[mound_arg[i].x][mound_arg[i].y] = i;
                } else {
-                world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-                kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 3) % 4].x + Last + 1) % (Last + 1);
-                kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 3) % 4].y + Last + 1) % (Last + 1);
-                kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-                kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
-                world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+                world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+                mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 3) % 4].x + Last + 1) % (Last + 1);
+                mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 3) % 4].y + Last + 1) % (Last + 1);
+                mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+                mound_arg[i].k = (mound_arg[i].k + 3) % 4;
+                world_arg[mound_arg[i].x][mound_arg[i].y] = i;
                }
               } else {
               if (random(1) < 0.5) {
-               kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+               mound_arg[i].k = (mound_arg[i].k + 1) % 4;
               } else {
-               kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+               mound_arg[i].k = (mound_arg[i].k + 3) % 4;
               }
              }
             } else if ((g > 0) && (h > 0) && (l > 0)) {
               if (random(1) < w) {
                if (random(1) < 0.33) {
-                  world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-                  kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[kopiec_arg[i].k].x + Last + 1) % (Last + 1);
-                  kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[kopiec_arg[i].k].y + Last + 1) % (Last + 1);
-                  kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-                  world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+                  world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+                  mound_arg[i].x = (mound_arg[i].x + transitions_table[mound_arg[i].k].x + Last + 1) % (Last + 1);
+                  mound_arg[i].y = (mound_arg[i].y + transitions_table[mound_arg[i].k].y + Last + 1) % (Last + 1);
+                  mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+                  world_arg[mound_arg[i].x][mound_arg[i].y] = i;
                  } else if (random(1) > 0.66) {
-                   world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-                   kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 3) % 4].x + Last + 1) % (Last + 1);
-                   kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 3) % 4].y + Last + 1) % (Last + 1);
-                   kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-                   kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
-                   world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+                   world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+                   mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 3) % 4].x + Last + 1) % (Last + 1);
+                   mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 3) % 4].y + Last + 1) % (Last + 1);
+                   mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+                   mound_arg[i].k = (mound_arg[i].k + 3) % 4;
+                   world_arg[mound_arg[i].x][mound_arg[i].y] = i;
                   } else {
-                   world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-                   kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 1) % 4].x + Last + 1) % (Last + 1);
-                   kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 1) % 4].y + Last + 1) % (Last + 1);
-                   kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-                   kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
-                   world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+                   world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+                   mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 1) % 4].x + Last + 1) % (Last + 1);
+                   mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 1) % 4].y + Last + 1) % (Last + 1);
+                   mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+                   mound_arg[i].k = (mound_arg[i].k + 1) % 4;
+                   world_arg[mound_arg[i].x][mound_arg[i].y] = i;
                   }
                } else {
                if (random(1) < 0.5) {
-                kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+                mound_arg[i].k = (mound_arg[i].k + 1) % 4;
                } else {
-                kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+                mound_arg[i].k = (mound_arg[i].k + 3) % 4;
                }
               }
              } else if ((g == 0) && (h <= 0) && (l <= 0)) {
-               world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-               kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[kopiec_arg[i].k].x + Last + 1) % (Last + 1);
-               kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[kopiec_arg[i].k].y + Last + 1) % (Last + 1);
-               world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
-               if (random(1) < skret) {
+               world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+               mound_arg[i].x = (mound_arg[i].x + transitions_table[mound_arg[i].k].x + Last + 1) % (Last + 1);
+               mound_arg[i].y = (mound_arg[i].y + transitions_table[mound_arg[i].k].y + Last + 1) % (Last + 1);
+               world_arg[mound_arg[i].x][mound_arg[i].y] = i;
+               if (random(1) < Change_prob) {
                  if (random(1) < 0.5) {
-                  kopiec_arg[i].k = ((kopiec_arg[i].k + 1) % 4);
+                  mound_arg[i].k = ((mound_arg[i].k + 1) % 4);
                  } else {
-                  kopiec_arg[i].k = ((kopiec_arg[i].k + 3) % 4);
+                  mound_arg[i].k = ((mound_arg[i].k + 3) % 4);
                  }
                }
               } else {
                if (random(1) < 0.5) {
-                kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+                mound_arg[i].k = (mound_arg[i].k + 1) % 4;
                } else {
-                kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+                mound_arg[i].k = (mound_arg[i].k + 3) % 4;
                }
               }
     } else {
-     if ((g == kopiec_arg[i].c) || (h == kopiec_arg[i].c) || (l == kopiec_arg[i].c)) {
+     if ((g == mound_arg[i].c) || (h == mound_arg[i].c) || (l == mound_arg[i].c)) {
       if (random(1) < w) {
          if (t < 0) {
           if (random(1) < 0.5) {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 1) % 4;
           } else {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 3) % 4;
           }
          } else {
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = -kopiec_arg[i].c;
-           kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 2) % 4].x + Last + 1) % (Last + 1);
-           kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 2) % 4].y + Last + 1) % (Last + 1);
-           kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-           kopiec_arg[i].k = (kopiec_arg[i].k + 2) % 4;
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+           world_arg[mound_arg[i].x][mound_arg[i].y] = -mound_arg[i].c;
+           mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 2) % 4].x + Last + 1) % (Last + 1);
+           mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 2) % 4].y + Last + 1) % (Last + 1);
+           mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+           mound_arg[i].k = (mound_arg[i].k + 2) % 4;
+           world_arg[mound_arg[i].x][mound_arg[i].y] = i;
           }
        } else {
        if (random(1) < 0.5) {
-        kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+        mound_arg[i].k = (mound_arg[i].k + 1) % 4;
        } else {
-        kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+        mound_arg[i].k = (mound_arg[i].k + 3) % 4;
        }
       }
-     } else if ((g == 0) && (h != kopiec_arg[i].c) && (l != kopiec_arg[i].c)) {
+     } else if ((g == 0) && (h != mound_arg[i].c) && (l != mound_arg[i].c)) {
        if (random(1) > w) {
-        world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = -kopiec_arg[i].c;
-        kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[kopiec_arg[i].k].x + Last + 1) % (Last + 1);
-        kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[kopiec_arg[i].k].y + Last + 1) % (Last + 1);
-        kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-        world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+        world_arg[mound_arg[i].x][mound_arg[i].y] = -mound_arg[i].c;
+        mound_arg[i].x = (mound_arg[i].x + transitions_table[mound_arg[i].k].x + Last + 1) % (Last + 1);
+        mound_arg[i].y = (mound_arg[i].y + transitions_table[mound_arg[i].k].y + Last + 1) % (Last + 1);
+        mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+        world_arg[mound_arg[i].x][mound_arg[i].y] = i;
         } else {
-         world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = 0;
-         kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[kopiec_arg[i].k].x + Last + 1) % (Last + 1);
-         kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[kopiec_arg[i].k].y + Last + 1) % (Last + 1);
-         world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+         world_arg[mound_arg[i].x][mound_arg[i].y] = 0;
+         mound_arg[i].x = (mound_arg[i].x + transitions_table[mound_arg[i].k].x + Last + 1) % (Last + 1);
+         mound_arg[i].y = (mound_arg[i].y + transitions_table[mound_arg[i].k].y + Last + 1) % (Last + 1);
+         world_arg[mound_arg[i].x][mound_arg[i].y] = i;
         }
       } else if (g < 0) {
         if (t < 0) {
          if (random(1) < 0.5) {
-          kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+          mound_arg[i].k = (mound_arg[i].k + 1) % 4;
          } else {
-          kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+          mound_arg[i].k = (mound_arg[i].k + 3) % 4;
          }
         } else {
          if (random(1) > w) {
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = -kopiec_arg[i].c;
-           kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 2) % 4].x + Last + 1) % (Last + 1);
-           kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 2) % 4].y + Last + 1) % (Last + 1);
-           kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-           kopiec_arg[i].k = (kopiec_arg[i].k + 2) % 4;
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+           world_arg[mound_arg[i].x][mound_arg[i].y] = -mound_arg[i].c;
+           mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 2) % 4].x + Last + 1) % (Last + 1);
+           mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 2) % 4].y + Last + 1) % (Last + 1);
+           mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+           mound_arg[i].k = (mound_arg[i].k + 2) % 4;
+           world_arg[mound_arg[i].x][mound_arg[i].y] = i;
           } else {
           if (random(1) < 0.5) {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 1) % 4;
           } else {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 3) % 4;
           }
          }
         }
        } else if (t >= 0) {
          if (random(1) > w) {
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = -kopiec_arg[i].c;
-           kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[(kopiec_arg[i].k + 2) % 4].x + Last + 1) % (Last + 1);
-           kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[(kopiec_arg[i].k + 2) % 4].y + Last + 1) % (Last + 1);
-           kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-           kopiec_arg[i].k = (kopiec_arg[i].k + 2) % 4;
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+           world_arg[mound_arg[i].x][mound_arg[i].y] = -mound_arg[i].c;
+           mound_arg[i].x = (mound_arg[i].x + transitions_table[(mound_arg[i].k + 2) % 4].x + Last + 1) % (Last + 1);
+           mound_arg[i].y = (mound_arg[i].y + transitions_table[(mound_arg[i].k + 2) % 4].y + Last + 1) % (Last + 1);
+           mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+           mound_arg[i].k = (mound_arg[i].k + 2) % 4;
+           world_arg[mound_arg[i].x][mound_arg[i].y] = i;
           } else {
           if (random(1) < 0.5) {
-           kopiec_arg[i].k = ((kopiec_arg[i].k + 1) % 4);
+           mound_arg[i].k = ((mound_arg[i].k + 1) % 4);
           } else {
-           kopiec_arg[i].k = ((kopiec_arg[i].k + 3) % 4);
+           mound_arg[i].k = ((mound_arg[i].k + 3) % 4);
           }
          }
         } else {
          if (random(1) < w) {
           if (random(1) < 0.5) {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 1) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 1) % 4;
           } else {
-           kopiec_arg[i].k = (kopiec_arg[i].k + 3) % 4;
+           mound_arg[i].k = (mound_arg[i].k + 3) % 4;
           }
          } else {
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = -kopiec_arg[i].c;
-           kopiec_arg[i].x = (kopiec_arg[i].x + tablica_przejscia[kopiec_arg[i].k].x + Last + 1) % (Last + 1);
-           kopiec_arg[i].y = (kopiec_arg[i].y + tablica_przejscia[kopiec_arg[i].k].y + Last + 1) % (Last + 1);
-           kopiec_arg[i].c = -world_arg[kopiec_arg[i].x][kopiec_arg[i].y];
-           world_arg[kopiec_arg[i].x][kopiec_arg[i].y] = i;
+           world_arg[mound_arg[i].x][mound_arg[i].y] = -mound_arg[i].c;
+           mound_arg[i].x = (mound_arg[i].x + transitions_table[mound_arg[i].k].x + Last + 1) % (Last + 1);
+           mound_arg[i].y = (mound_arg[i].y + transitions_table[mound_arg[i].k].y + Last + 1) % (Last + 1);
+           mound_arg[i].c = -world_arg[mound_arg[i].x][mound_arg[i].y];
+           world_arg[mound_arg[i].x][mound_arg[i].y] = i;
           }
      }
-  }
+   }
  }
 }
 
 void draw() {
-  if (step % vis_frequency == 0) {
-    rysowanie(world, kopiec);
+  if (step % Vis_frequency == 0) {
+    drawing(world, mound);
     fill(255);
     stroke(255);
     rect(10, Last * Width + 60, 150, 15);
     fill(0);
     textSize(12);
-    text("Krok: " + step, 10, Last * Width + 70);
+    text("Step: " + step, 10, Last * Width + 70);
   }
 
-  step(world, kopiec);
+  step(world, mound);
   step = step + 1;
 }
 
