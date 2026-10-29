@@ -1,4 +1,4 @@
-/// decisions and actions of birds
+/// Decisions and actions of birds.
 void decisions()
 {
    for(int i=0;i<HM_BIRDS;i++)
@@ -18,7 +18,7 @@ int signum(float v)
   else return 0;
 }
 
-/// simple target orientation
+/// Simple target orientation.
 void thinkAndDoTarget(Bird me)
 {
   float dx=me.tx-me.x;
@@ -175,4 +175,4 @@ void thinkAndDoBoids(Bird boid,int my_index)
 }
 
 
-/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

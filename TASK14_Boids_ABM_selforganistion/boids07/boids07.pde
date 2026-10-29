@@ -27,7 +27,7 @@ final float   southMargin=NORD_SOUTH-margin;
 final float   groundMargin=max(protectedRange,MAX_CEIL*0.05);
 final float   ceilMargin=MAX_CEIL*0.95;
 
-ArrayList<Bird> birds;         ///< all our birds in JAVA like container
+ArrayList<Bird> birds;         ///< All our birds in JAVA like container.
 
 void initBirds()
 {
@@ -36,6 +36,7 @@ void initBirds()
     birds.add(new Bird(NORD_SOUTH,WEST_EAST,MAX_CEIL,TARGETED));
 }
 
+/// Visualisation.
 /// @note We assume that the birds are always properly sorted in terms of height.
 void showBirds()
 {
@@ -66,9 +67,10 @@ void setup()
   decisions();
   frameRate(25); // Slowly at first
   println("protectedRange:",protectedRange,"visualRange:",visualRange);
+  
   // Comment out the two lines below if you do not need the video.
-  initVideoExport(this,"boids.mp4",25);
-  FirstVideoFrame();
+  //initVideoExport(this,"boids.mp4",25);
+  //FirstVideoFrame();
 }
 
 void draw()
@@ -95,4 +97,4 @@ void exit()
   super.exit();       //What library superclass have to do at exit()
 }
 
-/// @date 2026-10-16 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

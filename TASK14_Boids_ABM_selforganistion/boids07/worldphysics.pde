@@ -1,4 +1,4 @@
-/// Birds' decisions and actions have physical consequences
+/// Birds' decisions and actions have physical consequences.
 void moveBirds()
 {
    for(int i=0;i<HM_BIRDS;i++)
@@ -23,4 +23,4 @@ void moveBirds()
    }
 }
 
-/// @date 2026-10-28 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
