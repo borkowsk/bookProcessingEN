@@ -301,3 +301,8 @@ String getFilename() {
          (MONTE_CARLO ? "M" : "") +
          ".csv";
 }
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

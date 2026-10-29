@@ -1,3 +1,8 @@
+
+
+
+
+
 # Identifiers changing map (from Polish version)
 
 ## Oto propozycja anglojęzycznych odpowiedników dla polskich identyfikatorów 
@@ -104,3 +109,8 @@ W KooperujRywalizuj / KoopHelper:
 - KosztKrokuSpinEditChange $\rightarrow$ onStepCostChangedOptimumZapasuSpinEditChange $\rightarrow$ onOptimumReserveChanged
 - WyplataSpinEdit00Change $\ldots$ WyplataSpinEdit11Change $\rightarrow$ onPayoff00Changed $\ldots$ onPayoff11Changed
 - PoziomSzumuEditChange $\rightarrow$ onNoiseLevelChanged
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
+
+

@@ -7,4 +7,6 @@ smooth(); // Line smoothing ("anti-aliasing")
 for(int i=0;i<300;i+=10) // REPEAT 30 TIMES EVERY TEN!
   rect(i-500,i,500,500); // Drawing a sheet of paper
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

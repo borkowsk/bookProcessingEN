@@ -189,3 +189,9 @@ void exit() //it is called whenever a window is closed.
   println("Thank You");
   super.exit(); //What library superclass have to do at exit
 } 
+
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

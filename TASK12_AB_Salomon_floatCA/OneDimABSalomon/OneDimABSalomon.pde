@@ -211,3 +211,9 @@ void draw() {
   text("Number of A = " + totalA + "   Current MaxB = " + maxB, 10, height - 10);
   drawScale(WORLD_SIZE + 10, 0, 20, WORLD_SIZE, maxAll);
 }
+
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

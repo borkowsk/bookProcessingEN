@@ -191,3 +191,9 @@ void exit() {
   println("Dziękuje i polecam się na przyszłość");
   super.exit();
 }
+
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

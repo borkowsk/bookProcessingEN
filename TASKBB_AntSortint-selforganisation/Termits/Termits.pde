@@ -1,11 +1,10 @@
-/* Autorem implementacji w ALGO jest Magda Roszczyńska (jeszcze wtedy bez dr).
-   PRZETŁUMACZONE Z APLIKACJI Delphi NA Processing ZA POMOCĄ GEMINI
-   
-   Gdy termit nie ma nic na plecach, idzie, sprawdza czy przed nim lub obok niego jest drewienko. 
-   Jeżeli jest to z pewnym prawdopodobieństwem go bierze i idzie dalej.
-   Jeżeli termit ma coś na plecach sprawdza, czy przed nim, lub obok niego jest podobne drewienko.
-   Jeżeli jest to z pewnym prawdopodobieństwem zrzuca drewienko 
-*/
+// Autorem implementacji w ALGO jest Magda Roszczyńska (jeszcze wtedy bez dr).
+// PRZETŁUMACZONE Z APLIKACJI Delphi NA Processing ZA POMOCĄ GEMINI
+// @details
+//   Gdy termit nie ma nic na plecach, idzie, sprawdza czy przed nim lub obok niego jest drewienko. 
+//   Jeżeli jest to z pewnym prawdopodobieństwem go bierze i idzie dalej.
+//   Jeżeli termit ma coś na plecach sprawdza, czy przed nim, lub obok niego jest podobne drewienko.
+//   Jeżeli jest to z pewnym prawdopodobieństwem zrzuca drewienko.
 
 int wizual = 5; /* Co ile kroków rysować? */
 int n_termity = 10;
@@ -435,3 +434,9 @@ void draw() {
   krok(world, kopiec);
   step = step + 1;
 }
+
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

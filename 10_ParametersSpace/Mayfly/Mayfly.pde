@@ -182,3 +182,8 @@ void setup() {
 //void draw() {
   // Drawing is already done in setup()
 //}
+
+
+
+
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
