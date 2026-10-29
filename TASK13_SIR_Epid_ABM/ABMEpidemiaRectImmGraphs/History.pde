@@ -183,3 +183,8 @@ void dottedLine(float x1, float y1, float x2, float y2, float steps)
    point(x,y);
  }
 } 
+
+//-////////////////////////////////////////////////////////////////////////////
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
+//-////////////////////////////////////////////////////////////////////////////

@@ -5,7 +5,7 @@
 // Generalny pomysł jest taki, że mamy miasto podzielone drogami, złożone z obszarów 
 // mieszkalnych (jasne) i miejsc pracy (szare).
 // Ci sami agenci na zmianę są w domu lub w pracy, i wszędzie mogą zarazić się przez 
-// kontakt. Stąd jeden krok symulacji to pół dnia - parzyste kroki w pracy, nieparzyste 
+// contact. Thus, one simulation step represents half a day. - even-numbered steps in the work, nieparzyste 
 // w domu, chyba że agent nie ma pracy.
 //
 // Właściwości danego wirusa są opisane parametrami symulacji.
@@ -18,8 +18,8 @@ int side=200; //LENGTH OF THE SIDE OF THE WORLD - PIONOWEGO. Poziomy jest x2
 float density=0.66; //Population density in "residential areas"
                            
 final float  PDeath=0.15;     //Średnie prawdopodobieństwo śmierci w danym KROKU(12h!) 
-                              //choroby. Teraz krok to 12 godzin.
-final int    Duration=14;     //Infection duration W krokach symulacji. 
+                              //choroby. Now the step is 12 hours.
+final int    Duration=14;     //Infection duration (in simulation steps). 
                               //Krok to teraz  12 godzin, czyli default to 7 dni.
 //float PTransfer=???;        //Prawdopodobieństwo zarażenia agenta w pojedynczej
                               //interakcji zależy od indywidualnej wartości `immunity`!
@@ -147,4 +147,5 @@ void writeStatusLine()
 
 //-/////////////////////////////////////////////////////////////////////////////////////////
 /// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM MAIN TEMPLATE
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
 //-/////////////////////////////////////////////////////////////////////////////////////////

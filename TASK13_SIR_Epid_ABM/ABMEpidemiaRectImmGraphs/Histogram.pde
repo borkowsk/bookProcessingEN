@@ -8,7 +8,7 @@ void histogram(Agent[][] agents,float startx,float starty,float hight)
   int NumOfBaskets=100;
   int Basket[]=new int[NumOfBaskets+1];
   int N=0; //Licznik żywych
-  //int Max=0; //Albo Max resetowany dla każdego kroku
+  //int Max=0; //Or Max reset for each step
   Agent curra; //Pomocniczy uchwyt agenta
   
   //Zliczanie 
@@ -41,3 +41,8 @@ void histogram(Agent[][] agents,float startx,float starty,float hight)
    fill(random(255),random(255),random(255));
    text("N:"+N+"\nMax:"+Max,startx+NumOfBaskets,starty);
 }
+
+//-////////////////////////////////////////////////////////////////////////////
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
+//-////////////////////////////////////////////////////////////////////////////

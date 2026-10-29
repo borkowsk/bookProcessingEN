@@ -10,7 +10,7 @@ final String IniFile = "";    /* "2DCA_dane.txt"; */    /* Data file name */
 
 int[][] Swiat = new int[Last + 1][Last + 1]; 
 /* A global variable representing the World */ 
-int krok; 
+int step; 
 
 /* VARIOUS INITIALIZATION FUNCTIONS FOR A SENSIBLE CHOICE */ 
 
@@ -36,15 +36,15 @@ void setup() {
   } 
   
   Wypisz(); 
-  krok = 0; 
+  step = 0; 
 }
 
 void draw() {
   /* The actual simulation loop */
   ZróbKrokMonteCarlo(); 
-  krok = krok + 1; 
+  step = step + 1; 
   Wypisz(); 
-  print("\r"+nf(krok, 3) + ")     "); 
+  print("\r"+nf(step, 3) + ")     "); 
 }
 
 void ZerujCałe() { 

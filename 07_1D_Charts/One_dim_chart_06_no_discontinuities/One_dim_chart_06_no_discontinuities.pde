@@ -25,16 +25,16 @@ void wykres()
 {
   stroke(255,0,0);    //Kolor wykresu funkcji
   
-  float krokX=(PI*2)/1000; //Jaki fragment dziedziny na jedną kolumnę okna o długości 1000
-  float krokY=2.0/500;     //Jaki fragment przeciwdziedziny na jeden wiersz okna o wysokości 500
+  float stepX=(PI*2)/1000; //What portion of the domain corresponds to a single window column with a length of 1000?
+  float stepY=2.0/500;     //Which portion of the codomain corresponds to a single row of a window with a height of 500?
   int oldw=-1;
   int oldk=-1;
   
   for(int k=0;k<1000;k++) //Przejście po wszystkich kolumnach pikseli
   {
-    float x=k*krokX+startX;    //Przeliczenie kolumny okna na x z uwzględnieniem przesunięcia o startX 
+    float x=k*stepX+startX;    //Converting a window column to `x` taking into account an offset of `startX`
     float y=mojaFunkcja(x);    //Obliczenie wartości funkcji dla danego x
-    int  w=250-round(y/krokY); //Przeliczenie x na numer wiesza, 
+    int  w=250-round(y/stepY); //Conversion of `x` into a row number, 
     line(oldk,oldw,k,w);       //Nakreślenie linii od punktu poprzedniego do aktualnego
     oldk=k;oldw=w;             //Zapamiętanie pozycji punktu
   }

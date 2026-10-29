@@ -51,7 +51,7 @@ void initializeAgents(Agent[][] agents,int[][] env)
 void sheduleAgents(Agent[][] agents,int[][] env,int step)
 //Proste przemieszczanie agentów sterowane upływem czasu symulacji
 {
-   Agent curra; //println("Parzysty: ",step%2==0); //Co innego w krokach parzystych!
+   Agent curra; //println("Parzysty: ",step%2==0); //It’s a different story with even-numbered steps!
    for(int a=0;a<agents.length;a++)
     for(int b=0;b<agents[a].length;b++)
     {
@@ -60,7 +60,7 @@ void sheduleAgents(Agent[][] agents,int[][] env,int step)
      && curra.workX!=curra.flatX && curra.workY!=curra.flatY//nie pracuje w domu!
      )
      {
-       if(step % 2 == 0 ) //Jak 0 czyli krok parzysty to z domu do pracy
+       if(step % 2 == 0 ) //If it’s 0—meaning an even-numbered step—then it’s from home to work.
        {
          float workProbability=(Infected < curra.state && curra.state < Recovered) 
                                ? Dutifulness * (1-PSLeav): Dutifulness;
@@ -72,7 +72,7 @@ void sheduleAgents(Agent[][] agents,int[][] env,int step)
            agents[curra.workY][curra.workX]=curra; //Teleportuje się do pracy
          }
        }
-       else// jak krok nieparzysty to z pracy do domu
+       else// if the step number is odd, then it’s from work to home
          if(env[a][b]==Env_WORK+1) //Tylko jak nadal jest w pracy to z niej wraca
          {
            agents[a][b]=null; //A z pracy znika
@@ -141,12 +141,13 @@ void  agentsChange(Agent[][] agents)
         }
     }
   }
-  //We record the change in the base statistics jaka się dokonała w kroku symulacji
+  //We record the change in the base statistics which took place during the simulation step
   deaths.append(sumDeath-befDeath);
   newcas.append(sumInfected-befInfected);
   cured.append(sumRecovered-befRecovered);
 }
 
-//-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM: BASIC INITIALISATION & EVERY STEP CHANGE
-//-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
+//-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

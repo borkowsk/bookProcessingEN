@@ -7,12 +7,12 @@ float mojaFunkcja(float x,float y)
 }
 
 //Globalne ustawienia
-float krokX,krokY,mnozZ;
+float stepX,stepY,mnozZ;
 void setup()
 {
   size(500,500); noSmooth();  background(255);
-  krokX=(PI*2)/width; //Jaki fragment X na jedną kolumnę okna o długości width
-  krokY=(PI*2)/height; //Jaki fragment Y na jeden wiersz okna o wysokości height
+  stepX=(PI*2)/width; //Which segment of X corresponds to a single window column of length 'width'?
+  stepY=(PI*2)/height; //Which Y-segment corresponds to a single row of a window with height `height`?
   mnozZ=255;
   axes();
 }
@@ -22,10 +22,10 @@ void draw() //Rysuje wykres kolumna po kolumnie
 {
   if(k<width) //Przejście po wszystkich kolumnach pikseli
   {
-    float x=k*krokX-PI;   //Przeliczenie kolumny okna na x , chcemy żeby też były ujemne
+    float x=k*stepX-PI;   //Convert the window column to x; we want it to include negative values ​​as well.
     for(int w=0;w<height;w++) // a w kolumnach przejście po wszystkich wierszach
     {
-      float y=(height-w)*krokY-PI; //Przeliczenie wiersza okna na y , chcemy żeby też były ujemne
+      float y=(height-w)*stepY-PI; //Converting the window row to a y-coordinate; we want these to be negative as well.
       float z=mojaFunkcja(x,y);       //Obliczenie funkcji
       if(z>0) stroke(z*mnozZ,z*mnozZ,0); //Ustalenie koloru dla wyników dodatnich
       else    stroke(0,0,-z*mnozZ); // oraz dla ujemnych

@@ -83,3 +83,8 @@ void sierpinskiCarpetRect(int[][] env,int val,int x, int y, int sizex, int sizey
    sierpinskiCarpetRect(env,val,x+2*sizex,y+sizey  ,sizex,sizey);
    sierpinskiCarpetRect(env,val,x+sizex  ,y+2*sizey,sizex,sizey);
 }
+
+//-/////////////////////////////////////////////////////////////////////////////////////////
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM MODEL
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
+//-/////////////////////////////////////////////////////////////////////////////////////////

@@ -16,15 +16,15 @@ line(0,0,5,10);         //Pół grotu Y
 
 stroke(255,0,0);    //Kolor wykresu funkcji
 
-float krokX=(PI*2)/1000; //Jaki fragment dziedziny na jedną kolumnę okna o długości 1000
-float krokY=2.0/500;     //Jaki fragment przeciwdziedziny na jeden wiersz okna o wysokości 500
+float stepX=(PI*2)/1000; //What portion of the domain corresponds to a single window column with a length of 1000?
+float stepY=2.0/500;     //Which portion of the codomain corresponds to a single row of a window with a height of 500?
 println('x','\t','y');   //Nagłówki kolumn na konsoli
 
 for(int k=0;k<1000;k++)  //Przejście po wszystkich kolumnach pikseli
 {
-  float x=k*krokX;       //Przeliczenie kolumny okna na x 
+  float x=k*stepX;       //Converting a window column to `x` 
   float y=sin(x);        //Obliczenie wartości funkcji dla danego x
-  int  w=250-round(y/krokY); //Przeliczenie x na numer wiesza, 
+  int  w=250-round(y/stepY); //Conversion of `x` into a row number, 
                              //pamiętając że wiersze pikseli są numerowane od góry, 
                              //a funkcja sinus ma wartości z zakresu -1 do 1
   point(k,w);            //Nakreślenie punktu w odpowiednim miejscu
@@ -32,4 +32,4 @@ for(int k=0;k<1000;k++)  //Przejście po wszystkich kolumnach pikseli
   //Wartości z konsoli można zaznaczyć (Ctrl-A) i przekopiować do schowka (Ctrl-C)
 }
 
-/// @date 2026 ( → https://github.com/borkowsk/bookProcessingEN)
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)

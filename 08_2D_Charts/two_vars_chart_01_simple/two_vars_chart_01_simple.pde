@@ -6,15 +6,15 @@ size(1000,1000);
 smooth();
 background(255);
 
-float krokX=(PI*2)/width; //Jaki fragment X na jedną kolumnę okna o długości width
-float krokY=(PI*2)/height; //Jaki fragment Y na jeden wiersz okna o wysokości height
+float stepX=(PI*2)/width; //Which segment of X corresponds to a single window column of length 'width'?
+float stepY=(PI*2)/height; //Which Y-segment corresponds to a single row of a window with height `height`?
 
 //Wykres 
 for(int k=0;k<width;k++) //Przejście po wszystkich kolumnach pikseli
   for(int w=0;w<height;w++) // a w nich po wszystkich wierszach
   {
-    float x=k*krokX-PI;   //Przeliczenie kolumny okna na x , chcemy żeby też były ujemne
-    float y=(height-w)*krokY-PI; //Przeliczenie wiersza okna na y , chcemy żeby też były ujemne
+    float x=k*stepX-PI;   //Convert the window column to x; we want it to include negative values ​​as well.
+    float y=(height-w)*stepY-PI; //Converting the window row to a y-coordinate; we want these to be negative as well.
     float z=x*y; 
     if(z>0) stroke(z*32,0,0);  //Ustalenie koloru dla wyników dodatnich
     else    stroke(0,0,-z*32); // oraz dla ujemnych

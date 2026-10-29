@@ -192,3 +192,8 @@ void viewAxis(int startX,int startY,int width,int height)
   line(startX+5,startY-height+5,startX,startY-height);
   line(startX-5,startY-height+5,startX,startY-height);
 }
+
+//-//////////////////////////////////////////////////////////////////////////////////////////////////////
+/// @author https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI @src: ABM: BASIC STATISTICS
+/// @date 2026-10-29 ( → https://github.com/borkowsk/bookProcessingEN)
+//-//////////////////////////////////////////////////////////////////////////////////////////////////////

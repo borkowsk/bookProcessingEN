@@ -6,11 +6,11 @@
 //   Jeżeli termit ma coś na plecach sprawdza, czy przed nim, lub obok niego jest podobne drewienko.
 //   Jeżeli jest to z pewnym prawdopodobieństwem zrzuca drewienko.
 
-int wizual = 5; /* Every how many steps should I draw? */
+int vis_frequency = 5; /* Every how many steps should I draw? */
 int n_termity = 10;
 int Last = 65;
 int czas = 0;
-int szerokosc = 10;
+int Width = 10;
 int n_przedmiotow = 2; /* How many types of items? */
 
 double gestosc = 0.2;
@@ -36,7 +36,7 @@ lok[]    tablica_przejscia = new lok[4];
 int step = 0;
 
 void settings() {
-  size(Last * szerokosc + szerokosc + 5, Last * szerokosc + 80);
+  size(Last * Width + Width + 5, Last * Width + 80);
 }
 
 void setup() {
@@ -103,18 +103,18 @@ int i, j, m, k;
      stroke(0, 0, 0);
      fill(koloruj_r(kopiec_arg[world_arg[i][j]].c), koloruj_g(kopiec_arg[world_arg[i][j]].c), koloruj_b(kopiec_arg[world_arg[i][j]].c));
     }
-    rect(szerokosc * i, szerokosc * j, szerokosc, szerokosc);
+    rect(Width * i, Width * j, Width, Width);
    }
  }
 
  fill(255, 255, 255);
  stroke(255, 255, 255);
- rect(10, Last * szerokosc + 10, width - 20, 50); /* Clearing the text panel */
+ rect(10, Last * Width + 10, width - 20, 50); /* Clearing the text panel */
 
  fill(0);
  textSize(12);
- text("Liczba termitów: " + m, 10, Last * szerokosc + 25);
- text("Liczba drewienek: " + k, 10, Last * szerokosc + 45);
+ text("Liczba termitów: " + m, 10, Last * Width + 25);
+ text("Liczba drewienek: " + k, 10, Last * Width + 45);
 }
 
 void init(int[][] world_arg, termit[] kopiec_arg) {
@@ -153,7 +153,7 @@ int i, j, x, y;
 rysowanie(world_arg, kopiec_arg);
 }
 
-void krok(int[][] world_arg, termit[] kopiec_arg) {
+void step(int[][] world_arg, termit[] kopiec_arg) {
 int k_idx, i, g, h, l, t;
  for (k_idx = 1; k_idx <= n_termity; k_idx++) {
    i = int(random(n_termity)) + 1;
@@ -421,17 +421,17 @@ int k_idx, i, g, h, l, t;
 }
 
 void draw() {
-  if (step % wizual == 0) {
+  if (step % vis_frequency == 0) {
     rysowanie(world, kopiec);
     fill(255);
     stroke(255);
-    rect(10, Last * szerokosc + 60, 150, 15);
+    rect(10, Last * Width + 60, 150, 15);
     fill(0);
     textSize(12);
-    text("Krok: " + step, 10, Last * szerokosc + 70);
+    text("Krok: " + step, 10, Last * Width + 70);
   }
 
-  krok(world, kopiec);
+  step(world, kopiec);
   step = step + 1;
 }
 
