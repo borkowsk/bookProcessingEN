@@ -80,7 +80,7 @@ class simulation_world : #@INTERFACE simulation_world   # For documentation only
 
 ##*##=======================================================================================
 ##  https://www.researchgate.net/profile/WOJCIECH_BORKOWSKI - ABM SAKODA0 MAIN 
-##  https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( --> https://github.com/borkowsk/bookProcessingEN)
 ##*##=======================================================================================
 ## jigle.awk .pde classes preprocessing by borkowsk @ github.
 ## Translated by pde2pyde Fri, 20 Dec 2024 20:30:09 +0100

@@ -1,5 +1,5 @@
 ''' Lotka–Volterra equations. Over time loop.
- * https:##en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
+ * https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
  '''
 
 X=100 #x is the number of prey (for example, rabbits)
@@ -33,4 +33,4 @@ for T in range(0,1000,Tstep): # "T"  is used as stearing variable!
   Y=Y + Tstep * (gamma*oldX*Y-delta*Y)
 
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2024 ( --> https://github.com/borkowsk/bookProcessingEN)

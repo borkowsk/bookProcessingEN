@@ -89,5 +89,5 @@ def draw(): # Any globals modified? #
   if t%10==0 : 
     print   t, frameRate, "fps"  
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

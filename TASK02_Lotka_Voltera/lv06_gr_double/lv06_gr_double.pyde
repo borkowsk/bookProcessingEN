@@ -1,5 +1,5 @@
 ''' Lotka–Volterra equations calculated in double precision.
- *  https:##en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
+ *  https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
  '''
  
 from adhoclib import frange #floating point loop prosthesis
@@ -53,4 +53,4 @@ for T in frange(0,Tlimit,Tstep): # loop over variable "T" # double TIME used as 
 
 print   "DONE" 
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2024 ( --> https://github.com/borkowsk/bookProcessingEN)

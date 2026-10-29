@@ -12,4 +12,4 @@ for i in range( 0,100,1): # "i" should be int
   a=random(1.0)  # A new random number in the range 0..1
 
  
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

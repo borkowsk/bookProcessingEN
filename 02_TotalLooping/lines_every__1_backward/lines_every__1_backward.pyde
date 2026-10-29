@@ -10,4 +10,4 @@ for i in range(255,0-1,-1): # "i" should be int # REPEAT 256 times (counting bac
   line(i,0,128,500)  # only x changes, y==0
 #END
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

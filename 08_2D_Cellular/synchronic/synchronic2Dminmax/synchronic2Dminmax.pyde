@@ -80,4 +80,4 @@ def draw(): # Any globals modified? #
                  +  (1 if WorldOld[i][dw]>0  else 0)             
                  
 '''
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)

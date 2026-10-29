@@ -83,5 +83,5 @@ def draw(): # Any globals modified? #
   textSize(20);textAlign(LEFT,TOP);text("ST:"+str(t),0,0)
   #end
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

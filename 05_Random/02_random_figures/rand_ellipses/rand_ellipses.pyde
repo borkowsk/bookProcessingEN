@@ -29,5 +29,5 @@ def draw(): # Is it any global variable used inside? YES, but these are system v
   ellipse(random(width),random(height),d,d)
 
 
-# https://github.com/borkowsk/bookProcessingEN
-# https://github.com/borkowsk/bookProcessingPL
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN

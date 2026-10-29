@@ -49,4 +49,4 @@ def draw(): # Is it any global variable modified inside?
 
 
 
-##@date 2024-12-01 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2024-12-01 ( --> https://github.com/borkowsk/bookProcessingEN)

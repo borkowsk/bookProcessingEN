@@ -6,4 +6,4 @@ if a != 0 :
     print "Result of 1/a is", 1.0/a # Note ".0"!
 #else : print "Dividing by zero is prohibited!" # Uncomment this and try!
         
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

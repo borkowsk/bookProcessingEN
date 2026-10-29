@@ -66,5 +66,5 @@ def draw(): # Is it any global variable modified inside? #
   text(jstr,width/2,height-2*FS)
 
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

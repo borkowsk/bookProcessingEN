@@ -1,5 +1,5 @@
 ## An example of using a class (complex user type)
-## @date 2026-06-17 (last modification)
+## @date 2026-06-17 ( --> https://github.com/borkowsk/bookProcessingEN)
 ##-##==================================================
 ## TODO comments clean!
 from adhoclib import * 
@@ -32,5 +32,5 @@ def draw(): # Any globals modified?
   TheSingiel.next()  # Method call - dot notation again
 
 
-## https://github.com/borkowsk/bookProcessingEN/
+## @date 2026 ( --> https://github.com/borkowsk/bookProcessingEN)
 ## Translated by pde2pyde Tue, 10 Dec 2024 18:08:23 +0100

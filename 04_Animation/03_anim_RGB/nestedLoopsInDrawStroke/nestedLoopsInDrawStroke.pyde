@@ -32,4 +32,4 @@ def draw(): # Is it any global variable used inside?
   k+=1  # Incrementation of "k" at the end of each call of `draw()`
 
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

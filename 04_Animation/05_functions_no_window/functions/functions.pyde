@@ -64,4 +64,4 @@ def exit(): # Is it any global variable used inside? # What should be done when 
   sys.exit()
 
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

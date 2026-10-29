@@ -158,7 +158,7 @@ def change(): # Is it any global variable modified inside? ## changing the state
 
 
 '''  hexagon(center x-coordinate, center y-coordinate, width, height)
- *  Source: https:##forum.processing.org/two/discussion/21083/creating-a-simple-function-to-draw-a-hexagon.html '''
+ *  Source: https://forum.processing.org/two/discussion/21083/creating-a-simple-function-to-draw-a-hexagon.html '''
 def hexagon(x, y, gsX, gsY): # Is it any global variable modified inside?         ##< "Tool" for drawing a hexagon
   '''What should this code below do?''' 
   sqrt3=sqrt(3)
@@ -177,6 +177,6 @@ def hexagon(x, y, gsX, gsY): # Is it any global variable modified inside?       
 ##-##==============================================================================
 ## Autor: Wojciech T. Borkowski
 ## Materials for the textbook "Processing in education and simulation
-## https://github.com/borkowsk/sym4processing/tree/master/ProcessingWEdukacji
+## @date 2026 ( --> https://github.com/borkowsk/bookProcessingEN)
 ##-##==============================================================================
-## @date 2026-10-07 (revived)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)

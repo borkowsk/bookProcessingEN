@@ -10,4 +10,4 @@ for i in range(0,150,1): # "i" should be int # REPEAT 150 times
    stroke(i,0,0)  # from black to dark red
    ellipse(100+i,100+i,1+i,1+i)
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

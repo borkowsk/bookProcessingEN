@@ -30,4 +30,4 @@ for i in range(0,256,1):
     #stroke(0,j,i) # GREEN+BLUE = shades of cyan
     point(j,255-i) #2D gradient of colors
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

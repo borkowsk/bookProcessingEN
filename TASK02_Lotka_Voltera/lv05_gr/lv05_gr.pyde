@@ -1,6 +1,6 @@
 ''' Lotka–Volterra equations
- * Model: https:##en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
- * About looping: https:##stackoverflow.com/questions/7267226/range-for-floats
+ * Model: https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
+ * About looping: https://stackoverflow.com/questions/7267226/range-for-floats
 '''
 
 # This generator works exacly like C loop on floats. 
@@ -63,4 +63,4 @@ for T in frange3(0,Tlimit,Tstep): # loop over variable "T" # float TIME used as 
   Y= Y + Tstep * (gamma*oldX*Y-delta*Y) #X has already new value, so we use oldX - old value of X
 
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2024 ( --> https://github.com/borkowsk/bookProcessingEN)

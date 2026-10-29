@@ -14,5 +14,5 @@ for i in range(0,500,10): # "i" should be int # REPEAT 50x every 10
   line(i,i,0,500)
 #END
 
-# https://www.facebook.com/ProcessingWEdukacji/
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

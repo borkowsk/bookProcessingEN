@@ -14,7 +14,7 @@ IDens=0.0  ##The initial density in the array
 Div=7      ##What divisor in the automaton rule
 
 CellSize=3        ##Cell height
-FRAME_RATE_REQ=2  ##How many frames per second would we like
+FRAME_RATE_REQ=20 ##How many frames per second would we like (rather few, not moer in Python :-D )
 
 def settings(): # Is it any global variable modified inside? ##A SPECIAL FUNCTION THAT ALLOWS YOU TO USE AN EXPRESSION DETERMINING WINDOW SIZES AND OTHER WINDOW SETTINGS
   '''What should this code below do?''' 
@@ -64,7 +64,7 @@ def draw(): # Is it any global variable modified inside?
 
 '''  "Tool" for drawing a hexagon:
  * hexagon(center x-coordinate, center y-coordinate, width, height) '''
-def hexagon(x, y, gsX, gsY): # Is it any global variable modified inside? ##< Source: https:##forum.processing.org/two/discussion/21083/creating-a-simple-function-to-draw-a-hexagon.html
+def hexagon(x, y, gsX, gsY): # Is it any global variable modified inside? ##< Source: https://forum.processing.org/two/discussion/21083/creating-a-simple-function-to-draw-a-hexagon.html
   '''What should this code below do?''' 
   sqrt3=sqrt(3)
   gsX/=4
@@ -150,6 +150,6 @@ def change(): # Is it any global variable modified inside? #
 ##*##==============================================================================
 ## Author: Wojciech T. Borkowski
 ## Materials for the textbook "Processing in education and simulation
-## https://github.com/borkowsk/sym4processing/tree/master/ProcessingWEdukacji
+## @date 2026 ( --> https://github.com/borkowsk/bookProcessingEN)
 ##*##==============================================================================
-## @date 2026-10-07 (revived)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)

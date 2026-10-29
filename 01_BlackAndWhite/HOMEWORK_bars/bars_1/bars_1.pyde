@@ -34,4 +34,4 @@ textAlign(LEFT,TOP);text(MAXD,0,0)  #Print max on window!
 line(0,height-1,width,height-1)  #Horizontal
 #line(width,height-1,width-10,height-5); //Arrow
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

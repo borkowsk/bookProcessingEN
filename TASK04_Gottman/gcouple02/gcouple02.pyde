@@ -37,4 +37,4 @@ for i in range(0,width,DOTSIZE+1): # loop over variable "i"
 
 print "DONE",
 
-##@date 2024-12-01 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2024-12-01 ( --> https://github.com/borkowsk/bookProcessingEN)

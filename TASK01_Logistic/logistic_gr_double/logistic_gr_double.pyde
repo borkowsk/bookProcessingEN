@@ -16,4 +16,4 @@ for i in range(0,width,1): # loop over variable "i" #Whole window width.
 
 text("R="+str(R),5,height-10) # R has double precision but `str` cuts not important part off.
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)

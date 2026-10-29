@@ -87,5 +87,5 @@ def draw(): # Any sideeffects on globals? #
   t+=1 ##The next generation/step/year
 
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

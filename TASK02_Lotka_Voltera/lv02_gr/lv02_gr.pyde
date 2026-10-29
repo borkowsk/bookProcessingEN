@@ -1,5 +1,5 @@
 ''' Lotka–Volterra equations.
-* https:##en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
+* https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
 '''
 
 X=350 #x is the number of prey (for example, rabbits)
@@ -31,4 +31,4 @@ for i in range(0,N,1): # loop over variable "i"
   Y=Y + Tstep * (gamma*oldX*Y-delta*Y)
 
 
-##https://github.com/borkowsk/bookProcessingEN
+## @date 2024 ( --> https://github.com/borkowsk/bookProcessingEN)

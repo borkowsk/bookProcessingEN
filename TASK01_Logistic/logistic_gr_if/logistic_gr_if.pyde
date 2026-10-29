@@ -22,4 +22,4 @@ for i in range(0,width,1): # loop over variable "i"
 
 text("R="+str(R),5,height-5)
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)

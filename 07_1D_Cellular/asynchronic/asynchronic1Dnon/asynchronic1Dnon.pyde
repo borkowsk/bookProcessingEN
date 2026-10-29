@@ -79,5 +79,5 @@ def draw(): # Any global variable modified? YES
   '''block ended.'''
 
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

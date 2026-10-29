@@ -99,5 +99,5 @@ def draw(): # Any globals modified? #
   text("ST:"+str(t),0,0) #In Python, you can only add a string to a string. Using the str() function, we guarantee that whatever is in the variable, it will result in a string.
 
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

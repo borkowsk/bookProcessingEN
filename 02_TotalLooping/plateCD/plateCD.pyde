@@ -17,4 +17,4 @@ stroke(128)
 for i in range(150,30,-2):
    ellipse(200,200,i,i)
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

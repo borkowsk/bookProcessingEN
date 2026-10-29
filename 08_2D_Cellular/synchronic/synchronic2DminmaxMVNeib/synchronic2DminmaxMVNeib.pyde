@@ -78,5 +78,5 @@ def draw(): # Any globals modified? #
   t+=1  ##The next generation/step/year
   textSize(20); textAlign(LEFT,TOP); text("ST:"+str(t),0,0)
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

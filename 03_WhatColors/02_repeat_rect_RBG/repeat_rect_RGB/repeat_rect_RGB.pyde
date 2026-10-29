@@ -13,4 +13,4 @@ for i in range(0,256,10): # "i" should be int # REPEAT EVERY TEN TIMES!
   rect(i,i,0,500)  # And draw a "card"!
   # END OF THE REPEATED ACTION
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

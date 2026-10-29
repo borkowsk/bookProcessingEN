@@ -121,5 +121,5 @@ def status(): # Any globals modified? NO
   text("ST:"+str(t)+"("+nf(frameRate,3,2)+")",0,height)
 
 
-## @date 2026-06-16 (https://github.com/borkowsk/bookProcessingEN/)
+## @date 2026-06-16 ( --> https://github.com/borkowsk/bookProcessingEN)
 

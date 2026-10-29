@@ -2,7 +2,7 @@
  The action of this SF novel takes place in a cylindrical world 
  after a conflict with "aliens". People live in steel cities, 
  climbing ropes, pursuing an undefined Goal.
- See: https:#www.goodreads.com/book/show/6615626-vertical
+ See: https://www.goodreads.com/book/show/6615626-vertical
 '''
 
 N=10     # Number of cities
@@ -44,4 +44,4 @@ def draw(): # Is it any global variable used inside? YES!!!
   
 
 
-## @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-06-17 ( --> https://github.com/borkowsk/bookProcessingEN)

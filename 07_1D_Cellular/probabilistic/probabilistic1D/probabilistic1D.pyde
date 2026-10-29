@@ -36,5 +36,5 @@ for i in range(0,len(World),1): # 'i' has int value
   print World[i],' ',
     
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

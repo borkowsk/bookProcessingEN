@@ -128,5 +128,5 @@ def draw(): # Any globals modified? #
   fill(255);textAlign(LEFT,BOTTOM); text(str(t)+"("+str(frameRate)+")",0,height)
 
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN/)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

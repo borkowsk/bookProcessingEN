@@ -65,5 +65,5 @@ def draw(): # Is it any global variable modified inside?
   #  println(frameCount+"*"+ frameRate ) #Process progress
 
 
-## @date 2026-06-17 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-06-17 ( --> https://github.com/borkowsk/bookProcessingEN)
 

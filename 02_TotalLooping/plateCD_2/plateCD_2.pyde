@@ -11,4 +11,4 @@ for i in range(250,30,-2): # "i" should be int # REPEAT BACKWARD every two times
    stroke(i)   # More sophisticated color
    ellipse(width/2,height/2,i,i)  # In the center of a window
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

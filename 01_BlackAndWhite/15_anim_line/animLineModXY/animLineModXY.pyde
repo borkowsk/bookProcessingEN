@@ -25,4 +25,4 @@ def draw():
   posY=posY % height
 #END
 
-# https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)

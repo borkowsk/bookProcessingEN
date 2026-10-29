@@ -32,4 +32,4 @@ for i in range(0,N,1): # loop over variable "i"
 
 text("DONE",30,50)
 
-##@date 2024 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2024 ( --> https://github.com/borkowsk/bookProcessingEN)

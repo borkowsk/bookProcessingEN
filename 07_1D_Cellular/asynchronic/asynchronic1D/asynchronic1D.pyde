@@ -65,5 +65,5 @@ def exit(): # Looks like this hack does not work in Python mode.
   print "Frame rate:",frameRate,"fps" #So it never appears :-(
 
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
 

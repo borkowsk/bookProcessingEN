@@ -29,5 +29,5 @@ def draw(): # Is it any global variable used inside?
   rect(random(width-s),random(height-s),s,s)  # Think, why "-s" ?
 
 
-# https://github.com/borkowsk/bookProcessingEN
-# https://github.com/borkowsk/bookProcessingPL
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN)
+## @date 2026 ( -->  https://github.com/borkowsk/bookProcessingEN

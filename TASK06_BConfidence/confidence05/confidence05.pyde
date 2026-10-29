@@ -81,5 +81,5 @@ def draw(): # Any globals modified? NO, only contents of lists.
       elif minds[a] > minds[b] :
           minds[a]-=eps[a]
 
-## @date 2026-06-16 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+## @date 2026-06-16 ( --> https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
 

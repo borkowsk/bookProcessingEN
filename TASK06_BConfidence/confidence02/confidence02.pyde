@@ -58,4 +58,4 @@ def draw(): # Is it any global variable modified inside? NO
   
  #End of draw()
 
-## @date 2026-06-16 (https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)
+## @date 2026-06-16 ( --> https://github.com/borkowsk/bookProcessingEN/tree/main/TASK06_bconfidence)

@@ -11,5 +11,5 @@ for i in range(0,10,1): # loop over variable "i"
 
 text("DONE",30,55) #For default window 100x100
 
-## @date 2026-10-07 (https://github.com/borkowsk/bookProcessingEN)
+## @date 2026-10-07 ( --> https://github.com/borkowsk/bookProcessingEN)
  

@@ -1,5 +1,5 @@
 ''' Lotka–Volterra equations
- *  See: https:##en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
+ *  See: https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations
 '''
 
 X=300 #< x is the number of prey (for example, rabbits)
@@ -61,4 +61,4 @@ def draw(): # Is it any global variable modified inside?
   T+=Tstep
 
 
-## https://github.com/borkowsk/bookProcessingEN
+## @date 2026 ( --> https://github.com/borkowsk/bookProcessingEN)
